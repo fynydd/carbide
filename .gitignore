@@ -123,4 +123,4 @@ Thumbs.db
 *.ide
 
 # Nuget packages
-/[Pp]ackages/
+[Cc]arbide/[Pp]ackages/
