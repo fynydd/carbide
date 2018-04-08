@@ -221,12 +221,6 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Halide\Halide\Halide.csproj">
-      <Project>{f4e5d625-93d6-432a-8111-852eb6b30d24}</Project>
-      <Name>Halide</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Support\Scripts\FormValidationHelpers.js" />
   </ItemGroup>
   <ItemGroup>

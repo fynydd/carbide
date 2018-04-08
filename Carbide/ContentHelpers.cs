@@ -11,7 +11,6 @@ using Umbraco.Core.Models;
 using Umbraco.Core.Media;
 using Umbraco.Core.Services;
 using Umbraco.Web;
-using Argentini.Halide;
 
 namespace Argentini.Carbide
 {

@@ -11,7 +11,6 @@ using Umbraco.Core.Models;
 using Umbraco.Core.Media;
 using Umbraco.Core.Services;
 using Umbraco.Web;
-using Argentini.Halide;
 
 namespace Argentini.Carbide
 {
@@ -720,6 +719,57 @@ namespace Argentini.Carbide
                 .Where(x => x.Name == nodeName)
                 .FirstOrDefault();
         }
+
+        #endregion
+
+        #region Base types
+
+        /// <summary>
+        /// Creates a string from the sequence by concatenating the result
+        /// of the specified string selector function for each element.
+        /// Concatenates the strings with no delimitter.
+        /// </summary>
+        /// <param name="source">The source IEnumerable object</param>
+        /// <param name="stringSelector">Abstraction for the individual string objects</param>
+        public static string ToConcatenatedString<T>(
+            this IEnumerable<T> source,
+            Func<T, string> stringSelector)
+        {
+            return ToConcatenatedString(source, stringSelector, String.Empty);
+        }
+
+        /// <summary>
+        /// Creates a string from the sequence by concatenating the result
+        /// of the specified string selector function for each element.
+        /// Concatenates the string with a specified delimitter.
+        /// </summary>
+        /// <param name="source">The source IEnumerable object</param>
+        /// <param name="stringSelector">Abstraction for the individual string objects</param>
+        /// <param name="delimitter">The string which separates each concatenated item</param>
+        public static string ToConcatenatedString<T>(
+            this IEnumerable<T> source,
+            Func<T, string> stringSelector,
+            string delimitter)
+        {
+            var b = new StringBuilder();
+            bool needsSeparator = false;
+
+            foreach (var item in source)
+            {
+                if (needsSeparator)
+                {
+                    b.Append(delimitter);
+                }
+
+                b.Append(stringSelector(item));
+                needsSeparator = true;
+            }
+
+            return b.ToString();
+        }
+
+
+
 
         #endregion
     }

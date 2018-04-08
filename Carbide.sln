@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27428.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carbide", "Carbide\Carbide.csproj", "{C0736303-EBC3-4FBA-A419-53FBCADCFE3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Halide", "Halide\Halide\Halide.csproj", "{F4E5D625-93D6-432A-8111-852EB6B30D24}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit Tests", "Unit Tests\Unit Tests.csproj", "{312AE95B-BE1F-40BF-9858-8D9C9FF264FD}"
 EndProject
 Global
@@ -19,10 +17,6 @@ Global
 		{C0736303-EBC3-4FBA-A419-53FBCADCFE3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0736303-EBC3-4FBA-A419-53FBCADCFE3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0736303-EBC3-4FBA-A419-53FBCADCFE3A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F4E5D625-93D6-432A-8111-852EB6B30D24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F4E5D625-93D6-432A-8111-852EB6B30D24}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F4E5D625-93D6-432A-8111-852EB6B30D24}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F4E5D625-93D6-432A-8111-852EB6B30D24}.Release|Any CPU.Build.0 = Release|Any CPU
 		{312AE95B-BE1F-40BF-9858-8D9C9FF264FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{312AE95B-BE1F-40BF-9858-8D9C9FF264FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{312AE95B-BE1F-40BF-9858-8D9C9FF264FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
