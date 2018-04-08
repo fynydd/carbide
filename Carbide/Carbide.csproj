@@ -219,7 +219,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Halide\Halide\Halide.csproj">
@@ -229,6 +228,45 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Support\Scripts\FormValidationHelpers.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="3.3.1" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="ClientDependency" Version="1.9.6" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="ClientDependency-Mvc5" Version="1.8.0.0" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Examine" Version="0.1.89" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.4.9.5" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="ImageProcessor" Version="2.5.6" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="ImageProcessor.Web" Version="4.8.7" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="log4net" Version="2.0.8" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Log4Net.Async" Version="2.0.4" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Lucene.Net" Version="2.9.4.1" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Markdown" Version="1.14.7" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.1" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Microsoft.AspNet.Identity.Owin" Version="2.2.1" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.3" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Microsoft.AspNet.Razor" Version="3.2.3" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Microsoft.AspNet.SignalR.Core" Version="2.2.1" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Microsoft.AspNet.WebApi" Version="5.2.3" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.3" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.3" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.WebHost" Version="5.2.3" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.2.3" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="1.2.2" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Microsoft.Owin" Version="3.1.0" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Microsoft.Owin.Host.SystemWeb" Version="3.1.0" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Microsoft.Owin.Security" Version="3.1.0" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Microsoft.Owin.Security.Cookies" Version="3.1.0" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Microsoft.Owin.Security.OAuth" Version="3.1.0" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Microsoft.Web.Infrastructure" Version="1.0.0.0" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="MiniProfiler" Version="2.1.0" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="MySql.Data" Version="6.9.11" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="Owin" Version="1.0" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="semver" Version="1.1.2" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="SharpZipLib" Version="0.86.0" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="System.Threading.Tasks.Dataflow" Version="4.7.0" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="System.ValueTuple" Version="4.4.0" Condition="'$(TargetFramework)' == 'net461'" />
+    <PackageReference Include="UmbracoCms.Core" Version="7.10.1" Condition="'$(TargetFramework)' == 'net461'" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
