@@ -16,8 +16,12 @@ Once you add the project to your solution, be sure to reference it in your code 
 or in Razor views...
 <pre><code>@using Argentini.Carbide</code></pre>
 
+
+
 ## Carbide Methods and Enhancements
 Following are the methods and other enhancements avalaible in Carbide.
+
+
 
 ### Argentini.Carbide.ContentHelpers
 These are static methods to use for retrieving (and scouring) content with as little code as possible.
@@ -34,6 +38,8 @@ Get all IPublishedContent nodes by their document type aliases. Searches from th
 #### GetContentByName()
 Get a single IPublishedContent node by its node name. Searches from the site root down through descendants, stopping at the first match.
 
+
+
 ### Argentini.Carbide.ContextHelpers
 These are static methods to use for ensuring an Umbraco context is available, as in class libraries, for example.
 
@@ -42,6 +48,8 @@ Return an UmbracoContext. For use in controllers and threads that need access to
 
 #### EstablishUmbracoContext()
 Establish an UmbracoContext. For use in controllers and threads that need access to Umbraco Helper, etc.
+
+
 
 ### Argentini.Carbide.ExtensionMethods
 These extension methods enhance existing Umbraco types, like IPublishedContent, to provide simple ways of retrieving and manipulating content.
@@ -106,6 +114,14 @@ Get a single IPublishedContent node by its node name. Searches from the current 
 #### IEnumerable.ToConcatenatedString()
 Creates a string from the sequence by concatenating the result of the specified string selector function for each element. Concatenates the strings with or without a delimitter.
 
+#### string.StripHtml()
+Return the current string with HTML tags removed.
+
+#### object.SafeToString()
+Convert an object to a string. If null an empty string is returned.
+
+
+
 ### Form Validators
 Additional MVC model and client-side validators for your forms. To use client-side validation, be sure to include the scripts:
 ```
@@ -135,6 +151,8 @@ Accepts a string array list of valid file extensions, without leading periods.
 [ValidFileTypeValidator(new string[] { "pdf", "docx" })]
 ```
 
+
+
 ### SEO Helpers
 Following are features to help with SEO and site indexing.
 
@@ -145,6 +163,8 @@ If you add the following to your web.config, instances of {HTTP_HOST} in a robot
   <handlers>
      <add name="RobotsTxt" path="/robots.txt" verb="*" type="Argentini.Carbide.RobotsTxt" resourceType="Unspecified" preCondition="integratedMode" />
 ```
+
+
 
 ## Developers
 If you'd like to help make this library better through bug fixes or code additions, let me know through the usual means.
