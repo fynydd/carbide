@@ -4,6 +4,9 @@ Carbide is a set of classes that provide Umbraco developers with additional high
 
 **This project uses the newer project file "PackageResource" configuration for NuGet packages.** This means that Carbide's NuGet packages are downloaded to your user folder, and used much like assemblies in the GAC, so they won't interfere with the /packages folder in the root of your project if you're using the standard (default) packages.config method in your solution.
 
+## Requirements
+Currently, Carbide is built on .NET CLR 4.6.1, and references UmbracoCMS.Core 7.10.1. Depending on your use case, you could keep it at this version even with a newer UmbracoCMS verson, provided there are no real incompatibilities with Core. Ideally, you want to keep the versions in lock-step. So any Carbide solutions should be updated frequently, which is generally a good practice from a security standpoint.
+
 ## Usage
 Simply include the git repo as a submodule in your Umbraco solution, and add a project reference to it in any other projects. You can also place the project into your solution, but you'll lose the benefit of a single source for Carbide updates.
 
