@@ -5,7 +5,7 @@ Carbide is a set of classes that provide Umbraco developers with additional high
 
 __What's included?__ Included in the project is a Visual Studio solution which compiles the Carbide source into a single binary with embedded resources, and XML Intellisense doc file which can be dropped into a web application's "Bin" folder and used immediately.
 
-This project uses the Halide submodule, from my open source Halide project.
+**This project uses the newer project file "PackageResource" configuration for NuGet packages.** This means that Carbide's NuGet packages are downloaded to your user folder, and used much like assemblies in the GAC, so they won't interfere with the /packages folder in the root of your project if you're using the standard (default) packages.config method in your solution.
 
 Usage
 -----
