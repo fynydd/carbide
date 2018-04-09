@@ -42,6 +42,7 @@ namespace Argentini.Carbide
         /// Retrieve the value of an application setting from the Web.config file.
         /// </summary>
         /// <param name="keyName">Key name for which a value should be returned.</param>
+        /// <param name="defaultValue">A default value if the key does not exist.</param>
         /// <returns>A key value or the default value if the key does not exist.</returns>
         public static T GetKeyValue<T>(string keyName, T defaultValue)
         {
@@ -78,10 +79,21 @@ namespace Argentini.Carbide
         /// Retrieve the value of an application setting from the Web.config file.
         /// </summary>
         /// <param name="keyName">Key name for which a value should be returned.</param>
-        /// <returns>A key value or en empty string if the key does not exist.</returns>
+        /// <param name="defaultValue">A default value if the key does not exist.</param>
+        /// <returns>A key value or a default value if the key does not exist.</returns>
         public static string GetKeyValue(string keyName, string defaultValue)
         {
             return GetKeyValue<string>(keyName, defaultValue);
+        }
+
+        /// <summary>
+        /// Retrieve the value of an application setting from the Web.config file.
+        /// </summary>
+        /// <param name="keyName">Key name for which a value should be returned.</param>
+        /// <returns>A key value or an empty string if the key does not exist.</returns>
+        public static string GetKeyValue(string keyName)
+        {
+            return GetKeyValue<string>(keyName, "");
         }
 
         /// <summary>
