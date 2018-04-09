@@ -16,9 +16,39 @@ using Umbraco.Web;
 
 namespace Argentini.Carbide
 {
+    /// <summary>
+    /// The ExtensionMethods class provides useful methods and properties to 
+    /// other object types.
+    /// </summary>
+    /// <example>
+    /// For example, you can work with IPublishedContent like this:
+    /// <code>
+    /// <![CDATA[
+    /// var udi = Model.GetUdi();
+    /// ]]>
+    /// </code>
+    /// </example>
     public static class ExtensionMethods
     {
-        #region Private properties and methods
+        #region Properties
+
+        /// <summary>
+        /// Return the version number of the class; read-only.
+        /// </summary>
+        /// <value>
+        /// A string with the version number of the class.
+        /// </value>
+        public static String Version
+        {
+            get
+            {
+                return "2018.04.09A";
+            }
+        }
+
+        #endregion
+
+        #region Private
 
         private enum IPublishedContentType
         {

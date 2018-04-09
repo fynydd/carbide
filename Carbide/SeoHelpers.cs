@@ -9,9 +9,10 @@ using System.Web;
 namespace Argentini.Carbide
 {
     /// <summary>
-    /// [<![CDATA[
     /// Replaces {HTTP_HOST} in your robots.txt file with your current domain and serve dynamically.
     /// Add the following to the web.config to enable this feature:
+    /// 
+    /// <![CDATA[
     /// <system.webServer>
     ///     <handlers>
     ///         <add name="RobotsTxt" path="/robots.txt" verb="*" type="Argentini.Carbide.RobotsTxt" resourceType="Unspecified" preCondition="integratedMode" />
@@ -19,6 +20,24 @@ namespace Argentini.Carbide
     /// </summary>
     public class RobotsTxt : IHttpHandler
     {
+        #region Properties
+
+        /// <summary>
+        /// Return the version number of the class; read-only.
+        /// </summary>
+        /// <value>
+        /// A string with the version number of the class.
+        /// </value>
+        public static String Version
+        {
+            get
+            {
+                return "2018.04.09A";
+            }
+        }
+
+        #endregion
+
         public bool IsReusable
         {
             get { return true; }

@@ -14,8 +14,38 @@ using Umbraco.Web;
 
 namespace Argentini.Carbide
 {
+    /// <summary>
+    /// The ContentHelpers class has static methods and properties for 
+    /// retrieving and managing content.
+    /// </summary>
+    /// <example>
+    /// For example, you can make calls like this:
+    /// <code>
+    /// <![CDATA[
+    /// var tweets = ContentHelpers.GetRootContentByDocTypeAlias("blogRoot");
+    /// ]]>
+    /// </code>
+    /// </example>
     public static class ContentHelpers
     {
+        #region Properties
+
+        /// <summary>
+        /// Return the version number of the class; read-only.
+        /// </summary>
+        /// <value>
+        /// A string with the version number of the class.
+        /// </value>
+        public static String Version
+        {
+            get
+            {
+                return "2018.04.09A";
+            }
+        }
+
+        #endregion
+
         #region Content scouring methods
 
         /// <summary>

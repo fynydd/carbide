@@ -9,6 +9,9 @@ using System.Web.Mvc;
 namespace Argentini.Carbide
 {
     /// <summary>
+    /// These classes provide additional form validators to your models and the client (javascript).
+    /// This validator verifies a minimum file size for an upload.
+    /// 
     /// <![CDATA[
     /// MODEL USAGE: [MinimumFileSizeValidator(1)]
     /// CLIENT USAGE: <script src="@Html.Raw(Url.Content("~/umbraco/api/carbidesupport/scripts/?file=FormValidationHelpers"))"></script>
@@ -16,6 +19,24 @@ namespace Argentini.Carbide
     /// </summary>
     public class MinimumFileSizeValidator : ValidationAttribute, IClientValidatable
     {
+        #region Properties
+
+        /// <summary>
+        /// Return the version number of the class; read-only.
+        /// </summary>
+        /// <value>
+        /// A string with the version number of the class.
+        /// </value>
+        public static String Version
+        {
+            get
+            {
+                return "2018.04.09A";
+            }
+        }
+
+        #endregion
+
         private string _errorMessage = "{0} can not be smaller than {1} MB";
 
         /// <summary> 
@@ -75,6 +96,9 @@ namespace Argentini.Carbide
     }
 
     /// <summary>
+    /// These classes provide additional form validators to your models and the client (javascript).
+    /// This validator verifies a maximum file size for an upload.
+    /// 
     /// <![CDATA[
     /// MODEL USAGE: [MaximumFileSizeValidator(1)]
     /// CLIENT USAGE: <script src="@Html.Raw(Url.Content("~/umbraco/api/carbidesupport/scripts/?file=FormValidationHelpers"))"></script>
@@ -82,6 +106,24 @@ namespace Argentini.Carbide
     /// </summary>
     public class MaximumFileSizeValidator : ValidationAttribute, IClientValidatable
     {
+        #region Properties
+
+        /// <summary>
+        /// Return the version number of the class; read-only.
+        /// </summary>
+        /// <value>
+        /// A string with the version number of the class.
+        /// </value>
+        public static String Version
+        {
+            get
+            {
+                return "2018.04.09A";
+            }
+        }
+
+        #endregion
+
         private string _errorMessage = "{0} can not be larger than {1} MB";
 
         /// <summary> 
@@ -141,6 +183,9 @@ namespace Argentini.Carbide
     }
 
     /// <summary>
+    /// These classes provide additional form validators to your models and the client (javascript).
+    /// This validator verifies the file type for an upload.
+    /// 
     /// <![CDATA[
     /// MODEL USAGE: [ValidFileTypeValidator(new string[] { "pdf", "docx" })]
     /// CLIENT USAGE: <script src="@Html.Raw(Url.Content("~/umbraco/api/carbidesupport/scripts/?file=FormValidationHelpers"))"></script>
@@ -148,6 +193,24 @@ namespace Argentini.Carbide
     /// </summary>
     public class ValidFileTypeValidator : ValidationAttribute, IClientValidatable
     {
+        #region Properties
+
+        /// <summary>
+        /// Return the version number of the class; read-only.
+        /// </summary>
+        /// <value>
+        /// A string with the version number of the class.
+        /// </value>
+        public static String Version
+        {
+            get
+            {
+                return "2018.04.09A";
+            }
+        }
+
+        #endregion
+
         private string _errorMessage = "{0} must be one of the following file types: {1}";
 
         /// <summary> 
@@ -216,6 +279,24 @@ namespace Argentini.Carbide
 
     public class FileUploadValidator : ValidationAttribute, IClientValidatable
     {
+        #region Properties
+
+        /// <summary>
+        /// Return the version number of the class; read-only.
+        /// </summary>
+        /// <value>
+        /// A string with the version number of the class.
+        /// </value>
+        public static String Version
+        {
+            get
+            {
+                return "2018.04.09A";
+            }
+        }
+
+        #endregion
+
         private MinimumFileSizeValidator _minimumFileSizeValidator;
         private MaximumFileSizeValidator _maximumFileSizeValidator;
         private ValidFileTypeValidator _validFileTypeValidator;

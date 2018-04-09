@@ -11,8 +11,38 @@ using Umbraco.Web.Security;
 
 namespace Argentini.Carbide
 {
+    /// <summary>
+    /// The ContextHelpers class has static methods and properties for 
+    /// ensuring and establishing contexts.
+    /// </summary>
+    /// <example>
+    /// For example, you can make calls like this:
+    /// <code>
+    /// <![CDATA[
+    /// var helper = new UmbracoHelper(ContextHelpers.EnsureUmbracoContext());
+    /// ]]>
+    /// </code>
+    /// </example>
     public static class ContextHelpers
     {
+        #region Properties
+
+        /// <summary>
+        /// Return the version number of the class; read-only.
+        /// </summary>
+        /// <value>
+        /// A string with the version number of the class.
+        /// </value>
+        public static String Version
+        {
+            get
+            {
+                return "2018.04.09A";
+            }
+        }
+
+        #endregion
+
         /// <summary>
         /// Return an UmbracoContext. For use in controllers and threads that need access to Umbraco Helper, etc.
         /// </summary>

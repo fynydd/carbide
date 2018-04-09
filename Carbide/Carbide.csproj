@@ -41,6 +41,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -51,8 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigurationHelpers.cs" />
     <Compile Include="ContentHelpers.cs" />
     <Compile Include="ContextHelpers.cs" />
+    <Compile Include="EmailHelpers.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="FormValidators.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
