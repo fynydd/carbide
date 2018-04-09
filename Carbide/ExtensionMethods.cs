@@ -380,7 +380,8 @@ namespace Argentini.Carbide
 
         /// <summary>
         /// Safely get items from a Multinode Tree Picker or multiple media items stored in a property.
-        /// If the property is null an empty IEnumerable is returned to avoid exceptions.
+        /// If the property is null an empty IEnumerable is returned to avoid exceptions, and so a simple 
+        /// foreach loop can be used without being wrapped if an if/else statement.
         /// </summary>
         /// <example>
         /// var socialLinks = Model.SafeGetPickerItems("heroSocialLinks");
@@ -426,8 +427,9 @@ namespace Argentini.Carbide
         }
 
         /// <summary>
-        /// Safely get items from a nested content picker stored in a property.
-        /// If the property is null an empty IEnumerable is returned to avoid exceptions.
+        /// Safely get items from a nested content picker stored in a property. If the property 
+        /// is null an empty IEnumerable is returned to avoid exceptions, and so a simple 
+        /// foreach loop can be used without being wrapped if an if/else statement.
         /// </summary>
         /// <example>
         /// var socialLinks = Model.SafeGetNestedContentItems("heroSocialLinks");
@@ -767,9 +769,6 @@ namespace Argentini.Carbide
 
             return b.ToString();
         }
-
-
-
 
         #endregion
     }

@@ -10,10 +10,10 @@ using Umbraco.Web.WebApi;
 
 namespace Argentini.Carbide
 {
-    public class HalideSupportController : UmbracoApiController
+    public class CarbideSupportController : UmbracoApiController
     {
         [HttpGet]
-        public HttpResponseMessage Scripts(string file) // /umbraco/api/halidesupport/scripts/?file=MvcValidationExtensions.unobtrusive
+        public HttpResponseMessage Scripts(string file) // /umbraco/api/carbidesupport/scripts/?file=FormValidationHelpers
         {
             string result = "";
 

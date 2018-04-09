@@ -11,7 +11,7 @@ namespace Argentini.Carbide
     /// <summary>
     /// <![CDATA[
     /// MODEL USAGE: [MinimumFileSizeValidator(1)]
-    /// CLIENT USAGE: <script src="@Html.Raw(Url.Content("~/umbraco/api/halidesupport/scripts/?file=FormValidationHelpers"))"></script>
+    /// CLIENT USAGE: <script src="@Html.Raw(Url.Content("~/umbraco/api/carbidesupport/scripts/?file=FormValidationHelpers"))"></script>
     /// ]]>
     /// </summary>
     public class MinimumFileSizeValidator : ValidationAttribute, IClientValidatable
@@ -77,7 +77,7 @@ namespace Argentini.Carbide
     /// <summary>
     /// <![CDATA[
     /// MODEL USAGE: [MaximumFileSizeValidator(1)]
-    /// CLIENT USAGE: <script src="@Html.Raw(Url.Content("~/umbraco/api/halidesupport/scripts/?file=FormValidationHelpers"))"></script>
+    /// CLIENT USAGE: <script src="@Html.Raw(Url.Content("~/umbraco/api/carbidesupport/scripts/?file=FormValidationHelpers"))"></script>
     /// ]]>
     /// </summary>
     public class MaximumFileSizeValidator : ValidationAttribute, IClientValidatable
@@ -143,7 +143,7 @@ namespace Argentini.Carbide
     /// <summary>
     /// <![CDATA[
     /// MODEL USAGE: [ValidFileTypeValidator(new string[] { "pdf", "docx" })]
-    /// CLIENT USAGE: <script src="@Html.Raw(Url.Content("~/umbraco/api/halidesupport/scripts/?file=FormValidationHelpers"))"></script>
+    /// CLIENT USAGE: <script src="@Html.Raw(Url.Content("~/umbraco/api/carbidesupport/scripts/?file=FormValidationHelpers"))"></script>
     /// ]]>
     /// </summary>
     public class ValidFileTypeValidator : ValidationAttribute, IClientValidatable
