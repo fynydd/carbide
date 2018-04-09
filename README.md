@@ -95,8 +95,37 @@ Get all IPublishedContent nodes by their document type aliases. Searches from th
 ### IPublishedContent.GetContentByName()
 Get a single IPublishedContent node by its node name. Searches from the current node's descendants, stopping at the first match.
 
-### IEnumerable<T>.ToConcatenatedString<T>
+### IEnumerable.ToConcatenatedString()
 Creates a string from the sequence by concatenating the result of the specified string selector function for each element. Concatenates the strings with or without a delimitter.
+
+## Form Validators
+Additional MVC model and client-side validators for your forms. To use client-side validation, be sure to include the scripts:
+```
+<script src="@Html.Raw(Url.Content("~/umbraco/api/carbidesupport/scripts/?file=FormValidationHelpers"))"></script>
+```
+### MinimumFileSizeValidator
+
+#### Model usage:
+Where # is the number of megabytes.
+```
+[MinimumFileSizeValidator(#)]
+```
+
+### MaximumFileSizeValidator
+
+#### Model usage:
+Where # is the number of megabytes.
+```
+[MaximumFileSizeValidator(#)]
+```
+
+### ValidFileTypeValidator
+
+#### Model usage:
+Accepts a string array list of valid file extensions, without leading periods.
+```
+[ValidFileTypeValidator(new string[] { "pdf", "docx" })]
+```
 
 ## Developers
 If you'd like to help make this library better through bug fixes or code additions, let me know through the usual means.
