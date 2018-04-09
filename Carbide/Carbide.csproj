@@ -43,6 +43,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -59,8 +60,11 @@
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="FormValidators.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestHelper.cs" />
     <Compile Include="SeoHelpers.cs" />
+    <Compile Include="StorageHelpers.cs" />
     <Compile Include="Support\SupportHandler.cs" />
+    <Compile Include="TemporalHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="UmbracoCms.Core">
