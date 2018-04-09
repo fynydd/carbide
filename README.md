@@ -135,6 +135,17 @@ Accepts a string array list of valid file extensions, without leading periods.
 [ValidFileTypeValidator(new string[] { "pdf", "docx" })]
 ```
 
+### SEO Helpers
+Following are features to help with SEO and site indexing.
+
+#### RobotsTxt
+If you add the following to your web.config, instances of {HTTP_HOST} in a robots.txt file at the root of your site will be swapped for the actual domain of the current site and served dynamically.
+```
+<system.webServer>
+  <handlers>
+     <add name="RobotsTxt" path="/robots.txt" verb="*" type="Argentini.Carbide.RobotsTxt" resourceType="Unspecified" preCondition="integratedMode" />
+```
+
 ## Developers
 If you'd like to help make this library better through bug fixes or code additions, let me know through the usual means.
 
