@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Web;
 
 using Umbraco.Core;
 using static Umbraco.Core.Constants;
@@ -110,7 +112,7 @@ namespace Argentini.Carbide
 
         #endregion
 
-        #region Public methods
+        #region IPublishedContent methods
 
         /// <summary>
         /// UDIs are required for setting picker content values, etc. in ContentService, and
@@ -769,6 +771,84 @@ namespace Argentini.Carbide
 
             return b.ToString();
         }
+
+        /// <summary>
+        /// Return the current string with HTML tags removed.
+        /// </summary>
+        /// <example>
+        /// <code>
+        /// string newBodyText = oldString.StripHtml();
+        /// </code>
+        /// </example>
+        /// <param name="strVar">Current string to process.</param>
+        /// <param name="convertBreaks">
+        /// <![CDATA[
+        /// Converts "<br>" and "<br />" to \r\n and converts "</p>" to \r\n\r\n.
+        /// ]]>
+        /// </param>
+        /// <param name="keepLinks">Keep and anchor tags intact.</param>
+        /// <param name="decodeEntities">Convert HTML entities to standard ASCII, like &copy; to ©</param>
+        /// <returns>A string with HTML tags removed.</returns>
+        public static string StripHtml(this string strVar, bool convertBreaks = false, bool keepLinks = false, bool decodeEntities = false)
+        {
+            if (strVar.IsNullOrWhiteSpace())
+            {
+                return (strVar);
+            }
+            else
+            {
+                Regex tags = new Regex(@"<(script|style).*?>.*?</(script|style).*?>", RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace | RegexOptions.Singleline);
+                strVar = tags.Replace(strVar, "");
+
+                if (convertBreaks == true)
+                {
+                    tags = new Regex(@"<br[\s]*[/]*>");
+                    strVar = tags.Replace(strVar, "\r\n");
+                    strVar = strVar.Replace("</p>", "\r\n\r\n");
+                }
+
+                if (keepLinks == true)
+                {
+                    strVar = Regex.Replace(strVar, "(<)(?=/??a)", "[[[[[", RegexOptions.IgnoreCase);
+                }
+
+                tags = new Regex(@"<[^>]+>|</[^>]+>");
+                strVar = tags.Replace(strVar, "");
+
+                if (keepLinks == true)
+                {
+                    strVar = strVar.Replace("[[[[[", "<");
+                }
+
+                if (decodeEntities)
+                {
+                    strVar = HttpContext.Current.Server.HtmlDecode(strVar);
+
+                    //strVar = strVar.Replace("&nbsp;", " ");
+                    //strVar = strVar.Replace("&edsp;", " ");
+                }
+
+                return strVar;
+            }
+        }
+
+        /// <summary>
+        /// Convert an object to a string. If null an empty string is returned.
+        /// </summary>
+        /// <param name="obj">Object to convert to a string</param>
+        /// <returns>String value or an empty string if null</returns>
+        public static string SafeToString(this object obj)
+        {
+            string result = "";
+
+            if (obj != null)
+            {
+                result = obj.ToString();
+            }
+
+            return result;
+        }
+
 
         #endregion
     }
