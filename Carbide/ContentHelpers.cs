@@ -124,5 +124,59 @@ namespace Argentini.Carbide
         }
 
         #endregion
+
+        #region Content rendering methods
+
+        public static string GetYoutubeUrl(string youtubeUrlOrCode, string transport = "//")
+        {
+            string result = "";
+            string[] fragments = { "?v=", "/embed/", "youtu.be/" };
+
+            if (!String.IsNullOrEmpty(youtubeUrlOrCode))
+            {
+                string prefix = transport + "www.youtube.com/embed/";
+
+                if (youtubeUrlOrCode.ToLower().StartsWith("http://") || youtubeUrlOrCode.ToLower().StartsWith("https://") || youtubeUrlOrCode.ToLower().StartsWith("//"))
+                {
+                    foreach (var fragment in fragments)
+                    {
+                        if (youtubeUrlOrCode.ToLower().Contains(fragment))
+                        {
+                            if (youtubeUrlOrCode.IndexOf(fragment) + fragment.Length < youtubeUrlOrCode.Length)
+                            {
+                                result = prefix + youtubeUrlOrCode.Substring(youtubeUrlOrCode.IndexOf(fragment) + fragment.Length);
+                                break;
+                            }
+                        }
+                    }
+
+                    if (result == "")
+                    {
+                        result = youtubeUrlOrCode;
+                    }
+                }
+
+                else
+                {
+                    result = prefix + youtubeUrlOrCode;
+                }
+            }
+
+            return result;
+        }
+
+        public static string GetYoutubeEmbedCode(string youtubeUrlOrCode, string transport = "//")
+        {
+            string result = "";
+
+            if (!String.IsNullOrEmpty(youtubeUrlOrCode))
+            {
+                result = "<iframe src=\"" + GetYoutubeUrl(youtubeUrlOrCode, transport) + "?rel=0&autohide=2&modestbranding=1&theme=light&color=white\" frameborder=\"0\" allowfullscreen></iframe>";
+            }
+
+            return result;
+        }
+
+        #endregion
     }
 }
