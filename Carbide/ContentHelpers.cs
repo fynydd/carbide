@@ -127,6 +127,12 @@ namespace Argentini.Carbide
 
         #region Content rendering methods
 
+        /// <summary>
+        /// Convert a YouTube URL or video code into a properly formed YouTube URL.
+        /// </summary>
+        /// <param name="youtubeUrlOrCode">YouTube video URL or code</param>
+        /// <param name="transport">Defaults to "//", but you can specify "http://", "https://", etc.</param>
+        /// <returns>A properly formatted YouTube video URL.</returns>
         public static string GetYoutubeUrl(string youtubeUrlOrCode, string transport = "//")
         {
             string result = "";
@@ -165,6 +171,12 @@ namespace Argentini.Carbide
             return result;
         }
 
+        /// <summary>
+        /// Create a properly formatted YouTube video markeup block.
+        /// </summary>
+        /// <param name="youtubeUrlOrCode">YouTube video URL or video code.</param>
+        /// <param name="transport">Defaults to "//", but you can specify "http://", "https://", etc.</param>
+        /// <returns>Properly formatted HTML markup to render the video.</returns>
         public static string GetYoutubeEmbedCode(string youtubeUrlOrCode, string transport = "//")
         {
             string result = "";
