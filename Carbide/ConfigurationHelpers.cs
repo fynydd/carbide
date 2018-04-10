@@ -96,35 +96,6 @@ namespace Argentini.Carbide
             return GetKeyValue<string>(keyName, "");
         }
 
-        /// <summary>
-        ///	Return a SQL connection string by name, from the Web.config file.
-        /// </summary>
-        /// <param name="connectionStringName">Name of a connection string within the 
-        /// Web.config file.</param>
-        /// <returns>A connection string.</returns>
-        public static string GetConnectionString(string connectionStringName)
-        {
-            string CS = "";
-
-            try
-            {
-                if (!string.IsNullOrEmpty(connectionStringName))
-                {
-                    CS = ConfigurationManager.ConnectionStrings[connectionStringName].ConnectionString;
-                }
-            }
-
-            catch
-            {
-                if (string.IsNullOrEmpty(CS))
-                {
-                    CS = "";
-                }
-            }
-
-            return CS;
-        }
-
         #endregion
     }
 }
