@@ -303,11 +303,19 @@ namespace Argentini.Carbide
             return result;
         }
 
+        #endregion
+    }
+
+    /// <summary>
+    /// Simple static class for getting server information.
+    /// </summary>
+    public static class HttpHelper
+    {
         /// <summary>
         /// Get the fully qualified domain name of the current URL.
         /// </summary>
         /// <returns>Domain name (FQDN).</returns>
-        public string GetHost()
+        public static string GetHost()
         {
             return HttpContext.Current.Request.Url.Host;
         }
@@ -316,7 +324,7 @@ namespace Argentini.Carbide
         /// Get the fully qualified domain name of the current URL with port.
         /// </summary>
         /// <returns>Domain name (FQDN) with a colon and a port number.</returns>
-        public string GetHostWithPort()
+        public static string GetHostWithPort()
         {
             return HttpContext.Current.Request.Url.Host + ":" + HttpContext.Current.Request.Url.Port;
         }
@@ -326,7 +334,7 @@ namespace Argentini.Carbide
         /// (e.g. if visiting "www.mydomain.com", "mydomain.com" is returned.)
         /// </summary>
         /// <returns>Root domain name.</returns>
-        public string GetHostRoot()
+        public static string GetHostRoot()
         {
             String fqdn = GetHost();
             String dn = fqdn;
@@ -339,7 +347,5 @@ namespace Argentini.Carbide
 
             return dn;
         }
-
-        #endregion
     }
 }
