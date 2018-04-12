@@ -196,11 +196,6 @@ namespace Argentini.Carbide
             Rss,
 
             /// <summary>
-            /// Fri, 20 Dec 2007 07:01:00 GMT
-            /// </summary>
-            Rss2,
-
-            /// <summary>
             /// Fri-Dec-20-2007
             /// </summary>
             AbbreviatedFull,
@@ -513,12 +508,8 @@ namespace Argentini.Carbide
                         break;
 
                     case DateFormats.Rss:
-                        thedate = date.ToUniversalTime().ToString("o");
-                        //                        thedate = date.ToString("yyyy-MM-dd") + "T" + date.ToString("HH:mm:ss") + "Z";
-                        break;
-
-                    case DateFormats.Rss2:
-                        thedate = date.ToUniversalTime().ToString("R");
+                        //thedate = date.ToUniversalTime().ToString("o");
+                        thedate = date.ToString("yyyy-MM-dd") + "T" + date.ToString("HH:mm:ss") + "Z";
                         break;
 
                     case DateFormats.AbbreviatedFull:
@@ -1102,6 +1093,248 @@ namespace Argentini.Carbide
             {
                 return TimeZoneInfo.ConvertTime(dateTime, destinationTimeZone);
             }
+        }
+
+        #endregion
+    }
+
+    /// <summary>
+    /// Accurate, Simple, and Easy to use Stopwatch Class. This class
+    /// can be used to track process execution time in seconds and milliseconds.
+    /// </summary>
+    /// <example>
+    /// Sample usage:
+    /// <code>
+    /// <![CDATA[
+    /// using Argentini.Carbide;
+    /// ...
+    /// StopWatch sw = new StopWatch();
+    /// sw.Start();
+    /// 
+    /// Trace.Write("Stopwatch", "Process1:" sw.GetTime());
+    /// Trace.Write("Stopwatch", "Process2:" sw.GetTime());
+    /// sw.Stop()
+    /// 
+    /// Trace.Write("Stopwatch", "Process 1 & 2:" sw.GetTime());
+    /// ]]>
+    /// </code>
+    /// </example>
+    public class StopWatch
+    {
+        #region Variables
+
+        private int _StartTime;
+        private int _StopTime;
+
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// Return the version number of the class; read-only.
+        /// </summary>
+        /// <value>
+        /// String version number of the class.
+        /// </value>
+        public string Version
+        {
+            get
+            {
+                return "2018.04.12A";
+            }
+        }
+
+        private int StartTime
+        {
+            get
+            {
+                return this._StartTime;
+            }
+
+            set
+            {
+                this._StartTime = value;
+            }
+        }
+
+        private int StopTime
+        {
+            get
+            {
+                return this._StopTime;
+            }
+
+            set
+            {
+                this._StopTime = value;
+            }
+        }
+
+        #endregion
+
+        #region Constructors
+
+        /// <summary>
+        /// Initializes the StopWatch to 0.
+        /// </summary>
+        /// <example>
+        /// Sample usage:
+        /// <code>
+        /// <![CDATA[
+        /// using Argentini.Carbide;
+        /// ...
+        /// StopWatch sw = new StopWatch();
+        /// sw.Start();
+        /// 
+        /// Trace.Write("Stopwatch", "Process1:" sw.GetTime());
+        /// Trace.Write("Stopwatch", "Process2:" sw.GetTime());
+        /// sw.Stop()
+        /// 
+        /// Trace.Write("Stopwatch", "Process 1 & 2:" sw.GetTime());
+        /// ]]>
+        /// </code>
+        /// </example>
+        public StopWatch()
+        {
+            StartTime = 0;
+            StopTime = 0;
+        }
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// Starts the Stopwatch.
+        /// </summary>
+        /// <example>
+        /// Sample usage:
+        /// <code>
+        /// <![CDATA[
+        /// using Argentini.Carbide;
+        /// ...
+        /// StopWatch sw = new StopWatch();
+        /// sw.Start();
+        /// 
+        /// Trace.Write("Stopwatch", "Process1:" sw.GetTime());
+        /// Trace.Write("Stopwatch", "Process2:" sw.GetTime());
+        /// sw.Stop()
+        /// 
+        /// Trace.Write("Stopwatch", "Process 1 & 2:" sw.GetTime());
+        /// ]]>
+        /// </code>
+        /// </example>
+        public void Start()
+        {
+            StartTime =
+                DateTime.Now.Hour * 60 * 60 * 1000 +
+                DateTime.Now.Minute * 60 * 1000 +
+                DateTime.Now.Second * 1000 +
+                DateTime.Now.Millisecond;
+        }
+
+        /// <summary>
+        /// Stops the Stopwatch.
+        /// </summary>
+        /// <example>
+        /// Sample usage:
+        /// <code>
+        /// <![CDATA[
+        /// using Argentini.Carbide;
+        /// ...
+        /// StopWatch sw = new StopWatch();
+        /// sw.Start();
+        /// 
+        /// Trace.Write("Stopwatch", "Process1:" sw.GetTime());
+        /// Trace.Write("Stopwatch", "Process2:" sw.GetTime());
+        /// sw.Stop()
+        /// 
+        /// Trace.Write("Stopwatch", "Process 1 & 2:" sw.GetTime());
+        /// ]]>
+        /// </code>
+        /// </example>
+        public void Stop()
+        {
+            StopTime =
+                DateTime.Now.Hour * 60 * 60 * 1000 +
+                DateTime.Now.Minute * 60 * 1000 +
+                DateTime.Now.Second * 1000 +
+                DateTime.Now.Millisecond;
+        }
+
+        /// <summary>
+        /// Reset the Stopwatch to 0.
+        /// </summary>
+        /// <example>
+        /// Sample usage:
+        /// <code>
+        /// <![CDATA[
+        /// using Argentini.Carbide;
+        /// ...
+        /// StopWatch sw = new StopWatch();
+        /// sw.Start();
+        /// 
+        /// Trace.Write("Stopwatch", "Process1:" sw.GetTime());
+        /// sw.Reset();
+        /// Trace.Write("Stopwatch", "Process2:" sw.GetTime());
+        /// sw.Stop()
+        /// 
+        /// Trace.Write("Stopwatch", "Process 1 & 2:" sw.GetTime());
+        /// ]]>
+        /// </code>
+        /// </example>
+        public void Reset()
+        {
+            StartTime = DateTime.Now.Millisecond;
+            StopTime = DateTime.Now.Millisecond;
+        }
+
+        /// <summary>
+        /// Returns a string containing the elasped time since the Start
+        /// of the StopWatch.
+        /// <para>(If Called after the Stop Method)
+        /// Returns a string containing the elasped time between the Start
+        /// of the StopWatch and the Stop of the StopWatch</para>
+        /// </summary>
+        /// <example>
+        /// Sample usage:
+        /// <code>
+        /// <![CDATA[
+        /// using Argentini.Carbide;
+        /// ...
+        /// StopWatch sw = new StopWatch();
+        /// sw.Start();
+        /// 
+        /// Trace.Write("Stopwatch", "Process1:" sw.GetTime());
+        /// Trace.Write("Stopwatch", "Process2:" sw.GetTime());
+        /// sw.Stop()
+        /// 
+        /// Trace.Write("Stopwatch", "Process 1 & 2:" sw.GetTime());
+        /// ]]>
+        /// </code>
+        /// </example>
+        public string GetTime()
+        {
+            int CurrentTime;
+            float Elasped;
+
+            CurrentTime =
+                DateTime.Now.Hour * 60 * 60 * 1000 +
+                DateTime.Now.Minute * 60 * 1000 +
+                DateTime.Now.Second * 1000 +
+                DateTime.Now.Millisecond;
+
+            if (StopTime == 0)
+            {
+                Elasped = (CurrentTime - StartTime) / (float)1000;
+            }
+
+            else
+            {
+                Elasped = (StopTime - StartTime) / (float)1000;
+            }
+
+            return Elasped.ToString();
         }
 
         #endregion
