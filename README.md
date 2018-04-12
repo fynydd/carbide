@@ -17,7 +17,7 @@ or in Razor views...
 <pre><code>@using Argentini.Carbide</code></pre>
 
 ## Carbide Methods and Enhancements
-Following are the methods and other enhancements avalaible in Carbide.
+Following are the methods and other enhancements available in Carbide.
 
 ### Argentini.Carbide.ConfigurationHelpers
 These are static methods to use for retrieving web.config data.
@@ -84,6 +84,21 @@ Additional MVC model and client-side validators for your forms. To use client-si
    ```
    [ValidFileTypeValidator(new string[] { "pdf", "docx" })]
    ```
+
+## REST Endpoints
+Following are the REST endpoints provided by Carbide.
+
+1. **/umbraco/api/carbidesupport/scripts/**
+   Use this URL to generate a path to a JavaScript resource for client-side validation support, etc.
+
+2. **/umbraco/api/carbidesupport/rebuildcache/**
+   Rebuild the content cache and Examine indexes, and refresh the content cache. 
+
+   **/umbraco/api/carbidesupport/rebuildcachestatus/**
+   Get the current status of a rebuild.
+
+   **/umbraco/api/carbidesupport/rebuildcachestatushistory/**
+   Get the last status of a rebuild.
 
 ## Developers
 If you'd like to help make this library better through bug fixes or code additions, let me know through the usual means.
