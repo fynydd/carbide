@@ -126,6 +126,11 @@ namespace Argentini.Carbide
         public enum DateFormats
         {
             /// <summary>
+            /// 2018-APR-12
+            /// </summary>
+            European,
+
+            /// <summary>
             /// 2007-12-20
             /// </summary>
             Sortable,
@@ -505,6 +510,10 @@ namespace Argentini.Carbide
 
                     case DateFormats.PressRelease:
                         thedate = date.ToString("MMMM d, yyyy");
+                        break;
+
+                    case DateFormats.European:
+                        thedate = date.ToString("yyyy-MMM-dd");
                         break;
 
                     case DateFormats.Rss:
