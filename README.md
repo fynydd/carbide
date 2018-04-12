@@ -88,16 +88,16 @@ Additional MVC model and client-side validators for your forms. To use client-si
 ## REST Endpoints
 Following are the REST endpoints provided by Carbide.
 
-1. **/umbraco/api/carbidesupport/scripts/**
+1. **/umbraco/api/carbidesupport/scripts/**   
    Use this URL to generate a path to a JavaScript resource for client-side validation support, etc.
 
-2. **/umbraco/api/carbidesupport/rebuildcache/**
+2. **/umbraco/api/carbidesupport/rebuildcache/**   
    Rebuild the content cache and Examine indexes, and refresh the content cache. 
 
-   **/umbraco/api/carbidesupport/rebuildcachestatus/**
+   **/umbraco/api/carbidesupport/rebuildcachestatus/**   
    Get the current status of a rebuild.
 
-   **/umbraco/api/carbidesupport/rebuildcachestatushistory/**
+   **/umbraco/api/carbidesupport/rebuildcachestatushistory/**   
    Get the last status of a rebuild.
 
 ## Developers
