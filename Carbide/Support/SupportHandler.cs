@@ -58,7 +58,7 @@ namespace Argentini.Carbide
                 var context = HttpContext.Current;
 
                 context.Application["RebuildCacheStatus"] = "running";
-                context.Application["RebuildCacheHistory"] = "<strong>Started on " + TemporalHelpers.DateFormat(DateTime.Now, TemporalHelpers.DateFormats.Rss) + "...</strong><br />";
+                context.Application["RebuildCacheHistory"] = "<strong>Started " + TemporalHelpers.DateFormat(DateTime.Now, TemporalHelpers.DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TemporalHelpers.TimeFormats.SqlMilitary) + "...</strong><br />";
 
                 result = context.Application["RebuildCacheHistory"].ToString();
 
@@ -94,7 +94,7 @@ namespace Argentini.Carbide
 
                         timer.Stop();
 
-                        context.Application["RebuildCacheHistory"] = "<p>" + context.Application["RebuildCacheHistory"].ToString() + "</p><strong>Finished on " + TemporalHelpers.DateFormat(DateTime.Now, TemporalHelpers.DateFormats.Rss) + " in " + timer.GetTime() + " seconds</strong>";
+                        context.Application["RebuildCacheHistory"] = "<p>" + context.Application["RebuildCacheHistory"].ToString() + "</p><strong>Finished in " + timer.GetTime() + " seconds on " + TemporalHelpers.DateFormat(DateTime.Now, TemporalHelpers.DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TemporalHelpers.TimeFormats.SqlMilitary) + "</strong>";
 
                         context.Application.SafeRemove("RebuildCacheStatus");
                     }
@@ -104,7 +104,7 @@ namespace Argentini.Carbide
                         timer.Stop();
                         timer2.Stop();
 
-                        context.Application["RebuildCacheHistory"] = "<strong>Error on " + TemporalHelpers.DateFormat(DateTime.Now, TemporalHelpers.DateFormats.Rss) + " in " + timer.GetTime() + " seconds</strong><br />" + e.Message;
+                        context.Application["RebuildCacheHistory"] = "<strong>Error in " + timer.GetTime() + " seconds on " + TemporalHelpers.DateFormat(DateTime.Now, TemporalHelpers.DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TemporalHelpers.TimeFormats.SqlMilitary) + "</strong><br />" + e.Message;
 
                         result = context.Application["RebuildCacheHistory"].ToString();
 
