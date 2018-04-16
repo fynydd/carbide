@@ -324,7 +324,7 @@ namespace Argentini.Carbide
         /// <param name="contentNode">The current content node as an IPublishedContent object</param>
         /// <param name="propertyName">Name of the property for which a string value is desired</param>
         /// <param name="recurseAncestors">Recurse ancestors until a property value is present; defaults to false</param>
-        /// <returns>Value of the property by type, or a min value, or an empty string, or null</returns>
+        /// <returns>Value of the property by type, or false (bool), -1 (numeric types), min value (dates), an empty string, or null (objects)</returns>
         public static T SafeGetValue<T>(this IPublishedContent contentNode, string propertyName, bool recurseAncestors = false)
         {
             if (contentNode != null)
@@ -345,7 +345,7 @@ namespace Argentini.Carbide
 
                     else if (typeof(T) == typeof(int) || typeof(T) == typeof(uint) || typeof(T) == typeof(decimal) || typeof(T) == typeof(Decimal) || typeof(T) == typeof(double) || typeof(T) == typeof(Double) || typeof(T) == typeof(float) || typeof(T) == typeof(Int16) || typeof(T) == typeof(Int32) || typeof(T) == typeof(Int64) || typeof(T) == typeof(Single) || typeof(T) == typeof(short) || typeof(T) == typeof(ushort) || typeof(T) == typeof(long) || typeof(T) == typeof(ulong))
                     {
-                        return (T)(value == null ? (object)0 : value);
+                        return (T)(value == null ? (object)-1 : value);
                     }
 
                     else if (typeof(T) == typeof(DateTime))
@@ -692,6 +692,78 @@ namespace Argentini.Carbide
         public static bool ContainsNestedContentValue(this IPublishedContent contentNode, string propertyName, string subPropertyName, string value, bool ignoreCase = true)
         {
             return ContainsTreePickerValue(contentNode, propertyName, subPropertyName, value, ignoreCase);
+        }
+
+        /// <summary>
+        /// Safely get the prevalue of a selected radio list item as a string.
+        /// </summary>
+        /// <example>
+        /// var choice = Model.SafeGetPrevalue("DevOrLive");
+        /// </example>
+        /// <param name="contentNode">The current content node as an IPublishedContent object</param>
+        /// <param name="propertyName">Name of the radio list property for which a string prevalue is desired</param>
+        /// <param name="recurseAncestors">Recurse ancestors until a property value is present; defaults to false</param>
+        /// <returns>Selected prevalue for the property as a string, or an empty string</returns>
+        public static string SafeGetPrevalue(this IPublishedContent contentNode, string propertyName, bool recurseAncestors = false)
+        {
+            var result = "";
+
+            if (contentNode.HasValue(propertyName, recurseAncestors))
+            {
+                var radioId = contentNode.SafeGetValue<int>(propertyName, recurseAncestors);
+
+                if (radioId > -1)
+                {
+                    result = umbraco.library.GetPreValueAsString(radioId);
+                }
+
+                if (result == null)
+                {
+                    result = "";
+                }
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determine if a selected radio button list item prevalue has a substring.
+        /// For example, in a radio button list list where the choices are "Item 1", 
+        /// "Item 2", "Item 3", and "Item 2" is selected, the following is true:
+        /// </summary>
+        /// <example>
+        /// bool hasValue = Model.SelectedPrevalueContains("MyRadioList", "2");
+        /// </example>
+        /// <param name="contentNode">The current content node as an IPublishedContent object</param>
+        /// <param name="propertyName">Name of the radio button list property for which the selected prevalue is being evaluated</param>
+        /// <param name="subString">The substring to search for</param>
+        /// <param name="ignoreCase">Ignore case; defaults to true</param>
+        /// <param name="recurseAncestors">Recurse ancestors until a property value is present; defaults to false</param>
+        /// <returns>True if the selected item has a prevalue with the given substring (case insensitive)</returns>
+        public static bool SelectedPrevalueContains(this IPublishedContent contentNode, string propertyName, string subString, bool ignoreCase = true, bool recurseAncestors = false)
+        {
+            return (SafeGetPrevalue(contentNode, propertyName).IndexOf(subString, (ignoreCase ? StringComparison.InvariantCultureIgnoreCase : StringComparison.InvariantCulture)) >= 0);
+        }
+
+        /// <summary>
+        /// Determine if a list of items (like checkbox list) has a selected item with a prevalue 
+        /// that contains a (case insensitive) substring. For example, in a checkbox list where the 
+        /// choices are "Item 1", "Item 2", "Item 3", and "Item 2" is selected, the following is true:
+        /// </summary>
+        /// <example>
+        /// bool hasValues = Model.SelectedPrevaluesContain("MyCheckboxList", "2");
+        /// </example>
+        /// <param name="contentNode">The current content node as an IPublishedContent object</param>
+        /// <param name="propertyName">Name of the checkbox list (or other prevalue source) property for which prevalues are being evaluated</param>
+        /// <param name="subString">The substring to search for</param>
+        /// <param name="recurseAncestors">Recurse ancestors until a property value is present; defaults to false</param>
+        /// <returns>True if any selected items have a prevalue with the given substring (case insensitive)</returns>
+        public static bool SelectedPrevaluesContain(this IPublishedContent contentNode, string propertyName, string subString, bool recurseAncestors = false)
+        {
+            var items = contentNode.GetPropertyValue<IEnumerable<string>>(propertyName, recurseAncestors);
+            var result = items.FirstOrDefault<string>(m => m.Contains(subString));
+
+            return (string.IsNullOrEmpty(result) ? false : true);
         }
 
         #endregion
