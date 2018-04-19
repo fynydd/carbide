@@ -6,7 +6,6 @@ using System.Collections.Specialized;
 using System.Data;
 using System.Data.OleDb;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Globalization;
 using System.Net;
 using System.Net.Mail;
