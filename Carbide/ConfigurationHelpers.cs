@@ -50,30 +50,7 @@ namespace Argentini.Carbide
             {
 				var value = ConfigurationManager.AppSettings[keyName].ToString();
 
-                if (typeof(T) == typeof(string))
-                {
-					return (T)(object)value;
-                }
-
-                else if (typeof(T) == typeof(bool))
-                {
-					return (T)((object)value ?? defaultValue);
-                }
-
-                else if (typeof(T) == typeof(int) || typeof(T) == typeof(uint) || typeof(T) == typeof(decimal) || typeof(T) == typeof(Decimal) || typeof(T) == typeof(double) || typeof(T) == typeof(Double) || typeof(T) == typeof(float) || typeof(T) == typeof(Int16) || typeof(T) == typeof(Int32) || typeof(T) == typeof(Int64) || typeof(T) == typeof(Single) || typeof(T) == typeof(short) || typeof(T) == typeof(ushort) || typeof(T) == typeof(long) || typeof(T) == typeof(ulong))
-                {
-					return (T)((object)value ?? defaultValue);
-                }
-
-                else if (typeof(T) == typeof(DateTime))
-                {
-					return (T)((object)value ?? defaultValue);
-                }
-
-                else
-                {
-					return defaultValue;
-                }
+                return (T)Convert.ChangeType(value, typeof(T));
             }
 
             else
