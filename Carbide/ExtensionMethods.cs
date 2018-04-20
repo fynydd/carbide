@@ -766,6 +766,88 @@ namespace Argentini.Carbide
             return (string.IsNullOrEmpty(result) ? false : true);
         }
 
+		/// <summary>
+		/// Generate a responsive image tag from a media picker image property.
+		/// </summary>
+		/// <returns>HTML5 image tag with sizes and srcset attributes</returns>
+		/// <param name="contentNode">The current content node as an IPublishedContent object</param>
+        /// <param name="propertyName">Name of the media picker property.</param>
+		/// <param name="alt">Text for the img tag's alt attribute</param>
+		/// <param name="breakpointsAndWidths">String array of @ separated image layout widths and CSS min-width breakpoints. 
+		/// For example, if the tablet CSS min-width breakpoint is 768px and the image is 50% of the page width, the first 
+		/// string array element will be "50vw @ 768px". Declare these in smallest to largest screen width order.</param>
+		/// <param name="fallbackWidth">The default width (in pixels) to use for browsers that don't support responsive images (e.g. "500")</param>
+		/// <param name="recurseAncestors">Recurse ancestors until a property value is present; defaults to false.</param>
+		/// <returns>HTML image tag markup with sizes and srcset attributes</returns>
+		public static string SafeGetResponsiveImageTag(this IPublishedContent contentNode, string propertyName, string alt = "", string[] breakpointsAndWidths = null, string fallbackWidth= "", bool recurseAncestors = false)
+		{
+			var imageUrl = contentNode.SafeGetMediaPickerItemUrl(propertyName, recurseAncestors);
+
+			if (imageUrl != "")
+			{
+				var sourceImageWidths = new string[] { "50", "150", "250", "320", "480", "640", "800", "1024", "1280", "1440", "1920", "2048", "2560", "3172" };
+
+				if (breakpointsAndWidths != null)
+				{
+					if (breakpointsAndWidths.Length > 0)
+					{
+						var srcset = "";
+						var sizes = "";
+
+						foreach (var size in sourceImageWidths)
+						{
+							if (srcset != "")
+							{
+								srcset += ", ";
+							}
+
+							srcset += imageUrl + "?width=" + size + " " + size + "w";
+						}
+
+						foreach (var doublet in breakpointsAndWidths)
+						{
+							var pair = doublet.Replace(" ", "");
+
+							if (pair.Length > 6)
+							{
+								if (pair.IndexOf("@") > 2 && pair.IndexOf("@") < pair.Length - 3)
+								{
+									string[] duo = pair.Split(new char[] { '@' }, StringSplitOptions.RemoveEmptyEntries);
+
+									if (duo.Length == 2)
+									{
+										if (sizes != "")
+										{
+											sizes += ", ";
+										}
+
+										sizes += "(min-width: " + duo[1] + ") " + duo[0];
+									}
+								}
+							}
+						}
+
+						return "<img sizes=\"" + sizes + ", 100vw\" srcset=\"" + srcset + "\" alt=\"" + alt + "\" src=\"" + imageUrl + "?width=" + fallbackWidth + "\" />";
+					}
+
+					else
+					{
+						return "";
+					}
+				}
+
+				else
+				{
+					return "";
+				}
+			}
+
+			else
+			{
+				return "";
+			}
+		}
+
         #endregion
 
         #region Content scouring methods
