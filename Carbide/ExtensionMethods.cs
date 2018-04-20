@@ -907,46 +907,6 @@ namespace Argentini.Carbide
 			}
 		}
 
-        /// <summary>
-        /// Determines is an image URL is a supported image type for responsive image generation,
-        /// and other ImageProcessor functions.
-        /// </summary>
-        /// <param name="url">URL to an image resource to evaluate.</param>
-        /// <returns>True if the image can be processed with ImageProcessor.</returns>
-        public static bool IsSupportedImageType(this string url)
-        {
-            if (url.ToLower().EndsWith(".jpg") || url.ToLower().EndsWith(".jpeg") || url.ToLower().EndsWith(".png") || url.ToLower().EndsWith(".webp"))
-            {
-                return true;
-            }
-
-            else
-            {
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Remove a querystring from the URL. Looks for "?" and removes everything from it to the end.
-        /// </summary>
-        /// <param name="url">URL to evaluate</param>
-        /// <returns>URL without a query string</returns>
-        public static string RemoveQueryString(this string url)
-        {
-            var result = url;
-
-            if (!string.IsNullOrEmpty(url))
-            {
-                if (url.IndexOf("?") > 0)
-                {
-                    result = url.Substring(0, url.IndexOf("?"));
-                }
-            }
-
-            return result;
-        }
-
-
         #endregion
 
         #region Content scouring methods
@@ -1132,6 +1092,44 @@ namespace Argentini.Carbide
             return result;
         }
 
+        /// <summary>
+        /// Determines is an image URL is a supported image type for responsive image generation,
+        /// and other ImageProcessor functions.
+        /// </summary>
+        /// <param name="url">URL to an image resource to evaluate.</param>
+        /// <returns>True if the image can be processed with ImageProcessor.</returns>
+        public static bool IsSupportedImageType(this string url)
+        {
+            if (url.ToLower().EndsWith(".jpg") || url.ToLower().EndsWith(".jpeg") || url.ToLower().EndsWith(".png") || url.ToLower().EndsWith(".webp"))
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Remove a querystring from the URL. Looks for "?" and removes everything from it to the end.
+        /// </summary>
+        /// <param name="url">URL to evaluate</param>
+        /// <returns>URL without a query string</returns>
+        public static string RemoveQueryString(this string url)
+        {
+            var result = url;
+
+            if (!string.IsNullOrEmpty(url))
+            {
+                if (url.IndexOf("?") > 0)
+                {
+                    result = url.Substring(0, url.IndexOf("?"));
+                }
+            }
+
+            return result;
+        }
 
         #endregion
     }
