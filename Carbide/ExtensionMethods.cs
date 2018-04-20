@@ -335,27 +335,27 @@ namespace Argentini.Carbide
 
                     if (typeof(T) == typeof(string))
                     {
-                        return (T)(value == null ? (object)string.Empty : value);
+                        return (T)(value == null ? (object)string.Empty : Convert.ChangeType(value, typeof(T)));
                     }
 
                     else if (typeof(T) == typeof(bool))
                     {
-                        return (T)(value == null ? (object)false : value);
+                        return (T)(value == null ? (object)false : Convert.ChangeType(value, typeof(T)));
                     }
 
-                    else if (typeof(T) == typeof(int) || typeof(T) == typeof(uint) || typeof(T) == typeof(decimal) || typeof(T) == typeof(Decimal) || typeof(T) == typeof(double) || typeof(T) == typeof(Double) || typeof(T) == typeof(float) || typeof(T) == typeof(Int16) || typeof(T) == typeof(Int32) || typeof(T) == typeof(Int64) || typeof(T) == typeof(Single) || typeof(T) == typeof(short) || typeof(T) == typeof(ushort) || typeof(T) == typeof(long) || typeof(T) == typeof(ulong))
+                    else if (typeof(T) == typeof(int) || typeof(T) == typeof(decimal) || typeof(T) == typeof(Decimal) || typeof(T) == typeof(double) || typeof(T) == typeof(Double) || typeof(T) == typeof(float) || typeof(T) == typeof(Int16) || typeof(T) == typeof(Int32) || typeof(T) == typeof(Int64) || typeof(T) == typeof(Single) || typeof(T) == typeof(short) || typeof(T) == typeof(long))
                     {
-                        return (T)(value == null ? (object)-1 : value);
+                        return (T)(value == null ? (object)-1 : Convert.ChangeType(value, typeof(T)));
                     }
 
                     else if (typeof(T) == typeof(DateTime))
                     {
-                        return (T)(value == null ? (object)DateTime.MinValue : value);
+                        return (T)(value == null ? (object)DateTime.MinValue : Convert.ChangeType(value, typeof(T)));
                     }
 
                     else
                     {
-                        return (T)value;
+                        return (T)Convert.ChangeType(value, typeof(T));
                     }
                 }
 
@@ -363,22 +363,22 @@ namespace Argentini.Carbide
                 {
                     if (typeof(T) == typeof(string))
                     {
-                        return (T)(object)string.Empty;
+                        return (T)Convert.ChangeType("", typeof(T));
                     }
 
                     else if (typeof(T) == typeof(bool))
                     {
-                        return (T)(object)false;
+                        return (T)Convert.ChangeType(false, typeof(T));
                     }
 
-                    else if (typeof(T) == typeof(int) || typeof(T) == typeof(uint) || typeof(T) == typeof(decimal) || typeof(T) == typeof(Decimal) || typeof(T) == typeof(double) || typeof(T) == typeof(Double) || typeof(T) == typeof(float) || typeof(T) == typeof(Int16) || typeof(T) == typeof(Int32) || typeof(T) == typeof(Int64) || typeof(T) == typeof(Single) || typeof(T) == typeof(short) || typeof(T) == typeof(ushort) || typeof(T) == typeof(long) || typeof(T) == typeof(ulong))
+                    else if (typeof(T) == typeof(int) || typeof(T) == typeof(decimal) || typeof(T) == typeof(Decimal) || typeof(T) == typeof(double) || typeof(T) == typeof(Double) || typeof(T) == typeof(float) || typeof(T) == typeof(Int16) || typeof(T) == typeof(Int32) || typeof(T) == typeof(Int64) || typeof(T) == typeof(Single) || typeof(T) == typeof(short) || typeof(T) == typeof(long))
                     {
-                        return (T)(object)0;
+                        return (T)Convert.ChangeType(-1, typeof(T));
                     }
 
                     else if (typeof(T) == typeof(DateTime))
                     {
-                        return (T)(object)DateTime.MinValue;
+                        return (T)Convert.ChangeType(DateTime.MinValue, typeof(T));
                     }
 
                     else
