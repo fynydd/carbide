@@ -202,11 +202,50 @@ namespace Argentini.Carbide
         /// </example>
         /// <param name="contentNode">The current content node as an IPublishedContent object</param>
         /// <param name="propertyName">Name of the media picker item property</param>
+        /// <param name="width">Width in pixels for the generated image.</param>
+        /// <param name="quality">Quality from 0-100 of the generated image. Lower quality yields a smaller file size.</param>
+        /// <param name="filters">Additional filters for ImageProcessor (e.g. "tint=red&brightness=10")</param>
+        /// <param name="recurseAncestors">Recurse ancestors until a property value is present; defaults to false</param>
+        /// <returns>URL to the picker item. If the picker item is null, an empty string is returned.</returns>
+        public static string SafeGetMediaPickerItemUrl(this IPublishedContent contentNode, string propertyName, int width = 800, int quality = 80, string filters = "", bool recurseAncestors = false)
+        {
+            var url = _ReturnContentItemUrl(contentNode, propertyName, IPublishedContentType.Media, recurseAncestors);
+            
+            if (url.IsSupportedImageType())
+            {
+                url += "?width=" + width + "&quality=" + quality + (filters != "" ? "&" + filters.Trim('&') : "");
+            }
+
+            return url;
+        }
+
+        /// <summary>
+        /// Get a single media picker item from a content node property, and return its URL.
+        /// </summary>
+        /// <example>
+        /// var heroBackgroundImageUrl = Model.SafeGetMediaPickerItemUrl("heroBackgroundImage");
+        /// </example>
+        /// <param name="contentNode">The current content node as an IPublishedContent object</param>
+        /// <param name="propertyName">Name of the media picker item property</param>
         /// <param name="recurseAncestors">Recurse ancestors until a property value is present; defaults to false</param>
         /// <returns>URL to the picker item. If the picker item is null, an empty string is returned.</returns>
         public static string SafeGetMediaPickerItemUrl(this IPublishedContent contentNode, string propertyName, bool recurseAncestors = false)
         {
-            return _ReturnContentItemUrl(contentNode, propertyName, IPublishedContentType.Media, recurseAncestors);
+            return SafeGetMediaPickerItemUrl(contentNode, propertyName, 800, 80, "", recurseAncestors);
+        }
+
+        /// <summary>
+        /// Get a single media picker item from a content node property, and return its URL.
+        /// </summary>
+        /// <example>
+        /// var heroBackgroundImageUrl = Model.SafeGetMediaPickerItemUrl("heroBackgroundImage");
+        /// </example>
+        /// <param name="contentNode">The current content node as an IPublishedContent object</param>
+        /// <param name="propertyName">Name of the media picker item property</param>
+        /// <returns>URL to the picker item. If the picker item is null, an empty string is returned.</returns>
+        public static string SafeGetMediaPickerItemUrl(this IPublishedContent contentNode, string propertyName)
+        {
+            return SafeGetMediaPickerItemUrl(contentNode, propertyName, 800, 80, "", false);
         }
 
         /// <summary>
@@ -774,44 +813,44 @@ namespace Argentini.Carbide
         /// <param name="propertyName">Name of the media picker property.</param>
 		/// <param name="breakpointsAndWidths">String array of @ separated image layout widths and CSS min-width breakpoints. 
 		/// For example, if the tablet CSS min-width breakpoint is 768px and the image is 50% of the page width, the first 
-		/// string array element will be "50vw @ 768px". Declare these in smallest to largest screen width order.</param>
+		/// string array element will be "50vw @ 768px". The last entry should be the default width of the image (e.g. "100vw")</param>
 		/// <param name="fallbackWidth">The default width (in pixels) to use for browsers that don't support responsive images (e.g. "500")</param>
 		/// <param name="quality">Quality score from 0-100, which affects the appearance and the file size</param>
 		/// <param name="recurseAncestors">Recurse ancestors until a property value is present; defaults to false.</param>
 		/// <returns>HTML image tag markup with sizes and srcset attributes</returns>
 		public static string SafeGetResponsiveImageTag(this IPublishedContent contentNode, string propertyName, string[] breakpointsAndWidths = null, string fallbackWidth= "", int quality = 100, bool recurseAncestors = false)
 		{
-			var imageUrl = contentNode.SafeGetMediaPickerItemUrl(propertyName, recurseAncestors);
+			var imageUrl = contentNode.SafeGetMediaPickerItemUrl(propertyName, recurseAncestors).RemoveQueryString();
 			var alt = contentNode.SafeGetMediaPickerItem("photo", recurseAncestors).SafeGetValue("description");
 
 			if (imageUrl != "")
 			{
-				var sourceImageWidths = new string[] { "50", "150", "250", "320", "480", "640", "800", "1024", "1280", "1440", "1920", "2048", "2560", "3172" };
+                if (imageUrl.IsSupportedImageType())
+                {
+                    var sourceImageWidths = new string[] { "50", "150", "250", "320", "480", "640", "800", "1024", "1280", "1440", "1920", "2048", "2560", "3172" };
 
-				if (breakpointsAndWidths != null)
-				{
-					if (breakpointsAndWidths.Length > 0)
-					{
-						var srcset = "";
-						var sizes = "";
+				    if (breakpointsAndWidths != null)
+				    {
+					    if (breakpointsAndWidths.Length > 0)
+					    {
+						    var srcset = "";
+						    var sizes = "";
 
-						foreach (var size in sourceImageWidths)
-						{
-							if (srcset != "")
-							{
-								srcset += ", ";
-							}
+						    foreach (var size in sourceImageWidths)
+						    {
+							    if (srcset != "")
+							    {
+								    srcset += ", ";
+							    }
 
-							srcset += imageUrl + "?width=" + size + "&quality=" + quality + " " + size + "w";
-						}
+							    srcset += imageUrl + "?width=" + size + "&quality=" + quality + " " + size + "w";
+						    }
 
-						foreach (var doublet in breakpointsAndWidths)
-						{
-							var pair = doublet.Replace(" ", "");
+						    foreach (var doublet in breakpointsAndWidths)
+						    {
+							    var pair = doublet.Replace(" ", "");
 
-							if (pair.Length > 6)
-							{
-								if (pair.IndexOf("@") > 2 && pair.IndexOf("@") < pair.Length - 3)
+								if (pair.IndexOf("@") > 1)
 								{
 									string[] duo = pair.Split(new char[] { '@' }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -825,29 +864,88 @@ namespace Argentini.Carbide
 										sizes += "(min-width: " + duo[1] + ") " + duo[0];
 									}
 								}
-							}
-						}
 
-						return "<img sizes=\"" + sizes + ", 100vw\" srcset=\"" + srcset + "\" alt=\"" + alt + "\" src=\"" + imageUrl + "?width=" + fallbackWidth + "&quality=" + quality + "\" />";
-					}
+                                else
+                                {
+                                    // If the last entry is just a value, use as the default
+                                    if (doublet == breakpointsAndWidths.LastOrDefault())
+                                    {
+                                        if (sizes != "")
+                                        {
+                                            sizes += ", ";
+                                        }
 
-					else
-					{
-						return "";
-					}
-				}
+                                        sizes += doublet;
+                                    }
+                                }
+                            }
 
-				else
-				{
-					return "";
-				}
-			}
+						    return "<img sizes=\"" + sizes + "\" srcset=\"" + srcset + "\" alt=\"" + alt + "\" src=\"" + imageUrl + "?width=" + fallbackWidth + "&quality=" + quality + "\" />";
+					    }
+
+					    else
+					    {
+						    return "";
+					    }
+				    }
+
+				    else
+				    {
+					    return "";
+				    }
+                }
+
+                else
+                {
+                    return "";
+                }
+            }
 
 			else
 			{
 				return "";
 			}
 		}
+
+        /// <summary>
+        /// Determines is an image URL is a supported image type for responsive image generation,
+        /// and other ImageProcessor functions.
+        /// </summary>
+        /// <param name="url">URL to an image resource to evaluate.</param>
+        /// <returns>True if the image can be processed with ImageProcessor.</returns>
+        public static bool IsSupportedImageType(this string url)
+        {
+            if (url.ToLower().EndsWith(".jpg") || url.ToLower().EndsWith(".jpeg") || url.ToLower().EndsWith(".png") || url.ToLower().EndsWith(".webp"))
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Remove a querystring from the URL. Looks for "?" and removes everything from it to the end.
+        /// </summary>
+        /// <param name="url">URL to evaluate</param>
+        /// <returns>URL without a query string</returns>
+        public static string RemoveQueryString(this string url)
+        {
+            var result = url;
+
+            if (!string.IsNullOrEmpty(url))
+            {
+                if (url.IndexOf("?") > 0)
+                {
+                    result = url.Substring(0, url.IndexOf("?"));
+                }
+            }
+
+            return result;
+        }
+
 
         #endregion
 
