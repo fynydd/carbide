@@ -772,16 +772,16 @@ namespace Argentini.Carbide
 		/// <returns>HTML5 image tag with sizes and srcset attributes</returns>
 		/// <param name="contentNode">The current content node as an IPublishedContent object</param>
         /// <param name="propertyName">Name of the media picker property.</param>
-		/// <param name="alt">Text for the img tag's alt attribute</param>
 		/// <param name="breakpointsAndWidths">String array of @ separated image layout widths and CSS min-width breakpoints. 
 		/// For example, if the tablet CSS min-width breakpoint is 768px and the image is 50% of the page width, the first 
 		/// string array element will be "50vw @ 768px". Declare these in smallest to largest screen width order.</param>
 		/// <param name="fallbackWidth">The default width (in pixels) to use for browsers that don't support responsive images (e.g. "500")</param>
 		/// <param name="recurseAncestors">Recurse ancestors until a property value is present; defaults to false.</param>
 		/// <returns>HTML image tag markup with sizes and srcset attributes</returns>
-		public static string SafeGetResponsiveImageTag(this IPublishedContent contentNode, string propertyName, string alt = "", string[] breakpointsAndWidths = null, string fallbackWidth= "", bool recurseAncestors = false)
+		public static string SafeGetResponsiveImageTag(this IPublishedContent contentNode, string propertyName, string[] breakpointsAndWidths = null, string fallbackWidth= "", bool recurseAncestors = false)
 		{
 			var imageUrl = contentNode.SafeGetMediaPickerItemUrl(propertyName, recurseAncestors);
+			var alt = contentNode.SafeGetMediaPickerItem("photo", recurseAncestors).SafeGetValue("description");
 
 			if (imageUrl != "")
 			{
