@@ -30,7 +30,7 @@ namespace Argentini.Carbide
         {
             get
             {
-                return "2018.04.09A";
+                return "2018.04.20A";
             }
         }
 
@@ -46,32 +46,39 @@ namespace Argentini.Carbide
         /// <returns>A key value or the default value if the key does not exist.</returns>
         public static T GetKeyValue<T>(string keyName, T defaultValue)
         {
-            if (typeof(T) == typeof(string))
+			if (ConfigurationManager.AppSettings[keyName] != null)
             {
-                if (ConfigurationManager.AppSettings[keyName] != null)
+				var value = ConfigurationManager.AppSettings[keyName].ToString();
+
+                if (typeof(T) == typeof(string))
                 {
-                    return (T)(object)ConfigurationManager.AppSettings[keyName].ToString();
+					return (T)(object)value;
+                }
+
+                else if (typeof(T) == typeof(bool))
+                {
+					return (T)((object)value ?? defaultValue);
+                }
+
+                else if (typeof(T) == typeof(int) || typeof(T) == typeof(uint) || typeof(T) == typeof(decimal) || typeof(T) == typeof(Decimal) || typeof(T) == typeof(double) || typeof(T) == typeof(Double) || typeof(T) == typeof(float) || typeof(T) == typeof(Int16) || typeof(T) == typeof(Int32) || typeof(T) == typeof(Int64) || typeof(T) == typeof(Single) || typeof(T) == typeof(short) || typeof(T) == typeof(ushort) || typeof(T) == typeof(long) || typeof(T) == typeof(ulong))
+                {
+					return (T)((object)value ?? defaultValue);
+                }
+
+                else if (typeof(T) == typeof(DateTime))
+                {
+					return (T)((object)value ?? defaultValue);
                 }
 
                 else
                 {
-                    return defaultValue;
+					return defaultValue;
                 }
             }
 
             else
             {
-                if (ConfigurationManager.AppSettings[keyName] != null)
-                {
-                    var value = ConfigurationManager.AppSettings[keyName].ToString();
-
-                    return (T)(object)value;
-                }
-
-                else
-                {
-                    return defaultValue;
-                }
+				return defaultValue;
             }
         }
 
