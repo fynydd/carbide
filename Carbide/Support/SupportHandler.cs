@@ -104,11 +104,11 @@ namespace Argentini.Carbide
 
                         timer.Stop();
 
-						context.Application["RebuildCacheHistory"] += "</ol>";
+                        context.Application.SafeRemove("RebuildCacheStatus");
+
+                        context.Application["RebuildCacheHistory"] += "</ol>";
 
 						context.Application["RebuildCacheHistory"] += "<h4 style=\"font-size: 1.1rem;\">Finished in " + timer.GetTime() + " seconds</h4>";
-
-                        context.Application.SafeRemove("RebuildCacheStatus");
                     }
 
                     catch (Exception e)
@@ -116,11 +116,11 @@ namespace Argentini.Carbide
                         timer.Stop();
                         timer2.Stop();
 
+                        context.Application.SafeRemove("RebuildCacheStatus");
+
                         context.Application["RebuildCacheHistory"] = "</li></ol><p><strong>Error in " + timer.GetTime() + " seconds on " + TemporalHelpers.DateFormat(DateTime.Now, TemporalHelpers.DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TemporalHelpers.TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
 
                         result = context.Application["RebuildCacheHistory"].ToString();
-
-                        context.Application.SafeRemove("RebuildCacheStatus");
                     }
                 }))
                 {
