@@ -74,5 +74,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Support\Scripts\FormValidationHelpers.js" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Support\Images\inline-busy-icon.svg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

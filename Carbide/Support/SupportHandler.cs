@@ -49,6 +49,34 @@ namespace Argentini.Carbide
         }
 
         [HttpGet]
+        public HttpResponseMessage Svg(string file) // /umbraco/api/carbidesupport/svg/?file=inline-busy-icon
+        {
+            string result = "";
+
+            try
+            {
+                var assembly = Assembly.GetExecutingAssembly();
+                var resourceName = "Carbide.Support.Images." + file + ".svg";
+
+                using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+                {
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        result = reader.ReadToEnd();
+                    }
+                }
+            }
+
+            catch
+            {
+            }
+
+            var response = new HttpResponseMessage(HttpStatusCode.OK);
+            response.Content = new StringContent(result, Encoding.UTF8, "image/svg+xml");
+            return response;
+        }
+
+        [HttpGet]
         public HttpResponseMessage RebuildCache() // /umbraco/api/carbidesupport/rebuildcache/
         {
             string result = "";
