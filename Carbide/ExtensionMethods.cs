@@ -211,7 +211,7 @@ namespace Argentini.Carbide
         {
             var url = _ReturnContentItemUrl(contentNode, propertyName, IPublishedContentType.Media, recurseAncestors);
             
-            if (url.IsSupportedImageType())
+            if (url.IsResponsiveImageType())
             {
                 url += "?width=" + width + "&quality=" + quality + (filters != "" ? "&" + filters.Trim('&') : "");
             }
@@ -825,7 +825,7 @@ namespace Argentini.Carbide
 
 			if (imageUrl != "")
 			{
-                if (imageUrl.IsSupportedImageType())
+                if (imageUrl.IsResponsiveImageType())
                 {
                     var sourceImageWidths = new string[] { "50", "150", "250", "320", "480", "640", "800", "1024", "1280", "1440", "1920", "2048", "2560", "3172" };
 
@@ -897,7 +897,15 @@ namespace Argentini.Carbide
 
                 else
                 {
-                    return "";
+                    if (imageUrl.IsWebImage())
+                    {
+                        return contentNode.SafeGetImageMarkup(propertyName, alt, recurseAncestors);
+                    }
+
+                    else
+                    {
+                        return "";
+                    }
                 }
             }
 
@@ -1093,14 +1101,32 @@ namespace Argentini.Carbide
         }
 
         /// <summary>
+        /// Determines is an image URL is supported natively by all major web browsers via the img tag.
+        /// </summary>
+        /// <param name="url">URL to an image resource to evaluate.</param>
+        /// <returns>True if the image will render in a browser via the img tag.</returns>
+        public static bool IsWebImage(this string url)
+        {
+            if (url.ToLower().EndsWith(".svg") || url.ToLower().EndsWith(".gif") || url.ToLower().EndsWith(".jpg") || url.ToLower().EndsWith(".jpeg") || url.ToLower().EndsWith(".png"))
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
         /// Determines is an image URL is a supported image type for responsive image generation,
         /// and other ImageProcessor functions.
         /// </summary>
         /// <param name="url">URL to an image resource to evaluate.</param>
         /// <returns>True if the image can be processed with ImageProcessor.</returns>
-        public static bool IsSupportedImageType(this string url)
+        public static bool IsResponsiveImageType(this string url)
         {
-            if (url.ToLower().EndsWith(".jpg") || url.ToLower().EndsWith(".jpeg") || url.ToLower().EndsWith(".png") || url.ToLower().EndsWith(".webp"))
+            if (url.ToLower().EndsWith(".jpg") || url.ToLower().EndsWith(".jpeg") || url.ToLower().EndsWith(".png"))
             {
                 return true;
             }
