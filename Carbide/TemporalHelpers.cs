@@ -1103,6 +1103,22 @@ namespace Argentini.Carbide
             }
         }
 
+        /// <summary>
+        /// Locking pause in execution for the calling code block.
+        /// Useful for delays before retrying an operation.
+        /// </summary>
+        /// <param name="seconds">Length of time in seconds to wait</param>
+        public static void PauseExecution(int seconds)
+        {
+            var wait = new StopWatch();
+            wait.Start();
+
+            while (wait.GetTime<int>() < seconds)
+            { }
+
+            wait.Stop();
+        }
+
         #endregion
     }
 
@@ -1298,8 +1314,7 @@ namespace Argentini.Carbide
         }
 
         /// <summary>
-        /// Returns a string containing the elasped time since the Start
-        /// of the StopWatch.
+        /// Returns the elasped time in seconds since the Start of the StopWatch.
         /// <para>(If Called after the Stop Method)
         /// Returns a string containing the elasped time between the Start
         /// of the StopWatch and the Stop of the StopWatch</para>
@@ -1321,10 +1336,10 @@ namespace Argentini.Carbide
         /// ]]>
         /// </code>
         /// </example>
-        public string GetTime()
+        public T GetTime<T>()
         {
             int CurrentTime;
-            float Elasped;
+            float Elapsed;
 
             CurrentTime =
                 DateTime.Now.Hour * 60 * 60 * 1000 +
@@ -1334,17 +1349,22 @@ namespace Argentini.Carbide
 
             if (StopTime == 0)
             {
-                Elasped = (CurrentTime - StartTime) / (float)1000;
+                Elapsed = (CurrentTime - StartTime) / (float)1000;
             }
 
             else
             {
-                Elasped = (StopTime - StartTime) / (float)1000;
+                Elapsed = (StopTime - StartTime) / (float)1000;
             }
 
-            return Elasped.ToString();
+            return (T)(Convert.ChangeType(Elapsed, typeof(T)));
         }
 
+        public string GetTime()
+        {
+            return GetTime<string>();
+        }
+    
         #endregion
     }
 }
