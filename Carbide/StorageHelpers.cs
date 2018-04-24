@@ -243,7 +243,7 @@ namespace Argentini.Carbide
         }
 
         /// <summary>
-        /// Reads directory names from a gievn path and returns a string array.
+        /// Reads directory names from a given path and returns a string array.
         /// </summary>
         /// <example>
         /// <code>
