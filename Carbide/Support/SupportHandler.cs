@@ -110,15 +110,12 @@ namespace Argentini.Carbide
 						context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Rebuilding Examine indexes... ";
                         timer2.Reset();
                         timer2.Start();
-                        // ExamineManager.Instance.IndexProviderCollection.ToList().ForEach(index => index.RebuildIndex());
 
                         foreach (var index in ExamineManager.Instance.IndexProviderCollection.ToList())
                         {
 							context.Application["RebuildCacheHistory"] += index.Name.Replace("Indexer", "") + "... ";
                             index.RebuildIndex();
                         }
-
-                        // ExamineManager.Instance.IndexProviderCollection.ToList().ForEach(index => index.RebuildIndex());
 
                         timer2.Stop();
                         context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetTime() + " seconds</strong></li>";
@@ -127,6 +124,53 @@ namespace Argentini.Carbide
                         timer2.Reset();
                         timer2.Start();
                         umbraco.library.RefreshContent();
+                        timer2.Stop();
+                        context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetTime() + " seconds</strong></li>";
+
+                        context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Clearing ImageProcessor cache... ";
+                        timer2.Reset();
+                        timer2.Start();
+
+                        foreach (var folder in StorageHelpers.GetFolders("/App_Data/cache/"))
+                        {
+                            StorageHelpers.DeleteDirectory("/App_Data/cache/" + folder);
+
+                            if (StorageHelpers.DirectoryExists("/App_Data/cache/" + folder))
+                            {
+                                // Retry up to 5 times after pausing...
+
+                                int retry = 0;
+
+                                string original = context.Application["RebuildCacheHistory"].ToString();
+
+                                while (retry < 5)
+                                {
+                                    retry++;
+
+                                    context.Application["RebuildCacheHistory"] = original + "cache/" + folder + " retry " + retry;
+
+                                    TemporalHelpers.PauseExecution(1);
+
+                                    if (StorageHelpers.DirectoryExists("/App_Data/cache/" + folder))
+                                    {
+                                        StorageHelpers.DeleteDirectory("/App_Data/cache/" + folder);
+                                    }
+
+                                    if (!StorageHelpers.DirectoryExists("/App_Data/cache/" + folder))
+                                    {
+                                        retry = 5;
+                                    }
+                                }
+
+                                context.Application["RebuildCacheHistory"] = original;
+
+                                if (StorageHelpers.DirectoryExists("/App_Data/cache/" + folder))
+                                {
+                                    context.Application["RebuildCacheHistory"] += "<strong style='color:#b94a48;'>cache/" + folder + " locked...</strong> ";
+                                }
+                            }
+                        }
+
                         timer2.Stop();
                         context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetTime() + " seconds</strong></li>";
 
