@@ -600,6 +600,36 @@ namespace Argentini.Carbide
             return Regex.Replace(fileName, @"[^\s\w\.-]", "_");
         }
 
+        /// <summary>
+        /// Use a file's modified date to generate a repeatable, URL-friendly
+        /// hash for use in cache busting web file assets, like CSS and JS files.
+        /// </summary>
+        /// <param name="filePath">Web-style file path</param>
+        /// <returns>A unique, repeatable, URL-friendly hash</returns>
+        public static string MakeCacheBuster(string filePath)
+        {
+            var result = "";
+
+            try
+            {
+                FileInfo fileInfo = new FileInfo(StorageHelpers.MapPath(filePath));
+                DateTime lastModified = fileInfo.LastWriteTime;
+                var size = fileInfo.Length;
+                
+                result = 
+                    lastModified.Year.ToString()
+                    + lastModified.Month.ToString("D2")
+                    + lastModified.Day.ToString("D2")
+                    + lastModified.Hour.ToString("D2")
+                    + lastModified.Minute.ToString("D2")
+                    + lastModified.Second.ToString("D2");
+            }
+
+            catch { }
+
+            return result;
+        }
+
         #endregion
     }
 }
