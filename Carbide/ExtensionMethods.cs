@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Mvc;
 
 using Umbraco.Core;
 using static Umbraco.Core.Constants;
@@ -1156,6 +1157,21 @@ namespace Argentini.Carbide
 
             return result;
         }
+
+        public static string Content(this UrlHelper url, string contentPath, bool addCacheBuster = false)
+        {
+            var result = url.Content(contentPath);
+
+            if (addCacheBuster)
+            {
+                var queryString = StorageHelpers.MakeCacheBuster(result);
+
+                result += (result.Contains("?") ? "&" : "?") + "_cachebuster=" + StorageHelpers.MakeCacheBuster(result);
+            }
+
+            return result;
+        }
+
 
         #endregion
     }
