@@ -101,34 +101,8 @@ namespace Argentini.Carbide
                         context.Server.ScriptTimeout = 100000;
 
 						context.Application["RebuildCacheHistory"] += "<ol style=\"padding: 0.25rem 0 0 1rem;\">";
-						context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Republishing content... ";
-                        timer2.Start();
-                        Services.ContentService.RePublishAll();
-                        timer2.Stop();
-                        context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetTime() + " seconds</strong></li>";
-
-						context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Rebuilding Examine indexes... ";
-                        timer2.Reset();
-                        timer2.Start();
-
-                        foreach (var index in ExamineManager.Instance.IndexProviderCollection.ToList())
-                        {
-							context.Application["RebuildCacheHistory"] += index.Name.Replace("Indexer", "") + "... ";
-                            index.RebuildIndex();
-                        }
-
-                        timer2.Stop();
-                        context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetTime() + " seconds</strong></li>";
-
-						context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Refreshing content... ";
-                        timer2.Reset();
-                        timer2.Start();
-                        umbraco.library.RefreshContent();
-                        timer2.Stop();
-                        context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetTime() + " seconds</strong></li>";
 
                         context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Clearing ImageProcessor cache... ";
-                        timer2.Reset();
                         timer2.Start();
 
                         foreach (var folder in StorageHelpers.GetFolders("/App_Data/cache/"))
@@ -171,6 +145,33 @@ namespace Argentini.Carbide
                             }
                         }
 
+                        timer2.Stop();
+                        context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetTime() + " seconds</strong></li>";
+
+                        context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Republishing content... ";
+                        timer2.Reset();
+                        timer2.Start();
+                        Services.ContentService.RePublishAll();
+                        timer2.Stop();
+                        context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetTime() + " seconds</strong></li>";
+
+						context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Rebuilding Examine indexes... ";
+                        timer2.Reset();
+                        timer2.Start();
+
+                        foreach (var index in ExamineManager.Instance.IndexProviderCollection.ToList())
+                        {
+							context.Application["RebuildCacheHistory"] += index.Name.Replace("Indexer", "") + "... ";
+                            index.RebuildIndex();
+                        }
+
+                        timer2.Stop();
+                        context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetTime() + " seconds</strong></li>";
+
+						context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Refreshing content... ";
+                        timer2.Reset();
+                        timer2.Start();
+                        umbraco.library.RefreshContent();
                         timer2.Stop();
                         context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetTime() + " seconds</strong></li>";
 
