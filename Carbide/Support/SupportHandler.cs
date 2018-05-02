@@ -239,7 +239,7 @@ namespace Argentini.Carbide
         [HttpGet]
         public HttpResponseMessage RebuildCacheStatusHistory() // /umbraco/api/carbidesupport/rebuildcachestatushistory/
         {
-            var result = "Last run: never";
+            var result = "Last run: a long time ago";
 
             if (HttpContext.Current.Application["RebuildCacheHistory"] != null)
             {
