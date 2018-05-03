@@ -203,30 +203,43 @@ namespace Argentini.Carbide
         /// and 1.5 would be an image that is 50% wider than it is tall.</param>
         /// <param name="maxWidth">Maximum width value</param>
         /// <param name="maxHeight">Maximum height value</param>
-        /// <param name="maxAspectRatio">Highest aspect ratio to adjust (defaults to 5.0)</param>
-        /// <param name="minAspectRatio">Lowest aspect ratio to ignore (defaults to 1.0)</param>
-        /// <param name="lowestHeightRatio">Lowest height ratio to allow (defaults to 0.55)</param>
+        /// <param name="maxAspectRatio">Highest aspect ratio to adjust (0.0 through 10-ish; defaults to 5.0)</param>
+        /// <param name="exponent">Exponent value for the curve (1.0 through 2.0-ish; defaults to 1.02)</param>
+        /// <param name="lowestHeightRatio">Lowest height ratio to allow (0 through 1.0-ish; defaults to 0.5)</param>
         /// <returns>The width an image can be without breaking the maximum height.</returns>
-        public static double GetIdealImageWidth(IPublishedContent contentNode, double aspectRatio, double maxWidth, double maxHeight, double maxAspectRatio = 5.0, double minAspectRatio = 1.0, double lowestHeightRatio = 0.55)
+        public static double GetIdealImageWidth(IPublishedContent contentNode, double aspectRatio, double maxWidth, double maxHeight, double maxAspectRatio = 5.0, double exponent = 1.02, double lowestHeightRatio = 0.5)
         {
-            double adjustedMaxHeight = maxHeight;
-            double width = maxWidth;
+            List<double> intervals = new List<double>();
 
-            if (aspectRatio <= minAspectRatio)
+            double n = Math.Pow(exponent, 100) - (exponent - 1);
+            double d = exponent - (exponent - 1);
+            double t = (1.0 - lowestHeightRatio) / (n / d);
+
+            for (int x = 0; x <= 100; x++)
             {
-                width = maxHeight * aspectRatio;
+                double interval = t * Math.Pow(exponent, x);
+                intervals.Add(interval);
             }
 
-            else
-            {
-                if (aspectRatio < maxAspectRatio)
-                {
-                    double increment = (1 - lowestHeightRatio) / ((maxAspectRatio - minAspectRatio) * 100);
-                    double aspectRatioRange = maxAspectRatio - (maxAspectRatio / aspectRatio);
-                    double multiplier = (1.0 - ((aspectRatioRange * 100) * increment));
+            double adjustedMaxHeight = maxHeight;
+            double width = maxWidth;
+            int index = 0;
+            double multiplier = 1.0;
 
-                    adjustedMaxHeight = maxHeight * multiplier;
+            if (aspectRatio < maxAspectRatio)
+            {
+                if (aspectRatio > 1.0)
+                {
+                    index = Convert.ToInt32(100 - ((maxAspectRatio - 1) / (aspectRatio - 1)) * 10);
+
+                    if (index < 0)
+                    {
+                        index = 0;
+                    }
                 }
+
+                multiplier = 1.0 - (double)intervals[index];
+                adjustedMaxHeight = maxHeight * multiplier;
             }
 
             if (aspectRatio > 0 && maxWidth > 0 && adjustedMaxHeight > 0)
@@ -242,7 +255,9 @@ namespace Argentini.Carbide
                 width = 0;
             }
 
-            return Math.Round(width, 4);
+            width = Math.Round(width, 4);
+
+            return width;
         }
 
         #endregion

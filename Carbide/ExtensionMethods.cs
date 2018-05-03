@@ -261,13 +261,13 @@ namespace Argentini.Carbide
         /// <param name="contentNode">The current media item as IPublishedContent</param>
         /// <param name="maxWidth">Maximum width value</param>
         /// <param name="maxHeight">Maximum height value</param>
-        /// <param name="maxAspectRatio">Highest aspect ratio to adjust (defaults to 5.0)</param>
-        /// <param name="minAspectRatio">Lowest aspect ratio to ignore (defaults to 1.0)</param>
-        /// <param name="lowestHeightRatio">Lowest height ratio to allow (defaults to 0.55)</param>
+        /// <param name="maxAspectRatio">Highest aspect ratio to adjust (0.0 through 10-ish; defaults to 5.0)</param>
+        /// <param name="exponent">Exponent value for the curve (1.0 through 2.0-ish; defaults to 1.02)</param>
+        /// <param name="lowestHeightRatio">Lowest height ratio to allow (0 through 1.0-ish; defaults to 0.5)</param>
         /// <returns>The width an image can be without breaking the maximum height.</returns>
-        public static double GetIdealImageWidth(this IPublishedContent contentNode, double maxWidth, double maxHeight, double maxAspectRatio = 5.0, double minAspectRatio = 1.0, double lowestHeightRatio = 0.55)
+        public static double GetIdealImageWidth(this IPublishedContent contentNode, double maxWidth, double maxHeight, double maxAspectRatio = 5.0, double exponent = 1.02, double lowestHeightRatio = 0.5)
         {
-            return ContentHelpers.GetIdealImageWidth(contentNode, contentNode.SafeGetValue<double>("aspectRatio"), maxWidth, maxHeight, maxAspectRatio, minAspectRatio, lowestHeightRatio);
+            return ContentHelpers.GetIdealImageWidth(contentNode, contentNode.SafeGetValue<double>("aspectRatio"), maxWidth, maxHeight, maxAspectRatio, exponent, lowestHeightRatio);
         }
 
         /// <summary>
