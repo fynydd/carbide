@@ -250,6 +250,27 @@ namespace Argentini.Carbide
         }
 
         /// <summary>
+        /// Return the maximum width for a media item given its aspect ratio and
+        /// a maximum width, maximum height, and image aspect ratio. maxWidth, maxHeight,
+        /// and the returned result are numeric. No units are required as this is all
+        /// about relative sizes. So this formula will work with any numbers.
+        /// Assumes a property exists for "aspectRatio", which contains a width to height 
+        /// number where 1.0 is a perfect square, and 1.5 would be an image that is 50% wider 
+        /// than it is tall.
+        /// </summary>
+        /// <param name="contentNode">The current media item as IPublishedContent</param>
+        /// <param name="maxWidth">Maximum width value</param>
+        /// <param name="maxHeight">Maximum height value</param>
+        /// <param name="maxAspectRatio">Highest aspect ratio to adjust (defaults to 5.0)</param>
+        /// <param name="minAspectRatio">Lowest aspect ratio to ignore (defaults to 1.0)</param>
+        /// <param name="lowestHeightRatio">Lowest height ratio to allow (defaults to 0.55)</param>
+        /// <returns>The width an image can be without breaking the maximum height.</returns>
+        public static double GetIdealImageWidth(this IPublishedContent contentNode, double maxWidth, double maxHeight, double maxAspectRatio = 5.0, double minAspectRatio = 1.0, double lowestHeightRatio = 0.55)
+        {
+            return ContentHelpers.GetIdealImageWidth(contentNode, contentNode.SafeGetValue<double>("aspectRatio"), maxWidth, maxHeight, maxAspectRatio, minAspectRatio, lowestHeightRatio);
+        }
+
+        /// <summary>
         /// Get a single content picker item from a content node property, and return its URL.
         /// </summary>
         /// <example>

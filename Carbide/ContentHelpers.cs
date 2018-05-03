@@ -189,6 +189,62 @@ namespace Argentini.Carbide
             return result;
         }
 
+        /// <summary>
+        /// Return the ideal width for a media item given its aspect ratio and
+        /// a maximum width, maximum height, and image aspect ratio. maxWidth, maxHeight,
+        /// and the returned result are numeric. No units are required as this is all
+        /// about relative sizes. So this formula will work with any numbers.
+        /// The ideal width is based on aspect ratio as well as maximum dimensions. So a logo,
+        /// for example, won't be too tall if it's 4:3 or similar aspect ration. It tries to 
+        /// calculate by "mass" not just dimensions.
+        /// </summary>
+        /// <param name="contentNode">A media item as IPublishedContent</param>
+        /// <param name="aspectRatio">A width to height number where 1.0 is a perfect square, 
+        /// and 1.5 would be an image that is 50% wider than it is tall.</param>
+        /// <param name="maxWidth">Maximum width value</param>
+        /// <param name="maxHeight">Maximum height value</param>
+        /// <param name="maxAspectRatio">Highest aspect ratio to adjust (defaults to 5.0)</param>
+        /// <param name="minAspectRatio">Lowest aspect ratio to ignore (defaults to 1.0)</param>
+        /// <param name="lowestHeightRatio">Lowest height ratio to allow (defaults to 0.55)</param>
+        /// <returns>The width an image can be without breaking the maximum height.</returns>
+        public static double GetIdealImageWidth(IPublishedContent contentNode, double aspectRatio, double maxWidth, double maxHeight, double maxAspectRatio = 5.0, double minAspectRatio = 1.0, double lowestHeightRatio = 0.55)
+        {
+            double adjustedMaxHeight = maxHeight;
+            double width = maxWidth;
+
+            if (aspectRatio <= minAspectRatio)
+            {
+                width = maxHeight * aspectRatio;
+            }
+
+            else
+            {
+                if (aspectRatio < maxAspectRatio)
+                {
+                    double increment = (1 - lowestHeightRatio) / ((maxAspectRatio - minAspectRatio) * 100);
+                    double aspectRatioRange = maxAspectRatio - (maxAspectRatio / aspectRatio);
+                    double multiplier = (1.0 - ((aspectRatioRange * 100) * increment));
+
+                    adjustedMaxHeight = maxHeight * multiplier;
+                }
+            }
+
+            if (aspectRatio > 0 && maxWidth > 0 && adjustedMaxHeight > 0)
+            {
+                if ((maxWidth / aspectRatio) > adjustedMaxHeight)
+                {
+                    width = aspectRatio * adjustedMaxHeight;
+                }
+            }
+
+            else
+            {
+                width = 0;
+            }
+
+            return Math.Round(width, 4);
+        }
+
         #endregion
     }
 }
