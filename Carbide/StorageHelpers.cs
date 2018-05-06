@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections;
+using System.Diagnostics;
 using System.IO;
 using System.Management;
 using System.Text.RegularExpressions;
 using System.Web;
+
+using LibSassHost;
+using LibSassHost.Helpers;
 
 namespace Argentini.Carbide
 {
@@ -590,6 +594,37 @@ namespace Argentini.Carbide
         }
 
         /// <summary>
+        /// Retrieve a filename from a path.
+        /// </summary>
+        /// <example>
+        /// <code>
+        /// using Argentini.Carbide;
+        /// ...
+        /// string filename = StorageHelpers.GetFilename(filepath);
+        /// </code>
+        /// </example>
+        /// <param name="fileName">File path to parse.</param>
+        /// <returns>Filename as a string.</returns>
+        public static string GetFilename(string filePath)
+        {
+            string filename = string.Empty;
+
+            int x = filePath.LastIndexOf("\\");
+
+            if (x < 0)
+            {
+                x = filePath.LastIndexOf("/");
+            }
+
+            if (x >= 0 && x < filePath.Length)
+            {
+                filename = filePath.Substring(filePath.Length - x - 1);
+            }
+
+            return filename;
+        }
+
+        /// <summary>
         /// Replaces any invalid characters in a file name with underscores,
         /// returning the filtered filename.
         /// </summary>
@@ -626,6 +661,44 @@ namespace Argentini.Carbide
             }
 
             catch { }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Compile a SCSS file or files into CSS.
+        /// </summary>
+        /// <param name="scssInputPath">Relative Unix path to the scss input file (e.g. "/scss/application.scss").</param>
+        /// <param name="outputPath">Relative Unix path to the CSS output file (e.g. "/stylesheets/application.css").</param>
+        /// <param name="debugMode">Set to true for expanded output with source maps, false for compressed production CSS only</param>
+        /// <returns>True if successful, false if an error occurred</returns>
+        public static bool BuildScss(string scssInputPath, string outputPath, bool debugMode = false)
+        {
+            var result = false;
+            var debugOptions = new CompilationOptions { LineFeedType = LineFeedType.Lf, OutputStyle = OutputStyle.Expanded, SourceComments = true, SourceMap = true };
+            var releaseOptions = new CompilationOptions { LineFeedType = LineFeedType.Lf, OutputStyle = OutputStyle.Compressed };
+            var baseFilename = GetFilename(scssInputPath).Replace("." + GetFileExtension(scssInputPath), "");
+            var outPath = outputPath.Replace(GetFilename(outputPath), "");
+
+            try
+            {
+                if (debugMode)
+                {
+                    CompilationResult css = SassCompiler.CompileFile(scssInputPath, outPath + baseFilename + ".css", outPath + baseFilename + ".css.map", debugOptions);
+                    result = true;
+                }
+
+                else
+                {
+                    CompilationResult css = SassCompiler.CompileFile(scssInputPath, outPath + baseFilename + ".css", options: releaseOptions);
+                    result = true;
+                }
+            }
+
+            catch (SassСompilationException e)
+            {
+                Debug.WriteLine("LibSass error: " + e.Message);
+            }
 
             return result;
         }

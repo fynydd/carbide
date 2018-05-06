@@ -67,6 +67,15 @@
     <Compile Include="TemporalHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="LibSassHost">
+      <Version>1.1.9</Version>
+    </PackageReference>
+    <PackageReference Include="LibSassHost.Native.win-x64">
+      <Version>1.1.9</Version>
+    </PackageReference>
+    <PackageReference Include="runtime.win7-x64.vcruntime140">
+      <Version>14.0.24406.1</Version>
+    </PackageReference>
     <PackageReference Include="UmbracoCms.Core">
       <Version>7.10.4</Version>
     </PackageReference>

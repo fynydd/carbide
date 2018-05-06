@@ -52,8 +52,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MSTest.TestAdapter" Version="1.2.0" Condition="'$(TargetFramework)' == 'net45'" />
-    <PackageReference Include="MSTest.TestFramework" Version="1.2.0" Condition="'$(TargetFramework)' == 'net45'" />
+    <PackageReference Include="LibSassHost">
+      <Version>1.1.9</Version>
+    </PackageReference>
+    <PackageReference Include="LibSassHost.Native.win-x64">
+      <Version>1.1.9</Version>
+    </PackageReference>
+    <PackageReference Include="MSTest.TestAdapter" Version="1.2.1" Condition="'$(TargetFramework)' == 'net45'" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.2.1" Condition="'$(TargetFramework)' == 'net45'" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
