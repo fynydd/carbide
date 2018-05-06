@@ -307,19 +307,34 @@ namespace Argentini.Carbide
 
             if (path.Length > 1)
             {
-                if (HttpContext.Current != null)
+                if (path.Substring(1, 1) == ":")
                 {
-                    filename = HttpContext.Current.Server.MapPath(path);
+                    // Handle weird scenarios where libraries like libsass return 
+                    // hybrid paths like "C:/paths/with/forward-slashes/"
+                    path = path.Replace("/", "\\");
+                }
+
+                if (path.Contains("\\"))
+                {
+                    filename = path;
                 }
 
                 else
                 {
-                    if (path.StartsWith("/"))
+                    if (HttpContext.Current != null)
                     {
-                        path = path.Substring(1, path.Length - 1);
+                        filename = HttpContext.Current.Server.MapPath(path);
                     }
 
-                    filename = AppDomain.CurrentDomain.BaseDirectory + path.Replace("/", "\\");
+                    else
+                    {
+                        if (path.StartsWith("/"))
+                        {
+                            path = path.Substring(1, path.Length - 1);
+                        }
+
+                        filename = AppDomain.CurrentDomain.BaseDirectory + path.Replace("/", "\\");
+                    }
                 }
             }
 
@@ -587,7 +602,7 @@ namespace Argentini.Carbide
 
             if (x > 0 && x < fileName.Length)
             {
-                ext = fileName.Substring(fileName.Length - x - 1);
+                ext = fileName.Substring(x + 1);
             }
 
             return ext;
@@ -609,16 +624,16 @@ namespace Argentini.Carbide
         {
             string filename = string.Empty;
 
-            int x = filePath.LastIndexOf("\\");
+            int x = filePath.LastIndexOf(@"\");
 
             if (x < 0)
             {
-                x = filePath.LastIndexOf("/");
+                x = filePath.LastIndexOf(@"/");
             }
 
             if (x >= 0 && x < filePath.Length)
             {
-                filename = filePath.Substring(filePath.Length - x - 1);
+                filename = filePath.Substring(x + 1);
             }
 
             return filename;
@@ -666,41 +681,162 @@ namespace Argentini.Carbide
         }
 
         /// <summary>
+        /// Convert a file path into a string that can be used as a session variable key name.
+        /// </summary>
+        /// <param name="filePath">Web style path to use (e.g. "/images/space.gif").</param>
+        /// <returns>"Carbide-Key--images-space.gif"</returns>
+        public static string ConvertFilePathToKey(string filePath)
+        {
+            return "Carbide-Key-" + filePath.Replace(":", "").Replace("\\", "").Replace("/", "").Replace(" ", "");
+        }
+
+        /// <summary>
         /// Compile a SCSS file or files into CSS.
         /// </summary>
-        /// <param name="scssInputPath">Relative Unix path to the scss input file (e.g. "/scss/application.scss").</param>
-        /// <param name="outputPath">Relative Unix path to the CSS output file (e.g. "/stylesheets/application.css").</param>
+        /// <param name="scssInputPath">Web path to the scss input file (e.g. "/scss/application.scss").</param>
+        /// <param name="outputPath">Web path to the CSS output file (e.g. "/stylesheets/application.css").</param>
         /// <param name="debugMode">Set to true for expanded output with source maps, false for compressed production CSS only</param>
         /// <returns>True if successful, false if an error occurred</returns>
-        public static bool BuildScss(string scssInputPath, string outputPath, bool debugMode = false)
+        public static void BuildScss(string scssInputPath, string outputPath, bool debugMode = false)
         {
-            var result = false;
-            var debugOptions = new CompilationOptions { LineFeedType = LineFeedType.Lf, OutputStyle = OutputStyle.Expanded, SourceComments = true, SourceMap = true };
-            var releaseOptions = new CompilationOptions { LineFeedType = LineFeedType.Lf, OutputStyle = OutputStyle.Compressed };
-            //var baseFilename = GetFilename(scssInputPath).Replace("." + GetFileExtension(scssInputPath), "");
-            //var outPath = outputPath.Replace(GetFilename(outputPath), "");
+            var process = false;
 
-            try
+            Debug.WriteLine("");
+            Debug.WriteLine("LibSass result (" + (debugMode ? "debug" : "release") + " mode):");
+            Debug.WriteLine("------------------------------");
+
+            #region Determine if at least one file has been modified
+
+            if (HttpContext.Current.Application.KeyExists(ConvertFilePathToKey(scssInputPath)))
             {
-                if (debugMode)
+                var files = (ArrayList)HttpContext.Current.Application[ConvertFilePathToKey(scssInputPath)];
+
+                if (files.Count > 0)
                 {
-                    CompilationResult css = SassCompiler.CompileFile(scssInputPath, outputPath, outputPath + ".map", debugOptions);
-                    result = true;
+                    foreach(string file in files)
+                    {
+                        var segments = file.Split('|');
+
+                        Debug.Write(GetFilename(segments[0]) + "... ");
+
+                        if (segments.Length == 2)
+                        {
+                            FileInfo fileInfo = new FileInfo(MapPath(segments[0]));
+                            DateTime lastModified = fileInfo.LastWriteTime;
+
+                            if (segments[1] != TemporalHelpers.DateFormat(lastModified, TemporalHelpers.DateFormats.Rss))
+                            {
+                                process = true;
+                                Debug.WriteLine(" modified, will recompile...");
+                                break;
+                            }
+
+                            else
+                            {
+                                Debug.WriteLine(" unchanged");
+                            }
+                        }
+
+                        else
+                        {
+                            process = true;
+                            Debug.WriteLine(" has no previous timestamp, will recompile...");
+                            break;
+                        }
+                    }
                 }
 
                 else
                 {
-                    CompilationResult css = SassCompiler.CompileFile(scssInputPath, outputPath, options: releaseOptions);
-                    result = true;
+                    process = true;
+                    Debug.WriteLine("No files list is present, will recompile...");
                 }
             }
 
-            catch (SassСompilationException e)
+            else
             {
-                Debug.WriteLine("LibSass error: " + e.Message);
+                process = true;
+                Debug.WriteLine("Cannot determine prior build timestamps, will recompile...");
             }
 
-            return result;
+            #endregion
+
+            #region No state or file(s) modified, process...
+
+            if (process == true)
+            {
+                var debugOptions = new CompilationOptions { LineFeedType = LineFeedType.Lf, OutputStyle = OutputStyle.Expanded, SourceComments = true, SourceMap = true };
+                var releaseOptions = new CompilationOptions { LineFeedType = LineFeedType.Lf, OutputStyle = OutputStyle.Compressed, SourceComments = false, SourceMap = false };
+
+                try
+                {
+                    CompilationResult css;
+
+                    if (debugMode)
+                    {
+                        css = SassCompiler.CompileFile(MapPath(scssInputPath), MapPath(outputPath), MapPath(outputPath + ".map"), debugOptions);
+
+                        DeleteFiles(outputPath);
+                        DeleteFiles(outputPath + ".map");
+                        Debug.WriteLine("Deleted " + outputPath + " and " + outputPath + ".map");
+
+                        WriteFile(outputPath, css.CompiledContent);
+                        WriteFile(outputPath + ".map", css.SourceMap);
+                        Debug.WriteLine("Generated " + outputPath + " and " + outputPath + ".map");
+                    }
+
+                    else
+                    {
+                        css = SassCompiler.CompileFile(MapPath(scssInputPath), MapPath(outputPath), options: releaseOptions);
+
+                        DeleteFiles(outputPath);
+                        DeleteFiles(outputPath + ".map");
+                        Debug.WriteLine("Deleted " + outputPath + " and " + outputPath + ".map (cleanup)");
+
+                        WriteFile(outputPath, css.CompiledContent);
+                        Debug.WriteLine("Generated " + outputPath);
+                    }
+
+                    if (css.IncludedFilePaths.Count > 0)
+                    {
+                        ArrayList fileList = new ArrayList();
+
+                        foreach(var file in css.IncludedFilePaths)
+                        {
+                            FileInfo fileInfo = new FileInfo(MapPath(file));
+                            DateTime lastModified = fileInfo.LastWriteTime;
+                            var item = file + "|" + TemporalHelpers.DateFormat(lastModified, TemporalHelpers.DateFormats.Rss);
+
+                            fileList.Add(item);
+                            Debug.WriteLine(item);
+                        }
+
+                        HttpContext.Current.Application[ConvertFilePathToKey(scssInputPath)] = fileList;
+                        Debug.WriteLine("Saved state for " + fileList.Count + " files");
+                        Debug.WriteLine("");
+                    }
+
+                    else
+                    {
+                        Debug.WriteLine("No files to process, aborting");
+                        Debug.WriteLine("");
+                    }
+                }
+
+                catch (SassСompilationException e)
+                {
+                    Debug.WriteLine("LibSass error: " + SassErrorHelpers.Format(e));
+                    Debug.WriteLine("");
+                }
+            }
+
+            else
+            {
+                Debug.WriteLine("File(s) not modified, aborting");
+                Debug.WriteLine("");
+            }
+
+            #endregion
         }
 
         #endregion
