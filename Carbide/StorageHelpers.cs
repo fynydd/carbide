@@ -696,10 +696,11 @@ namespace Argentini.Carbide
         /// <param name="scssInputPath">Web path to the scss input file (e.g. "/scss/application.scss").</param>
         /// <param name="outputPath">Web path to the CSS output file (e.g. "/stylesheets/application.css").</param>
         /// <param name="debugMode">Set to true for expanded output with source maps, false for compressed production CSS only</param>
+        /// <param name="force">Force a rebuild</param>
         /// <returns>True if successful, false if an error occurred</returns>
-        public static void BuildScss(string scssInputPath, string outputPath, bool debugMode = false)
+        public static void BuildScss(string scssInputPath, string outputPath, bool debugMode = false, bool force = false)
         {
-            var process = false;
+            var process = force;
 
             Debug.WriteLine("");
             Debug.WriteLine("LibSass result (" + (debugMode ? "debug" : "release") + " mode):");
@@ -707,72 +708,80 @@ namespace Argentini.Carbide
 
             #region Determine if at least one file has been modified
 
-            if (!FileExists(outputPath))
+            if (force)
             {
-                Debug.WriteLine("CSS file is missing, will recompile...");
-                process = true;
+                Debug.WriteLine("FORCED REBUILD MODE");
             }
 
             else
             {
-                if (debugMode && !FileExists(outputPath + ".map"))
+                if (!FileExists(outputPath))
                 {
-                    Debug.WriteLine("Debug mode and CSS Map file is missing, will recompile...");
+                    Debug.WriteLine("CSS file is missing, will recompile...");
                     process = true;
                 }
 
                 else
                 {
-                    if (HttpContext.Current.Application.KeyExists(ConvertFilePathToKey(scssInputPath)))
+                    if (debugMode && !FileExists(outputPath + ".map"))
                     {
-                        var files = (ArrayList)HttpContext.Current.Application[ConvertFilePathToKey(scssInputPath)];
+                        Debug.WriteLine("Debug mode and CSS Map file is missing, will recompile...");
+                        process = true;
+                    }
 
-                        if (files.Count > 0)
+                    else
+                    {
+                        if (HttpContext.Current.Application.KeyExists(ConvertFilePathToKey(scssInputPath)))
                         {
-                            foreach(string file in files)
+                            var files = (ArrayList)HttpContext.Current.Application[ConvertFilePathToKey(scssInputPath)];
+
+                            if (files.Count > 0)
                             {
-                                var segments = file.Split('|');
-
-                                Debug.Write(GetFilename(segments[0]) + "... ");
-
-                                if (segments.Length == 2)
+                                foreach(string file in files)
                                 {
-                                    FileInfo fileInfo = new FileInfo(MapPath(segments[0]));
-                                    DateTime lastModified = fileInfo.LastWriteTime;
+                                    var segments = file.Split('|');
 
-                                    if (segments[1] != TemporalHelpers.DateFormat(lastModified, TemporalHelpers.DateFormats.Rss))
+                                    Debug.Write(GetFilename(segments[0]) + "... ");
+
+                                    if (segments.Length == 2)
                                     {
-                                        process = true;
-                                        Debug.WriteLine(" modified, will recompile...");
-                                        break;
+                                        FileInfo fileInfo = new FileInfo(MapPath(segments[0]));
+                                        DateTime lastModified = fileInfo.LastWriteTime;
+
+                                        if (segments[1] != TemporalHelpers.DateFormat(lastModified, TemporalHelpers.DateFormats.Rss))
+                                        {
+                                            process = true;
+                                            Debug.WriteLine(" modified, will recompile...");
+                                            break;
+                                        }
+
+                                        else
+                                        {
+                                            Debug.WriteLine(" unchanged");
+                                        }
                                     }
 
                                     else
                                     {
-                                        Debug.WriteLine(" unchanged");
+                                        process = true;
+                                        Debug.WriteLine(" has no previous timestamp, will recompile...");
+                                        break;
                                     }
                                 }
+                            }
 
-                                else
-                                {
-                                    process = true;
-                                    Debug.WriteLine(" has no previous timestamp, will recompile...");
-                                    break;
-                                }
+                            else
+                            {
+                                process = true;
+                                Debug.WriteLine("No files list is present, will recompile...");
                             }
                         }
 
                         else
                         {
                             process = true;
-                            Debug.WriteLine("No files list is present, will recompile...");
+                            Debug.WriteLine("Cannot determine prior build timestamps, will recompile...");
                         }
-                    }
-
-                    else
-                    {
-                        process = true;
-                        Debug.WriteLine("Cannot determine prior build timestamps, will recompile...");
                     }
                 }
             }
