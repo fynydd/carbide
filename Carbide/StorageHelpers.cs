@@ -707,56 +707,74 @@ namespace Argentini.Carbide
 
             #region Determine if at least one file has been modified
 
-            if (HttpContext.Current.Application.KeyExists(ConvertFilePathToKey(scssInputPath)))
+            if (!FileExists(outputPath))
             {
-                var files = (ArrayList)HttpContext.Current.Application[ConvertFilePathToKey(scssInputPath)];
+                Debug.WriteLine("CSS file is missing, will recompile...");
+                process = true;
+            }
 
-                if (files.Count > 0)
+            else
+            {
+                if (debugMode && !FileExists(outputPath + ".map"))
                 {
-                    foreach(string file in files)
+                    Debug.WriteLine("Debug mode and CSS Map file is missing, will recompile...");
+                    process = true;
+                }
+
+                else
+                {
+                    if (HttpContext.Current.Application.KeyExists(ConvertFilePathToKey(scssInputPath)))
                     {
-                        var segments = file.Split('|');
+                        var files = (ArrayList)HttpContext.Current.Application[ConvertFilePathToKey(scssInputPath)];
 
-                        Debug.Write(GetFilename(segments[0]) + "... ");
-
-                        if (segments.Length == 2)
+                        if (files.Count > 0)
                         {
-                            FileInfo fileInfo = new FileInfo(MapPath(segments[0]));
-                            DateTime lastModified = fileInfo.LastWriteTime;
-
-                            if (segments[1] != TemporalHelpers.DateFormat(lastModified, TemporalHelpers.DateFormats.Rss))
+                            foreach(string file in files)
                             {
-                                process = true;
-                                Debug.WriteLine(" modified, will recompile...");
-                                break;
-                            }
+                                var segments = file.Split('|');
 
-                            else
-                            {
-                                Debug.WriteLine(" unchanged");
+                                Debug.Write(GetFilename(segments[0]) + "... ");
+
+                                if (segments.Length == 2)
+                                {
+                                    FileInfo fileInfo = new FileInfo(MapPath(segments[0]));
+                                    DateTime lastModified = fileInfo.LastWriteTime;
+
+                                    if (segments[1] != TemporalHelpers.DateFormat(lastModified, TemporalHelpers.DateFormats.Rss))
+                                    {
+                                        process = true;
+                                        Debug.WriteLine(" modified, will recompile...");
+                                        break;
+                                    }
+
+                                    else
+                                    {
+                                        Debug.WriteLine(" unchanged");
+                                    }
+                                }
+
+                                else
+                                {
+                                    process = true;
+                                    Debug.WriteLine(" has no previous timestamp, will recompile...");
+                                    break;
+                                }
                             }
                         }
 
                         else
                         {
                             process = true;
-                            Debug.WriteLine(" has no previous timestamp, will recompile...");
-                            break;
+                            Debug.WriteLine("No files list is present, will recompile...");
                         }
                     }
-                }
 
-                else
-                {
-                    process = true;
-                    Debug.WriteLine("No files list is present, will recompile...");
+                    else
+                    {
+                        process = true;
+                        Debug.WriteLine("Cannot determine prior build timestamps, will recompile...");
+                    }
                 }
-            }
-
-            else
-            {
-                process = true;
-                Debug.WriteLine("Cannot determine prior build timestamps, will recompile...");
             }
 
             #endregion
