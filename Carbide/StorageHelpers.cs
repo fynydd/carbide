@@ -677,20 +677,20 @@ namespace Argentini.Carbide
             var result = false;
             var debugOptions = new CompilationOptions { LineFeedType = LineFeedType.Lf, OutputStyle = OutputStyle.Expanded, SourceComments = true, SourceMap = true };
             var releaseOptions = new CompilationOptions { LineFeedType = LineFeedType.Lf, OutputStyle = OutputStyle.Compressed };
-            var baseFilename = GetFilename(scssInputPath).Replace("." + GetFileExtension(scssInputPath), "");
-            var outPath = outputPath.Replace(GetFilename(outputPath), "");
+            //var baseFilename = GetFilename(scssInputPath).Replace("." + GetFileExtension(scssInputPath), "");
+            //var outPath = outputPath.Replace(GetFilename(outputPath), "");
 
             try
             {
                 if (debugMode)
                 {
-                    CompilationResult css = SassCompiler.CompileFile(scssInputPath, outPath + baseFilename + ".css", outPath + baseFilename + ".css.map", debugOptions);
+                    CompilationResult css = SassCompiler.CompileFile(scssInputPath, outputPath, outputPath + ".map", debugOptions);
                     result = true;
                 }
 
                 else
                 {
-                    CompilationResult css = SassCompiler.CompileFile(scssInputPath, outPath + baseFilename + ".css", options: releaseOptions);
+                    CompilationResult css = SassCompiler.CompileFile(scssInputPath, outputPath, options: releaseOptions);
                     result = true;
                 }
             }
