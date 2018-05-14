@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<package >
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Argentini.Carbide</id>
     <version>$version$</version>
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>Fynydd LLC</owners>
-    <licenseUrl>https://fynydd.com/open-source-license/</licenseUrl>
+    <licenseUrl>https://fynydd.com/blog/open-source-license/</licenseUrl>
     <projectUrl>https://github.com/argentini/Carbide/</projectUrl>
-    <iconUrl>https://fynydd.com/images/carbide-icon.png</iconUrl>
+    <iconUrl>https://fynydd.com/images/carbide-icon.png?v3</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>Initial release.</releaseNotes>

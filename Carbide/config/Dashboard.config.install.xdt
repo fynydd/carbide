@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<dashBoard>
+<dashBoard xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
   <section alias="CarbideContentTools" xdt:Transform="Insert">
     <areas>
       <area>content</area>
     </areas>
     <tab caption="Carbide Content Tools">
-      <control>
-        /Carbide/DashControl.html
-      </control>
+      <control>/umbraco/api/carbidesupport/html/?file=DashControl</control>
     </tab>
   </section>
 </dashBoard>
