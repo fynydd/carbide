@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Carbide")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Carbide Tools for Umbraco")]
+[assembly: AssemblyDescription("A treasure trove of useful extension methods, helpers, and tools for Umbraco CMS.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Michael Argentini")]
 [assembly: AssemblyProduct("Carbide")]
-[assembly: AssemblyCopyright("Copyright ©  2018")]
+[assembly: AssemblyCopyright("Copyright © 2018, Michael Argentini")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

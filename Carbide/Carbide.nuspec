@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Argentini.Carbide</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>Fynydd LLC</owners>
+    <licenseUrl>https://fynydd.com/open-source-license/</licenseUrl>
+    <projectUrl>https://github.com/argentini/Carbide/</projectUrl>
+    <iconUrl>https://fynydd.com/images/carbide-icon.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>$copyright$</copyright>
+    <tags>umbraco carbide</tags>
+    <packageTypes>
+      <packageType name="Dependency" />
+    </packageTypes>
+    <dependencies>
+      <dependency id="UmbracoCms.Core" version="7.10.0" />
+      <dependency id="LibSassHost" version="1.1.9" />
+      <dependency id="LibSassHost.Native.win-x64" version="1.1.9" />
+      <dependency id="LibSassHost.Native.win-x86" version="1.1.9" />
+    </dependencies>    
+  </metadata>
+  <files>
+    <file src="../README.md" target="" />
+  </files>
+</package>

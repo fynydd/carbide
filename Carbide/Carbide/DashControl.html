@@ -1,0 +1,197 @@
+﻿<div style="padding-left: 10px; padding-right: 10px;">
+
+    <style type="text/css">
+
+        a[role="button"] {
+        
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            border: none;
+            box-shadow: none;
+            border-radius: 0.25rem;
+            background-color: #02bb1a;
+            color: white;
+            padding: 0.1rem 2rem;
+            line-height: 2.5;
+            padding-bottom: 0;
+        }
+
+        section[role="status"] {
+
+            background-color: #f5f5f5;
+            border: solid 1px #dcdcdc;
+            padding: 2rem 2rem;
+            border-radius: 0.35rem;
+            max-width: 35rem;
+            min-width: 175px;
+        }
+
+        section[role="status"] > h4 {
+
+            margin-top: 0;
+        }
+
+        div#output2 {
+
+            border-top: dashed 0.1rem #cdcdcd;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+        }
+
+    </style>
+
+    <h2>Fynydd Web Marketing Platform</h2>
+    <p style="padding-bottom: 50px;">Version 4.0 (build 18)</p>
+
+    <section role="status" id="CachePanel">
+        <h3>Rebuild Content and Examine Caches</h3>
+        <p style="margin-bottom: 20px;">
+            If you need to rebuild the caches due to development changes or corruption, <br />
+            you can run the rebuild tool. <strong>This does not affect your browser cache!</strong>
+        </p>
+        <p style="margin-bottom: 0;">
+            <a id="btnRebuild" role="button" onclick="startRebuild()" style="display: inline-block; text-align: center; vertical-align: middle; cursor: pointer; border: none; box-shadow: none; border-radius: 3px; background-color: #02bb1a; color: white; padding: 0.1rem 2rem; line-height: 2.5; padding-bottom: 0;">Rebuild Cache</a>
+        </p>
+        <div id="output2">
+
+        </div>
+    </section>
+
+        <script type="text/javascript">
+
+        // CACHE REBUILD
+        // ------------------------------------------------------
+
+        var statusTimer2;
+        var previous = "";
+        var lilSpinner = "&nbsp;<img src='/umbraco/api/carbidesupport/svg/?file=inline-busy-icon' style='display: inline-block; width: 0.85rem; position: relative; top: -0.1rem' />";
+
+        function hideButton() {
+
+            $("#btnRebuild").attr("style", "display: none;");
+
+            clearTimeout(statusTimer2);
+        }
+
+        function showButton() {
+
+            $("#btnRebuild").attr("style", "");
+
+            clearTimeout(statusTimer2);
+        }
+
+        function startRebuild() {
+
+            hideButton();
+
+            $.ajax({
+
+                type: "GET",
+                async: true,
+                url: "/umbraco/api/carbidesupport/rebuildcache/",
+
+                success: function (data) {
+
+                    getStatus2();
+                }
+            });
+        }
+
+        function getStatus2() {
+
+            $.ajax({
+
+                type: "GET",
+                async: true,
+                url: "/umbraco/api/carbidesupport/rebuildcachestatus/",
+
+                success: function (data) {
+
+                    if (data.match("^run")) {
+
+                        $.ajax({
+
+                            type: "GET",
+                            async: true,
+                            url: "/umbraco/api/carbidesupport/rebuildcachestatushistory/",
+
+                            success: function (data) {
+
+                                if (data != previous) {
+
+                                    previous = data;
+    
+                                    $("#output2").html(data + lilSpinner);
+                                }
+
+                                statusTimer2 = setTimeout(function () {
+
+                                    getStatus2();
+
+                                }, 500);
+                            }
+                        });
+
+                    } else {
+
+                        $.ajax({
+
+                            type: "GET",
+                            async: true,
+                            url: "/umbraco/api/carbidesupport/rebuildcachestatushistory/",
+
+                            success: function (data) {
+
+                                $("#output2").html(data);
+
+                                showButton();
+                            }
+                        });
+                    }
+                }
+            });
+        }
+
+        function loadPageState() {
+
+            $("#output2").html("Loading last status... " + lilSpinner);
+
+            showButton();
+
+            $.ajax({
+
+                type: "GET",
+                async: true,
+                url: "/umbraco/api/carbidesupport/rebuildcachestatus/",
+
+                success: function (data) {
+
+                    if (data.match("^ru")) {
+
+                        hideButton();
+
+                        getStatus2();
+
+                    } else {
+
+                        getStatus2();
+                    }
+                }
+            });
+        }
+
+        loadPageState();
+
+        $('a[data-toggle="tab"]').on('shown', function (e) {
+
+            if (e.target.innerHTML == "Carbide Content Tools") {
+
+                loadPageState();
+            }
+        });
+
+    </script>
+
+</div>

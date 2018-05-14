@@ -86,5 +86,14 @@
   <ItemGroup>
     <EmbeddedResource Include="Support\Images\inline-busy-icon.svg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Carbide.nuspec" />
+    <Content Include="config\Dashboard.config.install.xdt" />
+    <Content Include="config\Dashboard.config.uninstall.xdt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Carbide\DashControl.html" />
+    <None Include="nuget.exe" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

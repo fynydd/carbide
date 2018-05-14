@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dashBoard>
+  <section alias="CarbideContentTools" xdt:Transform="Remove">
+    <areas>
+      <area>content</area>
+    </areas>
+    <tab caption="Carbide Content Tools">
+      <control>
+        /Carbide/DashControl.html
+      </control>
+    </tab>
+  </section>
+</dashBoard>
