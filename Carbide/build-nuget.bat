@@ -1,1 +1,1 @@
-nuget pack Carbide.csproj Build -properties Configuration=Release -IncludeReferencedProjects
+nuget pack Carbide.csproj -Build -properties Configuration=Release -IncludeReferencedProjects
