@@ -50,10 +50,10 @@ Following are features to help with SEO and site indexing.
    ```
 
 ### Argentini.Carbide.StorageHelpers
-This is a static class with methods for reading and writing files to and from disk.
+This is a static class with methods for reading and writing files to and from disk, dynamically building SCSS, creating cache busters for web file links, and more.
 
 ### Argentini.Carbide.TemporalHelpers
-This is a static class with methods for formatting dates and times, and performing date calculations.
+This is a static class with methods for formatting dates and times, and performing date calculations. There is also a stopwatch class.
 
 ### Validators
 Additional MVC model and client-side validators for your forms. To use client-side validation, be sure to include the scripts:
