@@ -1,3 +1,5 @@
+<img src="https://fynydd.com/images/carbide-icon.png" width="100" />
+
 # Carbide
 
 Carbide is a set of classes that provide Umbraco developers with additional high-level functionality. This API requires no commercial third party components.
