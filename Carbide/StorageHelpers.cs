@@ -655,14 +655,22 @@ namespace Argentini.Carbide
         /// hash for use in cache busting web file assets, like CSS and JS files.
         /// </summary>
         /// <param name="filePath">Web-style file path</param>
+        /// <param name="fallback">Fallback value to use if the file cannot be identified</param>
         /// <returns>A unique, repeatable, URL-friendly hash</returns>
-        public static string MakeCacheBuster(string filePath)
+        public static string MakeCacheBuster(string filePath, string fallback = "")
         {
             var result = "";
 
             try
             {
-                FileInfo fileInfo = new FileInfo(StorageHelpers.MapPath(filePath));
+                var webFilePath = filePath;
+
+                if (webFilePath.Contains("?"))
+                {
+                    webFilePath = webFilePath.Substring(0, webFilePath.IndexOf('?'));
+                }
+
+                FileInfo fileInfo = new FileInfo(StorageHelpers.MapPath(webFilePath));
                 DateTime lastModified = fileInfo.LastWriteTime;
                 var size = fileInfo.Length;
                 
@@ -675,7 +683,10 @@ namespace Argentini.Carbide
                     + lastModified.Second.ToString("D2");
             }
 
-            catch { }
+            catch { 
+                
+                result = fallback;
+            }
 
             return result;
         }

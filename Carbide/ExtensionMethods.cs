@@ -1179,20 +1179,17 @@ namespace Argentini.Carbide
             return result;
         }
 
-        public static string Content(this UrlHelper url, string contentPath, bool addCacheBuster = false)
+        public static string Content(this UrlHelper url, string contentPath, bool addCacheBuster = false, string fallback = "")
         {
-            var result = url.Content(contentPath);
+            var queryString = "";
 
             if (addCacheBuster)
             {
-                var queryString = StorageHelpers.MakeCacheBuster(result);
-
-                result += (result.Contains("?") ? "&" : "?") + "_cachebuster=" + StorageHelpers.MakeCacheBuster(result);
+                queryString = (contentPath.Contains("?") ? "&" : "?") + "_cachebuster=" + StorageHelpers.MakeCacheBuster(contentPath, fallback);
             }
 
-            return result;
+            return url.Content(contentPath + queryString);
         }
-
 
         #endregion
     }
