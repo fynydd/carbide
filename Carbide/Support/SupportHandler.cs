@@ -20,6 +20,8 @@ namespace Argentini.Carbide
 {
     public class CarbideSupportController : UmbracoApiController
     {
+        public static string Version { get { return "2018-05-14"; } }
+
         [HttpGet]
         public HttpResponseMessage Html(string file) // /umbraco/api/carbidesupport/html/?file=DashControl
         {
@@ -72,7 +74,7 @@ namespace Argentini.Carbide
             }
 
             var response = new HttpResponseMessage(HttpStatusCode.OK);
-            response.Content = new StringContent(result, Encoding.UTF8, "text/plain");
+            response.Content = new StringContent(result, Encoding.UTF8, "application/javascript");
             return response;
         }
 
