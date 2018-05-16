@@ -9,6 +9,8 @@ Carbide is a set of classes that provide Umbraco developers with additional high
 ## Requirements
 Currently, Carbide is built on .NET CLR 4.6.1, and references UmbracoCMS.Core 7.10.1. Depending on your use case, you could keep it at this version even with a newer UmbracoCMS verson, provided there are no real incompatibilities with Core. Ideally, you want to keep the versions in lock-step. So any Carbide solutions should be updated frequently, which is generally a good practice from a security standpoint.
 
+**NOTE: Turn on 64-bit IIS Express** in Visual Studio, or you won't be able to debug unless you set all projects to x86. This is due to *SharpScss* detecting which binary is being used based on compilation flags. It will default to x64 for "Any CPU" configurations. This shouldn't affect deployments to IIS, provided the app pool for the site isn't set to use 32-bit mode.
+
 ## Usage
 Simply include the git repo as a submodule in your Umbraco solution, and add a project reference to it in any other projects. You can also place the project into your solution, but you'll lose the benefit of a single source for Carbide updates.
 
