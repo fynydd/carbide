@@ -132,6 +132,105 @@ namespace Fynydd.Carbide
 
 						context.Application["RebuildCacheHistory"] += "<ol style=\"padding: 0.25rem 0 0 1rem;\">";
 
+                        context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Republishing all content... ";
+                        timer2.Reset();
+                        timer2.Start();
+                        Services.ContentService.RePublishAll();
+                        timer2.Stop();
+                        context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetTime() + " seconds</strong></li>";
+
+						context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Refreshing XML cache... ";
+                        timer2.Reset();
+                        timer2.Start();
+                        umbraco.library.RefreshContent();
+                        timer2.Stop();
+                        context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetTime() + " seconds</strong></li>";
+
+                        context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Rebuilding Examine indexes... ";
+                        timer2.Reset();
+                        timer2.Start();
+
+                        foreach (var index in ExamineManager.Instance.IndexProviderCollection.ToList())
+                        {
+                            context.Application["RebuildCacheHistory"] += index.Name.Replace("Indexer", "") + "... ";
+                            index.RebuildIndex();
+                        }
+
+                        timer2.Stop();
+                        context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetTime() + " seconds</strong></li>";
+
+
+                        
+                        
+                        timer.Stop();
+
+                        context.Application.SafeRemove("RebuildCacheStatus");
+
+                        context.Application["RebuildCacheHistory"] += "</ol>";
+
+						context.Application["RebuildCacheHistory"] += "<h4 style=\"font-size: 1.1rem;\">Finished in " + timer.GetTime() + " seconds</h4>";
+                    }
+
+                    catch (Exception e)
+                    {
+                        timer.Stop();
+                        timer2.Stop();
+
+                        context.Application.SafeRemove("RebuildCacheStatus");
+
+                        context.Application["RebuildCacheHistory"] = "</li></ol><p><strong>Error in " + timer.GetTime() + " seconds on " + TemporalHelpers.DateFormat(DateTime.Now, TemporalHelpers.DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TemporalHelpers.TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
+
+                        result = context.Application["RebuildCacheHistory"].ToString();
+                    }
+                }))
+                {
+                    IsBackground = true
+                };
+                workerThread.Start();
+
+                while (HttpContext.Current.Application["RebuildCacheStatus"] == null)
+                {
+                    // Wait for worker thread to start up and initialize
+                    System.Threading.Thread.Sleep(50);
+                }
+            }
+
+            else
+            {
+                result = HttpContext.Current.Application["RebuildCacheHistory"].ToString();
+            }
+
+            var response = new HttpResponseMessage(HttpStatusCode.OK);
+            response.Content = new StringContent(result, Encoding.UTF8, "text/plain");
+            return response;
+        }
+
+        [HttpGet]
+        public HttpResponseMessage RebuildImageCache() // /umbraco/api/carbidesupport/rebuildimagecache/
+        {
+            string result = "";
+
+            if (HttpContext.Current.Application["RebuildCacheStatus"] == null)
+            {
+                var context = HttpContext.Current;
+
+                context.Application["RebuildCacheStatus"] = "running";
+                context.Application["RebuildCacheHistory"] = "<h4 style=\"font-size: 1.1rem; margin-bottom: 1.5rem;\">Started " + TemporalHelpers.DateFormat(DateTime.Now, TemporalHelpers.DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TemporalHelpers.TimeFormats.SqlMilitary) + "</h4>";
+
+                result = context.Application["RebuildCacheHistory"].ToString();
+
+                Thread workerThread = new Thread(new ThreadStart(() =>
+                {
+                    StopWatch timer = new StopWatch();
+                    StopWatch timer2 = new StopWatch();
+
+                    try
+                    {
+                        timer.Start();
+                        context.Server.ScriptTimeout = 100000;
+
+                        context.Application["RebuildCacheHistory"] += "<ol style=\"padding: 0.25rem 0 0 1rem;\">";
+
                         context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Clearing cached images... ";
                         timer2.Start();
 
@@ -178,43 +277,13 @@ namespace Fynydd.Carbide
                         timer2.Stop();
                         context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetTime() + " seconds</strong></li>";
 
-                        context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Republishing all content... ";
-                        timer2.Reset();
-                        timer2.Start();
-                        Services.ContentService.RePublishAll();
-                        timer2.Stop();
-                        context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetTime() + " seconds</strong></li>";
-
-						context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Refreshing XML cache... ";
-                        timer2.Reset();
-                        timer2.Start();
-                        umbraco.library.RefreshContent();
-                        timer2.Stop();
-                        context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetTime() + " seconds</strong></li>";
-
-                        context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Rebuilding Examine indexes... ";
-                        timer2.Reset();
-                        timer2.Start();
-
-                        foreach (var index in ExamineManager.Instance.IndexProviderCollection.ToList())
-                        {
-                            context.Application["RebuildCacheHistory"] += index.Name.Replace("Indexer", "") + "... ";
-                            index.RebuildIndex();
-                        }
-
-                        timer2.Stop();
-                        context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetTime() + " seconds</strong></li>";
-
-
-                        
-                        
                         timer.Stop();
 
                         context.Application.SafeRemove("RebuildCacheStatus");
 
                         context.Application["RebuildCacheHistory"] += "</ol>";
 
-						context.Application["RebuildCacheHistory"] += "<h4 style=\"font-size: 1.1rem;\">Finished in " + timer.GetTime() + " seconds</h4>";
+                        context.Application["RebuildCacheHistory"] += "<h4 style=\"font-size: 1.1rem;\">Finished in " + timer.GetTime() + " seconds</h4>";
                     }
 
                     catch (Exception e)

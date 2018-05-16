@@ -48,8 +48,10 @@
             If you need to rebuild the caches due to development changes or corruption, <br />
             you can run the rebuild tool. <strong>This does not affect your browser cache!</strong>
         </p>
-        <p style="margin-bottom: 0;">
-            <a id="btnRebuild" role="button" onclick="startRebuild()" style="display: inline-block; text-align: center; vertical-align: middle; cursor: pointer; border: none; box-shadow: none; border-radius: 3px; background-color: #02bb1a; color: white; padding: 0.1rem 2rem; line-height: 2.5; padding-bottom: 0;">Rebuild Cache</a>
+        <p style="margin-bottom: 0;" id="buttons">
+            <a role="button" onclick="startRebuild()" style="display: inline-block; text-align: center; vertical-align: middle; cursor: pointer; border: none; box-shadow: none; border-radius: 3px; background-color: #02bb1a; color: white; padding: 0.1rem 2rem; line-height: 2.5; padding-bottom: 0;">Rebuild Content Cache</a>
+            &nbsp;
+            <a role="button" onclick="startRebuildImages()" style="display: inline-block; text-align: center; vertical-align: middle; cursor: pointer; border: none; box-shadow: none; border-radius: 3px; background-color: #02bb1a; color: white; padding: 0.1rem 2rem; line-height: 2.5; padding-bottom: 0;">Rebuild Image Cache</a>
         </p>
         <div id="output2">
 
@@ -67,14 +69,14 @@
 
         function hideButton() {
 
-            $("#btnRebuild").attr("style", "display: none;");
+            $("#buttons").attr("style", "display: none;");
 
             clearTimeout(statusTimer2);
         }
 
         function showButton() {
 
-            $("#btnRebuild").attr("style", "");
+            $("#buttons").attr("style", "margin-bottom: 0;");
 
             clearTimeout(statusTimer2);
         }
@@ -88,6 +90,23 @@
                 type: "GET",
                 async: true,
                 url: "/umbraco/api/carbidesupport/rebuildcache/",
+
+                success: function (data) {
+
+                    getStatus2();
+                }
+            });
+        }
+
+        function startRebuildImages() {
+
+            hideButton();
+
+            $.ajax({
+
+                type: "GET",
+                async: true,
+                url: "/umbraco/api/carbidesupport/rebuildimagecache/",
 
                 success: function (data) {
 
