@@ -16,7 +16,7 @@ using System.Web.Http;
 using Umbraco.Web;
 using Umbraco.Web.WebApi;
 
-namespace Argentini.Carbide
+namespace Fynydd.Carbide
 {
     public class CarbideSupportController : UmbracoApiController
     {

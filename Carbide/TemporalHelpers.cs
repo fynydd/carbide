@@ -28,7 +28,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Xml;
 
-namespace Argentini.Carbide
+namespace Fynydd.Carbide
 {
     /// <summary>
     /// The TemporalHelpers class contains methods and properties for manipulating, 
@@ -311,7 +311,7 @@ namespace Argentini.Carbide
         /// For example, if using "Days" for comparison, startDate = "1/1/2008", and endDate = "1/7/2008",
         /// the return value is 6. Likewise, reversing the dates yields -6.
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// double result = TemporalHelpers.DateDiff(
         ///		TemporalHelpers.DateDiffComparisonType.days,
@@ -334,7 +334,7 @@ namespace Argentini.Carbide
         /// For example, if using "age" for comparison, startDate = "2000-02-29 00:00:00.000", and endDate = "2010-2-28 23:30:00:00.000",
         /// and the startDate timezone is CST the return value is 9.
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// double result = TemporalHelpers.DateDiff(
         ///		TemporalHelpers.DateDiffComparisonType.days,
@@ -445,7 +445,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// string result = TemporalHelpers.DateFormat(
         ///		theDate,
@@ -703,7 +703,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// string result = TemporalHelpers.DateFormat(
         ///		theDate,
@@ -739,7 +739,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// if (TemporalHelpers.IsDate(value))...
         /// </code>
@@ -825,7 +825,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// string result = TemporalHelpers.TimeFormat(
         ///		theTime,
@@ -868,7 +868,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// string result = TemporalHelpers.TimeFormat(
         ///		theTime,
@@ -890,7 +890,7 @@ namespace Argentini.Carbide
         /// If you pass the current date, and wish to know the first
         /// and last days of the week based on the current day:
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// DateRangeStruct result = TemporalHelpers.DateRange(
         ///		TemporalHelpers.DateRangeOptions.Week,
@@ -964,7 +964,7 @@ namespace Argentini.Carbide
         /// If you pass the current date, and wish to know the first
         /// and last days of the week based on the current day:
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// DateRangeStruct result = TemporalHelpers.DateRange(
         ///		TemporalHelpers.DateRangeOptions.Week,
@@ -1026,7 +1026,7 @@ namespace Argentini.Carbide
         /// <example>
         /// In the example below, the variable "result" would be "June 8 through 14".
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         ///	DateTime date = Convert.ToDateTime("6/10/2009");
         /// Int32[] range = TemporalHelpers.GetWeekRange(date);
@@ -1130,7 +1130,7 @@ namespace Argentini.Carbide
     /// Sample usage:
     /// <code>
     /// <![CDATA[
-    /// using Argentini.Carbide;
+    /// using Fynydd.Carbide;
     /// ...
     /// StopWatch sw = new StopWatch();
     /// sw.Start();
@@ -1205,7 +1205,7 @@ namespace Argentini.Carbide
         /// Sample usage:
         /// <code>
         /// <![CDATA[
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// StopWatch sw = new StopWatch();
         /// sw.Start();
@@ -1235,7 +1235,7 @@ namespace Argentini.Carbide
         /// Sample usage:
         /// <code>
         /// <![CDATA[
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// StopWatch sw = new StopWatch();
         /// sw.Start();
@@ -1264,7 +1264,7 @@ namespace Argentini.Carbide
         /// Sample usage:
         /// <code>
         /// <![CDATA[
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// StopWatch sw = new StopWatch();
         /// sw.Start();
@@ -1293,7 +1293,7 @@ namespace Argentini.Carbide
         /// Sample usage:
         /// <code>
         /// <![CDATA[
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// StopWatch sw = new StopWatch();
         /// sw.Start();
@@ -1323,7 +1323,7 @@ namespace Argentini.Carbide
         /// Sample usage:
         /// <code>
         /// <![CDATA[
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// StopWatch sw = new StopWatch();
         /// sw.Start();

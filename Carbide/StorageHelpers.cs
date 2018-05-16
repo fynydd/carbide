@@ -8,7 +8,7 @@ using System.Web;
 
 using SharpScss;
 
-namespace Argentini.Carbide
+namespace Fynydd.Carbide
 {
     /// <summary>
     /// The StorageHelpers class contains methods and properties for performing or evaluating disk and file operations.
@@ -67,7 +67,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// string result = StorageHelpers.DeleteDirectory("/temp/uploads");
         /// </code>
@@ -120,7 +120,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// string fileContents = StorageHelpers.ReadFile("/content/file.txt");
         /// </code>
@@ -154,7 +154,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// string result = StorageHelpers.WriteFile("/documents/file.txt", contentString);
         /// </code>
@@ -190,7 +190,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// ArrayList filenames = StorageHelpers.GetFiles("/pdf", "*.pdf|*.pdfx", Carbide.StorageHelpers.PathOptions.Path);
         /// </code>
@@ -250,7 +250,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-		/// using Argentini.Carbide;
+		/// using Fynydd.Carbide;
 		/// ...
 		/// string[] folderNames = StorageHelpers.GetFolders("/pdf/");
         /// </code>
@@ -274,7 +274,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// ArrayList filenames = StorageHelpers.GetFiles("/pdf", "*.pdf|*.pdfx");
         /// </code>
@@ -293,7 +293,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// string realPath = StorageHelpers.MapPath("/pdf/document.pdf");
         /// </code>
@@ -345,7 +345,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// bool result = StorageHelpers.FileExists("/pdf/document.pdf");
         /// </code>
@@ -362,7 +362,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// Long fileSize = StorageHelpers.GetFileSize("/pdf/document.pdf");
         /// </code>
@@ -387,7 +387,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// bool result = StorageHelpers.DirectoryExists("/pdf/");
         /// </code>
@@ -404,7 +404,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// bool result = StorageHelpers.CreateDirectory("/pdf");
         /// </code>
@@ -430,7 +430,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// int deletedFilesCount = StorageHelpers.DeleteFiles("/pdf/", "*.tmp|*.chk", Carbide.StorageHelpers.PathOptions.Path, DateTime.Now);
         /// </code>
@@ -501,7 +501,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// int deletedFilesCount = StorageHelpers.DeleteFiles("/pdf/", "*.tmp|*.chk", true);
         /// </code>
@@ -528,7 +528,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// int deletedFilesCount = StorageHelpers.DeleteFiles("/pdf/", "*.tmp|*.chk");
         /// </code>
@@ -546,7 +546,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// int deletedFilesCount = StorageHelpers.DeleteFiles("/pdf/document.pdf");
         /// </code>
@@ -563,7 +563,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// string filename = StorageHelpers.MakeUniqueFilename("jpg");
         /// </code>
@@ -586,7 +586,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// string fileExt = StorageHelpers.GetFileExtension(filename);
         /// </code>
@@ -612,7 +612,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// string filename = StorageHelpers.GetFilename(filepath);
         /// </code>

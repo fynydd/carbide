@@ -6,7 +6,7 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Argentini.Carbide
+namespace Fynydd.Carbide
 {
     /// <summary>
     /// These classes provide additional form validators to your models and the client (javascript).

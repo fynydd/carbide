@@ -15,7 +15,7 @@ using Umbraco.Core.Media;
 using Umbraco.Core.Services;
 using Umbraco.Web;
 
-namespace Argentini.Carbide
+namespace Fynydd.Carbide
 {
     /// <summary>
     /// The ExtensionMethods class provides useful methods and properties to 

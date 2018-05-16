@@ -13,7 +13,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Argentini.Carbide
+namespace Fynydd.Carbide
 {
     /// <summary>
     /// The Carbide Mailer class provides a set of methods for sending and manipulating email.
@@ -89,7 +89,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// ArrayList AttachMe = new ArrayList();
         /// AttachMe.Add("/ftp/file1.pdf");
@@ -217,7 +217,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// ArrayList AttachMe = new ArrayList();
         /// AttachMe.Add("/ftp/file1.pdf");
@@ -251,7 +251,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// string result = Mailer.Send(
         ///		"from@domain.com",
@@ -278,7 +278,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// string result = Mailer.Send(
         ///		"from@domain.com",
@@ -307,7 +307,7 @@ namespace Argentini.Carbide
         /// </summary>
         /// <example>
         /// <code>
-        /// using Argentini.Carbide;
+        /// using Fynydd.Carbide;
         /// ...
         /// string result = Mailer.Send(
         ///		"from@domain.com",

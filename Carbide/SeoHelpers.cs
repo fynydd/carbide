@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Argentini.Carbide
+namespace Fynydd.Carbide
 {
     /// <summary>
     /// Replaces {HTTP_HOST} in your robots.txt file with your current domain and serve dynamically.
@@ -15,7 +15,7 @@ namespace Argentini.Carbide
     /// <![CDATA[
     /// <system.webServer>
     ///     <handlers>
-    ///         <add name="RobotsTxt" path="/robots.txt" verb="*" type="Argentini.Carbide.RobotsTxt" resourceType="Unspecified" preCondition="integratedMode" />
+    ///         <add name="RobotsTxt" path="/robots.txt" verb="*" type="Fynydd.Carbide.RobotsTxt" resourceType="Unspecified" preCondition="integratedMode" />
     /// ]]>
     /// </summary>
     public class RobotsTxt : IHttpHandler

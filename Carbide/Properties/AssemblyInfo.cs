@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Carbide Tools for Umbraco")]
 [assembly: AssemblyDescription("A treasure trove of useful extension methods, helpers, and tools for Umbraco CMS.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Michael Argentini")]
+[assembly: AssemblyCompany("Fynydd LLC")]
 [assembly: AssemblyProduct("Carbide")]
-[assembly: AssemblyCopyright("Copyright © 2018, Michael Argentini")]
+[assembly: AssemblyCopyright("Copyright © 2018, Fynydd LLC")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

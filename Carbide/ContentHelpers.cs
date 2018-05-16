@@ -12,7 +12,7 @@ using Umbraco.Core.Media;
 using Umbraco.Core.Services;
 using Umbraco.Web;
 
-namespace Argentini.Carbide
+namespace Fynydd.Carbide
 {
     /// <summary>
     /// The ContentHelpers class has static methods and properties for 

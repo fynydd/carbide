@@ -5,14 +5,14 @@ using System.IO;
 using System.Text;
 using System.Web;
 
-namespace Argentini.Carbide
+namespace Fynydd.Carbide
 {
     /// <summary>
     /// Simple class for performing HTTP REST requests.
     /// </summary>
     /// <example>
     /// <code>
-    /// using Argentini.Carbide;
+    /// using Fynydd.Carbide;
     /// ...
     /// RestHelper request = new RestHelper();
     /// request.Url="http://seeker.dice.com/jobsearch/servlet/JobSearch";
