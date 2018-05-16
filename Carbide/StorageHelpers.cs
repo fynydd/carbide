@@ -6,8 +6,7 @@ using System.Management;
 using System.Text.RegularExpressions;
 using System.Web;
 
-using LibSassHost;
-using LibSassHost.Helpers;
+using SharpScss;
 
 namespace Argentini.Carbide
 {
@@ -803,43 +802,58 @@ namespace Argentini.Carbide
 
             if (process == true)
             {
-                var debugOptions = new CompilationOptions { LineFeedType = LineFeedType.Lf, OutputStyle = OutputStyle.Expanded, SourceComments = true, SourceMap = true };
-                var releaseOptions = new CompilationOptions { LineFeedType = LineFeedType.Lf, OutputStyle = OutputStyle.Compressed, SourceComments = false, SourceMap = false };
+                var debugOptions = new ScssOptions {
+
+                    OutputStyle = ScssOutputStyle.Expanded,
+                    SourceComments = true,
+                    GenerateSourceMap = true,
+                    OutputFile = MapPath(outputPath)
+                };
+
+                var releaseOptions = new ScssOptions {
+
+                    OutputStyle = ScssOutputStyle.Compressed,
+                    SourceComments = false,
+                    GenerateSourceMap = false,
+                    OutputFile = MapPath(outputPath)
+                };
 
                 try
                 {
-                    CompilationResult css;
+                    ScssResult css;
 
                     if (debugMode)
                     {
-                        css = SassCompiler.CompileFile(MapPath(scssInputPath), MapPath(outputPath), MapPath(outputPath + ".map"), debugOptions);
+                        css = Scss.ConvertFileToCss(MapPath(scssInputPath), debugOptions);
 
                         DeleteFiles(outputPath);
                         DeleteFiles(outputPath + ".map");
                         Debug.WriteLine("Deleted " + outputPath + " and " + outputPath + ".map");
 
-                        WriteFile(outputPath, css.CompiledContent);
+                        WriteFile(outputPath, css.Css);
                         WriteFile(outputPath + ".map", css.SourceMap);
                         Debug.WriteLine("Generated " + outputPath + " and " + outputPath + ".map");
+
                     }
 
                     else
                     {
-                        css = SassCompiler.CompileFile(MapPath(scssInputPath), MapPath(outputPath), options: releaseOptions);
+                        css = Scss.ConvertFileToCss(MapPath(scssInputPath), releaseOptions);
 
                         DeleteFiles(outputPath);
                         DeleteFiles(outputPath + ".map");
-                        Debug.WriteLine("Deleted " + outputPath + " and " + outputPath + ".map (cleanup)");
+                        Debug.WriteLine("Deleted " + outputPath + " and " + outputPath + ".map");
 
-                        WriteFile(outputPath, css.CompiledContent);
-                        Debug.WriteLine("Generated " + outputPath);
+                        WriteFile(outputPath, css.Css);
+                        WriteFile(outputPath + ".map", css.SourceMap);
+                        Debug.WriteLine("Generated " + outputPath + " and " + outputPath + ".map");
                     }
 
-                    if (css.IncludedFilePaths.Count > 0)
+                    if (css.IncludedFiles.Count > 0)
                     {
                         ArrayList fileList = new ArrayList();
 
-                        foreach(var file in css.IncludedFilePaths)
+                        foreach(var file in css.IncludedFiles)
                         {
                             FileInfo fileInfo = new FileInfo(MapPath(file));
                             DateTime lastModified = fileInfo.LastWriteTime;
@@ -861,9 +875,9 @@ namespace Argentini.Carbide
                     }
                 }
 
-                catch (SassСompilationException e)
+                catch (ScssException e)
                 {
-                    Debug.WriteLine("LibSass error: " + SassErrorHelpers.Format(e));
+                    Debug.WriteLine("LibSass error: " + e.Message);
                     Debug.WriteLine("");
                 }
             }
