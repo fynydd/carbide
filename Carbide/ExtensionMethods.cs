@@ -327,6 +327,9 @@ namespace Fynydd.Carbide
                                             prefix += "<" + tag + " data=\"";
                                             suffix = "\"></object>" + suffix;
                                             break;
+                                        case "svg":
+                                            mediaItemUrl = contentNode.RenderSvg(propertyName);
+                                            break;
                                         default:
                                             prefix += "<" + tag + " src=\"";
                                             suffix = "\" />" + suffix;
@@ -936,6 +939,66 @@ namespace Fynydd.Carbide
 				return "";
 			}
 		}
+
+        /// <summary>
+        /// Read an SVG file from disk and return the XML markup. If a monochrome SVG is being read,
+        /// it can be recolored as well.
+        /// </summary>
+		/// <param name="contentNode">The current content node as an IPublishedContent object</param>
+        /// <param name="propertyName">Name of the media picker property.</param>
+        /// <param name="oldColorHexCode">HTML hex color code to replace (e.g. "#000000")</param>
+        /// <param name="recolorWithHexCode">New HTML hex color code to use (e.g. "#ffffff")</param>
+        /// <returns>SVG markup</returns>
+        public static string RenderSvg(this IPublishedContent content, string propertyName, string oldColorHexCode = "", string recolorWithHexCode = "")
+        {
+            var svg = "";
+
+            if (content.SafeGetMediaPickerItemUrl(propertyName).EndsWith(".svg"))
+            {
+                svg = StorageHelpers.ReadFile(content.SafeGetMediaPickerItemUrl(propertyName));
+
+                #region Clean up file
+
+                svg = Regex.Replace(svg, "<!--.*?-->", String.Empty, RegexOptions.Singleline);
+                svg = Regex.Replace(svg, "<style.*?</style>", String.Empty, RegexOptions.Singleline);
+
+                #endregion
+
+                if (oldColorHexCode != "" && !oldColorHexCode.StartsWith("#"))
+                {
+                    oldColorHexCode = "#" + oldColorHexCode;
+                }
+
+                if (recolorWithHexCode != "" && !recolorWithHexCode.StartsWith("#"))
+                {
+                    recolorWithHexCode = "#" + recolorWithHexCode;
+                }
+
+                if (oldColorHexCode != "" && recolorWithHexCode != "")
+                {
+                    svg = svg.Replace(oldColorHexCode.ToLower(), recolorWithHexCode).Replace(oldColorHexCode.ToUpper(), recolorWithHexCode).Replace("<svg ", "<svg style=\"fill: " + recolorWithHexCode + ";\" ");
+                }
+
+                else if (recolorWithHexCode != "")
+                {
+                    svg = svg.Replace("<svg ", "<svg style=\"fill: " + recolorWithHexCode + ";\" ");
+                }
+            }
+
+            return svg;
+        }
+
+        /// <summary>
+        /// Read a black SVG file from disk and return the XML markup for it recolored.
+        /// </summary>
+		/// <param name="contentNode">The current content node as an IPublishedContent object</param>
+        /// <param name="propertyName">Name of the media picker property.</param>
+        /// <param name="color">HTML hex color code to use in place of black (e.g. "#ffffff")</param>
+        /// <returns></returns>
+        public static string RenderMonochromeSvg(this IPublishedContent content, string propertyName, string color)
+        {
+            return RenderSvg(content, propertyName, "#000000", color);
+        }
 
         #endregion
 
