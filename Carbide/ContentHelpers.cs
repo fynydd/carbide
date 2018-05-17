@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 using Umbraco.Core;
@@ -258,6 +259,48 @@ namespace Fynydd.Carbide
             width = Math.Round(width, 4);
 
             return width;
+        }
+
+        /// <summary>
+        /// Performs a find/replace on a color hex code within SVG markup.
+        /// </summary>
+        /// <param name="svg">SVG markup to recolor</param>
+        /// <param name="oldColorHexCode">Old color hex code</param>
+        /// <param name="newColorHexCode">New color hex code</param>
+        /// <returns>Recolored SVG markup</returns>
+        public static string RecolorSvg(string svg, string oldColorHexCode = "", string newColorHexCode = "")
+        {
+            var result = svg;
+
+            oldColorHexCode = oldColorHexCode.FixHexColor();
+            newColorHexCode = newColorHexCode.FixHexColor();
+
+            if (oldColorHexCode != "" && newColorHexCode != "")
+            {
+                result = result.Replace(oldColorHexCode.ToLower(), newColorHexCode).Replace(oldColorHexCode.ToUpper(), newColorHexCode).Replace("<svg ", "<svg style=\"fill: " + newColorHexCode + ";\" ");
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Remove comments and style attributes from SVG markup.
+        /// </summary>
+        /// <param name="svg">SVG markup to clean.</param>
+        /// <param name="removeStyles">If true, CSS style blocks are also removed.</param>
+        /// <returns>Cleaned SVG markup.</returns>
+        public static string CleanSvg(string svg, bool removeStyles = true)
+        {
+            var result = svg;
+
+            result = Regex.Replace(result, "<!--.*?-->", String.Empty, RegexOptions.Singleline);
+
+            if (removeStyles)
+            {
+                result = Regex.Replace(result, "<style.*?</style>", String.Empty, RegexOptions.Singleline);
+            }
+
+            return result;
         }
 
         #endregion

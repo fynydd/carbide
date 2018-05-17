@@ -947,9 +947,9 @@ namespace Fynydd.Carbide
 		/// <param name="contentNode">The current content node as an IPublishedContent object</param>
         /// <param name="propertyName">Name of the media picker property.</param>
         /// <param name="oldColorHexCode">HTML hex color code to replace (e.g. "#000000")</param>
-        /// <param name="recolorWithHexCode">New HTML hex color code to use (e.g. "#ffffff")</param>
+        /// <param name="newColorHexCode">New HTML hex color code to use (e.g. "#ffffff")</param>
         /// <returns>SVG markup</returns>
-        public static string RenderSvg(this IPublishedContent content, string propertyName, string oldColorHexCode = "", string recolorWithHexCode = "")
+        public static string RenderSvg(this IPublishedContent content, string propertyName, string oldColorHexCode = "", string newColorHexCode = "")
         {
             var svg = "";
 
@@ -957,31 +957,22 @@ namespace Fynydd.Carbide
             {
                 svg = StorageHelpers.ReadFile(content.SafeGetMediaPickerItemUrl(propertyName));
 
-                #region Clean up file
-
-                svg = Regex.Replace(svg, "<!--.*?-->", String.Empty, RegexOptions.Singleline);
-                svg = Regex.Replace(svg, "<style.*?</style>", String.Empty, RegexOptions.Singleline);
-
-                #endregion
-
-                if (oldColorHexCode != "" && !oldColorHexCode.StartsWith("#"))
+                if (svg.Length > 0)
                 {
-                    oldColorHexCode = "#" + oldColorHexCode;
-                }
+                    if (svg.Contains("<svg "))
+                    {
+                        if (oldColorHexCode != "" && newColorHexCode != "")
+                        {
+                            svg = ContentHelpers.CleanSvg(svg, true);
+                            svg = ContentHelpers.RecolorSvg(svg, oldColorHexCode, newColorHexCode);
+                            svg = svg.Replace("<svg ", "<svg style=\"fill: " + newColorHexCode + ";\" ");
+                        }
 
-                if (recolorWithHexCode != "" && !recolorWithHexCode.StartsWith("#"))
-                {
-                    recolorWithHexCode = "#" + recolorWithHexCode;
-                }
-
-                if (oldColorHexCode != "" && recolorWithHexCode != "")
-                {
-                    svg = svg.Replace(oldColorHexCode.ToLower(), recolorWithHexCode).Replace(oldColorHexCode.ToUpper(), recolorWithHexCode).Replace("<svg ", "<svg style=\"fill: " + recolorWithHexCode + ";\" ");
-                }
-
-                else if (recolorWithHexCode != "")
-                {
-                    svg = svg.Replace("<svg ", "<svg style=\"fill: " + recolorWithHexCode + ";\" ");
+                        else
+                        {
+                            svg = ContentHelpers.CleanSvg(svg, false);
+                        }
+                    }
                 }
             }
 
@@ -989,15 +980,37 @@ namespace Fynydd.Carbide
         }
 
         /// <summary>
-        /// Read a black SVG file from disk and return the XML markup for it recolored.
+        /// Read a monochrome SVG file from disk and return the XML markup for it recolored.
         /// </summary>
 		/// <param name="contentNode">The current content node as an IPublishedContent object</param>
         /// <param name="propertyName">Name of the media picker property.</param>
         /// <param name="color">HTML hex color code to use in place of black (e.g. "#ffffff")</param>
         /// <returns></returns>
-        public static string RenderMonochromeSvg(this IPublishedContent content, string propertyName, string color)
+        public static string RenderMonochromeSvg(this IPublishedContent content, string propertyName, string color = "")
         {
-            return RenderSvg(content, propertyName, "#000000", color);
+            var svg = "";
+            var colorHexCode = color.FixHexColor();
+
+            if (content.SafeGetMediaPickerItemUrl(propertyName).EndsWith(".svg"))
+            {
+                svg = StorageHelpers.ReadFile(content.SafeGetMediaPickerItemUrl(propertyName));
+
+                if (svg.Length > 0)
+                {
+                    if (svg.Contains("<svg "))
+                    {
+                        svg = ContentHelpers.CleanSvg(svg, true);
+
+                        if (colorHexCode != "")
+                        {
+                            svg = Regex.Replace(svg, "#[0-9a-fA-F]{6,8}", colorHexCode, RegexOptions.Singleline);
+                            svg = svg.Replace("<svg ", "<svg style=\"fill: " + colorHexCode + ";\" ");
+                        }
+                    }
+                }
+            }
+
+            return svg;
         }
 
         #endregion
@@ -1252,6 +1265,23 @@ namespace Fynydd.Carbide
             }
 
             return url.Content(contentPath + queryString);
+        }
+
+        /// <summary>
+        /// Ensure that a hex color starts with #.
+        /// </summary>
+        /// <param name="color">Hex color string to fix</param>
+        /// <returns>Color hex code with leading #</returns>
+        public static string FixHexColor(this string color)
+        {
+            var result = color;
+
+            if (result != "" && !result.StartsWith("#"))
+            {
+                result = "#" + result;
+            }
+
+            return result;
         }
 
         #endregion
