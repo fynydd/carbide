@@ -292,12 +292,58 @@ namespace Fynydd.Carbide
         public static string CleanSvg(string svg, bool removeStyles = true)
         {
             var result = svg;
+            var svgId = "SVG" + StorageHelpers.MakeUniqueFilename("").TrimEnd(".");
 
+            // Remove comments
             result = Regex.Replace(result, "<!--.*?-->", String.Empty, RegexOptions.Singleline);
 
+            // Assign a unique id to prevent in-page conflicts
+            MatchCollection matches = Regex.Matches(result, @"<svg[^>]* id=['\""](.*?)['\""][^>]*>", RegexOptions.Singleline);
+
+            if (matches.Count > 0)
+            {
+                foreach (Match match in matches)
+                {
+                    foreach (Group group in match.Groups)
+                    {
+                        if (!group.Value.StartsWith("<svg"))
+                        {
+                            result = result.Replace("id=\"" + group.Value, "id=\"" + svgId);
+                            result = result.Replace("id='" + group.Value, "id='" + svgId);
+                        }
+                    }
+                }
+            }
+
+            else
+            {
+                result = result.Replace("<svg ", "<svg id=\"" + svgId + "\" ");
+            }
+
+            // Remove styles?
             if (removeStyles)
             {
                 result = Regex.Replace(result, "<style.*?</style>", String.Empty, RegexOptions.Singleline);
+            }
+
+            // Fix embedded styles to class names are scoped locally
+            else
+            {
+                if (result.Contains("<style"))
+                {
+                    matches = Regex.Matches(result, @"\s*>*}*(\.[\w\d-]*)\s*{.*?", RegexOptions.Singleline);
+                    
+                    foreach (Match match in matches)
+                    {
+                        foreach (Group group in match.Groups)
+                        {
+                            if (!group.Value.EndsWith("{"))
+                            {
+                                result = result.Replace(group.Value, "#" + svgId + " " + group.Value);
+                            }
+                        }
+                    }
+                }
             }
 
             return result;
