@@ -297,6 +297,9 @@ namespace Fynydd.Carbide
             // Remove comments
             result = Regex.Replace(result, "<!--.*?-->", String.Empty, RegexOptions.Singleline);
 
+            // Remove XML header
+            result = Regex.Replace(result, @"<[\?]xml.*?[\?]>", String.Empty, RegexOptions.Singleline);
+
             // Assign a unique id to prevent in-page conflicts
             MatchCollection matches = Regex.Matches(result, @"<svg[^>]* id=['\""](.*?)['\""][^>]*>", RegexOptions.Singleline);
 
