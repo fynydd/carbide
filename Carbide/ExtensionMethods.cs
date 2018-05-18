@@ -949,13 +949,27 @@ namespace Fynydd.Carbide
         /// <param name="oldColorHexCode">HTML hex color code to replace (e.g. "#000000")</param>
         /// <param name="newColorHexCode">New HTML hex color code to use (e.g. "#ffffff")</param>
         /// <returns>SVG markup</returns>
-        public static string RenderSvg(this IPublishedContent content, string propertyName, string oldColorHexCode = "", string newColorHexCode = "")
+        public static string RenderSvg(this IPublishedContent content, string propertyName = "", string oldColorHexCode = "", string newColorHexCode = "")
         {
             var svg = "";
+            var svgUrl = "";
 
             if (content.SafeGetMediaPickerItemUrl(propertyName).EndsWith(".svg"))
             {
-                svg = StorageHelpers.ReadFile(content.SafeGetMediaPickerItemUrl(propertyName));
+                svgUrl = content.SafeGetMediaPickerItemUrl(propertyName);
+            }
+
+            else
+            {
+                if (content.Url.EndsWith(".svg"))
+                {
+                    svgUrl = content.Url;
+                }
+            }
+
+            if (svgUrl != "")
+            {
+                svg = StorageHelpers.ReadFile(svgUrl);
 
                 if (svg.Length > 0)
                 {

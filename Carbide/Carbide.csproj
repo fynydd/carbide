@@ -65,6 +65,7 @@
     <Compile Include="HttpHelpers.cs" />
     <Compile Include="SeoHelpers.cs" />
     <Compile Include="StorageHelpers.cs" />
+    <Compile Include="Support\FileHandler.cs" />
     <Compile Include="Support\SupportHandler.cs" />
     <Compile Include="TemporalHelpers.cs" />
   </ItemGroup>
