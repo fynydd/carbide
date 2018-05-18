@@ -349,7 +349,7 @@ namespace Fynydd.Carbide
                 }
             }
 
-            return result;
+            return result.Trim();
         }
 
         #endregion
