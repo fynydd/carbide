@@ -941,90 +941,31 @@ namespace Fynydd.Carbide
 		}
 
         /// <summary>
-        /// Read an SVG file from disk and return the XML markup. If a monochrome SVG is being read,
-        /// it can be recolored as well.
+        /// Return the markup required to render an SVG image
         /// </summary>
 		/// <param name="contentNode">The current content node as an IPublishedContent object</param>
-        /// <param name="propertyName">Name of the media picker property.</param>
-        /// <param name="oldColorHexCode">HTML hex color code to replace (e.g. "#000000")</param>
-        /// <param name="newColorHexCode">New HTML hex color code to use (e.g. "#ffffff")</param>
-        /// <returns>SVG markup</returns>
-        public static string RenderSvg(this IPublishedContent content, string propertyName = "", string oldColorHexCode = "", string newColorHexCode = "")
+        /// <param name="propertyName">Name of the media picker property, or blank if the conent item itself is the media item.</param>
+        /// <param name="color">Optional hex color code to use to recolor the SVG (e.g. "ffffff")</param>
+        /// <param name="attributes">Optional tag attributes to insert.</param>
+        /// <returns>SVG image markup</returns>
+        public static string RenderSvg(this IPublishedContent content, string propertyName = "", string color = "", string attributes = "")
         {
-            var svg = "";
-            var svgUrl = "";
+            var markup = "";
 
             if (content.SafeGetMediaPickerItemUrl(propertyName).EndsWith(".svg"))
             {
-                svgUrl = content.SafeGetMediaPickerItemUrl(propertyName);
+                markup = ContentHelpers.RenderSvg(content.SafeGetMediaPickerItem(propertyName), color, attributes);
             }
 
             else
             {
                 if (content.Url.EndsWith(".svg"))
                 {
-                    svgUrl = content.Url;
+                    markup = ContentHelpers.RenderSvg(content, color, attributes);
                 }
             }
 
-            if (svgUrl != "")
-            {
-                svg = StorageHelpers.ReadFile(svgUrl);
-
-                if (svg.Length > 0)
-                {
-                    if (svg.Contains("<svg "))
-                    {
-                        if (oldColorHexCode != "" && newColorHexCode != "")
-                        {
-                            svg = ContentHelpers.CleanSvg(svg, true);
-                            svg = ContentHelpers.RecolorSvg(svg, oldColorHexCode, newColorHexCode);
-                            svg = svg.Replace("<svg ", "<svg style=\"fill: " + newColorHexCode + ";\" ");
-                        }
-
-                        else
-                        {
-                            svg = ContentHelpers.CleanSvg(svg, false);
-                        }
-                    }
-                }
-            }
-
-            return svg;
-        }
-
-        /// <summary>
-        /// Read a monochrome SVG file from disk and return the XML markup for it recolored.
-        /// </summary>
-		/// <param name="contentNode">The current content node as an IPublishedContent object</param>
-        /// <param name="propertyName">Name of the media picker property.</param>
-        /// <param name="color">HTML hex color code to use in place of black (e.g. "#ffffff")</param>
-        /// <returns></returns>
-        public static string RenderMonochromeSvg(this IPublishedContent content, string propertyName, string color = "")
-        {
-            var svg = "";
-            var colorHexCode = color.FixHexColor();
-
-            if (content.SafeGetMediaPickerItemUrl(propertyName).EndsWith(".svg"))
-            {
-                svg = StorageHelpers.ReadFile(content.SafeGetMediaPickerItemUrl(propertyName));
-
-                if (svg.Length > 0)
-                {
-                    if (svg.Contains("<svg "))
-                    {
-                        svg = ContentHelpers.CleanSvg(svg, true);
-
-                        if (colorHexCode != "")
-                        {
-                            svg = Regex.Replace(svg, "#[0-9a-fA-F]{6,8}", colorHexCode, RegexOptions.Singleline);
-                            svg = svg.Replace("<svg ", "<svg style=\"fill: " + colorHexCode + ";\" ");
-                        }
-                    }
-                }
-            }
-
-            return svg;
+            return markup;
         }
 
         #endregion

@@ -262,34 +262,46 @@ namespace Fynydd.Carbide
         }
 
         /// <summary>
-        /// Performs a find/replace on a color hex code within SVG markup.
+        /// Return the markup required to render an SVG image
         /// </summary>
-        /// <param name="svg">SVG markup to recolor</param>
-        /// <param name="oldColorHexCode">Old color hex code</param>
-        /// <param name="newColorHexCode">New color hex code</param>
-        /// <returns>Recolored SVG markup</returns>
-        public static string RecolorSvg(string svg, string oldColorHexCode = "", string newColorHexCode = "")
+        /// <param name="contentNode">The media item property to render.</param>
+        /// <param name="color">Optional hex color code to use to recolor the SVG (e.g. "ffffff")</param>
+        /// <param name="attributes">Optional tag attributes to insert.</param>
+        /// <returns>SVG image markup</returns>
+        public static string RenderSvg(IPublishedContent content, string color = "", string attributes = "")
         {
-            var result = svg;
+            var markup = "";
+            int svgId = 0;
 
-            oldColorHexCode = oldColorHexCode.FixHexColor();
-            newColorHexCode = newColorHexCode.FixHexColor();
-
-            if (oldColorHexCode != "" && newColorHexCode != "")
+            if (content.Url.EndsWith(".svg"))
             {
-                result = result.Replace(oldColorHexCode.ToLower(), newColorHexCode).Replace(oldColorHexCode.ToUpper(), newColorHexCode).Replace("<svg ", "<svg style=\"fill: " + newColorHexCode + ";\" ");
+                svgId = content.Id;
             }
 
-            return result;
+            if (svgId > 0)
+            {
+                var querystring = "";
+
+                if (color != "" && color.Length < 10)
+                {
+                    querystring += "&color=" + color.Replace("#", "");
+                }
+
+                markup = "<img src=\"/umbraco/api/carbidefile/svg/?id=" + svgId + querystring + "\"" + (attributes != "" ? " " + attributes : "") + " />";
+            }
+
+            return markup;
         }
 
         /// <summary>
         /// Remove comments and style attributes from SVG markup.
         /// </summary>
         /// <param name="svg">SVG markup to clean.</param>
-        /// <param name="removeStyles">If true, CSS style blocks are also removed.</param>
+        /// <param name="removeStyles">If true, svg style property is removed.</param>
+        /// <param name="fixStyles">Ensure unique svg id and style classes are scoped to that id.</param>
+        /// <param name="removeXmlHeader">Removes the XML document header.</param>
         /// <returns>Cleaned SVG markup.</returns>
-        public static string CleanSvg(string svg, bool removeStyles = true)
+        public static string CleanSvg(string svg, bool removeStyles = false, bool fixStyles = true, bool removeXmlHeader = true)
         {
             var result = svg;
             var svgId = "SVG" + StorageHelpers.MakeUniqueFilename("").TrimEnd(".");
@@ -297,52 +309,75 @@ namespace Fynydd.Carbide
             // Remove comments
             result = Regex.Replace(result, "<!--.*?-->", String.Empty, RegexOptions.Singleline);
 
-            // Remove XML header
-            result = Regex.Replace(result, @"<[\?]xml.*?[\?]>", String.Empty, RegexOptions.Singleline);
-
-            // Assign a unique id to prevent in-page conflicts
-            MatchCollection matches = Regex.Matches(result, @"<svg[^>]* id=['\""](.*?)['\""][^>]*>", RegexOptions.Singleline);
-
-            if (matches.Count > 0)
+            if (removeXmlHeader)
             {
-                foreach (Match match in matches)
-                {
-                    foreach (Group group in match.Groups)
-                    {
-                        if (!group.Value.StartsWith("<svg"))
-                        {
-                            result = result.Replace("id=\"" + group.Value, "id=\"" + svgId);
-                            result = result.Replace("id='" + group.Value, "id='" + svgId);
-                        }
-                    }
-                }
-            }
-
-            else
-            {
-                result = result.Replace("<svg ", "<svg id=\"" + svgId + "\" ");
+                // Remove XML header
+                result = Regex.Replace(result, @"<[\?]xml.*?[\?]>", String.Empty, RegexOptions.Singleline);
             }
 
             // Remove styles?
             if (removeStyles)
             {
-                result = Regex.Replace(result, "<style.*?</style>", String.Empty, RegexOptions.Singleline);
+                // Removes embedded style blocks
+                // result = Regex.Replace(result, "<style.*?</style>", String.Empty, RegexOptions.Singleline);
+
+                MatchCollection matches = Regex.Matches(result, @"<svg[^>]* (style=['\""].*?['\""])[^>]*>", RegexOptions.Singleline);
+
+                if (matches.Count > 0)
+                {
+                    foreach (Match match in matches)
+                    {
+                        foreach (Group group in match.Groups)
+                        {
+                            if (!group.Value.StartsWith("<svg"))
+                            {
+                                result = result.Replace(group.Value, "");
+                            }
+                        }
+                    }
+                }
             }
 
             // Fix embedded styles to class names are scoped locally
             else
             {
-                if (result.Contains("<style"))
+                if (fixStyles)
                 {
-                    matches = Regex.Matches(result, @"\s*>*}*(\.[\w\d-]*)\s*{.*?", RegexOptions.Singleline);
-                    
-                    foreach (Match match in matches)
+                    // Assign a unique id to prevent in-page conflicts
+                    MatchCollection matches = Regex.Matches(result, @"<svg[^>]* id=['\""](.*?)['\""][^>]*>", RegexOptions.Singleline);
+
+                    if (matches.Count > 0)
                     {
-                        foreach (Group group in match.Groups)
+                        foreach (Match match in matches)
                         {
-                            if (!group.Value.EndsWith("{"))
+                            foreach (Group group in match.Groups)
                             {
-                                result = result.Replace(group.Value, "#" + svgId + " " + group.Value);
+                                if (!group.Value.StartsWith("<svg"))
+                                {
+                                    result = result.Replace("id=\"" + group.Value, "id=\"" + svgId);
+                                    result = result.Replace("id='" + group.Value, "id='" + svgId);
+                                }
+                            }
+                        }
+                    }
+
+                    else
+                    {
+                        result = result.Replace("<svg ", "<svg id=\"" + svgId + "\" ");
+                    }
+
+                    if (result.Contains("<style"))
+                    {
+                        matches = Regex.Matches(result, @"\s*>*}*(\.[\w\d-]*)\s*{.*?", RegexOptions.Singleline);
+                    
+                        foreach (Match match in matches)
+                        {
+                            foreach (Group group in match.Groups)
+                            {
+                                if (!group.Value.EndsWith("{"))
+                                {
+                                    result = result.Replace(group.Value, "#" + svgId + " " + group.Value);
+                                }
                             }
                         }
                     }

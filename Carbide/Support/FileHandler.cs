@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Web;
 using System.Web.Hosting;
@@ -29,7 +30,7 @@ namespace Fynydd.Carbide
         public static string Version { get { return "2018-05-18"; } }
 
         [HttpGet]
-        public HttpResponseMessage Svg(int id) // /umbraco/api/carbidefile/svg/?id=1024
+        public HttpResponseMessage Svg(int id, bool clean = false, string color = "") // /umbraco/api/carbidefile/svg/?id=1024&color=008BFF
         {
             string result = "";
 
@@ -46,7 +47,17 @@ namespace Fynydd.Carbide
                     {
                         if (result.Contains("<svg "))
                         {
-                            result = ContentHelpers.CleanSvg(result, false);
+                            if (clean)
+                            {
+                                result = ContentHelpers.CleanSvg(result, removeStyles: false, fixStyles: false, removeXmlHeader: false);
+                            }
+
+                            if (color != "" && color.Length < 10)
+                            {
+                                result = ContentHelpers.CleanSvg(result, removeStyles: true, fixStyles: false, removeXmlHeader: false);
+                                result = Regex.Replace(result, "#[0-9a-fA-F]{6,8}", color.FixHexColor(), RegexOptions.Singleline);
+                                result = result.Replace("<svg ", "<svg style=\"fill: " + color.FixHexColor() + ";\" ");
+                            }
                         }
                     }
                 }
