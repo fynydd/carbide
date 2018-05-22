@@ -7,7 +7,7 @@ Carbide is a set of classes that provide Umbraco developers with additional high
 **This project uses the newer project file "PackageResource" configuration for NuGet packages.** This means that Carbide's NuGet packages are downloaded to your user folder, and used much like assemblies in the GAC, so they won't interfere with the /packages folder in the root of your project if you're using the standard (default) packages.config method in your solution.
 
 ## Requirements
-Currently, Carbide is built on .NET CLR 4.6.1, and references UmbracoCMS.Core 7.10.1. Depending on your use case, you could keep it at this version even with a newer UmbracoCMS verson, provided there are no real incompatibilities with Core. Ideally, you want to keep the versions in lock-step. So any Carbide solutions should be updated frequently, which is generally a good practice from a security standpoint.
+Currently, Carbide is built on .NET CLR 4.6.1, and references UmbracoCMS.Core 7.10.x. Depending on your use case, you could keep it at this version even with a newer Umbraco CMS version, provided there are no real incompatibilities with Core. Ideally, you want to keep the versions in lock-step. So any Carbide solutions should be updated frequently, which is generally a good practice from a security standpoint.
 
 **NOTE: Turn on 64-bit IIS Express** in Visual Studio, or you won't be able to debug unless you set all projects to x86. This is due to *SharpScss* detecting which binary is being used based on compilation flags. It will default to x64 for "Any CPU" configurations. This shouldn't affect deployments to IIS, provided the app pool for the site isn't set to use 32-bit mode.
 
