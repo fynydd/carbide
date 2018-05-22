@@ -16,29 +16,29 @@ Simply include the git repo as a submodule in your Umbraco solution, and add a p
 
 Once you add the project to your solution, be sure to reference it in your code where applicable:
 
-<pre><code>using Argentini.Carbide;</code></pre>
+<pre><code>using Fynydd.Carbide;</code></pre>
 or in Razor views...
-<pre><code>@using Argentini.Carbide</code></pre>
+<pre><code>@using Fynydd.Carbide</code></pre>
 
 ## Carbide Methods and Enhancements
 Following are the methods and other enhancements available in Carbide.
 
-### Argentini.Carbide.ConfigurationHelpers
+### Fynydd.Carbide.ConfigurationHelpers
 These are static methods to use for retrieving web.config data.
 
-### Argentini.Carbide.EmailHelpers.Mailer
+### Fynydd.Carbide.EmailHelpers.Mailer
 Instantiate this class to create and send email using the Send() methods.
 
-### Argentini.Carbide.ContentHelpers
+### Fynydd.Carbide.ContentHelpers
 These are static methods to use for retrieving (and scouring) content with as little code as possible.
 
-### Argentini.Carbide.ContextHelpers
+### Fynydd.Carbide.ContextHelpers
 These are static methods to use for ensuring an Umbraco context is available, as in class libraries, for example.
 
-### Argentini.Carbide.ExtensionMethods
+### Fynydd.Carbide.ExtensionMethods
 These extension methods enhance existing Umbraco types, like IPublishedContent, to provide simple ways of retrieving and manipulating content.
 
-### Argentini.Carbide.RestHelper
+### Fynydd.Carbide.RestHelper
 Instantiate this class to make REST calls..
 
 ### SEO Helpers
@@ -50,13 +50,13 @@ Following are features to help with SEO and site indexing.
    ```
    <system.webServer>
      <handlers>
-        <add name="RobotsTxt" path="/robots.txt" verb="*" type="Argentini.Carbide.RobotsTxt" resourceType="Unspecified" preCondition="integratedMode" />
+        <add name="RobotsTxt" path="/robots.txt" verb="*" type="Fynydd.Carbide.RobotsTxt" resourceType="Unspecified" preCondition="integratedMode" />
    ```
 
-### Argentini.Carbide.StorageHelpers
+### Fynydd.Carbide.StorageHelpers
 This is a static class with methods for reading and writing files to and from disk, dynamically building SCSS, creating cache busters for web file links, and more.
 
-### Argentini.Carbide.TemporalHelpers
+### Fynydd.Carbide.TemporalHelpers
 This is a static class with methods for formatting dates and times, and performing date calculations. There is also a stopwatch class.
 
 ### Validators
@@ -107,6 +107,6 @@ Following are the REST endpoints provided by Carbide.
 ## Developers
 If you'd like to help make this library better through bug fixes or code additions, let me know through the usual means.
 
-_Carbide is published into the open source community by Michael Argentini._
+_Carbide is published into the open source community by Fynydd._
 
-__License and Disclaimer__: Halide is licensed under the MIT Open Source license, which can be read in the included file "LICENSE.txt".
+__License and Disclaimer__: Carbide is licensed under the MIT Open Source license, which can be read in the included file "LICENSE.txt".
