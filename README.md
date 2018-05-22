@@ -89,8 +89,8 @@ Additional MVC model and client-side validators for your forms. To use client-si
    [ValidFileTypeValidator(new string[] { "pdf", "docx" })]
    ```
 
-## REST Endpoints
-Following are the REST endpoints provided by Carbide.
+## WebAPI/Controller Endpoints
+Following are the endpoints provided by Carbide.
 
 1. **/umbraco/api/carbidesupport/scripts/**   
    Use this URL to generate a path to a JavaScript resource for client-side validation support, etc.
