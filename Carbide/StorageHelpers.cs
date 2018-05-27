@@ -3,6 +3,7 @@ using System.Collections;
 using System.Diagnostics;
 using System.IO;
 using System.Management;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 
@@ -133,7 +134,7 @@ namespace Fynydd.Carbide
 
             try
             {
-                string fn = StorageHelpers.MapPath(filename);
+                string fn = StorageHelpers.MapPath(filename.StripQueryString());
 
                 using (StreamReader sr = new StreamReader(fn))
                 {
@@ -166,7 +167,7 @@ namespace Fynydd.Carbide
         {
             try
             {
-                string fn = StorageHelpers.MapPath(filename);
+                string fn = StorageHelpers.MapPath(filename.StripQueryString());
 
                 if (File.Exists(fn)) File.Delete(fn);
 
@@ -354,7 +355,7 @@ namespace Fynydd.Carbide
         /// <returns>true or false.</returns>
         public static bool FileExists(string path)
         {
-            return (System.IO.File.Exists(StorageHelpers.MapPath(path)));
+            return (System.IO.File.Exists(StorageHelpers.MapPath(path.StripQueryString())));
         }
 
         /// <summary>
@@ -672,8 +673,8 @@ namespace Fynydd.Carbide
                 FileInfo fileInfo = new FileInfo(StorageHelpers.MapPath(webFilePath));
                 DateTime lastModified = fileInfo.LastWriteTime;
                 var size = fileInfo.Length;
-                
-                result = 
+
+                result =
                     lastModified.Year.ToString()
                     + lastModified.Month.ToString("D2")
                     + lastModified.Day.ToString("D2")
@@ -682,8 +683,9 @@ namespace Fynydd.Carbide
                     + lastModified.Second.ToString("D2");
             }
 
-            catch { 
-                
+            catch
+            {
+
                 result = fallback;
             }
 
@@ -747,7 +749,7 @@ namespace Fynydd.Carbide
 
                             if (files.Count > 0)
                             {
-                                foreach(string file in files)
+                                foreach (string file in files)
                                 {
                                     var segments = file.Split('|');
 
@@ -802,7 +804,8 @@ namespace Fynydd.Carbide
 
             if (process == true)
             {
-                var debugOptions = new ScssOptions {
+                var debugOptions = new ScssOptions
+                {
 
                     OutputStyle = ScssOutputStyle.Expanded,
                     SourceComments = true,
@@ -810,7 +813,8 @@ namespace Fynydd.Carbide
                     OutputFile = MapPath(outputPath)
                 };
 
-                var releaseOptions = new ScssOptions {
+                var releaseOptions = new ScssOptions
+                {
 
                     OutputStyle = ScssOutputStyle.Compressed,
                     SourceComments = false,
