@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -14,6 +15,8 @@ using Umbraco.Core.Models;
 using Umbraco.Core.Media;
 using Umbraco.Core.Services;
 using Umbraco.Web;
+
+using Yahoo.Yui.Compressor;
 
 namespace Fynydd.Carbide
 {
@@ -1210,16 +1213,109 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        public static string Content(this UrlHelper url, string contentPath, bool addCacheBuster = false, string fallback = "")
+        /// <summary>
+        /// Strip the query string from a file URL.
+        /// </summary>
+        /// <param name="filepath">File URL (e.g. "/download/file.pdf?abc=1")</param>
+        /// <returns>String with the query string removed (e.g. "/download/file.pdf")</returns>
+        public static string StripQueryString(this string filepath)
         {
-            var queryString = "";
+            return filepath.Substring(0, (filepath.IndexOf("?") > 0 ? filepath.IndexOf("?") : filepath.Length));
+        }
+
+        /// <summary>
+        /// Return the query string from a file URL.
+        /// </summary>
+        /// <param name="filepath">File URL (e.g. "/download/file.pdf?abc=1")</param>
+        /// <returns>Query string (e.g. "?abc=1")</returns>
+        public static string QueryString(this string filepath)
+        {
+            if (filepath.Contains("?"))
+            {
+                return filepath.Substring(filepath.IndexOf("?"));
+            }
+
+            else
+            {
+                return "";
+            }
+        }
+
+        public static string Content(this UrlHelper url, string contentPath, bool addCacheBuster = false, bool minify = false, string fallback = "")
+        {
+            var queryString = contentPath.QueryString();
+            var filePath = contentPath.StripQueryString();
+
+            if (minify && !filePath.StartsWith("_carbide."))
+            {
+                if (filePath.EndsWith(".js") || filePath.EndsWith(".css"))
+                {
+                    bool proceed = true;
+                    var newContentpath = "";
+                    
+                    if (filePath.Contains("/"))
+                    {
+                        newContentpath = filePath.Substring(0, filePath.LastIndexOf("/") + 1) + "_carbide." + filePath.Substring(filePath.LastIndexOf("/") + 1);
+                    }
+                    
+                    else
+                    {
+                        newContentpath = "_carbide." + filePath;
+                    }
+
+                    if (HttpContext.Current.Application.KeyExists(StorageHelpers.ConvertFilePathToKey(filePath) + "_MINIFY"))
+                    {
+                        if (StorageHelpers.FileExists(filePath))
+                        {
+                            if (HttpContext.Current.Application[StorageHelpers.ConvertFilePathToKey(filePath) + "_MINIFY"].ToString() == StorageHelpers.MakeCacheBuster(filePath))
+                            {
+                                proceed = false;
+                            }
+                        }
+                    }
+
+                    if (proceed)
+                    {
+                        if (StorageHelpers.FileExists(newContentpath))
+                        {
+                            StorageHelpers.DeleteFiles(newContentpath);
+                        }
+                        
+                        var minified = "";
+
+                        if (filePath.EndsWith(".js"))
+                        {
+                            var jsc = new JavaScriptCompressor();
+                            minified = jsc.Compress(StorageHelpers.ReadFile(filePath));
+                        }
+
+                        if (filePath.EndsWith(".css"))
+                        {
+                            var cssc = new CssCompressor();
+                            minified = cssc.Compress(StorageHelpers.ReadFile(filePath));
+                        }
+
+                        StorageHelpers.WriteFile(newContentpath, minified);
+                        HttpContext.Current.Application[StorageHelpers.ConvertFilePathToKey(filePath) + "_MINIFY"] = StorageHelpers.MakeCacheBuster(filePath);
+
+                        filePath = newContentpath;
+
+                        Debug.WriteLine("MINIFIED TO " + filePath);
+                    }
+
+                    else
+                    {
+                        Debug.WriteLine("SKIPPED MINIFICATION FOR " + filePath);
+                    }
+                }
+            }
 
             if (addCacheBuster)
             {
-                queryString = (contentPath.Contains("?") ? "&" : "?") + "_cachebuster=" + StorageHelpers.MakeCacheBuster(contentPath, fallback);
+                queryString += (queryString.Contains("?") ? "&" : "?") + "_cachebuster=" + StorageHelpers.MakeCacheBuster(filePath, fallback);
             }
 
-            return url.Content(contentPath + queryString);
+            return url.Content(filePath + queryString);
         }
 
         /// <summary>
