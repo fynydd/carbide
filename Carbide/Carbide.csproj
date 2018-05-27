@@ -76,6 +76,9 @@
     <PackageReference Include="UmbracoCms.Core">
       <Version>7.10.4</Version>
     </PackageReference>
+    <PackageReference Include="YUICompressor.NET.Signed">
+      <Version>3.0.17</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Support\Scripts\FormValidationHelpers.js" />
