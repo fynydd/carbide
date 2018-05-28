@@ -1269,6 +1269,7 @@ namespace Fynydd.Carbide
                         {
                             if (HttpContext.Current.Application[StorageHelpers.ConvertFilePathToKey(filePath) + "_MINIFY"].ToString() == StorageHelpers.MakeCacheBuster(filePath))
                             {
+                                filePath = newContentpath;
                                 proceed = false;
                             }
                         }
