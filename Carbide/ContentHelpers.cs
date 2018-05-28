@@ -41,13 +41,37 @@ namespace Fynydd.Carbide
         {
             get
             {
-                return "2018.04.09A";
+                return "2018.05.28A";
             }
         }
 
         #endregion
 
         #region Content scouring methods
+
+        /// <summary>
+        /// Get a single IPublishedContent node by its Id.
+        /// </summary>
+        /// <param name="Id">Content node Id</param>
+        /// <returns>Single matching IPublishedContent item.</returns>
+        public static IPublishedContent GetContentById(int Id)
+        {
+            var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
+
+            return umbracoHelper.TypedContent(Id);
+        }
+
+        /// <summary>
+        /// Get a single IPublishedContent node by its Id.
+        /// </summary>
+        /// <param name="Id">Content node Id</param>
+        /// <returns>Single matching IPublishedContent item.</returns>
+        public static IPublishedContent GetContentById(string Id)
+        {
+            var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
+
+            return umbracoHelper.TypedContent(Id);
+        }
 
         /// <summary>
         /// Get a single IPublishedContent node in the site root by its document type alias.
