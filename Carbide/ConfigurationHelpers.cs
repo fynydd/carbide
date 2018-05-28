@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
+using System.Xml;
 
 namespace Fynydd.Carbide
 {
@@ -30,7 +31,7 @@ namespace Fynydd.Carbide
         {
             get
             {
-                return "2018.04.20A";
+                return "2018.05.28A";
             }
         }
 
@@ -78,6 +79,27 @@ namespace Fynydd.Carbide
         public static string GetKeyValue(string keyName)
         {
             return GetKeyValue<string>(keyName, "");
+        }
+
+        /// <summary>
+        /// Retrieve XML node data from a config file.
+        /// </summary>
+        /// <param name="configFilePath">Web style path to the config file</param>
+        /// <param name="nodePath">XPath for node selection</param>
+        /// <returns>Enumerable string array of values</returns>
+        public static string[] GetConfigFileValues(string configFilePath, string nodePath)
+        {
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(StorageHelpers.MapPath(configFilePath));
+            XmlNodeList nodeList = xmlDoc.DocumentElement.SelectNodes(nodePath);
+            List<string> result = new List<string>();
+
+            foreach (XmlNode node in nodeList)
+            {
+                result.Add(node.InnerText);
+            }
+
+            return result.ToArray();
         }
 
         #endregion
