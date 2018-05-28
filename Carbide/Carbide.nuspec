@@ -14,7 +14,7 @@
         $description$ Carbide includes: extension methods for manipulating IPublishedContent objects, WebAPI routes for file handling, Umbraco dashboard tools to speed development, additional form field validators, and static helper classes. File assets are embedded resources, so no messay file/folder changes to your project. And Carbide requires no commercial third party components. You have all the source code, an MIT license, sunshine, and puppies.
     </description>
     <summary>$description$</summary>
-    <releaseNotes>Initial release.</releaseNotes>
+    <releaseNotes>Restyled the tools dashboard and added template pre-render tool, added dynamic JS and CSS minification using YUICompressor.Net.Signed, refactored BuildScss() and some other methods.</releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>umbraco carbide utilities scss seo</tags>
     <packageTypes>
@@ -23,7 +23,8 @@
     <dependencies>
       <dependency id="UmbracoCms.Core" version="7.10.0" />
       <dependency id="SharpScss" version="1.3.8" />
-    </dependencies>    
+      <dependency id="YUICompressor.NET.Signed" version="3.0.17" />
+    </dependencies>
   </metadata>
   <files>
     <file src="../README.md" target="" />
