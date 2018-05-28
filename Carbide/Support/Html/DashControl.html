@@ -2,6 +2,13 @@
 
     <style type="text/css">
 
+        #buttons {
+
+            border-top: solid 1px #cdcdcd;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+        }
+
         #buttons a[role="button"] {
         
             display: inline-block;
@@ -15,6 +22,7 @@
             color: white;
             padding: 0.5rem 1rem;
             line-height: 1.5;
+            margin-top: 0.5rem;
             margin-bottom: 1rem;
         }
 
@@ -35,8 +43,8 @@
 
         div#output2 {
 
-            border-top: dashed 0.1rem #cdcdcd;
-            margin-top: 2rem;
+            border-top: dashed 2px #cdcdcd;
+            margin-top: 1rem;
             padding-top: 1.5rem;
         }
 
@@ -46,15 +54,22 @@
         <h3>Rebuild Content and Examine Caches</h3>
         <p style="margin-bottom: 20px;">
             If you need to rebuild the caches due to development changes or corruption, <br />
-            you can run the rebuild tool. <strong>This does not affect your browser cache!</strong>
+            you can use these tools. <strong>They will not affect your browser cache!</strong>
         </p>
-        <p style="margin-bottom: 0;" id="buttons">
-            <a role="button" onclick="startRebuild()">Rebuild Content Cache</a>
-            &nbsp;
-            <a role="button" onclick="startRebuildImages()">Remove Cached Images</a>
-            &nbsp;
-            <a role="button" onclick="startPrerenderPages()">Prerender Templates</a>
-        </p>
+        <div id="buttons">
+            <p>
+                <strong>Clear and rebuild the XML content cache.</strong> Useful if you replace the database or change the data outside of Umbraco.<br />
+                <a role="button" onclick="startRebuild()">Rebuild Content Cache</a>
+            </p>
+            <p>
+                <strong>Delete all images cached by ImageProcessor.Web.</strong> Useful if media files or media data change outside of Umbraco. Can be slow to regenerate!<br />
+                <a role="button" onclick="startRebuildImages()">Remove Cached Images</a>
+            </p>
+            <p>
+                <strong>Pre-render page templates.</strong> Eliminates slow page loads on first request. This is useful to speed things up after a deployment or whenever the application is reset.<br />
+                <a role="button" onclick="startPrerenderPages()">Prerender Templates</a>
+            </p>
+        </div>
         <div id="output2">
 
         </div>
@@ -71,14 +86,14 @@
 
         function hideButton() {
 
-            $("#buttons").attr("style", "display: none;");
+            $("#buttons").attr("style", "opacity: 0.25; pointer-events: none;");
 
             clearTimeout(statusTimer2);
         }
 
         function showButton() {
 
-            $("#buttons").attr("style", "margin-bottom: 0;");
+            $("#buttons").attr("style", "");
 
             clearTimeout(statusTimer2);
         }
