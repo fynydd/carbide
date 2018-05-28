@@ -1241,12 +1241,21 @@ namespace Fynydd.Carbide
             }
         }
 
+        /// <summary>
+        /// Include a URL asset into a web page using relative paths. Optionally add dynamic cachebuster and minify JS and CSS files.
+        /// </summary>
+        /// <param name="url">UrlHelper object</param>
+        /// <param name="contentPath">Relative path to the asset</param>
+        /// <param name="addCacheBuster">If true, appends a cachebuster to the generated URL from the file modification date</param>
+        /// <param name="minify">If true minifies CSS and JS assets as new files and points the URL to them instead</param>
+        /// <param name="fallback">If cachebuster fails, use this fallback value</param>
+        /// <returns></returns>
         public static string Content(this UrlHelper url, string contentPath, bool addCacheBuster = false, bool minify = false, string fallback = "")
         {
             var queryString = contentPath.QueryString();
             var filePath = contentPath.StripQueryString();
 
-            if (minify && !filePath.StartsWith("_carbide."))
+            if (minify && !filePath.StartsWith("_carbide.generated."))
             {
                 if (filePath.EndsWith(".js") || filePath.EndsWith(".css"))
                 {
@@ -1255,12 +1264,12 @@ namespace Fynydd.Carbide
                     
                     if (filePath.Contains("/"))
                     {
-                        newContentpath = filePath.Substring(0, filePath.LastIndexOf("/") + 1) + "_carbide." + filePath.Substring(filePath.LastIndexOf("/") + 1);
+                        newContentpath = filePath.Substring(0, filePath.LastIndexOf("/") + 1) + "_carbide.generated." + filePath.Substring(filePath.LastIndexOf("/") + 1);
                     }
                     
                     else
                     {
-                        newContentpath = "_carbide." + filePath;
+                        newContentpath = "_carbide.generated." + filePath;
                     }
 
                     if (HttpContext.Current.Application.KeyExists(StorageHelpers.ConvertFilePathToKey(filePath) + "_MINIFY"))
