@@ -1,5 +1,6 @@
 ﻿using Examine;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -12,7 +13,9 @@ using System.Threading;
 using System.Web;
 using System.Web.Hosting;
 using System.Web.Http;
+using System.Xml;
 
+using Umbraco.Core.Models;
 using Umbraco.Web;
 using Umbraco.Web.WebApi;
 
@@ -159,9 +162,6 @@ namespace Fynydd.Carbide
                         timer2.Stop();
                         context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetTime() + " seconds</strong></li>";
 
-
-                        
-                        
                         timer.Stop();
 
                         context.Application.SafeRemove("RebuildCacheStatus");
@@ -321,6 +321,98 @@ namespace Fynydd.Carbide
         }
 
         [HttpGet]
+        public HttpResponseMessage PrerenderPages() // /umbraco/api/carbidesupport/prerenderpages/
+        {
+            string result = "";
+
+            if (HttpContext.Current.Application["RebuildCacheStatus"] == null)
+            {
+                var context = HttpContext.Current;
+
+                context.Application["RebuildCacheStatus"] = "running";
+                context.Application["RebuildCacheHistory"] = "<h4 style=\"font-size: 1.1rem; margin-bottom: 1.5rem;\">Started " + TemporalHelpers.DateFormat(DateTime.Now, TemporalHelpers.DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TemporalHelpers.TimeFormats.SqlMilitary) + "</h4>";
+
+                result = context.Application["RebuildCacheHistory"].ToString();
+
+                Thread workerThread = new Thread(new ThreadStart(() =>
+                {
+                    StopWatch timer = new StopWatch();
+                    StopWatch timer2 = new StopWatch();
+
+                    try
+                    {
+                        timer.Start();
+                        context.Server.ScriptTimeout = 100000;
+
+                        context.Application["RebuildCacheHistory"] += "<ol style=\"padding: 0.25rem 0 0 1rem;\">";
+
+                        context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Pre-rendering templates... ";
+                        timer2.Reset();
+                        timer2.Start();
+
+                        var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
+                        int pageCounter = 0;
+                        List<int> templates = new List<int>();
+
+                        foreach (var node in umbracoHelper.TypedContentAtRoot())
+                        {
+                            ListChildNodes(node, ref pageCounter, ref context, ref templates);
+                        }
+
+                        if (pageCounter > 1)
+                        {
+                            var msg = context.Application["RebuildCacheHistory"].ToString();
+                            msg = msg.Substring(0, msg.LastIndexOf("..."));
+                            context.Application["RebuildCacheHistory"] = msg + "... ";
+                        }
+
+                        timer2.Stop();
+                        context.Application["RebuildCacheHistory"] += "<strong>" + pageCounter + " template" + (pageCounter != 1 ? "s" : "") + " in " + timer2.GetTime() + " seconds</strong></li>";
+
+                        timer.Stop();
+
+                        context.Application.SafeRemove("RebuildCacheStatus");
+
+                        context.Application["RebuildCacheHistory"] += "</ol>";
+
+                        context.Application["RebuildCacheHistory"] += "<h4 style=\"font-size: 1.1rem;\">Finished in " + timer.GetTime() + " seconds</h4>";
+                    }
+
+                    catch (Exception e)
+                    {
+                        timer.Stop();
+                        timer2.Stop();
+
+                        context.Application.SafeRemove("RebuildCacheStatus");
+
+                        context.Application["RebuildCacheHistory"] = "</li></ol><p><strong>Error in " + timer.GetTime() + " seconds on " + TemporalHelpers.DateFormat(DateTime.Now, TemporalHelpers.DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TemporalHelpers.TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
+
+                        result = context.Application["RebuildCacheHistory"].ToString();
+                    }
+                }))
+                {
+                    IsBackground = true
+                };
+                workerThread.Start();
+
+                while (HttpContext.Current.Application["RebuildCacheStatus"] == null)
+                {
+                    // Wait for worker thread to start up and initialize
+                    System.Threading.Thread.Sleep(50);
+                }
+            }
+
+            else
+            {
+                result = HttpContext.Current.Application["RebuildCacheHistory"].ToString();
+            }
+
+            var response = new HttpResponseMessage(HttpStatusCode.OK);
+            response.Content = new StringContent(result, Encoding.UTF8, "text/plain");
+            return response;
+        }
+
+        [HttpGet]
         public HttpResponseMessage RebuildCacheStatus() // /umbraco/api/carbidesupport/rebuildcachestatus/
         {
             var result = "idle";
@@ -348,6 +440,49 @@ namespace Fynydd.Carbide
             var response = new HttpResponseMessage(HttpStatusCode.OK);
             response.Content = new StringContent(result, Encoding.UTF8, "text/plain");
             return response;
+        }
+
+        private void ListChildNodes(IPublishedContent startNode, ref int counter, ref HttpContext context, ref List<int> templates)
+        {
+            ProcessNode(startNode, ref counter, ref context, ref templates);
+
+            foreach (var node in startNode.Children().OrderBy(m => m.SortOrder))
+            {
+                ProcessNode(node, ref counter, ref context, ref templates);
+
+                if (node.Children().Count() > 0)
+                {
+                    ListChildNodes(node, ref counter, ref context, ref templates);
+                }
+            }
+        }
+
+        private void ProcessNode(IPublishedContent node, ref int counter, ref HttpContext context, ref List<int> templates)
+        {
+            if (node.TemplateId > 0)
+            {
+                if (templates.Contains<int>(node.TemplateId) == false)
+                {
+                    try
+                    {
+                        counter++;
+
+                        context.Application["RebuildCacheHistory"] += node.GetTemplateAlias() + "... ";
+
+                        RestHelper rest = new RestHelper();
+                        rest.Url = context.Request.Url.Scheme + "://" + HttpHelper.GetHostWithPort(context) + node.Url;
+                        rest.Timeout = 30000;
+                        rest.Call();
+
+                        templates.Add(node.TemplateId);
+                    }
+
+                    catch (Exception e)
+                    {
+                        Debug.WriteLine("ERROR: " + e.Message);
+                    }
+                }
+            }
         }
     }
 }

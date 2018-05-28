@@ -2,7 +2,7 @@
 
     <style type="text/css">
 
-        a[role="button"] {
+        #buttons a[role="button"] {
         
             display: inline-block;
             text-align: center;
@@ -13,18 +13,18 @@
             border-radius: 0.25rem;
             background-color: #02bb1a;
             color: white;
-            padding: 0.1rem 2rem;
-            line-height: 2.5;
-            padding-bottom: 0;
+            padding: 0.5rem 1rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
         }
 
         section[role="status"] {
 
             background-color: #f5f5f5;
             border: solid 1px #dcdcdc;
-            padding: 2rem 2rem;
+            padding: 1.5rem 1.5rem;
             border-radius: 0.35rem;
-            max-width: 35rem;
+            max-width: 40rem;
             min-width: 175px;
         }
 
@@ -49,9 +49,11 @@
             you can run the rebuild tool. <strong>This does not affect your browser cache!</strong>
         </p>
         <p style="margin-bottom: 0;" id="buttons">
-            <a role="button" onclick="startRebuild()" style="display: inline-block; text-align: center; vertical-align: middle; cursor: pointer; border: none; box-shadow: none; border-radius: 3px; background-color: #02bb1a; color: white; padding: 0.1rem 2rem; line-height: 2.5; padding-bottom: 0;">Rebuild Content Cache</a>
+            <a role="button" onclick="startRebuild()">Rebuild Content Cache</a>
             &nbsp;
-            <a role="button" onclick="startRebuildImages()" style="display: inline-block; text-align: center; vertical-align: middle; cursor: pointer; border: none; box-shadow: none; border-radius: 3px; background-color: #02bb1a; color: white; padding: 0.1rem 2rem; line-height: 2.5; padding-bottom: 0;">Rebuild Image Cache</a>
+            <a role="button" onclick="startRebuildImages()">Remove Cached Images</a>
+            &nbsp;
+            <a role="button" onclick="startPrerenderPages()">Prerender Templates</a>
         </p>
         <div id="output2">
 
@@ -107,6 +109,23 @@
                 type: "GET",
                 async: true,
                 url: "/umbraco/api/carbidesupport/rebuildimagecache/",
+
+                success: function (data) {
+
+                    getStatus2();
+                }
+            });
+        }
+
+        function startPrerenderPages() {
+
+            hideButton();
+
+            $.ajax({
+
+                type: "GET",
+                async: true,
+                url: "/umbraco/api/carbidesupport/prerenderpages/",
 
                 success: function (data) {
 
