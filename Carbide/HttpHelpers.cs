@@ -25,6 +25,24 @@ namespace Fynydd.Carbide
     /// </example>
     public class RestHelper
     {
+        #region Properties
+
+        /// <summary>
+        /// Return the version number of the class; read-only.
+        /// </summary>
+        /// <value>
+        /// A string with the version number of the class.
+        /// </value>
+        public static string Version
+        {
+            get
+            {
+                return "2018.05.28A";
+            }
+        }
+
+        #endregion
+
         /// <summary>
         /// Types of REST requests
         /// </summary>
@@ -311,6 +329,24 @@ namespace Fynydd.Carbide
     /// </summary>
     public static class HttpHelper
     {
+        #region Properties
+
+        /// <summary>
+        /// Return the version number of the class; read-only.
+        /// </summary>
+        /// <value>
+        /// A string with the version number of the class.
+        /// </value>
+        public static string Version
+        {
+            get
+            {
+                return "2018.05.28A";
+            }
+        }
+
+        #endregion
+
         /// <summary>
         /// Get the fully qualified domain name of the current URL.
         /// </summary>
@@ -321,12 +357,32 @@ namespace Fynydd.Carbide
         }
 
         /// <summary>
+        /// Get the fully qualified domain name of the current URL.
+        /// </summary>
+        /// <param name="context">Context to use</param>
+        /// <returns>Domain name (FQDN).</returns>
+        public static string GetHost(HttpContext context)
+        {
+            return context.Request.Url.Host;
+        }
+
+        /// <summary>
         /// Get the fully qualified domain name of the current URL with port.
         /// </summary>
         /// <returns>Domain name (FQDN) with a colon and a port number.</returns>
         public static string GetHostWithPort()
         {
             return HttpContext.Current.Request.Url.Host + ":" + HttpContext.Current.Request.Url.Port;
+        }
+
+        /// <summary>
+        /// Get the fully qualified domain name of the current URL with port.
+        /// </summary>
+        /// <param name="context">Context to use</param>
+        /// <returns>Domain name (FQDN) with a colon and a port number.</returns>
+        public static string GetHostWithPort(HttpContext context)
+        {
+            return context.Request.Url.Host + ":" + context.Request.Url.Port;
         }
 
         /// <summary>
