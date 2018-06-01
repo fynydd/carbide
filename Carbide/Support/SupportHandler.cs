@@ -33,7 +33,7 @@ namespace Fynydd.Carbide
             try
             {
                 var assembly = Assembly.GetExecutingAssembly();
-                var fileName = "Carbide.Support.Html." + file + ".html";
+                var fileName = "Fynydd.Carbide.Support.Html." + file + ".html";
 
                 using (Stream stream = assembly.GetManifestResourceStream(fileName))
                 {
@@ -61,7 +61,7 @@ namespace Fynydd.Carbide
             try
             {
                 var assembly = Assembly.GetExecutingAssembly();
-                var jsName = "Carbide.Support.Scripts." + file + ".js";
+                var jsName = "Fynydd.Carbide.Support.Scripts." + file + ".js";
 
                 using (Stream stream = assembly.GetManifestResourceStream(jsName))
                 {
@@ -89,7 +89,7 @@ namespace Fynydd.Carbide
             try
             {
                 var assembly = Assembly.GetExecutingAssembly();
-                var resourceName = "Carbide.Support.Images." + file + ".svg";
+                var resourceName = "Fynydd.Carbide.Support.Images." + file + ".svg";
 
                 using (Stream stream = assembly.GetManifestResourceStream(resourceName))
                 {
