@@ -7,8 +7,8 @@
     <ProjectGuid>{23EBF6D3-2D88-42D4-ABFF-296CAE41E55D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Carbide</RootNamespace>
-    <AssemblyName>Carbide</AssemblyName>
+    <RootNamespace>Fynydd.Carbide</RootNamespace>
+    <AssemblyName>Fynydd.Carbide</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
