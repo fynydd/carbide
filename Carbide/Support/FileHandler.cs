@@ -52,12 +52,12 @@ namespace Fynydd.Carbide
                         {
                             if (clean)
                             {
-                                result = ContentHelpers.CleanSvg(result, removeStyles: false, fixStyles: false, removeXmlHeader: false);
+                                result = MediaHelpers.CleanSvg(result, removeStyles: false, fixStyles: false, removeXmlHeader: false);
                             }
 
                             if (color != "" && color.Length < 10)
                             {
-                                result = ContentHelpers.CleanSvg(result, removeStyles: true, fixStyles: false, removeXmlHeader: false);
+                                result = MediaHelpers.CleanSvg(result, removeStyles: true, fixStyles: false, removeXmlHeader: false);
                                 result = Regex.Replace(result, "#[0-9a-fA-F]{6,8}", color.FixHexColor(), RegexOptions.Singleline);
                                 result = result.Replace("<svg ", "<svg style=\"fill: " + color.FixHexColor() + ";\" ");
                             }
