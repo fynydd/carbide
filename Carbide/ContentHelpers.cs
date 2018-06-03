@@ -13,6 +13,9 @@ using Umbraco.Core.Media;
 using Umbraco.Core.Services;
 using Umbraco.Web;
 
+using Fynydd.Halide;
+using Fynydd.Halide.Constants;
+
 namespace Fynydd.Carbide
 {
     /// <summary>
@@ -29,24 +32,6 @@ namespace Fynydd.Carbide
     /// </example>
     public static class ContentHelpers
     {
-        #region Properties
-
-        /// <summary>
-        /// Return the version number of the class; read-only.
-        /// </summary>
-        /// <value>
-        /// A string with the version number of the class.
-        /// </value>
-        public static String Version
-        {
-            get
-            {
-                return "2018.05.28A";
-            }
-        }
-
-        #endregion
-
         #region Content scouring methods
 
         /// <summary>
@@ -328,7 +313,7 @@ namespace Fynydd.Carbide
         public static string CleanSvg(string svg, bool removeStyles = false, bool fixStyles = true, bool removeXmlHeader = true)
         {
             var result = svg;
-            var svgId = "SVG" + StorageHelpers.MakeUniqueFilename("").TrimEnd(".");
+            var svgId = "SVG" + Storage.MakeUniqueFilenameFromExtension("").TrimEnd(".");
 
             // Remove comments
             result = Regex.Replace(result, "<!--.*?-->", String.Empty, RegexOptions.Singleline);

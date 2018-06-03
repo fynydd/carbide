@@ -16,6 +16,9 @@ using Umbraco.Core.Media;
 using Umbraco.Core.Services;
 using Umbraco.Web;
 
+using Fynydd.Halide;
+using Fynydd.Halide.Constants;
+
 using Yahoo.Yui.Compressor;
 
 namespace Fynydd.Carbide
@@ -34,24 +37,6 @@ namespace Fynydd.Carbide
     /// </example>
     public static class ExtensionMethods
     {
-        #region Properties
-
-        /// <summary>
-        /// Return the version number of the class; read-only.
-        /// </summary>
-        /// <value>
-        /// A string with the version number of the class.
-        /// </value>
-        public static String Version
-        {
-            get
-            {
-                return "2018.04.09A";
-            }
-        }
-
-        #endregion
-
         #region Private
 
         private enum IPublishedContentType
@@ -1036,127 +1021,6 @@ namespace Fynydd.Carbide
         #region Base types
 
         /// <summary>
-        /// Creates a string from the sequence by concatenating the result
-        /// of the specified string selector function for each element.
-        /// Concatenates the strings with no delimitter.
-        /// </summary>
-        /// <param name="source">The source IEnumerable object</param>
-        /// <param name="stringSelector">Abstraction for the individual string objects</param>
-        public static string ToConcatenatedString<T>(
-            this IEnumerable<T> source,
-            Func<T, string> stringSelector)
-        {
-            return ToConcatenatedString(source, stringSelector, String.Empty);
-        }
-
-        /// <summary>
-        /// Creates a string from the sequence by concatenating the result
-        /// of the specified string selector function for each element.
-        /// Concatenates the string with a specified delimitter.
-        /// </summary>
-        /// <param name="source">The source IEnumerable object</param>
-        /// <param name="stringSelector">Abstraction for the individual string objects</param>
-        /// <param name="delimitter">The string which separates each concatenated item</param>
-        public static string ToConcatenatedString<T>(
-            this IEnumerable<T> source,
-            Func<T, string> stringSelector,
-            string delimitter)
-        {
-            var b = new StringBuilder();
-            bool needsSeparator = false;
-
-            foreach (var item in source)
-            {
-                if (needsSeparator)
-                {
-                    b.Append(delimitter);
-                }
-
-                b.Append(stringSelector(item));
-                needsSeparator = true;
-            }
-
-            return b.ToString();
-        }
-
-        /// <summary>
-        /// Return the current string with HTML tags removed.
-        /// </summary>
-        /// <example>
-        /// <code>
-        /// string newBodyText = oldString.StripHtml();
-        /// </code>
-        /// </example>
-        /// <param name="strVar">Current string to process.</param>
-        /// <param name="convertBreaks">
-        /// <![CDATA[
-        /// Converts "<br>" and "<br />" to \r\n and converts "</p>" to \r\n\r\n.
-        /// ]]>
-        /// </param>
-        /// <param name="keepLinks">Keep and anchor tags intact.</param>
-        /// <param name="decodeEntities">Convert HTML entities to standard ASCII, like &copy; to ©</param>
-        /// <returns>A string with HTML tags removed.</returns>
-        public static string StripHtml(this string strVar, bool convertBreaks = false, bool keepLinks = false, bool decodeEntities = false)
-        {
-            if (strVar.IsNullOrWhiteSpace())
-            {
-                return (strVar);
-            }
-            else
-            {
-                Regex tags = new Regex(@"<(script|style).*?>.*?</(script|style).*?>", RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace | RegexOptions.Singleline);
-                strVar = tags.Replace(strVar, "");
-
-                if (convertBreaks == true)
-                {
-                    tags = new Regex(@"<br[\s]*[/]*>");
-                    strVar = tags.Replace(strVar, "\r\n");
-                    strVar = strVar.Replace("</p>", "\r\n\r\n");
-                }
-
-                if (keepLinks == true)
-                {
-                    strVar = Regex.Replace(strVar, "(<)(?=/??a)", "[[[[[", RegexOptions.IgnoreCase);
-                }
-
-                tags = new Regex(@"<[^>]+>|</[^>]+>");
-                strVar = tags.Replace(strVar, "");
-
-                if (keepLinks == true)
-                {
-                    strVar = strVar.Replace("[[[[[", "<");
-                }
-
-                if (decodeEntities)
-                {
-                    strVar = HttpContext.Current.Server.HtmlDecode(strVar);
-
-                    //strVar = strVar.Replace("&nbsp;", " ");
-                    //strVar = strVar.Replace("&edsp;", " ");
-                }
-
-                return strVar;
-            }
-        }
-
-        /// <summary>
-        /// Convert an object to a string. If null an empty string is returned.
-        /// </summary>
-        /// <param name="obj">Object to convert to a string</param>
-        /// <returns>String value or an empty string if null</returns>
-        public static string SafeToString(this object obj)
-        {
-            string result = "";
-
-            if (obj != null)
-            {
-                result = obj.ToString();
-            }
-
-            return result;
-        }
-
-        /// <summary>
         /// Determines is an image URL is supported natively by all major web browsers via the img tag.
         /// </summary>
         /// <param name="url">URL to an image resource to evaluate.</param>
@@ -1194,141 +1058,6 @@ namespace Fynydd.Carbide
         }
 
         /// <summary>
-        /// Remove a querystring from the URL. Looks for "?" and removes everything from it to the end.
-        /// </summary>
-        /// <param name="url">URL to evaluate</param>
-        /// <returns>URL without a query string</returns>
-        public static string RemoveQueryString(this string url)
-        {
-            var result = url;
-
-            if (!string.IsNullOrEmpty(url))
-            {
-                if (url.IndexOf("?") > 0)
-                {
-                    result = url.Substring(0, url.IndexOf("?"));
-                }
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Strip the query string from a file URL.
-        /// </summary>
-        /// <param name="filepath">File URL (e.g. "/download/file.pdf?abc=1")</param>
-        /// <returns>String with the query string removed (e.g. "/download/file.pdf")</returns>
-        public static string StripQueryString(this string filepath)
-        {
-            return filepath.Substring(0, (filepath.IndexOf("?") > 0 ? filepath.IndexOf("?") : filepath.Length));
-        }
-
-        /// <summary>
-        /// Return the query string from a file URL.
-        /// </summary>
-        /// <param name="filepath">File URL (e.g. "/download/file.pdf?abc=1")</param>
-        /// <returns>Query string (e.g. "?abc=1")</returns>
-        public static string QueryString(this string filepath)
-        {
-            if (filepath.Contains("?"))
-            {
-                return filepath.Substring(filepath.IndexOf("?"));
-            }
-
-            else
-            {
-                return "";
-            }
-        }
-
-        /// <summary>
-        /// Include a URL asset into a web page using relative paths. Optionally add dynamic cachebuster and minify JS and CSS files.
-        /// </summary>
-        /// <param name="url">UrlHelper object</param>
-        /// <param name="contentPath">Relative path to the asset</param>
-        /// <param name="addCacheBuster">If true, appends a cachebuster to the generated URL from the file modification date</param>
-        /// <param name="minify">If true minifies CSS and JS assets as new files and points the URL to them instead</param>
-        /// <param name="fallback">If cachebuster fails, use this fallback value</param>
-        /// <returns></returns>
-        public static string Content(this UrlHelper url, string contentPath, bool addCacheBuster = false, bool minify = false, string fallback = "")
-        {
-            var queryString = contentPath.QueryString();
-            var filePath = contentPath.StripQueryString();
-
-            if (minify && !filePath.StartsWith("_carbide.generated."))
-            {
-                if (filePath.EndsWith(".js") || filePath.EndsWith(".css"))
-                {
-                    bool proceed = true;
-                    var newContentpath = "";
-                    
-                    if (filePath.Contains("/"))
-                    {
-                        newContentpath = filePath.Substring(0, filePath.LastIndexOf("/") + 1) + "_carbide.generated." + filePath.Substring(filePath.LastIndexOf("/") + 1);
-                    }
-                    
-                    else
-                    {
-                        newContentpath = "_carbide.generated." + filePath;
-                    }
-
-                    if (HttpContext.Current.Application.KeyExists(StorageHelpers.ConvertFilePathToKey(filePath) + "_MINIFY"))
-                    {
-                        if (StorageHelpers.FileExists(filePath))
-                        {
-                            if (HttpContext.Current.Application[StorageHelpers.ConvertFilePathToKey(filePath) + "_MINIFY"].ToString() == StorageHelpers.MakeCacheBuster(filePath))
-                            {
-                                filePath = newContentpath;
-                                proceed = false;
-                            }
-                        }
-                    }
-
-                    if (proceed)
-                    {
-                        if (StorageHelpers.FileExists(newContentpath))
-                        {
-                            StorageHelpers.DeleteFiles(newContentpath);
-                        }
-                        
-                        var minified = "";
-
-                        if (filePath.EndsWith(".js"))
-                        {
-                            var jsc = new JavaScriptCompressor();
-                            minified = jsc.Compress(StorageHelpers.ReadFile(filePath));
-                        }
-
-                        if (filePath.EndsWith(".css"))
-                        {
-                            var cssc = new CssCompressor();
-                            minified = cssc.Compress(StorageHelpers.ReadFile(filePath));
-                        }
-
-                        StorageHelpers.WriteFile(newContentpath, minified);
-                        HttpContext.Current.Application[StorageHelpers.ConvertFilePathToKey(filePath) + "_MINIFY"] = StorageHelpers.MakeCacheBuster(filePath);
-
-                        filePath = newContentpath;
-
-                        Debug.WriteLine("MINIFIED TO " + filePath);
-                    }
-
-                    else
-                    {
-                        Debug.WriteLine("SKIPPED MINIFICATION FOR " + filePath);
-                    }
-                }
-            }
-
-            if (addCacheBuster)
-            {
-                queryString += (queryString.Contains("?") ? "&" : "?") + "_cachebuster=" + StorageHelpers.MakeCacheBuster(filePath, fallback);
-            }
-
-            return url.Content(filePath + queryString);
-        }
-
-        /// <summary>
         /// Ensure that a hex color starts with #.
         /// </summary>
         /// <param name="color">Hex color string to fix</param>
@@ -1347,51 +1076,4 @@ namespace Fynydd.Carbide
 
         #endregion
     }
-
-    #region Context
-
-    /// <summary>
-    /// <![CDATA[
-    /// The HttpContextApplicationExtensions class contains methods and properties for enhancing 
-    /// HttpContext objects. To begin using, just include this assembly.
-    /// ]]>
-    /// </summary>
-    public static class HttpContextApplicationExtensions
-    {
-        /// <summary>
-        /// Determine if an Application-level state variable exists.
-        /// </summary>
-        /// <param name="application">The current HttpApplictionState object</param>
-        /// <param name="keyName">The key name of the Application-level state variable</param>
-        public static bool KeyExists(this HttpApplicationState application, string keyName)
-        {
-            bool result = false;
-
-            if (application != null)
-            {
-                if (application[keyName] != null)
-                {
-                    result = true;
-                }
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Remove an Application-level state variable, first checking for its existence
-        /// and a valid context.
-        /// </summary>
-        /// <param name="application">The current HttpApplictionState object</param>
-        /// <param name="keyName">The key name of the Application-level state variable</param>
-        public static void SafeRemove(this HttpApplicationState application, string keyName)
-        {
-            if (KeyExists(application, keyName))
-            {
-                application.Remove(keyName);
-            }
-        }
-    }
-
-    #endregion
 }

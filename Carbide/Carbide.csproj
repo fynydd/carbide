@@ -55,29 +55,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfigurationHelpers.cs" />
     <Compile Include="ContentHelpers.cs" />
     <Compile Include="ContextHelpers.cs" />
-    <Compile Include="EmailHelpers.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="FormValidators.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="HttpHelpers.cs" />
     <Compile Include="SeoHelpers.cs" />
-    <Compile Include="StorageHelpers.cs" />
     <Compile Include="Support\FileHandler.cs" />
     <Compile Include="Support\SupportHandler.cs" />
-    <Compile Include="TemporalHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="SharpScss">
-      <Version>1.3.8</Version>
-    </PackageReference>
     <PackageReference Include="UmbracoCms.Core">
       <Version>7.10.4</Version>
-    </PackageReference>
-    <PackageReference Include="YUICompressor.NET.Signed">
-      <Version>3.0.17</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +81,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Support\Html\DashControl.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Halide-Submodule\Halide\Halide.csproj">
+      <Project>{c2b3286c-a4a2-48b9-9d88-5bde2c7c4f89}</Project>
+      <Name>Halide</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

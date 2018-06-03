@@ -23,6 +23,9 @@ using Umbraco.Core.Services;
 using Umbraco.Web;
 using Umbraco.Web.WebApi;
 
+using Fynydd.Halide;
+using Fynydd.Halide.Constants;
+
 namespace Fynydd.Carbide
 {
     public class CarbideFileController : UmbracoApiController
@@ -41,7 +44,7 @@ namespace Fynydd.Carbide
 
                 if (svg != null)
                 {
-                    result = StorageHelpers.ReadFile(svg.Url);
+                    result = Storage.ReadFile(svg.Url);
 
                     if (result.Length > 0)
                     {

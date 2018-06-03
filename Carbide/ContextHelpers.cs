@@ -9,6 +9,9 @@ using Umbraco.Web;
 using Umbraco.Web.Routing;
 using Umbraco.Web.Security;
 
+using Fynydd.Halide;
+using Fynydd.Halide.Constants;
+
 namespace Fynydd.Carbide
 {
     /// <summary>
@@ -25,24 +28,6 @@ namespace Fynydd.Carbide
     /// </example>
     public static class ContextHelpers
     {
-        #region Properties
-
-        /// <summary>
-        /// Return the version number of the class; read-only.
-        /// </summary>
-        /// <value>
-        /// A string with the version number of the class.
-        /// </value>
-        public static String Version
-        {
-            get
-            {
-                return "2018.04.09A";
-            }
-        }
-
-        #endregion
-
         /// <summary>
         /// Return an UmbracoContext. For use in controllers and threads that need access to Umbraco Helper, etc.
         /// </summary>

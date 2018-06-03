@@ -6,6 +6,9 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
+using Fynydd.Halide;
+using Fynydd.Halide.Constants;
+
 namespace Fynydd.Carbide
 {
     /// <summary>
@@ -19,24 +22,6 @@ namespace Fynydd.Carbide
     /// </summary>
     public class MinimumFileSizeValidator : ValidationAttribute, IClientValidatable
     {
-        #region Properties
-
-        /// <summary>
-        /// Return the version number of the class; read-only.
-        /// </summary>
-        /// <value>
-        /// A string with the version number of the class.
-        /// </value>
-        public static String Version
-        {
-            get
-            {
-                return "2018.04.09A";
-            }
-        }
-
-        #endregion
-
         private string _errorMessage = "{0} can not be smaller than {1} MB";
 
         /// <summary> 
@@ -193,24 +178,6 @@ namespace Fynydd.Carbide
     /// </summary>
     public class ValidFileTypeValidator : ValidationAttribute, IClientValidatable
     {
-        #region Properties
-
-        /// <summary>
-        /// Return the version number of the class; read-only.
-        /// </summary>
-        /// <value>
-        /// A string with the version number of the class.
-        /// </value>
-        public static String Version
-        {
-            get
-            {
-                return "2018.04.09A";
-            }
-        }
-
-        #endregion
-
         private string _errorMessage = "{0} must be one of the following file types: {1}";
 
         /// <summary> 
@@ -279,24 +246,6 @@ namespace Fynydd.Carbide
 
     public class FileUploadValidator : ValidationAttribute, IClientValidatable
     {
-        #region Properties
-
-        /// <summary>
-        /// Return the version number of the class; read-only.
-        /// </summary>
-        /// <value>
-        /// A string with the version number of the class.
-        /// </value>
-        public static String Version
-        {
-            get
-            {
-                return "2018.04.09A";
-            }
-        }
-
-        #endregion
-
         private MinimumFileSizeValidator _minimumFileSizeValidator;
         private MaximumFileSizeValidator _maximumFileSizeValidator;
         private ValidFileTypeValidator _validFileTypeValidator;

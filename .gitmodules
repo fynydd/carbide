@@ -1,0 +1,3 @@
+[submodule "Halide-Submodule"]
+	path = Halide-Submodule
+	url = https://github.com/fynydd/Halide.git

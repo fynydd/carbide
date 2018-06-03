@@ -6,6 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
+using Fynydd.Halide;
+using Fynydd.Halide.Constants;
+
 namespace Fynydd.Carbide
 {
     /// <summary>
@@ -20,24 +23,6 @@ namespace Fynydd.Carbide
     /// </summary>
     public class RobotsTxt : IHttpHandler
     {
-        #region Properties
-
-        /// <summary>
-        /// Return the version number of the class; read-only.
-        /// </summary>
-        /// <value>
-        /// A string with the version number of the class.
-        /// </value>
-        public static String Version
-        {
-            get
-            {
-                return "2018.04.09A";
-            }
-        }
-
-        #endregion
-
         public bool IsReusable
         {
             get { return true; }
