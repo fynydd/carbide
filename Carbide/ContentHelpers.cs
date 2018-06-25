@@ -202,7 +202,7 @@ namespace Fynydd.Carbide
             
             if (url.IsResponsiveImageType())
             {
-                url += "?width=" + width + "&quality=" + quality + (filters != "" ? "&" + filters.Trim('&') : "");
+                url = url.RemoveQueryString() + "?width=" + width + "&quality=" + quality + (filters != "" ? "&" + filters.Trim('&') : "");
             }
 
             return url;
