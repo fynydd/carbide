@@ -14,14 +14,14 @@
         $description$ Carbide includes: extension methods for manipulating IPublishedContent objects, WebAPI routes for file handling, Umbraco dashboard tools to speed development, additional form field validators, and static helper classes. File assets are embedded resources, so no messy file/folder changes to your project. And Carbide requires no commercial third party components. You have all the source code, an MIT license, sunshine, and puppies.
     </description>
     <summary>$description$</summary>
-    <releaseNotes>Fixes issue with Newtonsoft JSON coexistence with UmbracoCMS Core dependency, Now dependent on Halide version 4.0.5+, UmbracoCms.Core version 7.10.*.</releaseNotes>
+    <releaseNotes>REALLY fixes issue with Newtonsoft JSON coexistence with UmbracoCMS Core dependency, Now dependent on Halide version 4.0.5+, UmbracoCms.Core version 7.10.*.</releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>umbraco carbide utilities scss seo</tags>
     <packageTypes>
       <packageType name="Dependency" />
     </packageTypes>
     <dependencies>
-      <dependency id="Fynydd.Halide" version="(4.0.4,)" />
+      <dependency id="Fynydd.Halide" version="(4.0.5,)" />
       <dependency id="UmbracoCms.Core" version="7.10.*" />
     </dependencies>
   </metadata>
