@@ -21,7 +21,7 @@
       <packageType name="Dependency" />
     </packageTypes>
     <dependencies>
-      <dependency id="Fynydd.Halide" version="(4.0.5,)" />
+      <dependency id="Fynydd.Halide" version="(4.0.6,)" />
       <dependency id="UmbracoCms.Core" version="7.10.*" />
     </dependencies>
   </metadata>
