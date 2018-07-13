@@ -143,14 +143,14 @@ namespace Fynydd.Carbide
                         timer2.Start();
                         Services.ContentService.RePublishAll();
                         timer2.Stop();
-                        context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetTime() + " seconds</strong></li>";
+                        context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
 
 						context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Refreshing XML cache... ";
                         timer2.Reset();
                         timer2.Start();
                         umbraco.library.RefreshContent();
                         timer2.Stop();
-                        context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetTime() + " seconds</strong></li>";
+                        context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
 
                         context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Rebuilding Examine indexes... ";
                         timer2.Reset();
@@ -163,7 +163,7 @@ namespace Fynydd.Carbide
                         }
 
                         timer2.Stop();
-                        context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetTime() + " seconds</strong></li>";
+                        context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
 
                         timer.Stop();
 
@@ -171,7 +171,7 @@ namespace Fynydd.Carbide
 
                         context.Application["RebuildCacheHistory"] += "</ol>";
 
-						context.Application["RebuildCacheHistory"] += "<h4 style=\"font-size: 1.1rem;\">Finished in " + timer.GetTime() + " seconds</h4>";
+						context.Application["RebuildCacheHistory"] += "<h4 style=\"font-size: 1.1rem;\">Finished in " + timer.GetSeconds<int>() + " seconds</h4>";
                     }
 
                     catch (Exception e)
@@ -181,7 +181,7 @@ namespace Fynydd.Carbide
 
                         context.Application.SafeRemove("RebuildCacheStatus");
 
-                        context.Application["RebuildCacheHistory"] = "</li></ol><p><strong>Error in " + timer.GetTime() + " seconds on " + Temporal.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + Temporal.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
+                        context.Application["RebuildCacheHistory"] = "</li></ol><p><strong>Error in " + timer.GetSeconds<int>() + " seconds on " + Temporal.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + Temporal.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
 
                         result = context.Application["RebuildCacheHistory"].ToString();
                     }
@@ -278,7 +278,7 @@ namespace Fynydd.Carbide
                         }
 
                         timer2.Stop();
-                        context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetTime() + " seconds</strong></li>";
+                        context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
 
                         timer.Stop();
 
@@ -286,7 +286,7 @@ namespace Fynydd.Carbide
 
                         context.Application["RebuildCacheHistory"] += "</ol>";
 
-                        context.Application["RebuildCacheHistory"] += "<h4 style=\"font-size: 1.1rem;\">Finished in " + timer.GetTime() + " seconds</h4>";
+                        context.Application["RebuildCacheHistory"] += "<h4 style=\"font-size: 1.1rem;\">Finished in " + timer.GetSeconds<int>() + " seconds</h4>";
                     }
 
                     catch (Exception e)
@@ -296,7 +296,7 @@ namespace Fynydd.Carbide
 
                         context.Application.SafeRemove("RebuildCacheStatus");
 
-                        context.Application["RebuildCacheHistory"] = "</li></ol><p><strong>Error in " + timer.GetTime() + " seconds on " + Temporal.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + Temporal.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
+                        context.Application["RebuildCacheHistory"] = "</li></ol><p><strong>Error in " + timer.GetSeconds<int>() + " seconds on " + Temporal.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + Temporal.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
 
                         result = context.Application["RebuildCacheHistory"].ToString();
                     }
@@ -370,7 +370,7 @@ namespace Fynydd.Carbide
                         }
 
                         timer2.Stop();
-                        context.Application["RebuildCacheHistory"] += "<strong>" + pageCounter + " template" + (pageCounter != 1 ? "s" : "") + " in " + timer2.GetTime() + " seconds</strong></li>";
+                        context.Application["RebuildCacheHistory"] += "<strong>" + pageCounter + " template" + (pageCounter != 1 ? "s" : "") + " in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
 
                         timer.Stop();
 
@@ -378,7 +378,7 @@ namespace Fynydd.Carbide
 
                         context.Application["RebuildCacheHistory"] += "</ol>";
 
-                        context.Application["RebuildCacheHistory"] += "<h4 style=\"font-size: 1.1rem;\">Finished in " + timer.GetTime() + " seconds</h4>";
+                        context.Application["RebuildCacheHistory"] += "<h4 style=\"font-size: 1.1rem;\">Finished in " + timer.GetSeconds<int>() + " seconds</h4>";
                     }
 
                     catch (Exception e)
@@ -388,7 +388,7 @@ namespace Fynydd.Carbide
 
                         context.Application.SafeRemove("RebuildCacheStatus");
 
-                        context.Application["RebuildCacheHistory"] = "</li></ol><p><strong>Error in " + timer.GetTime() + " seconds on " + Temporal.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + Temporal.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
+                        context.Application["RebuildCacheHistory"] = "</li></ol><p><strong>Error in " + timer.GetSeconds<int>() + " seconds on " + Temporal.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + Temporal.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
 
                         result = context.Application["RebuildCacheHistory"].ToString();
                     }
