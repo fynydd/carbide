@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Formatting;
+using System.Net.Http.Headers;
 using System.Reflection;
 using System.Text;
 using System.Threading;
@@ -33,9 +34,33 @@ namespace Fynydd.Carbide
 
             try
             {
-                Version version = Assembly.GetEntryAssembly().GetName().Version;
+                Version version = Assembly.GetExecutingAssembly().GetName().Version;
 
-                result = version.Major + "." + version.Minor + "." + version.Revision;
+                result = version.Major + "." + version.Minor + "." + version.Build;
+            }
+
+            catch { }
+
+            var response = new HttpResponseMessage(HttpStatusCode.OK);
+            response.Content = new StringContent(result, Encoding.UTF8, "text/html");
+            return response;
+        }
+
+        [HttpGet]
+        public HttpResponseMessage HalideVersion() // /umbraco/api/carbidesupport/halideversion/
+        {
+            string result = "1.0.0";
+
+            try
+            {
+                foreach (AssemblyName an in Assembly.GetExecutingAssembly().GetReferencedAssemblies())
+                {
+                    if (an.Name == "Fynydd.Halide")
+                    {
+                        result = an.Version.Major + "." + an.Version.Minor + "." + an.Version.Build;
+                        break;
+                    }
+                }
             }
 
             catch { }
@@ -132,7 +157,7 @@ namespace Fynydd.Carbide
         [HttpGet]
         public HttpResponseMessage Png(string file) // /umbraco/api/carbidesupport/png/?file=carbide-icon
         {
-            string result = "";
+            byte[] result = null;
 
             try
             {
@@ -141,9 +166,12 @@ namespace Fynydd.Carbide
 
                 using (Stream stream = assembly.GetManifestResourceStream(resourceName))
                 {
-                    using (StreamReader reader = new StreamReader(stream))
+                    if (stream != null)
                     {
-                        result = reader.ReadToEnd();
+                        using (BinaryReader reader = new BinaryReader(stream))
+                        {
+                            result = reader.ReadBytes((int)reader.BaseStream.Length);
+                        }
                     }
                 }
             }
@@ -153,7 +181,8 @@ namespace Fynydd.Carbide
             }
 
             var response = new HttpResponseMessage(HttpStatusCode.OK);
-            response.Content = new StringContent(result, Encoding.UTF8, "image/png");
+            response.Content = new ByteArrayContent(result);
+            response.Content.Headers.ContentType = new MediaTypeHeaderValue("image/png");
             return response;
         }
 
