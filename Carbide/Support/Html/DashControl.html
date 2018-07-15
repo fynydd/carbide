@@ -48,9 +48,34 @@
             padding-top: 1.5rem;
         }
 
+        .carbide-logo {
+
+            display: block;
+            width: 7rem;
+            height: 7rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0;
+        }
+
+        .carbide-title {
+
+            padding-bottom: 0;
+            margin-bottom: 1rem;
+        }
+
+        .carbide-version {
+
+            padding-bottom: 0;
+            margin-bottom: 3rem;
+        }
+
     </style>
 
     <section role="status" id="CachePanel">
+        <img src="/umbraco/api/carbidesupport/png/?file=carbide-icon" class="carbide-logo" />
+        <h2 class="carbide-title">Carbide</h2>
+        <p class="carbide-version">Version <span id="carbide-version"></span></p>
+
         <h3>Rebuild Content and Examine Caches</h3>
         <p style="margin-bottom: 20px;">
             If you need to rebuild the caches due to development changes or corruption, <br />
@@ -231,6 +256,18 @@
                 }
             });
         }
+
+        $.ajax({
+
+            type: "GET",
+            async: true,
+            url: "/umbraco/api/carbidesupport/version/",
+
+            success: function (data) {
+
+                $("#carbide-version").html(data);
+            }
+        });
 
         loadPageState();
 

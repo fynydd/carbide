@@ -26,7 +26,24 @@ namespace Fynydd.Carbide
 {
     public class CarbideSupportController : UmbracoApiController
     {
-        public static string Version { get { return "2018-05-14"; } }
+        [HttpGet]
+        public HttpResponseMessage Version() // /umbraco/api/carbidesupport/version/
+        {
+            string result = "1.0.0";
+
+            try
+            {
+                Version version = Assembly.GetEntryAssembly().GetName().Version;
+
+                result = version.Major + "." + version.Minor + "." + version.Revision;
+            }
+
+            catch { }
+
+            var response = new HttpResponseMessage(HttpStatusCode.OK);
+            response.Content = new StringContent(result, Encoding.UTF8, "text/html");
+            return response;
+        }
 
         [HttpGet]
         public HttpResponseMessage Html(string file) // /umbraco/api/carbidesupport/html/?file=DashControl
@@ -109,6 +126,34 @@ namespace Fynydd.Carbide
 
             var response = new HttpResponseMessage(HttpStatusCode.OK);
             response.Content = new StringContent(result, Encoding.UTF8, "image/svg+xml");
+            return response;
+        }
+
+        [HttpGet]
+        public HttpResponseMessage Png(string file) // /umbraco/api/carbidesupport/png/?file=carbide-icon
+        {
+            string result = "";
+
+            try
+            {
+                var assembly = Assembly.GetExecutingAssembly();
+                var resourceName = "Fynydd.Carbide.Support.Images." + file + ".png";
+
+                using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+                {
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        result = reader.ReadToEnd();
+                    }
+                }
+            }
+
+            catch
+            {
+            }
+
+            var response = new HttpResponseMessage(HttpStatusCode.OK);
+            response.Content = new StringContent(result, Encoding.UTF8, "image/png");
             return response;
         }
 
