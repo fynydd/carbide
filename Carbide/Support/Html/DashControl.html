@@ -34,6 +34,8 @@
             border-radius: 0.35rem;
             max-width: 40rem;
             min-width: 175px;
+
+            margin-bottom: 3rem;
         }
 
         section[role="status"] > h4 {
@@ -50,32 +52,47 @@
 
         .carbide-logo {
 
-            display: block;
-            width: 7rem;
-            height: 7rem;
-            margin-bottom: 1rem;
+            display: inline-block;
+            width: 4rem;
+            height: 4rem;
+            margin-right: 1rem;
             padding-bottom: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 400px) {
+
+            .carbide-logo {
+
+                margin-bottom: 0.5rem;
+            }
         }
 
         .carbide-title {
 
             padding-bottom: 0;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .carbide-version {
 
-            padding-bottom: 0;
-            margin-bottom: 3rem;
+            font-size: 0.9rem;
+            line-height: 1.6rem;
+            font-style: italic;
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 0;
+            background-color: #e0e0e0;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
         }
 
     </style>
 
     <section role="status" id="CachePanel">
-        <img src="/umbraco/api/carbidesupport/png/?file=carbide-icon" class="carbide-logo" />
-        <h2 class="carbide-title">Carbide</h2>
-        <p class="carbide-version">Version <span id="carbide-version"></span></p>
-
+        <h1 class="carbide-title">
+            <img src="/umbraco/api/carbidesupport/png/?file=carbide-icon" class="carbide-logo" />Carbide
+        </h1>
         <h3>Rebuild Content and Examine Caches</h3>
         <p style="margin-bottom: 20px;">
             If you need to rebuild the caches due to development changes or corruption, <br />
@@ -98,6 +115,12 @@
         <div id="output2">
 
         </div>
+
+        <p class="carbide-version">
+            Carbide version <span id="carbide-version">1.0.0</span> &mdash; 
+            <nobr>Halide version <span id="halide-version">1.0.0</span></nobr>
+        </p>
+
     </section>
 
         <script type="text/javascript">
@@ -266,6 +289,18 @@
             success: function (data) {
 
                 $("#carbide-version").html(data);
+            }
+        });
+
+        $.ajax({
+
+            type: "GET",
+            async: true,
+            url: "/umbraco/api/carbidesupport/halideversion/",
+
+            success: function (data) {
+
+                $("#halide-version").html(data);
             }
         });
 
