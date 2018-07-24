@@ -27,7 +27,7 @@ namespace Fynydd.Carbide
             var queryString = contentPath.QueryString();
             var filePath = contentPath.RemoveQueryString();
 
-            if (minify && !filePath.StartsWith("_halide.generated."))
+            if (minify && !filePath.StartsWith("_carbide.generated."))
             {
                 if (filePath.EndsWith(".js") || filePath.EndsWith(".css"))
                 {
@@ -36,12 +36,12 @@ namespace Fynydd.Carbide
 
                     if (filePath.Contains("/"))
                     {
-                        newContentpath = filePath.Substring(0, filePath.LastIndexOf("/") + 1) + "_halide.generated." + filePath.Substring(filePath.LastIndexOf("/") + 1);
+                        newContentpath = filePath.Substring(0, filePath.LastIndexOf("/") + 1) + "_carbide.generated." + filePath.Substring(filePath.LastIndexOf("/") + 1);
                     }
 
                     else
                     {
-                        newContentpath = "_halide.generated." + filePath;
+                        newContentpath = "_carbide.generated." + filePath;
                     }
 
                     if (HttpContext.Current.Application.KeyExists(Storage.ConvertFilePathToKey(filePath) + "_MINIFY"))

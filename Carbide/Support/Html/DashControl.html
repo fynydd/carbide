@@ -291,18 +291,6 @@
             }
         });
 
-        $.ajax({
-
-            type: "GET",
-            async: true,
-            url: "/umbraco/api/carbidesupport/halideversion/",
-
-            success: function (data) {
-
-                $("#halide-version").html(data);
-            }
-        });
-
         loadPageState();
 
         $('a[data-toggle="tab"]').on('shown', function (e) {
