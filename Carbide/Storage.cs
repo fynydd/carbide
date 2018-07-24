@@ -850,6 +850,10 @@ namespace Fynydd.Carbide
 
         /// <summary>
         /// Read a folder of filenames (SCSS partials) and inject them into a SCSS file as import statements.
+        /// Add the following to your SCSS file so the method knows where to inject the import statements,
+        /// including the leading "// ":
+        /// // $CARBIDE_PARTIALS:BEGIN
+        /// // $CARBIDE_PARTIALS:END
         /// </summary>
         /// <param name="scssPath">Relative web path to the SCSS files (e.g. "/scss/").</param>
         /// <param name="scssFilename">File name for the SCSS file in which to inject the partials as import statements (e.g. "application.scss").</param>
