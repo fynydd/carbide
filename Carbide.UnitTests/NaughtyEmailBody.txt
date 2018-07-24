@@ -1,0 +1,18 @@
+﻿Original body message.
+.
+X-Received: by 2002:a25:6a55:: with SMTP id f82-v6mr14349543ybc.235.1527016187707; Tue, 22 May 2018 12:09:47 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 2002:a25:e446:0:0:0:0:0 with HTTP; Tue, 22 May 2018 12:09:17 -0700 (PDT)
+From: John Doe <john.doe@example.com>
+Date: Tue, 22 May 2018 15:09:17 -0400
+Message-ID: <CANoBcbRFynkd9Xoa5J5XNQRiyT7536cq93sjJF2N1ZvTfNtwkA@mail.gmail.com>
+Subject: Test Message
+To: Jane Doe <jane.doe@example.com>
+Content-Type: multipart/alternative; boundary="0000000000006f59bc056cd029a1"
+
+--0000000000006f59bc056cd029a1
+Content-Type: text/plain; charset="UTF-8"
+
+Test message body
+
+--0000000000006f59bc056cd029a1--
