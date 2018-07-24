@@ -112,9 +112,5 @@
   <ItemGroup>
     <EmbeddedResource Include="Support\Html\DashControl.html" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="build-nuget.bat" />
-    <None Include="Carbide.nuspec" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
