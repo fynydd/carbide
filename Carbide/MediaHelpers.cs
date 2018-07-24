@@ -13,8 +13,8 @@ using Umbraco.Core.Media;
 using Umbraco.Core.Services;
 using Umbraco.Web;
 
-using Fynydd.Halide;
-using Fynydd.Halide.Constants;
+using Fynydd.Carbide;
+using Fynydd.Carbide.Constants;
 
 namespace Fynydd.Carbide
 {

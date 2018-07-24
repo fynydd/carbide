@@ -23,8 +23,8 @@ using Umbraco.Core.Services;
 using Umbraco.Web;
 using Umbraco.Web.WebApi;
 
-using Fynydd.Halide;
-using Fynydd.Halide.Constants;
+using Fynydd.Carbide;
+using Fynydd.Carbide.Constants;
 
 namespace Fynydd.Carbide
 {

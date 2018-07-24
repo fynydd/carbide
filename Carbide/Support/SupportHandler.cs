@@ -20,8 +20,8 @@ using Umbraco.Core.Models;
 using Umbraco.Web;
 using Umbraco.Web.WebApi;
 
-using Fynydd.Halide;
-using Fynydd.Halide.Constants;
+using Fynydd.Carbide;
+using Fynydd.Carbide.Constants;
 
 namespace Fynydd.Carbide
 {
@@ -37,30 +37,6 @@ namespace Fynydd.Carbide
                 Version version = Assembly.GetExecutingAssembly().GetName().Version;
 
                 result = version.Major + "." + version.Minor + "." + version.Build;
-            }
-
-            catch { }
-
-            var response = new HttpResponseMessage(HttpStatusCode.OK);
-            response.Content = new StringContent(result, Encoding.UTF8, "text/html");
-            return response;
-        }
-
-        [HttpGet]
-        public HttpResponseMessage HalideVersion() // /umbraco/api/carbidesupport/halideversion/
-        {
-            string result = "1.0.0";
-
-            try
-            {
-                foreach (AssemblyName an in Assembly.GetExecutingAssembly().GetReferencedAssemblies())
-                {
-                    if (an.Name == "Fynydd.Halide")
-                    {
-                        result = an.Version.Major + "." + an.Version.Minor + "." + an.Version.Build;
-                        break;
-                    }
-                }
             }
 
             catch { }

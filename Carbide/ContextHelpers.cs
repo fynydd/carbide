@@ -9,8 +9,8 @@ using Umbraco.Web;
 using Umbraco.Web.Routing;
 using Umbraco.Web.Security;
 
-using Fynydd.Halide;
-using Fynydd.Halide.Constants;
+using Fynydd.Carbide;
+using Fynydd.Carbide.Constants;
 
 namespace Fynydd.Carbide
 {
