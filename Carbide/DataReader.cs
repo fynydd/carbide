@@ -676,7 +676,7 @@ namespace Fynydd.Carbide
         /// </summary>
         private void ReadByPage(string commandText, string WhereClause, string OrderByClause, int PerPage, int PageNum)
         {
-            string template = "WITH VIRTUAL_HALIDE_ROWSET AS (SELECT ROW_NUMBER() OVER( ORDER BY [ORDERBY] ) AS ROWNUMBER, * FROM ([SELECT]) AS ML_HALIDE WHERE [WHERECLAUSE]) SELECT * FROM VIRTUAL_HALIDE_ROWSET WHERE ROWNUMBER BETWEEN CONVERT(varchar, [BEGINRECORD]) and CONVERT(varchar, [ENDRECORD]);";
+            string template = "WITH VIRTUAL_CARBIDE_ROWSET AS (SELECT ROW_NUMBER() OVER( ORDER BY [ORDERBY] ) AS ROWNUMBER, * FROM ([SELECT]) AS ML_CARBIDE WHERE [WHERECLAUSE]) SELECT * FROM VIRTUAL_CARBIDE_ROWSET WHERE ROWNUMBER BETWEEN CONVERT(varchar, [BEGINRECORD]) and CONVERT(varchar, [ENDRECORD]);";
 
             if (PerPage > 0 && PageNum > 0)
             {
