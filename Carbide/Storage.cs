@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Management;
@@ -257,6 +258,40 @@ namespace Fynydd.Carbide
             for (int i = 0; i < folders.Length; i++)
             {
                 folders[i] = folders[i].Substring(folders[i].LastIndexOf("\\") + 1);
+            }
+
+            return folders;
+        }
+
+        /// <summary>
+        /// Returns the folders within a specified folder, using full relative web paths, including the starting path.
+        /// </summary>
+        /// <example>
+        /// <code>
+        /// string[] folderNames = RecurseFolder("/pdf/");
+        /// </code>
+        /// </example>
+        /// <param name="path">Web-formatted parent path to examine.</param>
+        /// <param name="includeRoot">First insert the passed path.</param>
+        /// <returns>String array of fully qualified child folder names (e.g. "/pdf/", "/pdf/child1/", "/pdf/child2/", etc.).</returns>
+        public static ArrayList GetWebFolders(this string path, bool includeRoot = false)
+        {
+            ArrayList folders = new ArrayList();
+            string[] _folders = Directory.GetDirectories(path.MapPath());
+
+            for (int i = 0; i < _folders.Length; i++)
+            {
+                var newPath = path.TrimEnd('/') + "/" + _folders[i].Substring(_folders[i].LastIndexOf("\\") + 1) + "/";
+                folders.Add(newPath);
+
+                folders.AddRange(GetWebFolders(newPath));
+            }
+
+            folders.Sort();
+
+            if (includeRoot == true)
+            {
+                folders.Add(path.TrimEnd('/') + "/");
             }
 
             return folders;
@@ -811,6 +846,72 @@ namespace Fynydd.Carbide
             }
 
             #endregion
+        }
+
+        /// <summary>
+        /// Read a folder of filenames (SCSS partials) and inject them into a SCSS file as import statements.
+        /// </summary>
+        /// <param name="scssPath">Relative web path to the SCSS files (e.g. "/scss/").</param>
+        /// <param name="scssFilename">File name for the SCSS file in which to inject the partials as import statements (e.g. "application.scss").</param>
+        /// <param name="partialPath">Relative web path to the folder containing the SCSS partials to read (e.g. "/scss/custom/").</param>
+        public static void InjectScssPartials(string scssPath, string scssFilename, string partialPath)
+        {
+            try
+            {
+                var _scssPath = "/" + scssPath.ToLower().Trim('/') + "/";
+                var _partialPath = "/" + partialPath.ToLower().Trim('/') + "/";
+                _partialPath = _partialPath.Replace(_scssPath, "");
+                var scss = Storage.ReadFile(_scssPath + scssFilename);
+                string[] delims = { "// $CARBIDE_PARTIALS:BEGIN", "// $CARBIDE_PARTIALS:END" };
+
+                if (scss.Length > (delims[0].Length + delims[1].Length))
+                {
+                    if (scss.Contains(delims[0]) && scss.Contains(delims[1]))
+                    {
+                        if (scss.IndexOf(delims[0]) < scss.IndexOf(delims[1]))
+                        {
+                            List<string> chunks = new List<string>(scss.Split(delims, StringSplitOptions.RemoveEmptyEntries));
+
+                            if (chunks.Count == 3)
+                            {
+                                chunks.RemoveAt(1);
+                            }
+
+                            if (chunks.Count == 2)
+                            {
+                                var inject = "";
+                                ArrayList folders = GetWebFolders(_scssPath + _partialPath, includeRoot: true);
+
+                                while (folders.Count > 0)
+                                {
+                                    foreach (var folder in folders)
+                                    {
+                                        var _files = Storage.GetFiles(folder.ToString(), "*.scss");
+                                        _files.Sort();
+
+                                        if (_files.Count > 0)
+                                        {
+                                            foreach (var file in _files)
+                                            {
+                                                inject += "@import \"" + folder.ToString().Replace(_scssPath, "") + file + "\";\r\n";
+                                            }
+                                        }
+                                    }
+                                }
+
+                                var finalFile = chunks[0] + delims[0] + "\r\n" + inject + delims[1] + chunks[1];
+
+                                Storage.WriteFile(_scssPath + scssFilename, finalFile);
+                            }
+                        }
+                    }
+                }
+            }
+
+            catch (Exception e)
+            {
+                Debug.WriteLine("EXCEPTION: Carbide.Storage.InjectScssPartials() - " + e.Message);
+            }
         }
     }
 }
