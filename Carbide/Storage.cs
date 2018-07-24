@@ -882,19 +882,16 @@ namespace Fynydd.Carbide
                                 var inject = "";
                                 ArrayList folders = GetWebFolders(_scssPath + _partialPath, includeRoot: true);
 
-                                while (folders.Count > 0)
+                                foreach (var folder in folders)
                                 {
-                                    foreach (var folder in folders)
-                                    {
-                                        var _files = Storage.GetFiles(folder.ToString(), "*.scss");
-                                        _files.Sort();
+                                    var _files = Storage.GetFiles(folder.ToString(), "*.scss");
+                                    _files.Sort();
 
-                                        if (_files.Count > 0)
+                                    if (_files.Count > 0)
+                                    {
+                                        foreach (var file in _files)
                                         {
-                                            foreach (var file in _files)
-                                            {
-                                                inject += "@import \"" + folder.ToString().Replace(_scssPath, "") + file + "\";\r\n";
-                                            }
+                                            inject += "@import \"" + folder.ToString().Replace(_scssPath, "") + file + "\";\r\n";
                                         }
                                     }
                                 }
