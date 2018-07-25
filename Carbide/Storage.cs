@@ -10,6 +10,7 @@ using System.Web;
 using SharpScss;
 
 using Fynydd.Carbide.Constants;
+using System.Reflection;
 
 namespace Fynydd.Carbide
 {
@@ -926,6 +927,34 @@ namespace Fynydd.Carbide
             {
                 Debug.WriteLine("EXCEPTION: Carbide.Storage.InjectScssPartials() - " + e.Message);
             }
+        }
+
+        /// <summary>
+        /// Read an HTML embedded resource from the Carbide binary
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <returns>HTML content or an empty string if not found</returns>
+        public static string CarbideEmbeddedHtml(string filename)
+        {
+            var fileContent = "";
+
+            try
+            {
+                var assembly = Assembly.GetExecutingAssembly();
+                var fileName = "Fynydd.Carbide.Support.Html." + filename;
+
+                using (Stream stream = assembly.GetManifestResourceStream(fileName))
+                {
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        fileContent = reader.ReadToEnd();
+                    }
+                }
+            }
+
+            catch { }
+
+            return fileContent;
         }
     }
 }
