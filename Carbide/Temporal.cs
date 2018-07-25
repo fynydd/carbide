@@ -919,6 +919,13 @@ namespace Fynydd.Carbide
             return result;
         }
 
+        /// <summary>
+        /// Format seconds as a more friendly timespan with a custom delimitter.
+        /// Like: 3d : 5h : 12m : 15s or 3d+5h+12m+15s
+        /// </summary>
+        /// <param name="seconds">Number of seconds to format.</param>
+        /// <param name="delimitter">Text to separate time elements; defaults to " : ".</param>
+        /// <returns>Formatted timespan</returns>
         public static string FormatTimer(int seconds, string delimitter = " : ")
         {
             var result = "0 seconds";
