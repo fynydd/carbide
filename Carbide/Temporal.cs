@@ -751,18 +751,18 @@ namespace Fynydd.Carbide
                     context.Application[activityName + "_Running"] = false;
                     context.Application[activityName + "_Seconds"] = seconds;
 
-                    Debug.WriteLine("Carbide.Temporal.TaskIntervalInit - DONE");
+                    Debug.WriteLine("Carbide.Temporal.TaskIntervalInit (" + activityName + ") - DONE");
                 }
 
                 else
                 {
-                    Debug.WriteLine("Carbide.Temporal.TaskIntervalInit - ALREADY INITIALIZED");
+                    Debug.WriteLine("Carbide.Temporal.TaskIntervalInit (" + activityName + ") - ALREADY INITIALIZED");
                 }
             }
 
             catch (Exception e)
             {
-                Debug.WriteLine("Carbide.Temporal EXCEPTION: TaskIntervalInit - " + e.Message);
+                Debug.WriteLine("Carbide.Temporal EXCEPTION: TaskIntervalInit (" + activityName + ") - " + e.Message);
             }
         }
 
@@ -785,12 +785,12 @@ namespace Fynydd.Carbide
 
                 context.Application[activityName + "_Running"] = true;
 
-                Debug.WriteLine("Carbide.Temporal.TaskIntervalStart - DONE");
+                Debug.WriteLine("Carbide.Temporal.TaskIntervalStart (" + activityName + ") - DONE");
             }
 
             catch (Exception e)
             {
-                Debug.WriteLine("Carbide.Temporal EXCEPTION: TaskIntervalStart - " + e.Message);
+                Debug.WriteLine("Carbide.Temporal EXCEPTION: TaskIntervalStart (" + activityName + ") - " + e.Message);
             }
         }
 
@@ -814,12 +814,12 @@ namespace Fynydd.Carbide
                 context.Application[activityName + "_Running"] = false;
                 context.Application[activityName + "_LastRun"] = DateTime.Now;
 
-                Debug.WriteLine("Carbide.Temporal.TaskIntervalStop - DONE");
+                Debug.WriteLine("Carbide.Temporal.TaskIntervalStop (" + activityName + ") - DONE");
             }
 
             catch (Exception e)
             {
-                Debug.WriteLine("Carbide.Temporal EXCEPTION: TaskIntervalStop - " + e.Message);
+                Debug.WriteLine("Carbide.Temporal EXCEPTION: TaskIntervalStop (" + activityName + ") - " + e.Message);
             }
         }
 
@@ -845,7 +845,7 @@ namespace Fynydd.Carbide
                 result = Convert.ToBoolean(context.Application[activityName + "_Running"].ToString());
             }
 
-            Debug.WriteLine("Carbide.Temporal.TaskIsRunning - " + (result == true ? "YES" : "NO"));
+            Debug.WriteLine("Carbide.Temporal.TaskIsRunning (" + activityName + ") - " + (result == true ? "YES" : "NO"));
             return result;
         }
 
@@ -889,7 +889,7 @@ namespace Fynydd.Carbide
                     {
                         result = false;
 
-                        Debug.WriteLine("Carbide.Temporal.TaskShouldBeRun - RUNNING");
+                        Debug.WriteLine("Carbide.Temporal.TaskShouldBeRun (" + activityName + ") - RUNNING");
                     }
 
                     else if (lastRun != DateTime.MinValue)
@@ -897,25 +897,25 @@ namespace Fynydd.Carbide
                         if (Temporal.DateDiff<double>(lastRun, DateTime.Now, DateDiffComparisonType.Seconds) < seconds)
                         {
                             result = false;
-                            Debug.WriteLine("Carbide.Temporal.TaskShouldBeRun - TOO SOON; " + FormatTimer((int)(seconds - Temporal.DateDiff<double>(lastRun, DateTime.Now, DateDiffComparisonType.Seconds)), " ") + " to go");
+                            Debug.WriteLine("Carbide.Temporal.TaskShouldBeRun (" + activityName + ") - TOO SOON; " + FormatTimer((int)(seconds - Temporal.DateDiff<double>(lastRun, DateTime.Now, DateDiffComparisonType.Seconds)), " ") + " to go");
                         }
                     }
                 }
 
                 catch (Exception e)
                 {
-                    Debug.WriteLine("Carbide.Temporal EXCEPTION: TaskShouldBeRun - " + e.Message);
+                    Debug.WriteLine("Carbide.Temporal EXCEPTION: TaskShouldBeRun (" + activityName + ") - " + e.Message);
                 }
             }
 
             else
             {
-                Debug.WriteLine("Carbide.Temporal.TaskShouldBeRun - Seconds is zero");
+                Debug.WriteLine("Carbide.Temporal.TaskShouldBeRun (" + activityName + ") - Seconds is zero");
 
                 result = false;
             }
 
-            Debug.WriteLine("Carbide.Temporal.TaskShouldBeRun - " + (result == true ? "YES" : "NO"));
+            Debug.WriteLine("Carbide.Temporal.TaskShouldBeRun (" + activityName + ") - " + (result == true ? "YES" : "NO"));
             return result;
         }
 
