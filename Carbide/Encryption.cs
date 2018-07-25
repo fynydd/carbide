@@ -8,6 +8,24 @@ using Newtonsoft.Json.Linq;
 
 namespace Fynydd.Carbide
 {
+    /// <summary>
+    /// The Encryption class contains methods and properties for
+    /// working with encrypted data. You can place encryption base key and init vectors
+    /// in the web.config as follows:
+    /// <example>
+    /// <code>
+    /// <![CDATA[
+    /// <configSections>
+    ///		<section name="Fynydd.Carbide" type="System.Configuration.NameValueFileSectionHandler"/>
+    /// </configSections>
+    /// <Fynydd.Carbide>
+    ///    <add key = "Encryption.BaseKey" value="10,64,9,2,13,199,67,18,141,233,16,230,217,183,146,18,156,74,90,36,226,129,181,219" />
+    ///    <add key = "Encryption.InitVector" value="162,99,183,154,226,211,14,122,74,187,112,21,251,109,76,75,219,93" />
+    /// </Fynydd.Carbide>
+    ///	]]>
+    ///	</code>
+    ///	</example>
+    /// </summary>
     public static class Encryption
     {
         #region Properties
@@ -15,14 +33,14 @@ namespace Fynydd.Carbide
         /// <summary>
         /// The secret key to use for the symmetric algorithm.
         /// You should change these numbers for your individual use
-        /// by adding an encryptionBaseKey attribute to the Carbide Settings
+        /// by adding an Encryption.BaseKey attribute to the Carbide Settings
         /// config setting within the web.config file.
         /// </summary>
         public static byte[] basekey1
         {
             get
             {
-                string key = Config.GetKeyValue<string>("EncryptionBaseKey", "", "Fynydd.Carbide");
+                string key = Config.GetKeyValue<string>("Encryption.BaseKey", "", "Fynydd.Carbide");
 
                 byte[] _basekey1 = CreateBaseKey(key);
 
@@ -33,14 +51,14 @@ namespace Fynydd.Carbide
         /// <summary>
         /// The initialization vector to use for the symmetric algorithm.
         /// You should change these numbers for your individual use
-        /// by adding an encryptionInitVector attribute to the Carbide Settings
+        /// by adding an Encryption.InitVector attribute to the Carbide Settings
         /// config setting within the web.config file.
         /// </summary>
         public static byte[] iv
         {
             get
             {
-                string key = Config.GetKeyValue<string>("EncryptionInitVector", "", "Fynydd.Carbide");
+                string key = Config.GetKeyValue<string>("Encryption.InitVector", "", "Fynydd.Carbide");
 
                 byte[] _iv = CreateInitVector(key);
 
@@ -317,8 +335,8 @@ namespace Fynydd.Carbide
         /// <returns>A BASE64+ encrypted string.</returns>
         public static string Encrypt<T>(this T data)
         {
-            string key = Config.GetKeyValue<string>("EncryptionBaseKey", "", "Fynydd.Carbide");
-            string ivec = Config.GetKeyValue<string>("EncryptionInitVector", "", "Fynydd.Carbide");
+            string key = Config.GetKeyValue<string>("Encryption.BaseKey", "", "Fynydd.Carbide");
+            string ivec = Config.GetKeyValue<string>("Encryption.InitVector", "", "Fynydd.Carbide");
 
             return Encrypt(data, CreateBaseKey(key), CreateInitVector(ivec));
         }
@@ -352,8 +370,8 @@ namespace Fynydd.Carbide
         /// <returns>A decrypted variable</returns>
         public static T Decrypt<T>(this string data)
         {
-            string key = Config.GetKeyValue<string>("EncryptionBaseKey", "", "Fynydd.Carbide");
-            string ivec = Config.GetKeyValue<string>("EncryptionInitVector", "", "Fynydd.Carbide");
+            string key = Config.GetKeyValue<string>("Encryption.BaseKey", "", "Fynydd.Carbide");
+            string ivec = Config.GetKeyValue<string>("Encryption.InitVector", "", "Fynydd.Carbide");
 
             return Decrypt<T>(data, CreateBaseKey(key), CreateInitVector(ivec));
         }
