@@ -47,6 +47,7 @@ namespace Fynydd.Carbide
         /// <param name="key">Unique name of the cached item</param>
         /// <param name="value">Object to store in the cache</param>
         /// <param name="expirationSeconds">Expiration time, in seconds, from the current date and time.</param>
+        /// <param name="context">HttpContext; defaults to Current</param>
         public static void Cache(string key, object value, int expirationSeconds, HttpContext context = null)
         {
             if (context == null)
@@ -58,11 +59,28 @@ namespace Fynydd.Carbide
         }
 
         /// <summary>
+        /// Output Caching wrapper method. Caches an object for the life of the application.
+        /// </summary>
+        /// <param name="key">Unique name of the cached item</param>
+        /// <param name="value">Object to store in the cache</param>
+        /// <param name="context">HttpContext; defaults to Current</param>
+        public static void CachePermanent(string key, object value, HttpContext context = null)
+        {
+            if (context == null)
+            {
+                context = HttpContext.Current;
+            }
+
+            context.Cache.Add(key, value, null, System.Web.Caching.Cache.NoAbsoluteExpiration, System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.High, null);
+        }
+
+        /// <summary>
         /// Output Caching wrapper method. Caches a string value for the number of seconds specified.
         /// </summary>
         /// <param name="key">Unique name of the cached item</param>
         /// <param name="value">String value to store in the cache</param>
         /// <param name="expirationSeconds">Expiration time, in seconds, from the current date and time.</param>
+        /// <param name="context">HttpContext; defaults to Current</param>
         public static void Cache(string key, string value, int expirationSeconds, HttpContext context = null)
         {
             if (context == null)
@@ -79,6 +97,7 @@ namespace Fynydd.Carbide
         /// <param name="key">Unique name of the cached item</param>
         /// <param name="value">Object to store in the cache</param>
         /// <param name="expirationDateTime">Expiration date and time.</param>
+        /// <param name="context">HttpContext; defaults to Current</param>
         public static void Cache(string key, object value, DateTime expirationDateTime, HttpContext context = null)
         {
             if (context == null)
@@ -95,6 +114,7 @@ namespace Fynydd.Carbide
         /// <param name="key">Unique name of the cached item</param>
         /// <param name="value">String value to store in the cache</param>
         /// <param name="expirationDateTime">Expiration date and time.</param>
+        /// <param name="context">HttpContext; defaults to Current</param>
         public static void Cache(string key, string value, DateTime expirationDateTime, HttpContext context = null)
         {
             if (context == null)
@@ -111,6 +131,7 @@ namespace Fynydd.Carbide
         /// </summary>
         /// <param name="key">Unique name of the cached item</param>
         /// <param name="value">Object to store in the cache</param>
+        /// <param name="context">HttpContext; defaults to Current</param>
         public static void Cache(string key, object value, HttpContext context = null)
         {
             if (context == null)
@@ -127,6 +148,7 @@ namespace Fynydd.Carbide
         /// </summary>
         /// <param name="key">Unique name of the cached item</param>
         /// <param name="value">String value to store in the cache</param>
+        /// <param name="context">HttpContext; defaults to Current</param>
         public static void Cache(string key, string value, HttpContext context = null)
         {
             if (context == null)
@@ -140,6 +162,7 @@ namespace Fynydd.Carbide
         /// <summary>
         /// Clear the output cache.
         /// </summary>
+        /// <param name="context">HttpContext; defaults to Current</param>
         public static void CacheClear(HttpContext context = null)
         {
             if (context == null)
@@ -158,6 +181,7 @@ namespace Fynydd.Carbide
         /// <summary>
         /// Delete a single cached item.
         /// </summary>
+        /// <param name="context">HttpContext; defaults to Current</param>
         public static void CacheDelete(string key, HttpContext context = null)
         {
             if (context == null)
@@ -178,6 +202,7 @@ namespace Fynydd.Carbide
         /// Output caching wrapper method. Determines if a cached item exists or not.
         /// </summary>
         /// <param name="key">Unique name of the cached item</param>
+        /// <param name="context">HttpContext; defaults to Current</param>
         /// <returns>true if cached item exists, false if not.</returns>
         public static bool CacheValid(string key, HttpContext context = null)
         {
@@ -200,6 +225,7 @@ namespace Fynydd.Carbide
         /// Output caching wrapper method. Retrieve a typed cache item.
         /// </summary>
         /// <param name="key">Unique name of the cached item</param>
+        /// <param name="context">HttpContext; defaults to Current</param>
         /// <returns>Cached value</returns>
         public static T Cache<T>(string key, HttpContext context = null)
         {
@@ -210,7 +236,7 @@ namespace Fynydd.Carbide
 
             if (string.IsNullOrWhiteSpace(key) == false)
             {
-                if (CacheValid(key))
+                if (CacheValid(key, context))
                 {
                     var value = context.Cache[key];
 
