@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Web;
 
 using Fynydd.Carbide.Constants;
 
@@ -447,7 +449,7 @@ namespace Fynydd.Carbide
                 typeof(T) == typeof(short) || typeof(T) == typeof(Int16) || typeof(T) == typeof(ushort) || typeof(T) == typeof(UInt16) ||
                 typeof(T) == typeof(int) || typeof(T) == typeof(Int32) || typeof(T) == typeof(uint) || typeof(T) == typeof(UInt32) ||
                 typeof(T) == typeof(long) || typeof(T) == typeof(Int64) || typeof(T) == typeof(ulong) || typeof(T) == typeof(UInt64) ||
-                typeof(T) == typeof(float) || typeof(T) == typeof(Single) || 
+                typeof(T) == typeof(float) || typeof(T) == typeof(Single) ||
                 typeof(T) == typeof(double) || typeof(T) == typeof(Double)
                 )
             {
@@ -722,6 +724,228 @@ namespace Fynydd.Carbide
             { }
 
             wait.Stop();
+        }
+
+        /// <summary>
+        /// Task Interval methods help manage scheduled activities triggered by web page views.
+        /// These methods only track status and time. They do not execute anything.
+        /// 
+        /// Start by running TaskIntervalInit(). This can be placed on a web page and will skip
+        /// its processes if it has been run prior. This establishes the name of the task and the
+        /// time interval in seconds (or greater) before it will run again.
+        /// </summary>
+        /// <param name="activityName">Name of the activity, like "TwitterImport".</param>
+        /// <param name="seconds">Number of seconds between runs.</param>
+        /// <param name="context">Manually set the context if running the method from a thread.</param>
+        public static void TaskIntervalInit(string activityName, double seconds, HttpContext context = null)
+        {
+            try
+            {
+                if (context == null)
+                {
+                    context = HttpContext.Current;
+                }
+
+                if (context.Application[activityName + "_Seconds"] == null || context.Application[activityName + "_Running"] == null)
+                {
+                    context.Application[activityName + "_Running"] = false;
+                    context.Application[activityName + "_Seconds"] = seconds;
+
+                    Debug.WriteLine("Carbide.Temporal.TaskIntervalInit - DONE");
+                }
+
+                else
+                {
+                    Debug.WriteLine("Carbide.Temporal.TaskIntervalInit - ALREADY INITIALIZED");
+                }
+            }
+
+            catch (Exception e)
+            {
+                Debug.WriteLine("Carbide.Temporal EXCEPTION: TaskIntervalInit - " + e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Task Interval methods help manage scheduled activities triggered by web page views.
+        /// These methods only track status and time. They do not execute anything.
+        /// 
+        /// Run TimeIntervalStart() from your actual task method to indicate that it has begun.
+        /// </summary>
+        /// <param name="activityName">Name of the activity, like "TwitterImport".</param>
+        /// <param name="context">Manually set the context if running the method from a thread.</param>
+        public static void TaskIntervalStart(string activityName, HttpContext context = null)
+        {
+            try
+            {
+                if (context == null)
+                {
+                    context = HttpContext.Current;
+                }
+
+                context.Application[activityName + "_Running"] = true;
+
+                Debug.WriteLine("Carbide.Temporal.TaskIntervalStart - DONE");
+            }
+
+            catch (Exception e)
+            {
+                Debug.WriteLine("Carbide.Temporal EXCEPTION: TaskIntervalStart - " + e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Task Interval methods help manage scheduled activities triggered by web page views.
+        /// These methods only track status and time. They do not execute anything.
+        /// 
+        /// Run TimeIntervalStop() from your actual task method to indicate that it has ended.
+        /// </summary>
+        /// <param name="activityName">Name of the activity, like "TwitterImport".</param>
+        /// <param name="context">Manually set the context if running the method from a thread.</param>
+        public static void TaskIntervalStop(string activityName, HttpContext context = null)
+        {
+            try
+            {
+                if (context == null)
+                {
+                    context = HttpContext.Current;
+                }
+
+                context.Application[activityName + "_Running"] = false;
+                context.Application[activityName + "_LastRun"] = DateTime.Now;
+
+                Debug.WriteLine("Carbide.Temporal.TaskIntervalStop - DONE");
+            }
+
+            catch (Exception e)
+            {
+                Debug.WriteLine("Carbide.Temporal EXCEPTION: TaskIntervalStop - " + e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Task Interval methods help manage scheduled activities triggered by web page views.
+        /// These methods only track status and time. They do not execute anything.
+        /// 
+        /// Check to see if a task is currently running (as indicated by running TimeIntervalStart()).
+        /// </summary>
+        /// <param name="activityName">Name of the activity, like "TwitterImport".</param>
+        /// <param name="context">Manually set the context if running the method from a thread.</param>
+        public static bool TaskIsRunning(string activityName, HttpContext context = null)
+        {
+            bool result = false;
+
+            if (context == null)
+            {
+                context = HttpContext.Current;
+            }
+
+            if (context.Application[activityName + "_Running"] != null)
+            {
+                result = Convert.ToBoolean(context.Application[activityName + "_Running"].ToString());
+            }
+
+            Debug.WriteLine("Carbide.Temporal.TaskIsRunning - " + (result == true ? "YES" : "NO"));
+            return result;
+        }
+
+        /// <summary>
+        /// Task Interval methods help manage scheduled activities triggered by web page views.
+        /// These methods only track status and time. They do not execute anything.
+        /// 
+        /// Check to see if a task should be run again. It ensures that the task is not currently running
+        /// and that the task time in seconds set in TimeIntervalInit() has elapsed.
+        /// </summary>
+        /// <param name="activityName">Name of the activity, like "TwitterImport".</param>
+        /// <param name="context">Manually set the context if running the method from a thread.</param>
+        public static bool TaskShouldBeRun(string activityName, HttpContext context = null)
+        {
+            bool result = true;
+
+            double seconds = 0;
+            bool running = TaskIsRunning(activityName, context);
+            DateTime lastRun = DateTime.MinValue;
+
+            if (context == null)
+            {
+                context = HttpContext.Current;
+            }
+
+            if (context.Application[activityName + "_Seconds"] != null)
+            {
+                seconds = Convert.ToDouble(context.Application[activityName + "_Seconds"].ToString());
+            }
+
+            if (context.Application[activityName + "_LastRun"] != null)
+            {
+                lastRun = Convert.ToDateTime(context.Application[activityName + "_LastRun"].ToString());
+            }
+
+            if (seconds > 0)
+            {
+                try
+                {
+                    if (running == true)
+                    {
+                        result = false;
+
+                        Debug.WriteLine("Carbide.Temporal.TaskShouldBeRun - RUNNING");
+                    }
+
+                    else if (lastRun != DateTime.MinValue)
+                    {
+                        if (Temporal.DateDiff<double>(lastRun, DateTime.Now, DateDiffComparisonType.Seconds) < seconds)
+                        {
+                            result = false;
+                            Debug.WriteLine("Carbide.Temporal.TaskShouldBeRun - TOO SOON; " + FormatTimer((int)(seconds - Temporal.DateDiff<double>(lastRun, DateTime.Now, DateDiffComparisonType.Seconds))) + " to go");
+                        }
+                    }
+                }
+
+                catch (Exception e)
+                {
+                    Debug.WriteLine("Carbide.Temporal EXCEPTION: TaskShouldBeRun - " + e.Message);
+                }
+            }
+
+            else
+            {
+                Debug.WriteLine("Carbide.Temporal.TaskShouldBeRun - Seconds is zero");
+
+                result = false;
+            }
+
+            Debug.WriteLine("Carbide.Temporal.TaskShouldBeRun - " + (result == true ? "YES" : "NO"));
+            return result;
+        }
+
+        public static string FormatTimer(int seconds)
+        {
+            var result = "0 seconds";
+
+            if (seconds > 0)
+            {
+                result = (int)seconds + "s";
+
+                if (seconds >= 60)
+                {
+                    TimeSpan ts = new TimeSpan(0, 0, seconds);
+
+                    result = ts.Minutes.ToString() + "m : " + ts.Seconds.ToString() + "s";
+
+                    if (ts.Hours > 0)
+                    {
+                        result = ts.Hours.ToString() + "h : " + ts.Minutes.ToString() + "m : " + ts.Seconds.ToString() + "s";
+                    }
+
+                    if (ts.Days > 0)
+                    {
+                        result = ts.Days + "d : " + ts.Hours.ToString() + "h : " + ts.Minutes.ToString() + "m : " + ts.Seconds.ToString() + "s";
+                    }
+                }
+            }
+
+            return result;
         }
     }
 

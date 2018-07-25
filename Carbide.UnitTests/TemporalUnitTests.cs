@@ -102,5 +102,16 @@ namespace Fynydd.Carbide.UnitTests
             stopwatch.StopDate = stopwatch.StartDate.AddDays(3).AddHours(5).AddMinutes(7).AddSeconds(15).AddMilliseconds(999);
             Assert.AreEqual("3.05:07:15.999", stopwatch.GetTimeSpan().ToString(@"d\.hh\:mm\:ss\.fff"), "GetTimeSpan() complex 2");
         }
+
+        [TestMethod]
+        public void FormatTimer()
+        {
+            Assert.AreEqual("30s", Temporal.FormatTimer(30), "FormatTimer() 30 seconds");
+            Assert.AreEqual("1m : 30s", Temporal.FormatTimer(90), "FormatTimer() 90 seconds");
+            Assert.AreEqual("1h : 0m : 0s", Temporal.FormatTimer(3600), "FormatTimer() 3600 seconds");
+            Assert.AreEqual("1d : 1h : 0m : 0s", Temporal.FormatTimer((3600 * 24) + 3600), "FormatTimer() (3600 * 24) + 3600 seconds");
+            Assert.AreEqual("5d : 1h : 0m : 0s", Temporal.FormatTimer((3600 * 24 * 5) + 3600), "FormatTimer() (3600 * 24 * 5) + 3600 seconds");
+            Assert.AreEqual("20d : 5h : 10m : 15s", Temporal.FormatTimer((3600 * 24 * 20) + (3600 * 5) + (60 * 10) + 15), "FormatTimer() (3600 * 24 * 20) + (3600 * 5) + (60 * 10) + 15 seconds");
+        }
     }
 }
