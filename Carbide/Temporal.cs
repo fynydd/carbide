@@ -897,7 +897,7 @@ namespace Fynydd.Carbide
                         if (Temporal.DateDiff<double>(lastRun, DateTime.Now, DateDiffComparisonType.Seconds) < seconds)
                         {
                             result = false;
-                            Debug.WriteLine("Carbide.Temporal.TaskShouldBeRun - TOO SOON; " + FormatTimer((int)(seconds - Temporal.DateDiff<double>(lastRun, DateTime.Now, DateDiffComparisonType.Seconds))) + " to go");
+                            Debug.WriteLine("Carbide.Temporal.TaskShouldBeRun - TOO SOON; " + FormatTimer((int)(seconds - Temporal.DateDiff<double>(lastRun, DateTime.Now, DateDiffComparisonType.Seconds)), " ") + " to go");
                         }
                     }
                 }
@@ -919,7 +919,7 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        public static string FormatTimer(int seconds)
+        public static string FormatTimer(int seconds, string delimitter = " : ")
         {
             var result = "0 seconds";
 
@@ -931,16 +931,16 @@ namespace Fynydd.Carbide
                 {
                     TimeSpan ts = new TimeSpan(0, 0, seconds);
 
-                    result = ts.Minutes.ToString() + "m : " + ts.Seconds.ToString() + "s";
+                    result = ts.Minutes.ToString() + "m" + delimitter + ts.Seconds.ToString() + "s";
 
                     if (ts.Hours > 0)
                     {
-                        result = ts.Hours.ToString() + "h : " + ts.Minutes.ToString() + "m : " + ts.Seconds.ToString() + "s";
+                        result = ts.Hours.ToString() + "h" + delimitter + ts.Minutes.ToString() + "m" + delimitter + ts.Seconds.ToString() + "s";
                     }
 
                     if (ts.Days > 0)
                     {
-                        result = ts.Days + "d : " + ts.Hours.ToString() + "h : " + ts.Minutes.ToString() + "m : " + ts.Seconds.ToString() + "s";
+                        result = ts.Days + "d" + delimitter + ts.Hours.ToString() + "h" + delimitter + ts.Minutes.ToString() + "m" + delimitter + ts.Seconds.ToString() + "s";
                     }
                 }
             }
