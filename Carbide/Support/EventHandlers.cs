@@ -26,31 +26,53 @@ namespace Fynydd.Carbide
         /// </summary>
         private void InjectCarbideDependencies(object sender, EventArgs e)
         {
-            var result = false;
+            var tabExists = false;
             var file = "/config/Dashboard.config";
             var aliases = Config.GetConfigFileValues(file, "//dashBoard/section/@alias");
 
             foreach (var alias in aliases)
             {
-                if (alias.ToLower() == "carbidecontenttools")
+                if (alias == "CarbideContentTools")
                 {
-                    result = true;
+                    tabExists = true;
+                    break;
                 }
             }
 
-            if (result == false)
-            { 
-                XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.Load(Storage.MapPath(file));
-                XmlNode root = xmlDoc.DocumentElement;
+            if (Config.GetKeyValue<bool>("Tabs.Content.Enabled", true, "Fynydd.Carbide"))
+            {
+                if (tabExists == false)
+                { 
+                    XmlDocument xmlDoc = new XmlDocument();
+                    xmlDoc.Load(Storage.MapPath(file));
+                    XmlNode root = xmlDoc.DocumentElement;
 
-                XmlDocument fragment = new XmlDocument();
-                fragment.LoadXml(Storage.CarbideEmbeddedHtml("DashControl.xml"));
-                XmlNode tab = xmlDoc.ImportNode(fragment.DocumentElement, true);
+                    XmlDocument fragment = new XmlDocument();
+                    fragment.LoadXml(Storage.CarbideEmbeddedHtml("DashControl.xml"));
+                    XmlNode tab = xmlDoc.ImportNode(fragment.DocumentElement, true);
 
-                root.InsertBefore(tab, root.FirstChild);
+                    root.InsertBefore(tab, root.FirstChild);
 
-                xmlDoc.Save(Storage.MapPath(file));
+                    xmlDoc.Save(Storage.MapPath(file));
+                }
+            }
+
+            else
+            {
+                if (tabExists == true)
+                {
+                    XmlDocument xmlDoc = new XmlDocument();
+                    xmlDoc.Load(Storage.MapPath(file));
+
+                    XmlNodeList xnList = xmlDoc.SelectNodes("//dashBoard/section[@alias='CarbideContentTools']");
+
+                    foreach (XmlNode node in xnList)
+                    {
+                        node.ParentNode.RemoveChild(node);
+                    }
+
+                    xmlDoc.Save(Storage.MapPath(file));
+                }
             }
 
             UmbracoApplicationBase.ApplicationInit -= InjectCarbideDependencies;
