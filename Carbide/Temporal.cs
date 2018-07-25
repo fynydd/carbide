@@ -746,10 +746,11 @@ namespace Fynydd.Carbide
                     context = HttpContext.Current;
                 }
 
-                if (context.Application[activityName + "_Seconds"] == null || context.Application[activityName + "_Running"] == null)
+                if (Caching.CacheValid(activityName + "_Seconds", context) == false || Caching.CacheValid(activityName + "_Running", context) == false)
                 {
-                    context.Application[activityName + "_Running"] = false;
-                    context.Application[activityName + "_Seconds"] = seconds;
+                    Caching.Cache(activityName + "_Running", false, context);
+                    Caching.Cache(activityName + "_Seconds", seconds, context);
+                    Caching.CacheDelete(activityName + "_Waiting", context);
 
                     Debug.WriteLine("Carbide.Temporal.TaskIntervalInit (" + activityName + ") - DONE");
                 }
@@ -783,7 +784,8 @@ namespace Fynydd.Carbide
                     context = HttpContext.Current;
                 }
 
-                context.Application[activityName + "_Running"] = true;
+                Caching.Cache(activityName + "_Running", true, context);
+                Caching.CacheDelete(activityName + "_Waiting", context);
 
                 Debug.WriteLine("Carbide.Temporal.TaskIntervalStart (" + activityName + ") - DONE");
             }
@@ -811,8 +813,8 @@ namespace Fynydd.Carbide
                     context = HttpContext.Current;
                 }
 
-                context.Application[activityName + "_Running"] = false;
-                context.Application[activityName + "_LastRun"] = DateTime.Now;
+                Caching.Cache(activityName + "_Running", false, context);
+                Caching.Cache(activityName + "_Waiting", DateTime.Now.AddSeconds(Caching.Cache<int>(activityName + "_Seconds")), DateTime.Now.AddSeconds(Caching.Cache<int>(activityName + "_Seconds")), context);
 
                 Debug.WriteLine("Carbide.Temporal.TaskIntervalStop (" + activityName + ") - DONE");
             }
@@ -840,9 +842,9 @@ namespace Fynydd.Carbide
                 context = HttpContext.Current;
             }
 
-            if (context.Application[activityName + "_Running"] != null)
+            if (Caching.CacheValid(activityName + "_Running", context) == true)
             {
-                result = Convert.ToBoolean(context.Application[activityName + "_Running"].ToString());
+                result = Caching.Cache<bool>(activityName + "_Running", context);
             }
 
             Debug.WriteLine("Carbide.Temporal.TaskIsRunning (" + activityName + ") - " + (result == true ? "YES" : "NO"));
@@ -861,44 +863,23 @@ namespace Fynydd.Carbide
         public static bool TaskShouldBeRun(string activityName, HttpContext context = null)
         {
             bool result = true;
-
-            double seconds = 0;
-            bool running = TaskIsRunning(activityName, context);
-            DateTime lastRun = DateTime.MinValue;
+            //double seconds = 0;
+            //DateTime lastRun = DateTime.MinValue;
 
             if (context == null)
             {
                 context = HttpContext.Current;
             }
 
-            if (context.Application[activityName + "_Seconds"] != null)
-            {
-                seconds = Convert.ToDouble(context.Application[activityName + "_Seconds"].ToString());
-            }
-
-            if (context.Application[activityName + "_LastRun"] != null)
-            {
-                lastRun = Convert.ToDateTime(context.Application[activityName + "_LastRun"].ToString());
-            }
-
-            if (seconds > 0)
+            if (Caching.CacheValid(activityName + "_Waiting", context) == false)
             {
                 try
                 {
-                    if (running == true)
+                    if (TaskIsRunning(activityName, context) == true)
                     {
                         result = false;
 
                         Debug.WriteLine("Carbide.Temporal.TaskShouldBeRun (" + activityName + ") - RUNNING");
-                    }
-
-                    else if (lastRun != DateTime.MinValue)
-                    {
-                        if (Temporal.DateDiff<double>(lastRun, DateTime.Now, DateDiffComparisonType.Seconds) < seconds)
-                        {
-                            result = false;
-                            Debug.WriteLine("Carbide.Temporal.TaskShouldBeRun (" + activityName + ") - TOO SOON; " + FormatTimer((int)(seconds - Temporal.DateDiff<double>(lastRun, DateTime.Now, DateDiffComparisonType.Seconds)), " ") + " to go");
-                        }
                     }
                 }
 
@@ -910,9 +891,9 @@ namespace Fynydd.Carbide
 
             else
             {
-                Debug.WriteLine("Carbide.Temporal.TaskShouldBeRun (" + activityName + ") - Seconds is zero");
-
                 result = false;
+
+                Debug.WriteLine("Carbide.Temporal.TaskShouldBeRun (" + activityName + ") - TOO SOON; " + FormatTimer((int)(Temporal.DateDiff<double>(DateTime.Now, Caching.Cache<DateTime>(activityName + "_Waiting", context), DateDiffComparisonType.Seconds)), " ") + " to go");
             }
 
             Debug.WriteLine("Carbide.Temporal.TaskShouldBeRun (" + activityName + ") - " + (result == true ? "YES" : "NO"));
