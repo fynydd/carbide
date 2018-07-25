@@ -850,6 +850,10 @@ namespace Fynydd.Carbide
 
         /// <summary>
         /// Read a folder of filenames (SCSS partials) and inject them into a SCSS file as import statements.
+        /// Add the following to your SCSS file so the method knows where to inject the import statements,
+        /// including the leading "// ":
+        /// // $CARBIDE_PARTIALS:BEGIN
+        /// // $CARBIDE_PARTIALS:END
         /// </summary>
         /// <param name="scssPath">Relative web path to the SCSS files (e.g. "/scss/").</param>
         /// <param name="scssFilename">File name for the SCSS file in which to inject the partials as import statements (e.g. "application.scss").</param>
@@ -871,9 +875,11 @@ namespace Fynydd.Carbide
                         if (scss.IndexOf(delims[0]) < scss.IndexOf(delims[1]))
                         {
                             List<string> chunks = new List<string>(scss.Split(delims, StringSplitOptions.RemoveEmptyEntries));
+                            var oldList = "";
 
                             if (chunks.Count == 3)
                             {
+                                oldList = chunks[1];
                                 chunks.RemoveAt(1);
                             }
 
@@ -896,9 +902,20 @@ namespace Fynydd.Carbide
                                     }
                                 }
 
-                                var finalFile = chunks[0] + delims[0] + "\r\n" + inject + delims[1] + chunks[1];
+                                // Only write imports if there are changes...
+                                if (oldList == "" || inject.ToLower().Trim().Replace("\r\n", "|").Replace("\r", "|").Replace("\n", "|") != oldList.ToLower().Trim().Replace("\r\n", "|").Replace("\r", "|").Replace("\n", "|"))
+                                {
+                                    var finalFile = chunks[0] + delims[0] + "\r\n" + inject + delims[1] + chunks[1];
 
-                                Storage.WriteFile(_scssPath + scssFilename, finalFile);
+                                    Storage.WriteFile(_scssPath + scssFilename, finalFile);
+
+                                    Debug.WriteLine("SCSS import changes detected, writing to " + _scssPath + scssFilename);
+                                }
+
+                                else
+                                {
+                                    Debug.WriteLine("No SCSS import changes detected in " + _scssPath + scssFilename + ", skipping");
+                                }
                             }
                         }
                     }
