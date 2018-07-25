@@ -108,6 +108,7 @@
   <ItemGroup>
     <Content Include="config\Dashboard.config.install.xdt" />
     <Content Include="config\Dashboard.config.uninstall.xdt" />
+    <EmbeddedResource Include="Support\Html\DashControl.xml" />
     <EmbeddedResource Include="Support\Images\carbide-icon.png" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,8 @@
+﻿<section alias="CarbideContentTools">
+  <areas>
+    <area>content</area>
+  </areas>
+  <tab caption="Carbide Content Tools">
+    <control>/umbraco/api/carbidesupport/html/?file=DashControl</control>
+  </tab>
+</section>
