@@ -80,6 +80,7 @@
     <Compile Include="SeoHelpers.cs" />
     <Compile Include="SQL.cs" />
     <Compile Include="Storage.cs" />
+    <Compile Include="Support\EventHandlers.cs" />
     <Compile Include="Support\FileHandler.cs" />
     <Compile Include="Support\SupportHandler.cs" />
     <Compile Include="Temporal.cs" />
