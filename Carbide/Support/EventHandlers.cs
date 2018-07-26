@@ -75,6 +75,7 @@ namespace Fynydd.Carbide
                 }
             }
 
+            // Remove event hook to ensure it only runs once
             UmbracoApplicationBase.ApplicationInit -= InjectCarbideDependencies;
         }
     }
