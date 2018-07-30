@@ -933,6 +933,60 @@ namespace Fynydd.Carbide
         }
 
         /// <summary><![CDATA[
+        /// Wrapper method for building CSS from SCSS files, with partial injection.
+        /// Will check and build every "Scss.BuildCheck.Seconds" when debug=true if there are file changes (production).
+        /// Will check and build every page load when debug=true if there are file changes.
+        /// Requires the following Carbide config items:
+        /// ]]></summary>
+        /// <example>
+        /// <code><![CDATA[
+        /// <add key="Scss.BuildCheck.Seconds" value="3600" />
+        /// <add key="Scss.Root" value="/scss/" />
+        /// <add key="Scss.Partials.Root" value="/scss/custom/" />
+        /// <add key="Scss.Filename.Base" value="application" />
+        /// <add key="Scss.Output.Root" value="/css/" />
+        /// ]]></code>
+        /// </example>
+        public static void RunConfiguredScssBuild()
+        {
+            var debugging = AppStateHelpers.IsDebugging();
+            var buildScss = debugging; // Always run in debug mode
+
+            if (debugging == false)
+            {
+                // Only run the check periodically on production
+
+                TemporalHelpers.TaskIntervalInit("ScssProductionBuild", Config.GetKeyValue<double>("Scss.BuildCheck.Seconds", 60 * 60 * 24, "Fynydd.Carbide"));
+
+                if (TemporalHelpers.TaskShouldBeRun("ScssProductionBuild"))
+                {
+                    buildScss = true;
+                }
+            }
+
+            if (buildScss == true)
+            {
+                if (debugging == false)
+                {
+                    TemporalHelpers.TaskIntervalStart("ScssProductionBuild");
+                }
+
+                var scssPath = Config.GetKeyValue("Scss.Root", "/scss/", "Fynydd.Carbide");
+                var scssPartialsPath = Config.GetKeyValue("Scss.Partials.Root", "/scss/custom/", "Fynydd.Carbide");
+                var scssFilenameBase = Config.GetKeyValue("Scss.Filename.Base", "application", "Fynydd.Carbide");
+                var scssOutputPath = Config.GetKeyValue("Scss.Output.Root", "/css/", "Fynydd.Carbide");
+
+                StorageHelpers.InjectScssPartials(scssPath, scssFilenameBase + ".scss", scssPartialsPath);
+                StorageHelpers.BuildScss(scssPath + scssFilenameBase + ".scss", scssOutputPath + scssFilenameBase + ".css", debugMode: debugging);
+
+                if (debugging == false)
+                {
+                    TemporalHelpers.TaskIntervalStop("ScssProductionBuild");
+                }
+            }
+        }
+
+        /// <summary><![CDATA[
         /// Read an HTML embedded resource from the Carbide binary
         /// ]]></summary>
         /// <param name="filename"></param>
