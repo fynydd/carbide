@@ -261,7 +261,7 @@ namespace Fynydd.Carbide
         public static string CleanSvg(string svg, bool removeStyles = false, bool fixStyles = true, bool removeXmlHeader = true)
         {
             var result = svg;
-            var svgId = "SVG" + Storage.MakeUniqueFilenameFromExtension("").TrimEnd(".");
+            var svgId = "SVG" + StorageHelpers.MakeUniqueFilenameFromExtension("").TrimEnd(".");
 
             // Remove comments
             result = Regex.Replace(result, "<!--.*?-->", String.Empty, RegexOptions.Singleline);

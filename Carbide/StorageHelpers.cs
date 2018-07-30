@@ -17,7 +17,7 @@ namespace Fynydd.Carbide
     /// <summary><![CDATA[
     /// Various helper methods for using files and folders.
     /// ]]></summary>
-    public static class Storage
+    public static class StorageHelpers
     {
         /// <summary><![CDATA[
         /// Transforms web-style relative path to physical path.
@@ -869,7 +869,7 @@ namespace Fynydd.Carbide
                 var _scssPath = "/" + scssPath.ToLower().Trim('/') + "/";
                 var _partialPath = "/" + partialPath.ToLower().Trim('/') + "/";
                 _partialPath = _partialPath.Replace(_scssPath, "");
-                var scss = Storage.ReadFile(_scssPath + scssFilename);
+                var scss = StorageHelpers.ReadFile(_scssPath + scssFilename);
                 string[] delims = { "// $CARBIDE_PARTIALS:BEGIN", "// $CARBIDE_PARTIALS:END" };
 
                 if (scss.Length > (delims[0].Length + delims[1].Length))
@@ -894,7 +894,7 @@ namespace Fynydd.Carbide
 
                                 foreach (var folder in folders)
                                 {
-                                    var _files = Storage.GetFiles(folder.ToString(), "*.scss");
+                                    var _files = StorageHelpers.GetFiles(folder.ToString(), "*.scss");
                                     _files.Sort();
 
                                     if (_files.Count > 0)
@@ -911,7 +911,7 @@ namespace Fynydd.Carbide
                                 {
                                     var finalFile = chunks[0] + delims[0] + "\r\n" + inject + delims[1] + chunks[1];
 
-                                    Storage.WriteFile(_scssPath + scssFilename, finalFile);
+                                    StorageHelpers.WriteFile(_scssPath + scssFilename, finalFile);
 
                                     Debug.WriteLine("SCSS import changes detected, writing to " + _scssPath + scssFilename);
                                 }
@@ -928,7 +928,7 @@ namespace Fynydd.Carbide
 
             catch (Exception e)
             {
-                Debug.WriteLine("EXCEPTION: Carbide.Storage.InjectScssPartials() - " + e.Message);
+                Debug.WriteLine("EXCEPTION: Carbide.StorageHelpers.InjectScssPartials() - " + e.Message);
             }
         }
 

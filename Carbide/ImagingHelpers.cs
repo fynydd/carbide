@@ -7,7 +7,7 @@ namespace Fynydd.Carbide
     /// <summary><![CDATA[
     /// Various helper methods for processing images.
     /// ]]></summary>
-    public static class Imaging
+    public static class ImagingHelpers
     {
         /// <summary><![CDATA[
         /// Resize an image on disk, constraining proportions
@@ -18,7 +18,7 @@ namespace Fynydd.Carbide
         /// <example>
         /// <code><![CDATA[
         /// Rectangle cropArea = new Rectangle(0, 0, 0, 0);
-        /// string finalPath = Imaging.ResizeImage("/portfolio/picture01.jpg", 80, 320, 0, "/portfolio/temp/upload.jpg", cropArea);
+        /// string finalPath = ImagingHelpers.ResizeImage("/portfolio/picture01.jpg", 80, 320, 0, "/portfolio/temp/upload.jpg", cropArea);
         /// ]]></code>
         /// </example>
         /// <param name="imageSavePath">Web-style path with filename for the final resized image.</param>
@@ -167,7 +167,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string finalPath = Imaging.ResizeImage("/portfolio/picture01.jpg", 80, 320, 0, "/portfolio/temp/upload.jpg");
+        /// string finalPath = ImagingHelpers.ResizeImage("/portfolio/picture01.jpg", 80, 320, 0, "/portfolio/temp/upload.jpg");
         /// ]]></code>
         /// </example>
         /// <param name="imageSavePath">Web-style path with filename for the final resized image.</param>
@@ -188,7 +188,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// Image croppedImage = Imaging.CropImage("/portfolio/picture01jpg", 320, 0, 0, 0);
+        /// Image croppedImage = ImagingHelpers.CropImage("/portfolio/picture01jpg", 320, 0, 0, 0);
         /// ]]></code>
         /// </example>
         /// <param name="path">Web-style path to the source image file.</param>

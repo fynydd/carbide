@@ -52,16 +52,16 @@ namespace Fynydd.Carbide
                 if (tabExists == false)
                 { 
                     XmlDocument xmlDoc = new XmlDocument();
-                    xmlDoc.Load(Storage.MapPath(file));
+                    xmlDoc.Load(StorageHelpers.MapPath(file));
                     XmlNode root = xmlDoc.DocumentElement;
 
                     XmlDocument fragment = new XmlDocument();
-                    fragment.LoadXml(Storage.CarbideEmbeddedHtml("DashControl.xml"));
+                    fragment.LoadXml(StorageHelpers.CarbideEmbeddedHtml("DashControl.xml"));
                     XmlNode tab = xmlDoc.ImportNode(fragment.DocumentElement, true);
 
                     root.InsertBefore(tab, root.FirstChild);
 
-                    xmlDoc.Save(Storage.MapPath(file));
+                    xmlDoc.Save(StorageHelpers.MapPath(file));
                 }
             }
 
@@ -70,7 +70,7 @@ namespace Fynydd.Carbide
                 if (tabExists == true)
                 {
                     XmlDocument xmlDoc = new XmlDocument();
-                    xmlDoc.Load(Storage.MapPath(file));
+                    xmlDoc.Load(StorageHelpers.MapPath(file));
 
                     XmlNodeList xnList = xmlDoc.SelectNodes("//dashBoard/section[@alias='CarbideContentTools']");
 
@@ -79,7 +79,7 @@ namespace Fynydd.Carbide
                         node.ParentNode.RemoveChild(node);
                     }
 
-                    xmlDoc.Save(Storage.MapPath(file));
+                    xmlDoc.Save(StorageHelpers.MapPath(file));
                 }
             }
 

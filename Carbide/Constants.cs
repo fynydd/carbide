@@ -1031,14 +1031,12 @@ namespace Fynydd.Carbide.Constants
         /// <summary><![CDATA[
         /// Meta tag to prevent page indexing
         /// ]]></summary>
-        public static string DoNotIndex = @"
-<meta name=""robots"" content=""noindex,nofollow"">
+        public static string DoNotIndex = @"<meta name=""robots"" content=""noindex,nofollow"">
 ";
         /// <summary><![CDATA[
         /// Meta tag to prevent browser page caching
         /// ]]></summary>
-        public static string DoNotCache = @"
-<meta http-equiv=""CACHE-CONTROL"" content=""NO-CACHE"">
+        public static string DoNotCache = @"<meta http-equiv=""CACHE-CONTROL"" content=""NO-CACHE"">
 <meta http-equiv=""PRAGMA"" content=""NO-CACHE"">
 ";
     }

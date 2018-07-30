@@ -5,7 +5,7 @@ namespace Fynydd.Carbide
     /// <summary><![CDATA[
     /// Helper methods for accessing and managing Application State.
     /// ]]></summary>
-    public static class AppState
+    public static class AppStateHelpers
     {
         /// <summary><![CDATA[
         /// Determine if an Application-level state variable exists.

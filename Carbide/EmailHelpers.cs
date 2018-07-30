@@ -30,7 +30,7 @@ namespace Fynydd.Carbide
     ///	</system.net>
     /// ]]></code>
     /// </example>
-    public static class Email
+    public static class EmailHelpers
     {
         #region Methods
 

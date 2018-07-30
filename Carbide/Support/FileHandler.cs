@@ -52,7 +52,7 @@ namespace Fynydd.Carbide
 
                 if (svg != null)
                 {
-                    result = Storage.ReadFile(svg.Url);
+                    result = StorageHelpers.ReadFile(svg.Url);
 
                     if (result.Length > 0)
                     {

@@ -10,7 +10,7 @@ namespace Fynydd.Carbide
     /// The TemporalHelpers class contains methods and properties for manipulating, 
     /// evaluating, or displaying dates and times.
     /// ]]></summary>
-    public static class Temporal
+    public static class TemporalHelpers
     {
         /// <summary><![CDATA[
         /// Calculate an age with a given birthdate. Assumes current timezone.
@@ -746,18 +746,18 @@ namespace Fynydd.Carbide
                     context = HttpContext.Current;
                 }
 
-                if (Caching.CacheValid(activityName + "_Seconds", context) == false || Caching.CacheValid(activityName + "_Running", context) == false)
+                if (CacheHelpers.CacheValid(activityName + "_Seconds", context) == false || CacheHelpers.CacheValid(activityName + "_Running", context) == false)
                 {
-                    Caching.CachePermanent(activityName + "_Running", false, context);
-                    Caching.CachePermanent(activityName + "_Seconds", seconds, context);
-                    Caching.CacheDelete(activityName + "_Waiting", context);
+                    CacheHelpers.CachePermanent(activityName + "_Running", false, context);
+                    CacheHelpers.CachePermanent(activityName + "_Seconds", seconds, context);
+                    CacheHelpers.CacheDelete(activityName + "_Waiting", context);
 
-                    Debug.WriteLine("Carbide.Temporal.TaskIntervalInit (" + activityName + ") - INITIALIZED");
+                    Debug.WriteLine("Carbide.TemporalHelpers.TaskIntervalInit (" + activityName + ") - INITIALIZED");
                 }
 
                 else
                 {
-                    Debug.WriteLine("Carbide.Temporal.TaskIntervalInit (" + activityName + ") - ALREADY INITIALIZED, skipping");
+                    Debug.WriteLine("Carbide.TemporalHelpers.TaskIntervalInit (" + activityName + ") - ALREADY INITIALIZED, skipping");
                 }
             }
 
@@ -784,10 +784,10 @@ namespace Fynydd.Carbide
                     context = HttpContext.Current;
                 }
 
-                Caching.CachePermanent(activityName + "_Running", true, context);
-                Caching.CacheDelete(activityName + "_Waiting", context);
+                CacheHelpers.CachePermanent(activityName + "_Running", true, context);
+                CacheHelpers.CacheDelete(activityName + "_Waiting", context);
 
-                Debug.WriteLine("Carbide.Temporal.TaskIntervalStart (" + activityName + ") - STARTED");
+                Debug.WriteLine("Carbide.TemporalHelpers.TaskIntervalStart (" + activityName + ") - STARTED");
             }
 
             catch (Exception e)
@@ -813,22 +813,22 @@ namespace Fynydd.Carbide
                     context = HttpContext.Current;
                 }
 
-                Caching.CachePermanent(activityName + "_Running", false, context);
+                CacheHelpers.CachePermanent(activityName + "_Running", false, context);
 
-                if (Caching.CacheValid(activityName + "_Seconds", context))
+                if (CacheHelpers.CacheValid(activityName + "_Seconds", context))
                 {
-                    Caching.Cache(activityName + "_Waiting", DateTime.Now.AddSeconds(Caching.Cache<double>(activityName + "_Seconds", context)), DateTime.Now.AddSeconds(Caching.Cache<double>(activityName + "_Seconds", context)), context);
+                    CacheHelpers.Cache(activityName + "_Waiting", DateTime.Now.AddSeconds(CacheHelpers.Cache<double>(activityName + "_Seconds", context)), DateTime.Now.AddSeconds(CacheHelpers.Cache<double>(activityName + "_Seconds", context)), context);
 
-                    Debug.WriteLine("Carbide.Temporal.TaskIntervalStop (" + activityName + ") - STOPPED");
+                    Debug.WriteLine("Carbide.TemporalHelpers.TaskIntervalStop (" + activityName + ") - STOPPED");
                 }
 
                 else
                 {
-                    Caching.CacheDelete(activityName + "_Running", context);
-                    Caching.CacheDelete(activityName + "_Seconds", context);
-                    Caching.CacheDelete(activityName + "_Waiting", context);
+                    CacheHelpers.CacheDelete(activityName + "_Running", context);
+                    CacheHelpers.CacheDelete(activityName + "_Seconds", context);
+                    CacheHelpers.CacheDelete(activityName + "_Waiting", context);
 
-                    Debug.WriteLine("Carbide.Temporal.TaskIntervalStop (" + activityName + ") - task time doesn't exist; resetting");
+                    Debug.WriteLine("Carbide.TemporalHelpers.TaskIntervalStop (" + activityName + ") - task time doesn't exist; resetting");
                 }
             }
 
@@ -855,12 +855,12 @@ namespace Fynydd.Carbide
                 context = HttpContext.Current;
             }
 
-            if (Caching.CacheValid(activityName + "_Running", context) == true)
+            if (CacheHelpers.CacheValid(activityName + "_Running", context) == true)
             {
-                result = Caching.Cache<bool>(activityName + "_Running", context);
+                result = CacheHelpers.Cache<bool>(activityName + "_Running", context);
             }
 
-            Debug.WriteLine("Carbide.Temporal.TaskIsRunning (" + activityName + ") - " + (result == true ? "YES" : "NO"));
+            Debug.WriteLine("Carbide.TemporalHelpers.TaskIsRunning (" + activityName + ") - " + (result == true ? "YES" : "NO"));
 
             return result;
         }
@@ -883,7 +883,7 @@ namespace Fynydd.Carbide
                 context = HttpContext.Current;
             }
 
-            if (Caching.CacheValid(activityName + "_Waiting", context) == false)
+            if (CacheHelpers.CacheValid(activityName + "_Waiting", context) == false)
             {
                 try
                 {
@@ -891,7 +891,7 @@ namespace Fynydd.Carbide
                     {
                         result = false;
 
-                        Debug.WriteLine("Carbide.Temporal.TaskShouldBeRun (" + activityName + ") - ALREADY RUNNING");
+                        Debug.WriteLine("Carbide.TemporalHelpers.TaskShouldBeRun (" + activityName + ") - ALREADY RUNNING");
                     }
                 }
 
@@ -905,10 +905,10 @@ namespace Fynydd.Carbide
             {
                 result = false;
 
-                Debug.WriteLine("Carbide.Temporal.TaskShouldBeRun (" + activityName + ") - TOO SOON; " + FormatTimer((int)(Temporal.DateDiff<double>(DateTime.Now, Caching.Cache<DateTime>(activityName + "_Waiting", context), DateDiffComparisonType.Seconds)), " ") + " to go");
+                Debug.WriteLine("Carbide.TemporalHelpers.TaskShouldBeRun (" + activityName + ") - TOO SOON; " + FormatTimer((int)(TemporalHelpers.DateDiff<double>(DateTime.Now, CacheHelpers.Cache<DateTime>(activityName + "_Waiting", context), DateDiffComparisonType.Seconds)), " ") + " to go");
             }
 
-            Debug.WriteLine("Carbide.Temporal.TaskShouldBeRun (" + activityName + ") - " + (result == true ? "YES" : "NO"));
+            Debug.WriteLine("Carbide.TemporalHelpers.TaskShouldBeRun (" + activityName + ") - " + (result == true ? "YES" : "NO"));
 
             return result;
         }
@@ -1012,7 +1012,7 @@ namespace Fynydd.Carbide
         /// <code><![CDATA[
         /// StopWatch stopwatch = new StopWatch();
         /// stopwatch.Start();
-        /// Temporal.PauseExecution(2000);
+        /// TemporalHelpers.PauseExecution(2000);
         /// stopwatch.Stop();
         /// Assert.AreEqual(2, stopwatch.GetSeconds<int>(), "GetSeconds()");
         /// ]]></code>
@@ -1030,7 +1030,7 @@ namespace Fynydd.Carbide
         /// <code><![CDATA[
         /// StopWatch stopwatch = new StopWatch();
         /// stopwatch.Start();
-        /// Temporal.PauseExecution(2000);
+        /// TemporalHelpers.PauseExecution(2000);
         /// stopwatch.Stop();
         /// Assert.AreEqual(2, stopwatch.GetSeconds<int>(), "GetSeconds()");
         /// ]]></code>
@@ -1048,7 +1048,7 @@ namespace Fynydd.Carbide
         /// <code><![CDATA[
         /// StopWatch stopwatch = new StopWatch();
         /// stopwatch.Start();
-        /// Temporal.PauseExecution(2000);
+        /// TemporalHelpers.PauseExecution(2000);
         /// stopwatch.Stop();
         /// stopwatch.Reset();
         /// Assert.AreEqual(0, stopwatch.GetSeconds<int>(), "GetSeconds()");
@@ -1070,12 +1070,12 @@ namespace Fynydd.Carbide
         /// <code><![CDATA[
         /// StopWatch stopwatch = new StopWatch();
         /// stopwatch.Start();
-        /// Temporal.PauseExecution(2000);
+        /// TemporalHelpers.PauseExecution(2000);
         /// Assert.AreEqual(2000, stopwatch.GetTime<int>(), "GetTime()");
-        /// Temporal.PauseExecution(1000);
+        /// TemporalHelpers.PauseExecution(1000);
         /// stopwatch.Stop();
         /// Assert.AreEqual(3000, stopwatch.GetTime<int>(), "GetTime()");
-        /// Temporal.PauseExecution(1000);
+        /// TemporalHelpers.PauseExecution(1000);
         /// Assert.AreEqual(3000, stopwatch.GetTime<int>(), "GetTime()");
         /// ]]></code>
         /// </example>
@@ -1107,12 +1107,12 @@ namespace Fynydd.Carbide
         /// <code><![CDATA[
         /// StopWatch stopwatch = new StopWatch();
         /// stopwatch.Start();
-        /// Temporal.PauseExecution(2000);
+        /// TemporalHelpers.PauseExecution(2000);
         /// Assert.AreEqual("2000", stopwatch.GetTime(), "GetTime()");
-        /// Temporal.PauseExecution(1000);
+        /// TemporalHelpers.PauseExecution(1000);
         /// stopwatch.Stop();
         /// Assert.AreEqual("3000", stopwatch.GetTime(), "GetTime()");
-        /// Temporal.PauseExecution(1000);
+        /// TemporalHelpers.PauseExecution(1000);
         /// Assert.AreEqual("3000", stopwatch.GetTime(), "GetTime()");
         /// ]]></code>
         /// </example>
@@ -1132,12 +1132,12 @@ namespace Fynydd.Carbide
         /// <code><![CDATA[
         /// StopWatch stopwatch = new StopWatch();
         /// stopwatch.Start();
-        /// Temporal.PauseExecution(2000);
+        /// TemporalHelpers.PauseExecution(2000);
         /// Assert.AreEqual(2, stopwatch.GetSeconds<int>(), "GetTime()");
-        /// Temporal.PauseExecution(1000);
+        /// TemporalHelpers.PauseExecution(1000);
         /// stopwatch.Stop();
         /// Assert.AreEqual(3, stopwatch.GetSeconds<int>(), "GetTime()");
-        /// Temporal.PauseExecution(1000);
+        /// TemporalHelpers.PauseExecution(1000);
         /// Assert.AreEqual(3, stopwatch.GetSeconds<int>(), "GetTime()");
         /// ]]></code>
         /// </example>
@@ -1159,7 +1159,7 @@ namespace Fynydd.Carbide
         /// <code><![CDATA[
         /// StopWatch stopwatch = new StopWatch();
         /// stopwatch.Start();
-        /// Temporal.PauseExecution(2000);
+        /// TemporalHelpers.PauseExecution(2000);
         /// stopwatch.Stop();
         /// Assert.AreEqual("00:00:02", stopwatch.GetTimeSpan().ToString(@"hh\:mm\:ss"), "GetTimeSpan() 1 second");
         /// ]]></code>

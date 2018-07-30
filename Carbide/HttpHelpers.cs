@@ -11,9 +11,27 @@ namespace Fynydd.Carbide
     /// <summary><![CDATA[
     /// Various helper methods for managing HTTP requests, browser identification, query string parsing, etc.
     /// ]]></summary>
-    public static class Http
+    public static class HttpHelpers
     {
         #region Host / domain
+
+        /// <summary>
+        /// Return the current domain name. If on a port other than 80 or 443, append the port.
+        /// </summary>
+        /// <param name="context">HttpContext (defaults to Current)</param>
+        /// <returns>Current domain, with non-standard port if in-use</returns>
+        public static string GetSeoHost(HttpContext context = null)
+        {
+            var _context = ContextHelpers.EnsureAppContext(context);
+            var domain = _context.Request.Url.Host.ToLower();
+
+            if (_context.Request.Url.Port != 80 && _context.Request.Url.Port != 443)
+            {
+                domain += ":" + _context.Request.Url.Port;
+            }
+
+            return domain;
+        }
 
         /// <summary><![CDATA[
         /// Get the fully qualified domain name of the current URL.
@@ -81,7 +99,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string result = Http.GetWebPage("http://www.site.com");
+        /// string result = HttpHelpers.GetWebPage("http://www.site.com");
         /// ]]></code>
         /// </example>
         /// <param name="url">Fully qualified URL to the remote page.</param>
@@ -97,7 +115,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string result = Http.GetWebPage("http://www.site.com");
+        /// string result = HttpHelpers.GetWebPage("http://www.site.com");
         /// ]]></code>
         /// </example>
         /// <param name="url">Fully qualified URL to the remote page.</param>
@@ -113,7 +131,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string result = Http.GetWebPage("http://www.site.com", myCookies);
+        /// string result = HttpHelpers.GetWebPage("http://www.site.com", myCookies);
         /// ]]></code>
         /// </example>
         /// <param name="url">Fully qualified URL to the remote page.</param>
@@ -129,7 +147,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string result = Http.GetWebPage("http://www.site.com", Carbide.Http.GetWebPageMethod.Get, postData);
+        /// string result = HttpHelpers.GetWebPage("http://www.site.com", HttpHelpers.GetWebPageMethod.Get, postData);
         /// ]]></code>
         /// </example>
         /// <param name="url">Fully qualified URL to the remote page.</param>
@@ -146,7 +164,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string result = Http.GetWebPage("http://www.site.com", "jsmith", "password");
+        /// string result = HttpHelpers.GetWebPage("http://www.site.com", "jsmith", "password");
         /// ]]></code>
         /// </example>
         /// <param name="url">Fully qualified URL to the remote page.</param>
@@ -164,7 +182,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string result = Http.GetWebPage("http://www.site.com", Http.GetWebPageMethod.Get, cookies, postData, "jsmith", "password");
+        /// string result = HttpHelpers.GetWebPage("http://www.site.com", HttpHelpers.GetWebPageMethod.Get, cookies, postData, "jsmith", "password");
         /// ]]></code>
         /// </example>
         /// <param name="url">Fully qualified URL to the remote page.</param>
@@ -241,7 +259,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string result = Http.GetWebPage("http://www.site.com", Http.GetWebPageMethod.Get, cookies, postData, "jsmith", "password");
+        /// string result = HttpHelpers.GetWebPage("http://www.site.com", HttpHelpers.GetWebPageMethod.Get, cookies, postData, "jsmith", "password");
         /// ]]></code>
         /// </example>
         /// <param name="url">Fully qualified URL to the remote page.</param>

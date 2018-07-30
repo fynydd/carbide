@@ -73,7 +73,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// Byte[] baseKey = Security.CreateBaseKey("151, 4, 109, 42, 135, 99, 67, 82, 242, 233, 16, 200, 9, 83, 196, 178, 56, 74, 90, 36, 206, 129, 81, 229, 67, 82, 242, 233, 16, 200, 9, 83");
+        /// Byte[] baseKey = EncryptionHelpers.CreateBaseKey("151, 4, 109, 42, 135, 99, 67, 82, 242, 233, 16, 200, 9, 83, 196, 178, 56, 74, 90, 36, 206, 129, 81, 229, 67, 82, 242, 233, 16, 200, 9, 83");
         /// ]]></code>
         /// </example>
         /// <param name="key">32 8-bit values in a comma-separated list.</param>
@@ -114,7 +114,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// Byte[] baseIV = Security.CreateInitVector("180, 54, 206, 210, 10, 101, 6, 87, 13, 3, 241, 189, 176, 175, 109, 217");
+        /// Byte[] baseIV = EncryptionHelpers.CreateInitVector("180, 54, 206, 210, 10, 101, 6, 87, 13, 3, 241, 189, 176, 175, 109, 217");
         /// ]]></code>
         /// </example>
         /// <param name="key">18 8-bit values in a comma-separated list.</param>
@@ -156,7 +156,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string baseKey = Security.GenerateKey(32);
+        /// string baseKey = EncryptionHelpers.GenerateKey(32);
         /// ]]></code>
         /// </example>
         /// <param name="count">Number of 8-bit numbers to generate</param>
@@ -204,7 +204,7 @@ namespace Fynydd.Carbide
         /// <code><![CDATA[
         /// Byte[] ivec = { 180, 54, 206, 210, 10, 101, 6, 87, 13, 3, 241, 189, 176, 175, 109, 217 };
         /// Byte[] key = { 151, 4, 109, 42, 135, 99, 67, 82, 242, 233, 16, 200, 9, 83, 196, 178, 56, 74, 90, 36, 206, 129, 81, 229, 67, 82, 242, 233, 16, 200, 9, 83 };
-        /// string encryptedVar = Security.Encrypt<string>(dataToEncrypt, key, ivec);
+        /// string encryptedVar = EncryptionHelpers.Encrypt<string>(dataToEncrypt, key, ivec);
         /// ]]></code>
         /// </example>
         /// <param name="data">Data to encrypt.</param>
@@ -309,7 +309,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string encryptedVar = Security.Encrypt<string>(myData, "151, 4, 109, 42, 135, 99, 67, 82, 242, 233, 16, 200, 9, 83, 196, 178, 56, 74, 90, 36, 206, 129, 81, 229, 67, 82, 242, 233, 16, 200, 9, 83", "180, 54, 206, 210, 10, 101, 6, 87, 13, 3, 241, 189, 176, 175, 109, 217" );
+        /// string encryptedVar = EncryptionHelpers.Encrypt<string>(myData, "151, 4, 109, 42, 135, 99, 67, 82, 242, 233, 16, 200, 9, 83, 196, 178, 56, 74, 90, 36, 206, 129, 81, 229, 67, 82, 242, 233, 16, 200, 9, 83", "180, 54, 206, 210, 10, 101, 6, 87, 13, 3, 241, 189, 176, 175, 109, 217" );
         /// ]]></code>
         /// </example>
         /// <param name="data">Data to encrypt.</param>
@@ -326,7 +326,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string encryptedVar = Security.Encrypt<string>(myData);
+        /// string encryptedVar = EncryptionHelpers.Encrypt<string>(myData);
         /// ]]></code>
         /// </example>
         /// <param name="data">Data to encrypt.</param>
@@ -344,7 +344,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string decryptedVar = Security.Decrypt<string>(encryptedVar, "151, 4, 109, 42, 135, 99, 67, 82, 242, 233, 16, 200, 9, 83, 196, 178, 56, 74, 90, 36, 206, 129, 81, 229, 67, 82, 242, 233, 16, 200, 9, 83", "180, 54, 206, 210, 10, 101, 6, 87, 13, 3, 241, 189, 176, 175, 109, 217" );
+        /// string decryptedVar = EncryptionHelpers.Decrypt<string>(encryptedVar, "151, 4, 109, 42, 135, 99, 67, 82, 242, 233, 16, 200, 9, 83, 196, 178, 56, 74, 90, 36, 206, 129, 81, 229, 67, 82, 242, 233, 16, 200, 9, 83", "180, 54, 206, 210, 10, 101, 6, 87, 13, 3, 241, 189, 176, 175, 109, 217" );
         /// ]]></code>
         /// </example>
         /// <param name="data">String to decrypt.</param>
@@ -361,7 +361,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string decryptedVar = Security.Decrypt<string>(encryptedVar);
+        /// string decryptedVar = EncryptionHelpers.Decrypt<string>(encryptedVar);
         /// ]]></code>
         /// </example>
         /// <param name="data">String to decrypt.</param>
@@ -381,7 +381,7 @@ namespace Fynydd.Carbide
         /// <code><![CDATA[
         /// Byte[] ivec = { 180, 54, 206, 210, 10, 101, 6, 87, 13, 3, 241, 189, 176, 175, 109, 217 };
         /// Byte[] key = { 151, 4, 109, 42, 135, 99, 67, 82, 242, 233, 16, 200, 9, 83, 196, 178, 56, 74, 90, 36, 206, 129, 81, 229, 67, 82, 242, 233, 16, 200, 9, 83 };
-        /// String decryptedVar = Security.Decrypt<string>(encryptedVar, bytekey, ivec);
+        /// String decryptedVar = EncryptionHelpers.Decrypt<string>(encryptedVar, bytekey, ivec);
         /// ]]></code>
         /// </example>
         /// <param name="data">String to decrypt.</param>
@@ -512,7 +512,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string encodedVar = Security.MD5String(stringVar);
+        /// string encodedVar = EncryptionHelpers.MD5String(stringVar);
         /// ]]></code>
         /// </example>
         /// <param name="input">The string to encode.</param>
@@ -555,7 +555,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// if (Security.MD5VerifyString(stringVar, hash))...
+        /// if (EncryptionHelpers.MD5VerifyString(stringVar, hash))...
         /// ]]></code>
         /// </example>
         /// <param name="input">The string to compare.</param>
@@ -587,7 +587,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string encodedVar = Security.Base64StringEncode(stringVar);
+        /// string encodedVar = EncryptionHelpers.Base64StringEncode(stringVar);
         /// ]]></code>
         /// </example>
         /// <param name="input">A string to encode.</param>
@@ -602,7 +602,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string encodedVar = Security.Base64Encode(bytes);
+        /// string encodedVar = EncryptionHelpers.Base64Encode(bytes);
         /// ]]></code>
         /// </example>
         /// <param name="input">A byte array to encode.</param>
@@ -627,7 +627,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string decodedVar = Security.Base64DecodeToString(stringVar);
+        /// string decodedVar = EncryptionHelpers.Base64DecodeToString(stringVar);
         /// ]]></code>
         /// </example>
         /// <param name="input">A Base64-encoded string.</param>
@@ -650,7 +650,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// byte[] decodedVar = Security.Base64DecodeToBytes(stringVar);
+        /// byte[] decodedVar = EncryptionHelpers.Base64DecodeToBytes(stringVar);
         /// ]]></code>
         /// </example>
         /// <param name="input">A Base64-encoded string.</param>
@@ -672,7 +672,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string encodedVar = Security.Base64UrlEncode(bytes);
+        /// string encodedVar = EncryptionHelpers.Base64UrlEncode(bytes);
         /// ]]></code>
         /// </example>
         /// <param name="input">A byte array to encode.</param>
@@ -704,7 +704,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string encodedVar = Security.Base64UrlEncode(stringVar);
+        /// string encodedVar = EncryptionHelpers.Base64UrlEncode(stringVar);
         /// ]]></code>
         /// </example>
         /// <param name="input">A string to encode.</param>
@@ -727,7 +727,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// byte[] decodedVar = Security.Base64UrlDecodeToBytes(stringVar);
+        /// byte[] decodedVar = EncryptionHelpers.Base64UrlDecodeToBytes(stringVar);
         /// ]]></code>
         /// </example>
         /// <param name="input">A Base64Url-encoded string.</param>
@@ -768,7 +768,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string decodedVar = Security.Base64UrlDecodeToString(stringVar);
+        /// string decodedVar = EncryptionHelpers.Base64UrlDecodeToString(stringVar);
         /// ]]></code>
         /// </example>
         /// <param name="input">A Base64Url-encoded string.</param>
@@ -809,9 +809,9 @@ namespace Fynydd.Carbide
         /// In the example, the value for jwt (the token) is:
         /// eyAiYWxnIjogIkhTMjU2IiwgInR5cCI6ICJKV1QiIH0.eyAic3ViIjogInRlc3QiLCAibmFtZSI6ICJNaWNoYWVsIEFyZ2VudGluaSIgfQ.Gb7z2CJSrWdBhZ7lGZK9qdcac_ktuOuqiCBJo3sG_lA
         /// <code><![CDATA[
-        /// string base64Secret = Encryption.Base64StringEncode("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@");
+        /// string base64Secret = EncryptionHelpers.Base64StringEncode("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@");
         /// string payload = "{ \"sub\": \"test\", \"name\": \"Michael Argentini\" }";
-        /// string jwt = Encryption.GenerateJWT(payload, base64Secret, "HS256");
+        /// string jwt = EncryptionHelpers.GenerateJWT(payload, base64Secret, "HS256");
         /// ]]></code>
         /// </example>
         /// <param name="payload">Primary data block to pack into the token, using JSON syntax.</param>
@@ -923,10 +923,10 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string base64Secret = Encryption.Base64StringEncode("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@");
+        /// string base64Secret = EncryptionHelpers.Base64StringEncode("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@");
         /// string payload = "{ \"sub\": \"test\", \"name\": \"Michael Argentini\" }";
-        /// string jwt = Encryption.GenerateJWT(payload, base64Secret, "HS256");
-        /// if (Encryption.VerifyJWT(jwt, base64Secret))
+        /// string jwt = EncryptionHelpers.GenerateJWT(payload, base64Secret, "HS256");
+        /// if (EncryptionHelpers.VerifyJWT(jwt, base64Secret))
         /// {
         ///     // token has a valid signature...
         /// }

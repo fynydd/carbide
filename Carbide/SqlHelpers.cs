@@ -20,7 +20,7 @@ namespace Fynydd.Carbide
     ///		</connectionStrings>
     /// ]]></code>
     /// </example>
-    public static class SQL
+    public static class SqlHelpers
     {
         /// <summary><![CDATA[
         ///	The SQL connection string, retrieved from the web.config file by its name.
@@ -354,9 +354,9 @@ namespace Fynydd.Carbide
 
             CSV = GenerateCSV(select, connectionStringName, includeHeaders, alwaysUseQuotes);
 
-            Storage.WriteFile(filePath, CSV.ToString());
+            StorageHelpers.WriteFile(filePath, CSV.ToString());
 
-            if (Storage.FileExists(filePath))
+            if (StorageHelpers.FileExists(filePath))
             {
                 result = true;
             }

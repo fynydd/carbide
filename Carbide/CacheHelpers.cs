@@ -20,7 +20,7 @@ namespace Fynydd.Carbide
     /// </Fynydd.Carbide>
     ///	]]></code>
     ///	</example>
-    public static class Caching
+    public static class CacheHelpers
     {
         #region Properties
 

@@ -107,7 +107,7 @@ namespace Fynydd.Carbide
         public static string[] GetConfigFileValues(string configFilePath, string nodePath)
         {
             XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(Storage.MapPath(configFilePath));
+            xmlDoc.Load(StorageHelpers.MapPath(configFilePath));
             XmlNodeList nodeList = xmlDoc.DocumentElement.SelectNodes(nodePath);
             List<string> result = new List<string>();
 

@@ -8,14 +8,14 @@ namespace Fynydd.Carbide
     /// <summary><![CDATA[
     /// The Compression class contains methods for compressing and decompressing data.
     /// ]]></summary>
-    public static class Compression
+    public static class CompressionHelpers
     {
         /// <summary><![CDATA[
         /// GZip compress a string. Only useful for strings over 300 characters in length.
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string compressedVar = Compression.CompressString(stringVar);
+        /// string compressedVar = CompressionHelpers.CompressString(stringVar);
         /// ]]></code>
         /// </example>
         /// <param name="text">String to compress.</param>
@@ -46,7 +46,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string decompressedVar = Compression.DecompressString(compressedVar);
+        /// string decompressedVar = CompressionHelpers.DecompressString(compressedVar);
         /// ]]></code>
         /// </example>
         /// <param name="gzipBuffer">Byte array to decompress.</param>
@@ -76,7 +76,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// byte[] compressedVar = Compression.Compress(byteBuff);
+        /// byte[] compressedVar = CompressionHelpers.Compress(byteBuff);
         /// ]]></code>
         /// </example>
         /// <param name="buffer">Byte array to compress.</param>
@@ -103,7 +103,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// byte[] decompressedVar = Compression.Decompress(byteBuff);
+        /// byte[] decompressedVar = CompressionHelpers.Decompress(byteBuff);
         /// ]]></code>
         /// </example>
         /// <param name="gzipBuffer">Byte array to decompress.</param>

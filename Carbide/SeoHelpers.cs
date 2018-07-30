@@ -20,24 +20,18 @@ namespace Fynydd.Carbide
         /// Output a meta tag to prevent page indexing in current context.
         /// Use in a Razor page.
         /// ]]></summary>
-        public static void PreventSearchIndexingWhenDebug()
+        public static string PreventSearchIndexingWhenDebug()
         {
-            if (HttpContext.Current.IsDebuggingEnabled)
-            {
-                HttpContext.Current.Response.Write(Metadata.DoNotIndex);
-            }
+            return Metadata.DoNotIndex;
         }
 
         /// <summary><![CDATA[
         /// Return a meta tag to prevent browser page caching in current context.
         /// Use in a Razor page.
         /// ]]></summary>
-        public static void PreventBrowserCachingWhenDebug()
+        public static string PreventBrowserCachingWhenDebug()
         {
-            if (HttpContext.Current.IsDebuggingEnabled)
-            {
-                HttpContext.Current.Response.Write(Metadata.DoNotCache);
-            }
+            return Metadata.DoNotCache;
         }
     }
 
@@ -71,15 +65,13 @@ namespace Fynydd.Carbide
             context.Response.ContentType = "text/plain";
 
             var path = HttpContext.Current.Server.MapPath(VirtualPathUtility.ToAbsolute("~/robots.txt"));
-            var text = @"
-User-agent: *
+            var text = @"User-agent: *
 Disallow:
 ";
 
             if (context.IsDebuggingEnabled)
             {
-                text = @"
-User-agent: *
+                text = @"User-agent: *
 Disallow: /
 ";
             }

@@ -11,7 +11,7 @@ namespace Fynydd.Carbide
     /// The Client class contains methods and properties for controlling
     /// client-side objects like cookies, javascript, etc.
     /// ]]></summary>
-    public static class Client
+    public static class ClientHelpers
     {
         /// <summary><![CDATA[
         /// Include a URL asset into a web page using relative paths. Optionally add dynamic cachebuster and minify JS and CSS files.
@@ -44,11 +44,11 @@ namespace Fynydd.Carbide
                         newContentpath = "_carbide.generated." + filePath;
                     }
 
-                    if (HttpContext.Current.Application.KeyExists(Storage.ConvertFilePathToKey(filePath) + "_MINIFY"))
+                    if (HttpContext.Current.Application.KeyExists(StorageHelpers.ConvertFilePathToKey(filePath) + "_MINIFY"))
                     {
-                        if (Storage.FileExists(filePath))
+                        if (StorageHelpers.FileExists(filePath))
                         {
-                            if (HttpContext.Current.Application[Storage.ConvertFilePathToKey(filePath) + "_MINIFY"].ToString() == Storage.MakeCacheBuster(filePath))
+                            if (HttpContext.Current.Application[StorageHelpers.ConvertFilePathToKey(filePath) + "_MINIFY"].ToString() == StorageHelpers.MakeCacheBuster(filePath))
                             {
                                 filePath = newContentpath;
                                 proceed = false;
@@ -58,9 +58,9 @@ namespace Fynydd.Carbide
 
                     if (proceed)
                     {
-                        if (Storage.FileExists(newContentpath))
+                        if (StorageHelpers.FileExists(newContentpath))
                         {
-                            Storage.DeleteFiles(newContentpath);
+                            StorageHelpers.DeleteFiles(newContentpath);
                         }
 
                         var minified = "";
@@ -68,17 +68,17 @@ namespace Fynydd.Carbide
                         if (filePath.EndsWith(".js"))
                         {
                             var jsc = new JavaScriptCompressor();
-                            minified = jsc.Compress(Storage.ReadFile(filePath));
+                            minified = jsc.Compress(StorageHelpers.ReadFile(filePath));
                         }
 
                         if (filePath.EndsWith(".css"))
                         {
                             var cssc = new CssCompressor();
-                            minified = cssc.Compress(Storage.ReadFile(filePath));
+                            minified = cssc.Compress(StorageHelpers.ReadFile(filePath));
                         }
 
-                        Storage.WriteFile(newContentpath, minified);
-                        HttpContext.Current.Application[Storage.ConvertFilePathToKey(filePath) + "_MINIFY"] = Storage.MakeCacheBuster(filePath);
+                        StorageHelpers.WriteFile(newContentpath, minified);
+                        HttpContext.Current.Application[StorageHelpers.ConvertFilePathToKey(filePath) + "_MINIFY"] = StorageHelpers.MakeCacheBuster(filePath);
 
                         filePath = newContentpath;
 
@@ -94,7 +94,7 @@ namespace Fynydd.Carbide
 
             if (addCacheBuster)
             {
-                queryString += (queryString.Contains("?") ? "&" : "?") + "_cachebuster=" + Storage.MakeCacheBuster(filePath, fallback);
+                queryString += (queryString.Contains("?") ? "&" : "?") + "_cachebuster=" + StorageHelpers.MakeCacheBuster(filePath, fallback);
             }
 
             return url.Content(filePath + queryString);
@@ -105,7 +105,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// bool cookieExists = Client.CookieExists(Request, "Score");
+        /// bool cookieExists = ClientHelpers.CookieExists(Request, "Score");
         /// ]]></code>
         /// </example>
         /// <param name="request">HttpRequest object.</param>
@@ -129,7 +129,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// bool cookieExists = Client.CookieExists("Score");
+        /// bool cookieExists = ClientHelpers.CookieExists("Score");
         /// ]]></code>
         /// </example>
         /// <param name="cookieName">Name of cookie for which to verify its existence.</param>
@@ -152,7 +152,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string cookieVal = Client.GetCookie(Request, "Score");
+        /// string cookieVal = ClientHelpers.GetCookie(Request, "Score");
         /// ]]></code>
         /// </example>
         /// <param name="request">HttpRequest object.</param>
@@ -176,7 +176,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// string cookieVal = Client.GetCookie("Score");
+        /// string cookieVal = ClientHelpers.GetCookie("Score");
         /// ]]></code>
         /// </example>
         /// <param name="cookieName">Name of cookie to retrieve.</param>
@@ -191,7 +191,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// Client.SetCookie("Score", "15", "", 7);
+        /// ClientHelpers.SetCookie("Score", "15", "", 7);
         /// ]]></code>
         /// </example>
         /// <param name="cookieName">Name of the cookie to create.</param>
@@ -215,7 +215,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// Client.SetCookie("Score", "15", "", 7, ".mydomain.com");
+        /// ClientHelpers.SetCookie("Score", "15", "", 7, ".mydomain.com");
         /// ]]></code>
         /// </example>
         /// <param name="cookieName">Name of the cookie to create.</param>
@@ -241,7 +241,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// Client.ClearCookie("Score", "/", "mysite.com");
+        /// ClientHelpers.ClearCookie("Score", "/", "mysite.com");
         /// ]]></code>
         /// </example>
         /// <param name="cookieName">Name of the cookie to remove.</param>
@@ -271,7 +271,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// Client.ClearCookie("Score", "/");
+        /// ClientHelpers.ClearCookie("Score", "/");
         /// ]]></code>
         /// </example>
         /// <param name="cookieName">Name of the cookie to remove.</param>
@@ -287,7 +287,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
-        /// Client.ClearCookie("Score");
+        /// ClientHelpers.ClearCookie("Score");
         /// ]]></code>
         /// </example>
         /// <param name="cookieName">Name of the cookie to remove.</param>

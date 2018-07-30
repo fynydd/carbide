@@ -6,15 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Web;
-using System.Web.Hosting;
 using System.Web.Http;
-using System.Xml;
 
 using Umbraco.Core.Models;
 using Umbraco.Web;
@@ -203,7 +200,7 @@ namespace Fynydd.Carbide
                 var context = HttpContext.Current;
 
                 context.Application["RebuildCacheStatus"] = "running";
-				context.Application["RebuildCacheHistory"] = "<h4 style=\"font-size: 1.1rem; margin-bottom: 1.5rem;\">Started " + Temporal.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + Temporal.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</h4>";
+				context.Application["RebuildCacheHistory"] = "<h4 style=\"font-size: 1.1rem; margin-bottom: 1.5rem;\">Started " + TemporalHelpers.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</h4>";
 
                 result = context.Application["RebuildCacheHistory"].ToString();
 
@@ -262,7 +259,7 @@ namespace Fynydd.Carbide
 
                         context.Application.SafeRemove("RebuildCacheStatus");
 
-                        context.Application["RebuildCacheHistory"] = "</li></ol><p><strong>Error in " + timer.GetSeconds<int>() + " seconds on " + Temporal.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + Temporal.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
+                        context.Application["RebuildCacheHistory"] = "</li></ol><p><strong>Error in " + timer.GetSeconds<int>() + " seconds on " + TemporalHelpers.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
 
                         result = context.Application["RebuildCacheHistory"].ToString();
                     }
@@ -303,7 +300,7 @@ namespace Fynydd.Carbide
                 var context = HttpContext.Current;
 
                 context.Application["RebuildCacheStatus"] = "running";
-                context.Application["RebuildCacheHistory"] = "<h4 style=\"font-size: 1.1rem; margin-bottom: 1.5rem;\">Started " + Temporal.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + Temporal.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</h4>";
+                context.Application["RebuildCacheHistory"] = "<h4 style=\"font-size: 1.1rem; margin-bottom: 1.5rem;\">Started " + TemporalHelpers.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</h4>";
 
                 result = context.Application["RebuildCacheHistory"].ToString();
 
@@ -322,11 +319,11 @@ namespace Fynydd.Carbide
                         context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Clearing cached images... ";
                         timer2.Start();
 
-                        foreach (var folder in Storage.GetFolders("/App_Data/cache/"))
+                        foreach (var folder in StorageHelpers.GetFolders("/App_Data/cache/"))
                         {
-                            Storage.DeleteDirectory("/App_Data/cache/" + folder);
+                            StorageHelpers.DeleteDirectory("/App_Data/cache/" + folder);
 
-                            if (Storage.DirectoryExists("/App_Data/cache/" + folder))
+                            if (StorageHelpers.DirectoryExists("/App_Data/cache/" + folder))
                             {
                                 // Retry up to 5 times after pausing...
 
@@ -340,14 +337,14 @@ namespace Fynydd.Carbide
 
                                     context.Application["RebuildCacheHistory"] = original + "cache/" + folder + " retry " + retry;
 
-                                    Temporal.PauseExecution(1);
+                                    TemporalHelpers.PauseExecution(1);
 
-                                    if (Storage.DirectoryExists("/App_Data/cache/" + folder))
+                                    if (StorageHelpers.DirectoryExists("/App_Data/cache/" + folder))
                                     {
-                                        Storage.DeleteDirectory("/App_Data/cache/" + folder);
+                                        StorageHelpers.DeleteDirectory("/App_Data/cache/" + folder);
                                     }
 
-                                    if (!Storage.DirectoryExists("/App_Data/cache/" + folder))
+                                    if (!StorageHelpers.DirectoryExists("/App_Data/cache/" + folder))
                                     {
                                         retry = 5;
                                     }
@@ -355,7 +352,7 @@ namespace Fynydd.Carbide
 
                                 context.Application["RebuildCacheHistory"] = original;
 
-                                if (Storage.DirectoryExists("/App_Data/cache/" + folder))
+                                if (StorageHelpers.DirectoryExists("/App_Data/cache/" + folder))
                                 {
                                     context.Application["RebuildCacheHistory"] += "<strong style='color:#b94a48;'>cache/" + folder + " locked...</strong> ";
                                 }
@@ -381,7 +378,7 @@ namespace Fynydd.Carbide
 
                         context.Application.SafeRemove("RebuildCacheStatus");
 
-                        context.Application["RebuildCacheHistory"] = "</li></ol><p><strong>Error in " + timer.GetSeconds<int>() + " seconds on " + Temporal.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + Temporal.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
+                        context.Application["RebuildCacheHistory"] = "</li></ol><p><strong>Error in " + timer.GetSeconds<int>() + " seconds on " + TemporalHelpers.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
 
                         result = context.Application["RebuildCacheHistory"].ToString();
                     }
@@ -422,7 +419,7 @@ namespace Fynydd.Carbide
                 var context = HttpContext.Current;
 
                 context.Application["RebuildCacheStatus"] = "running";
-                context.Application["RebuildCacheHistory"] = "<h4 style=\"font-size: 1.1rem; margin-bottom: 1.5rem;\">Started " + Temporal.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + Temporal.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</h4>";
+                context.Application["RebuildCacheHistory"] = "<h4 style=\"font-size: 1.1rem; margin-bottom: 1.5rem;\">Started " + TemporalHelpers.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</h4>";
 
                 result = context.Application["RebuildCacheHistory"].ToString();
 
@@ -477,7 +474,7 @@ namespace Fynydd.Carbide
 
                         context.Application.SafeRemove("RebuildCacheStatus");
 
-                        context.Application["RebuildCacheHistory"] = "</li></ol><p><strong>Error in " + timer.GetSeconds<int>() + " seconds on " + Temporal.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + Temporal.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
+                        context.Application["RebuildCacheHistory"] = "</li></ol><p><strong>Error in " + timer.GetSeconds<int>() + " seconds on " + TemporalHelpers.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
 
                         result = context.Application["RebuildCacheHistory"].ToString();
                     }
@@ -570,7 +567,7 @@ namespace Fynydd.Carbide
                         context.Application["RebuildCacheHistory"] += node.GetTemplateAlias() + "... ";
 
                         RestHelper rest = new RestHelper();
-                        rest.Url = context.Request.Url.Scheme + "://" + Http.GetHostWithPort(context) + node.Url;
+                        rest.Url = context.Request.Url.Scheme + "://" + HttpHelpers.GetHostWithPort(context) + node.Url;
                         rest.Timeout = 30000;
                         rest.Call();
 
