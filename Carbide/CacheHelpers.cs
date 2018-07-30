@@ -48,10 +48,7 @@ namespace Fynydd.Carbide
         /// <param name="context">HttpContext; defaults to Current</param>
         public static void Cache(string key, object value, int expirationSeconds, HttpContext context = null)
         {
-            if (context == null)
-            {
-                context = HttpContext.Current;
-            }
+            context = ContextHelpers.EnsureAppContext(context);
 
             context.Cache.Add(key, value, null, DateTime.Now.AddSeconds(Convert.ToDouble(expirationSeconds)), System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Normal, null);
         }
@@ -64,10 +61,7 @@ namespace Fynydd.Carbide
         /// <param name="context">HttpContext; defaults to Current</param>
         public static void CachePermanent(string key, object value, HttpContext context = null)
         {
-            if (context == null)
-            {
-                context = HttpContext.Current;
-            }
+            context = ContextHelpers.EnsureAppContext(context);
 
             context.Cache.Add(key, value, null, System.Web.Caching.Cache.NoAbsoluteExpiration, System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.High, null);
         }
@@ -81,10 +75,7 @@ namespace Fynydd.Carbide
         /// <param name="context">HttpContext; defaults to Current</param>
         public static void Cache(string key, string value, int expirationSeconds, HttpContext context = null)
         {
-            if (context == null)
-            {
-                context = HttpContext.Current;
-            }
+            context = ContextHelpers.EnsureAppContext(context);
 
             context.Cache.Add(key, value, null, DateTime.Now.AddSeconds(Convert.ToDouble(expirationSeconds)), System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Normal, null);
         }
@@ -98,10 +89,7 @@ namespace Fynydd.Carbide
         /// <param name="context">HttpContext; defaults to Current</param>
         public static void Cache(string key, object value, DateTime expirationDateTime, HttpContext context = null)
         {
-            if (context == null)
-            {
-                context = HttpContext.Current;
-            }
+            context = ContextHelpers.EnsureAppContext(context);
 
             context.Cache.Add(key, value, null, expirationDateTime, System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Normal, null);
         }
@@ -115,10 +103,7 @@ namespace Fynydd.Carbide
         /// <param name="context">HttpContext; defaults to Current</param>
         public static void Cache(string key, string value, DateTime expirationDateTime, HttpContext context = null)
         {
-            if (context == null)
-            {
-                context = HttpContext.Current;
-            }
+            context = ContextHelpers.EnsureAppContext(context);
 
             context.Cache.Add(key, value, null, expirationDateTime, System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Normal, null);
         }
@@ -132,10 +117,7 @@ namespace Fynydd.Carbide
         /// <param name="context">HttpContext; defaults to Current</param>
         public static void Cache(string key, object value, HttpContext context = null)
         {
-            if (context == null)
-            {
-                context = HttpContext.Current;
-            }
+            context = ContextHelpers.EnsureAppContext(context);
 
             context.Cache.Add(key, value, null, DateTime.Now.AddSeconds(Convert.ToDouble(OutputCacheTime)), System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Normal, null);
         }
@@ -149,10 +131,7 @@ namespace Fynydd.Carbide
         /// <param name="context">HttpContext; defaults to Current</param>
         public static void Cache(string key, string value, HttpContext context = null)
         {
-            if (context == null)
-            {
-                context = HttpContext.Current;
-            }
+            context = ContextHelpers.EnsureAppContext(context);
 
             context.Cache.Add(key, value, null, DateTime.Now.AddSeconds(Convert.ToDouble(OutputCacheTime)), System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Normal, null);
         }
@@ -163,10 +142,7 @@ namespace Fynydd.Carbide
         /// <param name="context">HttpContext; defaults to Current</param>
         public static void CacheClear(HttpContext context = null)
         {
-            if (context == null)
-            {
-                context = HttpContext.Current;
-            }
+            context = ContextHelpers.EnsureAppContext(context);
 
             IDictionaryEnumerator CacheEnum = context.Cache.GetEnumerator();
 
@@ -183,10 +159,7 @@ namespace Fynydd.Carbide
         /// <param name="context">HttpContext; defaults to Current</param>
         public static void CacheDelete(string key, HttpContext context = null)
         {
-            if (context == null)
-            {
-                context = HttpContext.Current;
-            }
+            context = ContextHelpers.EnsureAppContext(context);
 
             if (string.IsNullOrWhiteSpace(key) == false)
             {
@@ -207,10 +180,7 @@ namespace Fynydd.Carbide
         {
             bool result = false;
 
-            if (context == null)
-            {
-                context = HttpContext.Current;
-            }
+            context = ContextHelpers.EnsureAppContext(context);
 
             if (context.Cache[key] != null)
             {
@@ -228,10 +198,7 @@ namespace Fynydd.Carbide
         /// <returns>Cached value</returns>
         public static T Cache<T>(string key, HttpContext context = null)
         {
-            if (context == null)
-            {
-                context = HttpContext.Current;
-            }
+            context = ContextHelpers.EnsureAppContext(context);
 
             if (string.IsNullOrWhiteSpace(key) == false)
             {
