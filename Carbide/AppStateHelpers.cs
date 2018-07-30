@@ -7,6 +7,18 @@ namespace Fynydd.Carbide
     /// ]]></summary>
     public static class AppStateHelpers
     {
+        /// <summary>
+        /// Determine if the application is running in debug mode.
+        /// </summary>
+        /// <param name="context">HttpContext; defaults to Current</param>
+        /// <returns>True if application is running in debug mode.</returns>
+        public static bool IsDebugging(HttpContext context = null)
+        {
+            context = ContextHelpers.EnsureAppContext(context);
+
+            return context.IsDebuggingEnabled;
+        }
+
         /// <summary><![CDATA[
         /// Determine if an Application-level state variable exists.
         /// ]]></summary>
