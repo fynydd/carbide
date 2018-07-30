@@ -18,8 +18,13 @@ namespace Fynydd.Carbide
     {
         /// <summary><![CDATA[
         /// Output a meta tag to prevent page indexing in current context.
-        /// Use in a Razor page.
         /// ]]></summary>
+        /// <example>
+        /// Use in a Razor page.
+        /// <code><![CDATA[
+        /// @Html.Raw(SeoHelpers.PreventSearchIndexingWhenDebug())
+        /// ]]></code>
+        /// </example>
         public static string PreventSearchIndexingWhenDebug()
         {
             return Metadata.DoNotIndex;
@@ -29,6 +34,12 @@ namespace Fynydd.Carbide
         /// Return a meta tag to prevent browser page caching in current context.
         /// Use in a Razor page.
         /// ]]></summary>
+        /// <example>
+        /// Use in a Razor page.
+        /// <code><![CDATA[
+        /// @Html.Raw(SeoHelpers.PreventBrowserCachingWhenDebug())
+        /// ]]></code>
+        /// </example>
         public static string PreventBrowserCachingWhenDebug()
         {
             return Metadata.DoNotCache;
