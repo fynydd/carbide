@@ -14,16 +14,24 @@ using Umbraco.Web;
 
 namespace Fynydd.Carbide
 {
+    /// <summary><![CDATA[
+    /// Event handlers for Carbide functionality.
+    /// ]]></summary>
     public class EventHandlers : ApplicationEventHandler
     {
+        /// <summary><![CDATA[
+        /// Event fired after Umbraco application has been initialized.
+        /// ]]></summary>
+        /// <param name="umbracoApplication">Umbraco base app</param>
+        /// <param name="applicationContext">Umbraco context</param>
         protected override void ApplicationInitialized(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
             UmbracoApplicationBase.ApplicationInit += InjectCarbideDependencies;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Process Carbide dependencies on startup
-        /// </summary>
+        /// ]]></summary>
         private void InjectCarbideDependencies(object sender, EventArgs e)
         {
             var tabExists = false;

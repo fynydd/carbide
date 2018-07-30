@@ -2,11 +2,14 @@
 
 namespace Fynydd.Carbide
 {
+    /// <summary><![CDATA[
+    /// Helper methods for accessing and managing Application State.
+    /// ]]></summary>
     public static class AppState
     {
-        /// <summary>
+        /// <summary><![CDATA[
         /// Determine if an Application-level state variable exists.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="application">The current HttpApplictionState object</param>
         /// <param name="keyName">The key name of the Application-level state variable</param>
         public static bool KeyExists(this HttpApplicationState application, string keyName)
@@ -24,10 +27,10 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Remove an Application-level state variable, first checking for its existence
         /// and a valid context.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="application">The current HttpApplictionState object</param>
         /// <param name="keyName">The key name of the Application-level state variable</param>
         public static void SafeRemove(this HttpApplicationState application, string keyName)

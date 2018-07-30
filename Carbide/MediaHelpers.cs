@@ -18,25 +18,23 @@ using Fynydd.Carbide.Constants;
 
 namespace Fynydd.Carbide
 {
-    /// <summary>
+    /// <summary><![CDATA[
     /// The MediaHelpers class has static methods and properties for 
     /// using media.
-    /// </summary>
+    /// ]]></summary>
     /// <example>
     /// For example, you can make calls like this:
-    /// <code>
-    /// <![CDATA[
+    /// <code><![CDATA[
     /// var markup = MediaHelpers.GetYoutubeUrl("abc123", "https://");
-    /// ]]>
-    /// </code>
+    /// ]]></code>
     /// </example>
     public static class MediaHelpers
     {
         #region YouTube helpers
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Convert a YouTube URL or video code into a properly formed YouTube URL.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="youtubeUrlOrCode">YouTube video URL or code</param>
         /// <param name="transport">Defaults to "//", but you can specify "http://", "https://", etc.</param>
         /// <returns>A properly formatted YouTube video URL.</returns>
@@ -78,9 +76,9 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Create a properly formatted YouTube video markeup block.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="youtubeUrlOrCode">YouTube video URL or video code.</param>
         /// <param name="transport">Defaults to "//", but you can specify "http://", "https://", etc.</param>
         /// <returns>Properly formatted HTML markup to render the video.</returns>
@@ -96,7 +94,7 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the maximum width for a media item given its aspect ratio and
         /// a maximum width, maximum height, and image aspect ratio. maxWidth, maxHeight,
         /// and the returned result are numeric. No units are required as this is all
@@ -104,7 +102,7 @@ namespace Fynydd.Carbide
         /// Assumes a property exists for "aspectRatio", which contains a width to height 
         /// number where 1.0 is a perfect square, and 1.5 would be an image that is 50% wider 
         /// than it is tall.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="contentNode">The current media item as IPublishedContent</param>
         /// <param name="maxWidth">Maximum width value</param>
         /// <param name="maxHeight">Maximum height value</param>
@@ -117,7 +115,7 @@ namespace Fynydd.Carbide
             return GetIdealImageWidth(contentNode, contentNode.SafeGetValue<double>("aspectRatio"), maxWidth, maxHeight, maxAspectRatio, exponent, lowestHeightRatio);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the ideal width for a media item given its aspect ratio and
         /// a maximum width, maximum height, and image aspect ratio. maxWidth, maxHeight,
         /// and the returned result are numeric. No units are required as this is all
@@ -125,7 +123,7 @@ namespace Fynydd.Carbide
         /// The ideal width is based on aspect ratio as well as maximum dimensions. So a logo,
         /// for example, won't be too tall if it's 4:3 or similar aspect ration. It tries to 
         /// calculate by "mass" not just dimensions.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="contentNode">A media item as IPublishedContent</param>
         /// <param name="aspectRatio">A width to height number where 1.0 is a perfect square, 
         /// and 1.5 would be an image that is 50% wider than it is tall.</param>
@@ -192,10 +190,10 @@ namespace Fynydd.Carbide
 
         #region SVG helpers
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the markup required to render an SVG image
-        /// </summary>
-        /// <param name="contentNode">The media item property to render.</param>
+        /// ]]></summary>
+        /// <param name="content">The media item property to render.</param>
         /// <param name="color">Optional hex color code to use to recolor the SVG (e.g. "ffffff")</param>
         /// <param name="attributes">Optional tag attributes to insert.</param>
         /// <returns>SVG image markup</returns>
@@ -224,10 +222,10 @@ namespace Fynydd.Carbide
             return markup;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the markup required to render an SVG image
-        /// </summary>
-        /// <param name="contentNode">The current content node as an IPublishedContent object</param>
+        /// ]]></summary>
+        /// <param name="content">The current content node as an IPublishedContent object</param>
         /// <param name="propertyName">Name of the media picker property, or blank if the conent item itself is the media item.</param>
         /// <param name="color">Optional hex color code to use to recolor the SVG (e.g. "ffffff")</param>
         /// <param name="attributes">Optional tag attributes to insert.</param>
@@ -252,9 +250,9 @@ namespace Fynydd.Carbide
             return markup;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Remove comments and style attributes from SVG markup.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="svg">SVG markup to clean.</param>
         /// <param name="removeStyles">If true, svg style property is removed.</param>
         /// <param name="fixStyles">Ensure unique svg id and style classes are scoped to that id.</param>
@@ -350,9 +348,9 @@ namespace Fynydd.Carbide
 
         #region Extension methods
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Determines is an image URL is supported natively by all major web browsers via the img tag.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="url">URL to an image resource to evaluate.</param>
         /// <returns>True if the image will render in a browser via the img tag.</returns>
         public static bool IsWebImage(this string url)
@@ -368,10 +366,10 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Determines is an image URL is a supported image type for responsive image generation,
         /// and other ImageProcessor functions.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="url">URL to an image resource to evaluate.</param>
         /// <returns>True if the image can be processed with ImageProcessor.</returns>
         public static bool IsResponsiveImageType(this string url)
@@ -395,9 +393,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Ensure that a hex color starts with #.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="color">Hex color string to fix</param>
         /// <returns>Color hex code with leading #</returns>
         public static string FixHexColor(this string color)

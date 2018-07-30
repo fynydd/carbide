@@ -6,16 +6,14 @@ using System.Xml;
 
 namespace Fynydd.Carbide
 {
-    /// <summary>
-    /// <![CDATA[
+    /// <summary><![CDATA[
     /// The Configuration class contains methods and properties for manipulating configuration properties
     /// within the Web.config file.
     /// 
     /// Add a reference to the Carbide configuration section in your Web.config file as below.
-    /// ]]>
+    ///	]]></summary>
     /// <example>
-    /// <code>
-    /// <![CDATA[
+    /// <code><![CDATA[
     /// <configSections>
     ///		<section name="Fynydd.Carbide" type="System.Configuration.NameValueFileSectionHandler"/>
     /// </configSections>
@@ -24,15 +22,13 @@ namespace Fynydd.Carbide
     ///		<add key="EncryptionBaseKey" value="10,64,9,2,13,99,67,118,241,133,116,30,217,183,146,18,56,74,90,36,26,129,81,219"/>
     ///		<add key="EncryptionInitVector" value="162,199,183,54,126,11,114,221,16,187,122,221,151,9,176,75,119,17"/>
     /// </Fynydd.Carbide>
-    ///	]]>
-    ///	</code>
+    ///	]]></code>
     ///	</example>
-    ///	</summary>
     public static class Config
     {
-        /// <summary>
+        /// <summary><![CDATA[
         /// Retrieve the value of an application setting from the Web.config file.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="keyName">Key name for which a value should be returned.</param>
         /// <param name="defaultValue">A default value if the key does not exist.</param>
         /// <param name="sectionName">Optional section name (e.g. "Fynydd.Carbide")</param>
@@ -80,20 +76,21 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Retrieve the value of an application setting from the Web.config file.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="keyName">Key name for which a value should be returned.</param>
         /// <param name="defaultValue">A default value if the key does not exist.</param>
+        /// <param name="sectionName">Config section name.</param>
         /// <returns>A key value or a default value if the key does not exist.</returns>
         public static string GetKeyValue(string keyName, string defaultValue, string sectionName = "")
         {
             return GetKeyValue<string>(keyName, defaultValue, sectionName);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Retrieve the value of an application setting from the Web.config file.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="keyName">Key name for which a value should be returned.</param>
         /// <returns>A key value or an empty string if the key does not exist.</returns>
         public static string GetKeyValue(string keyName)
@@ -101,9 +98,9 @@ namespace Fynydd.Carbide
             return GetKeyValue<string>(keyName, "", "");
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Retrieve XML node data from a config file.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="configFilePath">Web style path to the config file</param>
         /// <param name="nodePath">XPath for node selection</param>
         /// <returns>Enumerable string array of values</returns>

@@ -15,13 +15,16 @@ using Fynydd.Carbide.Constants;
 
 namespace Fynydd.Carbide
 {
+    /// <summary><![CDATA[
+    /// Various helper methods for base data types.
+    /// ]]></summary>
     public static class BaseTypes
     {
         #region Strings and string output
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get the left "length" characters of a string.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String value</param>
         /// <param name="length">Number of characters</param>
         /// <returns>Left portion of a string</returns>
@@ -40,9 +43,9 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get the left characters of a string up to but not including the first instance of "marker".
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String value</param>
         /// <param name="marker">Delimitter to denote the cut off point</param>
         /// <returns>Left portion of a string</returns>
@@ -64,9 +67,9 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get the right "length" characters of a string.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String value</param>
         /// <param name="length">Number of characters</param>
         /// <returns>Right portion of a string</returns>
@@ -85,9 +88,9 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get the right characters of a string up to but not including the last instance of "marker" (right to left).
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String value</param>
         /// <param name="marker">Delimitter to denote the cut off point</param>
         /// <returns>Right portion of a string</returns>
@@ -109,9 +112,9 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Replace string occurrences within another string, ignoring case, using whole word or character based matching.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to search</param>
         /// <param name="substring">String to find</param>
         /// <param name="newstring">String replacement</param>
@@ -124,9 +127,9 @@ namespace Fynydd.Carbide
             return regEx.Replace(value, newstring);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Replace the first instance of a string.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to search</param>
         /// <param name="substring">String to find</param>
         /// <param name="newstring">String replacement</param>
@@ -139,9 +142,9 @@ namespace Fynydd.Carbide
             return regEx.Replace(value, newstring, 1);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Replace the last instance of a string.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to search</param>
         /// <param name="substring">String to find</param>
         /// <param name="newstring">String replacement</param>
@@ -154,9 +157,9 @@ namespace Fynydd.Carbide
             return regEx.Replace(value, newstring, 1);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Replace words in a string with mask characters, like asterisks. Useful for filtering profanity.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to search</param>
         /// <param name="stringMask">Mask character to use (e.g. "*")</param>
         /// <param name="filterWords">String array of words to mask</param>
@@ -186,10 +189,10 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Convert a string to AP style title case, which makes all words use an upper case first character,
         /// except a core set of small words, unless one of those small words is the first or last one in the string.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to make AP title case</param>
         /// <returns>String in AP title case</returns>
         public static string ApTitleCase(this string value)
@@ -230,9 +233,9 @@ namespace Fynydd.Carbide
             return newTitle;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Makes two or more consecutive spaces in a string one single space.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to process</param>
         /// <returns>String with only single spaces</returns>
         public static string RemoveExtraSpaces(this string value)
@@ -241,7 +244,7 @@ namespace Fynydd.Carbide
             return regEx.Replace(value, " ");
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the current string cropped by number of words or characters.
         /// <para>
         /// Words: returns the first "count" of words in the string, including any intermediate punctuation, etc.
@@ -253,11 +256,11 @@ namespace Fynydd.Carbide
         /// of a word, it will skip ahead to the next non-alpha-numeric chatacter and break on that, so your cropped string
         /// may be slightly larger than the number of characters you requested. Trailing punctuation is always removed.
         /// </para>
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// result = result.Crop(3, StringCropType.Words, " .,;:!?", "...");
-        /// </code>
+        /// ]]></code>
         /// result would be "now is the...".
         /// </example>
         /// <param name="value">String to process.</param>
@@ -341,9 +344,9 @@ namespace Fynydd.Carbide
             return outt;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Number of times a substring appears in a string.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to evaluate</param>
         /// <param name="find">Substring to count</param>
         /// <param name="wholeWords">If true only match whole words</param>
@@ -358,9 +361,9 @@ namespace Fynydd.Carbide
             return matches.Count;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Convert a string to a byte array.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to evaluate</param>
         /// <returns>Byte array</returns>
         public static byte[] ToByteArray(this string value)
@@ -369,10 +372,10 @@ namespace Fynydd.Carbide
             return encoding.GetBytes(value);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Format a number into a string representation based on a number format.
         /// Useful for friendly output of telephone numebrs, disk file sizes, etc.
-        /// </summary>
+        /// ]]></summary>
         /// <typeparam name="T">Numeric type being evaluated</typeparam>
         /// <param name="val">Numeric variable to evaluate</param>
         /// <param name="format">Output format for the number</param>
@@ -501,15 +504,15 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Calculate a percentage in string form for friendly output.
         /// Does the math for you.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// int value = 30;
         /// string result = value.MakePercentage(total: 200, places: 2) + "%";
-        /// </code>
+        /// ]]></code>
         /// result: 15.00%
         /// </example>
         /// <typeparam name="T">Numeric type being evaluated</typeparam>
@@ -544,10 +547,10 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Convert a string representation of a file size into a numeric number of bytes.
         /// (e.g. convert "1kb" to 1024).
-        /// </summary>
+        /// ]]></summary>
         /// <typeparam name="T">Numeric type being returned</typeparam>
         /// <param name="fileSize">String representation of a file size</param>
         /// <returns>Number of bytes</returns>
@@ -571,10 +574,10 @@ namespace Fynydd.Carbide
             return (T)Convert.ChangeType(result, typeof(T));
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Convert a string into a URL-friendly slug, filtering out everything but alphanumeric characters
         /// and using hyphens for whitespace.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="input">String to evaluate</param>
         /// <returns>URL-friendly slug</returns>
         public static string MakeSlug(this string input)
@@ -605,10 +608,10 @@ namespace Fynydd.Carbide
             return (result);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Trim leading and trailing whitespace, which includes space, non-breaking space, carriage returns, linefeeds, 
         /// tabs, en space, em space, and other ASCII and 16-bit Unicode whitrspace characters.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to evaluate</param>
         /// <returns>String with leading and trailing whitespade removed.</returns>
         public static string TrimWhitespace(this string value)
@@ -616,9 +619,9 @@ namespace Fynydd.Carbide
             return value.Trim(Characters.Whitespace);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Convert fractions like "1/3" to single-character symbolic HTML encoded fractions.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to evaluate</param>
         /// <returns>String with HTML encoded fractions</returns>
         public static string ConvertFractions(this string value)
@@ -644,22 +647,20 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the current string with HTML tags removed.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string newBodyText = oldString.StripHtml();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="value">Current string to process.</param>
-        /// <param name="convertBreaks">
-        /// <![CDATA[
+        /// <param name="convertBreaks"><![CDATA[
         /// Converts "<br>" and "<br />" to \r\n and converts "</p>" to \r\n\r\n.
-        /// ]]>
-        /// </param>
+        /// ]]></param>
         /// <param name="keepLinks">Keep and anchor tags intact.</param>
-        /// <param name="decodeEntities">Convert HTML entities to standard ASCII, like &copy; to ©</param>
+        /// <param name="decodeEntities">Convert HTML entities to standard ASCII, like &amp;copy; to ©</param>
         /// <returns>A string with HTML tags removed.</returns>
         public static string StripHtml(this string value, bool convertBreaks = false, bool keepLinks = false, bool decodeEntities = false)
         {
@@ -702,22 +703,20 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the current string with HTML tags removed.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string newBodyText = oldString.StripHtml();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="value">Current string to process.</param>
-        /// <param name="convertBreaks">
-        /// <![CDATA[
+        /// <param name="convertBreaks"><![CDATA[
         /// Converts "<br>" and "<br />" to \r\n and converts "</p>" to \r\n\r\n.
-        /// ]]>
-        /// </param>
+        /// ]]></param>
         /// <param name="keepLinks">Keep and anchor tags intact.</param>
-        /// <param name="decodeEntities">Convert HTML entities to standard ASCII, like &copy; to ©</param>
+        /// <param name="decodeEntities"><![CDATA[Convert HTML entities to standard ASCII, like &copy; to ©]]></param>
         /// <returns>A string with HTML tags removed.</returns>
         public static string StripHtml(this StringBuilder value, bool convertBreaks = false, bool keepLinks = false, bool decodeEntities = false)
         {
@@ -734,9 +733,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Convert an object to a string. If null an empty string is returned.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="obj">Object to convert to a string</param>
         /// <returns>String value or an empty string if null</returns>
         public static string SafeToString(this object obj)
@@ -751,14 +750,12 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
-        /// <![CDATA[
+        /// <summary><![CDATA[
         /// Sanitize a string so that it only contains inert text data.
         /// it removes markup, scripts, decodes escape sequences, and optionally 
         /// removes email header properties.
         /// Converts HTML </p> to \r\n\r\n and <br> to \r\n sequences.
-        /// ]]>
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to sanitize.</param>
         /// <param name="alsoSanitizeForEmail">Also sanitize for email inclusion; defaults to false</param>
         /// <returns>A sanitized string.</returns>
@@ -780,15 +777,13 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
-        /// <![CDATA[
+        /// <summary><![CDATA[
         /// Sanitize a string so that it only contains inert text data.
         /// it removes markup, scripts, decodes escape sequences, and optionally 
         /// removes email header properties.
         /// Converts HTML </p> to \r\n\r\n and <br> to \r\n sequences.
         /// Also replaces single apostrophes with two apostrophes.
-        /// ]]>
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to sanitize.</param>
         /// <param name="alsoSanitizeForEmail">Also sanitize for email inclusion; defaults to false</param>
         /// <returns>A sanitized string.</returns>
@@ -797,12 +792,12 @@ namespace Fynydd.Carbide
             return value.Sanitize(alsoSanitizeForEmail).Replace("'", "''");
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the current string with potentially dangerous tags removed.
         /// Dangerous tags that are removed include:
         /// <para>applet, body, embed, frame, script, frameset, html, iframe, img, style, layer, link, ilayer, meta, object.</para>
         /// <para>javascript properties injected into other tags are also removed.</para>
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to process.</param>
         /// <returns>A string that has been stripped of scripts.</returns>
         public static string StripDangerousTags(this string value)
@@ -824,10 +819,10 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the current string with all escape sequences (e.g. &#34;) changed to appropriate and ASCII characters (e.g. "),
         /// so dangerous markup can more easily be identified.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to process.</param>
         /// <returns>A string that has been filtered for escape sequences.</returns>
         public static string SanitizeEscapes(this string value)
@@ -842,9 +837,9 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the current string with all instances of a specific tag removed.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to process.</param>
         /// <param name="tagName">Tag name to strip (e.g. blockquote)</param>
         /// <returns>A string that has been filtered.</returns>
@@ -866,10 +861,10 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Remove all occurrences of dangerous tag properties from a string.
         /// Helps to prevent injected javascript from running.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to process.</param>
         /// <returns>A string that has been filtered.</returns>
         public static string StripDangerousProperties(this string value)
@@ -885,13 +880,13 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Remove all occurrences of dangerous email header properties from a string.
         /// This is used to prevent someone from inserting code into submitted form data
         /// that will trick the page into sending email to other people.
         /// <para>E-mail header text that will be removed includes:</para>
         /// <para>"x-mailer:", "x-rcpt-to:", "x-uidl:", "content-transfer-encoding:", "content-type:", "mime-version:", "x-sender:", "bcc:", "cc:", "x-receiver:"</para>
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to process.</param>
         /// <returns>A string that has been filtered.</returns>
         public static string SanitizeForEmail(this string value)
@@ -915,11 +910,9 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
-        /// <![CDATA[
+        /// <summary><![CDATA[
         /// Converts return/lineFeeds to HTML tags, except between [nofeed][/nofeed] blocks.
-        /// ]]>
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to convert.</param>
         /// <param name="feedType">Line break scheme to use</param>
         /// <returns>A string with HTML line breaks added.</returns>
@@ -1036,9 +1029,9 @@ namespace Fynydd.Carbide
 
         #region Variables
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Perform a deep copy of an object.
-        /// </summary>
+        /// ]]></summary>
         /// <typeparam name="T">The type of object being copied.</typeparam>
         /// <param name="source">The object instance to copy.</param>
         /// <returns>The copied object.</returns>
@@ -1065,15 +1058,15 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Randomize the values in a given array.
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         ///	Int32[] values = { 1, 2, 3, 4, 5 };
         /// Int32[] randomized = values.RandomizeArray();
-        /// </code>
+        /// ]]></code>
         /// </example>
-        /// </summary>
         /// <typeparam name="T">Allows for randomizing arrays of different data types.</typeparam>
         /// <param name="array">Variable array to randomize.</param>
         /// <returns>Nothing. Passed array is randomized directly.</returns>
@@ -1106,11 +1099,11 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Creates a string from the sequence by concatenating the result
         /// of the specified string selector function for each element.
         /// Concatenates the strings with no delimitter.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="source">The source IEnumerable object</param>
         /// <param name="stringSelector">Abstraction for the individual string objects</param>
         public static string ToConcatenatedString<T>(
@@ -1120,11 +1113,11 @@ namespace Fynydd.Carbide
             return ToConcatenatedString(source, stringSelector, String.Empty);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Creates a string from the sequence by concatenating the result
         /// of the specified string selector function for each element.
         /// Concatenates the string with a specified delimitter.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="source">The source IEnumerable object</param>
         /// <param name="stringSelector">Abstraction for the individual string objects</param>
         /// <param name="delimitter">The string which separates each concatenated item</param>

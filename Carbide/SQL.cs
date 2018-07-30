@@ -7,26 +7,24 @@ using System.Text;
 
 namespace Fynydd.Carbide
 {
-    /// <summary>
+    /// <summary><![CDATA[
     /// The SQL class contains methods and properties for
     /// performing operations on, or evaluating, SQL databases.
-    /// </summary>
+    /// ]]></summary>
     /// <example>
     /// Add the following to your web.config file to use the
     /// these class methods without specifying the connection string:
-    /// <code lang="XML">
-    /// <![CDATA[
+    /// <code lang="XML"><![CDATA[
     ///		<connectionStrings>
     ///			<add name="Carbide" connectionString="Data Source=server; Initial Catalog=database; User ID=username; password=password; Connection Timeout=30;" providerName="System.Data.SqlClient" />
     ///		</connectionStrings>
-    ///	]]>
-    /// </code>
+    /// ]]></code>
     /// </example>
     public static class SQL
     {
-        /// <summary>
+        /// <summary><![CDATA[
         ///	The SQL connection string, retrieved from the web.config file by its name.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="connectionStringName">Name of a connection string within the Web.config file.</param>
         /// <returns>A connection string.</returns>
         public static string ConnectionString(string connectionStringName)
@@ -57,15 +55,15 @@ namespace Fynydd.Carbide
             return CS;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Look up a value from a database object. Returns only one string
         /// value, so query must only return one value.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string result = SQL.Lookup("SELECT TOP 5 * FROM ContentTable", "SqlServer01", 30);
         /// string result2 = SQL.Lookup("exec spu_ProcedureName", "SqlServer02", 30);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="sqlCommand">SQL query string for which to return a string value.</param>
         /// <param name="connectionStringName">Name of a connection string in the Web.config file.</param>
@@ -105,14 +103,14 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Execute a SQL stored procedure.
         /// Returns true or false indicating error state.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// bool result = SQL.Exec("spu_ProcedureName @param1='test';", "SqlServer01", 60);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="statement">SQL statement to execute.</param>
         /// <param name="connectionStringName">Name of a connection string in the Web.config file.</param>
@@ -149,15 +147,15 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Execute a stored procedure with passed form field names in string array.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string[] fields = new string[] { "fname", "lname", "email1" };
         /// string[] values = new string[] { "", "", value5 };
         /// string result = SQL.PowerExec("spu_Function_Name", fields, values, true, "SqlServer01");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="procedureName">Name of stored procedure.</param>
         /// <param name="paramNames">string array with field names.</param>
@@ -238,13 +236,13 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Loads the results of a SQL query into a DataTable object.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataTable dt = SQL.ReadTable("SELECT TOP 5 FROM tablename;", "SqlServer01");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="statement">SQL statement to execute.</param>
         /// <param name="connectionStringName">Name of a connection string in the Web.config file.</param>
@@ -261,9 +259,9 @@ namespace Fynydd.Carbide
             return (dt);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Generate CSV data from a SQL Server request. Converts quotation marks to "&quot;".
-        /// </summary>
+        /// ]]></summary>
         /// <param name="select">SQL Server command to execute, which retrieves a dataset.</param>
         /// <param name="connectionStringName">Connection string name in the Web.config file.</param>
         /// <param name="includeHeaders">Include column names as a header row in the CSV file.</param>
@@ -339,9 +337,9 @@ namespace Fynydd.Carbide
             return csv;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Generate CSV data from a SQL Server data request, and write it to a file. Converts quotation marks to "&quot;".
-        /// </summary>
+        /// ]]></summary>
         /// <param name="select">SQL Server command to execute, which retrieves a dataset.</param>
         /// <param name="connectionStringName">Connection string name in the Web.config file.</param>
         /// <param name="includeHeaders">Include column names as a header row in the CSV file.</param>

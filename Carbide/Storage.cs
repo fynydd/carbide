@@ -14,15 +14,18 @@ using System.Reflection;
 
 namespace Fynydd.Carbide
 {
+    /// <summary><![CDATA[
+    /// Various helper methods for using files and folders.
+    /// ]]></summary>
     public static class Storage
     {
-        /// <summary>
+        /// <summary><![CDATA[
         /// Transforms web-style relative path to physical path.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string realPath = relativePath.MapPath();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="path">Web-style path to a file (e.g. "/downloads/file.jpg").</param>
         /// <returns>C:\files\downloads\file.jpg</returns>
@@ -66,14 +69,14 @@ namespace Fynydd.Carbide
             return filename;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Deletes a directory, and any files and subdirectories it contains.
         /// Directory passed is in standard web form (e.g. "/temp").
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string result = DeleteDirectory("/temp/uploads");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="directory">Directory to delete (as "/temp"). Passing an empty string will delete the current working directory!</param>
         /// <returns>Empty string on success, or a string with an error message.</returns>
@@ -118,13 +121,13 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Reads the contents of a text file.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string fileContents = ReadFile("/content/file.txt");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="filename">Web-formatted path and file name to read.</param>
         /// <returns>String with file contents.</returns>
@@ -150,13 +153,13 @@ namespace Fynydd.Carbide
             return (inn);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Writes a string to a text file.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string result = WriteFile("/documents/file.txt", contentString);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="filename">Web-formatted path and file name to save.</param>
         /// <param name="content">String to save into file.</param>
@@ -184,13 +187,13 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Reads filenames from a directory and returns an ArrayList.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// ArrayList filenames = GetFiles("/pdf", "*.pdf|*.pdfx", PathOptions.Path);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="path">Web-formatted path to the files.</param>
         /// <param name="filter">String filename wildcard (*.* is assumed by default).
@@ -242,13 +245,13 @@ namespace Fynydd.Carbide
             return fileArray;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Reads directory names from a given path and returns a string array.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
 		/// string[] folderNames = GetFolders("/pdf/");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="path">Web-formatted parent path to examine.</param>
         /// <returns>String array of folder names.</returns>
@@ -264,13 +267,13 @@ namespace Fynydd.Carbide
             return folders;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Returns the folders within a specified folder, using full relative web paths, including the starting path.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string[] folderNames = RecurseFolder("/pdf/");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="path">Web-formatted parent path to examine.</param>
         /// <param name="includeRoot">First insert the passed path.</param>
@@ -298,13 +301,13 @@ namespace Fynydd.Carbide
             return folders;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Reads filenames from a directory and returns an ArrayList.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// ArrayList filenames = GetFiles("/pdf", "*.pdf|*.pdfx");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="path">Web-formatted path to the files.</param>
         /// <param name="filter">String filename wildcard (*.* is assumed by default).
@@ -315,13 +318,13 @@ namespace Fynydd.Carbide
             return GetFiles(path, filter, 0);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Determines if a file exists at a given web path.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// bool result = FileExists("/pdf/document.pdf");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="path">Path to a file (e.g. "/downloads/file.jpg").</param>
         /// <returns>true or false.</returns>
@@ -330,13 +333,13 @@ namespace Fynydd.Carbide
             return (File.Exists(path.RemoveQueryString().MapPath()));
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get the file size in bytes of a file on disk.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// Long fileSize = GetFileSize("/pdf/document.pdf");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="path">Path to a file (e.g. "/downloads/file.jpg").</param>
         /// <returns>File size in bytes.</returns>
@@ -353,13 +356,13 @@ namespace Fynydd.Carbide
             return fileSize;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Determines if a directory exists at a given web path.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// bool result = DirectoryExists("/pdf/");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="path">Path to a directory (e.g. "/downloads/").</param>
         /// <returns>true or false.</returns>
@@ -368,13 +371,13 @@ namespace Fynydd.Carbide
             return (Directory.Exists(path.MapPath()));
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Create a directory at a given web path.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// bool result = CreateDirectory("/pdf");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="path">Path and new directory (e.g. "/downloads/newdir").</param>
         /// <returns>true if created, false if not.</returns>
@@ -392,13 +395,13 @@ namespace Fynydd.Carbide
             return retVal;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Deletes file(s) from a directory, based on age.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// int deletedFilesCount = DeleteFiles("/pdf/", "*.tmp|*.chk", PathOptions.Path, DateTime.Now);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="path">Web-formatted path to the files or a full path and filename to delete a single file (the later ignores any age params).</param>
         /// <param name="filter">String filename wildcard (*.* is assumed by default). Separate multiple filespecs with a bar character (e.g. "*.gif|*.jpg").</param>
@@ -461,13 +464,13 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Deletes file(s) immediately.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// int deletedFilesCount = DeleteFiles("/pdf/", "*.tmp|*.chk", true);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="path">Web-formatted path where the files exist.</param>
         /// <param name="fileSpec">String filename wildcard (*.* is assumed by default). Separate multiple filespecs with a bar character (e.g. "*.gif|*.jpg").</param>
@@ -486,13 +489,13 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Deletes file(s) immediately.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// int deletedFilesCount = DeleteFiles("/pdf/", "*.tmp|*.chk");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="path">Web-formatted path where the files exist.</param>
         /// <param name="fileSpec">String filename wildcard (*.* is assumed by default). Separate multiple filespecs with a bar character (e.g. "*.gif|*.jpg").</param>
@@ -502,13 +505,13 @@ namespace Fynydd.Carbide
             return path.DeleteFiles(fileSpec, 0, DateTime.Now);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Deletes a single file immediately.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// int deletedFilesCount = DeleteFiles("/pdf/document.pdf");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="fileSpec">Web-formatted path with file name.</param>
         /// <returns>1 on success, 0 on failure</returns>
@@ -517,13 +520,13 @@ namespace Fynydd.Carbide
             return fileSpec.DeleteFiles("", 0, DateTime.Now);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Creates a unique, cryptic filename (based on GUID) for use in temporary file manipulation.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string filename = MakeUniqueFilename("jpg");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="ext">File extension to append to the name, without leading period.</param>
         /// <returns>Unique filename as string.</returns>
@@ -538,13 +541,13 @@ namespace Fynydd.Carbide
             return mvarFileName;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Retrieve a file's extension, without the period.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string fileExt = GetFileExtension(filename);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="fileName">File name to parse.</param>
         /// <returns>File extension as a string.</returns>
@@ -562,15 +565,15 @@ namespace Fynydd.Carbide
             return ext;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Retrieve a filename from a path.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string filename = GetFilename(filepath);
-        /// </code>
+        /// ]]></code>
         /// </example>
-        /// <param name="fileName">File path to parse.</param>
+        /// <param name="filePath">File path to parse.</param>
         /// <returns>Filename as a string.</returns>
         public static string GetFilename(this string filePath)
         {
@@ -591,10 +594,10 @@ namespace Fynydd.Carbide
             return filename;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Replaces any invalid characters in a file name with underscores,
         /// returning the filtered filename.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="fileName">File name to filter.</param>
         /// <returns>Filtered file name.</returns>
         public static string MakeValidFileName(this string fileName)
@@ -602,10 +605,10 @@ namespace Fynydd.Carbide
             return Regex.Replace(fileName, @"[^\s\w\.-]", "_");
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Use a file's modified date to generate a repeatable, URL-friendly
         /// hash for use in cache busting web file assets, like CSS and JS files.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="filePath">Web-style file path</param>
         /// <param name="fallback">Fallback value to use if the file cannot be identified</param>
         /// <returns>A unique, repeatable, URL-friendly hash</returns>
@@ -644,9 +647,9 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Convert a file path into a string that can be used as a session variable key name.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="filePath">Web style path to use (e.g. "/images/space.gif").</param>
         /// <returns>"Carbide-Key--images-space.gif"</returns>
         public static string ConvertFilePathToKey(this string filePath)
@@ -654,9 +657,9 @@ namespace Fynydd.Carbide
             return "Carbide-Key-" + filePath.Replace(":", "").Replace("\\", "").Replace("/", "").Replace(" ", "");
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Compile a SCSS file or files into CSS.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="scssInputPath">Web path to the scss input file (e.g. "/scss/application.scss").</param>
         /// <param name="outputPath">Web path to the CSS output file (e.g. "/stylesheets/application.css").</param>
         /// <param name="debugMode">Set to true for expanded output with source maps, false for compressed production CSS only</param>
@@ -849,13 +852,13 @@ namespace Fynydd.Carbide
             #endregion
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read a folder of filenames (SCSS partials) and inject them into a SCSS file as import statements.
         /// Add the following to your SCSS file so the method knows where to inject the import statements,
         /// including the leading "// ":
         /// // $CARBIDE_PARTIALS:BEGIN
         /// // $CARBIDE_PARTIALS:END
-        /// </summary>
+        /// ]]></summary>
         /// <param name="scssPath">Relative web path to the SCSS files (e.g. "/scss/").</param>
         /// <param name="scssFilename">File name for the SCSS file in which to inject the partials as import statements (e.g. "application.scss").</param>
         /// <param name="partialPath">Relative web path to the folder containing the SCSS partials to read (e.g. "/scss/custom/").</param>
@@ -929,9 +932,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read an HTML embedded resource from the Carbide binary
-        /// </summary>
+        /// ]]></summary>
         /// <param name="filename"></param>
         /// <returns>HTML content or an empty string if not found</returns>
         public static string CarbideEmbeddedHtml(string filename)

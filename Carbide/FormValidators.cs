@@ -11,22 +11,20 @@ using Fynydd.Carbide.Constants;
 
 namespace Fynydd.Carbide
 {
-    /// <summary>
+    /// <summary><![CDATA[
     /// These classes provide additional form validators to your models and the client (javascript).
     /// This validator verifies a minimum file size for an upload.
     /// 
-    /// <![CDATA[
     /// MODEL USAGE: [MinimumFileSizeValidator(1)]
     /// CLIENT USAGE: <script src="@Html.Raw(Url.Content("~/umbraco/api/carbidesupport/scripts/?file=FormValidationHelpers"))"></script>
-    /// ]]>
-    /// </summary>
+    /// ]]></summary>
     public class MinimumFileSizeValidator : ValidationAttribute, IClientValidatable
     {
         private string _errorMessage = "{0} can not be smaller than {1} MB";
 
-        /// <summary> 
+        /// <summary><![CDATA[ 
         /// Minimum file size in MB 
-        /// </summary> 
+        /// ]]></summary> 
         public double MinimumFileSize { get; private set; }
 
         /// <param name="minimumFileSize">MinimumFileSize file size in MB</param> 
@@ -35,6 +33,11 @@ namespace Fynydd.Carbide
             MinimumFileSize = minimumFileSize;
         }
 
+        /// <summary><![CDATA[
+        /// Is a valid minimum file size.
+        /// ]]></summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public override bool IsValid(object value)
         {
             if (value == null)
@@ -51,11 +54,22 @@ namespace Fynydd.Carbide
             return true;
         }
 
+        /// <summary><![CDATA[
+        /// Format error message
+        /// ]]></summary>
+        /// <param name="name">Field name</param>
+        /// <returns>Formatted error message</returns>
         public override string FormatErrorMessage(string name)
         {
             return String.Format(_errorMessage, name, MinimumFileSize);
         }
 
+        /// <summary><![CDATA[
+        /// Get validation rules
+        /// ]]></summary>
+        /// <param name="metadata">Model metadata</param>
+        /// <param name="context">Controller context</param>
+        /// <returns>Enumeration of validation rules</returns>
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
         {
             var clientValidationRule = new ModelClientValidationRule()
@@ -80,22 +94,20 @@ namespace Fynydd.Carbide
         }
     }
 
-    /// <summary>
+    /// <summary><![CDATA[
     /// These classes provide additional form validators to your models and the client (javascript).
     /// This validator verifies a maximum file size for an upload.
     /// 
-    /// <![CDATA[
     /// MODEL USAGE: [MaximumFileSizeValidator(1)]
     /// CLIENT USAGE: <script src="@Html.Raw(Url.Content("~/umbraco/api/carbidesupport/scripts/?file=FormValidationHelpers"))"></script>
-    /// ]]>
-    /// </summary>
+    /// ]]></summary>
     public class MaximumFileSizeValidator : ValidationAttribute, IClientValidatable
     {
         #region Properties
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the version number of the class; read-only.
-        /// </summary>
+        /// ]]></summary>
         /// <value>
         /// A string with the version number of the class.
         /// </value>
@@ -111,9 +123,9 @@ namespace Fynydd.Carbide
 
         private string _errorMessage = "{0} can not be larger than {1} MB";
 
-        /// <summary> 
+        /// <summary><![CDATA[ 
         /// Maximum file size in MB 
-        /// </summary> 
+        /// ]]></summary> 
         public double MaximumFileSize { get; private set; }
 
         /// <param name="maximumFileSize">Maximum file size in MB</param> 
@@ -122,6 +134,11 @@ namespace Fynydd.Carbide
             MaximumFileSize = maximumFileSize;
         }
 
+        /// <summary><![CDATA[
+        /// Maximum file length is valid
+        /// ]]></summary>
+        /// <param name="value">Posted file</param>
+        /// <returns>True if at or below maximum file size</returns>
         public override bool IsValid(object value)
         {
             if (value == null)
@@ -138,11 +155,22 @@ namespace Fynydd.Carbide
             return true;
         }
 
+        /// <summary><![CDATA[
+        /// Format error message
+        /// ]]></summary>
+        /// <param name="name">Field name</param>
+        /// <returns>Formatted error message</returns>
         public override string FormatErrorMessage(string name)
         {
             return String.Format(_errorMessage, name, MaximumFileSize);
         }
 
+        /// <summary><![CDATA[
+        /// Get validation rules
+        /// ]]></summary>
+        /// <param name="metadata">Model metadata</param>
+        /// <param name="context">Controller context</param>
+        /// <returns>Enumeration of validation rules</returns>
         public System.Collections.Generic.IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
         {
             var clientValidationRule = new ModelClientValidationRule()
@@ -167,22 +195,20 @@ namespace Fynydd.Carbide
         }
     }
 
-    /// <summary>
+    /// <summary><![CDATA[
     /// These classes provide additional form validators to your models and the client (javascript).
     /// This validator verifies the file type for an upload.
     /// 
-    /// <![CDATA[
     /// MODEL USAGE: [ValidFileTypeValidator(new string[] { "pdf", "docx" })]
     /// CLIENT USAGE: <script src="@Html.Raw(Url.Content("~/umbraco/api/carbidesupport/scripts/?file=FormValidationHelpers"))"></script>
-    /// ]]>
-    /// </summary>
+    /// ]]></summary>
     public class ValidFileTypeValidator : ValidationAttribute, IClientValidatable
     {
         private string _errorMessage = "{0} must be one of the following file types: {1}";
 
-        /// <summary> 
+        /// <summary><![CDATA[ 
         /// Valid file extentions 
-        /// </summary> 
+        /// ]]></summary> 
         public string[] ValidFileTypes { get; private set; }
 
         /// <param name="validFileTypes">Valid file extensions(without the dot)</param> 
@@ -191,6 +217,11 @@ namespace Fynydd.Carbide
             ValidFileTypes = validFileTypes;
         }
 
+        /// <summary><![CDATA[
+        /// File type is valid
+        /// ]]></summary>
+        /// <param name="value">Posted file</param>
+        /// <returns>True if file type is valid</returns>
         public override bool IsValid(object value)
         {
             var file = value as HttpPostedFileBase;
@@ -225,11 +256,22 @@ namespace Fynydd.Carbide
             return true;
         }
 
+        /// <summary><![CDATA[
+        /// Format error message
+        /// ]]></summary>
+        /// <param name="name">Field name</param>
+        /// <returns>Formatted error message</returns>
         public override string FormatErrorMessage(string name)
         {
             return String.Format(_errorMessage, name, ValidFileTypes.ToConcatenatedString(s => s, ","));
         }
 
+        /// <summary><![CDATA[
+        /// Get validation rules
+        /// ]]></summary>
+        /// <param name="metadata">Model metadata</param>
+        /// <param name="context">Controller context</param>
+        /// <returns>Enumeration of validation rules</returns>
         public System.Collections.Generic.IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
         {
             var clientValidationRule = new ModelClientValidationRule()
@@ -244,6 +286,9 @@ namespace Fynydd.Carbide
         }
     }
 
+    /// <summary><![CDATA[
+    /// File upload validator support
+    /// ]]></summary>
     public class FileUploadValidator : ValidationAttribute, IClientValidatable
     {
         private MinimumFileSizeValidator _minimumFileSizeValidator;
@@ -274,6 +319,12 @@ namespace Fynydd.Carbide
             _validFileTypeValidator = new ValidFileTypeValidator(validFileTypes);
         }
 
+        /// <summary><![CDATA[
+        /// Uploaded file is valid
+        /// ]]></summary>
+        /// <param name="value">Posted file</param>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>True if file is valid</returns>
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             if (value == null)
@@ -332,6 +383,12 @@ namespace Fynydd.Carbide
             }
         }
 
+        /// <summary><![CDATA[
+        /// Get file validation rules
+        /// ]]></summary>
+        /// <param name="metadata">Model metadata</param>
+        /// <param name="context">Controller context</param>
+        /// <returns>Enumerable of validation rules</returns>
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
         {
             var clientValidationRule = new ModelClientValidationRule()

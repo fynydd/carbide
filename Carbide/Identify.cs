@@ -8,21 +8,24 @@ using Fynydd.Carbide.Constants;
 
 namespace Fynydd.Carbide
 {
+    /// <summary><![CDATA[
+    /// Various helper method for identifying data.
+    /// ]]></summary>
     public static class Identify
     {
-        /// <summary>
+        /// <summary><![CDATA[
         /// Determine if a given string matches a 2-letter state abbreviation.
-        /// </summary>
-        /// <param name="stateCode">2-letter state abbreviation to check.</param>
+        /// ]]></summary>
+        /// <param name="value">2-letter state abbreviation to check.</param>
         /// <returns>true or false.</returns>
         public static bool IsState(this string value)
         {
             return Geography.StatesAbbreviations.Contains(value.ToUpper());
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Determines if a string value is numeric, but not currency.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to evaluate</param>
         /// <returns>true or false.</returns>
         public static bool IsNumeric(this string value)
@@ -31,9 +34,9 @@ namespace Fynydd.Carbide
             return Double.TryParse(value, (NumberStyles.AllowExponent | NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowLeadingSign), null, out doubleVal);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Determines if a string value is a bool value or not.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to evaluate</param>
         /// <returns>true or false.</returns>
         public static bool IsBool(this string value)
@@ -42,9 +45,9 @@ namespace Fynydd.Carbide
             return bool.TryParse(value, out boolVal);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Determines if a string value can be used as currency.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to evaluate</param>
         /// <returns>true or false.</returns>
         public static bool IsCurrency(this string value)
@@ -53,9 +56,9 @@ namespace Fynydd.Carbide
             return Double.TryParse(value, (NumberStyles.AllowCurrencySymbol | NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowLeadingSign), null, out doubleVal);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Determines if a string value is numeric, with no symbols, commas, or decimal points.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to evaluate</param>
         /// <returns>true or false.</returns>
         public static bool IsPureNumeric(this string value)
@@ -64,9 +67,9 @@ namespace Fynydd.Carbide
             return Double.TryParse(value, 0, null, out doubleVal);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Checks to see if the passed input has the passed pattern
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to evaluate</param>
         /// <param name="pattern">Regex pattern to use</param>
         /// <returns>True if the value has the pattern, false otherwise.</returns>
@@ -76,9 +79,9 @@ namespace Fynydd.Carbide
             return regEx.IsMatch(value);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Checks the passed input to make sure it validates against all the patterns.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to evaluate</param>
         /// <param name="patterns">String array of Regex patterns to use</param>
         /// <returns>True if the input has all of the patterns, false otherwise.</returns>
@@ -97,9 +100,9 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Determines if a string value is a valid date.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to evaluate</param>
         /// <returns>true or false</returns>
         public static bool IsDate(this string value)
@@ -123,13 +126,13 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Uses RegEx to check for password formatting. Alpha-numeric
         /// characters and basic typewriter symbols are allowed.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">password string to validate.</param>
-        /// <param name="minLen">Minimum length of valid password; at least 4.</param>
-        /// <param name="maxLen">Maximum length for valid password</param>
+        /// <param name="minLength">Minimum length of valid password; at least 4.</param>
+        /// <param name="maxLength">Maximum length for valid password</param>
         /// <returns>true if a valid password, false if not.</returns>
         public static bool IsValidPasswordFormat(this string value, int minLength, int maxLength)
         {
@@ -149,11 +152,11 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Uses RegEx to check for password formatting. Alpha-numeric
         /// characters and basic typewriter symbols are allowed.
         /// Password must be between 8 and 64 characters in length.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">password string to validate.</param>
         /// <returns>true if a valid password, false if not.</returns>
         public static bool IsValidPasswordFormat(this string value)
@@ -161,9 +164,9 @@ namespace Fynydd.Carbide
             return value.MatchesPattern(RegularExpressions.PasswordAndLength);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Validate the format of an email address
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">email address to evaluate</param>
         /// <returns>true if formatted as a valid email address, false if not</returns>
         public static bool IsEmail(this string value)
@@ -203,9 +206,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Verify that a given value is equal to a value in a delimitted list of provided values.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">String to evaluate</param>
         /// <param name="prevalueList">Delimitted list of possible matches for comparison.</param>
         /// <param name="delimitter">Delimitter string which defines the boundary between items in the list (e.g. ",")</param>
@@ -228,11 +231,11 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Run data type and field length validation on a specific value.
         /// Certain types of validators obviate the need to specify a minimum or maximum length,
         /// like ValidationOptions.Email.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">Value to validate.</param>
         /// <param name="valType">Constant determining what type of validation.</param>
         /// <param name="minLength">Minimum length alowed.</param>
@@ -458,11 +461,11 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Run data type and field length validation on a specific value.
         /// Certain types of validators obviate the need to specify a minimum or maximum length,
         /// like ValidationOptions.Email.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">Value to validate.</param>
         /// <param name="valType">Constant determining what type of validation.</param>
         /// <param name="minLength">Minimum length alowed.</param>
@@ -473,11 +476,11 @@ namespace Fynydd.Carbide
             return ValidateText(value, valType, minLength, maxLength, false);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Run data type and field length validation on a specific value.
         /// Certain types of validators obviate the need to specify a minimum or maximum length,
         /// like ValidationOptions.Email.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">Value to validate.</param>
         /// <param name="valType">Constant determining what type of validation.</param>
         /// <returns>Empty string if validation succeeds, error message on failure.</returns>
@@ -486,9 +489,9 @@ namespace Fynydd.Carbide
             return ValidateText(value, valType, 0, 0, false);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Run field length validation on a specific value.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">Value to validate.</param>
         /// <param name="minLength">Minimum length alowed.</param>
         /// <param name="maxLength">Maximum length allowed.</param>
@@ -498,9 +501,9 @@ namespace Fynydd.Carbide
             return ValidateText(value, ValidationOptions.Length, minLength, maxLength, false);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Run data type validation on a specific value.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">Value to validate.</param>
         /// <param name="valType">Constant determining what type of validation.</param>
         /// <param name="optional">Field is optional. Zero length validates, otherwise, full validation occurs.</param>

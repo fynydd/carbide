@@ -8,13 +8,13 @@ using Newtonsoft.Json.Linq;
 
 namespace Fynydd.Carbide
 {
-    /// <summary>
+    /// <summary><![CDATA[
     /// The Encryption class contains methods and properties for
     /// working with encrypted data. You can place encryption base key and init vectors
     /// in the web.config as follows:
+    ///	]]></summary>
     /// <example>
-    /// <code>
-    /// <![CDATA[
+    /// <code><![CDATA[
     /// <configSections>
     ///		<section name="Fynydd.Carbide" type="System.Configuration.NameValueFileSectionHandler"/>
     /// </configSections>
@@ -22,20 +22,18 @@ namespace Fynydd.Carbide
     ///    <add key = "Encryption.BaseKey" value="10,64,9,2,13,199,67,18,141,233,16,230,217,183,146,18,156,74,90,36,226,129,181,219" />
     ///    <add key = "Encryption.InitVector" value="162,99,183,154,226,211,14,122,74,187,112,21,251,109,76,75,219,93" />
     /// </Fynydd.Carbide>
-    ///	]]>
-    ///	</code>
+    ///	]]></code>
     ///	</example>
-    /// </summary>
     public static class Encryption
     {
         #region Properties
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// The secret key to use for the symmetric algorithm.
         /// You should change these numbers for your individual use
         /// by adding an Encryption.BaseKey attribute to the Carbide Settings
         /// config setting within the web.config file.
-        /// </summary>
+        /// ]]></summary>
         public static byte[] basekey1
         {
             get
@@ -48,12 +46,12 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// The initialization vector to use for the symmetric algorithm.
         /// You should change these numbers for your individual use
         /// by adding an Encryption.InitVector attribute to the Carbide Settings
         /// config setting within the web.config file.
-        /// </summary>
+        /// ]]></summary>
         public static byte[] iv
         {
             get
@@ -70,13 +68,13 @@ namespace Fynydd.Carbide
 
         #region Key generation
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Converts a comma-separated string of 24 8-bit values and converts it into a Byte array.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// Byte[] baseKey = Security.CreateBaseKey("151, 4, 109, 42, 135, 99, 67, 82, 242, 233, 16, 200, 9, 83, 196, 178, 56, 74, 90, 36, 206, 129, 81, 229, 67, 82, 242, 233, 16, 200, 9, 83");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="key">32 8-bit values in a comma-separated list.</param>
         /// <returns>Byte array</returns>
@@ -111,13 +109,13 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Converts a comma-separated string of 18 8-bit values and converts it into a Byte array.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// Byte[] baseIV = Security.CreateInitVector("180, 54, 206, 210, 10, 101, 6, 87, 13, 3, 241, 189, 176, 175, 109, 217");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="key">18 8-bit values in a comma-separated list.</param>
         /// <returns>Byte array</returns>
@@ -152,14 +150,14 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Generate a comma-separated string of 8-bit values for an encryption base key.
         /// The value is not guaranteed to be unique.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string baseKey = Security.GenerateKey(32);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="count">Number of 8-bit numbers to generate</param>
         /// <returns>Comma-separated string of 8-bit values</returns>
@@ -199,15 +197,15 @@ namespace Fynydd.Carbide
 
         #region Encryption and decryption methods
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// AES256 string encryption.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// Byte[] ivec = { 180, 54, 206, 210, 10, 101, 6, 87, 13, 3, 241, 189, 176, 175, 109, 217 };
         /// Byte[] key = { 151, 4, 109, 42, 135, 99, 67, 82, 242, 233, 16, 200, 9, 83, 196, 178, 56, 74, 90, 36, 206, 129, 81, 229, 67, 82, 242, 233, 16, 200, 9, 83 };
         /// string encryptedVar = Security.Encrypt<string>(dataToEncrypt, key, ivec);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="data">Data to encrypt.</param>
         /// <param name="key">24 byte array key for encrypting the data.</param>
@@ -306,13 +304,13 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// AES256 string encryption.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string encryptedVar = Security.Encrypt<string>(myData, "151, 4, 109, 42, 135, 99, 67, 82, 242, 233, 16, 200, 9, 83, 196, 178, 56, 74, 90, 36, 206, 129, 81, 229, 67, 82, 242, 233, 16, 200, 9, 83", "180, 54, 206, 210, 10, 101, 6, 87, 13, 3, 241, 189, 176, 175, 109, 217" );
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="data">Data to encrypt.</param>
         /// <param name="key">24 byte key string for encrypting the data.</param>
@@ -323,13 +321,13 @@ namespace Fynydd.Carbide
             return Encrypt(data, CreateBaseKey(key), CreateInitVector(ivec));
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// AES256 string encryption.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string encryptedVar = Security.Encrypt<string>(myData);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="data">Data to encrypt.</param>
         /// <returns>A BASE64+ encrypted string.</returns>
@@ -341,13 +339,13 @@ namespace Fynydd.Carbide
             return Encrypt(data, CreateBaseKey(key), CreateInitVector(ivec));
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// AES256 string decryption.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string decryptedVar = Security.Decrypt<string>(encryptedVar, "151, 4, 109, 42, 135, 99, 67, 82, 242, 233, 16, 200, 9, 83, 196, 178, 56, 74, 90, 36, 206, 129, 81, 229, 67, 82, 242, 233, 16, 200, 9, 83", "180, 54, 206, 210, 10, 101, 6, 87, 13, 3, 241, 189, 176, 175, 109, 217" );
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="data">String to decrypt.</param>
         /// <param name="key">24 byte key string for decrypting the data. This must match the key used to encrypt the data.</param>
@@ -358,13 +356,13 @@ namespace Fynydd.Carbide
             return Decrypt<T>(data, CreateBaseKey(key), CreateInitVector(ivec));
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// AES256 string decryption.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string decryptedVar = Security.Decrypt<string>(encryptedVar);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="data">String to decrypt.</param>
         /// <returns>A decrypted variable</returns>
@@ -376,15 +374,15 @@ namespace Fynydd.Carbide
             return Decrypt<T>(data, CreateBaseKey(key), CreateInitVector(ivec));
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// AES256 string decryption.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// Byte[] ivec = { 180, 54, 206, 210, 10, 101, 6, 87, 13, 3, 241, 189, 176, 175, 109, 217 };
         /// Byte[] key = { 151, 4, 109, 42, 135, 99, 67, 82, 242, 233, 16, 200, 9, 83, 196, 178, 56, 74, 90, 36, 206, 129, 81, 229, 67, 82, 242, 233, 16, 200, 9, 83 };
         /// String decryptedVar = Security.Decrypt<string>(encryptedVar, bytekey, ivec);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="data">String to decrypt.</param>
         /// <param name="key">24 byte array key for decrypting the data. This must match the key used to encrypt the data.</param>
@@ -509,13 +507,13 @@ namespace Fynydd.Carbide
 
         #region Hashing and encoding
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// MD5 encodes the passed string.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string encodedVar = Security.MD5String(stringVar);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="input">The string to encode.</param>
         /// <returns>An MD5 encoded string.</returns>
@@ -552,13 +550,13 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Verified a string against the passed MD5 hash.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// if (Security.MD5VerifyString(stringVar, hash))...
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="input">The string to compare.</param>
         /// <param name="hash">The hash to compare against.</param>
@@ -584,13 +582,13 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Base64 encodes a string.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string encodedVar = Security.Base64StringEncode(stringVar);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="input">A string to encode.</param>
         /// <returns>A Base64-encoded string.</returns>
@@ -599,13 +597,13 @@ namespace Fynydd.Carbide
             return Base64Encode(System.Text.Encoding.UTF8.GetBytes(input));
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Base64 encodes a byte array.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string encodedVar = Security.Base64Encode(bytes);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="input">A byte array to encode.</param>
         /// <returns>A Base64-encoded string.</returns>
@@ -624,13 +622,13 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Base64 decodes a string.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string decodedVar = Security.Base64DecodeToString(stringVar);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="input">A Base64-encoded string.</param>
         /// <returns>A decoded string.</returns>
@@ -647,13 +645,13 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Base64 decodes a string to a byte array.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// byte[] decodedVar = Security.Base64DecodeToBytes(stringVar);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="input">A Base64-encoded string.</param>
         /// <returns>A decoded byte array.</returns>
@@ -669,13 +667,13 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Base64Url-encodes a string.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string encodedVar = Security.Base64UrlEncode(bytes);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="input">A byte array to encode.</param>
         /// <returns>A Base64Url-encoded string.</returns>
@@ -701,13 +699,13 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Base64Url-encodes a string.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string encodedVar = Security.Base64UrlEncode(stringVar);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="input">A string to encode.</param>
         /// <returns>A Base64Url-encoded string.</returns>
@@ -724,13 +722,13 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Base64Url-decode a string. Handles missing padding characters.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// byte[] decodedVar = Security.Base64UrlDecodeToBytes(stringVar);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="input">A Base64Url-encoded string.</param>
         /// <returns>A decoded byte array.</returns>
@@ -765,13 +763,13 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Base64Url-decode a string. Handles missing padding characters.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string decodedVar = Security.Base64UrlDecodeToString(stringVar);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="input">A Base64Url-encoded string.</param>
         /// <returns>A decoded string.</returns>
@@ -792,7 +790,7 @@ namespace Fynydd.Carbide
 
         #region Javascript Web Tokens
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Generate a javascript web token (JWT) using hash-based message authentication code (HMAC).
         /// Supports HS256, HS384, and HS512 hashing algorithms.
         /// 
@@ -806,15 +804,15 @@ namespace Fynydd.Carbide
         /// 2. Use longer keys / hashes(e.g.HS512) for increased security
         /// 3. Keys longer than the hash size don’t provide additional security
         /// 4. Tokens where issuer and ultimate consumer is the same party
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// In the example, the value for jwt (the token) is:
         /// eyAiYWxnIjogIkhTMjU2IiwgInR5cCI6ICJKV1QiIH0.eyAic3ViIjogInRlc3QiLCAibmFtZSI6ICJNaWNoYWVsIEFyZ2VudGluaSIgfQ.Gb7z2CJSrWdBhZ7lGZK9qdcac_ktuOuqiCBJo3sG_lA
-        /// <code>
+        /// <code><![CDATA[
         /// string base64Secret = Encryption.Base64StringEncode("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@");
         /// string payload = "{ \"sub\": \"test\", \"name\": \"Michael Argentini\" }";
         /// string jwt = Encryption.GenerateJWT(payload, base64Secret, "HS256");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="payload">Primary data block to pack into the token, using JSON syntax.</param>
         /// <param name="base64Secret">A secret which you have already Base64-encoded. HS256 uses 64-byte secrets. HS384 and HS512 use 128-byte secrets.</param>
@@ -907,7 +905,7 @@ namespace Fynydd.Carbide
             return jwt;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Verify a javascript web token (JWT) which uses hash-based message authentication code (HMAC).
         /// Hashing algorithm is determined automatically from the header of the token.
         /// Supports HS256, HS384, and HS512 hashing algorithms.
@@ -922,9 +920,9 @@ namespace Fynydd.Carbide
         /// 2. Use longer keys / hashes(e.g.HS512) for increased security
         /// 3. Keys longer than the hash size don’t provide additional security
         /// 4. Tokens where issuer and ultimate consumer is the same party
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string base64Secret = Encryption.Base64StringEncode("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@");
         /// string payload = "{ \"sub\": \"test\", \"name\": \"Michael Argentini\" }";
         /// string jwt = Encryption.GenerateJWT(payload, base64Secret, "HS256");
@@ -932,7 +930,7 @@ namespace Fynydd.Carbide
         /// {
         ///     // token has a valid signature...
         /// }
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="jwt">Javascript Web Token</param>
         /// <param name="base64Secret">A secret which you have already Base64-encoded. HS256 uses 64-byte secrets. HS384 and HS512 use 128-byte secrets.</param>

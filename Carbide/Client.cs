@@ -7,15 +7,15 @@ using Yahoo.Yui.Compressor;
 
 namespace Fynydd.Carbide
 {
-    /// <summary>
+    /// <summary><![CDATA[
     /// The Client class contains methods and properties for controlling
     /// client-side objects like cookies, javascript, etc.
-    /// </summary>
+    /// ]]></summary>
     public static class Client
     {
-        /// <summary>
+        /// <summary><![CDATA[
         /// Include a URL asset into a web page using relative paths. Optionally add dynamic cachebuster and minify JS and CSS files.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="url">UrlHelper object</param>
         /// <param name="contentPath">Relative path to the asset</param>
         /// <param name="addCacheBuster">If true, appends a cachebuster to the generated URL from the file modification date</param>
@@ -100,13 +100,13 @@ namespace Fynydd.Carbide
             return url.Content(filePath + queryString);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Determines if a cookie exists.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// bool cookieExists = Client.CookieExists(Request, "Score");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="request">HttpRequest object.</param>
         /// <param name="cookieName">Name of cookie for which to verify its existence.</param>
@@ -124,13 +124,13 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Determines if a cookie exists.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// bool cookieExists = Client.CookieExists("Score");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="cookieName">Name of cookie for which to verify its existence.</param>
         /// <returns>True or False</returns>
@@ -147,13 +147,13 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Returns a specified cookie from a specified request object.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string cookieVal = Client.GetCookie(Request, "Score");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="request">HttpRequest object.</param>
         /// <param name="cookieName">Name of cookie to retrieve.</param>
@@ -171,13 +171,13 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Returns a specified cookie from the current request object.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string cookieVal = Client.GetCookie("Score");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="cookieName">Name of cookie to retrieve.</param>
         /// <returns>A cookie value.</returns>
@@ -186,13 +186,13 @@ namespace Fynydd.Carbide
             return GetCookie(HttpContext.Current.Request, cookieName);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Create a cookie on the client web browser.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// Client.SetCookie("Score", "15", "", 7);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="cookieName">Name of the cookie to create.</param>
         /// <param name="cookieValue">Cookie string value.</param>
@@ -210,13 +210,13 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Create a cookie on the client web browser.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// Client.SetCookie("Score", "15", "", 7, ".mydomain.com");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="cookieName">Name of the cookie to create.</param>
         /// <param name="cookieValue">Cookie string value.</param>
@@ -236,13 +236,13 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Remove a cookie from the client web browser.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// Client.ClearCookie("Score", "/", "mysite.com");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="cookieName">Name of the cookie to remove.</param>
         /// <param name="path">Virtual web path for cookie ownership (e.g. use "/" for the root web site).</param>
@@ -266,13 +266,13 @@ namespace Fynydd.Carbide
             HttpContext.Current.Response.Cookies[cookieName].Expires = DateTime.Now;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Remove a cookie from the client web browser.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// Client.ClearCookie("Score", "/");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="cookieName">Name of the cookie to remove.</param>
         /// <param name="path">Virtual web path for cookie ownership (e.g. use "/" for the root web site).</param>
@@ -282,13 +282,13 @@ namespace Fynydd.Carbide
             RemoveCookie(cookieName, path, "");
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Remove a cookie from the client web browser.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// Client.ClearCookie("Score");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="cookieName">Name of the cookie to remove.</param>
         /// <returns>Nothing.</returns>

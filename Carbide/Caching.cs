@@ -4,31 +4,29 @@ using System.Web;
 
 namespace Fynydd.Carbide
 {
-    /// <summary>
+    /// <summary><![CDATA[
     /// The Caching class contains methods and properties for
     /// manipulating the page output cache, as well as other
     /// caching and history functionality. Cache time is determined by the "OutputCache.Expiration.Seconds" setting
     /// in the Carbide configuration section of the web.config file. The time is in seconds.
+    /// ]]></summary>
     /// <example>
-    /// <code>
-    /// <![CDATA[
+    /// <code><![CDATA[
     /// <configSections>
     ///		<section name="Fynydd.Carbide" type="System.Configuration.NameValueFileSectionHandler"/>
     /// </configSections>
     /// <Fynydd.Carbide>
     ///     <add key="OutputCache.Expiration.Seconds" value="300"/>
     /// </Fynydd.Carbide>
-    ///	]]>
-    ///	</code>
+    ///	]]></code>
     ///	</example>
-    /// </summary>
     public static class Caching
     {
         #region Properties
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Returns the outputCacheTime setting from the Carbide Settings within the Web.config file.
-        /// </summary>
+        /// ]]></summary>
         public static int OutputCacheTime
         {
             get
@@ -41,9 +39,9 @@ namespace Fynydd.Carbide
 
         #region Methods
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Output Caching wrapper method. Caches an object for the number of seconds specified.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="key">Unique name of the cached item</param>
         /// <param name="value">Object to store in the cache</param>
         /// <param name="expirationSeconds">Expiration time, in seconds, from the current date and time.</param>
@@ -58,9 +56,9 @@ namespace Fynydd.Carbide
             context.Cache.Add(key, value, null, DateTime.Now.AddSeconds(Convert.ToDouble(expirationSeconds)), System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Normal, null);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Output Caching wrapper method. Caches an object for the life of the application.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="key">Unique name of the cached item</param>
         /// <param name="value">Object to store in the cache</param>
         /// <param name="context">HttpContext; defaults to Current</param>
@@ -74,9 +72,9 @@ namespace Fynydd.Carbide
             context.Cache.Add(key, value, null, System.Web.Caching.Cache.NoAbsoluteExpiration, System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.High, null);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Output Caching wrapper method. Caches a string value for the number of seconds specified.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="key">Unique name of the cached item</param>
         /// <param name="value">String value to store in the cache</param>
         /// <param name="expirationSeconds">Expiration time, in seconds, from the current date and time.</param>
@@ -91,9 +89,9 @@ namespace Fynydd.Carbide
             context.Cache.Add(key, value, null, DateTime.Now.AddSeconds(Convert.ToDouble(expirationSeconds)), System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Normal, null);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Output Caching wrapper method. Caches an object until the date and time specified.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="key">Unique name of the cached item</param>
         /// <param name="value">Object to store in the cache</param>
         /// <param name="expirationDateTime">Expiration date and time.</param>
@@ -108,9 +106,9 @@ namespace Fynydd.Carbide
             context.Cache.Add(key, value, null, expirationDateTime, System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Normal, null);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Output Caching wrapper method. Caches a string value until the date and time specified.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="key">Unique name of the cached item</param>
         /// <param name="value">String value to store in the cache</param>
         /// <param name="expirationDateTime">Expiration date and time.</param>
@@ -125,10 +123,10 @@ namespace Fynydd.Carbide
             context.Cache.Add(key, value, null, expirationDateTime, System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Normal, null);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Output Caching wrapper method. Caches an object for a number of seconds specified
         /// in the web.config file under the Carbide Settings key "OutputCache.Expiration.Seconds".
-        /// </summary>
+        /// ]]></summary>
         /// <param name="key">Unique name of the cached item</param>
         /// <param name="value">Object to store in the cache</param>
         /// <param name="context">HttpContext; defaults to Current</param>
@@ -142,10 +140,10 @@ namespace Fynydd.Carbide
             context.Cache.Add(key, value, null, DateTime.Now.AddSeconds(Convert.ToDouble(OutputCacheTime)), System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Normal, null);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Output Caching wrapper method. Caches a string value for a number of seconds specified
         /// in the web.config file under the Carbide Settings key "OutputCache.Expiration.Seconds".
-        /// </summary>
+        /// ]]></summary>
         /// <param name="key">Unique name of the cached item</param>
         /// <param name="value">String value to store in the cache</param>
         /// <param name="context">HttpContext; defaults to Current</param>
@@ -159,9 +157,9 @@ namespace Fynydd.Carbide
             context.Cache.Add(key, value, null, DateTime.Now.AddSeconds(Convert.ToDouble(OutputCacheTime)), System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Normal, null);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Clear the output cache.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="context">HttpContext; defaults to Current</param>
         public static void CacheClear(HttpContext context = null)
         {
@@ -178,9 +176,10 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Delete a single cached item.
-        /// </summary>
+        /// ]]></summary>
+        /// <param name="key">Unique name of the cached item</param>
         /// <param name="context">HttpContext; defaults to Current</param>
         public static void CacheDelete(string key, HttpContext context = null)
         {
@@ -198,9 +197,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Output caching wrapper method. Determines if a cached item exists or not.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="key">Unique name of the cached item</param>
         /// <param name="context">HttpContext; defaults to Current</param>
         /// <returns>true if cached item exists, false if not.</returns>
@@ -221,9 +220,9 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Output caching wrapper method. Retrieve a typed cache item.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="key">Unique name of the cached item</param>
         /// <param name="context">HttpContext; defaults to Current</param>
         /// <returns>Cached value</returns>

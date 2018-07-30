@@ -28,10 +28,18 @@ using Fynydd.Carbide.Constants;
 
 namespace Fynydd.Carbide
 {
+    /// <summary><![CDATA[
+    /// REST endpoints for using Umbraco file resources.
+    /// ]]></summary>
     public class CarbideFileController : UmbracoApiController
     {
-        public static string Version { get { return "2018-05-18"; } }
-
+        /// <summary><![CDATA[
+        /// REST endpoint for retrieving Umbraco media items that hold SVG images.
+        /// ]]></summary>
+        /// <param name="id">Umbraco media ID</param>
+        /// <param name="clean">Clean the SVG prior to returning the data</param>
+        /// <param name="color">Recolor the SVG with this hex color</param>
+        /// <returns>SVG data as XML</returns>
         [HttpGet]
         public HttpResponseMessage Svg(int id, bool clean = false, string color = "") // /umbraco/api/carbidefile/svg/?id=1024&color=008BFF
         {

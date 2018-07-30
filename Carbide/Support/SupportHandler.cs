@@ -25,8 +25,15 @@ using Fynydd.Carbide.Constants;
 
 namespace Fynydd.Carbide
 {
+    /// <summary><![CDATA[
+    /// REST endpoints for using Carbide embedded file resources.
+    /// ]]></summary>
     public class CarbideSupportController : UmbracoApiController
     {
+        /// <summary><![CDATA[
+        /// Get the current Carbide framework version.
+        /// ]]></summary>
+        /// <returns>Version nuumber</returns>
         [HttpGet]
         public HttpResponseMessage Version() // /umbraco/api/carbidesupport/version/
         {
@@ -46,6 +53,11 @@ namespace Fynydd.Carbide
             return response;
         }
 
+        /// <summary><![CDATA[
+        /// Get a Carbide embedded HTML resource.
+        /// ]]></summary>
+        /// <param name="file">HTML file name to retrieve (without the file extension)</param>
+        /// <returns>HTML file contents</returns>
         [HttpGet]
         public HttpResponseMessage Html(string file) // /umbraco/api/carbidesupport/html/?file=DashControl
         {
@@ -74,6 +86,11 @@ namespace Fynydd.Carbide
             return response;
         }
 
+        /// <summary><![CDATA[
+        /// Get a Carbide embedded JavaScript resource.
+        /// ]]></summary>
+        /// <param name="file">JavaScript file name to retrieve (without the file extension)</param>
+        /// <returns>JavaScript file contents</returns>
         [HttpGet]
         public HttpResponseMessage Scripts(string file) // /umbraco/api/carbidesupport/scripts/?file=FormValidationHelpers
         {
@@ -102,6 +119,11 @@ namespace Fynydd.Carbide
             return response;
         }
 
+        /// <summary><![CDATA[
+        /// Get a Carbide embedded SVG resource.
+        /// ]]></summary>
+        /// <param name="file">SVG file name to retrieve (without the file extension)</param>
+        /// <returns>SVG file contents</returns>
         [HttpGet]
         public HttpResponseMessage Svg(string file) // /umbraco/api/carbidesupport/svg/?file=inline-busy-icon
         {
@@ -130,6 +152,11 @@ namespace Fynydd.Carbide
             return response;
         }
 
+        /// <summary><![CDATA[
+        /// Get a Carbide embedded PNG resource.
+        /// ]]></summary>
+        /// <param name="file">PNG file name to retrieve (without the file extension)</param>
+        /// <returns>PNG file contents</returns>
         [HttpGet]
         public HttpResponseMessage Png(string file) // /umbraco/api/carbidesupport/png/?file=carbide-icon
         {
@@ -162,6 +189,10 @@ namespace Fynydd.Carbide
             return response;
         }
 
+        /// <summary><![CDATA[
+        /// Initiate an Umbraco content cache republish, rebuild, and Examine cache rebuild.
+        /// ]]></summary>
+        /// <returns>Operation result text</returns>
         [HttpGet]
         public HttpResponseMessage RebuildCache() // /umbraco/api/carbidesupport/rebuildcache/
         {
@@ -258,6 +289,10 @@ namespace Fynydd.Carbide
             return response;
         }
 
+        /// <summary><![CDATA[
+        /// Clear the ImageProcessor file cache.
+        /// ]]></summary>
+        /// <returns>Operation result text</returns>
         [HttpGet]
         public HttpResponseMessage RebuildImageCache() // /umbraco/api/carbidesupport/rebuildimagecache/
         {
@@ -373,6 +408,10 @@ namespace Fynydd.Carbide
             return response;
         }
 
+        /// <summary><![CDATA[
+        /// Initiate an Umbraco page template pre-cache, so pages load quickly on first request.
+        /// ]]></summary>
+        /// <returns>Operation result text</returns>
         [HttpGet]
         public HttpResponseMessage PrerenderPages() // /umbraco/api/carbidesupport/prerenderpages/
         {
@@ -465,6 +504,10 @@ namespace Fynydd.Carbide
             return response;
         }
 
+        /// <summary><![CDATA[
+        /// Get the current status of an Umbraco content cache rebuild.
+        /// ]]></summary>
+        /// <returns>Operation status text</returns>
         [HttpGet]
         public HttpResponseMessage RebuildCacheStatus() // /umbraco/api/carbidesupport/rebuildcachestatus/
         {
@@ -480,6 +523,10 @@ namespace Fynydd.Carbide
             return response;
         }
 
+        /// <summary><![CDATA[
+        /// Get the last complete status of an Umbraco content cache rebuild.
+        /// ]]></summary>
+        /// <returns>Operation status history text</returns>
         [HttpGet]
         public HttpResponseMessage RebuildCacheStatusHistory() // /umbraco/api/carbidesupport/rebuildcachestatushistory/
         {

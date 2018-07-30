@@ -5,18 +5,18 @@ using System.Text;
 
 namespace Fynydd.Carbide
 {
-    /// <summary>
+    /// <summary><![CDATA[
     /// The Compression class contains methods for compressing and decompressing data.
-    /// </summary>
+    /// ]]></summary>
     public static class Compression
     {
-        /// <summary>
+        /// <summary><![CDATA[
         /// GZip compress a string. Only useful for strings over 300 characters in length.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string compressedVar = Compression.CompressString(stringVar);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="text">String to compress.</param>
         /// <returns>A compressed string.</returns>
@@ -41,15 +41,15 @@ namespace Fynydd.Carbide
             return gzipBuffer;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// GZip decompress a string compressed with CompressString().
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string decompressedVar = Compression.DecompressString(compressedVar);
-        /// </code>
+        /// ]]></code>
         /// </example>
-        /// <param name="compressedText">String to decompress.</param>
+        /// <param name="gzipBuffer">Byte array to decompress.</param>
         /// <returns>A decompressed string.</returns>
         public static string DecompressString(this byte[] gzipBuffer)
         {
@@ -71,13 +71,13 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// GZip compress a byte array.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// byte[] compressedVar = Compression.Compress(byteBuff);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="buffer">Byte array to compress.</param>
         /// <returns>A compressed byte array.</returns>
@@ -98,13 +98,13 @@ namespace Fynydd.Carbide
             return gzipBuffer;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// GZip decompress a byte array.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// byte[] decompressedVar = Compression.Decompress(byteBuff);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="gzipBuffer">Byte array to decompress.</param>
         /// <returns>A decompressed byte array.</returns>

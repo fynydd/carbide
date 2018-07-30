@@ -6,24 +6,24 @@ using Fynydd.Carbide.Constants;
 
 namespace Fynydd.Carbide
 {
-    /// <summary>
+    /// <summary><![CDATA[
     /// The TemporalHelpers class contains methods and properties for manipulating, 
     /// evaluating, or displaying dates and times.
-    /// </summary>
+    /// ]]></summary>
     public static class Temporal
     {
-        /// <summary>
+        /// <summary><![CDATA[
         /// Calculate an age with a given birthdate. Assumes current timezone.
-        /// </summary>
-        /// <param name="birthday">A <see cref="DateTime" /> value representing a birthday./></param>
+        /// ]]></summary>
+        /// <param name="dob">A <see cref="DateTime" /> value representing a birthday./></param>
         /// <returns>Age in years as an integer</returns>
         public static int CalculateAge(this DateTime dob)
         {
             return CalculateAge(dob, TimeZone.CurrentTimeZone.GetUtcOffset(DateTime.Now).Hours);
         }
-        /// <summary>
+        /// <summary><![CDATA[
         /// Calculate an age with a given birthdate.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="dob">A <see cref="DateTime" /> value representing a birthday./></param>
         /// <param name="utcOffset">An <see cref="int"/> value indicating the offset to apply to UTC.</param>
         /// <returns>Age in years as an integer</returns>
@@ -32,9 +32,9 @@ namespace Fynydd.Carbide
             return Convert.ToInt32(Math.Truncate(DateDiff<double>(dob, DateTime.UtcNow, DateDiffComparisonType.Age, utcOffset, 0)));
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Compares 2 dates and determine the time interval between them.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// For example, if using "Days" for comparison, startDate = "1/1/2008", and endDate = "1/7/2008",
         /// the return value is 6. Likewise, reversing the dates yields -6.
@@ -48,9 +48,9 @@ namespace Fynydd.Carbide
             return DateDiff<T>(startDate, endDate, howtocompare, TimeZone.CurrentTimeZone.GetUtcOffset(startDate).Hours, TimeZone.CurrentTimeZone.GetUtcOffset(endDate).Hours);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Compares 2 dates and determine the time interval between them taking time zones into account.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// For example, if using "age" for comparison, startDate = "2000-02-29 00:00:00.000", and endDate = "2010-2-28 23:30:00:00.000",
         /// and the startDate timezone is CST the return value is 9.
@@ -153,9 +153,9 @@ namespace Fynydd.Carbide
             return (T)Convert.ChangeType(diff, typeof(T));
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Format a date/time variable for output.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="date">DateTime variable to format.</param>
         /// <param name="format">Date format.</param>
         /// <returns>String with the date formatted as requested.</returns>
@@ -402,9 +402,9 @@ namespace Fynydd.Carbide
             return (thedate);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Format a date/time variable for output.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">DateTime variable to format.</param>
         /// <param name="format">Date format.</param>
         /// <returns>String with the date formatted as requested.</returns>
@@ -431,9 +431,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Used to render abstract dates, given rounding thresholds.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">Number of items to evaluate (e.g. days, like 1.4).</param>
         /// <param name="increment">Singular form of the text value to display for increments (e.g. "day").</param>
         /// <param name="lowend">Fractional value for determing low end (e.g. 0.4 makes a value of 3.4 "days" render as "3 days ago").</param>
@@ -495,9 +495,9 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Format a time of day for output.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="date">Time variable to format.</param>
         /// <param name="format">Time format.</param>
         /// <returns>String with the time of day formatted as requested.</returns>
@@ -529,9 +529,9 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Format a time of day for output.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="date">Time variable to format.</param>
         /// <param name="format">Time format.</param>
         /// <returns>String with the time of day formatted as requested.</returns>
@@ -540,17 +540,17 @@ namespace Fynydd.Carbide
             return TimeFormat(Convert.ToDateTime(date), format);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Returns a struct with a start and end date for a given start date and interval.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// If you pass the current date, and wish to know the first
         /// and last days of the week based on the current day:
-        /// <code>
+        /// <code><![CDATA[
         /// DateRangeStruct result = DateTime.Now.DateRange(TemporalHelpers.DateRangeOptions.Week);
         /// Response.Write ("The first day of the week is " + result.startDate.ToString() + 
         /// ", and the last day of the week is " + result.endDate.ToString());
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="relativeDate">Date to use as the basis for calculating the start and end date of the range.</param>
         /// <param name="dateRangeOptions">Enumeration value specifying which abstracted date range to evaluate. Note, weeks begin on Sunday and end on Saturday.</param>
@@ -608,17 +608,17 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Returns a struct with a start and end date for a given start date and interval.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// If you pass the current date, and wish to know the first
         /// and last days of the week based on the current day:
-        /// <code>
+        /// <code><![CDATA[
         /// DateRangeStruct result = DateTime.Now.DateRange(TemporalHelpers.DateRangeOptions.Week);
         /// Response.Write ("The first day of the week is " + result.startDate.ToString() + 
         /// ", and the last day of the week is " + result.endDate.ToString());
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="relativeDate">Date to use as the basis for calculating the start and end date of the range.</param>
         /// <param name="dateRangeOptions">Enumeration value specifying which abstracted date range to evaluate. Note, weeks begin on Sunday and end on Saturday.</param>
@@ -628,9 +628,9 @@ namespace Fynydd.Carbide
             return DateRange(Convert.ToDateTime(relativeDate), dateRangeOptions);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get the month name by its number.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="value">Month number for which a name is requested (1 to 12).</param>
         /// <param name="returnAbbreviation">Set to "true" to return month names abbreviation (e.g. Dec).</param>
         /// <returns>Month name or abbreviation, or an empty string on error.</returns>
@@ -681,9 +681,9 @@ namespace Fynydd.Carbide
             return monthName;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Convert a DateTime value to a given time zone, automatically handling DST if using .NET CLR 3.5 or later.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="dateTime">DateTime value to convert.</param>
         /// <param name="timeZoneText">Text value of the desired time zone. Examples include "Eastern Standard Time", "Central Standard Time", "Mountain Standard Time", "Pacific Standard Time".</param>
         /// <returns>dateTime converted to the desired time zone.</returns>
@@ -710,10 +710,10 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Locking pause in execution for the calling code block.
         /// Useful for delays before retrying an operation.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="milliseconds">Length of time in milliseconds to wait</param>
         public static void PauseExecution(int milliseconds)
         {
@@ -726,14 +726,14 @@ namespace Fynydd.Carbide
             wait.Stop();
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Task Interval methods help manage scheduled activities triggered by web page views.
         /// These methods only track status and time. They do not execute anything.
         /// 
         /// Start by running TaskIntervalInit(). This can be placed on a web page and will skip
         /// its processes if it has been run prior. This establishes the name of the task and the
         /// time interval in seconds (or greater) before it will run again.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="activityName">Name of the activity, like "TwitterImport".</param>
         /// <param name="seconds">Number of seconds between runs.</param>
         /// <param name="context">Manually set the context if running the method from a thread.</param>
@@ -767,12 +767,12 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Task Interval methods help manage scheduled activities triggered by web page views.
         /// These methods only track status and time. They do not execute anything.
         /// 
         /// Run TimeIntervalStart() from your actual task method to indicate that it has begun.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="activityName">Name of the activity, like "TwitterImport".</param>
         /// <param name="context">Manually set the context if running the method from a thread.</param>
         public static void TaskIntervalStart(string activityName, HttpContext context = null)
@@ -796,12 +796,12 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Task Interval methods help manage scheduled activities triggered by web page views.
         /// These methods only track status and time. They do not execute anything.
         /// 
         /// Run TimeIntervalStop() from your actual task method to indicate that it has ended.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="activityName">Name of the activity, like "TwitterImport".</param>
         /// <param name="context">Manually set the context if running the method from a thread.</param>
         public static void TaskIntervalStop(string activityName, HttpContext context = null)
@@ -838,12 +838,12 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Task Interval methods help manage scheduled activities triggered by web page views.
         /// These methods only track status and time. They do not execute anything.
         /// 
         /// Check to see if a task is currently running (as indicated by running TimeIntervalStart()).
-        /// </summary>
+        /// ]]></summary>
         /// <param name="activityName">Name of the activity, like "TwitterImport".</param>
         /// <param name="context">Manually set the context if running the method from a thread.</param>
         public static bool TaskIsRunning(string activityName, HttpContext context = null)
@@ -865,13 +865,13 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Task Interval methods help manage scheduled activities triggered by web page views.
         /// These methods only track status and time. They do not execute anything.
         /// 
         /// Check to see if a task should be run again. It ensures that the task is not currently running
         /// and that the task time in seconds set in TimeIntervalInit() has elapsed.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="activityName">Name of the activity, like "TwitterImport".</param>
         /// <param name="context">Manually set the context if running the method from a thread.</param>
         public static bool TaskShouldBeRun(string activityName, HttpContext context = null)
@@ -913,10 +913,10 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Format seconds as a more friendly timespan with a custom delimitter.
         /// Like: 3d : 5h : 12m : 15s or 3d+5h+12m+15s
-        /// </summary>
+        /// ]]></summary>
         /// <param name="seconds">Number of seconds to format.</param>
         /// <param name="delimitter">Text to separate time elements; defaults to " : ".</param>
         /// <returns>Formatted timespan</returns>
@@ -950,50 +950,52 @@ namespace Fynydd.Carbide
         }
     }
 
-    /// <summary>
+    /// <summary><![CDATA[
     /// Accurate, Simple, and Easy to use Stopwatch Class. This class
     /// can be used to track process execution time in seconds and milliseconds.
-    /// </summary>
+    /// ]]></summary>
     /// <example>
     /// Sample usage:
-    /// <code>
-    /// <![CDATA[
+    /// <code><![CDATA[
     /// StopWatch sw = new StopWatch();
     /// sw.Start();
     /// Trace.Write("Stopwatch", "Process1:" sw.GetTime());
     /// Trace.Write("Stopwatch", "Process2:" sw.GetTime());
     /// sw.Stop()
     /// Trace.Write("Stopwatch", "Process 1 & 2:" sw.GetTime());
-    /// ]]>
-    /// </code>
+    /// ]]></code>
     /// </example>
     public class StopWatch
     {
         #region Properties
 
+        /// <summary><![CDATA[
+        /// Stop watch start time
+        /// ]]></summary>
         public DateTime StartDate { get; set; }
 
+        /// <summary><![CDATA[
+        /// Stopwatch stop time
+        /// ]]></summary>
         public DateTime StopDate { get; set; }
 
         #endregion
 
         #region Constructors
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Initializes the StopWatch to 0.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// Sample usage:
-        /// <code>
-        /// <![CDATA[
+        /// <code><![CDATA[
         /// StopWatch sw = new StopWatch();
         /// sw.Start();
         /// Trace.Write("Stopwatch", "Process1:" sw.GetTime());
         /// Trace.Write("Stopwatch", "Process2:" sw.GetTime());
         /// sw.Stop()
         /// Trace.Write("Stopwatch", "Process 1 & 2:" sw.GetTime());
-        /// ]]>
-        /// </code>
+        /// ]]></code>
         /// </example>
         public StopWatch()
         {
@@ -1002,61 +1004,55 @@ namespace Fynydd.Carbide
 
         #endregion
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Starts the Stopwatch.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// Sample usage:
-        /// <code>
-        /// <![CDATA[
+        /// <code><![CDATA[
         /// StopWatch stopwatch = new StopWatch();
         /// stopwatch.Start();
         /// Temporal.PauseExecution(2000);
         /// stopwatch.Stop();
         /// Assert.AreEqual(2, stopwatch.GetSeconds<int>(), "GetSeconds()");
-        /// ]]>
-        /// </code>
+        /// ]]></code>
         /// </example>
         public void Start()
         {
             StartDate = DateTime.Now;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Stops the Stopwatch.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// Sample usage:
-        /// <code>
-        /// <![CDATA[
+        /// <code><![CDATA[
         /// StopWatch stopwatch = new StopWatch();
         /// stopwatch.Start();
         /// Temporal.PauseExecution(2000);
         /// stopwatch.Stop();
         /// Assert.AreEqual(2, stopwatch.GetSeconds<int>(), "GetSeconds()");
-        /// ]]>
-        /// </code>
+        /// ]]></code>
         /// </example>
         public void Stop()
         {
             StopDate = DateTime.Now;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Reset the Stopwatch to 0.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// Sample usage:
-        /// <code>
-        /// <![CDATA[
+        /// <code><![CDATA[
         /// StopWatch stopwatch = new StopWatch();
         /// stopwatch.Start();
         /// Temporal.PauseExecution(2000);
         /// stopwatch.Stop();
         /// stopwatch.Reset();
         /// Assert.AreEqual(0, stopwatch.GetSeconds<int>(), "GetSeconds()");
-        /// ]]>
-        /// </code>
+        /// ]]></code>
         /// </example>
         public void Reset()
         {
@@ -1064,15 +1060,14 @@ namespace Fynydd.Carbide
             StopDate = StartDate;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Returns the elapsed time in milliseconds since the StopWatch was started.
         /// If the stopwatch has been stopped, the returned time will always be the same,
         /// otherwise it will continue to increase.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// Sample usage:
-        /// <code>
-        /// <![CDATA[
+        /// <code><![CDATA[
         /// StopWatch stopwatch = new StopWatch();
         /// stopwatch.Start();
         /// Temporal.PauseExecution(2000);
@@ -1082,8 +1077,7 @@ namespace Fynydd.Carbide
         /// Assert.AreEqual(3000, stopwatch.GetTime<int>(), "GetTime()");
         /// Temporal.PauseExecution(1000);
         /// Assert.AreEqual(3000, stopwatch.GetTime<int>(), "GetTime()");
-        /// ]]>
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <returns>Milliseconds since the stopwatch was started.</returns>
         public T GetTime<T>()
@@ -1103,15 +1097,14 @@ namespace Fynydd.Carbide
             return (T)(Convert.ChangeType(Elapsed, typeof(T)));
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Returns the elapsed time in milliseconds since the StopWatch was started.
         /// If the stopwatch has been stopped, the returned time will always be the same,
         /// otherwise it will continue to increase.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// Sample usage:
-        /// <code>
-        /// <![CDATA[
+        /// <code><![CDATA[
         /// StopWatch stopwatch = new StopWatch();
         /// stopwatch.Start();
         /// Temporal.PauseExecution(2000);
@@ -1121,8 +1114,7 @@ namespace Fynydd.Carbide
         /// Assert.AreEqual("3000", stopwatch.GetTime(), "GetTime()");
         /// Temporal.PauseExecution(1000);
         /// Assert.AreEqual("3000", stopwatch.GetTime(), "GetTime()");
-        /// ]]>
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <returns>Milliseconds since the stopwatch was started.</returns>
         public string GetTime()
@@ -1130,15 +1122,14 @@ namespace Fynydd.Carbide
             return GetTime<string>();
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Returns the elapsed time in seconds since the StopWatch was started.
         /// If the stopwatch has been stopped, the returned time will always be the same,
         /// otherwise it will continue to increase.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// Sample usage:
-        /// <code>
-        /// <![CDATA[
+        /// <code><![CDATA[
         /// StopWatch stopwatch = new StopWatch();
         /// stopwatch.Start();
         /// Temporal.PauseExecution(2000);
@@ -1148,8 +1139,7 @@ namespace Fynydd.Carbide
         /// Assert.AreEqual(3, stopwatch.GetSeconds<int>(), "GetTime()");
         /// Temporal.PauseExecution(1000);
         /// Assert.AreEqual(3, stopwatch.GetSeconds<int>(), "GetTime()");
-        /// ]]>
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <returns>Seconds since the stopwatch was started.</returns>
         public T GetSeconds<T>()
@@ -1159,22 +1149,20 @@ namespace Fynydd.Carbide
             return (T)(Convert.ChangeType(seconds, typeof(T)));
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Returns the elapsed time in seconds since the StopWatch was started.
         /// If the stopwatch has been stopped, the returned time will always be the same,
         /// otherwise it will continue to increase.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// Sample usage:
-        /// <code>
-        /// <![CDATA[
+        /// <code><![CDATA[
         /// StopWatch stopwatch = new StopWatch();
         /// stopwatch.Start();
         /// Temporal.PauseExecution(2000);
         /// stopwatch.Stop();
         /// Assert.AreEqual("00:00:02", stopwatch.GetTimeSpan().ToString(@"hh\:mm\:ss"), "GetTimeSpan() 1 second");
-        /// ]]>
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <returns>TimeSpan value of the elapsed time.</returns>
         public TimeSpan GetTimeSpan()
