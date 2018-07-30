@@ -22,12 +22,13 @@ namespace Fynydd.Carbide
         /// <returns>Current domain, with non-standard port if in-use</returns>
         public static string GetSeoHost(HttpContext context = null)
         {
-            var _context = ContextHelpers.EnsureAppContext(context);
-            var domain = _context.Request.Url.Host.ToLower();
+            context = ContextHelpers.EnsureAppContext(context);
 
-            if (_context.Request.Url.Port != 80 && _context.Request.Url.Port != 443)
+            var domain = context.Request.Url.Host.ToLower();
+
+            if (context.Request.Url.Port != 80 && context.Request.Url.Port != 443)
             {
-                domain += ":" + _context.Request.Url.Port;
+                domain += ":" + context.Request.Url.Port;
             }
 
             return domain;
@@ -36,38 +37,24 @@ namespace Fynydd.Carbide
         /// <summary><![CDATA[
         /// Get the fully qualified domain name of the current URL.
         /// ]]></summary>
-        /// <returns>Domain name (FQDN).</returns>
-        public static string GetHost()
-        {
-            return HttpContext.Current.Request.Url.Host;
-        }
-
-        /// <summary><![CDATA[
-        /// Get the fully qualified domain name of the current URL.
-        /// ]]></summary>
         /// <param name="context">Context to use</param>
         /// <returns>Domain name (FQDN).</returns>
-        public static string GetHost(HttpContext context)
+        public static string GetHost(HttpContext context = null)
         {
+            context = ContextHelpers.EnsureAppContext(context);
+
             return context.Request.Url.Host;
         }
 
         /// <summary><![CDATA[
         /// Get the fully qualified domain name of the current URL with port.
         /// ]]></summary>
-        /// <returns>Domain name (FQDN) with a colon and a port number.</returns>
-        public static string GetHostWithPort()
-        {
-            return HttpContext.Current.Request.Url.Host + ":" + HttpContext.Current.Request.Url.Port;
-        }
-
-        /// <summary><![CDATA[
-        /// Get the fully qualified domain name of the current URL with port.
-        /// ]]></summary>
         /// <param name="context">Context to use</param>
         /// <returns>Domain name (FQDN) with a colon and a port number.</returns>
-        public static string GetHostWithPort(HttpContext context)
+        public static string GetHostWithPort(HttpContext context = null)
         {
+            context = ContextHelpers.EnsureAppContext(context);
+
             return context.Request.Url.Host + ":" + context.Request.Url.Port;
         }
 
@@ -75,10 +62,11 @@ namespace Fynydd.Carbide
         /// Get the root domain from the fully qualified domain name of the current URL.
         /// (e.g. if visiting "www.mydomain.com", "mydomain.com" is returned.)
         /// ]]></summary>
+        /// <param name="context">Http context to use; defaults to current</param>
         /// <returns>Root domain name.</returns>
-        public static string GetHostRoot()
+        public static string GetHostRoot(HttpContext context = null)
         {
-            String fqdn = GetHost();
+            String fqdn = GetHost(context);
             String dn = fqdn;
             String[] dnParts = fqdn.Split('.');
 
@@ -332,16 +320,17 @@ namespace Fynydd.Carbide
         /// Return the version of Internet Explorer being used
         /// or -1 if the request came from another browser.
         /// ]]></summary>
+        /// <param name="context">Http context to use; defaults to current</param>
         /// <returns>Version of IE, or -1 if not IE.</returns>
-        public static double GetInternetExplorerVersion()
+        public static double GetInternetExplorerVersion(HttpContext context = null)
         {
             double ver;
 
-            ver = GetBrowserVersion("IE");
+            ver = GetBrowserVersion("IE", context);
 
             if (ver == -1)
             {
-                ver = GetBrowserVersion("InternetExplorer");
+                ver = GetBrowserVersion("InternetExplorer", context);
             }
 
             return ver;
@@ -351,44 +340,51 @@ namespace Fynydd.Carbide
         /// Return the version of Mozilla Firefox being used
         /// or -1 if the request came from another browser.
         /// ]]></summary>
+        /// <param name="context">Http context to use; defaults to current</param>
         /// <returns>Version of Firefox, or -1 if not Firefox.</returns>
-        public static double GetFirefoxVersion()
+        public static double GetFirefoxVersion(HttpContext context = null)
         {
-            return GetBrowserVersion("Firefox");
+            return GetBrowserVersion("Firefox", context);
         }
 
         /// <summary><![CDATA[
         /// Return the version of Apple Safari being used
         /// or -1 if the request came from another browser.
         /// ]]></summary>
+        /// <param name="context">Http context to use; defaults to current</param>
         /// <returns>Version of Safari, or -1 if not Safari.</returns>
-        public static double GetSafariVersion()
+        public static double GetSafariVersion(HttpContext context = null)
         {
-            return GetBrowserVersion("Safari");
+            return GetBrowserVersion("Safari", context);
         }
 
         /// <summary><![CDATA[
         /// Return the version of Google Chrome being used
         /// or -1 if the request came from another browser.
         /// ]]></summary>
+        /// <param name="context">Http context to use; defaults to current</param>
         /// <returns>Version of Safari, or -1 if not Safari.</returns>
-        public static double GetChromeVersion()
+        public static double GetChromeVersion(HttpContext context = null)
         {
-            return GetBrowserVersion("Chrome");
+            return GetBrowserVersion("Chrome", context);
         }
 
         /// <summary><![CDATA[
         /// Return the version of specific browser based on HTTP headers
         /// or -1 if the request came from another browser.
         /// ]]></summary>
+        /// <param name="browserName">Web browser name to query</param>
+        /// <param name="context">HttpContext to use; defaults to current</param>
         /// <returns>Version of the browser, or -1 if not the requested browser.</returns>
-        public static double GetBrowserVersion(string browserName)
+        public static double GetBrowserVersion(string browserName, HttpContext context = null)
         {
             // Returns the version of Mozilla Firefox or a -1
             // (indicating the use of another browser).
             double rv = -1;
 
-            System.Web.HttpBrowserCapabilities browser = HttpContext.Current.Request.Browser;
+            context = ContextHelpers.EnsureAppContext(context);
+
+            System.Web.HttpBrowserCapabilities browser = context.Request.Browser;
 
             if (browser.Browser.ToLower().EndsWith(browserName.ToLower()))
             {
@@ -401,19 +397,15 @@ namespace Fynydd.Carbide
         /// <summary><![CDATA[
         /// Return the browser name.
         /// ]]></summary>
+        /// <param name="context">HttpContext to use; defaults to current</param>
         /// <returns>Browser name.</returns>
-        public static string GetBrowserName()
+        public static string GetBrowserName(HttpContext context = null)
         {
-            if (HttpContext.Current != null)
-            {
-                System.Web.HttpBrowserCapabilities browser = HttpContext.Current.Request.Browser;
-                return browser.Browser;
-            }
+            context = ContextHelpers.EnsureAppContext(context);
 
-            else
-            {
-                return "Unknown";
-            }
+            System.Web.HttpBrowserCapabilities browser = context.Request.Browser;
+
+            return browser.Browser;
         }
 
         private static string BuildMatch(string pattern, string userAgent, string browser, int versionIndex, string browserNameVersionFallback, out string browserName, out long majorVersion, out long minorVersion, out long buildVersion)
@@ -805,78 +797,65 @@ namespace Fynydd.Carbide
         /// <summary><![CDATA[
         /// Return the browser major version number.
         /// ]]></summary>
+        /// <param name="context">HttpContext to use; defaults to current</param>
         /// <returns>Browser major version number.</returns>
-        public static string GetBrowserMajorVersion()
+        public static string GetBrowserMajorVersion(HttpContext context = null)
         {
-            if (HttpContext.Current != null)
-            {
-                System.Web.HttpBrowserCapabilities browser = HttpContext.Current.Request.Browser;
-                return browser.MajorVersion.ToString();
-            }
+            context = ContextHelpers.EnsureAppContext(context);
 
-            else
-            {
-                return "0";
-            }
+            System.Web.HttpBrowserCapabilities browser = context.Request.Browser;
+
+            return browser.MajorVersion.ToString();
         }
 
         /// <summary><![CDATA[
         /// Return the browser minor version number.
         /// ]]></summary>
+        /// <param name="context">HttpContext to use; defaults to current</param>
         /// <returns>Browser minor version number.</returns>
-        public static string GetBrowserMinorVersion()
+        public static string GetBrowserMinorVersion(HttpContext context = null)
         {
-            if (HttpContext.Current != null)
-            {
-                System.Web.HttpBrowserCapabilities browser = HttpContext.Current.Request.Browser;
-                return browser.MinorVersion.ToString();
-            }
+            context = ContextHelpers.EnsureAppContext(context);
 
-            else
-            {
-                return "0";
-            }
+            System.Web.HttpBrowserCapabilities browser = context.Request.Browser;
+
+            return browser.MinorVersion.ToString();
         }
 
         /// <summary><![CDATA[
         /// Return the IP address of a web visitor.
         /// ]]></summary>
+        /// <param name="context">HttpContext to use; defaults to current</param>
         /// <returns>IP address</returns>
-        public static string GetIPAddress()
+        public static string GetIPAddress(HttpContext context = null)
         {
-            if (HttpContext.Current != null)
-            {
-                if (HttpContext.Current.Request.UserHostAddress == "::1")
-                {
-                    return "127.0.0.1";
-                }
+            context = ContextHelpers.EnsureAppContext(context);
 
-                else
-                {
-                    return HttpContext.Current.Request.UserHostAddress;
-                }
+            if (context.Request.UserHostAddress == "::1")
+            {
+                return "127.0.0.1";
             }
 
             else
             {
-                return "127.0.0.1";
+                return context.Request.UserHostAddress;
             }
         }
 
         /// <summary><![CDATA[
         /// Return the operating system type for the current user agent
         /// ]]></summary>
+        /// <param name="context">HttpContext to use; defaults to current</param>
         /// <returns>Operating friendly system type (e.g. "Mac OS X 10.8").</returns>
-        public static string GetOSType()
+        public static string GetOSType(HttpContext context = null)
         {
             string userAgent = "";
 
-            if (HttpContext.Current != null)
+            context = ContextHelpers.EnsureAppContext(context);
+
+            if (context.Request.UserAgent != null)
             {
-                if (HttpContext.Current.Request.UserAgent != null)
-                {
-                    userAgent = HttpContext.Current.Request.UserAgent;
-                }
+                userAgent = context.Request.UserAgent;
             }
 
             return (GetOSType(userAgent));
