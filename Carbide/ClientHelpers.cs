@@ -296,5 +296,57 @@ namespace Fynydd.Carbide
         {
             RemoveCookie(cookieName, "/", "");
         }
+
+        /// <summary><![CDATA[
+        /// Wrapper method for restrieving a development or staging page banner.
+        /// Styling is in the application.scss file. 
+        /// ]]></summary>
+        /// <example>
+        /// Requires the following Carbide config items:
+        /// <code><![CDATA[
+        /// <add key = "Domain.Staging" value="staging.example.com" />
+        /// <add key = "Banner.Development.Show" value="true" />
+        /// <add key = "Banner.Development.Message" value="DEVELOPMENT SITE" />
+        /// <add key = "Banner.Staging.Show" value="true" />
+        /// <add key = "Banner.Staging.Message" value="STAGING SITE" />
+        /// ]]></code>
+        /// Use in a Razor page:
+        /// <code><![CDATA[
+        /// @Html.Raw(OutputDevelopmentBanner())
+        /// ]]></code>
+        /// </example>
+        public static string OutputDevelopmentBanner()
+        {
+            var debugging = AppStateHelpers.IsDebugging();
+            var domain = HttpHelpers.GetSeoHost();
+            var showBanner = false;
+            var result = "";
+
+            if (debugging)
+            {
+                showBanner = Config.GetKeyValue<bool>("Banner.Development.Show", true, "Fynydd.Carbide");
+
+                if (domain.Contains(Config.GetKeyValue("Domain.Staging", "{not found}", "Fynydd.Carbide")))
+                {
+                    showBanner = Config.GetKeyValue<bool>("Banner.Staging.Show", true, "Fynydd.Carbide");
+                }
+            }
+
+            if (showBanner)
+            {
+                var debugId = "debug-banner";
+                var debugMessage = Config.GetKeyValue("Banner.Development.Message", "DEVELOPMENT", "Fynydd.Carbide");
+
+                if (domain.Contains(Config.GetKeyValue("Domain.Staging", "{not found}", "Fynydd.Carbide")))
+                {
+                    debugId = "staging-banner";
+                    debugMessage = Config.GetKeyValue("Banner.Staging.Message", "STAGING", "Fynydd.Carbide");
+                }
+
+                result = "<section id=\"" + debugId + "\"><span>" + debugMessage + "</span></section>";
+            }
+
+            return result;
+        }
     }
 }
