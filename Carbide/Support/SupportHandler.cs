@@ -6,15 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Web;
-using System.Web.Hosting;
 using System.Web.Http;
-using System.Xml;
 
 using Umbraco.Core.Models;
 using Umbraco.Web;
@@ -25,8 +22,15 @@ using Fynydd.Carbide.Constants;
 
 namespace Fynydd.Carbide
 {
+    /// <summary><![CDATA[
+    /// REST endpoints for using Carbide embedded file resources.
+    /// ]]></summary>
     public class CarbideSupportController : UmbracoApiController
     {
+        /// <summary><![CDATA[
+        /// Get the current Carbide framework version.
+        /// ]]></summary>
+        /// <returns>Version nuumber</returns>
         [HttpGet]
         public HttpResponseMessage Version() // /umbraco/api/carbidesupport/version/
         {
@@ -46,6 +50,11 @@ namespace Fynydd.Carbide
             return response;
         }
 
+        /// <summary><![CDATA[
+        /// Get a Carbide embedded HTML resource.
+        /// ]]></summary>
+        /// <param name="file">HTML file name to retrieve (without the file extension)</param>
+        /// <returns>HTML file contents</returns>
         [HttpGet]
         public HttpResponseMessage Html(string file) // /umbraco/api/carbidesupport/html/?file=DashControl
         {
@@ -74,6 +83,11 @@ namespace Fynydd.Carbide
             return response;
         }
 
+        /// <summary><![CDATA[
+        /// Get a Carbide embedded JavaScript resource.
+        /// ]]></summary>
+        /// <param name="file">JavaScript file name to retrieve (without the file extension)</param>
+        /// <returns>JavaScript file contents</returns>
         [HttpGet]
         public HttpResponseMessage Scripts(string file) // /umbraco/api/carbidesupport/scripts/?file=FormValidationHelpers
         {
@@ -102,6 +116,11 @@ namespace Fynydd.Carbide
             return response;
         }
 
+        /// <summary><![CDATA[
+        /// Get a Carbide embedded SVG resource.
+        /// ]]></summary>
+        /// <param name="file">SVG file name to retrieve (without the file extension)</param>
+        /// <returns>SVG file contents</returns>
         [HttpGet]
         public HttpResponseMessage Svg(string file) // /umbraco/api/carbidesupport/svg/?file=inline-busy-icon
         {
@@ -130,6 +149,11 @@ namespace Fynydd.Carbide
             return response;
         }
 
+        /// <summary><![CDATA[
+        /// Get a Carbide embedded PNG resource.
+        /// ]]></summary>
+        /// <param name="file">PNG file name to retrieve (without the file extension)</param>
+        /// <returns>PNG file contents</returns>
         [HttpGet]
         public HttpResponseMessage Png(string file) // /umbraco/api/carbidesupport/png/?file=carbide-icon
         {
@@ -162,6 +186,10 @@ namespace Fynydd.Carbide
             return response;
         }
 
+        /// <summary><![CDATA[
+        /// Initiate an Umbraco content cache republish, rebuild, and Examine cache rebuild.
+        /// ]]></summary>
+        /// <returns>Operation result text</returns>
         [HttpGet]
         public HttpResponseMessage RebuildCache() // /umbraco/api/carbidesupport/rebuildcache/
         {
@@ -172,7 +200,7 @@ namespace Fynydd.Carbide
                 var context = HttpContext.Current;
 
                 context.Application["RebuildCacheStatus"] = "running";
-				context.Application["RebuildCacheHistory"] = "<h4 style=\"font-size: 1.1rem; margin-bottom: 1.5rem;\">Started " + Temporal.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + Temporal.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</h4>";
+				context.Application["RebuildCacheHistory"] = "<h4 style=\"font-size: 1.1rem; margin-bottom: 1.5rem;\">Started " + TemporalHelpers.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</h4>";
 
                 result = context.Application["RebuildCacheHistory"].ToString();
 
@@ -231,7 +259,7 @@ namespace Fynydd.Carbide
 
                         context.Application.SafeRemove("RebuildCacheStatus");
 
-                        context.Application["RebuildCacheHistory"] = "</li></ol><p><strong>Error in " + timer.GetSeconds<int>() + " seconds on " + Temporal.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + Temporal.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
+                        context.Application["RebuildCacheHistory"] = "</li></ol><p><strong>Error in " + timer.GetSeconds<int>() + " seconds on " + TemporalHelpers.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
 
                         result = context.Application["RebuildCacheHistory"].ToString();
                     }
@@ -258,6 +286,10 @@ namespace Fynydd.Carbide
             return response;
         }
 
+        /// <summary><![CDATA[
+        /// Clear the ImageProcessor file cache.
+        /// ]]></summary>
+        /// <returns>Operation result text</returns>
         [HttpGet]
         public HttpResponseMessage RebuildImageCache() // /umbraco/api/carbidesupport/rebuildimagecache/
         {
@@ -268,7 +300,7 @@ namespace Fynydd.Carbide
                 var context = HttpContext.Current;
 
                 context.Application["RebuildCacheStatus"] = "running";
-                context.Application["RebuildCacheHistory"] = "<h4 style=\"font-size: 1.1rem; margin-bottom: 1.5rem;\">Started " + Temporal.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + Temporal.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</h4>";
+                context.Application["RebuildCacheHistory"] = "<h4 style=\"font-size: 1.1rem; margin-bottom: 1.5rem;\">Started " + TemporalHelpers.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</h4>";
 
                 result = context.Application["RebuildCacheHistory"].ToString();
 
@@ -287,11 +319,11 @@ namespace Fynydd.Carbide
                         context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Clearing cached images... ";
                         timer2.Start();
 
-                        foreach (var folder in Storage.GetFolders("/App_Data/cache/"))
+                        foreach (var folder in StorageHelpers.GetFolders("/App_Data/cache/"))
                         {
-                            Storage.DeleteDirectory("/App_Data/cache/" + folder);
+                            StorageHelpers.DeleteDirectory("/App_Data/cache/" + folder);
 
-                            if (Storage.DirectoryExists("/App_Data/cache/" + folder))
+                            if (StorageHelpers.DirectoryExists("/App_Data/cache/" + folder))
                             {
                                 // Retry up to 5 times after pausing...
 
@@ -305,14 +337,14 @@ namespace Fynydd.Carbide
 
                                     context.Application["RebuildCacheHistory"] = original + "cache/" + folder + " retry " + retry;
 
-                                    Temporal.PauseExecution(1);
+                                    TemporalHelpers.PauseExecution(1);
 
-                                    if (Storage.DirectoryExists("/App_Data/cache/" + folder))
+                                    if (StorageHelpers.DirectoryExists("/App_Data/cache/" + folder))
                                     {
-                                        Storage.DeleteDirectory("/App_Data/cache/" + folder);
+                                        StorageHelpers.DeleteDirectory("/App_Data/cache/" + folder);
                                     }
 
-                                    if (!Storage.DirectoryExists("/App_Data/cache/" + folder))
+                                    if (!StorageHelpers.DirectoryExists("/App_Data/cache/" + folder))
                                     {
                                         retry = 5;
                                     }
@@ -320,7 +352,7 @@ namespace Fynydd.Carbide
 
                                 context.Application["RebuildCacheHistory"] = original;
 
-                                if (Storage.DirectoryExists("/App_Data/cache/" + folder))
+                                if (StorageHelpers.DirectoryExists("/App_Data/cache/" + folder))
                                 {
                                     context.Application["RebuildCacheHistory"] += "<strong style='color:#b94a48;'>cache/" + folder + " locked...</strong> ";
                                 }
@@ -346,7 +378,7 @@ namespace Fynydd.Carbide
 
                         context.Application.SafeRemove("RebuildCacheStatus");
 
-                        context.Application["RebuildCacheHistory"] = "</li></ol><p><strong>Error in " + timer.GetSeconds<int>() + " seconds on " + Temporal.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + Temporal.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
+                        context.Application["RebuildCacheHistory"] = "</li></ol><p><strong>Error in " + timer.GetSeconds<int>() + " seconds on " + TemporalHelpers.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
 
                         result = context.Application["RebuildCacheHistory"].ToString();
                     }
@@ -373,6 +405,10 @@ namespace Fynydd.Carbide
             return response;
         }
 
+        /// <summary><![CDATA[
+        /// Initiate an Umbraco page template pre-cache, so pages load quickly on first request.
+        /// ]]></summary>
+        /// <returns>Operation result text</returns>
         [HttpGet]
         public HttpResponseMessage PrerenderPages() // /umbraco/api/carbidesupport/prerenderpages/
         {
@@ -383,7 +419,7 @@ namespace Fynydd.Carbide
                 var context = HttpContext.Current;
 
                 context.Application["RebuildCacheStatus"] = "running";
-                context.Application["RebuildCacheHistory"] = "<h4 style=\"font-size: 1.1rem; margin-bottom: 1.5rem;\">Started " + Temporal.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + Temporal.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</h4>";
+                context.Application["RebuildCacheHistory"] = "<h4 style=\"font-size: 1.1rem; margin-bottom: 1.5rem;\">Started " + TemporalHelpers.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</h4>";
 
                 result = context.Application["RebuildCacheHistory"].ToString();
 
@@ -438,7 +474,7 @@ namespace Fynydd.Carbide
 
                         context.Application.SafeRemove("RebuildCacheStatus");
 
-                        context.Application["RebuildCacheHistory"] = "</li></ol><p><strong>Error in " + timer.GetSeconds<int>() + " seconds on " + Temporal.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + Temporal.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
+                        context.Application["RebuildCacheHistory"] = "</li></ol><p><strong>Error in " + timer.GetSeconds<int>() + " seconds on " + TemporalHelpers.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
 
                         result = context.Application["RebuildCacheHistory"].ToString();
                     }
@@ -465,6 +501,10 @@ namespace Fynydd.Carbide
             return response;
         }
 
+        /// <summary><![CDATA[
+        /// Get the current status of an Umbraco content cache rebuild.
+        /// ]]></summary>
+        /// <returns>Operation status text</returns>
         [HttpGet]
         public HttpResponseMessage RebuildCacheStatus() // /umbraco/api/carbidesupport/rebuildcachestatus/
         {
@@ -480,6 +520,10 @@ namespace Fynydd.Carbide
             return response;
         }
 
+        /// <summary><![CDATA[
+        /// Get the last complete status of an Umbraco content cache rebuild.
+        /// ]]></summary>
+        /// <returns>Operation status history text</returns>
         [HttpGet]
         public HttpResponseMessage RebuildCacheStatusHistory() // /umbraco/api/carbidesupport/rebuildcachestatushistory/
         {
@@ -523,7 +567,7 @@ namespace Fynydd.Carbide
                         context.Application["RebuildCacheHistory"] += node.GetTemplateAlias() + "... ";
 
                         RestHelper rest = new RestHelper();
-                        rest.Url = context.Request.Url.Scheme + "://" + Http.GetHostWithPort(context) + node.Url;
+                        rest.Url = context.Request.Url.Scheme + "://" + HttpHelpers.GetHostWithPort(context) + node.Url;
                         rest.Timeout = 30000;
                         rest.Call();
 

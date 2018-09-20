@@ -7,15 +7,15 @@ using Yahoo.Yui.Compressor;
 
 namespace Fynydd.Carbide
 {
-    /// <summary>
+    /// <summary><![CDATA[
     /// The Client class contains methods and properties for controlling
     /// client-side objects like cookies, javascript, etc.
-    /// </summary>
-    public static class Client
+    /// ]]></summary>
+    public static class ClientHelpers
     {
-        /// <summary>
+        /// <summary><![CDATA[
         /// Include a URL asset into a web page using relative paths. Optionally add dynamic cachebuster and minify JS and CSS files.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="url">UrlHelper object</param>
         /// <param name="contentPath">Relative path to the asset</param>
         /// <param name="addCacheBuster">If true, appends a cachebuster to the generated URL from the file modification date</param>
@@ -44,11 +44,11 @@ namespace Fynydd.Carbide
                         newContentpath = "_carbide.generated." + filePath;
                     }
 
-                    if (HttpContext.Current.Application.KeyExists(Storage.ConvertFilePathToKey(filePath) + "_MINIFY"))
+                    if (HttpContext.Current.Application.KeyExists(StorageHelpers.ConvertFilePathToKey(filePath) + "_MINIFY"))
                     {
-                        if (Storage.FileExists(filePath))
+                        if (StorageHelpers.FileExists(filePath))
                         {
-                            if (HttpContext.Current.Application[Storage.ConvertFilePathToKey(filePath) + "_MINIFY"].ToString() == Storage.MakeCacheBuster(filePath))
+                            if (HttpContext.Current.Application[StorageHelpers.ConvertFilePathToKey(filePath) + "_MINIFY"].ToString() == StorageHelpers.MakeCacheBuster(filePath))
                             {
                                 filePath = newContentpath;
                                 proceed = false;
@@ -58,9 +58,9 @@ namespace Fynydd.Carbide
 
                     if (proceed)
                     {
-                        if (Storage.FileExists(newContentpath))
+                        if (StorageHelpers.FileExists(newContentpath))
                         {
-                            Storage.DeleteFiles(newContentpath);
+                            StorageHelpers.DeleteFiles(newContentpath);
                         }
 
                         var minified = "";
@@ -68,17 +68,17 @@ namespace Fynydd.Carbide
                         if (filePath.EndsWith(".js"))
                         {
                             var jsc = new JavaScriptCompressor();
-                            minified = jsc.Compress(Storage.ReadFile(filePath));
+                            minified = jsc.Compress(StorageHelpers.ReadFile(filePath));
                         }
 
                         if (filePath.EndsWith(".css"))
                         {
                             var cssc = new CssCompressor();
-                            minified = cssc.Compress(Storage.ReadFile(filePath));
+                            minified = cssc.Compress(StorageHelpers.ReadFile(filePath));
                         }
 
-                        Storage.WriteFile(newContentpath, minified);
-                        HttpContext.Current.Application[Storage.ConvertFilePathToKey(filePath) + "_MINIFY"] = Storage.MakeCacheBuster(filePath);
+                        StorageHelpers.WriteFile(newContentpath, minified);
+                        HttpContext.Current.Application[StorageHelpers.ConvertFilePathToKey(filePath) + "_MINIFY"] = StorageHelpers.MakeCacheBuster(filePath);
 
                         filePath = newContentpath;
 
@@ -94,19 +94,19 @@ namespace Fynydd.Carbide
 
             if (addCacheBuster)
             {
-                queryString += (queryString.Contains("?") ? "&" : "?") + "_cachebuster=" + Storage.MakeCacheBuster(filePath, fallback);
+                queryString += (queryString.Contains("?") ? "&" : "?") + "_cachebuster=" + StorageHelpers.MakeCacheBuster(filePath, fallback);
             }
 
             return url.Content(filePath + queryString);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Determines if a cookie exists.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
-        /// bool cookieExists = Client.CookieExists(Request, "Score");
-        /// </code>
+        /// <code><![CDATA[
+        /// bool cookieExists = ClientHelpers.CookieExists(Request, "Score");
+        /// ]]></code>
         /// </example>
         /// <param name="request">HttpRequest object.</param>
         /// <param name="cookieName">Name of cookie for which to verify its existence.</param>
@@ -124,13 +124,13 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Determines if a cookie exists.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
-        /// bool cookieExists = Client.CookieExists("Score");
-        /// </code>
+        /// <code><![CDATA[
+        /// bool cookieExists = ClientHelpers.CookieExists("Score");
+        /// ]]></code>
         /// </example>
         /// <param name="cookieName">Name of cookie for which to verify its existence.</param>
         /// <returns>True or False</returns>
@@ -147,13 +147,13 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Returns a specified cookie from a specified request object.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
-        /// string cookieVal = Client.GetCookie(Request, "Score");
-        /// </code>
+        /// <code><![CDATA[
+        /// string cookieVal = ClientHelpers.GetCookie(Request, "Score");
+        /// ]]></code>
         /// </example>
         /// <param name="request">HttpRequest object.</param>
         /// <param name="cookieName">Name of cookie to retrieve.</param>
@@ -171,13 +171,13 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Returns a specified cookie from the current request object.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
-        /// string cookieVal = Client.GetCookie("Score");
-        /// </code>
+        /// <code><![CDATA[
+        /// string cookieVal = ClientHelpers.GetCookie("Score");
+        /// ]]></code>
         /// </example>
         /// <param name="cookieName">Name of cookie to retrieve.</param>
         /// <returns>A cookie value.</returns>
@@ -186,13 +186,13 @@ namespace Fynydd.Carbide
             return GetCookie(HttpContext.Current.Request, cookieName);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Create a cookie on the client web browser.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
-        /// Client.SetCookie("Score", "15", "", 7);
-        /// </code>
+        /// <code><![CDATA[
+        /// ClientHelpers.SetCookie("Score", "15", "", 7);
+        /// ]]></code>
         /// </example>
         /// <param name="cookieName">Name of the cookie to create.</param>
         /// <param name="cookieValue">Cookie string value.</param>
@@ -210,13 +210,13 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Create a cookie on the client web browser.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
-        /// Client.SetCookie("Score", "15", "", 7, ".mydomain.com");
-        /// </code>
+        /// <code><![CDATA[
+        /// ClientHelpers.SetCookie("Score", "15", "", 7, ".mydomain.com");
+        /// ]]></code>
         /// </example>
         /// <param name="cookieName">Name of the cookie to create.</param>
         /// <param name="cookieValue">Cookie string value.</param>
@@ -236,13 +236,13 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Remove a cookie from the client web browser.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
-        /// Client.ClearCookie("Score", "/", "mysite.com");
-        /// </code>
+        /// <code><![CDATA[
+        /// ClientHelpers.ClearCookie("Score", "/", "mysite.com");
+        /// ]]></code>
         /// </example>
         /// <param name="cookieName">Name of the cookie to remove.</param>
         /// <param name="path">Virtual web path for cookie ownership (e.g. use "/" for the root web site).</param>
@@ -266,13 +266,13 @@ namespace Fynydd.Carbide
             HttpContext.Current.Response.Cookies[cookieName].Expires = DateTime.Now;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Remove a cookie from the client web browser.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
-        /// Client.ClearCookie("Score", "/");
-        /// </code>
+        /// <code><![CDATA[
+        /// ClientHelpers.ClearCookie("Score", "/");
+        /// ]]></code>
         /// </example>
         /// <param name="cookieName">Name of the cookie to remove.</param>
         /// <param name="path">Virtual web path for cookie ownership (e.g. use "/" for the root web site).</param>
@@ -282,19 +282,71 @@ namespace Fynydd.Carbide
             RemoveCookie(cookieName, path, "");
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Remove a cookie from the client web browser.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
-        /// Client.ClearCookie("Score");
-        /// </code>
+        /// <code><![CDATA[
+        /// ClientHelpers.ClearCookie("Score");
+        /// ]]></code>
         /// </example>
         /// <param name="cookieName">Name of the cookie to remove.</param>
         /// <returns>Nothing.</returns>
         public static void RemoveCookie(string cookieName)
         {
             RemoveCookie(cookieName, "/", "");
+        }
+
+        /// <summary><![CDATA[
+        /// Wrapper method for restrieving a development or staging page banner.
+        /// Styling is in the application.scss file. 
+        /// ]]></summary>
+        /// <example>
+        /// Requires the following Carbide config items:
+        /// <code><![CDATA[
+        /// <add key = "Domain.Staging" value="staging.example.com" />
+        /// <add key = "Banner.Development.Show" value="true" />
+        /// <add key = "Banner.Development.Message" value="DEVELOPMENT SITE" />
+        /// <add key = "Banner.Staging.Show" value="true" />
+        /// <add key = "Banner.Staging.Message" value="STAGING SITE" />
+        /// ]]></code>
+        /// Use in a Razor page:
+        /// <code><![CDATA[
+        /// @Html.Raw(OutputDevelopmentBanner())
+        /// ]]></code>
+        /// </example>
+        public static string OutputDevelopmentBanner()
+        {
+            var debugging = AppStateHelpers.IsDebugging();
+            var domain = HttpHelpers.GetSeoHost();
+            var showBanner = false;
+            var result = "";
+
+            if (debugging)
+            {
+                showBanner = Config.GetKeyValue<bool>("Banner.Development.Show", true, "Fynydd.Carbide");
+
+                if (domain.Contains(Config.GetKeyValue("Domain.Staging", "{not found}", "Fynydd.Carbide")))
+                {
+                    showBanner = Config.GetKeyValue<bool>("Banner.Staging.Show", true, "Fynydd.Carbide");
+                }
+            }
+
+            if (showBanner)
+            {
+                var debugId = "debug-banner";
+                var debugMessage = Config.GetKeyValue("Banner.Development.Message", "DEVELOPMENT", "Fynydd.Carbide");
+
+                if (domain.Contains(Config.GetKeyValue("Domain.Staging", "{not found}", "Fynydd.Carbide")))
+                {
+                    debugId = "staging-banner";
+                    debugMessage = Config.GetKeyValue("Banner.Staging.Message", "STAGING", "Fynydd.Carbide");
+                }
+
+                result = "<section id=\"" + debugId + "\"><span>" + debugMessage + "</span></section>";
+            }
+
+            return result;
         }
     }
 }

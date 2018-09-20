@@ -59,19 +59,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppState.cs" />
+    <Compile Include="AppStateHelpers.cs" />
     <Compile Include="BaseTypes.cs" />
-    <Compile Include="Caching.cs" />
-    <Compile Include="Client.cs" />
-    <Compile Include="Compression.cs" />
+    <Compile Include="CacheHelpers.cs" />
+    <Compile Include="ClientHelpers.cs" />
+    <Compile Include="CompressionHelpers.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="DataReader.cs" />
-    <Compile Include="Email.cs" />
-    <Compile Include="Encryption.cs" />
-    <Compile Include="Http.cs" />
+    <Compile Include="EmailHelpers.cs" />
+    <Compile Include="EncryptionHelpers.cs" />
+    <Compile Include="HttpHelpers.cs" />
     <Compile Include="Identify.cs" />
-    <Compile Include="Imaging.cs" />
+    <Compile Include="ImagingHelpers.cs" />
     <Compile Include="MediaHelpers.cs" />
     <Compile Include="ContextHelpers.cs" />
     <Compile Include="ContentHelpers.cs" />
@@ -79,12 +79,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestHelper.cs" />
     <Compile Include="SeoHelpers.cs" />
-    <Compile Include="SQL.cs" />
-    <Compile Include="Storage.cs" />
+    <Compile Include="SqlHelpers.cs" />
+    <Compile Include="StorageHelpers.cs" />
     <Compile Include="Support\EventHandlers.cs" />
     <Compile Include="Support\FileHandler.cs" />
     <Compile Include="Support\SupportHandler.cs" />
-    <Compile Include="Temporal.cs" />
+    <Compile Include="TemporalHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">

@@ -10,15 +10,14 @@ using Fynydd.Carbide.Constants;
 
 namespace Fynydd.Carbide
 {
-    /// <summary>
+    /// <summary><![CDATA[
     /// The Carbide Mailer class provides a set of methods for sending and manipulating email.
-    /// </summary>
+    /// ]]></summary>
     /// <example>
     /// Make sure you add SMTP server information to your web.config file before using any email methods.
     /// In the Web.config file, only the "MailUseSsl" setting is used for the Mailer class. The other
     /// attributes are used for other classes.
-    /// <code>
-    /// <![CDATA[
+    /// <code><![CDATA[
     /// <system.net>
     ///		<mailSettings>
     ///			<smtp>
@@ -29,18 +28,17 @@ namespace Fynydd.Carbide
     ///			</smtp>
     ///		</mailSettings>
     ///	</system.net>
-    /// ]]>
-    /// </code>
+    /// ]]></code>
     /// </example>
-    public static class Email
+    public static class EmailHelpers
     {
         #region Methods
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Send an email message with optional attachments.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// ArrayList AttachMe = new ArrayList();
         /// AttachMe.Add("/ftp/file1.pdf");
         /// AttachMe.Add("/ftp/file2.pdf");
@@ -55,7 +53,7 @@ namespace Fynydd.Carbide
         ///		"This is the message body.",
         ///		Mailer.MailFormat.PlainText,
         ///		AttachMe);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="senderAddress">From address (i.e. joesmith@party.com).</param>
         /// <param name="senderName">From name (i.e. Joe).</param>
@@ -162,11 +160,11 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Send an email message with optional attachments.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// ArrayList AttachMe = new ArrayList();
         /// AttachMe.Add("/ftp/file1.pdf");
         /// AttachMe.Add("/ftp/file2.pdf");
@@ -179,7 +177,7 @@ namespace Fynydd.Carbide
         ///		"This is the message body.",
         ///		Mailer.MailFormat.PlainText,
         ///		AttachMe);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="senderAddress">From address (i.e. joesmith@party.com).</param>
         /// <param name="senderName">From name (i.e. Joe).</param>
@@ -194,18 +192,18 @@ namespace Fynydd.Carbide
             return Send(senderAddress, senderName, recipient, "", "", subject, body, bodyFormat, attachments, null);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Send an email message.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string result = Mailer.Send(
         ///		"from@domain.com",
         ///		"recipient1@domain.com,recipient2@domain.com",
         ///		"Message subject here",
         ///		"This is the message body.",
         ///		Mailer.MailFormat.PlainText);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="sender">From address (i.e. joesmith@party.com).</param>
         /// <param name="recipient">To address(es), separated by commas.</param>
@@ -219,11 +217,11 @@ namespace Fynydd.Carbide
             return Send(sender, "", recipient, subject, body, bodyFormat, attachments);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Send an email message.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string result = Mailer.Send(
         ///		"from@domain.com",
         ///		"John Sender",
@@ -231,7 +229,7 @@ namespace Fynydd.Carbide
         ///		"Message subject here",
         ///		"This is the message body.",
         ///		Mailer.MailFormat.PlainText);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="sender">From address (i.e. joesmith@party.com).</param>
         /// <param name="senderName">From name (i.e. Joe Smith).</param>
@@ -246,11 +244,11 @@ namespace Fynydd.Carbide
             return Send(sender, senderName, recipient, subject, body, bodyFormat, attachments);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Send an email message.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// string result = Mailer.Send(
         ///		"from@domain.com",
         ///		"John Sender",
@@ -260,7 +258,7 @@ namespace Fynydd.Carbide
         ///		"Message subject here",
         ///		"This is the message body.",
         ///		Mailer.MailFormat.PlainText);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="sender">From address (i.e. joesmith@party.com).</param>
         /// <param name="senderName">From name (i.e. Joe Smith).</param>

@@ -14,23 +14,21 @@ using Fynydd.Carbide.Constants;
 
 namespace Fynydd.Carbide
 {
-    /// <summary>
+    /// <summary><![CDATA[
     /// The ContextHelpers class has static methods and properties for 
     /// ensuring and establishing contexts.
-    /// </summary>
+    /// ]]></summary>
     /// <example>
     /// For example, you can make calls like this:
-    /// <code>
-    /// <![CDATA[
+    /// <code><![CDATA[
     /// var helper = new UmbracoHelper(ContextHelpers.EnsureUmbracoContext());
-    /// ]]>
-    /// </code>
+    /// ]]></code>
     /// </example>
     public static class ContextHelpers
     {
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return an UmbracoContext. For use in controllers and threads that need access to Umbraco Helper, etc.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// var context = ContextHelper.EnsureUmbracoContext();
         /// var helper = new UmbracoHelper(context);
@@ -57,7 +55,7 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Establish an UmbracoContext. For use in controllers and threads that need access to Umbraco Helper, etc.
         /// <example>
         /// Thread workerThread = new Thread(new ThreadStart(() =>
@@ -65,7 +63,7 @@ namespace Fynydd.Carbide
         ///     ContextHelpers.EstablishUmbracoContext();
         ///     ...
         /// </example>
-        /// </summary>
+        /// ]]></summary>
         public static void EstablishUmbracoContext()
         {
             if (UmbracoContext.Current == null)
@@ -80,6 +78,23 @@ namespace Fynydd.Carbide
                     UrlProviderResolver.Current.Providers,
                     false);
             }
+        }
+
+        /// <summary><![CDATA[
+        /// Helper to set a context variable with the current context if it is null.
+        /// ]]></summary>
+        /// <param name="context">HttpContext to evaluate</param>
+        /// <returns>Passed context, or Current if null</returns>
+        public static HttpContext EnsureAppContext(HttpContext context = null)
+        {
+            HttpContext result = context;
+
+            if (result == null)
+            {
+                result = HttpContext.Current;
+            }
+
+            return result;
         }
     }
 }

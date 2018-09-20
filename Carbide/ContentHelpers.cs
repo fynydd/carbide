@@ -23,17 +23,15 @@ using Yahoo.Yui.Compressor;
 
 namespace Fynydd.Carbide
 {
-    /// <summary>
+    /// <summary><![CDATA[
     /// The ContentHelpers class provides useful methods
     /// for using Umbraco content and properties.
-    /// </summary>
+    /// ]]></summary>
     /// <example>
     /// For example, you can work with IPublishedContent like this:
-    /// <code>
-    /// <![CDATA[
+    /// <code><![CDATA[
     /// var udi = Model.GetUdi();
-    /// ]]>
-    /// </code>
+    /// ]]></code>
     /// </example>
     public static class ContentHelpers
     {
@@ -133,11 +131,11 @@ namespace Fynydd.Carbide
 
         #region IPublishedContent property retrieval and evaluation
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// UDIs are required for setting picker content values, etc. in ContentService, and
         /// many other places, since numeric content Ids are being phased out. This method gets the
         /// UDI for a single IPublishedContent object.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="content">The current IPublishedContent content object</param>
         /// <returns>UDI (e.g. "umb://document/28b551d1e9e74c758686604c9168b910")</returns>
         public static string GetUdi(this IPublishedContent content)
@@ -153,9 +151,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get a single content picker item from a content node property.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// var content = Model.SafeGetContentPickerItem("destinationPage");
         /// </example>
@@ -168,9 +166,9 @@ namespace Fynydd.Carbide
             return _ReturnContentItem(contentNode, propertyName, IPublishedContentType.Content, recurseAncestors);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get a single media picker item from a content node property.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// var siteLogo = Model.SafeGetMediaPickerItem("heroSiteLogo", true);
         /// </example>
@@ -183,9 +181,9 @@ namespace Fynydd.Carbide
             return _ReturnContentItem(contentNode, propertyName, IPublishedContentType.Media, recurseAncestors);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get a single media picker item from a content node property, and return its URL.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// var heroBackgroundImageUrl = Model.SafeGetMediaPickerItemUrl("heroBackgroundImage");
         /// </example>
@@ -193,7 +191,7 @@ namespace Fynydd.Carbide
         /// <param name="propertyName">Name of the media picker item property</param>
         /// <param name="width">Width in pixels for the generated image.</param>
         /// <param name="quality">Quality from 0-100 of the generated image. Lower quality yields a smaller file size.</param>
-        /// <param name="filters">Additional filters for ImageProcessor (e.g. "tint=red&brightness=10")</param>
+        /// <param name="filters"><![CDATA[Additional filters for ImageProcessor (e.g. "tint=red&brightness=10")]]></param>
         /// <param name="recurseAncestors">Recurse ancestors until a property value is present; defaults to false</param>
         /// <returns>URL to the picker item. If the picker item is null, an empty string is returned.</returns>
         public static string SafeGetMediaPickerItemUrl(this IPublishedContent contentNode, string propertyName, int width = 800, int quality = 80, string filters = "", bool recurseAncestors = false)
@@ -208,9 +206,9 @@ namespace Fynydd.Carbide
             return url;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get a single media picker item from a content node property, and return its URL.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// var heroBackgroundImageUrl = Model.SafeGetMediaPickerItemUrl("heroBackgroundImage");
         /// </example>
@@ -223,9 +221,9 @@ namespace Fynydd.Carbide
             return SafeGetMediaPickerItemUrl(contentNode, propertyName, 800, 80, "", recurseAncestors);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get a single media picker item from a content node property, and return its URL.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// var heroBackgroundImageUrl = Model.SafeGetMediaPickerItemUrl("heroBackgroundImage");
         /// </example>
@@ -237,9 +235,9 @@ namespace Fynydd.Carbide
             return SafeGetMediaPickerItemUrl(contentNode, propertyName, 800, 80, "", false);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get a single content picker item from a content node property, and return its URL.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// var pageUrl = Model.SafeGetContentPickerItemUrl("childPage");
         /// </example>
@@ -252,11 +250,11 @@ namespace Fynydd.Carbide
             return _ReturnContentItemUrl(contentNode, propertyName, IPublishedContentType.Content, recurseAncestors);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get a single media item from a content node whose Document Type uses a Media Picker 
         /// to store a single media item as a property value, and return markup to display the item
 		/// based on tags passed to the method.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// var heroBackgroundImageMarkup = Model.SafeGetMediaItemMarkup("heroBackgroundImage", "span img");
         /// </example>
@@ -342,15 +340,17 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Safely get a property value by type. For supported types min values are returned
         /// (e.g. <int> returns 0, <bool> returns false, etc.) when the property does not exist
         /// or if the property returns null. Null is only returned if a type is not supported.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
+        /// <code><![CDATA[
         /// var brandUrl = siteLogo.SafeGetValue<string>("brandUrl");
         /// var proceed = siteLogo.SafeGetValue<bool>("shouldWeProceed");
         /// var value = siteLogo.SafeGetValue<int>("quantityItems");
+        /// ]]></code>
         /// </example>
         /// <param name="contentNode">The current content node as an IPublishedContent object</param>
         /// <param name="propertyName">Name of the property for which a string value is desired</param>
@@ -425,10 +425,10 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Safely get a property value as string. An empty string is returned when the property does not exist
         /// or if the property returns null.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// var brandUrl = siteLogo.SafeGetValue("brandUrl");
         /// </example>
@@ -441,11 +441,11 @@ namespace Fynydd.Carbide
             return SafeGetValue<string>(contentNode, propertyName, recurseAncestors);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Safely get items from a Multinode Tree Picker or multiple media items stored in a property.
         /// If the property is null an empty IEnumerable is returned to avoid exceptions, and so a simple 
         /// foreach loop can be used without being wrapped if an if/else statement.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// var socialLinks = Model.SafeGetPickerItems("heroSocialLinks");
         /// foreach (var socialLink in socialLinks)
@@ -489,11 +489,11 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Safely get items from a nested content picker stored in a property. If the property 
         /// is null an empty IEnumerable is returned to avoid exceptions, and so a simple 
         /// foreach loop can be used without being wrapped if an if/else statement.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// var socialLinks = Model.SafeGetNestedContentItems("heroSocialLinks");
         /// foreach (var socialLink in socialLinks)
@@ -509,11 +509,11 @@ namespace Fynydd.Carbide
             return contentNode.SafeGetPickerItems(propertyName, recurseAncestors);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Safely get the get best property value as string. Pass a list of property names in order of preference
         /// from worst to best, and get the best value available. Useful for getting navigation menu text from
         /// various node name-like properties (e.g. name -> title -> menuName).
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// var menuText = Model.SafeGetBestValueAsString("name", "title", "menuText");
         /// </example>
@@ -546,11 +546,11 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get a single media item from a content node whose Document Type uses a Media Picker 
         /// to store a single media item as a property value, and return auto-generated markup
         /// based on the type of image.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// var heroImageMarkup = Model.SafeGetImageMarkup("heroImage");
         /// </example>
@@ -594,9 +594,9 @@ namespace Fynydd.Carbide
             return markup;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return a string array of tags from a tags property.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="contentNode">The current content node as an IPublishedContent object</param>
 		/// <param name="propertyName">Name of the content item property.</param>
         /// <returns>String array of tags</returns>
@@ -635,9 +635,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Determine if a content picker or multi-node tree picker property contains an item with a specific value.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="contentNode">The current content node as an IPublishedContent object</param>
 		/// <param name="propertyName">Name of the content item property.</param>
         /// <param name="subPropertyName">Name of the picker item property to evaluate.</param>
@@ -672,9 +672,9 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Determine if a content picker or multi-node tree picker property has an item that contains a specific substring value.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="contentNode">The current content node as an IPublishedContent object</param>
         /// <param name="propertyName">Name of the content item property.</param>
         /// <param name="subPropertyName">Name of the picker item property to evaluate.</param>
@@ -697,9 +697,9 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Determine if a nested content property contains an item with a specific value.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="contentNode">The current content node as an IPublishedContent object</param>
         /// <param name="propertyName">Name of the content item property.</param>
         /// <param name="subPropertyName">Name of the nested content property to evaluate.</param>
@@ -711,9 +711,9 @@ namespace Fynydd.Carbide
             return HasTreePickerValue(contentNode, propertyName, subPropertyName, value, ignoreCase);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Determine if a nested content property has an item that contains a specific substring value.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="contentNode">The current content node as an IPublishedContent object</param>
         /// <param name="propertyName">Name of the content item property.</param>
         /// <param name="subPropertyName">Name of the nested content property to evaluate.</param>
@@ -725,9 +725,9 @@ namespace Fynydd.Carbide
             return ContainsTreePickerValue(contentNode, propertyName, subPropertyName, value, ignoreCase);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Safely get the prevalue of a selected radio list item as a string.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// var choice = Model.SafeGetPrevalue("DevOrLive");
         /// </example>
@@ -757,11 +757,11 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Determine if a selected radio button list item prevalue has a substring.
         /// For example, in a radio button list list where the choices are "Item 1", 
         /// "Item 2", "Item 3", and "Item 2" is selected, the following is true:
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// bool hasValue = Model.SelectedPrevalueContains("MyRadioList", "2");
         /// </example>
@@ -776,11 +776,11 @@ namespace Fynydd.Carbide
             return (SafeGetPrevalue(contentNode, propertyName).IndexOf(subString, (ignoreCase ? StringComparison.InvariantCultureIgnoreCase : StringComparison.InvariantCulture)) >= 0);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Determine if a list of items (like checkbox list) has a selected item with a prevalue 
         /// that contains a (case insensitive) substring. For example, in a checkbox list where the 
         /// choices are "Item 1", "Item 2", "Item 3", and "Item 2" is selected, the following is true:
-        /// </summary>
+        /// ]]></summary>
         /// <example>
         /// bool hasValues = Model.SelectedPrevaluesContain("MyCheckboxList", "2");
         /// </example>
@@ -797,9 +797,9 @@ namespace Fynydd.Carbide
             return (string.IsNullOrEmpty(result) ? false : true);
         }
 
-		/// <summary>
+		/// <summary><![CDATA[
 		/// Generate a responsive image tag from a media picker image property.
-		/// </summary>
+		/// ]]></summary>
 		/// <returns>HTML5 image tag with sizes and srcset attributes</returns>
 		/// <param name="contentNode">The current content node as an IPublishedContent object</param>
         /// <param name="propertyName">Name of the media picker property.</param>
@@ -911,10 +911,10 @@ namespace Fynydd.Carbide
 
         #region IPublishedContent node retrieval methods
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get a single IPublishedContent node by its document type alias.
         /// Searches the current node's descendants, stopping at the first match.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="contentNode">The current content node as an IPublishedContent object</param>
         /// <param name="documentTypeAlias">Document type alias (e.g. "blogArticle")</param>
         /// <returns>Single matching IPublishedContent node.</returns>
@@ -926,10 +926,10 @@ namespace Fynydd.Carbide
                 .FirstOrDefault();
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get all IPublishedContent nodes by their document type aliases.
         /// Searches from the current node's descendants, returning all matches.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="contentNode">The current content node as an IPublishedContent object</param>
         /// <param name="documentTypeAlias">Document type alias (e.g. "blogArticle")</param>
         /// <returns>All matching IPublishedContent nodes.</returns>
@@ -952,12 +952,13 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get a single IPublishedContent node by its node name.
         /// Searches from the current node's descendants, stopping
         /// at the first match.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="nodeName">Node name (e.g. "Home Page")</param>
+        /// <param name="contentNode">Parent content node to search</param>
         /// <returns>Single matching IPublishedContent node.</returns>
         public static IPublishedContent GetContentByName(this IPublishedContent contentNode, string nodeName)
         {
@@ -967,9 +968,9 @@ namespace Fynydd.Carbide
                 .FirstOrDefault();
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get a single IPublishedContent node by its Id.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="Id">Content node Id</param>
         /// <returns>Single matching IPublishedContent item.</returns>
         public static IPublishedContent GetContentById(int Id)
@@ -979,9 +980,9 @@ namespace Fynydd.Carbide
             return umbracoHelper.TypedContent(Id);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get a single IPublishedContent node by its Id.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="Id">Content node Id</param>
         /// <returns>Single matching IPublishedContent item.</returns>
         public static IPublishedContent GetContentById(string Id)
@@ -991,9 +992,9 @@ namespace Fynydd.Carbide
             return umbracoHelper.TypedContent(Id);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get a single IPublishedContent node in the site root by its document type alias.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="documentTypeAlias">Document type alias (e.g. "homePage")</param>
         /// <returns>Single matching IPublishedContent root node.</returns>
         public static IPublishedContent GetRootContentByDocTypeAlias(string documentTypeAlias)
@@ -1005,11 +1006,11 @@ namespace Fynydd.Carbide
                 .FirstOrDefault();
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get a single IPublishedContent node by its document type alias.
         /// Searches from the site root down through descendants, stopping
         /// at the first match.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="documentTypeAlias">Document type alias (e.g. "blogArticle")</param>
         /// <returns>Single matching IPublishedContent node.</returns>
         public static IPublishedContent GetContentByDocTypeAlias(string documentTypeAlias)
@@ -1022,11 +1023,11 @@ namespace Fynydd.Carbide
                 .FirstOrDefault();
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get all IPublishedContent nodes by their document type aliases.
         /// Searches from the site root down through descendants, returning
         /// all matches.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="documentTypeAlias">Document type alias (e.g. "blogArticle")</param>
         /// <returns>All matching IPublishedContent nodes.</returns>
         public static IEnumerable<IPublishedContent> GetAllContentByDocTypeAlias(string documentTypeAlias)
@@ -1049,11 +1050,11 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get a single IPublishedContent node by its node name.
         /// Searches from the site root down through descendants, stopping
         /// at the first match.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="nodeName">Node name (e.g. "Home Page")</param>
         /// <returns>Single matching IPublishedContent node.</returns>
         public static IPublishedContent GetContentByName(string nodeName)

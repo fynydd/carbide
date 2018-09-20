@@ -4,19 +4,22 @@ using System.Drawing.Imaging;
 
 namespace Fynydd.Carbide
 {
-    public static class Imaging
+    /// <summary><![CDATA[
+    /// Various helper methods for processing images.
+    /// ]]></summary>
+    public static class ImagingHelpers
     {
-        /// <summary>
+        /// <summary><![CDATA[
         /// Resize an image on disk, constraining proportions
         /// (handles BMP, JPEG, GIF, TIFF, PNG); maintains
         /// transparency of PNG images. Filenames determine
         /// file types used automatically.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// Rectangle cropArea = new Rectangle(0, 0, 0, 0);
-        /// string finalPath = Imaging.ResizeImage("/portfolio/picture01.jpg", 80, 320, 0, "/portfolio/temp/upload.jpg", cropArea);
-        /// </code>
+        /// string finalPath = ImagingHelpers.ResizeImage("/portfolio/picture01.jpg", 80, 320, 0, "/portfolio/temp/upload.jpg", cropArea);
+        /// ]]></code>
         /// </example>
         /// <param name="imageSavePath">Web-style path with filename for the final resized image.</param>
         /// <param name="quality">Quality setting from 1 to 100 (for JPEG only; 0 for other types).</param>
@@ -156,16 +159,16 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Resize an image on disk, constraining proportions
         /// (handles BMP, JPEG, GIF, TIFF, PNG); maintains
         /// transparency of PNG images. Filenames determine
         /// file types used automatically.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
-        /// string finalPath = Imaging.ResizeImage("/portfolio/picture01.jpg", 80, 320, 0, "/portfolio/temp/upload.jpg");
-        /// </code>
+        /// <code><![CDATA[
+        /// string finalPath = ImagingHelpers.ResizeImage("/portfolio/picture01.jpg", 80, 320, 0, "/portfolio/temp/upload.jpg");
+        /// ]]></code>
         /// </example>
         /// <param name="imageSavePath">Web-style path with filename for the final resized image.</param>
         /// <param name="quality">Quality setting from 1 to 100 (for JPEG only; 0 for other types).</param>
@@ -180,13 +183,13 @@ namespace Fynydd.Carbide
             return ResizeImage(imageSavePath, quality, maxWidth, maxHeight, path, cropArea);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Load an image from disk and crop, returning cropped System.Drawing.Image object.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
-        /// Image croppedImage = Imaging.CropImage("/portfolio/picture01jpg", 320, 0, 0, 0);
-        /// </code>
+        /// <code><![CDATA[
+        /// Image croppedImage = ImagingHelpers.CropImage("/portfolio/picture01jpg", 320, 0, 0, 0);
+        /// ]]></code>
         /// </example>
         /// <param name="path">Web-style path to the source image file.</param>
         /// <param name="Width">Crop width.</param>

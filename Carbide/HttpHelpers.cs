@@ -8,56 +8,65 @@ using System.IO;
 
 namespace Fynydd.Carbide
 {
-    public static class Http
+    /// <summary><![CDATA[
+    /// Various helper methods for managing HTTP requests, browser identification, query string parsing, etc.
+    /// ]]></summary>
+    public static class HttpHelpers
     {
         #region Host / domain
 
         /// <summary>
-        /// Get the fully qualified domain name of the current URL.
+        /// Return the current domain name. If on a port other than 80 or 443, append the port.
         /// </summary>
-        /// <returns>Domain name (FQDN).</returns>
-        public static string GetHost()
+        /// <param name="context">HttpContext (defaults to Current)</param>
+        /// <returns>Current domain, with non-standard port if in-use</returns>
+        public static string GetSeoHost(HttpContext context = null)
         {
-            return HttpContext.Current.Request.Url.Host;
+            context = ContextHelpers.EnsureAppContext(context);
+
+            var domain = context.Request.Url.Host.ToLower();
+
+            if (context.Request.Url.Port != 80 && context.Request.Url.Port != 443)
+            {
+                domain += ":" + context.Request.Url.Port;
+            }
+
+            return domain;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get the fully qualified domain name of the current URL.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="context">Context to use</param>
         /// <returns>Domain name (FQDN).</returns>
-        public static string GetHost(HttpContext context)
+        public static string GetHost(HttpContext context = null)
         {
+            context = ContextHelpers.EnsureAppContext(context);
+
             return context.Request.Url.Host;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get the fully qualified domain name of the current URL with port.
-        /// </summary>
-        /// <returns>Domain name (FQDN) with a colon and a port number.</returns>
-        public static string GetHostWithPort()
-        {
-            return HttpContext.Current.Request.Url.Host + ":" + HttpContext.Current.Request.Url.Port;
-        }
-
-        /// <summary>
-        /// Get the fully qualified domain name of the current URL with port.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="context">Context to use</param>
         /// <returns>Domain name (FQDN) with a colon and a port number.</returns>
-        public static string GetHostWithPort(HttpContext context)
+        public static string GetHostWithPort(HttpContext context = null)
         {
+            context = ContextHelpers.EnsureAppContext(context);
+
             return context.Request.Url.Host + ":" + context.Request.Url.Port;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get the root domain from the fully qualified domain name of the current URL.
         /// (e.g. if visiting "www.mydomain.com", "mydomain.com" is returned.)
-        /// </summary>
+        /// ]]></summary>
+        /// <param name="context">Http context to use; defaults to current</param>
         /// <returns>Root domain name.</returns>
-        public static string GetHostRoot()
+        public static string GetHostRoot(HttpContext context = null)
         {
-            String fqdn = GetHost();
+            String fqdn = GetHost(context);
             String dn = fqdn;
             String[] dnParts = fqdn.Split('.');
 
@@ -73,13 +82,13 @@ namespace Fynydd.Carbide
 
         #region Get and Post web pages and files
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Perform an Http GET operation, and return the result.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
-        /// string result = Http.GetWebPage("http://www.site.com");
-        /// </code>
+        /// <code><![CDATA[
+        /// string result = HttpHelpers.GetWebPage("http://www.site.com");
+        /// ]]></code>
         /// </example>
         /// <param name="url">Fully qualified URL to the remote page.</param>
         /// <returns>A string with the result from the GET operation.</returns>
@@ -88,14 +97,14 @@ namespace Fynydd.Carbide
             return GetWebPage(url, GetWebPageMethod.Get, null, null, null, null);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Perform an Http GET operation, and return the result.
         /// Timeout in milliseconds is passed as well.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
-        /// string result = Http.GetWebPage("http://www.site.com");
-        /// </code>
+        /// <code><![CDATA[
+        /// string result = HttpHelpers.GetWebPage("http://www.site.com");
+        /// ]]></code>
         /// </example>
         /// <param name="url">Fully qualified URL to the remote page.</param>
         /// <param name="timeoutMilliseconds">Timeout in milliseconds for the request.</param>
@@ -105,13 +114,13 @@ namespace Fynydd.Carbide
             return GetWebPage(url, GetWebPageMethod.Get, null, null, null, null, timeoutMilliseconds);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Perform an Http GET operation, passing cookies, and return the result.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
-        /// string result = Http.GetWebPage("http://www.site.com", myCookies);
-        /// </code>
+        /// <code><![CDATA[
+        /// string result = HttpHelpers.GetWebPage("http://www.site.com", myCookies);
+        /// ]]></code>
         /// </example>
         /// <param name="url">Fully qualified URL to the remote page.</param>
         /// <param name="cookies">CookieContainer variable for sending cookies.</param>
@@ -121,13 +130,13 @@ namespace Fynydd.Carbide
             return GetWebPage(url, GetWebPageMethod.Get, cookies, null, null, null);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Perform an Http GET or POST operation, and return the result.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
-        /// string result = Http.GetWebPage("http://www.site.com", Carbide.Http.GetWebPageMethod.Get, postData);
-        /// </code>
+        /// <code><![CDATA[
+        /// string result = HttpHelpers.GetWebPage("http://www.site.com", HttpHelpers.GetWebPageMethod.Get, postData);
+        /// ]]></code>
         /// </example>
         /// <param name="url">Fully qualified URL to the remote page.</param>
         /// <param name="method">GetWebPageMethod enum value.</param>
@@ -138,13 +147,13 @@ namespace Fynydd.Carbide
             return GetWebPage(url, method, null, postData, null, null);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Perform an Http GET operation, passing credentials, and return the result.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
-        /// string result = Http.GetWebPage("http://www.site.com", "jsmith", "password");
-        /// </code>
+        /// <code><![CDATA[
+        /// string result = HttpHelpers.GetWebPage("http://www.site.com", "jsmith", "password");
+        /// ]]></code>
         /// </example>
         /// <param name="url">Fully qualified URL to the remote page.</param>
         /// <param name="userName">User name string for Windows Authentication.</param>
@@ -155,14 +164,14 @@ namespace Fynydd.Carbide
             return GetWebPage(url, GetWebPageMethod.Get, null, null, userName, password);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Perform an Http GET or POST operation, passing cookies, post data,
         /// user name and password, and return the result.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
-        /// string result = Http.GetWebPage("http://www.site.com", Http.GetWebPageMethod.Get, cookies, postData, "jsmith", "password");
-        /// </code>
+        /// <code><![CDATA[
+        /// string result = HttpHelpers.GetWebPage("http://www.site.com", HttpHelpers.GetWebPageMethod.Get, cookies, postData, "jsmith", "password");
+        /// ]]></code>
         /// </example>
         /// <param name="url">Fully qualified URL to the remote page.</param>
         /// <param name="method">GetWebPageMethod enum value.</param>
@@ -232,14 +241,14 @@ namespace Fynydd.Carbide
             return response;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Perform an Http GET or POST operation, passing cookies, post data,
         /// user name and password, and return the result.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
-        /// string result = Http.GetWebPage("http://www.site.com", Http.GetWebPageMethod.Get, cookies, postData, "jsmith", "password");
-        /// </code>
+        /// <code><![CDATA[
+        /// string result = HttpHelpers.GetWebPage("http://www.site.com", HttpHelpers.GetWebPageMethod.Get, cookies, postData, "jsmith", "password");
+        /// ]]></code>
         /// </example>
         /// <param name="url">Fully qualified URL to the remote page.</param>
         /// <param name="method">GetWebPageMethod enum value.</param>
@@ -253,9 +262,9 @@ namespace Fynydd.Carbide
             return GetWebPage(url, method, cookies, postData, userName, password, 300000);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read a binary file from a URL and write it to disk.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="url">URL to the web resource.</param>
         /// <param name="filePath">Web-style path for the destination file on disk, including new file name.</param>
         /// <returns>Number of bytes read, or zero if no file was returned.</returns>
@@ -307,67 +316,75 @@ namespace Fynydd.Carbide
 
         #region Browser and OS identification
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the version of Internet Explorer being used
         /// or -1 if the request came from another browser.
-        /// </summary>
+        /// ]]></summary>
+        /// <param name="context">Http context to use; defaults to current</param>
         /// <returns>Version of IE, or -1 if not IE.</returns>
-        public static double GetInternetExplorerVersion()
+        public static double GetInternetExplorerVersion(HttpContext context = null)
         {
             double ver;
 
-            ver = GetBrowserVersion("IE");
+            ver = GetBrowserVersion("IE", context);
 
             if (ver == -1)
             {
-                ver = GetBrowserVersion("InternetExplorer");
+                ver = GetBrowserVersion("InternetExplorer", context);
             }
 
             return ver;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the version of Mozilla Firefox being used
         /// or -1 if the request came from another browser.
-        /// </summary>
+        /// ]]></summary>
+        /// <param name="context">Http context to use; defaults to current</param>
         /// <returns>Version of Firefox, or -1 if not Firefox.</returns>
-        public static double GetFirefoxVersion()
+        public static double GetFirefoxVersion(HttpContext context = null)
         {
-            return GetBrowserVersion("Firefox");
+            return GetBrowserVersion("Firefox", context);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the version of Apple Safari being used
         /// or -1 if the request came from another browser.
-        /// </summary>
+        /// ]]></summary>
+        /// <param name="context">Http context to use; defaults to current</param>
         /// <returns>Version of Safari, or -1 if not Safari.</returns>
-        public static double GetSafariVersion()
+        public static double GetSafariVersion(HttpContext context = null)
         {
-            return GetBrowserVersion("Safari");
+            return GetBrowserVersion("Safari", context);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the version of Google Chrome being used
         /// or -1 if the request came from another browser.
-        /// </summary>
+        /// ]]></summary>
+        /// <param name="context">Http context to use; defaults to current</param>
         /// <returns>Version of Safari, or -1 if not Safari.</returns>
-        public static double GetChromeVersion()
+        public static double GetChromeVersion(HttpContext context = null)
         {
-            return GetBrowserVersion("Chrome");
+            return GetBrowserVersion("Chrome", context);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the version of specific browser based on HTTP headers
         /// or -1 if the request came from another browser.
-        /// </summary>
+        /// ]]></summary>
+        /// <param name="browserName">Web browser name to query</param>
+        /// <param name="context">HttpContext to use; defaults to current</param>
         /// <returns>Version of the browser, or -1 if not the requested browser.</returns>
-        public static double GetBrowserVersion(string browserName)
+        public static double GetBrowserVersion(string browserName, HttpContext context = null)
         {
             // Returns the version of Mozilla Firefox or a -1
             // (indicating the use of another browser).
             double rv = -1;
 
-            System.Web.HttpBrowserCapabilities browser = HttpContext.Current.Request.Browser;
+            context = ContextHelpers.EnsureAppContext(context);
+
+            System.Web.HttpBrowserCapabilities browser = context.Request.Browser;
 
             if (browser.Browser.ToLower().EndsWith(browserName.ToLower()))
             {
@@ -377,22 +394,18 @@ namespace Fynydd.Carbide
             return rv;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the browser name.
-        /// </summary>
+        /// ]]></summary>
+        /// <param name="context">HttpContext to use; defaults to current</param>
         /// <returns>Browser name.</returns>
-        public static string GetBrowserName()
+        public static string GetBrowserName(HttpContext context = null)
         {
-            if (HttpContext.Current != null)
-            {
-                System.Web.HttpBrowserCapabilities browser = HttpContext.Current.Request.Browser;
-                return browser.Browser;
-            }
+            context = ContextHelpers.EnsureAppContext(context);
 
-            else
-            {
-                return "Unknown";
-            }
+            System.Web.HttpBrowserCapabilities browser = context.Request.Browser;
+
+            return browser.Browser;
         }
 
         private static string BuildMatch(string pattern, string userAgent, string browser, int versionIndex, string browserNameVersionFallback, out string browserName, out long majorVersion, out long minorVersion, out long buildVersion)
@@ -473,9 +486,9 @@ namespace Fynydd.Carbide
             return browser;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the browser name and version.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="userAgent">Browser user agent string</param>
         /// <returns>Browser name.</returns>
         public static string GetBrowser(string userAgent)
@@ -488,9 +501,9 @@ namespace Fynydd.Carbide
             return GetBrowser(userAgent, out majorVersion, out minorVersion, out buildVersion, out browserName);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the browser name and version.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="userAgent">Browser user agent string</param>
         /// <param name="majorVersion">Output of major version</param>
         /// <param name="minorVersion">Output of minor version</param>
@@ -781,89 +794,76 @@ namespace Fynydd.Carbide
             return browser;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the browser major version number.
-        /// </summary>
+        /// ]]></summary>
+        /// <param name="context">HttpContext to use; defaults to current</param>
         /// <returns>Browser major version number.</returns>
-        public static string GetBrowserMajorVersion()
+        public static string GetBrowserMajorVersion(HttpContext context = null)
         {
-            if (HttpContext.Current != null)
-            {
-                System.Web.HttpBrowserCapabilities browser = HttpContext.Current.Request.Browser;
-                return browser.MajorVersion.ToString();
-            }
+            context = ContextHelpers.EnsureAppContext(context);
 
-            else
-            {
-                return "0";
-            }
+            System.Web.HttpBrowserCapabilities browser = context.Request.Browser;
+
+            return browser.MajorVersion.ToString();
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the browser minor version number.
-        /// </summary>
+        /// ]]></summary>
+        /// <param name="context">HttpContext to use; defaults to current</param>
         /// <returns>Browser minor version number.</returns>
-        public static string GetBrowserMinorVersion()
+        public static string GetBrowserMinorVersion(HttpContext context = null)
         {
-            if (HttpContext.Current != null)
-            {
-                System.Web.HttpBrowserCapabilities browser = HttpContext.Current.Request.Browser;
-                return browser.MinorVersion.ToString();
-            }
+            context = ContextHelpers.EnsureAppContext(context);
 
-            else
-            {
-                return "0";
-            }
+            System.Web.HttpBrowserCapabilities browser = context.Request.Browser;
+
+            return browser.MinorVersion.ToString();
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the IP address of a web visitor.
-        /// </summary>
+        /// ]]></summary>
+        /// <param name="context">HttpContext to use; defaults to current</param>
         /// <returns>IP address</returns>
-        public static string GetIPAddress()
+        public static string GetIPAddress(HttpContext context = null)
         {
-            if (HttpContext.Current != null)
-            {
-                if (HttpContext.Current.Request.UserHostAddress == "::1")
-                {
-                    return "127.0.0.1";
-                }
+            context = ContextHelpers.EnsureAppContext(context);
 
-                else
-                {
-                    return HttpContext.Current.Request.UserHostAddress;
-                }
-            }
-
-            else
+            if (context.Request.UserHostAddress == "::1")
             {
                 return "127.0.0.1";
             }
+
+            else
+            {
+                return context.Request.UserHostAddress;
+            }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the operating system type for the current user agent
-        /// </summary>
+        /// ]]></summary>
+        /// <param name="context">HttpContext to use; defaults to current</param>
         /// <returns>Operating friendly system type (e.g. "Mac OS X 10.8").</returns>
-        public static string GetOSType()
+        public static string GetOSType(HttpContext context = null)
         {
             string userAgent = "";
 
-            if (HttpContext.Current != null)
+            context = ContextHelpers.EnsureAppContext(context);
+
+            if (context.Request.UserAgent != null)
             {
-                if (HttpContext.Current.Request.UserAgent != null)
-                {
-                    userAgent = HttpContext.Current.Request.UserAgent;
-                }
+                userAgent = context.Request.UserAgent;
             }
 
             return (GetOSType(userAgent));
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the operating system type and version for the current user agent
-        /// </summary>
+        /// ]]></summary>
         /// <param name="userAgent">Web browser User Agent string</param>
         /// <returns>Operating friendly system type (e.g. "Mac OS X 10.8").</returns>
         public static string GetOSType(string userAgent)
@@ -876,9 +876,9 @@ namespace Fynydd.Carbide
             return GetOSType(userAgent, out majorVersion, out minorVersion, out buildVersion, out osName);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the operating system type for the current user agent
-        /// </summary>
+        /// ]]></summary>
         /// <param name="userAgent">Web browser User Agent string</param>
         /// <param name="majorVersion">Output of major version</param>
         /// <param name="minorVersion">Output of minor version</param>
@@ -1194,9 +1194,9 @@ namespace Fynydd.Carbide
 
         #region Query string
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Remove a querystring from the URL. Looks for "?" and removes everything from it to the end.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="url">URL to evaluate</param>
         /// <returns>URL without a query string</returns>
         public static string RemoveQueryString(this string url)
@@ -1214,10 +1214,11 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the query string from a provided URL.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="filepath">File URL (e.g. "/download/file.pdf?abc=1")</param>
+        /// <param name="includePrefix">Include the "?" prefix</param>
         /// <returns>Query string (e.g. "?abc=1")</returns>
         public static string QueryString(this string filepath, bool includePrefix = true)
         {
@@ -1232,9 +1233,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get the current URL parameters as a single string.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="includePrefix">Include the leading "?" if there are parameters.</param>
         /// <returns>The current URL parameters as a single string with the leading "?" if there are parameters.</returns>
         public static string GetUrlParams(bool includePrefix)
@@ -1257,11 +1258,11 @@ namespace Fynydd.Carbide
             return urlParams;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// When passed a URL parameter list, it is returned with the leading "?",
         /// or as a blank string if there are no parameters. This method is used to
         /// ensure that a URL parameter list starts with a "?".
-        /// </summary>
+        /// ]]></summary>
         /// <param name="urlParams">URL parameters list with or without the leading "?".</param>
         /// <returns>The URL parameters as a single string with the leading "?" if there are parameters, or an empty string.</returns>
         public static string AddUrlParamPrefix(this string urlParams)
@@ -1279,18 +1280,18 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get the current URL parameters as a single string, without the leading "?".
-        /// </summary>
+        /// ]]></summary>
         /// <returns>The current URL parameters as a single string, without the leading "?".</returns>
         public static string GetUrlParams()
         {
             return GetUrlParams(false);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Remove a URL parameter and return the new request string.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="urlParameterString">The URL parameter string to modify, without the leading "?".</param>
         /// <param name="urlParam">Name of the URL parameter to remove.</param>
         /// <returns>Altered URL parameter string without the leading "?".</returns>
@@ -1317,10 +1318,10 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Remove a URL parameter from the current URL parameter list
         /// and return the new request string.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="urlParam">Name of the URL parameter to remove.</param>
         /// <returns>Altered URL parameter string without the leading "?".</returns>
         public static string DeleteUrlParameter(string urlParam)
@@ -1328,11 +1329,11 @@ namespace Fynydd.Carbide
             return DeleteUrlParameter(GetUrlParams(), urlParam);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Add or Edit a URL parameter value.
         /// If the parameter exists on the supplied URL parameter string, it is modified.
         /// Otherwise, its value is changed.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="urlParameterString">The URL parameter string to modify, without the leading "?".</param>
         /// <param name="urlParam">Name of the URL parameter.</param>
         /// <param name="value">Value of the URL parameter to add or edit.</param>
@@ -1374,10 +1375,10 @@ namespace Fynydd.Carbide
             return result;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Add or Edit a URL parameter value in the current URL.
         /// If the parameter exists, it is modified. Otherwise, its value is changed.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="urlParam">Name of the URL parameter.</param>
         /// <param name="value">Value of the URL parameter to add or edit.</param>
         /// <returns>Altered URL parameter string without the leading "?".</returns>

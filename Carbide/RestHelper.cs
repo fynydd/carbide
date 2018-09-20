@@ -8,11 +8,11 @@ using Fynydd.Carbide.Constants;
 
 namespace Fynydd.Carbide
 {
-    /// <summary>
+    /// <summary><![CDATA[
     /// Simple class for performing HTTP REST requests.
-    /// </summary>
+    /// ]]></summary>
     /// <example>
-    /// <code>
+    /// <code><![CDATA[
     /// RestHelper request = new RestHelper();
     /// request.Url="http://seeker.dice.com/jobsearch/servlet/JobSearch";
     /// request.HeaderItems.Add("X-App-Token","skadjfhaskjfs");
@@ -20,7 +20,7 @@ namespace Fynydd.Carbide
     /// request.RequestFormat = RestHelper.RequestFormatEnum.JSON;
     /// request.Timeout = 10000;
     /// string result = request.Call();
-    /// </code>
+    /// ]]></code>
     /// </example>
     public class RestHelper
     {
@@ -36,9 +36,9 @@ namespace Fynydd.Carbide
 
         private string status = "";
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Content for the request
-        /// </summary>
+        /// ]]></summary>
         public string Payload
         {
             get
@@ -52,9 +52,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Timeout for the request in milliseconds
-        /// </summary>
+        /// ]]></summary>
         public int Timeout
         {
             get
@@ -68,9 +68,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// The last status returned by the HttpWebResponse object (e.g. 201, 200, etc.)
-        /// </summary>
+        /// ]]></summary>
         public string LastStatus
         {
             get
@@ -84,9 +84,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Gets or sets the url to submit the post to.
-        /// </summary>
+        /// ]]></summary>
         public string Url
         {
             get
@@ -99,9 +99,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Gets or sets the name value collection of header items.
-        /// </summary>
+        /// ]]></summary>
         public Dictionary<string, string> HeaderItems
         {
             get
@@ -114,9 +114,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Gets or sets the type of action to perform against the url.
-        /// </summary>
+        /// ]]></summary>
         public RequestTypeEnum RequestType
         {
             get
@@ -129,9 +129,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Gets or sets the request and response format in-use.
-        /// </summary>
+        /// ]]></summary>
         public RequestFormatEnum RequestFormat
         {
             get
@@ -144,9 +144,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Force TLS 2.0
-        /// </summary>
+        /// ]]></summary>
         public bool ForceTls2
         {
             get
@@ -161,18 +161,18 @@ namespace Fynydd.Carbide
 
         #endregion
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Default constructor.
-        /// </summary>
+        /// ]]></summary>
         public RestHelper()
         {
         }
 
         #region Methods
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Execute the REST request.
-        /// </summary>
+        /// ]]></summary>
         /// <returns>Response data as a string</returns>
         public string Call()
         {

@@ -8,24 +8,22 @@ using System.Text;
 
 namespace Fynydd.Carbide
 {
-    /// <summary>
+    /// <summary><![CDATA[
     /// The Reader class provides a more powerful, flexible SQL reader class.
-    /// </summary>
+    /// ]]></summary>
     /// <example>
-    /// <code>
+    /// <code><![CDATA[
     /// DataReader reader = new DataReader("select * from test");
-    /// </code>
+    /// ]]></code>
     /// Add the following to your web.config file in order to use the Carbide DataReader without specifying a connection string.
-    /// <code>
-    /// <![CDATA[
+    /// <code><![CDATA[
     ///		<connectionStrings>
     ///			<add name="Carbide"
     ///			connectionString="Data Source=[server name or address]; Initial Catalog=[database name];
     ///				User ID=[user name]; password=[password]; Connection Timeout=30;"
     ///			providerName="System.Data.SqlClient" />
     ///		</connectionStrings>
-    ///	]]>
-    /// </code>
+    /// ]]></code>
     /// </example>
     public class DataReader : System.IDisposable
     {
@@ -45,85 +43,85 @@ namespace Fynydd.Carbide
         private Exception _lastSqlError;
         private string _connectionStringName = "Carbide";
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// SQL Command String.
-        /// </summary>
+        /// ]]></summary>
         public string sqlCommandString = "";
         private string xmlResult = null;
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Number of rows that have been read.
-        /// </summary>
+        /// ]]></summary>
         private int _RowsRead = 0;
 
         #endregion
 
         #region Constants
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// External file connection strings, for use with Excel and Access file connections.
         /// Placeholder {FILEPATH} must be replaced with actual file path.
         /// Placeholder {PASSWORD} must be replaced with password, if applicable.
-        /// </summary>
+        /// ]]></summary>
         public enum ConnectionStrings
         {
-            /// <summary>
+            /// <summary><![CDATA[
             /// XLSX OLEDB
-            /// </summary>
+            /// ]]></summary>
             [DescriptionAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={FILEPATH};Extended Properties=\"Excel 12.0 Xml;HDR=YES\";")]
             XLSX_OLEDB,
 
-            /// <summary>
+            /// <summary><![CDATA[
             /// XLSX
-            /// </summary>
+            /// ]]></summary>
             [DescriptionAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={FILEPATH};Extended Properties=\"Excel 12.0 Xml;HDR=YES;IMEX=1\";")]
             XLSX_All_Text_OLEDB,
 
-            /// <summary>
+            /// <summary><![CDATA[
             /// XLSB
-            /// </summary>
+            /// ]]></summary>
             [DescriptionAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={FILEPATH};Extended Properties=\"Excel 12.0;HDR=YES\";")]
             XLSB_OLEDB,
 
-            /// <summary>
+            /// <summary><![CDATA[
             /// XLSM
-            /// </summary>
+            /// ]]></summary>
             [DescriptionAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={FILEPATH};Extended Properties=\"Excel 12.0 Macro;HDR=YES\";")]
             XLSM_OLEDB,
 
-            /// <summary>
+            /// <summary><![CDATA[
             /// XLS JET
-            /// </summary>
+            /// ]]></summary>
             [DescriptionAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={FILEPATH};Extended Properties=\"Excel 8.0;HDR=Yes;IMEX=1\";")]
             XLS_Jet_OLEDB,
 
-            /// <summary>
+            /// <summary><![CDATA[
             /// XLS OLEDB
-            /// </summary>
+            /// ]]></summary>
             [DescriptionAttribute("OLEDB;Provider=Microsoft.Jet.OLEDB.4.0;Data Source={FILEPATH};Extended Properties=\"Excel 8.0;HDR=Yes;IMEX=1\";")]
             XLS_OLEDB_Alt,
 
-            /// <summary>
+            /// <summary><![CDATA[
             /// ACCDB OLEDB
-            /// </summary>
+            /// ]]></summary>
             [DescriptionAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={FILEPATH};Persist Security Info=False;")]
             ACCDB_OLEDB,
 
-            /// <summary>
+            /// <summary><![CDATA[
             /// ACCDB OLEDB
-            /// </summary>
+            /// ]]></summary>
             [DescriptionAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={FILEPATH};Jet OLEDB:Database password={PASSWORD};")]
             ACCDB_With_password_OLEDB,
 
-            /// <summary>
+            /// <summary><![CDATA[
             /// MDB OLEDB
-            /// </summary>
+            /// ]]></summary>
             [DescriptionAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={FILEPATH};User Id=admin;password=;")]
             MDB_OLEDB,
 
-            /// <summary>
+            /// <summary><![CDATA[
             /// MDB OLEDB
-            /// </summary>
+            /// ]]></summary>
             [DescriptionAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={FILEPATH};Jet OLEDB:Database password={PASSWORD};")]
             MDB_With_password_OLEDB
         }
@@ -132,9 +130,9 @@ namespace Fynydd.Carbide
 
         #region Properties
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Returns the # of rows read so far.
-        /// </summary>
+        /// ]]></summary>
         public int RowsRead
         {
             get
@@ -143,9 +141,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Determine if schema information is available.
-        /// </summary>
+        /// ]]></summary>
         public bool SchemaAvailable
         {
             get
@@ -154,9 +152,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Retrieve the last SQL error that occurred.
-        /// </summary>
+        /// ]]></summary>
         /// <returns>Last SQL Exception</returns>
         public Exception SqlLastError
         {
@@ -171,9 +169,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Connection string name within the Web.config file.
-        /// </summary>
+        /// ]]></summary>
         public string connectionStringName
         {
             get
@@ -187,9 +185,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Connection string loaded via the connectionStringName property.
-        /// </summary>
+        /// ]]></summary>
         public string ConnectionString
         {
             get
@@ -213,17 +211,17 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Returns true if there are rows to return.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// bool result = reader.HasRows;
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <value>A boolean representing the availability of rows to read.</value>
         public bool HasRows
@@ -251,9 +249,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Returns the number of fields in a recordset.
-        /// </summary>
+        /// ]]></summary>
         /// <value>An integer.</value>
         public int FieldCount
         {
@@ -280,9 +278,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the SqlDataReader object.
-        /// </summary>
+        /// ]]></summary>
         public SqlDataReader SqlDataReader
         {
             get
@@ -291,9 +289,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return the OleDbDataReader object.
-        /// </summary>
+        /// ]]></summary>
         public OleDbDataReader OlwDbDataReader
         {
             get
@@ -306,7 +304,7 @@ namespace Fynydd.Carbide
 
         #region Constructors / Deconstructors / Disposal
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Instantiate the class by passing a SQL command string, where clause, order by clause,
         /// rows per page, and page number, to receive only that page's rows. Only compatible with
         /// Microsoft SQL Server 2005 and later.
@@ -314,11 +312,11 @@ namespace Fynydd.Carbide
         /// If you insert [WHERECLAUSE] within your SELECT statement, you can force the passed
         /// where clause to be inserted for you; for advanced queries. The same holds true for
         /// [ORDERBY]. Remember NOT to include the "WHERE" or "ORDER BY" text in your passed arguments.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test", "ID>5", "LastName ASC, FirstName ASC", 10, 3, "Carbide");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="commandText">A SQL command to execute.</param>
         /// <param name="whereClause">Where clause without the "Where".</param>
@@ -332,7 +330,7 @@ namespace Fynydd.Carbide
             ReadByPage(commandText, whereClause, orderByClause, perPage, pageNum);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Instantiate the class by passing a SQL command string, where clause, order by clause,
         /// rows per page, and page number, to receive only that page's rows. Only compatible with
         /// Microsoft SQL Server 2005 and later. Uses the default "Carbide" connection string.
@@ -340,11 +338,11 @@ namespace Fynydd.Carbide
         /// If you insert [WHERECLAUSE] within your SELECT statement, you can force the passed
         /// where clause to be inserted for you; for advanced queries. The same holds true for
         /// [ORDERBY]. Remember NOT to include the "WHERE" or "ORDER BY" text in your passed arguments.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test", "ID>5", "LastName ASC, FirstName ASC", 10, 3);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="commandText">A SQL command to execute.</param>
         /// <param name="whereClause">Where clause without the "Where".</param>
@@ -356,25 +354,25 @@ namespace Fynydd.Carbide
             ReadByPage(commandText, whereClause, orderByClause, perPage, pageNum);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Instantiate the class.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader();
-        /// </code>
+        /// ]]></code>
         /// </example>
         public DataReader()
         {
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Instantiate the class by passing a SQL command string.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="commandText">A SQL command to execute.</param>
         public DataReader(string commandText)
@@ -399,13 +397,13 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Instantiate the class by passing a SQL command string. Optionally enables getting schema information.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test", true);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="commandText">A SQL command to execute.</param>
         /// <param name="getSchema">Determines if schema information should also be retured, enabling various other methods and properties.</param>
@@ -441,13 +439,13 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Instantiate the class by passing a SQL command string and connection string name.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test", "Carbide");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="commandText">A SQL command to execute.</param>
         /// <param name="connectionName">Name of a connection string within the Web.Config file.</param>
@@ -475,13 +473,13 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Instantiate the class for connecting to an external data source file.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("SELECT * FROM Sheet", "/uploads/sheet.xls", "", DataReader.ConnectionStrings.XLS_OLEDB);
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="commandText">A SQL command to execute.</param>
         /// <param name="filePath">Path to the file.</param>
@@ -509,14 +507,14 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Instantiate the class by passing a SQL command string, optionally enables getting schema information,
         /// pass a connection string name.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test", true, "Carbide");
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="commandText">A SQL command to execute.</param>
         /// <param name="getSchema">Determines if schema information should also be retured, enabling various other methods and properties.</param>
@@ -555,22 +553,22 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Closes the Smart Reader object when the class is destroyed.
-        /// </summary>
+        /// ]]></summary>
         ~DataReader()
         {
             Close();
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Close a previously opened DataReader object. You must close an opened DataReader object when finished using it!
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <returns>Nothing.</returns>
         public void Close()
@@ -596,9 +594,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Disposes the SmartReader.
-        /// </summary>
+        /// ]]></summary>
         public void Dispose()
         {
             Close();
@@ -608,9 +606,9 @@ namespace Fynydd.Carbide
 
         #region Indexers
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Shorthand for the GetString method. Returns a record as a string by name.
-        /// </summary>
+        /// ]]></summary>
         /// <value>
         /// Record value as a string.
         /// </value>
@@ -622,9 +620,9 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Shorthand for the GetString method. Returns a record as a string by column number.
-        /// </summary>
+        /// ]]></summary>
         /// <value>
         /// Record value as a string.
         /// </value>
@@ -671,9 +669,9 @@ namespace Fynydd.Carbide
             throw new ArgumentException("The string is not a description or value of the specified enum.");
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Used by the constructor to read in a page of results.
-        /// </summary>
+        /// ]]></summary>
         private void ReadByPage(string commandText, string WhereClause, string OrderByClause, int PerPage, int PageNum)
         {
             string template = "WITH VIRTUAL_CARBIDE_ROWSET AS (SELECT ROW_NUMBER() OVER( ORDER BY [ORDERBY] ) AS ROWNUMBER, * FROM ([SELECT]) AS ML_CARBIDE WHERE [WHERECLAUSE]) SELECT * FROM VIRTUAL_CARBIDE_ROWSET WHERE ROWNUMBER BETWEEN CONVERT(varchar, [BEGINRECORD]) and CONVERT(varchar, [ENDRECORD]);";
@@ -711,18 +709,18 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read the first (or next) row in the query.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// while (reader.Read())
         /// {
         ///		...
         ///	}
         ///	reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <returns>true if read, false if end of data.</returns>
         public bool Read()
@@ -755,16 +753,16 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Switch to the next result set; for use with SQL statements that return multiple (compound) recordsets.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.NextResult();
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <returns>true if result set is switched, false if not.</returns>
         public bool NextResult()
@@ -789,19 +787,17 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Retrieve the columns and their schema information as an ASCII text string for output.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
-        /// <![CDATA[
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// Response.Write (reader.ListSchema().Replace("\r\n", "<br />"));
         /// ...
         /// reader.Close();
-        /// ]]>
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <returns>A string</returns>
         public string ListSchema()
@@ -836,17 +832,17 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get the primary key column name, or an empty string if schema is not available.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// string result = reader.GetPrimarykeyName();
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <returns>A string with the column name of the primary key.</returns>
         public string GetPrimarykeyName()
@@ -877,17 +873,17 @@ namespace Fynydd.Carbide
             return "";
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get the size (dimension) of the column, or zero if no schema information is available.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// int result = reader.GetColumnSize("ID");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of the column.</param>
         /// <returns>An integer.</returns>
@@ -933,17 +929,17 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Is the specified column a primary key? Returns false if no schema information is available.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// bool result = reader.GetColumnIsKey("ID");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of the column.</param>
         /// <returns>true or false.</returns>
@@ -970,17 +966,17 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Does a specified column allow nulls? Returns false if no schema information is available.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// bool result = reader.GetColumnAllowNulls("ID");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of the column.</param>
         /// <returns>true or false.</returns>
@@ -1008,17 +1004,17 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Is a specified column an identity? Returns false if no schema information is available.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// bool result = reader.GetColumnIsIdentity("ID");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of the column.</param>
         /// <returns>true or false.</returns>
@@ -1046,17 +1042,17 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Is a specified column an auto-incrementing field? Returns false if no schema information is available.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// bool result = reader.GetColumnIsAutoIncrement("ID");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of the column.</param>
         /// <returns>true or false.</returns>
@@ -1084,18 +1080,18 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Return a column's equivalent system data type name (e.g. "String", "Int64", et al.).
         /// Returns an empty string if no schema information is available.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// string result = reader.GetColumnSystemDataType("ID");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of the column.</param>
         /// <returns>Data type name as a string.</returns>
@@ -1123,17 +1119,17 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Retrieve the SQL data type name of a specified column (e.g. "varchar", "int", "smallint", et al.).
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// string result = reader.GetDataTypeName(0);
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnIndex">Number of the column.</param>
         /// <returns>A string.</returns>
@@ -1154,17 +1150,17 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Retrieve the SQL data type name of a specified column (e.g. "varchar", "int", "smallint", et al.).
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// string result = reader.GetDataTypeName("ID");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of the column.</param>
         /// <returns>A string.</returns>
@@ -1182,17 +1178,17 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Get a column name by its number.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// string result = reader.ColumnName(0);
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnNumber">Number of column to retrieve.</param>
         /// <returns>A string.</returns>
@@ -1218,17 +1214,17 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Is a specified column value empty or null?
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// bool result = reader.IsNullOrEmpty("ID");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of column to evaluate.</param>
         /// <returns>true if column value is null or empty, false if not.</returns>
@@ -1258,22 +1254,22 @@ namespace Fynydd.Carbide
 
         #region Column Value / Data Return Methods
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Create a dynamic DataTable object from a SQL data statement.
         /// One use for this method is to create a data source for other
         /// controls that want a DataTable, like 3rd party controls.
-        /// </summary>
+        /// ]]></summary>
         /// <returns>DataTable object</returns>
         public DataTable ReadTable()
         {
             return ReadTable(false);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Create a dynamic DataTable object from a SQL data statement.
         /// One use for this method is to create a data source for other
         /// controls that want a DataTable, like 3rd party controls.
-        /// </summary>
+        /// ]]></summary>
         /// <param name="addBlank">Determine whether to add a blank row to the end or not.</param>
         /// <returns>DataTable object</returns>
         public DataTable ReadTable(bool addBlank)
@@ -1325,17 +1321,17 @@ namespace Fynydd.Carbide
             return (outp);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read a column value in as a DateTime object.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// DateTime reader.GetDateTime("thedate");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of column to retrieve.</param>
         /// <returns>DateTime object.</returns>
@@ -1365,17 +1361,17 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read a column value in as a nullable DateTime object.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// DateTime? dt = reader.GetDateTimeNullable("thedate");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of column to retrieve.</param>
         /// <returns>DateTime object.</returns>
@@ -1405,17 +1401,17 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read a column value in as a string formatted as a date.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// string result = reader.GetDate("thedate");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of column to retrieve</param>
         /// <returns>A string with the column value as a date.</returns>
@@ -1462,17 +1458,17 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read a column value in as a string formatted as a time.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// string result = reader.GetTime("thedate");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of column to retrieve.</param>
         /// <returns>A string with the column value as a time.</returns>
@@ -1519,17 +1515,17 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read a column value in as a string formatted as money.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// string result = reader.GetMoney("cost");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of column to retrieve.</param>
         /// <returns>A string with the column formatted as currency.</returns>
@@ -1576,17 +1572,17 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read a column value in as an integer.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// int result = reader.GetInt("ID");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of column to retrieve.</param>
         /// <returns>An integer.</returns>
@@ -1633,17 +1629,17 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read a column value in as a nullable int.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// int? result = reader.GetInt32Nullable("ID");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of column to retrieve.</param>
         /// <returns>A nullable int</returns>
@@ -1680,17 +1676,17 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read a column value in as an int.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// int result = reader.GetInt32("ID");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of column to retrieve.</param>
         /// <returns>An int.</returns>
@@ -1699,17 +1695,17 @@ namespace Fynydd.Carbide
             return GetInt(columnName);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read a column value in as a nullable Int64.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// Int64? result = reader.GetInt64Nullable("ID");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of column to retrieve.</param>
         /// <returns>A nullable Int64.</returns>
@@ -1746,17 +1742,17 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read a column value in as a long.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// long result = reader.GetLong("ID");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of column to retrieve.</param>
         /// <returns>A long.</returns>
@@ -1803,17 +1799,17 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read a column value in as an Int64.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// long result = reader.GetInt64("ID");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of column to retrieve.</param>
         /// <returns>An Int64.</returns>
@@ -1822,17 +1818,17 @@ namespace Fynydd.Carbide
             return GetLong(columnName);
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read a column value in as a double.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// double result = reader.GetDouble("ID");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of column to retrieve.</param>
         /// <returns>A double.</returns>
@@ -1879,17 +1875,17 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read a column value in as a decimal.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// decimal result = reader.GetDecimal("ID");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of column to retrieve.</param>
         /// <returns>A decimal.</returns>
@@ -1936,17 +1932,17 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read a column value in as a float.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// float result = reader.GetFloat("ID");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of column to retrieve.</param>
         /// <returns>A float.</returns>
@@ -1993,20 +1989,20 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read an XML result from a stored procedure.
         /// Used to bypass the 2,033 byte limit (multiple row) segmentation of XML results
         /// when simply requesting the column as a string.
         /// Reads in column 0 of all rows in the result set and appends them.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("EXEC prGetXML @email='me@example.com'");
         /// reader.Read();
         /// string XMLresult = reader.GetXMLResult();
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <returns>A string with the XML result.</returns>
         public string GetXMLResult()
@@ -2053,17 +2049,17 @@ namespace Fynydd.Carbide
         }
 
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read a column value in as a string, by its column number.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// string result = reader.GetString(0);
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnIndex">Number of column to retrieve.</param>
         /// <returns>A string.</returns>
@@ -2108,17 +2104,17 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read a column value in as a string by its column name. Can return nulls.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// string result = reader.GetStringNullable("ID");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of column to retrieve.</param>
         /// <returns>A string value or null.</returns>
@@ -2154,17 +2150,17 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read a column value in as a string, by its column name.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// string result = reader.GetString("ID", "none");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of column to retrieve.</param>
         /// <param name="defaultValue">Default value to return if string is null or empty.</param>
@@ -2205,17 +2201,17 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read a column value in as a string, by its column name.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// string result = reader.GetString("ID");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of column to retrieve.</param>
         /// <returns>A string.</returns>
@@ -2224,17 +2220,17 @@ namespace Fynydd.Carbide
             return GetString(columnName, "");
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read a column value in as a boolean, by its column name.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// bool result = reader.GetBoolean("ID");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of column to retrieve.</param>
         /// <returns>A boolean.</returns>
@@ -2281,17 +2277,17 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Read a column value in and process as "Yes", "No", or "n/a" using the GetBoolean method.
-        /// </summary>
+        /// ]]></summary>
         /// <example>
-        /// <code>
+        /// <code><![CDATA[
         /// DataReader reader = new DataReader("select * from test");
         /// reader.Read();
         /// string result = reader.GetYesNo("choice");
         /// ...
         /// reader.Close();
-        /// </code>
+        /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of column to retrieve.</param>
         /// <returns>A string.</returns>
@@ -2348,10 +2344,10 @@ namespace Fynydd.Carbide
             return output;
         }
 
-        /// <summary>
+        /// <summary><![CDATA[
         /// Gets a numeric field that represents minutes (ie 125)
         /// and converts it to an hour format (ie 2:05)
-        /// </summary>
+        /// ]]></summary>
         /// <param name="columnName">Name of column to retrieve.</param>
         /// <returns>A formatted string.</returns>
         public string GetStringOfMinutes(string columnName)

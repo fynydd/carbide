@@ -11,42 +11,97 @@ using Fynydd.Carbide.Constants;
 
 namespace Fynydd.Carbide
 {
-    /// <summary>
-    /// Replaces {HTTP_HOST} in your robots.txt file with your current domain and serve dynamically.
+    /// <summary><![CDATA[
+    /// Static helper methods to assist with SEO initiatives.
+    /// ]]></summary>
+    public static class SeoHelpers
+    {
+        /// <summary><![CDATA[
+        /// Output a meta tag to prevent page indexing in current context.
+        /// ]]></summary>
+        /// <example>
+        /// Use in a Razor page.
+        /// <code><![CDATA[
+        /// @Html.Raw(SeoHelpers.PreventSearchIndexingWhenDebug())
+        /// ]]></code>
+        /// </example>
+        public static string PreventSearchIndexingWhenDebug()
+        {
+            return Metadata.DoNotIndex;
+        }
+
+        /// <summary><![CDATA[
+        /// Return a meta tag to prevent browser page caching in current context.
+        /// Use in a Razor page.
+        /// ]]></summary>
+        /// <example>
+        /// Use in a Razor page.
+        /// <code><![CDATA[
+        /// @Html.Raw(SeoHelpers.PreventBrowserCachingWhenDebug())
+        /// ]]></code>
+        /// </example>
+        public static string PreventBrowserCachingWhenDebug()
+        {
+            return Metadata.DoNotCache;
+        }
+    }
+
+    /// <summary><![CDATA[
+    /// Replaces {HTTP_HOST} in your robots.txt file with your current domain and serves it dynamically
+    /// (original file is not modified). It will serve a global disallow if the web app is in debug mode.
+    /// If no robots.txt file is present, a global allow to all user agents is served.
+    /// 
     /// Add the following to the web.config to enable this feature:
     /// 
-    /// <![CDATA[
     /// <system.webServer>
     ///     <handlers>
     ///         <add name="RobotsTxt" path="/robots.txt" verb="*" type="Fynydd.Carbide.RobotsTxt" resourceType="Unspecified" preCondition="integratedMode" />
-    /// ]]>
-    /// </summary>
+    /// ]]></summary>
     public class RobotsTxt : IHttpHandler
     {
+        /// <summary><![CDATA[
+        /// Handler is reusable
+        /// ]]></summary>
         public bool IsReusable
         {
             get { return true; }
         }
 
+        /// <summary><![CDATA[
+        /// Process requests for the robots.txt file
+        /// ]]></summary>
+        /// <param name="context"></param>
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
 
             var path = HttpContext.Current.Server.MapPath(VirtualPathUtility.ToAbsolute("~/robots.txt"));
-            
-            if (File.Exists(path))
+            var text = @"User-agent: *
+Disallow:
+";
+
+            if (context.IsDebuggingEnabled)
             {
-                var streamReader = File.OpenText(path);
-                var text = streamReader.ReadToEnd();
-                context.Response.Write(text.Replace("{HTTP_HOST}", HttpContext.Current.Request.ServerVariables["HTTP_HOST"]));
-                streamReader.Close();
-                streamReader.Dispose();
+                text = @"User-agent: *
+Disallow: /
+";
             }
 
             else
             {
-                context.Response.Write("");
+                if (File.Exists(path))
+                {
+                    using (var streamReader = File.OpenText(path))
+                    {
+                        text = streamReader.ReadToEnd();
+                        streamReader.Close();
+                    }
+
+                    text = text.Replace("{HTTP_HOST}", HttpContext.Current.Request.ServerVariables["HTTP_HOST"]);
+                }
             }
+
+            context.Response.Write(text);
         }
     }
 }
