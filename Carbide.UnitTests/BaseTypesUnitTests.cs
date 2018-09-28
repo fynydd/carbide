@@ -189,16 +189,16 @@ namespace Fynydd.Carbide.UnitTests
         {
             var path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
-            string naughtyScripts = Storage.ReadFile(path + @"\NaughtyScripts.txt");
-            string niceScripts = Storage.ReadFile(path + @"\NiceScripts.txt");
+            string naughtyScripts = StorageHelpers.ReadFile(path + @"\NaughtyScripts.txt");
+            string niceScripts = StorageHelpers.ReadFile(path + @"\NiceScripts.txt");
             Assert.AreEqual(niceScripts, naughtyScripts.Sanitize());
 
-            string naughtySql = Storage.ReadFile(path + @"\NaughtySql.txt");
-            string niceSql = Storage.ReadFile(path + @"\NiceSql.txt");
+            string naughtySql = StorageHelpers.ReadFile(path + @"\NaughtySql.txt");
+            string niceSql = StorageHelpers.ReadFile(path + @"\NiceSql.txt");
             Assert.AreEqual(niceSql, naughtySql.SqlSanitize());
 
-            string naughtyEmail = Storage.ReadFile(path + @"\NaughtyEmailBody.txt");
-            string niceEmail = Storage.ReadFile(path + @"\NiceEmailBody.txt");
+            string naughtyEmail = StorageHelpers.ReadFile(path + @"\NaughtyEmailBody.txt");
+            string niceEmail = StorageHelpers.ReadFile(path + @"\NiceEmailBody.txt");
             Assert.AreEqual(niceEmail, naughtyEmail.SanitizeForEmail());
         }
 

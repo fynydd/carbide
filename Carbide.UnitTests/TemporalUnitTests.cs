@@ -30,13 +30,6 @@ namespace Fynydd.Carbide.UnitTests
         }
 
         [TestMethod]
-        public void DateFormat()
-        {
-            Assert.AreEqual("01-JAN-1968", dob.DateFormat(DateFormats.European));
-            Assert.AreEqual("over " + (50 + DateTime.Now.Year - Convert.ToDateTime("January 1, 2018").Year) + " years ago", dob.DateFormat(DateFormats.Abstract));
-        }
-
-        [TestMethod]
         public void TimeFormat()
         {
             Assert.AreEqual("12:00", pastDate.TimeFormat(TimeFormats.Military));
@@ -85,7 +78,7 @@ namespace Fynydd.Carbide.UnitTests
             StopWatch stopwatch = new StopWatch();
 
             stopwatch.Start();
-            Temporal.PauseExecution(2000);
+            TemporalHelpers.PauseExecution(2000);
             stopwatch.Stop();
 
             Assert.AreEqual(2, stopwatch.GetSeconds<int>(), "GetSeconds()");
@@ -106,12 +99,12 @@ namespace Fynydd.Carbide.UnitTests
         [TestMethod]
         public void FormatTimer()
         {
-            Assert.AreEqual("30s", Temporal.FormatTimer(30), "FormatTimer() 30 seconds");
-            Assert.AreEqual("1m : 30s", Temporal.FormatTimer(90), "FormatTimer() 90 seconds");
-            Assert.AreEqual("1h : 0m : 0s", Temporal.FormatTimer(3600), "FormatTimer() 3600 seconds");
-            Assert.AreEqual("1d : 1h : 0m : 0s", Temporal.FormatTimer((3600 * 24) + 3600), "FormatTimer() (3600 * 24) + 3600 seconds");
-            Assert.AreEqual("5d : 1h : 0m : 0s", Temporal.FormatTimer((3600 * 24 * 5) + 3600), "FormatTimer() (3600 * 24 * 5) + 3600 seconds");
-            Assert.AreEqual("20d : 5h : 10m : 15s", Temporal.FormatTimer((3600 * 24 * 20) + (3600 * 5) + (60 * 10) + 15), "FormatTimer() (3600 * 24 * 20) + (3600 * 5) + (60 * 10) + 15 seconds");
+            Assert.AreEqual("30s", TemporalHelpers.FormatTimer(30), "FormatTimer() 30 seconds");
+            Assert.AreEqual("1m : 30s", TemporalHelpers.FormatTimer(90), "FormatTimer() 90 seconds");
+            Assert.AreEqual("1h : 0m : 0s", TemporalHelpers.FormatTimer(3600), "FormatTimer() 3600 seconds");
+            Assert.AreEqual("1d : 1h : 0m : 0s", TemporalHelpers.FormatTimer((3600 * 24) + 3600), "FormatTimer() (3600 * 24) + 3600 seconds");
+            Assert.AreEqual("5d : 1h : 0m : 0s", TemporalHelpers.FormatTimer((3600 * 24 * 5) + 3600), "FormatTimer() (3600 * 24 * 5) + 3600 seconds");
+            Assert.AreEqual("20d : 5h : 10m : 15s", TemporalHelpers.FormatTimer((3600 * 24 * 20) + (3600 * 5) + (60 * 10) + 15), "FormatTimer() (3600 * 24 * 20) + (3600 * 5) + (60 * 10) + 15 seconds");
         }
     }
 }
