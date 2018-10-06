@@ -304,13 +304,21 @@ namespace Fynydd.Carbide.Constants
         public const string Url = @"^(?<Protocol>\w+):\/\/(?<Domain>[\w.]+\/?)\S*$";
 
         /// <summary><![CDATA[
-        /// This matches an ip address in the format xxx-xxx-xxx-xxx
+        /// This matches an ipv4 address in the format xxx-xxx-xxx-xxx
         /// each group of xxx must be less than or equal to 255
         /// ]]></summary>
         /// <example>
         /// Allows: 123.123.123.123, 192.168.1.1
         /// </example>
         public const string IPv4Address = @"^(?<First>2[0-4]\d|25[0-5]|[01]?\d\d?)\.(?<Second>2[0-4]\d|25[0-5]|[01]?\d\d?)\.(?<Third>2[0-4]\d|25[0-5]|[01]?\d\d?)\.(?<Fourth>2[0-4]\d|25[0-5]|[01]?\d\d?)$";
+
+        /// <summary><![CDATA[
+        /// This matches an ipv6 address in 8 16-bit words.
+        /// ]]></summary>
+        /// <example>
+        /// Allows: 1762:0:0:0:0:B03:1:AF18, etc.
+        /// </example>
+        public const string IPv6Address = @"^(((?=.*(::))(?!.*\3.+\3))\3?|[0-9A-F]{1,4}:)([0-9A-F]{1,4}(\3|:\b)|\2){5}(([0-9A-F]{1,4}(\3|:\b|$)|\2){2}|(((2[0-4]|1[0-9]|[1-9])?[0-9]|25[0-5])\.?\b){4})\z";
 
         /// <summary><![CDATA[
         /// This matches a date in the format mm/dd/yy
