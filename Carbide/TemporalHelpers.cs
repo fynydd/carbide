@@ -746,10 +746,10 @@ namespace Fynydd.Carbide
                     context = HttpContext.Current;
                 }
 
-                if (CacheHelpers.CacheValid(activityName + "_Seconds", context) == false || CacheHelpers.CacheValid(activityName + "_Running", context) == false)
+                if (CacheHelpers.CacheExists(activityName + "_Seconds", context) == false || CacheHelpers.CacheExists(activityName + "_Running", context) == false)
                 {
-                    CacheHelpers.CachePermanent(activityName + "_Running", false, context);
-                    CacheHelpers.CachePermanent(activityName + "_Seconds", seconds, context);
+                    CacheHelpers.CacheAddPermanent(activityName + "_Running", false, context);
+                    CacheHelpers.CacheAddPermanent(activityName + "_Seconds", seconds, context);
                     CacheHelpers.CacheDelete(activityName + "_Waiting", context);
 
                     Debug.WriteLine("Carbide.TemporalHelpers.TaskIntervalInit (" + activityName + ") - INITIALIZED");
@@ -784,7 +784,7 @@ namespace Fynydd.Carbide
                     context = HttpContext.Current;
                 }
 
-                CacheHelpers.CachePermanent(activityName + "_Running", true, context);
+                CacheHelpers.CacheAddPermanent(activityName + "_Running", true, context);
                 CacheHelpers.CacheDelete(activityName + "_Waiting", context);
 
                 Debug.WriteLine("Carbide.TemporalHelpers.TaskIntervalStart (" + activityName + ") - STARTED");
@@ -813,11 +813,11 @@ namespace Fynydd.Carbide
                     context = HttpContext.Current;
                 }
 
-                CacheHelpers.CachePermanent(activityName + "_Running", false, context);
+                CacheHelpers.CacheAddPermanent(activityName + "_Running", false, context);
 
-                if (CacheHelpers.CacheValid(activityName + "_Seconds", context))
+                if (CacheHelpers.CacheExists(activityName + "_Seconds", context))
                 {
-                    CacheHelpers.Cache(activityName + "_Waiting", DateTime.Now.AddSeconds(CacheHelpers.Cache<double>(activityName + "_Seconds", context)), DateTime.Now.AddSeconds(CacheHelpers.Cache<double>(activityName + "_Seconds", context)), context);
+                    CacheHelpers.CacheAdd(activityName + "_Waiting", DateTime.Now.AddSeconds(CacheHelpers.Cache<double>(activityName + "_Seconds", context)), DateTime.Now.AddSeconds(CacheHelpers.Cache<double>(activityName + "_Seconds", context)), context);
 
                     Debug.WriteLine("Carbide.TemporalHelpers.TaskIntervalStop (" + activityName + ") - STOPPED");
                 }
@@ -855,7 +855,7 @@ namespace Fynydd.Carbide
                 context = HttpContext.Current;
             }
 
-            if (CacheHelpers.CacheValid(activityName + "_Running", context) == true)
+            if (CacheHelpers.CacheExists(activityName + "_Running", context) == true)
             {
                 result = CacheHelpers.Cache<bool>(activityName + "_Running", context);
             }
@@ -883,7 +883,7 @@ namespace Fynydd.Carbide
                 context = HttpContext.Current;
             }
 
-            if (CacheHelpers.CacheValid(activityName + "_Waiting", context) == false)
+            if (CacheHelpers.CacheExists(activityName + "_Waiting", context) == false)
             {
                 try
                 {

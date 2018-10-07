@@ -43,39 +43,17 @@ namespace Fynydd.Carbide
         /// Output Caching wrapper method. Caches an object for the number of seconds specified.
         /// ]]></summary>
         /// <param name="key">Unique name of the cached item</param>
-        /// <param name="value">Object to store in the cache</param>
+        /// <param name="value">Data to store in the cache</param>
         /// <param name="expirationSeconds">Expiration time, in seconds, from the current date and time.</param>
         /// <param name="context">HttpContext; defaults to Current</param>
-        public static void Cache(string key, object value, int expirationSeconds, HttpContext context = null)
+        public static void CacheAdd<T>(string key, T value, int expirationSeconds, HttpContext context = null)
         {
             context = ContextHelpers.EnsureAppContext(context);
 
-            context.Cache.Add(key, value, null, DateTime.Now.AddSeconds(Convert.ToDouble(expirationSeconds)), System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Normal, null);
-        }
-
-        /// <summary><![CDATA[
-        /// Output Caching wrapper method. Caches an object for the life of the application.
-        /// ]]></summary>
-        /// <param name="key">Unique name of the cached item</param>
-        /// <param name="value">Object to store in the cache</param>
-        /// <param name="context">HttpContext; defaults to Current</param>
-        public static void CachePermanent(string key, object value, HttpContext context = null)
-        {
-            context = ContextHelpers.EnsureAppContext(context);
-
-            context.Cache.Add(key, value, null, System.Web.Caching.Cache.NoAbsoluteExpiration, System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.High, null);
-        }
-
-        /// <summary><![CDATA[
-        /// Output Caching wrapper method. Caches a string value for the number of seconds specified.
-        /// ]]></summary>
-        /// <param name="key">Unique name of the cached item</param>
-        /// <param name="value">String value to store in the cache</param>
-        /// <param name="expirationSeconds">Expiration time, in seconds, from the current date and time.</param>
-        /// <param name="context">HttpContext; defaults to Current</param>
-        public static void Cache(string key, string value, int expirationSeconds, HttpContext context = null)
-        {
-            context = ContextHelpers.EnsureAppContext(context);
+            if (CacheExists(key, context))
+            {
+                CacheDelete(key, context);
+            }
 
             context.Cache.Add(key, value, null, DateTime.Now.AddSeconds(Convert.ToDouble(expirationSeconds)), System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Normal, null);
         }
@@ -87,25 +65,34 @@ namespace Fynydd.Carbide
         /// <param name="value">Object to store in the cache</param>
         /// <param name="expirationDateTime">Expiration date and time.</param>
         /// <param name="context">HttpContext; defaults to Current</param>
-        public static void Cache(string key, object value, DateTime expirationDateTime, HttpContext context = null)
+        public static void CacheAdd<T>(string key, T value, DateTime expirationDateTime, HttpContext context = null)
         {
             context = ContextHelpers.EnsureAppContext(context);
+
+            if (CacheExists(key, context))
+            {
+                CacheDelete(key, context);
+            }
 
             context.Cache.Add(key, value, null, expirationDateTime, System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Normal, null);
         }
 
         /// <summary><![CDATA[
-        /// Output Caching wrapper method. Caches a string value until the date and time specified.
+        /// Output Caching wrapper method. Caches an object for the life of the application.
         /// ]]></summary>
         /// <param name="key">Unique name of the cached item</param>
-        /// <param name="value">String value to store in the cache</param>
-        /// <param name="expirationDateTime">Expiration date and time.</param>
+        /// <param name="value">Object to store in the cache</param>
         /// <param name="context">HttpContext; defaults to Current</param>
-        public static void Cache(string key, string value, DateTime expirationDateTime, HttpContext context = null)
+        public static void CacheAddPermanent<T>(string key, T value, HttpContext context = null)
         {
             context = ContextHelpers.EnsureAppContext(context);
 
-            context.Cache.Add(key, value, null, expirationDateTime, System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Normal, null);
+            if (CacheExists(key, context))
+            {
+                CacheDelete(key, context);
+            }
+
+            context.Cache.Add(key, value, null, System.Web.Caching.Cache.NoAbsoluteExpiration, System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.High, null);
         }
 
         /// <summary><![CDATA[
@@ -115,21 +102,7 @@ namespace Fynydd.Carbide
         /// <param name="key">Unique name of the cached item</param>
         /// <param name="value">Object to store in the cache</param>
         /// <param name="context">HttpContext; defaults to Current</param>
-        public static void Cache(string key, object value, HttpContext context = null)
-        {
-            context = ContextHelpers.EnsureAppContext(context);
-
-            context.Cache.Add(key, value, null, DateTime.Now.AddSeconds(Convert.ToDouble(OutputCacheTime)), System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Normal, null);
-        }
-
-        /// <summary><![CDATA[
-        /// Output Caching wrapper method. Caches a string value for a number of seconds specified
-        /// in the web.config file under the Carbide Settings key "OutputCache.Expiration.Seconds".
-        /// ]]></summary>
-        /// <param name="key">Unique name of the cached item</param>
-        /// <param name="value">String value to store in the cache</param>
-        /// <param name="context">HttpContext; defaults to Current</param>
-        public static void Cache(string key, string value, HttpContext context = null)
+        public static void CacheAdd<T>(string key, T value, HttpContext context = null)
         {
             context = ContextHelpers.EnsureAppContext(context);
 
@@ -163,7 +136,7 @@ namespace Fynydd.Carbide
 
             if (string.IsNullOrWhiteSpace(key) == false)
             {
-                if (CacheValid(key, context) == true)
+                if (CacheExists(key, context) == true)
                 {
                     context.Cache.Remove(key);
                 }
@@ -176,7 +149,7 @@ namespace Fynydd.Carbide
         /// <param name="key">Unique name of the cached item</param>
         /// <param name="context">HttpContext; defaults to Current</param>
         /// <returns>true if cached item exists, false if not.</returns>
-        public static bool CacheValid(string key, HttpContext context = null)
+        public static bool CacheExists(string key, HttpContext context = null)
         {
             bool result = false;
 
@@ -200,60 +173,22 @@ namespace Fynydd.Carbide
         {
             context = ContextHelpers.EnsureAppContext(context);
 
-            if (string.IsNullOrWhiteSpace(key) == false)
+            try
             {
-                if (CacheValid(key, context))
+                if (CacheExists(key, context))
                 {
-                    var value = context.Cache[key];
-
-                    if (typeof(T) == typeof(string))
-                    {
-                        return (T)(value == null ? (object)string.Empty : Convert.ChangeType(value, typeof(T)));
-                    }
-
-                    else if (typeof(T) == typeof(bool))
-                    {
-                        return (T)(value == null ? (object)false : Convert.ChangeType(value, typeof(T)));
-                    }
-
-                    else if (typeof(T) == typeof(int) || typeof(T) == typeof(decimal) || typeof(T) == typeof(Decimal) || typeof(T) == typeof(double) || typeof(T) == typeof(Double) || typeof(T) == typeof(float) || typeof(T) == typeof(Int16) || typeof(T) == typeof(Int32) || typeof(T) == typeof(Int64) || typeof(T) == typeof(Single) || typeof(T) == typeof(short) || typeof(T) == typeof(long))
-                    {
-                        return (T)(value == null ? (object)-1 : Convert.ChangeType(value, typeof(T)));
-                    }
-
-                    else if (typeof(T) == typeof(DateTime))
-                    {
-                        return (T)(value == null ? (object)DateTime.MinValue : Convert.ChangeType(value, typeof(T)));
-                    }
-
-                    else
-                    {
-                        return (T)Convert.ChangeType(value, typeof(T));
-                    }
+                    return (T)HttpContext.Current.Cache[key];
                 }
 
                 else
                 {
-                    if (typeof(T) == typeof(string))
-                    {
-                        return (T)Convert.ChangeType("", typeof(T));
-                    }
-
-                    else if (typeof(T) == typeof(DateTime))
-                    {
-                        return (T)Convert.ChangeType(DateTime.MinValue, typeof(T));
-                    }
-
-                    else
-                    {
-                        return (T)(object)null;
-                    }
+                    return default(T);
                 }
             }
-
-            else
+            
+            catch (InvalidCastException)
             {
-                return (T)(object)null;
+                return default(T);
             }
         }
 
