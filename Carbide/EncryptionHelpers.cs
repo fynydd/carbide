@@ -827,7 +827,7 @@ namespace Fynydd.Carbide
                 if (string.IsNullOrWhiteSpace(base64Secret) == false)
                 {
                     string header = "{ \"alg\": \"" + hashingAlgorithm.ToUpper() + "\", \"typ\": \"JWT\" }";
-                    byte[] secretBytes = Base64DecodeToBytes(base64Secret);
+                    byte[] secretBytes = Base64UrlDecodeToBytes(base64Secret);
 
                     if (secretBytes.Length >= 64)
                     {
@@ -934,10 +934,10 @@ namespace Fynydd.Carbide
         /// </example>
         /// <param name="jwt">Javascript Web Token</param>
         /// <param name="base64Secret">A secret which you have already Base64-encoded. HS256 uses 64-byte secrets. HS384 and HS512 use 128-byte secrets.</param>
-        /// <returns>true if the signature is valid, false if not</returns>
-        public static bool VerifyJWT(string jwt, string base64Secret)
+        /// <returns>Payload if the signature is valid, empty string if not</returns>
+        public static string VerifyJWT(string jwt, string base64Secret)
         {
-            bool result = false;
+            string result = "";
 
             try
             {
@@ -964,7 +964,7 @@ namespace Fynydd.Carbide
 
                             if (GenerateJWT(Base64UrlDecodeToString(payload), base64Secret, hashAlgorithm) == jwt)
                             {
-                                result = true;
+                                result = Base64UrlDecodeToString(payload);
                             }
                         }
 
