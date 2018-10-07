@@ -4,78 +4,64 @@ namespace Fynydd.Carbide.Constants
 {
     #region Base Types
 
-    /// <summary><![CDATA[
+    /// <summary>
     /// Determines the output format for various methods.
-    /// ]]></summary>
+    /// </summary>
     public enum NumberFormats
     {
-        /// <summary><![CDATA[
+        /// <summary>
         /// Currency (#,##0.00).
-        /// ]]></summary>
+        /// </summary>
         Currency,
 
-        /// <summary><![CDATA[
-        /// Disk storage (#,##0.#kb/mb/gb/tb/pb)
-        /// ]]></summary>
-        DiskStorage,
-
-        /// <summary><![CDATA[
+        /// <summary>
         /// 1112223333 becomes (111) 222-3333
-        /// ]]></summary>
+        /// </summary>
         TelephoneFull,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// 1112223333 becomes 111.222.3333
-        /// ]]></summary>
+        /// </summary>
         TelephoneDots,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// 1112223333 becomes 111-222-3333
-        /// ]]></summary>
+        /// </summary>
         TelephoneHyphens
     }
 
-    /// <summary><![CDATA[
+    /// <summary>
     /// Determines the type of text cropping to perform.
-    /// ]]></summary>
+    /// </summary>
     public enum StringCropType
     {
-        /// <summary><![CDATA[
+        /// <summary>
         /// Crop on a specific character count.
-        /// ]]></summary>
+        /// </summary>
         Characters,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Crop on a specific word count.
-        /// ]]></summary>
+        /// </summary>
         Words
     }
 
-    /// <summary><![CDATA[
+    /// <summary>
     /// Types of HTML line breaking schemes
-    /// ]]></summary>
+    /// </summary>
     public enum HtmlLinefeeds
     {
-        /// <summary><![CDATA[
-        /// Use <p> tags
-        /// ]]></summary>
         Paragraphs,
 
-        /// <summary><![CDATA[
-        /// Use <br /> tags
-        /// ]]></summary>
         LineBreaks
     }
 
-    /// <summary><![CDATA[
+    /// <summary>
     /// Words to keep lower case when using AP Title Case,
     /// unless they are the first or last word.
-    /// ]]></summary>
+    /// </summary>
     public static class Words
     {
-        /// <summary><![CDATA[
-        /// Words to keep lower case in titles
-        /// ]]></summary>
         public static readonly string[] TitleCaseIgnoreWords =
         {
             "a",
@@ -98,14 +84,14 @@ namespace Fynydd.Carbide.Constants
         };
     }
 
-    /// <summary><![CDATA[
+    /// <summary>
     /// HTML tags
-    /// ]]></summary>
+    /// </summary>
     public static class Tags
     {
-        /// <summary><![CDATA[
+        /// <summary>
         /// Dangerous (scriptable) HTML tags
-        /// ]]></summary>
+        /// </summary>
         public static readonly string[] Dangerous =
         {
             "applet",
@@ -126,14 +112,14 @@ namespace Fynydd.Carbide.Constants
         };
     }
 
-    /// <summary><![CDATA[
+    /// <summary>
     /// Characters for use in string functions.
-    /// ]]></summary>
+    /// </summary>
     public static class Characters
     {
-        /// <summary><![CDATA[
+        /// <summary>
         /// Characters considered to be whitespace
-        /// ]]></summary>
+        /// </summary>
         public static readonly char[] Whitespace = new char[]
         {
             '\u0009',  // CHARACTER TABULATION
@@ -158,20 +144,68 @@ namespace Fynydd.Carbide.Constants
 		    '\u3000',  // IDEOGRAPHIC SPACE
 		    '\uFEFF'  // ZERO WIDTH NO-BREAK SPACE
         };
+
+        /// <summary>
+        /// Characters considered to be delimitters for whole-word text searches
+        /// </summary>
+        public static readonly char[] WordDelimitters = new char[]
+        {
+            '\u0009',  // CHARACTER TABULATION
+		    '\u000A',  // LINE FEED
+		    '\u000B',  // LINE TABULATION
+		    '\u000C',  // FORM FEED
+		    '\u000D',  // CARRIAGE RETURN
+		    '\u0020',  // SPACE
+		    '\u00A0',  // NO-BREAK SPACE
+		    '\u2000',  // EN QUAD
+		    '\u2001',  // EM QUAD
+		    '\u2002',  // EN SPACE
+		    '\u2003',  // EM SPACE
+		    '\u2004',  // THREE-PER-EM SPACE
+		    '\u2005',  // FOUR-PER-EM SPACE
+		    '\u2006',  // SIX-PER-EM SPACE
+		    '\u2007',  // FIGURE SPACE
+		    '\u2008',  // PUNCTUATION SPACE
+		    '\u2009',  // THIN SPACE
+		    '\u200A',  // HAIR SPACE
+		    '\u200B',  // ZERO WIDTH SPACE
+		    '\u3000',  // IDEOGRAPHIC SPACE
+		    '\uFEFF',  // ZERO WIDTH NO-BREAK SPACE
+			'!',
+            '@',
+            '#',
+            '$',
+            '%',
+            '^',
+            '&',
+            '*',
+            '(',
+            ')',
+            '-',
+            '=',
+            ',',
+            '.',
+            '/',
+            '[',
+            ']',
+            '\\',
+            '`',
+            '<',
+            '>',
+            '?',
+            '{',
+            '}',
+            '|',
+            '~'
+        };
     }
 
     #endregion
 
     #region Identification
 
-    /// <summary><![CDATA[
-    /// Geography constants, like U.S. state abbreviations
-    /// ]]></summary>
     public static class Geography
     {
-        /// <summary><![CDATA[
-        /// U.S. state abbreviations
-        /// ]]></summary>
         public static readonly string[] StatesAbbreviations =
         {
             "AL",
@@ -228,85 +262,82 @@ namespace Fynydd.Carbide.Constants
         };
     }
 
-    /// <summary><![CDATA[
-    /// Regular expression constants
-    /// ]]></summary>
     public static class RegularExpressions
     {
-        /// <summary><![CDATA[
+        /// <summary>
         /// Standard RFC3986 approved email addresses.
-        /// ]]></summary>
+        /// </summary>
         /// <example>
         /// Allows: joe@domain.com, joe.smith@domain.com, joe.o'donnel@domain.com
         /// </example>
         public const string Email = @"^(?!^.{254})([a-zA-Z0-9_'+*$%\^&!\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9:]{2,4})+$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// File size in KB, MB, GB, TB or PB.
-        /// ]]></summary>
+        /// </summary>
         /// <example>
         /// Allows: 1kb, 1 KB, 15.7mb, et al.
         /// </example>
         public const string FileSize = @"^\d{1}[0-9\.]*\s?(kb|Kb|KB|mb|Mb|MB|gb|Gb|GB|tb|Tb|TB|pb|Pb|PB){1}$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Standard 5 digit U.S. zip code.
-        /// ]]></summary>
+        /// </summary>
         /// <example>
         /// Allows: 12345
         /// </example>
         public const string ZipCode = @"^\d{5}$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Standard 5 digit U.S. zip code with four extra digits.
-        /// ]]></summary>
+        /// </summary>
         /// <example>
         /// Allows: 12345-1234
         /// </example>
         public const string ZipCodePlusFour = @"^\d{5}((-|\s)?\d{4})$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Standard 5 digit U.S. zip code with optional four extra digits.
-        /// ]]></summary>
+        /// </summary>
         /// <example>
         /// Allows: 12345-1234, 12345
         /// </example>
         public const string ZipCodePlusFourOptional = @"^\d{5}((-|\s)?\d{4})?$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Standard 2-letter state abbreviation, case insensitive.
-        /// ]]></summary>
+        /// </summary>
         public const string USStateAbbreviation = @"^([Aa][LlKkSsZzRrAaEePp]|[Cc][AaOoTt]|[Dd][EeCc]|[Ff][LlMm]|[Gg][AaUu]|[Hh][Ii]|[Ii][AaDdLlNn]|[Kk][SsYy]|[Ll][Aa]|[Mm][AaDdEeHhIiNnOoPpSsTt]|[Nn][CcDdEeHhJjMmVvYy]|[Oo][HhKkRr]|[Pp][AaRrWw]|[Rr][Ii]|[Ss][CcDd]|[Tt][NnXx]|[Uu][Tt]|[Vv][AaIiTt]|[Ww][AaIiVvYy])$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Permissive US Telephone Regex. Does not allow extensions. Area code is not required.
-        /// ]]></summary>
+        /// </summary>
         /// <example>
         /// Allows: 234-3433, 324-234-3433, 3242343434, (234)234-234, (234) 234-2343
         /// </example>
         public const string TelephoneUS = @"^([\(]{1}[0-9]{3}[\)]{1}[\.| |\-]{0,1}|^[0-9]{3}[\.|\-| ]?)?[0-9]{3}(\.|\-| )?[0-9]{4}$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Permissive US Telephone Regex. Does not allow extensions. Area code is required.
-        /// ]]></summary>
+        /// </summary>
         /// <example>
         /// Allows: 324-234-3433, 3242343434, (234)234-2343, (234) 234-2343
         /// </example>
         public const string Telephone10 = @"^\(\d{3}\) ?\d{3}( |-)?\d{4}|^\d{3}( |-)?\d{3}( |-)?\d{4}";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// This matches a url in the generic format 
         /// scheme://authority/path?query#fragment
-        /// ]]></summary>
+        /// </summary>
         /// <example>
         /// Allows: http://www.yahoo.com, https://www.yahoo.com, ftp://www.yahoo.com
         /// </example>
         public const string Url = @"^(?<Protocol>\w+):\/\/(?<Domain>[\w.]+\/?)\S*$";
 
-        /// <summary><![CDATA[
-        /// This matches an ipv4 address in the format xxx-xxx-xxx-xxx
+        /// <summary>
+        /// This matches an ip address in the format xxx-xxx-xxx-xxx
         /// each group of xxx must be less than or equal to 255
-        /// ]]></summary>
+        /// </summary>
         /// <example>
         /// Allows: 123.123.123.123, 192.168.1.1
         /// </example>
@@ -320,80 +351,80 @@ namespace Fynydd.Carbide.Constants
         /// </example>
         public const string IPv6Address = @"^(((?=.*(::))(?!.*\3.+\3))\3?|[0-9A-F]{1,4}:)([0-9A-F]{1,4}(\3|:\b)|\2){5}(([0-9A-F]{1,4}(\3|:\b|$)|\2){2}|(((2[0-4]|1[0-9]|[1-9])?[0-9]|25[0-5])\.?\b){4})\z";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// This matches a date in the format mm/dd/yy
-        /// ]]></summary>
+        /// </summary>
         /// <example>
         /// Allows: 01/05/05, 12/30/99, 04/11/05
         /// Does not allow: 01/05/2000, 2/2/02
         /// </example> 
         public const string DateMMDDYY = @"^(1[0-2]|0[1-9])/(([1-2][0-9]|3[0-1]|0[1-9])/\d\d)$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// This matches a date in the format m/d/yyyy. Month and day can optionally contain leading zeroes.
-        /// ]]></summary>
+        /// </summary>
         /// <example>
         /// Allows: 01/05/2005, 12/30/9999, 4/1/2005
         /// </example> 
         public const string Date = @"^((1[0-2]|[1-9]|0[1-9])/([1-2][0-9]|3[0-1]|0[1-9]|[1-9])/(\d{2}|\d{4}))$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// This matches a date in the format mm/yy
-        /// ]]></summary>
+        /// </summary>
         /// <example>
         /// Allows: 01/05, 11/05, 04/99
         /// Does not allow: 1/05, 13/05, 00/05
         /// </example>
         public const string DateMMYY = @"^((0[1-9])|(1[0-2]))\/(\d{2})$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// This matches only numbers (no decimals, commas, etc.)
-        /// ]]></summary>
+        /// </summary>
         /// <example>
         /// Allows: 0, 1, 123, 4232323, 1212322
         /// </example>
         public const string Numeric = @"^([1-9]\d*)$|^0$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// This matches any string with only alpha characters upper or lower case(A-Z)
-        /// ]]></summary>
+        /// </summary>
         /// <example>
         /// Allows: abc, ABC, abCd, AbCd
         /// Does not allow: A C, abc!, (a,b)
         /// </example>
         public const string Alpha = @"^[a-zA-Z]+$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// This matches any string with only upper case alpha character(A-Z)
-        /// ]]></summary>
+        /// </summary>
         public const string UpperCase = @"^[A-Z]+$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// This matches any string with only lower case alpha character(A-Z)
-        /// ]]></summary>
+        /// </summary>
         public const string LowerCase = @"^[a-z]+$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Ensures the string only contains alpha-numeric characters, and
         /// not punctuation, spaces, newlines, etc.
-        /// ]]></summary>
+        /// </summary>
         /// <example>
         /// Allows: ab2c, 112ABC, ab23Cd
         /// Does not allow: A C, abc!, a.a
         /// </example>
         public const string AlphaNumeric = @"^[a-zA-Z0-9]+$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Validates US Currency.  Requires $ sign.
         /// Allows for optional commas and decimal. 
         /// No leading zeros. 
-        /// ]]></summary>
+        /// </summary>
         /// <example>
         /// Allows: $100,000 or $10000.00 or $10.00 or $.10 or $0 or $0.00 or $0.10 or 10,000
         /// </example>
         public const string USCurrency = @"^[\$]*(([0-9]\d*|([0-9]\d{0,2}(\,\d{3})*))(\.\d{1,2})?|(\.\d{1,2}))$|^\$[0](.00)?$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Matches major credit cards including: Visa (length 16, prefix 4);
         /// <para>Mastercard (length 16, prefix 51-55);</para>
         /// <para>Diners Club/Carte Blanche (length 14, prefix 36, 38, or 300-305);</para>
@@ -407,133 +438,133 @@ namespace Fynydd.Carbide.Constants
         /// space between each group of digits.</para>
         /// <para>Formatting characters must be consistant, i.e. if two groups are separated by a hyphen, 
         /// all groups must be separated by a hyphen for a match to occur.</para>
-        /// ]]></summary>
+        /// </summary>
         public const string ValidCreditCardNumber = @"^(?:(?<Visa>4\d{3})|(?<Mastercard>5[1-5]\d{2})|(?<Discover>6011)|(?<DinersClub>(?:3[68]\d{2})|(?:30[0-5]\d))|(?<AmericanExpress>3[47]\d{2}))([ -]?)(?(DinersClub)(?:\d{6}\1\d{4})|(?(AmericanExpress)(?:\d{6}\1\d{5})|(?:\d{4}\1\d{4}\1\d{4})))$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Matches social security in the following format xxx-xx-xxxx
         /// where x is a number
-        /// ]]></summary>
+        /// </summary>
         /// <example>
         /// Allows: 123-45-6789, 232-432-1212
         /// </example>
         public const string SocialSecurityNumber = @"^\d{3}-\d{2}-\d{4}$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Matches x,x where x is a name, spaces are only allowed between comma and name
-        /// ]]></summary>
+        /// </summary>
         /// <example>
         /// Allows: christophersen,eric; christophersen, eric
         /// Not allowed: christophersen ,eric;
         /// </example>
         public const string FullNameWithComma = @"^[a-zA-Z]+,\s?[a-zA-Z]+$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Matches time of day. Leading zeroes are ignored.
-        /// ]]></summary>
+        /// </summary>
         /// <example>
         /// Allows: 01:15am, 10:15 AM, etc.
         /// </example>
         public const string Time = @"^((0?[1-9]|1[012]):[0-5]\d(\ {0,}[AaPp][Mm]))$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Matches time of day in military format.
-        /// ]]></summary>
+        /// </summary>
         /// <example>
         /// Allows: 00:15, 23:45, et al.
         /// </example>
         public const string TimeMilitary = @"^((([0][0-2])|([1][0-9])|([2][0-3])):[0-5][0-9])$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Matches 3 digits for an area code
-        /// ]]></summary>
+        /// </summary>
         /// <example>
         /// Allows: any 3 digits
         /// </example>
         public const string AreaCode = @"^\d\d\d$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Matches a domain name.
-        /// ]]></summary>
+        /// </summary>
         /// <example>
         /// Allows: site.com, site.com:8080, http://www.site.com, et al.
         /// </example>
         public const string DomainName = @"^([a-zA-Z\:/]*[a-zA-Z0-9-_]\.[a-zA-Z][a-zA-Z][a-zA-Z0-9\?\=&#_\-/\.\:]*[^\.\s])$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Matches a strong password format. Must have 8-64 characters, and at least one lower case, one upper case, one digit, and one special character.
         /// Special characters include: ~!@#$%^&*()_+=[{]};:<>|./?,-
-        /// ]]></summary>
+        /// </summary>
         public const string PasswordAndLength = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&*\(\)_+=\[{\]};:<>|./?,-])\S{8,64}$";
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Matches a strong password format. Must have at least one lower case, one upper case, one digit, and one special character.
         /// Special characters include: ~!@#$%^&*()_+=[{]};:<>|./?,-
-        /// ]]></summary>
+        /// </summary>
         public const string Password = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&*\(\)_+=\[{\]};:<>|./?,-])\S{4,}$";
     }
 
-    /// <summary><![CDATA[
+    /// <summary>
     /// Regex validation options for various methods.
-    /// ]]></summary>
+    /// </summary>
     public enum ValidationOptions
     {
-        /// <summary><![CDATA[
+        /// <summary>
         /// Validate only the length of the string.
-        /// ]]></summary>
+        /// </summary>
         Length,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Validate as an E-mail address
-        /// ]]></summary>
+        /// </summary>
         Email,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Validate as a list of e-mail addresses. Addresses can be separated with ",", "|", ";", "/", or spaces.
-        /// ]]></summary>
+        /// </summary>
         EmailList,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Validate as a numeric value.
-        /// ]]></summary>
+        /// </summary>
         Number,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Validate as a pure number; no commas, periods, or non-numeric characters.
-        /// ]]></summary>
+        /// </summary>
         PureNumber,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Validate as a number which is greater than zero.
-        /// ]]></summary>
+        /// </summary>
         NonZero,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Validate as currency.
-        /// ]]></summary>
+        /// </summary>
         Currency,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Validate as a date.
-        /// ]]></summary>
+        /// </summary>
         Date,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Validate as time of day.
-        /// ]]></summary>
+        /// </summary>
         Time,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Validate as a telephone number. Allows: 234-3433, 324-234-3433, 3242343434, (234)234-234, (234) 234-2343.
-        /// ]]></summary>
+        /// </summary>
         Telephone,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Validate as a telephone number. Area code is required. Allows: 324-234-3433, 3242343434, (234)234-234, (234) 234-2343.
-        /// ]]></summary>
+        /// </summary>
         Telephone10,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Validate as a credit card number.
         /// <para>Matches major credit cards including: Visa (length 16, prefix 4);</para>
         /// <para>Mastercard (length 16, prefix 51-55);</para>
@@ -548,44 +579,44 @@ namespace Fynydd.Carbide.Constants
         /// space between each group of digits.</para>
         /// <para>Formatting characters must be consistant, i.e. if two groups are separated by a hyphen, 
         /// all groups must be separated by a hyphen for a match to occur.</para>
-        /// ]]></summary>
+        /// </summary>
         CreditCard,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Validate as a U.S. 5-digit zip code.
-        /// ]]></summary>
+        /// </summary>
         ZipCode,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Validate as a URL. Allows: http://www.yahoo.com, https://www.yahoo.com, ftp://www.yahoo.com.
-        /// ]]></summary>
+        /// </summary>
         Url,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Validate as an IPv4 address. Allows: 123.123.123.123, 192.168.1.1.
-        /// ]]></summary>
+        /// </summary>
         IPv4Address,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Validate as a social security number. Allows: 123-45-6789, 232-432-1212.
-        /// ]]></summary>
+        /// </summary>
         Ssn,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Validate as domain name. Allows: site.com, site.com:8080, http://www.site.com, et al.
-        /// ]]></summary>
+        /// </summary>
         Domain,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Validate as first and last name.
         /// <para>Allows: christophersen,eric; christophersen, eric.</para>
         /// <para>Not allowed: christophersen ,eric.</para>
-        /// ]]></summary>
+        /// </summary>
         FullNameWithComma,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Validate a 2-letter abbreviation as a valid state in the U.S.
-        /// ]]></summary>
+        /// </summary>
         USStateAbbreviation
     }
 
@@ -593,227 +624,227 @@ namespace Fynydd.Carbide.Constants
 
     #region Temporal
 
-    /// <summary><![CDATA[
+    /// <summary>
     /// Enumeration used in the DateDiff method to specify what date/time increment to use.
-    /// ]]></summary>
+    /// </summary>
     public enum DateDiffComparisonType
     {
-        /// <summary><![CDATA[
+        /// <summary>
         /// Minutes (fractional).
-        /// ]]></summary>
+        /// </summary>
         Minutes,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Hours (fractional).
-        /// ]]></summary>
+        /// </summary>
         Hours,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Seconds (fractional).
-        /// ]]></summary>
+        /// </summary>
         Seconds,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// CPU ticks (fractional).
-        /// ]]></summary>
+        /// </summary>
         Ticks,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Milliseconds (fractional).
-        /// ]]></summary>
+        /// </summary>
         Milliseconds,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Years (fractional).
-        /// ]]></summary>
+        /// </summary>
         Years,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Quarters (fractional).
-        /// ]]></summary>
+        /// </summary>
         Quarters,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Days (fractional).
-        /// ]]></summary>
+        /// </summary>
         Days,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Months (fractional).
-        /// ]]></summary>
+        /// </summary>
         Months,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Days (whole number; ignores time).
         /// Result is exclusive (e.g. 1/1/2008 and 1/7/2008 returns 6).
-        /// ]]></summary>
+        /// </summary>
         DaysWhole,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Age in Years (whole number, takes leap year into account, many options - see CalculateAge for more details).
         /// Takes Leap Year into account: with a 2/29/2000 birthday, if today is 2/28/2011 age is 10, if today is 3/1/2011 age is 11.
-        /// ]]></summary>
+        /// </summary>
         Age
     }
 
-    /// <summary><![CDATA[
+    /// <summary>
     /// Enumeration used with the DateFormat method, specifying the format of the output date.
-    /// ]]></summary>
+    /// </summary>
     public enum DateFormats
     {
-        /// <summary><![CDATA[
+        /// <summary>
         /// 12-APR-2018
-        /// ]]></summary>
+        /// </summary>
         European,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// 2007-12-20
-        /// ]]></summary>
+        /// </summary>
         Sortable,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// 12/20/2007
-        /// ]]></summary>
+        /// </summary>
         Slashes,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// 12.20.2007
-        /// ]]></summary>
+        /// </summary>
         Dots,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Friday; December 20, 2007
-        /// ]]></summary>
+        /// </summary>
         Full,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Friday; December 20
-        /// ]]></summary>
+        /// </summary>
         Daily,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Dec 1, 2007
-        /// ]]></summary>
+        /// </summary>
         Tidy,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Friday
-        /// ]]></summary>
+        /// </summary>
         Weekday,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Fri
-        /// ]]></summary>
+        /// </summary>
         WeekdayShort,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// December
-        /// ]]></summary>
+        /// </summary>
         Month,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Dec
-        /// ]]></summary>
+        /// </summary>
         MonthShort,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// 12/2007
-        /// ]]></summary>
+        /// </summary>
         Corporate,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// December 20, 2007
-        /// ]]></summary>
+        /// </summary>
         PressRelease,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// 12-20-2007
-        /// ]]></summary>
+        /// </summary>
         Standard,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// 2007-12-20T09:45:24Z
-        /// ]]></summary>
+        /// </summary>
         Rss,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Fri-Dec-20-2007
-        /// ]]></summary>
+        /// </summary>
         AbbreviatedFull,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// "X minutes ago", "X hours ago", "yesterday", "X days ago", "a week ago", or "on m/d/yyyy"
-        /// ]]></summary>
+        /// </summary>
         Friendly,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// No dates, only abstractions based on the current date and time;
         /// "X minutes ago", "X hours ago", "yesterday", "X days ago", "a week ago", "a month ago", "x months ago", "a year ago", "almost 2 years ago", etc.
-        /// ]]></summary>
+        /// </summary>
         Abstract
     }
 
-    /// <summary><![CDATA[
+    /// <summary>
     /// Enumeration used to format times of day with the TimeFormat method.
-    /// ]]></summary>
+    /// </summary>
     public enum TimeFormats
     {
-        /// <summary><![CDATA[
+        /// <summary>
         /// 10:23PM
-        /// ]]></summary>
+        /// </summary>
         Standard,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// 15:30:00
-        /// ]]></summary>
+        /// </summary>
         SqlMilitary,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// 15:30
-        /// ]]></summary>
+        /// </summary>
         Military
     }
 
-    /// <summary><![CDATA[
+    /// <summary>
     /// Enumeration used to define date intervals for the DateRange method.
-    /// ]]></summary>
+    /// </summary>
     [Flags]
     public enum DateRangeOptions : byte
     {
-        /// <summary><![CDATA[
+        /// <summary>
         /// Weeks
-        /// ]]></summary>
+        /// </summary>
         Week = 1,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Months
-        /// ]]></summary>
+        /// </summary>
         Month = 2,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Quarters
-        /// ]]></summary>
+        /// </summary>
         Quarter = 4,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Years
-        /// ]]></summary>
+        /// </summary>
         Year = 5
     }
 
-    /// <summary><![CDATA[
+    /// <summary>
     /// Struct used to define the return value format for the DateRange method.
-    /// ]]></summary>
+    /// </summary>
     public struct DateRangeStruct
     {
-        /// <summary><![CDATA[
+        /// <summary>
         /// Start Date is the first element.
-        /// ]]></summary>
+        /// </summary>
         public DateTime startDate;
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// End Date is the second element.
-        /// ]]></summary>
+        /// </summary>
         public DateTime endDate;
     }
 
@@ -821,25 +852,25 @@ namespace Fynydd.Carbide.Constants
 
     #region Storage
 
-    /// <summary><![CDATA[
+    /// <summary>
     /// The PathOptions enumeration is used to specify file attributes, like "hidden", "system", et al.
-    /// ]]></summary>
+    /// </summary>
     [Flags]
     public enum PathOptions : byte
     {
-        /// <summary><![CDATA[
+        /// <summary>
         /// Normal files.
-        /// ]]></summary>
+        /// </summary>
         Path = 1,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Hidden files.
-        /// ]]></summary>
+        /// </summary>
         Hidden = 2,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// System files.
-        /// ]]></summary>
+        /// </summary>
         System = 4
     }
 
@@ -847,35 +878,35 @@ namespace Fynydd.Carbide.Constants
 
     #region Email
 
-    /// <summary><![CDATA[
+    /// <summary>
     /// Format for email body content.
-    /// ]]></summary>
+    /// </summary>
     public enum EmailFormat
     {
-        /// <summary><![CDATA[
+        /// <summary>
         /// Quotable plain text format.
-        /// ]]></summary>
+        /// </summary>
         PlainText,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// HTML format.
-        /// ]]></summary>
+        /// </summary>
         Html,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// 7-bit plain text format.
-        /// ]]></summary>
+        /// </summary>
         PlainText7Bit
     }
 
-    /// <summary><![CDATA[
+    /// <summary>
     /// Email header items
-    /// ]]></summary>
+    /// </summary>
     public static class EmailHeader
     {
-        /// <summary><![CDATA[
+        /// <summary>
         /// Email header properties
-        /// ]]></summary>
+        /// </summary>
         public static readonly string[] Properties = {
 
             "x-mailer:",
@@ -895,19 +926,19 @@ namespace Fynydd.Carbide.Constants
 
     #region HTTP
 
-    /// <summary><![CDATA[
+    /// <summary>
     /// Enumeration used with the GetWebPage method.
-    /// ]]></summary>
+    /// </summary>
     public enum GetWebPageMethod
     {
-        /// <summary><![CDATA[
+        /// <summary>
         /// Http GET operation.
-        /// ]]></summary>
+        /// </summary>
         Get,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Http POST operation.
-        /// ]]></summary>
+        /// </summary>
         Post
     };
 
@@ -915,49 +946,49 @@ namespace Fynydd.Carbide.Constants
 
     #region RestHelper
 
-    /// <summary><![CDATA[
+    /// <summary>
     /// Types of REST requests
-    /// ]]></summary>
+    /// </summary>
     public enum RequestTypeEnum
     {
-        /// <summary><![CDATA[
+        /// <summary>
         /// Does a get against the source.
-        /// ]]></summary>
+        /// </summary>
         GET,
-        /// <summary><![CDATA[
+        /// <summary>
         /// Does a post against the source.
-        /// ]]></summary>
+        /// </summary>
         POST,
-        /// <summary><![CDATA[
+        /// <summary>
         /// Does a put against the soruce
-        /// ]]></summary>
+        /// </summary>
         PUT,
-        /// <summary><![CDATA[
+        /// <summary>
         /// Does a patch against the soruce
-        /// ]]></summary>
+        /// </summary>
         PATCH,
-        /// <summary><![CDATA[
+        /// <summary>
         /// Does a delete against the soruce
-        /// ]]></summary>
+        /// </summary>
         DELETE
     }
 
-    /// <summary><![CDATA[
+    /// <summary>
     /// Types of request and response
-    /// ]]></summary>
+    /// </summary>
     public enum RequestFormatEnum
     {
-        /// <summary><![CDATA[
+        /// <summary>
         /// JSON
-        /// ]]></summary>
+        /// </summary>
         JSON,
-        /// <summary><![CDATA[
+        /// <summary>
         /// XML
-        /// ]]></summary>
+        /// </summary>
         XML,
-        /// <summary><![CDATA[
+        /// <summary>
         /// HTML
-        /// ]]></summary>
+        /// </summary>
         HTML
     }
 
@@ -965,65 +996,65 @@ namespace Fynydd.Carbide.Constants
 
     #region Security
 
-    /// <summary><![CDATA[
+    /// <summary>
     /// LogonSessionType for LogonUser method.
-    /// ]]></summary>
+    /// </summary>
     public enum LogonSessionType : int
     {
-        /// <summary><![CDATA[
+        /// <summary>
         /// Interactive authentication.
-        /// ]]></summary>
+        /// </summary>
         Interactive = 2,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Network authentication.
-        /// ]]></summary>
+        /// </summary>
         Network,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Batch authentication.
-        /// ]]></summary>
+        /// </summary>
         Batch,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Service authentication.
-        /// ]]></summary>
+        /// </summary>
         Service,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Network authentication using clear text.
-        /// ]]></summary>
+        /// </summary>
         NetworkCleartext = 8,
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// New Credentials.
-        /// ]]></summary>
+        /// </summary>
         NewCredentials
     }
 
-    /// <summary><![CDATA[
+    /// <summary>
     /// Logon provider enum for LogonUser method.
-    /// ]]></summary>
+    /// </summary>
     public enum LogonProvider : int
     {
-        /// <summary><![CDATA[
+        /// <summary>
         /// Default platform.
-        /// ]]></summary>
+        /// </summary>
         Default = 0, // default for platform (use this!)
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Windows NT 3.5 style.
-        /// ]]></summary>
+        /// </summary>
         WinNT35,     // sends smoke signals to authority
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Windows NT 4.0 style.
-        /// ]]></summary>
+        /// </summary>
         WinNT40,     // uses NTLM
 
-        /// <summary><![CDATA[
+        /// <summary>
         /// Windows 2000 style using Kerberos or NTLM.
-        /// ]]></summary>
+        /// </summary>
         WinNT50      // negotiates Kerberos or NTLM
     }
 
@@ -1050,4 +1081,5 @@ namespace Fynydd.Carbide.Constants
     }
 
     #endregion
+
 }
