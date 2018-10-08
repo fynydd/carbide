@@ -1068,5 +1068,26 @@ namespace Fynydd.Carbide
         }
 
         #endregion
+
+        #region Node transformations
+
+        /// <summary><![CDATA[
+        /// Convert the node name to a javascript-compatible selector.
+        /// ]]></summary>
+        /// <param name="contentNode">The current content node as an IPublishedContent object</param>
+        /// <returns>Javascript-compatible selector.</returns>
+        public static string GetJavascriptSelector(this IPublishedContent contentNode)
+        {
+            var result = "";
+
+            if (contentNode != null)
+            {
+                result = Regex.Replace(contentNode.Name.ToLower().Replace(" ", "-"), "[^a-z0-9_-]", "");
+            }
+
+            return result;
+        }
+
+        #endregion
     }
 }
