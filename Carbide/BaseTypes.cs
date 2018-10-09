@@ -1470,6 +1470,11 @@ namespace Fynydd.Carbide
 
                         break;
 
+                    case NumberFormats.Proper:
+
+                        result = (value.ToString("#,##0"));
+                        break;
+
                     case NumberFormats.Currency:
 
                         result = (value.ToString("#,##0.00"));

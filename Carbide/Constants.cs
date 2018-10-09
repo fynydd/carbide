@@ -15,6 +15,11 @@ namespace Fynydd.Carbide.Constants
         Currency,
 
         /// <summary>
+        /// Proper (#,##0).
+        /// </summary>
+        Proper,
+
+        /// <summary>
         /// 1112223333 becomes (111) 222-3333
         /// </summary>
         TelephoneFull,
