@@ -993,6 +993,31 @@ namespace Fynydd.Carbide
         }
 
         /// <summary><![CDATA[
+        /// Get a single IPublishedContent node by its Guid.
+        /// ]]></summary>
+        /// <param name="guid">Content node Guid</param>
+        /// <returns>Single matching IPublishedContent item.</returns>
+        public static IPublishedContent GetContentByGuid(string guid)
+        {
+            var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
+            Guid _guid = new Guid(guid);
+
+            return umbracoHelper.TypedContent(_guid);
+        }
+
+        /// <summary><![CDATA[
+        /// Get a single IPublishedContent node by its Guid.
+        /// ]]></summary>
+        /// <param name="guid">Content node Guid</param>
+        /// <returns>Single matching IPublishedContent item.</returns>
+        public static IPublishedContent GetContentByGuid(Guid guid)
+        {
+            var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
+
+            return umbracoHelper.TypedContent(guid);
+        }
+
+        /// <summary><![CDATA[
         /// Get a single IPublishedContent node in the site root by its document type alias.
         /// ]]></summary>
         /// <param name="documentTypeAlias">Document type alias (e.g. "homePage")</param>
