@@ -109,20 +109,27 @@ namespace Fynydd.Carbide
 
             if (Config.GetKeyValue<bool>("Tabs.Content.Enabled", true, "Fynydd.Carbide"))
             {
-                if (tabExists == false)
-                { 
-                    XmlDocument xmlDoc = new XmlDocument();
-                    xmlDoc.Load(StorageHelpers.MapPath(file));
-                    XmlNode root = xmlDoc.DocumentElement;
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load(StorageHelpers.MapPath(file));
 
-                    XmlDocument fragment = new XmlDocument();
-                    fragment.LoadXml(StorageHelpers.CarbideEmbeddedHtml("DashControl.xml"));
-                    XmlNode tab = xmlDoc.ImportNode(fragment.DocumentElement, true);
+                if (tabExists == true)
+                {
+                    XmlNodeList xnList = xmlDoc.SelectNodes("//dashBoard/section[@alias='CarbideContentTools']");
 
-                    root.InsertBefore(tab, root.FirstChild);
-
-                    xmlDoc.Save(StorageHelpers.MapPath(file));
+                    foreach (XmlNode node in xnList)
+                    {
+                        node.ParentNode.RemoveChild(node);
+                    }
                 }
+
+                XmlNode root = xmlDoc.DocumentElement;
+                XmlDocument fragment = new XmlDocument();
+                fragment.LoadXml(StorageHelpers.CarbideEmbeddedHtml("DashControl.xml"));
+                XmlNode tab = xmlDoc.ImportNode(fragment.DocumentElement, true);
+
+                root.InsertBefore(tab, root.FirstChild);
+
+                xmlDoc.Save(StorageHelpers.MapPath(file));
             }
 
             else
