@@ -27,7 +27,15 @@ namespace Fynydd.Carbide
         /// </example>
         public static string PreventSearchIndexingWhenDebug()
         {
-            return Metadata.DoNotIndex;
+            if (AppStateHelpers.IsDebugging())
+            {
+                return Metadata.DoNotIndex;
+            }
+
+            else
+            {
+                return "";
+            }
         }
 
         /// <summary><![CDATA[
@@ -42,7 +50,15 @@ namespace Fynydd.Carbide
         /// </example>
         public static string PreventBrowserCachingWhenDebug()
         {
-            return Metadata.DoNotCache;
+            if (AppStateHelpers.IsDebugging())
+            {
+                return Metadata.DoNotCache;
+            }
+
+            else
+            {
+                return "";
+            }
         }
     }
 
