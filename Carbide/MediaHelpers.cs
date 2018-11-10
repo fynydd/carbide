@@ -216,7 +216,9 @@ namespace Fynydd.Carbide
                     querystring += "&color=" + color.Replace("#", "");
                 }
 
-                markup = "<img src=\"/umbraco/api/carbidefile/svg/?id=" + svgId + querystring + "\"" + (attributes != "" ? " " + attributes : "") + " />";
+                var umbracoPath = Config.GetKeyValue("umbracoPath", "~/umbraco").TrimStart(new[] { '~' }).TrimEnd(new[] { '/' });
+
+                markup = "<img src=\"" + umbracoPath + "/api/carbidefile/svg/?id=" + svgId + querystring + "\"" + (attributes != "" ? " " + attributes : "") + " />";
             }
 
             return markup;

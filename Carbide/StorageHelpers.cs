@@ -1011,6 +1011,10 @@ namespace Fynydd.Carbide
 
             catch { }
 
+            var umbracoPath = Config.GetKeyValue("umbracoPath", "~/umbraco");
+
+            fileContent = fileContent.Replace("~/umbraco", umbracoPath.TrimStart(new[] { '~' }).TrimEnd(new[] { '/' }));
+
             return fileContent;
         }
     }

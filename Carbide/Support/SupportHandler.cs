@@ -78,6 +78,10 @@ namespace Fynydd.Carbide
             {
             }
 
+            var umbracoPath = Config.GetKeyValue("umbracoPath", "~/umbraco");
+
+            result = result.Replace("~/umbraco", umbracoPath.TrimStart(new[] { '~' }).TrimEnd(new[] { '/' }));
+
             var response = new HttpResponseMessage(HttpStatusCode.OK);
             response.Content = new StringContent(result, Encoding.UTF8, "text/html");
             return response;
@@ -110,6 +114,10 @@ namespace Fynydd.Carbide
             catch
             {
             }
+
+            var umbracoPath = Config.GetKeyValue("umbracoPath", "~/umbraco");
+
+            result = result.Replace("~/umbraco", umbracoPath.TrimStart(new[] { '~' }).TrimEnd(new[] { '/' }));
 
             var response = new HttpResponseMessage(HttpStatusCode.OK);
             response.Content = new StringContent(result, Encoding.UTF8, "application/javascript");

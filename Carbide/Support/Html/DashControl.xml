@@ -3,6 +3,6 @@
     <area>content</area>
   </areas>
   <tab caption="Carbide Content Tools">
-    <control>/umbraco/api/carbidesupport/html/?file=DashControl</control>
+    <control>~/umbraco/api/carbidesupport/html/?file=DashControl</control>
   </tab>
 </section>

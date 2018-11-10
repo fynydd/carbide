@@ -91,7 +91,7 @@
 
     <section role="status" id="CachePanel">
         <h1 class="carbide-title">
-            <img src="/umbraco/api/carbidesupport/png/?file=carbide-icon" class="carbide-logo" />Carbide
+            <img src="~/umbraco/api/carbidesupport/png/?file=carbide-icon" class="carbide-logo" />Carbide
         </h1>
         <h3>Rebuild Content and Examine Caches</h3>
         <p style="margin-bottom: 20px;">
@@ -129,7 +129,7 @@
 
         var statusTimer2;
         var previous = "";
-        var lilSpinner = "&nbsp;<img src='/umbraco/api/carbidesupport/svg/?file=inline-busy-icon' style='display: inline-block; width: 0.85rem; position: relative; top: -0.1rem' />";
+        var lilSpinner = "&nbsp;<img src='~/umbraco/api/carbidesupport/svg/?file=inline-busy-icon' style='display: inline-block; width: 0.85rem; position: relative; top: -0.1rem' />";
 
         function hideButton() {
 
@@ -153,7 +153,7 @@
 
                 type: "GET",
                 async: true,
-                url: "/umbraco/api/carbidesupport/rebuildcache/",
+                url: "~/umbraco/api/carbidesupport/rebuildcache/",
 
                 success: function (data) {
 
@@ -170,7 +170,7 @@
 
                 type: "GET",
                 async: true,
-                url: "/umbraco/api/carbidesupport/rebuildimagecache/",
+                url: "~/umbraco/api/carbidesupport/rebuildimagecache/",
 
                 success: function (data) {
 
@@ -187,7 +187,7 @@
 
                 type: "GET",
                 async: true,
-                url: "/umbraco/api/carbidesupport/prerenderpages/",
+                url: "~/umbraco/api/carbidesupport/prerenderpages/",
 
                 success: function (data) {
 
@@ -202,7 +202,7 @@
 
                 type: "GET",
                 async: true,
-                url: "/umbraco/api/carbidesupport/rebuildcachestatus/",
+                url: "~/umbraco/api/carbidesupport/rebuildcachestatus/",
 
                 success: function (data) {
 
@@ -212,7 +212,7 @@
 
                             type: "GET",
                             async: true,
-                            url: "/umbraco/api/carbidesupport/rebuildcachestatushistory/",
+                            url: "~/umbraco/api/carbidesupport/rebuildcachestatushistory/",
 
                             success: function (data) {
 
@@ -237,7 +237,7 @@
 
                             type: "GET",
                             async: true,
-                            url: "/umbraco/api/carbidesupport/rebuildcachestatushistory/",
+                            url: "~/umbraco/api/carbidesupport/rebuildcachestatushistory/",
 
                             success: function (data) {
 
@@ -261,7 +261,7 @@
 
                 type: "GET",
                 async: true,
-                url: "/umbraco/api/carbidesupport/rebuildcachestatus/",
+                url: "~/umbraco/api/carbidesupport/rebuildcachestatus/",
 
                 success: function (data) {
 
@@ -283,7 +283,7 @@
 
             type: "GET",
             async: true,
-            url: "/umbraco/api/carbidesupport/version/",
+            url: "~/umbraco/api/carbidesupport/version/",
 
             success: function (data) {
 
