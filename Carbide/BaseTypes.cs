@@ -1787,12 +1787,46 @@ namespace Fynydd.Carbide
             }
         }
 
-        /// <summary>
-        /// Convert an object to a string. If null an empty string is returned.
-        /// </summary>
-        /// <param name="obj">Object to convert to a string</param>
-        /// <returns>String value or an empty string if null</returns>
-        public static string SafeToString(this object obj)
+		/// <summary>
+		/// <![CDATA[
+		/// Return the current string with HTML line breaks removed.
+		/// Removes "<p>", "</p>", "<br />", and "<br>" and then trims the output.
+		/// ]]>
+		/// </summary>
+		/// <example>
+		/// <code>
+		/// string newBodyText = oldString.StripHtmlBreaks();
+		/// </code>
+		/// </example>
+		/// <returns>A string with HTML breaks removed.</returns>
+		public static string StripHtmlBreaks(this string value)
+		{
+			if (value != null)
+			{
+				//var result = value.Replace("<p>", "").Replace("</p>", "");
+				var result = value;
+
+				var tags = new Regex(@"<br.*?>", RegexOptions.Singleline | RegexOptions.IgnoreCase | RegexOptions.Compiled);
+				result = tags.Replace(result, "");
+
+				tags = new Regex(@"</?p((\s+\w+(\s*=\s*(?:"".*?""|'.*?'|[^'"">\s]+))?)+\s*|\s*)/?>", RegexOptions.Singleline | RegexOptions.IgnoreCase | RegexOptions.Compiled);
+				result = tags.Replace(result, "");
+
+				return result;
+			}
+
+			else
+			{
+				return string.Empty;
+			}
+		}
+
+		/// <summary>
+		/// Convert an object to a string. If null an empty string is returned.
+		/// </summary>
+		/// <param name="obj">Object to convert to a string</param>
+		/// <returns>String value or an empty string if null</returns>
+		public static string SafeToString(this object obj)
         {
             string result = "";
 
