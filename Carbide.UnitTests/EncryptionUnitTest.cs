@@ -102,24 +102,24 @@ namespace Fynydd.Carbide.UnitTests
 
             // HS256
             jwt = Encryption.GenerateJWT(payload, Secret64bit);
-            Assert.AreEqual("eyAiYWxnIjogIkhTMjU2IiwgInR5cCI6ICJKV1QiIH0.ew0KICAgICJzdWIiOiAidGVzdCIsDQogICAgIm5hbWUiOiAiTWljaGFlbCBBcmdlbnRpbmkiDQp9.yI0e3K3m4FdQWVTnPOmH53v712fxGI0rIG4B5YsLyCA", jwt, "HS256 failure");
+            Assert.AreEqual("eyAiYWxnIjogIkhTMjU2IiwgInR5cCI6ICJKV1QiIH0.ewogICAgInN1YiI6ICJ0ZXN0IiwKICAgICJuYW1lIjogIk1pY2hhZWwgQXJnZW50aW5pIgp9.ZJmLa7aQWBFJE-pi8vRfbYS4Dl98Eq2sgr5PMIpQJmY", jwt, "HS256 failure");
 
             // Verify HS256
-            Assert.AreEqual(true, Encryption.VerifyJWT(jwt, Secret64bit), "HS256 signature verification failure");
+            Assert.AreEqual(payload, Encryption.VerifyJWT(jwt, Secret64bit), "HS256 signature verification failure");
 
             // HS384
             jwt = Encryption.GenerateJWT(payload, Secret128bit, "HS384");
-            Assert.AreEqual("eyAiYWxnIjogIkhTMzg0IiwgInR5cCI6ICJKV1QiIH0.ew0KICAgICJzdWIiOiAidGVzdCIsDQogICAgIm5hbWUiOiAiTWljaGFlbCBBcmdlbnRpbmkiDQp9.grBXlNZ7DK0eABt99IPP8dqv9IQqTgBJssL66R-IoDSJrUV5_6WvPhr7QJrBZv7a", jwt, "HS384 failure");
+            Assert.AreEqual("eyAiYWxnIjogIkhTMzg0IiwgInR5cCI6ICJKV1QiIH0.ewogICAgInN1YiI6ICJ0ZXN0IiwKICAgICJuYW1lIjogIk1pY2hhZWwgQXJnZW50aW5pIgp9.gYv63tIn5Gtbx52txfX97ekKVd7QXoNliEj34HaWHfz02Vm_rKvM05Lg13QBFaSa", jwt, "HS384 failure");
 
             // Verify HS384
-            Assert.AreEqual(true, Encryption.VerifyJWT(jwt, Secret128bit), "HS384 signature verification failure");
+            Assert.AreEqual(payload, Encryption.VerifyJWT(jwt, Secret128bit), "HS384 signature verification failure");
 
             // HS512
             jwt = Encryption.GenerateJWT(payload, Secret128bit, "HS512");
-            Assert.AreEqual("eyAiYWxnIjogIkhTNTEyIiwgInR5cCI6ICJKV1QiIH0.ew0KICAgICJzdWIiOiAidGVzdCIsDQogICAgIm5hbWUiOiAiTWljaGFlbCBBcmdlbnRpbmkiDQp9.rgKRqZHGQkhInN-uwhd_KXNIWBA6-arN9WcjL2l6sTDLLDieMA2MpHc7JbCXEsuCnjBnabewmUD25Z_jDGkvfQ", jwt, "HS512 failure");
+            Assert.AreEqual("eyAiYWxnIjogIkhTNTEyIiwgInR5cCI6ICJKV1QiIH0.ewogICAgInN1YiI6ICJ0ZXN0IiwKICAgICJuYW1lIjogIk1pY2hhZWwgQXJnZW50aW5pIgp9.IEZaq3r4jMrgQBvdUtlVQHgTdzxLxmHjydvh1j9TF5B_Ea3tf7aX0kfMXVDHv8vg9YHpEoyGgSBX640iQ4RtdA", jwt, "HS512 failure");
 
             // Verify HS512
-            Assert.AreEqual(true, Encryption.VerifyJWT(jwt, Secret128bit), "HS512 signature verification failure");
+            Assert.AreEqual(payload, Encryption.VerifyJWT(jwt, Secret128bit), "HS512 signature verification failure");
         }
     }
 }

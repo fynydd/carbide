@@ -1309,13 +1309,14 @@ namespace Fynydd.Carbide
             return outt;
         }
 
-        /// <summary>
-        /// Number of times a substring appears in a string.
-        /// </summary>
-        /// <param name="value">String to evaluate</param>
-        /// <param name="find">Substring to count</param>
-        /// <returns>Number of times the substring is found</returns>
-        public static int SubstringCount(this string value, string find, bool wholeWord = false)
+		/// <summary>
+		/// Number of times a substring appears in a string.
+		/// </summary>
+		/// <param name="value">String to evaluate</param>
+		/// <param name="find">Substring to count</param>
+		/// <param name="wholeWord">Only look for words surrounded by whitespace or grammatical marks</param>
+		/// <returns>Number of times the substring is found</returns>
+		public static int SubstringCount(this string value, string find, bool wholeWord = false)
         {
             var processed = value;
 

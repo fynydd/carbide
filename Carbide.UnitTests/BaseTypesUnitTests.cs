@@ -16,40 +16,28 @@ namespace Fynydd.Carbide.UnitTests
             double x0 = 9999.87523;
             Assert.AreEqual("9,999.88", x0.FormatNumber(NumberFormats.Currency).ToLower());
 
-            short x1 = 10000;
-            Assert.AreEqual("9.8kb", x1.FormatNumber(NumberFormats.DiskStorage).ToLower());
-
-            int x2 = 10000;
-            Assert.AreEqual("9.8kb", x2.FormatNumber(NumberFormats.DiskStorage).ToLower());
-
-            long x3 = 10000;
-            Assert.AreEqual("9.8kb", x3.FormatNumber(NumberFormats.DiskStorage).ToLower());
-
-            double x4 = 10000;
-            Assert.AreEqual("9.8kb", x4.FormatNumber(NumberFormats.DiskStorage).ToLower());
-
-            decimal x5 = 10000;
-            Assert.AreEqual("9.8kb", x5.FormatNumber(NumberFormats.DiskStorage).ToLower());
-
-            double x6 = 9999999999;
-            Assert.AreEqual("9.3gb", x6.FormatNumber(NumberFormats.DiskStorage).ToLower());
-
-            double x7 = 9999999999999;
-            Assert.AreEqual("9.1tb", x7.FormatNumber(NumberFormats.DiskStorage).ToLower());
-
-            decimal x8 = 9999999999999999;
-            Assert.AreEqual("8.9pb", x8.FormatNumber(NumberFormats.DiskStorage).ToLower());
-
-            double x9 = 1024;
-            Assert.AreEqual("1kb", x9.FormatNumber(NumberFormats.DiskStorage).ToLower());
-
             string phone = "12223334444";
             Assert.AreEqual("(222) 333-4444", phone.FormatNumber(NumberFormats.TelephoneFull));
             phone = "2223334444";
             Assert.AreEqual("222-333-4444", phone.FormatNumber(NumberFormats.TelephoneHyphens));
         }
 
-        [TestMethod]
+		[TestMethod]
+		public void FormatBytes()
+		{
+			short x1 = 10000;
+			Assert.AreEqual("10kb", x1.FormatBytes().ToLower());
+
+			int x2 = 10000;
+			Assert.AreEqual("9.8kb", x2.FormatBytes(false).ToLower());
+
+			double x5 = 9999999999;
+			Assert.AreEqual("10gb", x5.FormatBytes().ToLower());
+			Assert.AreEqual("9.3gb", x5.FormatBytes(false).ToLower());
+
+		}
+
+		[TestMethod]
         public void MakePercentage()
         {
             short x0 = 32;
@@ -144,8 +132,9 @@ namespace Fynydd.Carbide.UnitTests
         [TestMethod]
         public void SubstringCount()
         {
-            Assert.AreEqual(2, sentence.SubStringCount("the"));
-            Assert.AreEqual(0, sentence.SubStringCount("kitty"));
+            Assert.AreEqual(3, sentence.SubstringCount("the"));
+			Assert.AreEqual(2, sentence.SubstringCount("the", true));
+			Assert.AreEqual(0, sentence.SubstringCount("kitty"));
         }
 
         [TestMethod]
@@ -161,7 +150,14 @@ namespace Fynydd.Carbide.UnitTests
             Assert.AreEqual("now is the time", x0.TrimWhitespace());
         }
 
-        [TestMethod]
+		[TestMethod]
+		public void StripHtmlBreaks()
+		{
+			string x0 = "<p id=\"testname\">Successful</p> <br>test<br /><p>!</p><p></p>";
+			Assert.AreEqual("Successful test!", x0.StripHtmlBreaks());
+		}
+
+		[TestMethod]
         public void ConvertFractions()
         {
             string x0 = "I'm pouring 1/2 a glass from 3/4 of the bottle.";
