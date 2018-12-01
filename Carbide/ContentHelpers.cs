@@ -53,7 +53,22 @@ namespace Fynydd.Carbide
                 {
                     var contentProperty = contentNode.GetPropertyValue<IPublishedContent>(propertyName, recurseAncestors);
 
-                    if (contentProperty != null)
+					if (contentProperty == null)
+					{
+						// See if property is a collection and return first item if it is
+
+						var collection = contentNode.GetPropertyValue<IEnumerable<IPublishedContent>>(propertyName, recurseAncestors);
+
+						if (collection != null)
+						{
+							if (collection.Count() > 0)
+							{
+								contentProperty = collection.First();
+							}
+						}
+					}
+
+					if (contentProperty != null)
                     {
                         if (contentType == IPublishedContentType.Media)
                         {
