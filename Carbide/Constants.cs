@@ -772,10 +772,15 @@ namespace Fynydd.Carbide.Constants
         /// </summary>
         Rss,
 
-        /// <summary>
-        /// Fri-Dec-20-2007
-        /// </summary>
-        AbbreviatedFull,
+		/// <summary>
+		/// 2007-12-20T09:45:24Z
+		/// </summary>
+		Utc,
+
+		/// <summary>
+		/// Fri-Dec-20-2007
+		/// </summary>
+		AbbreviatedFull,
 
         /// <summary>
         /// "X minutes ago", "X hours ago", "yesterday", "X days ago", "a week ago", or "on m/d/yyyy"

@@ -220,8 +220,9 @@ namespace Fynydd.Carbide
                         break;
 
                     case DateFormats.Rss:
-                        //thedate = date.ToUniversalTime().ToString("o");
-                        thedate = date.ToString("yyyy-MM-dd") + "T" + date.ToString("HH:mm:ss") + "Z";
+					case DateFormats.Utc:
+
+						thedate = date.ToString("yyyy-MM-dd") + "T" + date.ToString("HH:mm:ss") + "Z";
                         break;
 
                     case DateFormats.AbbreviatedFull:
