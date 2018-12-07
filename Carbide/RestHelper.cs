@@ -90,8 +90,8 @@ namespace Fynydd.Carbide
 		/// <summary>
 		/// Simple way to rate limit and blacklist REST requests from anonymous website pages (no tokens).
 		/// </summary>
-		/// <param name="wanIpAddress">The WAN IP address of the caller (provided by the caller)</param>
-		/// <param name="timestamp">UTC timestamp of the REST call (provided by the caller) in the format 2018-12-01T23:59:00Z, or empty string to not use timestamps</param>
+		/// <param name="wanIpAddress">The WAN IP address of the caller (optional, provided by the caller)</param>
+		/// <param name="timestamp">UTC timestamp of the REST call (optional, provided by the caller) in the format 2018-12-01T23:59:00Z, or empty string to not use timestamps</param>
 		/// <param name="config">RestSecurityConfig object</param>
 		/// <param name="context">Optional HttpContext object (uses Current if not provided)</param>
 		/// <returns>RestSecurityResult object with response information</returns>
@@ -124,7 +124,7 @@ namespace Fynydd.Carbide
 						CacheHelpers.CacheAdd(GetWanIpCacheName(wanip), 0, expirationSeconds: config.RestApiRateLimitSeconds);
 
 						// Validate WAN IP address matches actual
-						if (string.IsNullOrWhiteSpace(wanIpAddress) == false && wanip == wanIpAddress)
+						if (string.IsNullOrEmpty(wanIpAddress) || (string.IsNullOrEmpty(wanIpAddress) == false && wanip == wanIpAddress))
 						{
 							if (string.IsNullOrEmpty(timestamp))
 							{
