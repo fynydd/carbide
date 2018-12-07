@@ -106,16 +106,5 @@ namespace Fynydd.Carbide.UnitTests
             Assert.AreEqual("5d : 1h : 0m : 0s", TemporalHelpers.FormatTimer((3600 * 24 * 5) + 3600), "FormatTimer() (3600 * 24 * 5) + 3600 seconds");
             Assert.AreEqual("20d : 5h : 10m : 15s", TemporalHelpers.FormatTimer((3600 * 24 * 20) + (3600 * 5) + (60 * 10) + 15), "FormatTimer() (3600 * 24 * 20) + (3600 * 5) + (60 * 10) + 15 seconds");
         }
-
-        [TestMethod]
-        public void DateTimeUtc()
-        {
-            var timestamp = new DateTime(2018, 12, 6, 23, 50, 0, 0).ToString("yyyy-MM-dd") + "T" + new DateTime(2018, 12, 6, 23, 50, 0, 0).ToString("HH:mm:ss") + "Z";
-            var timestampParse = DateTime.Parse(timestamp, null, System.Globalization.DateTimeStyles.AdjustToUniversal);
-
-            timestampParse = (new DateTimeOffset(timestampParse, new TimeSpan(-5, 0, 0))).UtcDateTime;
-
-            Assert.AreEqual(timestamp, timestampParse);
-        }
     }
 }
