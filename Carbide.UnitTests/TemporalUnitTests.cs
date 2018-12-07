@@ -115,7 +115,7 @@ namespace Fynydd.Carbide.UnitTests
 
             timestampParse = (new DateTimeOffset(timestampParse, new TimeSpan(-5, 0, 0))).UtcDateTime;
 
-            Assert.Equal(timestamp, timestampParse);
+            Assert.AreEqual(timestamp, timestampParse);
         }
     }
 }
