@@ -65,8 +65,15 @@ namespace Fynydd.Carbide
         {
             double diff = 0;
 
-            startDate = (new DateTimeOffset(startDate, new TimeSpan(startDateOffset, 0, 0))).UtcDateTime;
-            endDate = (new DateTimeOffset(endDate, new TimeSpan(endDateOffset, 0, 0))).UtcDateTime;
+			if (startDate.Kind != DateTimeKind.Utc)
+			{
+				startDate = (new DateTimeOffset(startDate, new TimeSpan(startDateOffset, 0, 0))).UtcDateTime;
+			}
+
+			if (endDate.Kind != DateTimeKind.Utc)
+			{
+				endDate = (new DateTimeOffset(endDate, new TimeSpan(endDateOffset, 0, 0))).UtcDateTime;
+			}
 
             try
             {
