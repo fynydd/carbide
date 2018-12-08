@@ -81,28 +81,31 @@ namespace Fynydd.Carbide
 		/// Get the RestSecurity cache name
 		/// </summary>
 		/// <param name="wanIp">WAN IP address</param>
+		/// <param name="restPath">REST path to use as an identifier so that each path has its own rate limiting, etc. (e.g. "/member/signin")</param>
 		/// <returns></returns>
-		public static string GetWanIpCacheName(string wanIp)
+		public static string GetWanIpCacheName(string wanIp, string restPath = "/")
 		{
-			return "IP" + wanIp.Replace(".", "-");
+			return restPath + (restPath.EndsWith("/") ? "" : "/") + "IP" + wanIp.Replace(".", "-");
 		}
 
 		/// <summary>
-		/// Simple way to rate limit and blacklist REST requests from anonymous website pages (no tokens).
+		/// Simple way to rate limit and blacklist abusers for anonymous REST requests.
+		/// Uses WAN IP address to identify requesters and track their bad requests in order to blacklist them.
 		/// </summary>
-		/// <param name="wanIpAddress">The WAN IP address of the caller (optional, provided by the caller)</param>
-		/// <param name="timestamp">UTC timestamp of the REST call (optional, provided by the caller) in the format 2018-12-01T23:59:00Z, or empty string to not use timestamps</param>
+		/// <param name="wanIpAddress">Optional WAN IP address of the caller (provided by the caller) to compare against the actual address used to make the request</param>
+		/// <param name="timestamp">Optional UTC timestamp of the REST call (provided by the caller) in the format 2018-12-01T23:59:00Z</param>
+		/// <param name="restPath">REST path to use as an identifier so that each path has its own rate limiting, etc. (e.g. "/member/signin")</param>
 		/// <param name="config">RestSecurityConfig object</param>
 		/// <param name="context">Optional HttpContext object (uses Current if not provided)</param>
 		/// <returns>RestSecurityResult object with response information</returns>
-		public static RestSecurityResult RateLimit(string wanIpAddress, string timestamp, RestSecurityConfig config, HttpContext context = null)
+		public static RestSecurityResult RateLimit(string wanIpAddress, string timestamp, string restPath, RestSecurityConfig config, HttpContext context = null)
 		{
 			var wanip = ContextHelpers.EnsureAppContext(context).Request.UserHostAddress;
 			var result = new RestSecurityResult { WanIp = wanip, StatusCode = HttpStatusCode.BadGateway, Result = "Bad Gateway", Message = "Invalid request" };
 
 			try
 			{
-				if (CacheHelpers.CacheExists("BLACKLISTED" + GetWanIpCacheName(wanip)))
+				if (CacheHelpers.CacheExists("BLACKLISTED" + GetWanIpCacheName(wanip, restPath)))
 				{
 					result.StatusCode = HttpStatusCode.Forbidden;
 					result.Result = "Blacklisted";
@@ -112,7 +115,7 @@ namespace Fynydd.Carbide
 				else
 				{
 					// If a cache item exists with the WAN IP, rate limit (deny request)
-					if (CacheHelpers.CacheExists(GetWanIpCacheName(wanip)))
+					if (CacheHelpers.CacheExists(GetWanIpCacheName(wanip, restPath)))
 					{
 						result.StatusCode = (HttpStatusCode)429;
 						result.Result = "Too Many Requests";
@@ -121,7 +124,7 @@ namespace Fynydd.Carbide
 
 					else
 					{
-						CacheHelpers.CacheAdd(GetWanIpCacheName(wanip), 0, expirationSeconds: config.RestApiRateLimitSeconds);
+						CacheHelpers.CacheAdd(GetWanIpCacheName(wanip, restPath), 0, expirationSeconds: config.RestApiRateLimitSeconds);
 
 						// Validate WAN IP address matches actual
 						if (string.IsNullOrEmpty(wanIpAddress) || (string.IsNullOrEmpty(wanIpAddress) == false && wanip == wanIpAddress))
@@ -162,7 +165,7 @@ namespace Fynydd.Carbide
 				result.Message = e.Message;
 			}
 
-			ProcessRestSecurityTracking(result, config);
+			ProcessRestSecurityTracking(result, restPath, config);
 
 			return result;
 		}
@@ -171,8 +174,9 @@ namespace Fynydd.Carbide
 		/// Process and track REST request tracking.
 		/// </summary>
 		/// <param name="result">REST request result to process and track</param>
+		/// <param name="restPath">REST path to use as an identifier so that each path has its own rate limiting, etc. (e.g. "/member/signin")</param>
 		/// <param name="config">REST security configuration</param>
-		public static void ProcessRestSecurityTracking(RestSecurityResult result, RestSecurityConfig config)
+		public static void ProcessRestSecurityTracking(RestSecurityResult result, string restPath, RestSecurityConfig config)
 		{
 			// Failure, track bad requests for potential blacklisting
 			if (result.StatusCode != HttpStatusCode.OK)
@@ -180,22 +184,22 @@ namespace Fynydd.Carbide
 				int failures = 0;
 				var _x = HttpContext.Current.Cache;
 
-				if (CacheHelpers.CacheExists("FAILURES" + GetWanIpCacheName(result.WanIp)))
+				if (CacheHelpers.CacheExists("FAILURES" + GetWanIpCacheName(result.WanIp, restPath)))
 				{
-					failures = CacheHelpers.Cache<int>("FAILURES" + GetWanIpCacheName(result.WanIp));
+					failures = CacheHelpers.Cache<int>("FAILURES" + GetWanIpCacheName(result.WanIp, restPath));
 				}
 
 				failures++;
 
 				if (failures > config.RestApiBlacklistMaxFailureCount)
 				{
-					CacheHelpers.CacheDelete("FAILURES" + GetWanIpCacheName(result.WanIp));
-					CacheHelpers.CacheAdd("BLACKLISTED" + GetWanIpCacheName(result.WanIp), 0, expirationSeconds: config.RestApiBlacklistSeconds);
+					CacheHelpers.CacheDelete("FAILURES" + GetWanIpCacheName(result.WanIp, restPath));
+					CacheHelpers.CacheAdd("BLACKLISTED" + GetWanIpCacheName(result.WanIp, restPath), 0, expirationSeconds: config.RestApiBlacklistSeconds);
 				}
 
 				else
 				{
-					CacheHelpers.CacheAdd("FAILURES" + GetWanIpCacheName(result.WanIp), failures, expirationSeconds: config.RestApiBlacklistMaxFailureSeconds);
+					CacheHelpers.CacheAdd("FAILURES" + GetWanIpCacheName(result.WanIp, restPath), failures, expirationSeconds: config.RestApiBlacklistMaxFailureSeconds);
 				}
 			}
 		}
