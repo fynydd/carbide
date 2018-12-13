@@ -92,6 +92,20 @@ namespace Fynydd.Carbide
 		/// Simple way to rate limit and blacklist abusers for anonymous REST requests.
 		/// Uses WAN IP address to identify requesters and track their bad requests in order to blacklist them.
 		/// </summary>
+		/// <example>
+		/// One line of code will enforce rate limiting and blacklist a repeated bad request offender, 
+		/// returning a class object that contains the HttpStatusCode and messaging.
+		/// <code>
+		/// var jsonData = RestSecurity.RateLimit("169.128.25.23", "2018-12-01T23:59:00Z", "member/signin", restApiSettings);
+		/// if (jsonData.StatusCode == HttpStatusCode.OK)
+		///	{
+		///	    // Do stuff and set the status code and messaging properties in jsonData.
+		///     // After all processing, execute ProcessRestSecurityTracking() so subsequent
+		///     // calls to RateLimit() are aware of the ultimate result of this request.
+		///	    RestSecurity.ProcessRestSecurityTracking(jsonData, "member/signin", restApiSettings);
+		///	}
+		/// </code>
+		/// </example>
 		/// <param name="wanIpAddress">Optional WAN IP address of the caller (provided by the caller) to compare against the actual address used to make the request</param>
 		/// <param name="timestamp">Optional UTC timestamp of the REST call (provided by the caller) in the format 2018-12-01T23:59:00Z</param>
 		/// <param name="restPath">REST path to use as an identifier so that each path has its own rate limiting, etc. (e.g. "/member/signin")</param>
@@ -173,6 +187,20 @@ namespace Fynydd.Carbide
 		/// <summary>
 		/// Process and track REST request tracking.
 		/// </summary>
+		/// <example>
+		/// One line of code will enforce rate limiting and blacklist a repeated bad request offender, 
+		/// returning a class object that contains the HttpStatusCode and messaging.
+		/// <code>
+		/// var jsonData = RestSecurity.RateLimit("169.128.25.23", "2018-12-01T23:59:00Z", "member/signin", restApiSettings);
+		/// if (jsonData.StatusCode == HttpStatusCode.OK)
+		///	{
+		///	    // Do stuff and set the status code and messaging properties in jsonData.
+		///     // After all processing, execute ProcessRestSecurityTracking() so subsequent
+		///     // calls to RateLimit() are aware of the ultimate result of this request.
+		///	    RestSecurity.ProcessRestSecurityTracking(jsonData, "member/signin", restApiSettings);
+		///	}
+		/// </code>
+		/// </example>
 		/// <param name="result">REST request result to process and track</param>
 		/// <param name="restPath">REST path to use as an identifier so that each path has its own rate limiting, etc. (e.g. "/member/signin")</param>
 		/// <param name="config">REST security configuration</param>
