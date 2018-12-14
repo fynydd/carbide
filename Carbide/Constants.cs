@@ -56,8 +56,14 @@ namespace Fynydd.Carbide.Constants
     /// </summary>
     public enum HtmlLinefeeds
     {
+		/// <summary>
+		/// Use paragraph tags
+		/// </summary>
         Paragraphs,
 
+		/// <summary>
+		/// Use line break tags
+		/// </summary>
         LineBreaks
     }
 
@@ -67,6 +73,9 @@ namespace Fynydd.Carbide.Constants
     /// </summary>
     public static class Words
     {
+		/// <summary>
+		/// Words to ignore when using title case
+		/// </summary>
         public static readonly string[] TitleCaseIgnoreWords =
         {
             "a",
@@ -209,8 +218,14 @@ namespace Fynydd.Carbide.Constants
 
     #region Identification
 
+	/// <summary>
+	/// Constants used in geographic methods.
+	/// </summary>
     public static class Geography
     {
+		/// <summary>
+		/// U.S. state name abbreviations
+		/// </summary>
         public static readonly string[] StatesAbbreviations =
         {
             "AL",
@@ -267,6 +282,9 @@ namespace Fynydd.Carbide.Constants
         };
     }
 
+	/// <summary>
+	/// Regular expression strings.
+	/// </summary>
     public static class RegularExpressions
     {
         /// <summary>
@@ -498,13 +516,13 @@ namespace Fynydd.Carbide.Constants
 
         /// <summary>
         /// Matches a strong password format. Must have 8-64 characters, and at least one lower case, one upper case, one digit, and one special character.
-        /// Special characters include: ~!@#$%^&*()_+=[{]};:<>|./?,-
+        /// Special characters include: ~!@#$%^&amp;*()_+=[{]};:&lt;&gt;|./?,-
         /// </summary>
         public const string PasswordAndLength = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&*\(\)_+=\[{\]};:<>|./?,-])\S{8,64}$";
 
         /// <summary>
         /// Matches a strong password format. Must have at least one lower case, one upper case, one digit, and one special character.
-        /// Special characters include: ~!@#$%^&*()_+=[{]};:<>|./?,-
+        /// Special characters include: ~!@#$%^&amp;*()_+=[{]};:&lt;&gt;|./?,-
         /// </summary>
         public const string Password = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~!@#$%^&*\(\)_+=\[{\]};:<>|./?,-])\S{4,}$";
     }

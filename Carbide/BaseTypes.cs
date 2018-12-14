@@ -805,7 +805,7 @@ namespace Fynydd.Carbide
         /// Return a line from a string at a specific line number.
         /// </summary> 
         /// <param name="source">String to search</param>
-        /// <param name="lineNumber">Zero-based row number to return</param>
+        /// <param name="row">Zero-based row number to return</param>
         /// <param name="minimumWidth">Ensure whitespace up to this many characters</param>
         /// <returns>Line from the string including, not including line endings</returns> 
         public static string GetLine(this string source, int row, int minimumWidth = 0)
@@ -1713,7 +1713,7 @@ namespace Fynydd.Carbide
         /// ]]>
         /// </param>
         /// <param name="keepLinks">Keep and anchor tags intact.</param>
-        /// <param name="decodeEntities">Convert HTML entities to standard ASCII, like &copy; to ©</param>
+        /// <param name="decodeEntities">Convert HTML entities to standard ASCII, like &amp;copy; to ©</param>
         /// <returns>A string with HTML tags removed.</returns>
         public static string StripHtml(this string value, bool convertBreaks = false, bool keepLinks = false, bool decodeEntities = false)
         {
@@ -1771,7 +1771,7 @@ namespace Fynydd.Carbide
         /// ]]>
         /// </param>
         /// <param name="keepLinks">Keep and anchor tags intact.</param>
-        /// <param name="decodeEntities">Convert HTML entities to standard ASCII, like &copy; to ©</param>
+        /// <param name="decodeEntities">Convert HTML entities to standard ASCII, like &amp;copy; to ©</param>
         /// <returns>A string with HTML tags removed.</returns>
         public static string StripHtml(this StringBuilder value, bool convertBreaks = false, bool keepLinks = false, bool decodeEntities = false)
         {
@@ -2160,6 +2160,11 @@ namespace Fynydd.Carbide
             "F8", "F9", "FA", "FB", "FC", "FD", "FE", "FF"
         };
 
+		/// <summary>
+		/// Converts a list of bytes into a string of hexadecimal values.
+		/// </summary>
+		/// <param name="input">Byte list to convert</param>
+		/// <returns>Hex string</returns>
         public static string ConvertToHexString(this IList<byte> input)
         {
             if (input == null || input.Count <= 0)
