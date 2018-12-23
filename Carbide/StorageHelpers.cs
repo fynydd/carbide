@@ -565,42 +565,42 @@ namespace Fynydd.Carbide
             return ext;
         }
 
-        /// <summary><![CDATA[
-        /// Retrieve a filename from a path.
-        /// ]]></summary>
-        /// <example>
-        /// <code><![CDATA[
-        /// string filename = GetFilename(filepath);
-        /// ]]></code>
-        /// </example>
-        /// <param name="filePath">File path to parse.</param>
-        /// <returns>Filename as a string.</returns>
-        public static string GetFilename(this string filePath)
-        {
-            string filename = string.Empty;
+		/// <summary><![CDATA[
+		/// Retrieve a filename from a path.
+		/// ]]></summary>
+		/// <example>
+		/// <code><![CDATA[
+		/// string filename = GetFilename(filepath);
+		/// ]]></code>
+		/// </example>
+		/// <param name="filePath">File path to parse.</param>
+		/// <returns>Filename as a string.</returns>
+		public static string GetFilename(this string filePath)
+		{
+			string filename = filePath;
 
-            int x = filePath.LastIndexOf(@"\");
+			int x = filePath.LastIndexOf(Path.DirectorySeparatorChar.ToString());
 
-            if (x < 0)
-            {
-                x = filePath.LastIndexOf(@"/");
-            }
+			if (x < 0)
+			{
+				x = filePath.LastIndexOf(@"/");
+			}
 
-            if (x >= 0 && x < filePath.Length)
-            {
-                filename = filePath.Substring(x + 1);
-            }
+			if (x >= 0 && x < filePath.Length)
+			{
+				filename = filePath.Substring(x + 1);
+			}
 
-            return filename;
-        }
+			return filename;
+		}
 
-        /// <summary><![CDATA[
-        /// Replaces any invalid characters in a file name with underscores,
-        /// returning the filtered filename.
-        /// ]]></summary>
-        /// <param name="fileName">File name to filter.</param>
-        /// <returns>Filtered file name.</returns>
-        public static string MakeValidFileName(this string fileName)
+		/// <summary><![CDATA[
+		/// Replaces any invalid characters in a file name with underscores,
+		/// returning the filtered filename.
+		/// ]]></summary>
+		/// <param name="fileName">File name to filter.</param>
+		/// <returns>Filtered file name.</returns>
+		public static string MakeValidFileName(this string fileName)
         {
             return Regex.Replace(fileName, @"[^\s\w\.-]", "_");
         }

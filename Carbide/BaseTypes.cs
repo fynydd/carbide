@@ -325,30 +325,6 @@ namespace Fynydd.Carbide
         }
 
         /// <summary>
-        /// Get the filename portion of a file path.
-        /// </summary>
-        /// <param name="filePath">File path from which to extract the filename</param>
-        /// <returns>A filename or empty string</returns>
-        public static string GetFilename(this string filePath)
-        {
-            string filename = filePath;
-
-            int x = filePath.LastIndexOf(Path.DirectorySeparatorChar.ToString());
-
-            if (x < 0)
-            {
-                x = filePath.LastIndexOf(@"/");
-            }
-
-            if (x >= 0 && x < filePath.Length)
-            {
-                filename = filePath.Substring(x + 1);
-            }
-
-            return filename;
-        }
-
-        /// <summary>
         /// Repeat the first character a given string up to a specified number.
         /// </summary>
         /// <param name="text">String with first character to repeat</param>
