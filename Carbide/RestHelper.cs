@@ -15,10 +15,16 @@ namespace Fynydd.Carbide
 	public class RestSecurityConfig
 	{
 		/// <summary>
-		/// Minimum number of seconds allowed between successive REST calls, per WAN address.
-		/// Default: 2
+		/// Maximum number of seconds allowed between a given number of successive REST calls, per WAN address.
+		/// Default: 10
 		/// </summary>
-		public int RestApiRateLimitSeconds = 2;
+		public int RestApiRateLimitSeconds = 10;
+
+		/// <summary>
+		/// Maximum number of successive REST calls withina given number of seconds, per WAN address.
+		/// Default: 1000
+		/// </summary>
+		public int RestApiRateLimitCount = 1000;
 
 		/// <summary>
 		/// Maximum failure count within RestApiBlacklistMaxFailureSeconds before a caller is blacklisted.
@@ -45,7 +51,6 @@ namespace Fynydd.Carbide
 		public int RestApiTimestampMinutes = 15;
 	}
 
-
 	/// <summary>
 	/// Class for returning REST results
 	/// </summary>
@@ -70,6 +75,22 @@ namespace Fynydd.Carbide
 		/// Verbose result description
 		/// </summary>
 		public string Message { get; set; }
+	}
+
+	/// <summary>
+	/// Class for REST call rate limiting counters
+	/// </summary>
+	public class RateLimitingCounter
+	{
+		/// <summary>
+		/// Number of requests in a given time
+		/// </summary>
+		public int Counter { get; set; }
+
+		/// <summary>
+		/// Number of requests in a given time
+		/// </summary>
+		public DateTime Expiration { get; set; }
 	}
 
 	/// <summary><![CDATA[
@@ -128,18 +149,20 @@ namespace Fynydd.Carbide
 
 				else
 				{
-					// If a cache item exists with the WAN IP, rate limit (deny request)
-					if (CacheHelpers.CacheExists(GetWanIpCacheName(wanip, restPath)))
+					if (CacheHelpers.CacheExists(GetWanIpCacheName(wanip, restPath)) == false)
 					{
-						result.StatusCode = (HttpStatusCode)429;
-						result.Result = "Too Many Requests";
-						result.Message = "Slow down there partner.";
+						var newRateData = new RateLimitingCounter { Counter = 0, Expiration = DateTime.Now.AddSeconds(config.RestApiRateLimitSeconds) };
+						CacheHelpers.CacheAdd(GetWanIpCacheName(wanip, restPath), newRateData, expirationDateTime: newRateData.Expiration);
 					}
 
-					else
-					{
-						CacheHelpers.CacheAdd(GetWanIpCacheName(wanip, restPath), 0, expirationSeconds: config.RestApiRateLimitSeconds);
+					var rateData = CacheHelpers.Cache<RateLimitingCounter>(GetWanIpCacheName(wanip, restPath));
+					rateData.Counter += 1;
 
+					CacheHelpers.CacheDelete(GetWanIpCacheName(wanip, restPath));
+					CacheHelpers.CacheAdd(GetWanIpCacheName(wanip, restPath), rateData, expirationDateTime: rateData.Expiration);
+
+					if (rateData.Counter <= config.RestApiRateLimitCount)
+					{
 						// Validate WAN IP address matches actual
 						if (string.IsNullOrEmpty(wanIpAddress) || (string.IsNullOrEmpty(wanIpAddress) == false && wanip == wanIpAddress))
 						{
@@ -168,6 +191,20 @@ namespace Fynydd.Carbide
 								}
 							}
 						}
+
+						else
+						{
+							result.StatusCode = HttpStatusCode.BadRequest;
+							result.Result = "FAILURE";
+							result.Message = "You are not who you claim to be.";
+						}
+					}
+
+					else
+					{
+						result.StatusCode = (HttpStatusCode)429;
+						result.Result = "Too Many Requests";
+						result.Message = "Slow down there partner.";
 					}
 				}
 			}

@@ -44,7 +44,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <param name="key">Unique name of the cached item</param>
         /// <param name="value">Data to store in the cache</param>
-        /// <param name="expirationSeconds">Expiration time, in seconds, from the current date and time.</param>
+        /// <param name="expirationSeconds">Expiration time, in seconds, from the current date and time</param>
         /// <param name="context">HttpContext; defaults to Current</param>
         public static void CacheAdd<T>(string key, T value, int expirationSeconds, HttpContext context = null)
         {
@@ -58,14 +58,14 @@ namespace Fynydd.Carbide
             context.Cache.Add(key, value, null, DateTime.Now.AddSeconds(Convert.ToDouble(expirationSeconds)), System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Normal, null);
         }
 
-        /// <summary><![CDATA[
-        /// Output Caching wrapper method. Caches an object until the date and time specified.
-        /// ]]></summary>
-        /// <param name="key">Unique name of the cached item</param>
-        /// <param name="value">Object to store in the cache</param>
-        /// <param name="expirationDateTime">Expiration date and time.</param>
-        /// <param name="context">HttpContext; defaults to Current</param>
-        public static void CacheAdd<T>(string key, T value, DateTime expirationDateTime, HttpContext context = null)
+		/// <summary><![CDATA[
+		/// Output Caching wrapper method. Caches an object until the date and time specified.
+		/// ]]></summary>
+		/// <param name="key">Unique name of the cached item</param>
+		/// <param name="value">Object to store in the cache</param>
+		/// <param name="expirationDateTime">Expiration date and time.</param>
+		/// <param name="context">HttpContext; defaults to Current</param>
+		public static void CacheAdd<T>(string key, T value, DateTime expirationDateTime, HttpContext context = null)
         {
             context = ContextHelpers.EnsureAppContext(context);
 
