@@ -30,15 +30,63 @@ namespace Fynydd.Carbide
     /// </example>
     public static class MediaHelpers
     {
-        #region YouTube helpers
+		#region Media retrieval methods
 
-        /// <summary><![CDATA[
-        /// Convert a YouTube URL or video code into a properly formed YouTube URL.
-        /// ]]></summary>
-        /// <param name="youtubeUrlOrCode">YouTube video URL or code</param>
-        /// <param name="transport">Defaults to "//", but you can specify "http://", "https://", etc.</param>
-        /// <returns>A properly formatted YouTube video URL.</returns>
-        public static string GetYoutubeUrl(string youtubeUrlOrCode, string transport = "//")
+		/// <summary><![CDATA[
+		/// Get a single IPublishedContent media item by its document type alias.
+		/// Searches from the media library root down through descendants, stopping
+		/// at the first match.
+		/// ]]></summary>
+		/// <param name="documentTypeAlias">Document type alias (e.g. "presentationFile")</param>
+		/// <returns>Single matching IPublishedContent media item.</returns>
+		public static IPublishedContent GetMediaByDocTypeAlias(string documentTypeAlias)
+		{
+			var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
+
+			return umbracoHelper.TypedMediaAtRoot()
+				.SelectMany(root => root.Descendants())
+				.Where(x => x.DocumentTypeAlias == documentTypeAlias)
+				.FirstOrDefault();
+		}
+
+		/// <summary><![CDATA[
+		/// Get all IPublishedContent media items by their document type alias.
+		/// Searches from the site root down through descendants, returning
+		/// all matches.
+		/// ]]></summary>
+		/// <param name="documentTypeAlias">Document type alias (e.g. "presentationFile")</param>
+		/// <returns>All matching IPublishedContent media items.</returns>
+		public static IEnumerable<IPublishedContent> GetAllMediaByDocTypeAlias(string documentTypeAlias)
+		{
+			IEnumerable<IPublishedContent> fallback = Enumerable.Empty<IPublishedContent>();
+			var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
+
+			var content = umbracoHelper.TypedMediaAtRoot()
+				.SelectMany(root => root.Descendants())
+				.Where(x => x.DocumentTypeAlias == documentTypeAlias);
+
+			if (content != null)
+			{
+				return content;
+			}
+
+			else
+			{
+				return fallback;
+			}
+		}
+
+		#endregion
+
+		#region YouTube helpers
+
+		/// <summary><![CDATA[
+		/// Convert a YouTube URL or video code into a properly formed YouTube URL.
+		/// ]]></summary>
+		/// <param name="youtubeUrlOrCode">YouTube video URL or code</param>
+		/// <param name="transport">Defaults to "//", but you can specify "http://", "https://", etc.</param>
+		/// <returns>A properly formatted YouTube video URL.</returns>
+		public static string GetYoutubeUrl(string youtubeUrlOrCode, string transport = "//")
         {
             string result = "";
             string[] fragments = { "?v=", "/embed/", "youtu.be/" };
