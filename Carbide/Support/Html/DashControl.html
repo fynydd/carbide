@@ -26,6 +26,11 @@
             margin-bottom: 1rem;
         }
 
+        #buttons a[role="button"].orange {
+
+            background-color: #df6c1a;
+        }
+
         section[role="status"] {
 
             background-color: #f5f5f5;
@@ -113,7 +118,7 @@
             </p>
             <p>
                 <strong>Compact database.</strong> Delete the following if older than 30 days or unused: log entires, property data, previews, content versions, and content.<br />
-                <a role="button" onclick="startCompactDatabase()">Compact database</a>
+                <a role="button" class="orange" onclick="startCompactDatabase()">Compact database</a>
             </p>
         </div>
         <div id="output2">
@@ -202,19 +207,22 @@
 
         function startCompactDatabase() {
 
-            hideButton();
+            if (confirm("Are you sure? Press OK to compactthe database.")) {
 
-            $.ajax({
+                hideButton();
 
-                type: "GET",
-                async: true,
-                url: "~/umbraco/api/carbidesupport/compactdatabase/",
+                $.ajax({
 
-                success: function (data) {
+                    type: "GET",
+                    async: true,
+                    url: "~/umbraco/api/carbidesupport/compactdatabase/",
 
-                    getStatus2();
-                }
-            });
+                    success: function (data) {
+
+                        getStatus2();
+                    }
+                });
+            }
         }
 
         function getStatus2() {
