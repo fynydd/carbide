@@ -413,11 +413,197 @@ namespace Fynydd.Carbide
             return response;
         }
 
-        /// <summary><![CDATA[
-        /// Initiate an Umbraco page template pre-cache, so pages load quickly on first request.
-        /// ]]></summary>
-        /// <returns>Operation result text</returns>
-        [HttpGet]
+		/// <summary><![CDATA[
+		/// Delete log entries, unused property data and content, as well as old preview xml cache items.
+		/// ]]></summary>
+		/// <returns>Operation result text</returns>
+		[HttpGet]
+		public HttpResponseMessage CompactDatabase() // /umbraco/api/carbidesupport/compactdatabase/
+		{
+			string result = "";
+
+			if (HttpContext.Current.Application["RebuildCacheStatus"] == null)
+			{
+				var context = HttpContext.Current;
+
+				context.Application["RebuildCacheStatus"] = "running";
+				context.Application["RebuildCacheHistory"] = "<h4 style=\"font-size: 1.1rem; margin-bottom: 1.5rem;\">Started " + TemporalHelpers.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</h4>";
+
+				result = context.Application["RebuildCacheHistory"].ToString();
+
+				Thread workerThread = new Thread(new ThreadStart(() =>
+				{
+					StopWatch timer = new StopWatch();
+					StopWatch timer2 = new StopWatch();
+
+					try
+					{
+						timer.Start();
+						context.Server.ScriptTimeout = 100000;
+
+						context.Application["RebuildCacheHistory"] += "<ol style=\"padding: 0.25rem 0 0 1rem;\">";
+
+						var daterange = "DATEADD(m, -1, getdate())";
+						var ageText = "> 30 days old";
+
+
+						
+						// Truncate log
+
+						timer2.Start();
+						context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Truncating log (" + ageText + ")... ";
+
+						var commands = @"DECLARE @out int = (SELECT COUNT(*) FROM umbracoLog WHERE Datestamp < " + daterange + @");
+DELETE FROM umbracolog WHERE Datestamp < " + daterange + @";
+SELECT @out;";
+						context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
+
+						timer2.Stop();
+						context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
+
+
+						
+						// Delete unused property data
+
+						timer2.Start();
+						context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Delete unused property data (" + ageText + ")... ";
+
+						commands = @"DECLARE @out int = (SELECT COUNT(*) FROM cmsPropertyData WHERE
+    versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+    contentNodeId IN (SELECT DISTINCT nodeID FROM cmsDocument));
+DELETE FROM cmsPropertyData WHERE
+    versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+    contentNodeId IN (SELECT DISTINCT nodeID FROM cmsDocument);
+SELECT @out;";
+						context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
+
+						timer2.Stop();
+						context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
+
+
+
+						// Delete preview XML (pass 1)
+
+						timer2.Start();
+						context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Delete XML previews (" + ageText + ")... ";
+
+						commands = @"DECLARE @out int = (SELECT COUNT(*) FROM cmsPreviewXml WHERE
+    versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+    nodeId IN (SELECT DISTINCT nodeID FROM cmsDocument));
+DELETE FROM cmsPreviewXml WHERE
+    versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+    nodeId IN (SELECT DISTINCT nodeID FROM cmsDocument);
+SELECT @out;";
+						context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
+
+						timer2.Stop();
+						context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
+
+
+
+						// Delete content versions
+
+						timer2.Start();
+						context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Delete content versions (" + ageText + ")... ";
+
+						commands = @"DECLARE @out int = (SELECT COUNT(*) FROM cmsContentVersion WHERE
+    versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+    ContentId  IN (SELECT DISTINCT nodeID FROM cmsDocument));
+DELETE FROM cmsContentVersion WHERE
+    versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+    ContentId  IN (SELECT DISTINCT nodeID FROM cmsDocument);
+SELECT @out;";
+						context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
+
+						timer2.Stop();
+						context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
+
+						
+						
+						// Delete unpublished content
+
+						timer2.Start();
+						context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Delete unpublished content (" + ageText + ")... ";
+
+						commands = @"DECLARE @out int = (SELECT COUNT(*) FROM cmsDocument WHERE
+    versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+    nodeId IN (SELECT DISTINCT nodeID FROM cmsDocument));
+DELETE FROM cmsDocument WHERE
+    versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+    nodeId IN (SELECT DISTINCT nodeID FROM cmsDocument);
+SELECT @out;";
+						context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
+
+						timer2.Stop();
+						context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
+
+
+
+						// Delete preview XML (pass 2)
+
+						timer2.Start();
+						context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Delete XML previews (pass 2)... ";
+
+						commands = @"DECLARE @out int = (SELECT COUNT(*) FROM cmsPreviewXml WHERE
+    versionId IN (SELECT cmsPreviewXml.versionId FROM cmsPreviewXml JOIN cmsDocument ON cmsPreviewXml.versionId=cmsDocument.versionId WHERE cmsDocument.newest <> 1));
+DELETE FROM cmsPreviewXml WHERE
+    versionId IN (SELECT cmsPreviewXml.versionId FROM cmsPreviewXml JOIN cmsDocument ON cmsPreviewXml.versionId=cmsDocument.versionId WHERE cmsDocument.newest <> 1);
+SELECT @out;";
+						context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
+
+						timer2.Stop();
+						context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
+
+
+
+						timer.Stop();
+
+						context.Application.SafeRemove("RebuildCacheStatus");
+
+						context.Application["RebuildCacheHistory"] += "</ol>";
+
+						context.Application["RebuildCacheHistory"] += "<h4 style=\"font-size: 1.1rem;\">Finished in " + timer.GetSeconds<int>() + " seconds</h4>";
+					}
+
+					catch (Exception e)
+					{
+						timer.Stop();
+						timer2.Stop();
+
+						context.Application.SafeRemove("RebuildCacheStatus");
+
+						context.Application["RebuildCacheHistory"] += "</li></ol><p><strong>Error in " + timer.GetSeconds<int>() + " seconds on " + TemporalHelpers.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
+
+						result = context.Application["RebuildCacheHistory"].ToString();
+					}
+				}))
+				{
+					IsBackground = true
+				};
+				workerThread.Start();
+
+				while (HttpContext.Current.Application["RebuildCacheStatus"] == null)
+				{
+					// Wait for worker thread to start up and initialize
+					System.Threading.Thread.Sleep(50);
+				}
+			}
+
+			else
+			{
+				result = HttpContext.Current.Application["RebuildCacheHistory"].ToString();
+			}
+
+			var response = new HttpResponseMessage(HttpStatusCode.OK);
+			response.Content = new StringContent(result, Encoding.UTF8, "text/plain");
+			return response;
+		}
+
+		/// <summary><![CDATA[
+		/// Initiate an Umbraco page template pre-cache, so pages load quickly on first request.
+		/// ]]></summary>
+		/// <returns>Operation result text</returns>
+		[HttpGet]
         public HttpResponseMessage PrerenderPages() // /umbraco/api/carbidesupport/prerenderpages/
         {
             string result = "";

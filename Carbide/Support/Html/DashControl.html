@@ -111,6 +111,10 @@
                 <strong>Pre-render page templates.</strong> Eliminates slow page loads on first request. This is useful to speed things up after a deployment or whenever the application is reset.<br />
                 <a role="button" onclick="startPrerenderPages()">Prerender Templates</a>
             </p>
+            <p>
+                <strong>Compact database.</strong> Delete the following if older than 30 days or unused: log entires, property data, previews, content versions, and content.<br />
+                <a role="button" onclick="startCompactDatabase()">Compact database</a>
+            </p>
         </div>
         <div id="output2">
 
@@ -188,6 +192,23 @@
                 type: "GET",
                 async: true,
                 url: "~/umbraco/api/carbidesupport/prerenderpages/",
+
+                success: function (data) {
+
+                    getStatus2();
+                }
+            });
+        }
+
+        function startCompactDatabase() {
+
+            hideButton();
+
+            $.ajax({
+
+                type: "GET",
+                async: true,
+                url: "~/umbraco/api/carbidesupport/compactdatabase/",
 
                 success: function (data) {
 
