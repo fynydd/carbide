@@ -418,9 +418,10 @@ namespace Fynydd.Carbide
 		/// ]]></summary>
 		/// <returns>Operation result text</returns>
 		[HttpGet]
-		public HttpResponseMessage CompactDatabase() // /umbraco/api/carbidesupport/compactdatabase/
+		public HttpResponseMessage CompactDatabase(string days = "30") // /umbraco/api/carbidesupport/compactdatabase/
 		{
 			string result = "";
+			var response = new HttpResponseMessage(HttpStatusCode.OK);
 
 			if (HttpContext.Current.Application["RebuildCacheStatus"] == null)
 			{
@@ -431,161 +432,177 @@ namespace Fynydd.Carbide
 
 				result = context.Application["RebuildCacheHistory"].ToString();
 
-				Thread workerThread = new Thread(new ThreadStart(() =>
+				if (days.IsPureNumeric() == true)
 				{
-					StopWatch timer = new StopWatch();
-					StopWatch timer2 = new StopWatch();
+					int _days = int.Parse(days);
 
-					try
+					Thread workerThread = new Thread(new ThreadStart(() =>
 					{
-						timer.Start();
-						context.Server.ScriptTimeout = 100000;
+						StopWatch timer = new StopWatch();
+						StopWatch timer2 = new StopWatch();
 
-						context.Application["RebuildCacheHistory"] += "<ol style=\"padding: 0.25rem 0 0 1rem;\">";
+						try
+						{
+							timer.Start();
+							context.Server.ScriptTimeout = 100000;
 
-						var daterange = "DATEADD(m, -1, getdate())";
-						var ageText = "> 30 days old";
+							context.Application["RebuildCacheHistory"] += "<ol style=\"padding: 0.25rem 0 0 1rem;\">";
+
+							var daterange = "DATEADD(d, " + (_days * -1) + ", getdate())";
+							var ageText = "> " + _days + " days old";
 
 
-						
+
 						// Truncate log
 
 						timer2.Start();
-						context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Truncating log (" + ageText + ")... ";
+							context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Truncating log (" + ageText + ")... ";
 
-						var commands = @"DECLARE @out int = (SELECT COUNT(*) FROM umbracoLog WHERE Datestamp < " + daterange + @");
+							var commands = @"DECLARE @out int = (SELECT COUNT(*) FROM umbracoLog WHERE Datestamp < " + daterange + @");
 DELETE FROM umbracolog WHERE Datestamp < " + daterange + @";
 SELECT @out;";
-						context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
+							context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
 
-						timer2.Stop();
-						context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
+							timer2.Stop();
+							context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
 
 
-						
+
 						// Delete unused property data
 
 						timer2.Start();
-						context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Delete unused property data (" + ageText + ")... ";
+							context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Delete unused property data (" + ageText + ")... ";
 
-						commands = @"DECLARE @out int = (SELECT COUNT(*) FROM cmsPropertyData WHERE
-    versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
-    contentNodeId IN (SELECT DISTINCT nodeID FROM cmsDocument));
+							commands = @"DECLARE @out int = (SELECT COUNT(*) FROM cmsPropertyData WHERE
+	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+	contentNodeId IN (SELECT DISTINCT nodeID FROM cmsDocument));
 DELETE FROM cmsPropertyData WHERE
-    versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
-    contentNodeId IN (SELECT DISTINCT nodeID FROM cmsDocument);
+	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+	contentNodeId IN (SELECT DISTINCT nodeID FROM cmsDocument);
 SELECT @out;";
-						context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
+							context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
 
-						timer2.Stop();
-						context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
+							timer2.Stop();
+							context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
 
 
 
 						// Delete preview XML (pass 1)
 
 						timer2.Start();
-						context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Delete XML previews (" + ageText + ")... ";
+							context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Delete XML previews (" + ageText + ")... ";
 
-						commands = @"DECLARE @out int = (SELECT COUNT(*) FROM cmsPreviewXml WHERE
-    versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
-    nodeId IN (SELECT DISTINCT nodeID FROM cmsDocument));
+							commands = @"DECLARE @out int = (SELECT COUNT(*) FROM cmsPreviewXml WHERE
+	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+	nodeId IN (SELECT DISTINCT nodeID FROM cmsDocument));
 DELETE FROM cmsPreviewXml WHERE
-    versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
-    nodeId IN (SELECT DISTINCT nodeID FROM cmsDocument);
+	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+	nodeId IN (SELECT DISTINCT nodeID FROM cmsDocument);
 SELECT @out;";
-						context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
+							context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
 
-						timer2.Stop();
-						context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
+							timer2.Stop();
+							context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
 
 
 
 						// Delete content versions
 
 						timer2.Start();
-						context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Delete content versions (" + ageText + ")... ";
+							context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Delete content versions (" + ageText + ")... ";
 
-						commands = @"DECLARE @out int = (SELECT COUNT(*) FROM cmsContentVersion WHERE
-    versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
-    ContentId  IN (SELECT DISTINCT nodeID FROM cmsDocument));
+							commands = @"DECLARE @out int = (SELECT COUNT(*) FROM cmsContentVersion WHERE
+	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+	ContentId  IN (SELECT DISTINCT nodeID FROM cmsDocument));
 DELETE FROM cmsContentVersion WHERE
-    versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
-    ContentId  IN (SELECT DISTINCT nodeID FROM cmsDocument);
+	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+	ContentId  IN (SELECT DISTINCT nodeID FROM cmsDocument);
 SELECT @out;";
-						context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
+							context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
 
-						timer2.Stop();
-						context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
+							timer2.Stop();
+							context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
 
-						
-						
+
+
 						// Delete unpublished content
 
 						timer2.Start();
-						context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Delete unpublished content (" + ageText + ")... ";
+							context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Delete unpublished content (" + ageText + ")... ";
 
-						commands = @"DECLARE @out int = (SELECT COUNT(*) FROM cmsDocument WHERE
-    versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
-    nodeId IN (SELECT DISTINCT nodeID FROM cmsDocument));
+							commands = @"DECLARE @out int = (SELECT COUNT(*) FROM cmsDocument WHERE
+	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+	nodeId IN (SELECT DISTINCT nodeID FROM cmsDocument));
 DELETE FROM cmsDocument WHERE
-    versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
-    nodeId IN (SELECT DISTINCT nodeID FROM cmsDocument);
+	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+	nodeId IN (SELECT DISTINCT nodeID FROM cmsDocument);
 SELECT @out;";
-						context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
+							context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
 
-						timer2.Stop();
-						context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
+							timer2.Stop();
+							context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
 
 
 
 						// Delete preview XML (pass 2)
 
 						timer2.Start();
-						context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Delete XML previews (pass 2)... ";
+							context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Delete XML previews (pass 2)... ";
 
-						commands = @"DECLARE @out int = (SELECT COUNT(*) FROM cmsPreviewXml WHERE
-    versionId IN (SELECT cmsPreviewXml.versionId FROM cmsPreviewXml JOIN cmsDocument ON cmsPreviewXml.versionId=cmsDocument.versionId WHERE cmsDocument.newest <> 1));
+							commands = @"DECLARE @out int = (SELECT COUNT(*) FROM cmsPreviewXml WHERE
+	versionId IN (SELECT cmsPreviewXml.versionId FROM cmsPreviewXml JOIN cmsDocument ON cmsPreviewXml.versionId=cmsDocument.versionId WHERE cmsDocument.newest <> 1));
 DELETE FROM cmsPreviewXml WHERE
-    versionId IN (SELECT cmsPreviewXml.versionId FROM cmsPreviewXml JOIN cmsDocument ON cmsPreviewXml.versionId=cmsDocument.versionId WHERE cmsDocument.newest <> 1);
+	versionId IN (SELECT cmsPreviewXml.versionId FROM cmsPreviewXml JOIN cmsDocument ON cmsPreviewXml.versionId=cmsDocument.versionId WHERE cmsDocument.newest <> 1);
 SELECT @out;";
-						context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
+							context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
 
-						timer2.Stop();
-						context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
+							timer2.Stop();
+							context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
 
 
 
-						timer.Stop();
+							timer.Stop();
 
-						context.Application.SafeRemove("RebuildCacheStatus");
+							context.Application.SafeRemove("RebuildCacheStatus");
 
-						context.Application["RebuildCacheHistory"] += "</ol>";
+							context.Application["RebuildCacheHistory"] += "</ol>";
+							context.Application["RebuildCacheHistory"] += "<h4 style=\"font-size: 1.1rem;\">Finished in " + timer.GetSeconds<int>() + " seconds</h4>";
+						}
 
-						context.Application["RebuildCacheHistory"] += "<h4 style=\"font-size: 1.1rem;\">Finished in " + timer.GetSeconds<int>() + " seconds</h4>";
-					}
+						catch (Exception e)
+						{
+							timer.Stop();
+							timer2.Stop();
 
-					catch (Exception e)
+							context.Application.SafeRemove("RebuildCacheStatus");
+
+							context.Application["RebuildCacheHistory"] += "</li></ol><p><strong>Error in " + timer.GetSeconds<int>() + " seconds on " + TemporalHelpers.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
+
+							result = context.Application["RebuildCacheHistory"].ToString();
+						}
+					}))
 					{
-						timer.Stop();
-						timer2.Stop();
+						IsBackground = true
+					};
+					workerThread.Start();
 
-						context.Application.SafeRemove("RebuildCacheStatus");
-
-						context.Application["RebuildCacheHistory"] += "</li></ol><p><strong>Error in " + timer.GetSeconds<int>() + " seconds on " + TemporalHelpers.DateFormat(DateTime.Now, DateFormats.European).ToUpper() + " @ " + TemporalHelpers.TimeFormat(DateTime.Now, TimeFormats.SqlMilitary) + "</strong></p>" + e.Message;
-
-						result = context.Application["RebuildCacheHistory"].ToString();
+					while (HttpContext.Current.Application["RebuildCacheStatus"] == null)
+					{
+						// Wait for worker thread to start up and initialize
+						System.Threading.Thread.Sleep(50);
 					}
-				}))
-				{
-					IsBackground = true
-				};
-				workerThread.Start();
+				}
 
-				while (HttpContext.Current.Application["RebuildCacheStatus"] == null)
+				else
 				{
-					// Wait for worker thread to start up and initialize
-					System.Threading.Thread.Sleep(50);
+					context.Application.SafeRemove("RebuildCacheStatus");
+
+					context.Application["RebuildCacheHistory"] += "<ol style=\"padding: 0.25rem 0 0 1rem;\">";
+					context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Days is not a numeric value.</li>";
+					context.Application["RebuildCacheHistory"] += "</ol>";
+					context.Application["RebuildCacheHistory"] += "<h4 style=\"font-size: 1.1rem;\">Aborted</h4>";
+
+					result = context.Application["RebuildCacheHistory"].ToString();
 				}
 			}
 
@@ -594,8 +611,8 @@ SELECT @out;";
 				result = HttpContext.Current.Application["RebuildCacheHistory"].ToString();
 			}
 
-			var response = new HttpResponseMessage(HttpStatusCode.OK);
 			response.Content = new StringContent(result, Encoding.UTF8, "text/plain");
+
 			return response;
 		}
 

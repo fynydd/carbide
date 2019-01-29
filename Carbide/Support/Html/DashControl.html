@@ -92,6 +92,17 @@
             border-radius: 4px;
         }
 
+        #compact-days {
+        
+            margin: 0 0.25rem;
+            padding: 0.1rem 0.25rem 0.05rem 0.25rem;
+            line-height: 0;
+            height: auto;
+            width: 3rem;
+            font-size: 0.75rem;
+            vertical-align: top;
+        }
+
     </style>
 
     <section role="status" id="CachePanel">
@@ -117,7 +128,7 @@
                 <a role="button" onclick="startPrerenderPages()">Prerender Templates</a>
             </p>
             <p>
-                <strong>Compact database.</strong> Delete the following if older than 30 days or unused: log entires, property data, previews, content versions, and content.<br />
+                <strong>Compact database.</strong> Delete the following if older than <input type="text" id="compact-days" value="30" /> days or unused: log entires, property data, previews, content versions, and content.<br />
                 <a role="button" class="orange" onclick="startCompactDatabase()">Compact database</a>
             </p>
         </div>
@@ -215,7 +226,7 @@
 
                     type: "GET",
                     async: true,
-                    url: "~/umbraco/api/carbidesupport/compactdatabase/",
+                    url: "~/umbraco/api/carbidesupport/compactdatabase/?days=" + $("#compact-days").val(),
 
                     success: function (data) {
 
