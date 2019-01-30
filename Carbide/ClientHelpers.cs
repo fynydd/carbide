@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Web;
 using System.Web.Mvc;
 
@@ -44,19 +45,40 @@ namespace Fynydd.Carbide
                         newContentpath = "_carbide.generated." + filePath;
                     }
 
-                    if (HttpContext.Current.Application.KeyExists(StorageHelpers.ConvertFilePathToKey(filePath) + "_MINIFY"))
+					FileInfo fileInfo = new FileInfo(StorageHelpers.MapPath(filePath));
+					DateTime lastModified = fileInfo.LastWriteTime;
+					var item = fileInfo.Length + "|" + lastModified.DateFormat(Carbide.Constants.DateFormats.Utc);
+
+					if (HttpContext.Current.Application.KeyExists(StorageHelpers.ConvertFilePathToKey(filePath)))
                     {
-                        if (StorageHelpers.FileExists(filePath))
-                        {
-                            if (HttpContext.Current.Application[StorageHelpers.ConvertFilePathToKey(filePath) + "_MINIFY"].ToString() == StorageHelpers.MakeCacheBuster(filePath))
-                            {
-                                filePath = newContentpath;
-                                proceed = false;
-                            }
-                        }
+						if (HttpContext.Current.Application[StorageHelpers.ConvertFilePathToKey(filePath)].ToString() == item)
+						{
+							if (StorageHelpers.FileExists(newContentpath))
+							{
+								filePath = newContentpath;
+								proceed = false;
+							}
+						}
+
+						else
+						{
+							if (StorageHelpers.FileExists(filePath) == false)
+							{
+								filePath = newContentpath;
+								proceed = false;
+							}
+						}
                     }
 
-                    if (proceed)
+					else
+					{
+						if (StorageHelpers.FileExists(filePath) == false)
+						{
+							proceed = false;
+						}
+					}
+
+					if (proceed)
                     {
                         if (StorageHelpers.FileExists(newContentpath))
                         {
@@ -78,14 +100,19 @@ namespace Fynydd.Carbide
                         }
 
                         StorageHelpers.WriteFile(newContentpath, minified);
-                        HttpContext.Current.Application[StorageHelpers.ConvertFilePathToKey(filePath) + "_MINIFY"] = StorageHelpers.MakeCacheBuster(filePath);
 
-                        filePath = newContentpath;
+                        Debug.WriteLine("MINIFIED TO " + newContentpath);
 
-                        Debug.WriteLine("MINIFIED TO " + filePath);
-                    }
+						fileInfo = new FileInfo(StorageHelpers.MapPath(filePath));
+						lastModified = fileInfo.LastWriteTime;
+						item = fileInfo.Length + "|" + lastModified.DateFormat(Carbide.Constants.DateFormats.Utc);
 
-                    else
+						HttpContext.Current.Application[StorageHelpers.ConvertFilePathToKey(filePath)] = item;
+
+						filePath = newContentpath;
+					}
+
+					else
                     {
                         Debug.WriteLine("SKIPPED MINIFICATION FOR " + filePath);
                     }

@@ -654,7 +654,7 @@ namespace Fynydd.Carbide
         /// <returns>"Carbide-Key--images-space.gif"</returns>
         public static string ConvertFilePathToKey(this string filePath)
         {
-            return "Carbide-Key-" + filePath.Replace(":", "").Replace("\\", "").Replace("/", "").Replace(" ", "");
+            return "Carbide-Key-" + filePath.Replace(":", "").Replace("\\", "-").Replace("/", "-").Replace(" ", "");
         }
 
         /// <summary><![CDATA[
@@ -715,7 +715,7 @@ namespace Fynydd.Carbide
                                         FileInfo fileInfo = new FileInfo(MapPath(segments[0]));
                                         DateTime lastModified = fileInfo.LastWriteTime;
 
-                                        if (segments[1] != lastModified.DateFormat(DateFormats.Rss))
+                                        if (segments[1] != lastModified.DateFormat(DateFormats.Utc))
                                         {
                                             process = true;
                                             Debug.WriteLine(" modified, will recompile...");
@@ -827,7 +827,7 @@ namespace Fynydd.Carbide
                         {
                             FileInfo fileInfo = new FileInfo(MapPath(file));
                             DateTime lastModified = fileInfo.LastWriteTime;
-                            var item = file + "|" + lastModified.DateFormat(DateFormats.Rss);
+                            var item = file + "|" + lastModified.DateFormat(DateFormats.Utc);
 
                             fileList.Add(item);
                             Debug.WriteLine(item);
