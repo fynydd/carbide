@@ -771,7 +771,7 @@ namespace Fynydd.Carbide
                 var releaseOptions = new ScssOptions
                 {
 
-                    OutputStyle = ScssOutputStyle.Compressed,
+                    OutputStyle = ScssOutputStyle.Compact,
                     SourceComments = false,
                     GenerateSourceMap = false,
                     OutputFile = MapPath(outputPath)
@@ -779,17 +779,26 @@ namespace Fynydd.Carbide
 
                 try
                 {
-                    ScssResult css;
-                    var options = debugOptions;
+                    ScssResult cssResult;
+					var css = "";
+					var map = "";
 
                     if (debugMode == false)
                     {
-                        options = releaseOptions;
-                    }
+						cssResult = Scss.ConvertFileToCss(MapPath(scssInputPath), releaseOptions);
 
-                    css = Scss.ConvertFileToCss(MapPath(scssInputPath), options);
+						var cssc = new Yahoo.Yui.Compressor.CssCompressor();
+						css = cssc.Compress(cssResult.Css);
+					}
 
-                    if (outputPath.FileExists())
+					else
+					{
+						cssResult = Scss.ConvertFileToCss(MapPath(scssInputPath), debugOptions);
+						css = cssResult.Css;
+						map = cssResult.SourceMap;
+					}
+
+					if (outputPath.FileExists())
                     {
                         DeleteFiles(outputPath);
                         Debug.WriteLine("Deleted " + outputPath);
@@ -801,20 +810,20 @@ namespace Fynydd.Carbide
                         Debug.WriteLine("Deleted " + outputPath + ".map");
                     }
 
-                    WriteFile(outputPath, css.Css);
+                    WriteFile(outputPath, css);
                     Debug.WriteLine("Generated " + outputPath);
 
-                    if (options.GenerateSourceMap == true)
-                    {
-                        WriteFile(outputPath + ".map", css.SourceMap);
+					if (debugMode == true)
+					{
+						WriteFile(outputPath + ".map", map);
                         Debug.WriteLine("Generated " + outputPath + ".map");
                     }
 
-                    if (css.IncludedFiles.Count > 0)
+                    if (cssResult.IncludedFiles.Count > 0)
                     {
                         ArrayList fileList = new ArrayList();
 
-                        foreach (var file in css.IncludedFiles)
+                        foreach (var file in cssResult.IncludedFiles)
                         {
                             FileInfo fileInfo = new FileInfo(MapPath(file));
                             DateTime lastModified = fileInfo.LastWriteTime;
