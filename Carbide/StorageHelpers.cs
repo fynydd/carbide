@@ -761,8 +761,8 @@ namespace Fynydd.Carbide
             {
                 var debugOptions = new LibSass.Compiler.Options.SassOptions
                 {
-                    OutputStyle = LibSass.Compiler.Options.SassOutputStyle.Expanded,
-                    IncludeSourceComments = true,
+                    OutputStyle = LibSass.Compiler.Options.SassOutputStyle.Compact,
+                    IncludeSourceComments = false,
                     IncludeSourceMapContents = true,
                     OutputPath = MapPath(outputPath),
                     SourceMapFile = outputPath + ".map",
