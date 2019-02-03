@@ -7,7 +7,7 @@ using System.Management;
 using System.Text.RegularExpressions;
 using System.Web;
 
-using SharpScss;
+using LibSass;
 
 using Fynydd.Carbide.Constants;
 using System.Reflection;
@@ -759,42 +759,46 @@ namespace Fynydd.Carbide
 
             if (process == true)
             {
-                var debugOptions = new ScssOptions
+                var debugOptions = new LibSass.Compiler.Options.SassOptions
                 {
-
-                    OutputStyle = ScssOutputStyle.Expanded,
-                    SourceComments = true,
-                    GenerateSourceMap = true,
-                    OutputFile = MapPath(outputPath)
+                    OutputStyle = LibSass.Compiler.Options.SassOutputStyle.Expanded,
+                    IncludeSourceComments = true,
+                    IncludeSourceMapContents = true,
+                    OutputPath = MapPath(outputPath),
+                    SourceMapFile = outputPath + ".map",
+                    InputPath = MapPath(scssInputPath)
                 };
 
-                var releaseOptions = new ScssOptions
+                var releaseOptions = new LibSass.Compiler.Options.SassOptions
                 {
-
-                    OutputStyle = ScssOutputStyle.Compact,
-                    SourceComments = false,
-                    GenerateSourceMap = false,
-                    OutputFile = MapPath(outputPath)
+                    OutputStyle = LibSass.Compiler.Options.SassOutputStyle.Compact,
+                    IncludeSourceComments = false,
+                    IncludeSourceMapContents = false,
+                    OutputPath = MapPath(outputPath),
+                    InputPath = MapPath(scssInputPath)
                 };
 
                 try
                 {
-                    ScssResult cssResult;
+                    var cssResult = new LibSass.Compiler.SassResult();
 					var css = "";
 					var map = "";
 
                     if (debugMode == false)
                     {
-						cssResult = Scss.ConvertFileToCss(MapPath(scssInputPath), releaseOptions);
+                        var sassCompiler = new LibSass.Compiler.SassCompiler(releaseOptions);
+                        var cssc = new Yahoo.Yui.Compressor.CssCompressor();
 
-						var cssc = new Yahoo.Yui.Compressor.CssCompressor();
-						css = cssc.Compress(cssResult.Css);
+                        cssResult = sassCompiler.Compile();
+						css = cssc.Compress(cssResult.Output);
 					}
 
 					else
 					{
-						cssResult = Scss.ConvertFileToCss(MapPath(scssInputPath), debugOptions);
-						css = cssResult.Css;
+                        var sassCompiler = new LibSass.Compiler.SassCompiler(debugOptions);
+
+                        cssResult = sassCompiler.Compile();
+						css = cssResult.Output;
 						map = cssResult.SourceMap;
 					}
 
@@ -819,7 +823,7 @@ namespace Fynydd.Carbide
                         Debug.WriteLine("Generated " + outputPath + ".map");
                     }
 
-                    if (cssResult.IncludedFiles.Count > 0)
+                    if (cssResult.IncludedFiles.Length > 0)
                     {
                         ArrayList fileList = new ArrayList();
 
@@ -845,7 +849,7 @@ namespace Fynydd.Carbide
                     }
                 }
 
-                catch (ScssException e)
+                catch (Exception e)
                 {
                     Debug.WriteLine("LibSass error: " + e.Message);
                     Debug.WriteLine("");
