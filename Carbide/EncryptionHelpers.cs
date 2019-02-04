@@ -69,7 +69,7 @@ namespace Fynydd.Carbide
         #region Key generation
 
         /// <summary><![CDATA[
-        /// Converts a comma-separated string of 24 8-bit values and converts it into a Byte array.
+        /// Converts a comma-separated string of 32 8-bit values and converts it into a Byte array.
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
@@ -110,14 +110,14 @@ namespace Fynydd.Carbide
         }
 
         /// <summary><![CDATA[
-        /// Converts a comma-separated string of 18 8-bit values and converts it into a Byte array.
+        /// Converts a comma-separated string of 16 8-bit values and converts it into a Byte array.
         /// ]]></summary>
         /// <example>
         /// <code><![CDATA[
         /// Byte[] baseIV = EncryptionHelpers.CreateInitVector("180, 54, 206, 210, 10, 101, 6, 87, 13, 3, 241, 189, 176, 175, 109, 217");
         /// ]]></code>
         /// </example>
-        /// <param name="key">18 8-bit values in a comma-separated list.</param>
+        /// <param name="key">16 8-bit values in a comma-separated list.</param>
         /// <returns>Byte array</returns>
         public static byte[] CreateInitVector(this string key)
         {
@@ -208,8 +208,8 @@ namespace Fynydd.Carbide
         /// ]]></code>
         /// </example>
         /// <param name="data">Data to encrypt.</param>
-        /// <param name="key">24 byte array key for encrypting the data.</param>
-        /// <param name="ivec">18 byte array initialization vector for the encryption routine.</param>
+        /// <param name="key">32 byte array key for encrypting the data.</param>
+        /// <param name="ivec">16 byte array initialization vector for the encryption routine.</param>
         /// <returns>An encrypted string.</returns>
         public static string Encrypt<T>(this T data, byte[] key, byte[] ivec)
         {
@@ -313,8 +313,8 @@ namespace Fynydd.Carbide
         /// ]]></code>
         /// </example>
         /// <param name="data">Data to encrypt.</param>
-        /// <param name="key">24 byte key string for encrypting the data.</param>
-        /// <param name="ivec">18 byte initialization vector string for the encryption routine.</param>
+        /// <param name="key">32 byte key string for encrypting the data.</param>
+        /// <param name="ivec">16 byte initialization vector string for the encryption routine.</param>
         /// <returns>A BASE64+ encrypted string.</returns>
         public static string Encrypt<T>(this T data, string key, string ivec)
         {
@@ -348,8 +348,8 @@ namespace Fynydd.Carbide
         /// ]]></code>
         /// </example>
         /// <param name="data">String to decrypt.</param>
-        /// <param name="key">24 byte key string for decrypting the data. This must match the key used to encrypt the data.</param>
-        /// <param name="ivec">18 byte initialization vector string for the decryption routine. This must match the init vector used to encrypt the data.</param>
+        /// <param name="key">32 byte key string for decrypting the data. This must match the key used to encrypt the data.</param>
+        /// <param name="ivec">16 byte initialization vector string for the decryption routine. This must match the init vector used to encrypt the data.</param>
         /// <returns>A decrypted variable</returns>
         public static T Decrypt<T>(this string data, string key, string ivec)
         {
@@ -385,8 +385,8 @@ namespace Fynydd.Carbide
         /// ]]></code>
         /// </example>
         /// <param name="data">String to decrypt.</param>
-        /// <param name="key">24 byte array key for decrypting the data. This must match the key used to encrypt the data.</param>
-        /// <param name="ivec">18 byte array init vector for decrypting the data. This must match the init vector used to encrypt the data.</param>
+        /// <param name="key">32 byte array key for decrypting the data. This must match the key used to encrypt the data.</param>
+        /// <param name="ivec">16 byte array init vector for decrypting the data. This must match the init vector used to encrypt the data.</param>
         /// <returns>A decrypted variable</returns>
         public static T Decrypt<T>(this string data, byte[] key, byte[] ivec)
         {
