@@ -42,12 +42,7 @@ namespace Fynydd.Carbide
 		/// <returns>Single matching IPublishedContent media item.</returns>
 		public static IPublishedContent GetMediaByDocTypeAlias(string documentTypeAlias)
 		{
-			var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
-
-			return umbracoHelper.TypedMediaAtRoot()
-				.SelectMany(root => root.Descendants())
-				.Where(x => x.DocumentTypeAlias == documentTypeAlias)
-				.FirstOrDefault();
+			return GetAllMediaByDocTypeAlias(documentTypeAlias).FirstOrDefault();
 		}
 
 		/// <summary><![CDATA[
@@ -82,7 +77,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <param name="Id">Content node Id</param>
         /// <returns>Single matching media item.</returns>
-        public static IPublishedContent GetContentById(int Id)
+        public static IPublishedContent GetMediaById(int Id)
         {
             var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
 
@@ -94,11 +89,36 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <param name="Id">Content node Id</param>
         /// <returns>Single matching media item.</returns>
-        public static IPublishedContent GetContentById(string Id)
+        public static IPublishedContent GetMediaById(string Id)
+        {
+            return GetMediaById(int.Parse(Id));
+        }
+
+        /// <summary><![CDATA[
+        /// Get a single Media node by Name.
+        /// ]]></summary>
+        /// <param name="name">Content node Name</param>
+        /// <returns>Single matching media item.</returns>
+        public static IPublishedContent GetMediaByName(string name)
         {
             var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
 
-            return umbracoHelper.TypedMedia(Id);
+            return GetAllMediaByName(name).FirstOrDefault();
+        }
+
+
+        /// <summary><![CDATA[
+        /// Get all single Media nodes by Name.
+        /// ]]></summary>
+        /// <param name="name">Content node Name</param>
+        /// <returns>All matching media items.</returns>
+        public static IEnumerable<IPublishedContent> GetAllMediaByName(string name)
+        {
+            var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
+
+            return umbracoHelper.TypedMediaAtRoot()
+                .SelectMany(root => root.Descendants())
+                .Where(m => m.Name == name);
         }
 
         #endregion
