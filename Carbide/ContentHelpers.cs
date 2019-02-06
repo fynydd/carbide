@@ -14,6 +14,7 @@ using Umbraco.Core.Events;
 using Umbraco.Core.Models;
 using Umbraco.Core.Media;
 using Umbraco.Core.Services;
+using Umbraco.Core.Xml;
 using Umbraco.Web;
 
 using Fynydd.Carbide;
@@ -1008,6 +1009,19 @@ namespace Fynydd.Carbide
         }
 
         /// <summary><![CDATA[
+        /// Get a single IPublishedContent node using XPath.
+        /// ]]></summary>
+        /// <param name="xpath">Content node XPath</param>
+        /// <param name="vars">Optional XPath variables</param>
+        /// <returns>Single matching IPublishedContent item.</returns>
+        public static IPublishedContent GetContentByXPath(string xpath, XPathVariable[] vars = null)
+        {
+            var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
+
+            return umbracoHelper.TypedContentSingleAtXPath(xpath, vars);
+        }
+
+        /// <summary><![CDATA[
         /// Get a single IPublishedContent node by its Guid.
         /// ]]></summary>
         /// <param name="guid">Content node Guid</param>
@@ -1088,6 +1102,19 @@ namespace Fynydd.Carbide
             {
                 return fallback;
             }
+        }
+
+        /// <summary><![CDATA[
+        /// Get all matching IPublishedContent nodes using XPath.
+        /// ]]></summary>
+        /// <param name="xpath">Content node XPath</param>
+        /// <param name="vars">Optional XPath variables</param>
+        /// <returns>All matching IPublishedContent items.</returns>
+        public static IEnumerable<IPublishedContent> GetAllContentByXPath(string xpath, XPathVariable[] vars = null)
+        {
+            var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
+
+            return umbracoHelper.TypedContentAtXPath(xpath, vars).ToList();
         }
 
         /// <summary><![CDATA[
