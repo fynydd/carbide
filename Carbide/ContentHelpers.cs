@@ -925,22 +925,7 @@ namespace Fynydd.Carbide
 
         #endregion
 
-        #region IPublishedContent node retrieval methods
-
-        /// <summary><![CDATA[
-        /// Get a single IPublishedContent node by its document type alias.
-        /// Searches the current node's descendants, stopping at the first match.
-        /// ]]></summary>
-        /// <param name="contentNode">The current content node as an IPublishedContent object</param>
-        /// <param name="documentTypeAlias">Document type alias (e.g. "blogArticle")</param>
-        /// <returns>Single matching IPublishedContent node.</returns>
-        public static IPublishedContent GetContentByDocTypeAlias(this IPublishedContent contentNode, string documentTypeAlias)
-        {
-            return contentNode
-                .Descendants()
-                .Where(x => x.DocumentTypeAlias == documentTypeAlias)
-                .FirstOrDefault();
-        }
+        #region Enumerable IPublishedContent retrieval methods
 
         /// <summary><![CDATA[
         /// Get all IPublishedContent nodes by their document type aliases.
@@ -954,7 +939,7 @@ namespace Fynydd.Carbide
             IEnumerable<IPublishedContent> fallback = Enumerable.Empty<IPublishedContent>();
 
             var content = contentNode
-                .Descendants()
+                .DescendantsOrSelf()
                 .Where(x => x.DocumentTypeAlias == documentTypeAlias);
 
             if (content != null)
@@ -976,105 +961,39 @@ namespace Fynydd.Carbide
         /// <param name="nodeName">Node name (e.g. "Home Page")</param>
         /// <param name="contentNode">Parent content node to search</param>
         /// <returns>Single matching IPublishedContent node.</returns>
-        public static IPublishedContent GetContentByName(this IPublishedContent contentNode, string nodeName)
+        public static IEnumerable<IPublishedContent> GetAllContentByName(this IPublishedContent contentNode, string nodeName)
         {
-            return contentNode
-                .Descendants()
-                .Where(x => x.Name == nodeName)
-                .FirstOrDefault();
-        }
-
-        /// <summary><![CDATA[
-        /// Get a single IPublishedContent node by its Id.
-        /// ]]></summary>
-        /// <param name="Id">Content node Id</param>
-        /// <returns>Single matching IPublishedContent item.</returns>
-        public static IPublishedContent GetContentById(int Id)
-        {
+            IEnumerable<IPublishedContent> fallback = Enumerable.Empty<IPublishedContent>();
             var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
 
-            return umbracoHelper.TypedContent(Id);
+            var content = contentNode
+                .DescendantsOrSelf()
+                .Where(x => x.Name == nodeName);
+
+            if (content == null)
+            {
+                return fallback;
+            }
+
+            else
+            {
+                return content.ToList();
+            }
         }
 
         /// <summary><![CDATA[
-        /// Get a single IPublishedContent node by its Id.
+        /// Get all IPublishedContent nodes by node name.
+        /// Searches from the site root down through descendants.
         /// ]]></summary>
-        /// <param name="Id">Content node Id</param>
-        /// <returns>Single matching IPublishedContent item.</returns>
-        public static IPublishedContent GetContentById(string Id)
-        {
-            var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
-
-            return umbracoHelper.TypedContent(Id);
-        }
-
-        /// <summary><![CDATA[
-        /// Get a single IPublishedContent node using XPath.
-        /// ]]></summary>
-        /// <param name="xpath">Content node XPath</param>
-        /// <param name="vars">Optional XPath variables</param>
-        /// <returns>Single matching IPublishedContent item.</returns>
-        public static IPublishedContent GetContentByXPath(string xpath, XPathVariable[] vars = null)
-        {
-            var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
-
-            return umbracoHelper.TypedContentSingleAtXPath(xpath, vars);
-        }
-
-        /// <summary><![CDATA[
-        /// Get a single IPublishedContent node by its Guid.
-        /// ]]></summary>
-        /// <param name="guid">Content node Guid</param>
-        /// <returns>Single matching IPublishedContent item.</returns>
-        public static IPublishedContent GetContentByGuid(string guid)
-        {
-            var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
-            Guid _guid = new Guid(guid);
-
-            return umbracoHelper.TypedContent(_guid);
-        }
-
-        /// <summary><![CDATA[
-        /// Get a single IPublishedContent node by its Guid.
-        /// ]]></summary>
-        /// <param name="guid">Content node Guid</param>
-        /// <returns>Single matching IPublishedContent item.</returns>
-        public static IPublishedContent GetContentByGuid(Guid guid)
-        {
-            var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
-
-            return umbracoHelper.TypedContent(guid);
-        }
-
-        /// <summary><![CDATA[
-        /// Get a single IPublishedContent node in the site root by its document type alias.
-        /// ]]></summary>
-        /// <param name="documentTypeAlias">Document type alias (e.g. "homePage")</param>
-        /// <returns>Single matching IPublishedContent root node.</returns>
-        public static IPublishedContent GetRootContentByDocTypeAlias(string documentTypeAlias)
-        {
-            var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
-
-            return umbracoHelper.TypedContentAtRoot()
-                .Where(x => x.DocumentTypeAlias == documentTypeAlias)
-                .FirstOrDefault();
-        }
-
-        /// <summary><![CDATA[
-        /// Get a single IPublishedContent node by its document type alias.
-        /// Searches from the site root down through descendants, stopping
-        /// at the first match.
-        /// ]]></summary>
-        /// <param name="documentTypeAlias">Document type alias (e.g. "blogArticle")</param>
-        /// <returns>Single matching IPublishedContent node.</returns>
-        public static IPublishedContent GetContentByDocTypeAlias(string documentTypeAlias)
+        /// <param name="nodeName">Node name (e.g. "Home Page")</param>
+        /// <returns>All matching IPublishedContent nodes.</returns>
+        public static IEnumerable<IPublishedContent> GetAllContentByName(string nodeName)
         {
             var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
 
             return umbracoHelper.TypedContentAtRoot()
                 .SelectMany(root => root.Descendants())
-                .Where(x => x.DocumentTypeAlias == documentTypeAlias)
-                .FirstOrDefault();
+                .Where(x => x.Name == nodeName);
         }
 
         /// <summary><![CDATA[
@@ -1112,9 +1031,134 @@ namespace Fynydd.Carbide
         /// <returns>All matching IPublishedContent items.</returns>
         public static IEnumerable<IPublishedContent> GetAllContentByXPath(string xpath, XPathVariable[] vars = null)
         {
+            IEnumerable<IPublishedContent> fallback = Enumerable.Empty<IPublishedContent>();
             var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
 
-            return umbracoHelper.TypedContentAtXPath(xpath, vars).ToList();
+            var content = umbracoHelper.TypedContentAtXPath(xpath, vars);
+
+            if (content == null)
+            {
+                return fallback;
+            }
+
+            else
+            {
+                return content.ToList();
+            }
+        }
+
+        #endregion
+
+        #region Single IPublishedContent retrieval methods
+
+        /// <summary><![CDATA[
+        /// Get a single IPublishedContent node by its document type alias.
+        /// Searches the current node's descendants, stopping at the first match.
+        /// ]]></summary>
+        /// <param name="contentNode">The current content node as an IPublishedContent object</param>
+        /// <param name="documentTypeAlias">Document type alias (e.g. "blogArticle")</param>
+        /// <returns>Single matching IPublishedContent node.</returns>
+        public static IPublishedContent GetContentByDocTypeAlias(this IPublishedContent contentNode, string documentTypeAlias)
+        {
+            return GetAllContentByDocTypeAlias(contentNode, documentTypeAlias).FirstOrDefault();
+        }
+
+        /// <summary><![CDATA[
+        /// Get a single IPublishedContent node by its node name.
+        /// Searches from the current node's descendants, stopping
+        /// at the first match.
+        /// ]]></summary>
+        /// <param name="nodeName">Node name (e.g. "Home Page")</param>
+        /// <param name="contentNode">Parent content node to search</param>
+        /// <returns>Single matching IPublishedContent node.</returns>
+        public static IPublishedContent GetContentByName(this IPublishedContent contentNode, string nodeName)
+        {
+            return GetAllContentByName(contentNode, nodeName)
+                .FirstOrDefault();
+        }
+
+        /// <summary><![CDATA[
+        /// Get a single IPublishedContent node by its Id.
+        /// ]]></summary>
+        /// <param name="Id">Content node Id</param>
+        /// <returns>Single matching IPublishedContent item.</returns>
+        public static IPublishedContent GetContentById(int Id)
+        {
+            var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
+
+            return umbracoHelper.TypedContent(Id);
+        }
+
+        /// <summary><![CDATA[
+        /// Get a single IPublishedContent node by its Id.
+        /// ]]></summary>
+        /// <param name="Id">Content node Id</param>
+        /// <returns>Single matching IPublishedContent item.</returns>
+        public static IPublishedContent GetContentById(string Id)
+        {
+            return GetContentById(int.Parse(Id));
+        }
+
+        /// <summary><![CDATA[
+        /// Get a single IPublishedContent node using XPath.
+        /// ]]></summary>
+        /// <param name="xpath">Content node XPath</param>
+        /// <param name="vars">Optional XPath variables</param>
+        /// <returns>Single matching IPublishedContent item.</returns>
+        public static IPublishedContent GetContentByXPath(string xpath, XPathVariable[] vars = null)
+        {
+            var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
+
+            return umbracoHelper.TypedContentSingleAtXPath(xpath, vars);
+        }
+
+        /// <summary><![CDATA[
+        /// Get a single IPublishedContent node by its Guid.
+        /// ]]></summary>
+        /// <param name="guid">Content node Guid</param>
+        /// <returns>Single matching IPublishedContent item.</returns>
+        public static IPublishedContent GetContentByGuid(string guid)
+        {
+            return GetContentByGuid(new Guid(guid));
+        }
+
+        /// <summary><![CDATA[
+        /// Get a single IPublishedContent node by its Guid.
+        /// ]]></summary>
+        /// <param name="guid">Content node Guid</param>
+        /// <returns>Single matching IPublishedContent item.</returns>
+        public static IPublishedContent GetContentByGuid(Guid guid)
+        {
+            var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
+
+            return umbracoHelper.TypedContent(guid);
+        }
+
+        /// <summary><![CDATA[
+        /// Get a single IPublishedContent node in the site root by its document type alias.
+        /// ]]></summary>
+        /// <param name="documentTypeAlias">Document type alias (e.g. "homePage")</param>
+        /// <returns>Single matching IPublishedContent root node.</returns>
+        public static IPublishedContent GetRootContentByDocTypeAlias(string documentTypeAlias)
+        {
+            var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
+
+            return umbracoHelper.TypedContentAtRoot()
+                .Where(x => x.DocumentTypeAlias == documentTypeAlias)
+                .FirstOrDefault();
+        }
+
+        /// <summary><![CDATA[
+        /// Get a single IPublishedContent node by its document type alias.
+        /// Searches from the site root down through descendants, stopping
+        /// at the first match.
+        /// ]]></summary>
+        /// <param name="documentTypeAlias">Document type alias (e.g. "blogArticle")</param>
+        /// <returns>Single matching IPublishedContent node.</returns>
+        public static IPublishedContent GetContentByDocTypeAlias(string documentTypeAlias)
+        {
+            return GetAllContentByDocTypeAlias(documentTypeAlias)
+                .FirstOrDefault();
         }
 
         /// <summary><![CDATA[
@@ -1126,11 +1170,7 @@ namespace Fynydd.Carbide
         /// <returns>Single matching IPublishedContent node.</returns>
         public static IPublishedContent GetContentByName(string nodeName)
         {
-            var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
-
-            return umbracoHelper.TypedContentAtRoot()
-                .SelectMany(root => root.Descendants())
-                .Where(x => x.Name == nodeName)
+            return GetAllContentByName(nodeName)
                 .FirstOrDefault();
         }
 
