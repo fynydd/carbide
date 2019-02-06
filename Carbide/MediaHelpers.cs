@@ -11,6 +11,7 @@ using Umbraco.Core.Events;
 using Umbraco.Core.Models;
 using Umbraco.Core.Media;
 using Umbraco.Core.Services;
+using Umbraco.Core.Xml;
 using Umbraco.Web;
 
 using Fynydd.Carbide;
@@ -76,17 +77,41 @@ namespace Fynydd.Carbide
 			}
 		}
 
-		#endregion
+        /// <summary><![CDATA[
+        /// Get a single Media node by Id.
+        /// ]]></summary>
+        /// <param name="Id">Content node Id</param>
+        /// <returns>Single matching media item.</returns>
+        public static IPublishedContent GetContentById(int Id)
+        {
+            var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
 
-		#region YouTube helpers
+            return umbracoHelper.TypedMedia(Id);
+        }
 
-		/// <summary><![CDATA[
-		/// Convert a YouTube URL or video code into a properly formed YouTube URL.
-		/// ]]></summary>
-		/// <param name="youtubeUrlOrCode">YouTube video URL or code</param>
-		/// <param name="transport">Defaults to "//", but you can specify "http://", "https://", etc.</param>
-		/// <returns>A properly formatted YouTube video URL.</returns>
-		public static string GetYoutubeUrl(string youtubeUrlOrCode, string transport = "//")
+        /// <summary><![CDATA[
+        /// Get a single Media node by Id.
+        /// ]]></summary>
+        /// <param name="Id">Content node Id</param>
+        /// <returns>Single matching media item.</returns>
+        public static IPublishedContent GetContentById(string Id)
+        {
+            var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
+
+            return umbracoHelper.TypedMedia(Id);
+        }
+
+        #endregion
+
+        #region YouTube helpers
+
+        /// <summary><![CDATA[
+        /// Convert a YouTube URL or video code into a properly formed YouTube URL.
+        /// ]]></summary>
+        /// <param name="youtubeUrlOrCode">YouTube video URL or code</param>
+        /// <param name="transport">Defaults to "//", but you can specify "http://", "https://", etc.</param>
+        /// <returns>A properly formatted YouTube video URL.</returns>
+        public static string GetYoutubeUrl(string youtubeUrlOrCode, string transport = "//")
         {
             string result = "";
             string[] fragments = { "?v=", "/embed/", "youtu.be/" };
