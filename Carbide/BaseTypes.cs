@@ -1655,7 +1655,7 @@ namespace Fynydd.Carbide
         public static string TrimRteWhitespace(this string value)
         {
             var result = value;
-            var f1 = new Regex(@"<([p])>((&nbsp;)*|\s*)</\1>", RegexOptions.Compiled);
+            var f1 = new Regex(@"<([p])>((\s*&nbsp;\s*)*|\s*)</\1>", RegexOptions.Compiled);
             var f2 = new Regex(@"<br[\s/]*>$", RegexOptions.Compiled);
 
             result = f1.Replace(result, "");

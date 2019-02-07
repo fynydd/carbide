@@ -210,5 +210,28 @@ Paragraph 3.";
             Assert.AreEqual(linefeedsConvertedP, linefeeds.ConvertLineBreaks(HtmlLinefeeds.Paragraphs));
             Assert.AreEqual(linefeedsConvertedBR, linefeeds.ConvertLineBreaks(HtmlLinefeeds.LineBreaks));
         }
+
+        [TestMethod]
+        public void TrimRteWhitespace()
+        {
+            string content = @"<p>This is test 1</p>
+<p>This is test 2</p>
+<p>This is test 3</p>
+<p> &nbsp; </p>
+<p>&nbsp;</p>
+<p> </p>
+<p></p>
+<br>
+  
+<br />
+ <br  / >
+<p></p>
+";
+            string correct = @"<p>This is test 1</p>
+<p>This is test 2</p>
+<p>This is test 3</p>";
+
+            Assert.AreEqual(content.TrimRteWhitespace(), correct);
+        }
     }
 }
