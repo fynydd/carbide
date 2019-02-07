@@ -1640,10 +1640,26 @@ namespace Fynydd.Carbide
         /// tabs, en space, em space, and other ASCII and Unicode whitespace characters.
         /// </summary>
         /// <param name="value">String to evaluate</param>
-        /// <returns>String with leading and trailing whitespade removed.</returns>
+        /// <returns>String with leading and trailing whitespace removed.</returns>
         public static string TrimWhitespace(this string value)
         {
             return value.Trim(Characters.Whitespace);
+        }
+
+        /// <summary>
+        /// Trim leading and trailing whitespace, which includes empty tag blocks, space, non-breaking space, carriage returns, linefeeds, 
+        /// tabs, en space, em space, and other ASCII and Unicode whitespace characters.
+        /// </summary>
+        /// <param name="value">String to evaluate</param>
+        /// <returns>String with leading and trailing whitespace removed.</returns>
+        public static string TrimRteWhitespace(this string value)
+        {
+            var result = value;
+
+            result = Regex.Replace(result, @"<([^>/][^>]*)>((&nbsp;)*|\s*)</\1>", "");
+            result = result.TrimWhitespace();
+
+            return result;
         }
 
         /// <summary>
