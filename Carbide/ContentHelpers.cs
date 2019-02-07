@@ -536,7 +536,7 @@ namespace Fynydd.Carbide
         /// <returns>The best property value as string, or an empty string if no values are found.</returns>
         /// <param name="nameFallback">Set to true to fall back to the node name itself if no property valies are found</param>
         /// <param name="contentNode">The current content node as an IPublishedContent object</param>
-        /// <param name="properties">One or more property names to evaluate.</param>
+        /// <param name="properties">One or more property names to evaluate (worst to best).</param>
         public static string SafeGetBestValueAsString(this IPublishedContent contentNode, bool nameFallback = false, params string[] properties)
         {
             var result = "";
