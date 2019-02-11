@@ -214,7 +214,9 @@ Paragraph 3.";
         [TestMethod]
         public void TrimRteWhitespace()
         {
-            string content = @"<p>This is test 1</p>
+            string content = @"   <br> <br>
+<br /> 
+<br / ><p></p><p>&nbsp;</p><p> &nbsp; </p><p>This is test 1</p>
 <p>This is test 2</p>
 <p>This is test 3</p>
 <p> &nbsp; </p>
@@ -231,7 +233,7 @@ Paragraph 3.";
 <p>This is test 2</p>
 <p>This is test 3</p>";
 
-            Assert.AreEqual(content.TrimRteWhitespace(), correct);
+            Assert.AreEqual(correct, content.TrimRteWhitespace(), "MESSAGE: " + content.TrimRteWhitespace());
         }
     }
 }
