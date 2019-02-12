@@ -214,13 +214,15 @@ Paragraph 3.";
         [TestMethod]
         public void TrimRteWhitespace()
         {
-            string content = @"   <br> <br>
+            string content = @"  <p style='what'>&nbsp;</p>
+<br> <br>
 <br /> 
 <br / ><p></p><p>&nbsp;</p><p> &nbsp; </p><p>This is test 1</p>
 <p>This is test 2</p>
 <p>This is test 3</p>
 <p> &nbsp; </p>
 <p>&nbsp;</p>
+<p class='sdfsdfsd'>&nbsp;</p>
 <p> </p>
 <p></p>
 <br>
