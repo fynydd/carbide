@@ -942,14 +942,14 @@ namespace Fynydd.Carbide
                 .DescendantsOrSelf()
                 .Where(x => x.DocumentTypeAlias == documentTypeAlias);
 
-            if (content != null)
+            if (content == null)
             {
-                return content;
+                return fallback;
             }
 
             else
             {
-                return fallback;
+                return content.ToList();
             }
         }
 
@@ -992,7 +992,7 @@ namespace Fynydd.Carbide
             var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
 
             return umbracoHelper.TypedContentAtRoot()
-                .SelectMany(root => root.Descendants())
+                .SelectMany(root => root.DescendantsOrSelf())
                 .Where(x => x.Name == nodeName);
         }
 
@@ -1009,7 +1009,7 @@ namespace Fynydd.Carbide
             var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
 
             var content = umbracoHelper.TypedContentAtRoot()
-                .SelectMany(root => root.Descendants())
+                .SelectMany(root => root.DescendantsOrSelf())
                 .Where(x => x.DocumentTypeAlias == documentTypeAlias);
 
             if (content != null)

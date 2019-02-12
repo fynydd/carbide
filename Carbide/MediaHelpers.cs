@@ -58,12 +58,12 @@ namespace Fynydd.Carbide
 			var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
 
 			var content = umbracoHelper.TypedMediaAtRoot()
-				.SelectMany(root => root.Descendants())
+				.SelectMany(root => root.DescendantsOrSelf())
 				.Where(x => x.DocumentTypeAlias == documentTypeAlias);
 
 			if (content != null)
 			{
-				return content;
+				return content.ToList();
 			}
 
 			else
@@ -117,7 +117,7 @@ namespace Fynydd.Carbide
             var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
 
             return umbracoHelper.TypedMediaAtRoot()
-                .SelectMany(root => root.Descendants())
+                .SelectMany(root => root.DescendantsOrSelf())
                 .Where(m => m.Name == name);
         }
 
