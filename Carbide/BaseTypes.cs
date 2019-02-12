@@ -1647,7 +1647,7 @@ namespace Fynydd.Carbide
         }
 
         /// <summary>
-        /// Trim leading and trailing whitespace, which includes empty tag blocks, space, non-breaking space, carriage returns, linefeeds, 
+        /// Trim leading and trailing whitespace, which includes empty &lt;p&gt; tag blocks, &lt;br&gt; tags, space, non-breaking space, carriage returns, linefeeds, 
         /// tabs, en space, em space, and other ASCII and Unicode whitespace characters.
         /// </summary>
         /// <param name="value">String to evaluate</param>
@@ -1658,6 +1658,7 @@ namespace Fynydd.Carbide
             var f1 = new Regex(@"^<p[^>]*>[\s]*(&nbsp;)*[\s]*</p>|<p[^>]*>[\s]*(&nbsp;)*[\s]*</p>$", RegexOptions.Compiled);
             var f2 = new Regex(@"^<br[\s/]*>|<br[\s/]*>$", RegexOptions.Compiled);
 
+            result = result.Trim();
             result = result.TrimWhitespace();
             var _temp = result;
 
@@ -1670,6 +1671,7 @@ namespace Fynydd.Carbide
                 _temp = result;
                 result = f1.Replace(result, "");
                 result = f2.Replace(result, "");
+                result = result.Trim();
                 result = result.TrimWhitespace();
             }
 
