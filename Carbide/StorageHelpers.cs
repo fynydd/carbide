@@ -962,12 +962,22 @@ namespace Fynydd.Carbide
         /// </example>
         public static void RunConfiguredScssBuild()
         {
+            var scssPath = Config.GetKeyValue("Scss.Root", "/scss/", "Fynydd.Carbide");
+            var scssPartialsPath = Config.GetKeyValue("Scss.Partials.Root", "/scss/custom/", "Fynydd.Carbide");
+            var scssFilenameBase = Config.GetKeyValue("Scss.Filename.Base", "application", "Fynydd.Carbide");
+            var scssOutputPath = Config.GetKeyValue("Scss.Output.Root", "/css/", "Fynydd.Carbide");
+
             var debugging = AppStateHelpers.IsDebugging();
             var buildScss = debugging; // Always run in debug mode
 
             if (debugging == false)
             {
-                // Only run the check periodically on production
+                // Only run the check periodically on production unless the file doesn't exist
+
+                if (FileExists(scssOutputPath + scssFilenameBase + ".css") == false)
+                {
+                    buildScss = true;
+                }
 
                 TemporalHelpers.TaskIntervalInit("ScssProductionBuild", Config.GetKeyValue<double>("Scss.BuildCheck.Seconds", 60 * 60 * 24, "Fynydd.Carbide"));
 
@@ -983,11 +993,6 @@ namespace Fynydd.Carbide
                 {
                     TemporalHelpers.TaskIntervalStart("ScssProductionBuild");
                 }
-
-                var scssPath = Config.GetKeyValue("Scss.Root", "/scss/", "Fynydd.Carbide");
-                var scssPartialsPath = Config.GetKeyValue("Scss.Partials.Root", "/scss/custom/", "Fynydd.Carbide");
-                var scssFilenameBase = Config.GetKeyValue("Scss.Filename.Base", "application", "Fynydd.Carbide");
-                var scssOutputPath = Config.GetKeyValue("Scss.Output.Root", "/css/", "Fynydd.Carbide");
 
                 StorageHelpers.InjectScssPartials(scssPath, scssFilenameBase + ".scss", scssPartialsPath);
                 StorageHelpers.BuildScss(scssPath + scssFilenameBase + ".scss", scssOutputPath + scssFilenameBase + ".css", debugMode: debugging);
