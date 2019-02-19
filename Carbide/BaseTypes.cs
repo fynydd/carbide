@@ -1679,6 +1679,24 @@ namespace Fynydd.Carbide
         }
 
         /// <summary>
+        /// Wrap words in HTML tags.
+        /// </summary>
+        /// <param name="value">Text to search and modify</param>
+        /// <param name="words">String array of words to find</param>
+        /// <param name="tag">HTML tag to use as a wrapper</param>
+        public static string WrapWords(this string value, string[] words, string tag)
+        {
+            var result = value;
+
+            foreach (var word in words)
+            {
+                result = Regex.Replace(result, word, m => String.Format(tag + "{0}" + tag.Replace("<", "</"), m.Value), RegexOptions.IgnoreCase);
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Convert fractions like "1/3" to single-character symbolic HTML encoded fractions.
         /// </summary>
         /// <param name="value">String to evaluate</param>
