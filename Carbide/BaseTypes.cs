@@ -1666,9 +1666,22 @@ namespace Fynydd.Carbide
         {
             var result = value;
 
-            foreach (var word in words)
+            if (String.IsNullOrEmpty(value) == false)
             {
-                result = Regex.Replace(result, word, m => String.Format(tag + "{0}" + tag.Replace("<", "</"), m.Value), RegexOptions.IgnoreCase);
+                var _words = value.Split(new char[] { ' ' });
+
+                for (var x = 0; x < _words.Length; x++)
+                {
+                    foreach (var word in words)
+                    {
+                        if (_words[x].Contains(tag) == false)
+                        {
+                            _words[x] = Regex.Replace(_words[x], word, m => String.Format(tag + "{0}" + tag.Replace("<", "</"), m.Value), RegexOptions.IgnoreCase);
+                        }
+                    }
+                }
+
+                result = String.Join(" ", _words);
             }
 
             return result;
@@ -1683,6 +1696,23 @@ namespace Fynydd.Carbide
         public static string WrapWords(this string value, List<string> words, string tag)
         {
             return WrapWords(value, words.ToArray<string>(), tag);
+        }
+
+        /// <summary>
+        /// Remove punctuation from a string. Uses regex to keep whitespace and words.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string RemovePunctuation(this string value)
+        {
+            var result = Regex.Replace(value, @"[^\w\s]", " ");
+
+            while (result.Contains("  "))
+            {
+                result = result.Replace("  ", " ");
+            }
+
+            return result;
         }
 
         /// <summary>
