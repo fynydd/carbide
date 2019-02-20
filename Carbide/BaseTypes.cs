@@ -1153,26 +1153,24 @@ namespace Fynydd.Carbide
         /// </summary>
         /// <param name="source">String to check</param>
         /// <param name="characters">String of characters for which to check</param>
-        /// <returns>True if source has one or more of the characters</returns>
         public static bool ContainsCharacters(this string source, string characters)
         {
             var result = false;
 
-            if (string.IsNullOrWhiteSpace(source) == false && string.IsNullOrWhiteSpace(characters) == false)
+            if (string.IsNullOrEmpty(source) == false && string.IsNullOrEmpty(characters) == false)
             {
-                for (int x = 0; x < source.Length; x++)
+                for (int x = 0; x < characters.Length; x++)
                 {
-                    if (characters.Contains(source.Substring(x, 1)))
+                    if (source.IndexOf(characters.Substring(x, 1)) >= 0)
                     {
                         result = true;
-                        x = source.Length;
+                        x = characters.Length;
                     }
                 }
             }
 
             return result;
         }
-
 
         /// <summary>
         /// Makes two or more consecutive spaces in a string one single space.
@@ -1187,6 +1185,8 @@ namespace Fynydd.Carbide
 
         /// <summary>
         /// Return the current string cropped by number of words or characters.
+        /// When cropping by characters, the returned string will always be equal to or less than the given count
+        /// and then "endingWhenCropped" is appended.
         /// <para>
         /// Words: returns the first "count" of words in the string, including any intermediate punctuation, etc.
         /// Trailing punctuation is always removed.
@@ -1237,48 +1237,26 @@ namespace Fynydd.Carbide
                                 breakOn = " ";
                             }
 
-                            int test = 0;
-                            int index = outt.Length;
-
-                            if (value.Length > count)
+                            while (outt.Length > count && outt.ContainsCharacters(breakOn))
                             {
                                 for (int X = 0; X < breakOn.Length; X++)
                                 {
-                                    test = outt.IndexOf(breakOn.Substring(X, 1), count);
-
-                                    if (test < index && test >= count)
+                                    if (outt.Length > count)
                                     {
-                                        index = test;
+                                        outt = outt.Substring(0, outt.LastIndexOf(breakOn.Substring(X, 1)));
                                     }
                                 }
+                            }
 
-                                if (index < 1 || index >= outt.Length)
-                                {
-                                    index = count;
-                                }
-
-                                else
-                                {
-                                    index++;
-                                }
-
-                                outt = value.Substring(0, index);
+                            if (outt.Length > count)
+                            {
+                                outt = outt.Substring(0, count);
                             }
 
                             break;
                     }
 
-                    if (outt.Length < value.Length)
-                    {
-                        Regex regEx = new Regex(@"^[a-zA-Z0-9]+$");
-
-                        while (outt.Length > 0 && !regEx.IsMatch(outt.Substring(outt.Length - 1, 1)))
-                        {
-                            outt = outt.Substring(0, outt.Length - 1);
-                        }
-
-                        outt += endingWhenCropped;
-                    }
+                    outt += endingWhenCropped;
                 }
             }
 
@@ -1694,6 +1672,17 @@ namespace Fynydd.Carbide
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// Wrap words in HTML tags.
+        /// </summary>
+        /// <param name="value">Text to search and modify</param>
+        /// <param name="words">List of words to find</param>
+        /// <param name="tag">HTML tag to use as a wrapper</param>
+        public static string WrapWords(this string value, List<string> words, string tag)
+        {
+            return WrapWords(value, words.ToArray<string>(), tag);
         }
 
         /// <summary>
