@@ -771,18 +771,25 @@ SELECT @out;";
             {
                 if (templates.Contains<int>(node.TemplateId) == false)
                 {
+                    var url = node.Url.TrimEnd(new char[] { '/' } ) + "/";
+
                     try
                     {
+                        if (url.Contains("://"))
+                        {
+                            url = url.Right(url.Length - url.IndexOf("/", url.IndexOf("://") + 3));
+                        }
+
+                        templates.Add(node.TemplateId);
+
                         counter++;
 
                         context.Application["RebuildCacheHistory"] += node.GetTemplateAlias() + "... ";
 
                         RestHelper rest = new RestHelper();
-                        rest.Url = context.Request.Url.Scheme + "://" + HttpHelpers.GetHostWithPort(context) + node.Url;
+                        rest.Url = context.Request.Url.Scheme + "://" + HttpHelpers.GetHostWithPort(context) + url;
                         rest.Timeout = 30000;
                         rest.Call();
-
-                        templates.Add(node.TemplateId);
                     }
 
                     catch (Exception e)
