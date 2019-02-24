@@ -96,6 +96,33 @@ namespace Fynydd.Carbide.Constants
             "up",
             "yet"
         };
+
+        /// <summary>
+        /// Words to ignore in searches
+        /// </summary>
+        public static readonly string[] SearchNoiseWords =
+        {
+            "a", "about", "after", "all", "also", "an", "another", "any", "are", "as", "and", "at",
+            "be", "because", "been", "before", "being", "between", "but", "both", "by",
+            "came", "can", "come", "could",
+            "did", "do",
+            "each", "even",
+            "for", "from", "further", "furthermore",
+            "get", "got",
+            "has", "had", "he", "have", "her", "here", "him", "himself", "his", "how", "hi", "however",
+            "i", "if", "in", "into", "is", "it", "its", "indeed",
+            "just",
+            "like",
+            "made", "many", "me", "might", "more", "moreover", "most", "much", "must", "my",
+            "never", "not", "now",
+            "of", "on", "only", "other", "our", "out", "or", "over",
+            "said", "same", "see", "should", "since", "she", "some", "still", "such",
+            "take", "than", "that", "the", "their", "them", "then", "there", "these", "therefore", "they", "this", "those", "through", "to", "too", "thus",
+            "under", "up",
+            "very",
+            "was", "way", "we", "well", "were", "what", "when", "where", "which", "while", "who", "will", "with", "would",
+            "you", "your"
+        };
     }
 
     /// <summary>
