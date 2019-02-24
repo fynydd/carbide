@@ -102,7 +102,7 @@ namespace Fynydd.Carbide.Constants
         /// </summary>
         public static readonly string[] SearchNoiseWords =
         {
-            "about", "after", "all", "also", "an", "another", "any", "are", "as", "and", "at",
+            "a", "about", "after", "all", "also", "an", "another", "any", "are", "as", "and", "at",
             "be", "because", "been", "before", "being", "between", "but", "both", "by",
             "came", "can", "come", "could",
             "did", "do",
