@@ -69,7 +69,7 @@ namespace Fynydd.Carbide
 		/// <summary>
 		/// HTTP status code text (e.g. OK)
 		/// </summary>
-		public string Result { get; set; }
+		public string StatusText { get; set; }
 
 		/// <summary>
 		/// Verbose result description
@@ -136,14 +136,14 @@ namespace Fynydd.Carbide
 		public static RestSecurityResult RateLimit(string wanIpAddress, string timestamp, string restPath, RestSecurityConfig config, HttpContext context = null)
 		{
 			var wanip = ContextHelpers.EnsureAppContext(context).Request.UserHostAddress;
-			var result = new RestSecurityResult { WanIp = wanip, StatusCode = HttpStatusCode.BadGateway, Result = "Bad Gateway", Message = "Invalid request" };
+			var result = new RestSecurityResult { WanIp = wanip, StatusCode = HttpStatusCode.BadGateway, StatusText = "Bad Gateway", Message = "Invalid request" };
 
 			try
 			{
 				if (CacheHelpers.CacheExists("BLACKLISTED" + GetWanIpCacheName(wanip, restPath)))
 				{
 					result.StatusCode = HttpStatusCode.Forbidden;
-					result.Result = "Blacklisted";
+					result.StatusText = "Forbidden";
 					result.Message = "You appear to be up to no good.";
 				}
 
@@ -171,7 +171,7 @@ namespace Fynydd.Carbide
 								// Timestamp not used, request is good...
 
 								result.StatusCode = HttpStatusCode.OK;
-								result.Result = "OK";
+								result.StatusText = "OK";
 								result.Message = "";
 							}
 
@@ -185,7 +185,7 @@ namespace Fynydd.Carbide
 										// Validate timestamp, request is good...
 
 										result.StatusCode = HttpStatusCode.OK;
-										result.Result = "OK";
+										result.StatusText = "OK";
 										result.Message = "";
 									}
 								}
@@ -195,7 +195,7 @@ namespace Fynydd.Carbide
 						else
 						{
 							result.StatusCode = HttpStatusCode.BadRequest;
-							result.Result = "FAILURE";
+							result.StatusText = "Bad Request";
 							result.Message = "You are not who you claim to be.";
 						}
 					}
@@ -203,7 +203,7 @@ namespace Fynydd.Carbide
 					else
 					{
 						result.StatusCode = (HttpStatusCode)429;
-						result.Result = "Too Many Requests";
+						result.StatusText = "Too Many Requests";
 						result.Message = "Slow down there partner.";
 					}
 				}
@@ -212,7 +212,7 @@ namespace Fynydd.Carbide
 			catch (Exception e)
 			{
 				result.StatusCode = HttpStatusCode.InternalServerError;
-				result.Result = "Internal Server Error";
+				result.StatusText = "Internal Server Error";
 				result.Message = e.Message;
 			}
 
@@ -268,23 +268,49 @@ namespace Fynydd.Carbide
 				}
 			}
 		}
-	}
 
-	/// <summary><![CDATA[
-	/// A class for performing HTTP REST requests.
-	/// ]]></summary>
-	/// <example>
-	/// <code><![CDATA[
-	/// RestHelper request = new RestHelper();
-	/// request.Url="http://seeker.dice.com/jobsearch/servlet/JobSearch";
-	/// request.HeaderItems.Add("X-App-Token","skadjfhaskjfs");
-	/// request.RequestType = RestHelper.RequestTypeEnum.GET;
-	/// request.RequestFormat = RestHelper.RequestFormatEnum.JSON;
-	/// request.Timeout = 10000;
-	/// string result = request.Call();
-	/// ]]></code>
-	/// </example>
-	public class RestHelper
+        /// <summary>
+        /// Determine if a bearer token in the Authorization header matches a provided token.
+        /// </summary>
+		/// <param name="context">HttpContext object</param>
+        /// <param name="bearerToken">Bearer token to compare with the Authorization header bearer token</param>
+        public static bool BearerTokenIsValid(this HttpContext context, string bearerToken = "")
+        {
+            var result = false;
+
+            if (String.IsNullOrEmpty(bearerToken) == false)
+            {
+                if (context.Request.Headers["Authorization"] != null)
+                {
+                    if (context.Request.Headers["Authorization"].ToString().ToLower().StartsWith("bearer "))
+                    {
+                        if (context.Request.Headers["Authorization"].ToString().EndsWith(" " + bearerToken))
+                        {
+                            result = true;
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+    }
+
+    /// <summary><![CDATA[
+    /// A class for performing HTTP REST requests.
+    /// ]]></summary>
+    /// <example>
+    /// <code><![CDATA[
+    /// RestHelper request = new RestHelper();
+    /// request.Url="http://seeker.dice.com/jobsearch/servlet/JobSearch";
+    /// request.HeaderItems.Add("X-App-Token","skadjfhaskjfs");
+    /// request.RequestType = RestHelper.RequestTypeEnum.GET;
+    /// request.RequestFormat = RestHelper.RequestFormatEnum.JSON;
+    /// request.Timeout = 10000;
+    /// string result = request.Call();
+    /// ]]></code>
+    /// </example>
+    public class RestHelper
     {
         #region Properties and variables
 
