@@ -105,6 +105,127 @@ namespace Fynydd.Carbide
         #region Strings and string output
 
         /// <summary>
+        /// Replace a list of words.
+        /// </summary>
+        /// <param name="value">Text to search and modify</param>
+        /// <param name="words">String array of words to find</param>
+        /// <param name="newText">Replacement text</param>
+        public static string ReplaceWords(this string value, string[] words, string newText)
+        {
+            var result = value;
+
+            if (String.IsNullOrEmpty(value) == false)
+            {
+                var _words = value.Split(new char[] { ' ' });
+
+                for (var x = 0; x < _words.Length; x++)
+                {
+                    foreach (var word in words)
+                    {
+                        _words[x] = Regex.Replace(_words[x], word, m => newText, RegexOptions.IgnoreCase);
+                    }
+                }
+
+                result = String.Join(" ", _words);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Take first, middle, and last name and makes a sortable string as LAST, FIRST MIDDLE
+        /// </summary>
+        /// <param name="firstName">First name</param>
+        /// <param name="middleName">Middle name</param>
+        /// <param name="lastName">Last name</param>
+        /// <returns>Sortable name</returns>
+        public static string SortableName(string firstName, string middleName, string lastName)
+        {
+            var result = "";
+
+            if (string.IsNullOrEmpty(firstName) == false || string.IsNullOrEmpty(middleName) == false || string.IsNullOrEmpty(lastName) == false)
+            {
+                if (string.IsNullOrEmpty(lastName))
+                {
+                    lastName = "(Unknown)";
+                }
+
+                result = (lastName.Trim() + "," + (string.IsNullOrEmpty(firstName.Trim()) == false ? " " + firstName.Trim() : "") + (string.IsNullOrEmpty(middleName.Trim()) == false ? " " + middleName.Trim() : "")).Trim(new char[] { ' ', ',' });
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Take a full name and makes a sortable string as LAST, FIRST MIDDLE
+        /// </summary>
+        /// <param name="fullName">Full name</param>
+        /// <returns>Sortable name</returns>
+        public static string SortableName(string fullName, bool justNameComponents = true)
+        {
+            var fn = "";
+            var mn = "";
+            var ln = "";
+
+            fullName = fullName.Trim();
+
+            if (justNameComponents)
+            {
+                foreach (var prefix in Words.NamePrefixes)
+                {
+                    fullName = Regex.Replace(fullName, @"^" + prefix + @"\s", m => "", RegexOptions.IgnoreCase);
+                }
+
+                foreach (var suffix in Words.NameSuffixes)
+                {
+                    fullName = Regex.Replace(fullName, @"[\s,;:-—(\[\.]{0,}" + suffix + @"[)\]]{0,}$", m => "", RegexOptions.IgnoreCase);
+                }
+
+                foreach (var degree in Words.NameDegrees)
+                {
+                    fullName = Regex.Replace(fullName, @"[\s,;:-—(\[\.]{0,}" + degree + @"[)\]]{0,}$", m => "", RegexOptions.IgnoreCase);
+                }
+
+                while (fullName != fullName.TrimStart(new char[] { ' ', ',', ';', ':', '-', '—', '(', '[' }).TrimEnd(new char[] { ' ', ',', ';', ':', '-', '—', ')', ']' }))
+                {
+                    fullName = fullName.TrimStart(new char[] { ' ', ',', ';', ':', '-', '—', '(', '[' }).TrimEnd(new char[] { ' ', ',', ';', ':', '-', '—', ')', ']' });
+                }
+            }
+
+            var segments = fullName.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (segments.Length > 0)
+            {
+                if (segments.Length == 1)
+                {
+                    ln = segments[0];
+                }
+
+                else if (segments.Length == 2)
+                {
+                    fn = segments[0];
+                    ln = segments[1];
+                }
+
+                else if (segments.Length > 2)
+                {
+                    fn = segments[0];
+
+                    for (var x = 1; x < segments.Length - 1; x++)
+                    {
+                        mn = segments[x] + " ";
+                    }
+
+                    mn = mn.Trim();
+
+                    ln = segments[segments.Length - 1];
+                }
+            }
+
+            return SortableName(fn, mn, ln);
+        }
+
+        /// <summary>
         /// Insert newlines to create hard line breaks without breaking words.
         /// Lines begining with "• " or "- " or numbered sequences like "1. "
         /// will indent wrapped text and keep the list margin.
