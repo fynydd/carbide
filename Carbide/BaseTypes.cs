@@ -133,7 +133,7 @@ namespace Fynydd.Carbide
         }
 
         /// <summary>
-        /// Take first, middle, and last name and makes a sortable string as LAST, FIRST MIDDLE
+        /// Take first, middle, and last name and makes a sortable string as Last, First Middle
         /// </summary>
         /// <param name="firstName">First name</param>
         /// <param name="middleName">Middle name</param>
@@ -157,11 +157,13 @@ namespace Fynydd.Carbide
         }
 
         /// <summary>
-        /// Take a full name and makes a sortable string as LAST, FIRST MIDDLE
+        /// Take a full name and makes a sortable string as LAST, FIRST MIDDLE.
+        /// Strips prefixes, suffixes, and education titles. Formats that are processed include:
+        /// John Doe, John Q. Doe, John Q. E. Doe, Mr. John Q. Doe III, Dr. John Q. Doe 3rd Jr., Ph.D., etc.
         /// </summary>
         /// <param name="fullName">Full name</param>
-        /// <returns>Sortable name</returns>
-        public static string SortableName(string fullName, bool justNameComponents = true)
+        /// <returns>Sortable name as Last, First Middle</returns>
+        public static string SortableName(string fullName)
         {
             var fn = "";
             var mn = "";
@@ -169,28 +171,42 @@ namespace Fynydd.Carbide
 
             fullName = fullName.Trim();
 
-            if (justNameComponents)
+            var _fullName = fullName;
+
+            do
             {
+                _fullName = fullName;
+
                 foreach (var prefix in Words.NamePrefixes)
                 {
                     fullName = Regex.Replace(fullName, @"^" + prefix + @"\s", m => "", RegexOptions.IgnoreCase);
                 }
 
-                foreach (var suffix in Words.NameSuffixes)
-                {
-                    fullName = Regex.Replace(fullName, @"[\s,;:-—(\[\.]{0,}" + suffix + @"[)\]]{0,}$", m => "", RegexOptions.IgnoreCase);
-                }
+                fullName = fullName.TrimStart();
+
+            } while (_fullName != fullName);
+
+            do
+            {
+                _fullName = fullName;
+
+                fullName = fullName.TrimEnd();
 
                 foreach (var degree in Words.NameDegrees)
                 {
-                    fullName = Regex.Replace(fullName, @"[\s,;:-—(\[\.]{0,}" + degree + @"[)\]]{0,}$", m => "", RegexOptions.IgnoreCase);
+                    fullName = Regex.Replace(fullName, @"\s" + degree + @"$", m => "", RegexOptions.IgnoreCase);
                 }
 
-                while (fullName != fullName.TrimStart(new char[] { ' ', ',', ';', ':', '-', '—', '(', '[' }).TrimEnd(new char[] { ' ', ',', ';', ':', '-', '—', ')', ']' }))
+                fullName = fullName.TrimEnd(new char[] { ' ', ',', ';' });
+
+                foreach (var suffix in Words.NameSuffixes)
                 {
-                    fullName = fullName.TrimStart(new char[] { ' ', ',', ';', ':', '-', '—', '(', '[' }).TrimEnd(new char[] { ' ', ',', ';', ':', '-', '—', ')', ']' });
+                    fullName = Regex.Replace(fullName, @"\s" + suffix + @"$", m => "", RegexOptions.IgnoreCase);
                 }
-            }
+
+                fullName = fullName.TrimEnd(new char[] { ' ', ',', ';' });
+                
+            } while (_fullName != fullName);
 
             var segments = fullName.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -213,7 +229,7 @@ namespace Fynydd.Carbide
 
                     for (var x = 1; x < segments.Length - 1; x++)
                     {
-                        mn = segments[x] + " ";
+                        mn += segments[x] + " ";
                     }
 
                     mn = mn.Trim();
