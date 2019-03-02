@@ -116,7 +116,7 @@ namespace Fynydd.Carbide
 
             if (String.IsNullOrEmpty(value) == false)
             {
-                var _words = value.Split(new char[] { ' ' });
+                var _words = value.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
                 for (var x = 0; x < _words.Length; x++)
                 {
@@ -127,6 +127,11 @@ namespace Fynydd.Carbide
                 }
 
                 result = String.Join(" ", _words);
+
+                while (result.Contains("  "))
+                {
+                    result = result.Replace("  ", " ");
+                }
             }
 
             return result;

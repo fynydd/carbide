@@ -31,6 +31,15 @@ namespace Fynydd.Carbide.UnitTests
         }
 
         [TestMethod]
+        public void ReplaceWordsTest()
+        {
+            var sentence = "These are the best, delicious, juicy, red apples.";
+
+            Assert.AreEqual("These are the worst, delicious, juicy, red apples.", sentence.ReplaceWords(new string[] { "best" }, "worst"));
+            Assert.AreEqual("These are the red apples.", sentence.ReplaceWords(new string[] { "best,", "delicious,", "juicy," }, ""));
+        }
+
+        [TestMethod]
         public void FormatNumber()
         {
             double x0 = 9999.87523;
