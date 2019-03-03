@@ -114,9 +114,9 @@ namespace Fynydd.Carbide
         {
             var result = value;
 
-            if (String.IsNullOrEmpty(value) == false)
+            if (String.IsNullOrEmpty(result) == false)
             {
-                var _words = value.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                var _words = result.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
                 for (var x = 0; x < _words.Length; x++)
                 {
@@ -150,12 +150,7 @@ namespace Fynydd.Carbide
 
             if (string.IsNullOrEmpty(firstName) == false || string.IsNullOrEmpty(middleName) == false || string.IsNullOrEmpty(lastName) == false)
             {
-                if (string.IsNullOrEmpty(lastName))
-                {
-                    lastName = "(Unknown)";
-                }
-
-                result = (lastName.Trim() + "," + (string.IsNullOrEmpty(firstName.Trim()) == false ? " " + firstName.Trim() : "") + (string.IsNullOrEmpty(middleName.Trim()) == false ? " " + middleName.Trim() : "")).Trim(new char[] { ' ', ',' });
+                result = ((string.IsNullOrEmpty(lastName) == false ? lastName.Trim() + "," : "") + (string.IsNullOrEmpty(firstName) == false ? " " + firstName.Trim() : "") + (string.IsNullOrEmpty(middleName) == false ? " " + middleName.Trim() : "")).Trim(new char[] { ' ', ',' });
             }
 
             return result;
@@ -210,7 +205,7 @@ namespace Fynydd.Carbide
                 }
 
                 fullName = fullName.TrimEnd(new char[] { ' ', ',', ';' });
-                
+
             } while (_fullName != fullName);
 
             var segments = fullName.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
