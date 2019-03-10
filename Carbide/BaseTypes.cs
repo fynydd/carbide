@@ -1842,11 +1842,16 @@ namespace Fynydd.Carbide
         /// <returns></returns>
         public static string RemovePunctuation(this string value)
         {
-            var result = Regex.Replace(value, @"[^\w\s]", " ");
+            var result = "";
 
-            while (result.Contains("  "))
+            if (value.HasValue())
             {
-                result = result.Replace("  ", " ");
+                result = Regex.Replace(value, @"[^\w\s]", " ");
+
+                while (result.Contains("  "))
+                {
+                    result = result.Replace("  ", " ");
+                }
             }
 
             return result;
