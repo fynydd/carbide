@@ -114,7 +114,7 @@ namespace Fynydd.Carbide
         {
             var result = value;
 
-            if (String.IsNullOrEmpty(result) == false)
+            if (result.HasValue())
             {
                 var _words = result.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -122,7 +122,10 @@ namespace Fynydd.Carbide
                 {
                     foreach (var word in words)
                     {
-                        _words[x] = Regex.Replace(_words[x], word, m => newText, RegexOptions.IgnoreCase);
+                        if (_words[x].ToLower() == word.ToLower())
+                        {
+                            _words[x] = Regex.Replace(_words[x], word, m => newText, RegexOptions.IgnoreCase);
+                        }
                     }
                 }
 
