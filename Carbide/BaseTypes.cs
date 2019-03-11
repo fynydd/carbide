@@ -1856,19 +1856,15 @@ namespace Fynydd.Carbide
         /// Remove punctuation from a string. Uses regex to keep whitespace and words.
         /// </summary>
         /// <param name="value"></param>
+        /// <param name="except">Regex list of characters to keep (e.g. "'")</param>
         /// <returns></returns>
-        public static string RemovePunctuation(this string value)
+        public static string RemovePunctuation(this string value, string except = "")
         {
             var result = "";
 
             if (value.HasValue())
             {
-                result = Regex.Replace(value, @"[^\w\s]", " ");
-
-                while (result.Contains("  "))
-                {
-                    result = result.Replace("  ", " ");
-                }
+                result = Regex.Replace(value, @"[^\w\s" + except + "]", "");
             }
 
             return result;
