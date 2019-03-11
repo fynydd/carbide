@@ -113,6 +113,7 @@ namespace Fynydd.Carbide
         public static string ReplaceWords(this string value, string[] words, string newText)
         {
             var result = value;
+            var hash = EncryptionHelpers.MD5String(DateTime.Now.ToString());
 
             if (result.HasValue())
             {
@@ -122,18 +123,31 @@ namespace Fynydd.Carbide
                 {
                     foreach (var word in words)
                     {
-                        if (_words[x].ToLower() == word.ToLower())
+                        if (_words[x].RemovePunctuation().ToLower() == word.RemovePunctuation().ToLower())
                         {
                             _words[x] = Regex.Replace(_words[x], word, m => newText, RegexOptions.IgnoreCase);
+
+                            if (newText == "")
+                            {
+                                if (_words[x].RemovePunctuation() == "")
+                                {
+                                    _words[x] = hash + "|" + _words[x];
+                                }
+                            }
                         }
                     }
                 }
 
                 result = String.Join(" ", _words);
 
-                while (result.Contains("  "))
+                if (newText == "")
                 {
-                    result = result.Replace("  ", " ");
+                    result = result.Replace(" " + hash + "|", "");
+
+                    while (result.Contains("  "))
+                    {
+                        result = result.Replace("  ", " ");
+                    }
                 }
             }
 
