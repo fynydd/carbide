@@ -105,6 +105,21 @@ namespace Fynydd.Carbide
         #region Strings and string output
 
         /// <summary>
+        /// Determines if a string has a value (is not null or empty).
+        /// Inverse of string.IsNullorEmpty().
+        /// </summary>
+        /// <param name="value">String to evaluate</param>
+        public static bool HasValue(this string value)
+        {
+            if (value != null)
+            {
+                value = value.Trim();
+            }
+
+            return (string.IsNullOrEmpty(value) == false);
+        }
+
+        /// <summary>
         /// Replace a list of words.
         /// </summary>
         /// <param name="value">Text to search and modify</param>
@@ -113,7 +128,7 @@ namespace Fynydd.Carbide
         public static string ReplaceWords(this string value, string[] words, string newText)
         {
             var result = value;
-            var hash = EncryptionHelpers.MD5String(DateTime.Now.ToString());
+            var hash = Encryption.MD5String(DateTime.Now.ToString());
 
             if (result.HasValue())
             {
