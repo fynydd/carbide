@@ -1,7 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.IO;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+using Fynydd.Carbide;
 using Fynydd.Carbide.Constants;
-using System.IO;
 
 namespace Fynydd.Carbide.UnitTests
 {
@@ -9,6 +10,34 @@ namespace Fynydd.Carbide.UnitTests
     public class BaseTypesUnitTests
     {
         public string sentence = "Now is the time for all good men to spend the $500.27 in their wallet -- seriously.";
+
+        [TestMethod]
+        public void SortableNameTest()
+        {
+            var fullName0 = "Michael Argentini";
+            var fullName1 = "Mr. Michael D. Argentini 3rd";
+            var fullName2 = "Michael D. E. Argentini";
+            var fullName3 = "Father Michael D. E. Argentini, Ph.D.";
+            var fullName4 = "Coach Michael D. E. Argentini Jr. III, Ph.D.";
+
+            Assert.AreEqual("Argentini, Michael D", BaseTypes.SortableName("Michael", "D", "Argentini"));
+            Assert.AreEqual("Argentini, Michael D. E.", BaseTypes.SortableName("Michael", "D. E.", "Argentini"));
+
+            Assert.AreEqual("Argentini, Michael", BaseTypes.SortableName(fullName0));
+            Assert.AreEqual("Argentini, Michael D.", BaseTypes.SortableName(fullName1));
+            Assert.AreEqual("Argentini, Michael D. E.", BaseTypes.SortableName(fullName2));
+            Assert.AreEqual("Argentini, Michael D. E.", BaseTypes.SortableName(fullName3));
+            Assert.AreEqual("Argentini, Michael D. E.", BaseTypes.SortableName(fullName4));
+        }
+
+        [TestMethod]
+        public void ReplaceWordsTest()
+        {
+            var sentence = "These are the best, delicious, juicy, red apples.";
+
+            Assert.AreEqual("These are the worst, delicious, juicy, red apples.", sentence.ReplaceWords(new string[] { "best" }, "worst"));
+            Assert.AreEqual("These are the red apples.", sentence.ReplaceWords(new string[] { "best,", "delicious,", "juicy," }, ""));
+        }
 
         [TestMethod]
         public void FormatNumber()

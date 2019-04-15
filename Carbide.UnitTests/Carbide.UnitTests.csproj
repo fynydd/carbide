@@ -64,13 +64,13 @@
     <Content Include="NiceSql.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Carbide\Carbide.csproj">
       <Project>{23ebf6d3-2d88-42d4-abff-296cae41e55d}</Project>
       <Name>Carbide</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

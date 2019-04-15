@@ -25,9 +25,9 @@ namespace Fynydd.Carbide
         /// <summary>
         /// Count substring ocurrences in a StringBuilder object.
         /// </summary>
-        /// <param name="source">The StringBuilder to search.</param>
-        /// <param name="substring">The substring to count.</param>
-        /// <returns>Number of times the substring is within the source.</returns>
+        /// <param name="source">The StringBuilder to search</param>
+        /// <param name="substring">The substring to count</param>
+        /// <returns>Number of times the substring is within the source</returns>
         public static int SubstringCount(this StringBuilder source, string substring)
         {
             return source.ToString().Split(new string[] { substring }, StringSplitOptions.None).Length - 1;
@@ -105,6 +105,175 @@ namespace Fynydd.Carbide
         #region Strings and string output
 
         /// <summary>
+        /// Determines if a string has a value (is not null or empty).
+        /// Inverse of string.IsNullorEmpty().
+        /// </summary>
+        /// <param name="value">String to evaluate</param>
+        public static bool HasValue(this string value)
+        {
+            if (value != null)
+            {
+                value = value.Trim();
+            }
+
+            return (string.IsNullOrEmpty(value) == false);
+        }
+
+        /// <summary>
+        /// Replace a list of words.
+        /// </summary>
+        /// <param name="value">Text to search and modify</param>
+        /// <param name="words">String array of words to find</param>
+        /// <param name="newText">Replacement text</param>
+        public static string ReplaceWords(this string value, string[] words, string newText)
+        {
+            var result = value;
+            var hash = Encryption.MD5String(DateTime.Now.ToString());
+
+            if (result.HasValue())
+            {
+                var _words = result.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+                for (var x = 0; x < _words.Length; x++)
+                {
+                    foreach (var word in words)
+                    {
+                        if (_words[x].RemovePunctuation().ToLower() == word.RemovePunctuation().ToLower())
+                        {
+                            _words[x] = Regex.Replace(_words[x], word, m => newText, RegexOptions.IgnoreCase);
+
+                            if (newText == "")
+                            {
+                                if (_words[x].RemovePunctuation() == "")
+                                {
+                                    _words[x] = hash + "|" + _words[x];
+                                }
+                            }
+                        }
+                    }
+                }
+
+                result = String.Join(" ", _words);
+
+                if (newText == "")
+                {
+                    result = result.Replace(" " + hash + "|", "");
+
+                    while (result.Contains("  "))
+                    {
+                        result = result.Replace("  ", " ");
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Take first, middle, and last name and makes a sortable string as Last, First Middle
+        /// </summary>
+        /// <param name="firstName">First name</param>
+        /// <param name="middleName">Middle name</param>
+        /// <param name="lastName">Last name</param>
+        /// <returns>Sortable name</returns>
+        public static string SortableName(string firstName, string middleName, string lastName)
+        {
+            var result = "";
+
+            if (string.IsNullOrEmpty(firstName) == false || string.IsNullOrEmpty(middleName) == false || string.IsNullOrEmpty(lastName) == false)
+            {
+                result = ((string.IsNullOrEmpty(lastName) == false ? lastName.Trim() + "," : "") + (string.IsNullOrEmpty(firstName) == false ? " " + firstName.Trim() : "") + (string.IsNullOrEmpty(middleName) == false ? " " + middleName.Trim() : "")).Trim(new char[] { ' ', ',' });
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Take a full name and makes a sortable string as LAST, FIRST MIDDLE.
+        /// Strips prefixes, suffixes, and education titles. Formats that are processed include:
+        /// John Doe, John Q. Doe, John Q. E. Doe, Mr. John Q. Doe III, Dr. John Q. Doe 3rd Jr., Ph.D., etc.
+        /// </summary>
+        /// <param name="fullName">Full name</param>
+        /// <returns>Sortable name as Last, First Middle</returns>
+        public static string SortableName(string fullName)
+        {
+            var fn = "";
+            var mn = "";
+            var ln = "";
+
+            fullName = fullName.Trim();
+
+            var _fullName = fullName;
+
+            do
+            {
+                _fullName = fullName;
+
+                foreach (var prefix in Words.NamePrefixes)
+                {
+                    fullName = Regex.Replace(fullName, @"^" + prefix + @"\s", m => "", RegexOptions.IgnoreCase);
+                }
+
+                fullName = fullName.TrimStart();
+
+            } while (_fullName != fullName);
+
+            do
+            {
+                _fullName = fullName;
+
+                fullName = fullName.TrimEnd();
+
+                foreach (var degree in Words.NameDegrees)
+                {
+                    fullName = Regex.Replace(fullName, @"\s" + degree + @"$", m => "", RegexOptions.IgnoreCase);
+                }
+
+                fullName = fullName.TrimEnd(new char[] { ' ', ',', ';' });
+
+                foreach (var suffix in Words.NameSuffixes)
+                {
+                    fullName = Regex.Replace(fullName, @"\s" + suffix + @"$", m => "", RegexOptions.IgnoreCase);
+                }
+
+                fullName = fullName.TrimEnd(new char[] { ' ', ',', ';' });
+
+            } while (_fullName != fullName);
+
+            var segments = fullName.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (segments.Length > 0)
+            {
+                if (segments.Length == 1)
+                {
+                    ln = segments[0];
+                }
+
+                else if (segments.Length == 2)
+                {
+                    fn = segments[0];
+                    ln = segments[1];
+                }
+
+                else if (segments.Length > 2)
+                {
+                    fn = segments[0];
+
+                    for (var x = 1; x < segments.Length - 1; x++)
+                    {
+                        mn += segments[x] + " ";
+                    }
+
+                    mn = mn.Trim();
+
+                    ln = segments[segments.Length - 1];
+                }
+            }
+
+            return SortableName(fn, mn, ln);
+        }
+
+        /// <summary>
         /// Insert newlines to create hard line breaks without breaking words.
         /// Lines begining with "• " or "- " or numbered sequences like "1. "
         /// will indent wrapped text and keep the list margin.
@@ -113,7 +282,7 @@ namespace Fynydd.Carbide
         /// <param name="width">Number of characters per line or less</param>
         /// <param name="newline">Newline ending to use</param>
         /// <param name="prefix">Text for the beginning (like indentation spaces) evaluated as part of the final length</param>
-        /// <returns>String with hard breaks added.</returns>
+        /// <returns>String with hard breaks added</returns>
         public static string HardWrap(this string s, int width, string newline, string prefix = "")
         {
             var result = "";
@@ -248,7 +417,7 @@ namespace Fynydd.Carbide
         /// or mutates any nulls passed into string.Empty.
         /// </summary>
         /// <param name="s">String to convert</param>
-        /// <returns>String with first letter in upper case.</returns>
+        /// <returns>String with first letter in upper case</returns>
         public static string ToUpperFirstCharacter(this string s)
         {
             if (string.IsNullOrEmpty(s))
@@ -806,7 +975,7 @@ namespace Fynydd.Carbide
         /// <param name="endsWith">End of the line to find</param>
         /// <param name="lineFeedFormat">Line feed character(s) used in the string</param>
         /// <param name="includeLineBreaks">Return any EOL breaks with the found row</param>
-        /// <returns>Line from the string including the end provided.</returns> 
+        /// <returns>Line from the string including the end provided</returns> 
         public static string GetStringRow(this string source, string endsWith, string lineFeedFormat = "\r\n", bool includeLineBreaks = true)
         {
             var result = "";
@@ -858,7 +1027,7 @@ namespace Fynydd.Carbide
         /// <param name="source">String to search</param>
         /// <param name="startsWith">Beginning of the substring to find</param>
         /// <param name="endsWith">End of the substring to find</param>
-        /// <returns>Substring including the start and end provided.</returns> 
+        /// <returns>Substring including the start and end provided</returns> 
         public static string GetStringRange(this string source, string startsWith, string endsWith)
         {
             var result = "";
@@ -1224,7 +1393,7 @@ namespace Fynydd.Carbide
 
                             Regex x = new Regex(@"((\w*?)(\W|\z)){0," + count + @"}", RegexOptions.Singleline);
                             MatchCollection mc = x.Matches(value);
-                            outt = mc[0].ToString();
+                            outt = mc[0].ToString().Trim();
 
                             break;
 
@@ -1263,14 +1432,14 @@ namespace Fynydd.Carbide
             return outt;
         }
 
-		/// <summary>
-		/// Number of times a substring appears in a string.
-		/// </summary>
-		/// <param name="value">String to evaluate</param>
-		/// <param name="find">Substring to count</param>
-		/// <param name="wholeWord">Only look for words surrounded by whitespace or grammatical marks</param>
-		/// <returns>Number of times the substring is found</returns>
-		public static int SubstringCount(this string value, string find, bool wholeWord = false)
+        /// <summary>
+        /// Number of times a substring appears in a string.
+        /// </summary>
+        /// <param name="value">String to evaluate</param>
+        /// <param name="find">Substring to count</param>
+        /// <param name="wholeWord">Only look for words surrounded by whitespace or grammatical marks</param>
+        /// <returns>Number of times the substring is found</returns>
+        public static int SubstringCount(this string value, string find, bool wholeWord = false)
         {
             var processed = value;
 
@@ -1444,7 +1613,7 @@ namespace Fynydd.Carbide
         /// Convert bytes into a user-friendly size (e.g. 1024 becomes 1kb).
         /// </summary>
         /// <param name="val">Number of bytes</param>
-        /// <param name="forStorage">When true sizes are calculated using base 10 (so 1kb = 1,000 bytes), false uses base 2 (so 1kb = 1,024 bytes).false Defaults to true.</param>
+        /// <param name="forStorage">When true sizes are calculated using base 10 (so 1kb = 1,000 bytes), false uses base 2 (so 1kb = 1,024 bytes).false Defaults to true</param>
         /// <returns>User-friendly size representation</returns>
         public static string FormatBytes<T>(this T val, bool forStorage = true)
         {
@@ -1618,7 +1787,7 @@ namespace Fynydd.Carbide
         /// tabs, en space, em space, and other ASCII and Unicode whitespace characters.
         /// </summary>
         /// <param name="value">String to evaluate</param>
-        /// <returns>String with leading and trailing whitespace removed.</returns>
+        /// <returns>String with leading and trailing whitespace removed</returns>
         public static string TrimWhitespace(this string value)
         {
             return value.Trim(Characters.Whitespace);
@@ -1629,7 +1798,7 @@ namespace Fynydd.Carbide
         /// tabs, en space, em space, and other ASCII and Unicode whitespace characters.
         /// </summary>
         /// <param name="value">String to evaluate</param>
-        /// <returns>String with leading and trailing whitespace removed.</returns>
+        /// <returns>String with leading and trailing whitespace removed</returns>
         public static string TrimRteWhitespace(this string value)
         {
             var result = value;
@@ -1702,14 +1871,15 @@ namespace Fynydd.Carbide
         /// Remove punctuation from a string. Uses regex to keep whitespace and words.
         /// </summary>
         /// <param name="value"></param>
+        /// <param name="except">Regex list of characters to keep (e.g. "'")</param>
         /// <returns></returns>
-        public static string RemovePunctuation(this string value)
+        public static string RemovePunctuation(this string value, string except = "")
         {
-            var result = Regex.Replace(value, @"[^\w\s]", " ");
+            var result = "";
 
-            while (result.Contains("  "))
+            if (value.HasValue())
             {
-                result = result.Replace("  ", " ");
+                result = Regex.Replace(value, @"[^\w\s" + except + "]", "");
             }
 
             return result;
@@ -1751,15 +1921,15 @@ namespace Fynydd.Carbide
         /// string newBodyText = oldString.StripHtml();
         /// </code>
         /// </example>
-        /// <param name="value">Current string to process.</param>
+        /// <param name="value">Current string to process</param>
         /// <param name="convertBreaks">
         /// <![CDATA[
         /// Converts "<br>" and "<br />" to \r\n and converts "</p>" to \r\n\r\n.
         /// ]]>
         /// </param>
-        /// <param name="keepLinks">Keep and anchor tags intact.</param>
+        /// <param name="keepLinks">Keep and anchor tags intact</param>
         /// <param name="decodeEntities">Convert HTML entities to standard ASCII, like &amp;copy; to ©</param>
-        /// <returns>A string with HTML tags removed.</returns>
+        /// <returns>A string with HTML tags removed</returns>
         public static string StripHtml(this string value, bool convertBreaks = false, bool keepLinks = false, bool decodeEntities = false)
         {
             if (string.IsNullOrWhiteSpace(value))
@@ -1809,15 +1979,15 @@ namespace Fynydd.Carbide
         /// string newBodyText = oldString.StripHtml();
         /// </code>
         /// </example>
-        /// <param name="value">Current string to process.</param>
+        /// <param name="value">Current string to process</param>
         /// <param name="convertBreaks">
         /// <![CDATA[
         /// Converts "<br>" and "<br />" to \r\n and converts "</p>" to \r\n\r\n.
         /// ]]>
         /// </param>
-        /// <param name="keepLinks">Keep and anchor tags intact.</param>
+        /// <param name="keepLinks">Keep and anchor tags intact</param>
         /// <param name="decodeEntities">Convert HTML entities to standard ASCII, like &amp;copy; to ©</param>
-        /// <returns>A string with HTML tags removed.</returns>
+        /// <returns>A string with HTML tags removed</returns>
         public static string StripHtml(this StringBuilder value, bool convertBreaks = false, bool keepLinks = false, bool decodeEntities = false)
         {
             if (value != null)
@@ -1833,46 +2003,46 @@ namespace Fynydd.Carbide
             }
         }
 
-		/// <summary>
-		/// <![CDATA[
-		/// Return the current string with HTML line breaks removed.
-		/// Removes "<p>", "</p>", "<br />", and "<br>" and then trims the output.
-		/// ]]>
-		/// </summary>
-		/// <example>
-		/// <code>
-		/// string newBodyText = oldString.StripHtmlBreaks();
-		/// </code>
-		/// </example>
-		/// <returns>A string with HTML breaks removed.</returns>
-		public static string StripHtmlBreaks(this string value)
-		{
-			if (value != null)
-			{
-				//var result = value.Replace("<p>", "").Replace("</p>", "");
-				var result = value;
+        /// <summary>
+        /// <![CDATA[
+        /// Return the current string with HTML line breaks removed.
+        /// Removes "<p>", "</p>", "<br />", and "<br>" and then trims the output.
+        /// ]]>
+        /// </summary>
+        /// <example>
+        /// <code>
+        /// string newBodyText = oldString.StripHtmlBreaks();
+        /// </code>
+        /// </example>
+        /// <returns>A string with HTML breaks removed</returns>
+        public static string StripHtmlBreaks(this string value)
+        {
+            if (value != null)
+            {
+                //var result = value.Replace("<p>", "").Replace("</p>", "");
+                var result = value;
 
-				var tags = new Regex(@"<br.*?>", RegexOptions.Singleline | RegexOptions.IgnoreCase | RegexOptions.Compiled);
-				result = tags.Replace(result, "");
+                var tags = new Regex(@"<br.*?>", RegexOptions.Singleline | RegexOptions.IgnoreCase | RegexOptions.Compiled);
+                result = tags.Replace(result, "");
 
-				tags = new Regex(@"</?p((\s+\w+(\s*=\s*(?:"".*?""|'.*?'|[^'"">\s]+))?)+\s*|\s*)/?>", RegexOptions.Singleline | RegexOptions.IgnoreCase | RegexOptions.Compiled);
-				result = tags.Replace(result, "");
+                tags = new Regex(@"</?p((\s+\w+(\s*=\s*(?:"".*?""|'.*?'|[^'"">\s]+))?)+\s*|\s*)/?>", RegexOptions.Singleline | RegexOptions.IgnoreCase | RegexOptions.Compiled);
+                result = tags.Replace(result, "");
 
-				return result;
-			}
+                return result;
+            }
 
-			else
-			{
-				return string.Empty;
-			}
-		}
+            else
+            {
+                return string.Empty;
+            }
+        }
 
-		/// <summary>
-		/// Convert an object to a string. If null an empty string is returned.
-		/// </summary>
-		/// <param name="obj">Object to convert to a string</param>
-		/// <returns>String value or an empty string if null</returns>
-		public static string SafeToString(this object obj)
+        /// <summary>
+        /// Convert an object to a string. If null an empty string is returned.
+        /// </summary>
+        /// <param name="obj">Object to convert to a string</param>
+        /// <returns>String value or an empty string if null</returns>
+        public static string SafeToString(this object obj)
         {
             string result = "";
 
@@ -1892,9 +2062,9 @@ namespace Fynydd.Carbide
         /// Converts HTML </p> to \r\n\r\n and <br> to \r\n sequences.
         /// ]]>
         /// </summary>
-        /// <param name="value">String to sanitize.</param>
+        /// <param name="value">String to sanitize</param>
         /// <param name="alsoSanitizeForEmail">Also sanitize for email inclusion; defaults to false</param>
-        /// <returns>A sanitized string.</returns>
+        /// <returns>A sanitized string</returns>
         public static string Sanitize(this string value, bool alsoSanitizeForEmail = false)
         {
             string result = string.Empty;
@@ -1922,9 +2092,9 @@ namespace Fynydd.Carbide
         /// Also replaces single apostrophes with two apostrophes.
         /// ]]>
         /// </summary>
-        /// <param name="value">String to sanitize.</param>
+        /// <param name="value">String to sanitize</param>
         /// <param name="alsoSanitizeForEmail">Also sanitize for email inclusion; defaults to false</param>
-        /// <returns>A sanitized string.</returns>
+        /// <returns>A sanitized string</returns>
         public static string SqlSanitize(this string value, bool alsoSanitizeForEmail = false)
         {
             return value.Sanitize(alsoSanitizeForEmail).Replace("'", "''");
@@ -1936,8 +2106,8 @@ namespace Fynydd.Carbide
         /// <para>applet, body, embed, frame, script, frameset, html, iframe, img, style, layer, link, ilayer, meta, object.</para>
         /// <para>javascript properties injected into other tags are also removed.</para>
         /// </summary>
-        /// <param name="value">String to process.</param>
-        /// <returns>A string that has been stripped of scripts.</returns>
+        /// <param name="value">String to process</param>
+        /// <returns>A string that has been stripped of scripts</returns>
         public static string StripDangerousTags(this string value)
         {
             string result = string.Empty;
@@ -1958,11 +2128,11 @@ namespace Fynydd.Carbide
         }
 
         /// <summary>
-        /// Return the current string with all escape sequences (e.g. &#34;) changed to appropriate and ASCII characters (e.g. "),
+        /// Return the current string with all escape sequences (e.g. &amp;#34;) changed to appropriate and ASCII characters (e.g. "),
         /// so dangerous markup can more easily be identified.
         /// </summary>
-        /// <param name="value">String to process.</param>
-        /// <returns>A string that has been filtered for escape sequences.</returns>
+        /// <param name="value">String to process</param>
+        /// <returns>A string that has been filtered for escape sequences</returns>
         public static string SanitizeEscapes(this string value)
         {
             string result = string.Empty;
@@ -1978,9 +2148,9 @@ namespace Fynydd.Carbide
         /// <summary>
         /// Return the current string with all instances of a specific tag removed.
         /// </summary>
-        /// <param name="value">String to process.</param>
+        /// <param name="value">String to process</param>
         /// <param name="tagName">Tag name to strip (e.g. blockquote)</param>
-        /// <returns>A string that has been filtered.</returns>
+        /// <returns>A string that has been filtered</returns>
         public static string StripSpecificTag(this string value, string tagName)
         {
             string result = string.Empty;
@@ -2003,8 +2173,8 @@ namespace Fynydd.Carbide
         /// Remove all occurrences of dangerous tag properties from a string.
         /// Helps to prevent injected javascript from running.
         /// </summary>
-        /// <param name="value">String to process.</param>
-        /// <returns>A string that has been filtered.</returns>
+        /// <param name="value">String to process</param>
+        /// <returns>A string that has been filtered</returns>
         public static string StripDangerousProperties(this string value)
         {
             string result = string.Empty;
@@ -2025,8 +2195,8 @@ namespace Fynydd.Carbide
         /// <para>E-mail header text that will be removed includes:</para>
         /// <para>"x-mailer:", "x-rcpt-to:", "x-uidl:", "content-transfer-encoding:", "content-type:", "mime-version:", "x-sender:", "bcc:", "cc:", "x-receiver:"</para>
         /// </summary>
-        /// <param name="value">String to process.</param>
-        /// <returns>A string that has been filtered.</returns>
+        /// <param name="value">String to process</param>
+        /// <returns>A string that has been filtered</returns>
         public static string SanitizeForEmail(this string value)
         {
             string result = string.Empty;
@@ -2053,9 +2223,9 @@ namespace Fynydd.Carbide
         /// Converts return/lineFeeds to HTML tags, except between [nofeed][/nofeed] blocks.
         /// ]]>
         /// </summary>
-        /// <param name="value">String to convert.</param>
+        /// <param name="value">String to convert</param>
         /// <param name="feedType">Line break scheme to use</param>
-        /// <returns>A string with HTML line breaks added.</returns>
+        /// <returns>A string with HTML line breaks added</returns>
         public static string ConvertLineBreaks(this string value, HtmlLinefeeds feedType)
         {
             string result = string.Empty;
@@ -2205,11 +2375,11 @@ namespace Fynydd.Carbide
             "F8", "F9", "FA", "FB", "FC", "FD", "FE", "FF"
         };
 
-		/// <summary>
-		/// Converts a list of bytes into a string of hexadecimal values.
-		/// </summary>
-		/// <param name="input">Byte list to convert</param>
-		/// <returns>Hex string</returns>
+        /// <summary>
+        /// Converts a list of bytes into a string of hexadecimal values.
+        /// </summary>
+        /// <param name="input">Byte list to convert</param>
+        /// <returns>Hex string</returns>
         public static string ConvertToHexString(this IList<byte> input)
         {
             if (input == null || input.Count <= 0)
@@ -2234,8 +2404,8 @@ namespace Fynydd.Carbide
         /// Perform a deep copy of an object.
         /// </summary>
         /// <typeparam name="T">The type of object being copied.</typeparam>
-        /// <param name="source">The object instance to copy.</param>
-        /// <returns>The copied object.</returns>
+        /// <param name="source">The object instance to copy</param>
+        /// <returns>The copied object</returns>
         public static T DeepCopy<T>(this T source)
         {
             if (!typeof(T).IsSerializable)
@@ -2269,8 +2439,8 @@ namespace Fynydd.Carbide
         /// </example>
         /// </summary>
         /// <typeparam name="T">Allows for randomizing arrays of different data types.</typeparam>
-        /// <param name="array">Variable array to randomize.</param>
-        /// <returns>Nothing. Passed array is randomized directly.</returns>
+        /// <param name="array">Variable array to randomize</param>
+        /// <returns>Nothing. Passed array is randomized directly</returns>
         public static T[] RandomizeArray<T>(this T[] array)
         {
             if (array.Length > 0)
