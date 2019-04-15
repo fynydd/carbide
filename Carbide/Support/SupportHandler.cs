@@ -474,10 +474,10 @@ SELECT @out;";
 							context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Delete unused property data (" + ageText + ")... ";
 
 							commands = @"DECLARE @out int = (SELECT COUNT(*) FROM cmsPropertyData WHERE
-	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR newest = 1) AND
 	contentNodeId IN (SELECT DISTINCT nodeID FROM cmsDocument));
 DELETE FROM cmsPropertyData WHERE
-	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR newest = 1) AND
 	contentNodeId IN (SELECT DISTINCT nodeID FROM cmsDocument);
 SELECT @out;";
 							context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
@@ -493,10 +493,10 @@ SELECT @out;";
 							context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Delete XML previews (" + ageText + ")... ";
 
 							commands = @"DECLARE @out int = (SELECT COUNT(*) FROM cmsPreviewXml WHERE
-	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR newest = 1) AND
 	nodeId IN (SELECT DISTINCT nodeID FROM cmsDocument));
 DELETE FROM cmsPreviewXml WHERE
-	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR newest = 1) AND
 	nodeId IN (SELECT DISTINCT nodeID FROM cmsDocument);
 SELECT @out;";
 							context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
@@ -512,10 +512,10 @@ SELECT @out;";
 							context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Delete content versions (" + ageText + ")... ";
 
 							commands = @"DECLARE @out int = (SELECT COUNT(*) FROM cmsContentVersion WHERE
-	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR newest = 1) AND
 	ContentId  IN (SELECT DISTINCT nodeID FROM cmsDocument));
 DELETE FROM cmsContentVersion WHERE
-	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR newest = 1) AND
 	ContentId  IN (SELECT DISTINCT nodeID FROM cmsDocument);
 SELECT @out;";
 							context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
@@ -531,10 +531,10 @@ SELECT @out;";
 							context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Delete unpublished content (" + ageText + ")... ";
 
 							commands = @"DECLARE @out int = (SELECT COUNT(*) FROM cmsDocument WHERE
-	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR newest = 1) AND
 	nodeId IN (SELECT DISTINCT nodeID FROM cmsDocument));
 DELETE FROM cmsDocument WHERE
-	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR published = 1 OR newest = 1) AND
+	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR newest = 1) AND
 	nodeId IN (SELECT DISTINCT nodeID FROM cmsDocument);
 SELECT @out;";
 							context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
