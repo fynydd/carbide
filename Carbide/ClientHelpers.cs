@@ -28,100 +28,108 @@ namespace Fynydd.Carbide
             var queryString = contentPath.QueryString();
             var filePath = contentPath.RemoveQueryString();
 
-            if (minify && !filePath.StartsWith("_carbide.generated."))
+            try
             {
-                if (filePath.EndsWith(".js") || filePath.EndsWith(".css"))
+                if (minify && !filePath.StartsWith("_carbide.generated."))
                 {
-                    bool proceed = true;
-                    var newContentpath = "";
-
-                    if (filePath.Contains("/"))
+                    if (filePath.EndsWith(".js") || filePath.EndsWith(".css"))
                     {
-                        newContentpath = filePath.Substring(0, filePath.LastIndexOf("/") + 1) + "_carbide.generated." + filePath.Substring(filePath.LastIndexOf("/") + 1);
-                    }
+                        bool proceed = true;
+                        var newContentpath = "";
 
-                    else
-                    {
-                        newContentpath = "_carbide.generated." + filePath;
-                    }
-
-					FileInfo fileInfo = new FileInfo(StorageHelpers.MapPath(filePath));
-					DateTime lastModified = fileInfo.LastWriteTime;
-					var item = fileInfo.Length + "|" + lastModified.DateFormat(Carbide.Constants.DateFormats.Utc);
-
-					if (HttpContext.Current.Application.KeyExists(StorageHelpers.ConvertFilePathToKey(filePath)))
-                    {
-						if (HttpContext.Current.Application[StorageHelpers.ConvertFilePathToKey(filePath)].ToString() == item)
-						{
-							if (StorageHelpers.FileExists(newContentpath))
-							{
-								filePath = newContentpath;
-								proceed = false;
-							}
-						}
-
-						else
-						{
-							if (StorageHelpers.FileExists(filePath) == false)
-							{
-								filePath = newContentpath;
-								proceed = false;
-							}
-						}
-                    }
-
-					else
-					{
-						if (StorageHelpers.FileExists(filePath) == false)
-						{
-							proceed = false;
-						}
-					}
-
-					if (proceed)
-                    {
-                        if (StorageHelpers.FileExists(newContentpath))
+                        if (filePath.Contains("/"))
                         {
-                            StorageHelpers.DeleteFiles(newContentpath);
+                            newContentpath = filePath.Substring(0, filePath.LastIndexOf("/") + 1) + "_carbide.generated." + filePath.Substring(filePath.LastIndexOf("/") + 1);
                         }
 
-                        var minified = "";
-
-                        if (filePath.EndsWith(".js"))
+                        else
                         {
-                            var jsc = new JavaScriptCompressor();
-                            minified = jsc.Compress(StorageHelpers.ReadFile(filePath));
+                            newContentpath = "_carbide.generated." + filePath;
                         }
 
-                        if (filePath.EndsWith(".css"))
+					    FileInfo fileInfo = new FileInfo(StorageHelpers.MapPath(filePath));
+					    DateTime lastModified = fileInfo.LastWriteTime;
+					    var item = fileInfo.Length + "|" + lastModified.DateFormat(Carbide.Constants.DateFormats.Utc);
+
+					    if (HttpContext.Current.Application.KeyExists(StorageHelpers.ConvertFilePathToKey(filePath)))
                         {
-                            var cssc = new CssCompressor();
-                            minified = cssc.Compress(StorageHelpers.ReadFile(filePath));
+						    if (HttpContext.Current.Application[StorageHelpers.ConvertFilePathToKey(filePath)].ToString() == item)
+						    {
+							    if (StorageHelpers.FileExists(newContentpath))
+							    {
+								    filePath = newContentpath;
+								    proceed = false;
+							    }
+						    }
+
+						    else
+						    {
+							    if (StorageHelpers.FileExists(filePath) == false)
+							    {
+								    filePath = newContentpath;
+								    proceed = false;
+							    }
+						    }
                         }
 
-                        StorageHelpers.WriteFile(newContentpath, minified);
+					    else
+					    {
+						    if (StorageHelpers.FileExists(filePath) == false)
+						    {
+							    proceed = false;
+						    }
+					    }
 
-                        Debug.WriteLine("MINIFIED TO " + newContentpath);
+					    if (proceed)
+                        {
+                            if (StorageHelpers.FileExists(newContentpath))
+                            {
+                                StorageHelpers.DeleteFiles(newContentpath);
+                            }
 
-						fileInfo = new FileInfo(StorageHelpers.MapPath(filePath));
-						lastModified = fileInfo.LastWriteTime;
-						item = fileInfo.Length + "|" + lastModified.DateFormat(Carbide.Constants.DateFormats.Utc);
+                            var minified = "";
 
-						HttpContext.Current.Application[StorageHelpers.ConvertFilePathToKey(filePath)] = item;
+                            if (filePath.EndsWith(".js"))
+                            {
+                                var jsc = new JavaScriptCompressor();
+                                minified = jsc.Compress(StorageHelpers.ReadFile(filePath));
+                            }
 
-						filePath = newContentpath;
-					}
+                            if (filePath.EndsWith(".css"))
+                            {
+                                var cssc = new CssCompressor();
+                                minified = cssc.Compress(StorageHelpers.ReadFile(filePath));
+                            }
 
-					else
-                    {
-                        Debug.WriteLine("SKIPPED MINIFICATION FOR " + filePath);
+                            StorageHelpers.WriteFile(newContentpath, minified);
+
+                            Debug.WriteLine("MINIFIED TO " + newContentpath);
+
+						    fileInfo = new FileInfo(StorageHelpers.MapPath(filePath));
+						    lastModified = fileInfo.LastWriteTime;
+						    item = fileInfo.Length + "|" + lastModified.DateFormat(Carbide.Constants.DateFormats.Utc);
+
+						    HttpContext.Current.Application[StorageHelpers.ConvertFilePathToKey(filePath)] = item;
+
+						    filePath = newContentpath;
+					    }
+
+					    else
+                        {
+                            Debug.WriteLine("SKIPPED MINIFICATION FOR " + filePath);
+                        }
                     }
+                }
+
+                if (addCacheBuster)
+                {
+                    queryString += (queryString.Contains("?") ? "&" : "?") + "_cachebuster=" + StorageHelpers.MakeCacheBuster(filePath, fallback);
                 }
             }
 
-            if (addCacheBuster)
+            catch (Exception e)
             {
-                queryString += (queryString.Contains("?") ? "&" : "?") + "_cachebuster=" + StorageHelpers.MakeCacheBuster(filePath, fallback);
+                Debug.WriteLine(e);
             }
 
             return url.Content(filePath + queryString);
