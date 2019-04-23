@@ -1221,8 +1221,9 @@ namespace Fynydd.Carbide
         /// except a core set of small words, unless one of those small words is the first or last one in the string.
         /// </summary>
         /// <param name="value">String to make AP title case</param>
+        /// <param name="alwaysLowerIgnoreWords">Always use lower case for ignored words (not true AP title case)</param>
         /// <returns>String in AP title case</returns>
-        public static string ApTitleCase(this string value)
+        public static string ApTitleCase(this string value, bool alwaysLowerIgnoreWords = false)
         {
             string result = value;
 
@@ -1238,7 +1239,6 @@ namespace Fynydd.Carbide
                 if (tokens.Count > 2)
                 {
                     var newTitle = "";
-                    var suffix = "";
 
                     while (tokens.Count > 2 && string.IsNullOrWhiteSpace(tokens[0]))
                     {
@@ -1262,20 +1262,10 @@ namespace Fynydd.Carbide
 
                         while (tokens.Count > 2 && string.IsNullOrWhiteSpace(tokens[tokens.Count - 1]))
                         {
-                            if (tokens[tokens.Count - 1] == " ")
-                            {
-                                suffix = " " + suffix;
-                            }
-
-                            else
-                            {
-                                suffix = tokens[tokens.Count - 1] + suffix;
-                            }
-
                             tokens.RemoveAt(tokens.Count - 1);
                         }
 
-                        if (tokens.Count > 2)
+                        if (tokens.Count > (alwaysLowerIgnoreWords ? 1 : 2))
                         {
                             var lastWord = (tokens[tokens.Count - 1].ContainsCharacters("ABCDEFGHIJKLMNOPQRSTUVWXYZ") ? tokens[tokens.Count - 1] : textInfo.ToTitleCase(tokens[tokens.Count - 1].ToLower())); ;
                             tokens.RemoveAt(tokens.Count - 1);
