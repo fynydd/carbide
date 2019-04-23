@@ -13,6 +13,33 @@ namespace Fynydd.Carbide
     /// ]]></summary>
     public static class Identify
     {
+        /// <summary>
+        /// Determine if a given string is in a valid GUID format.
+        /// </summary>
+        /// <param name="value">GUID string value</param>
+        /// <returns>true or false</returns>
+        public static bool IsGuid(this string value)
+        {
+            var result = false;
+
+            if (value.HasValue())
+            {
+                try
+                {
+                    var guid = new Guid(value);
+
+                    if (guid != null)
+                    {
+                        result = true;
+                    }
+                }
+
+                catch { }
+            }
+
+            return result;
+        }
+
         /// <summary><![CDATA[
         /// Determine if a given string matches a 2-letter state abbreviation.
         /// ]]></summary>
