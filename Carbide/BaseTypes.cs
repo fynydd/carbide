@@ -2055,6 +2055,46 @@ namespace Fynydd.Carbide
         }
 
         /// <summary>
+        /// Sanitize a telephone number, adding a U.S. country code if none is present.
+        /// This is ideal for using with SMS systems.
+        /// </summary>
+        /// <example>
+        /// Converts (610) 123-4567 to +16101234567.
+        /// </example>
+        /// <param name="value">String to filter</param>
+        /// <param name="forceCountryCode">Prepends "+1" if no country code is present</param>
+        /// <returns></returns>
+        public static string SanitizeTelephone(this string value, bool forceCountryCode = true)
+        {
+            var result = "";
+
+            if (value.HasValue())
+            {
+                result = Regex.Replace(value, @"[^0-9\+]", "");
+
+                if (forceCountryCode && result.StartsWith("+") == false)
+                {
+                    if (result.Length == 10)
+                    {
+                        result = "+1" + result;
+                    }
+
+                    else if (result.Length == 11)
+                    {
+                        result = "+" + result;
+                    }
+                }
+
+                if (result.Length < 12 || result.Length > 14)
+                {
+                    result = "";
+                }
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// <![CDATA[
         /// Sanitize a string so that it only contains inert text data.
         /// it removes markup, scripts, decodes escape sequences, and optionally 
