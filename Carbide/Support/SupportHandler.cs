@@ -415,6 +415,7 @@ namespace Fynydd.Carbide
 
 		/// <summary><![CDATA[
 		/// Delete log entries, unused property data and content, as well as old preview xml cache items.
+        /// Does not delete unpublished content.
 		/// ]]></summary>
 		/// <returns>Operation result text</returns>
 		[HttpGet]
@@ -527,20 +528,20 @@ SELECT @out;";
 
 						// Delete unpublished content
 
-						timer2.Start();
-							context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Delete unpublished content (" + ageText + ")... ";
+//						timer2.Start();
+//							context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Delete unpublished content (" + ageText + ")... ";
 
-							commands = @"DECLARE @out int = (SELECT COUNT(*) FROM cmsDocument WHERE
-	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR newest = 1) AND
-	nodeId IN (SELECT DISTINCT nodeID FROM cmsDocument));
-DELETE FROM cmsDocument WHERE
-	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR newest = 1) AND
-	nodeId IN (SELECT DISTINCT nodeID FROM cmsDocument);
-SELECT @out;";
-							context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
+//							commands = @"DECLARE @out int = (SELECT COUNT(*) FROM cmsDocument WHERE
+//	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR newest = 1) AND
+//	nodeId IN (SELECT DISTINCT nodeID FROM cmsDocument));
+//DELETE FROM cmsDocument WHERE
+//	versionId NOT IN (SELECT versionId FROM cmsDocument WHERE updateDate > " + daterange + @" OR newest = 1) AND
+//	nodeId IN (SELECT DISTINCT nodeID FROM cmsDocument);
+//SELECT @out;";
+//							context.Application["RebuildCacheHistory"] += Carbide.SqlHelpers.Lookup<int>(commands, "umbracoDbDSN").FormatNumber(NumberFormats.Proper) + " deleted... ";
 
-							timer2.Stop();
-							context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
+//							timer2.Stop();
+//							context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
 
 
 
@@ -561,15 +562,46 @@ SELECT @out;";
 
 
 
-							timer.Stop();
 
-							context.Application.SafeRemove("RebuildCacheStatus");
+                            // REBUILD CONTENT CACHE
+
+                            timer2.Reset();
+                            context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Republishing all content... ";
+                            timer2.Start();
+                            Services.ContentService.RePublishAll();
+                            timer2.Stop();
+                            context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
+
+                            timer2.Reset();
+                            context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Refreshing XML cache... ";
+                            timer2.Start();
+                            umbraco.library.RefreshContent();
+                            timer2.Stop();
+                            context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
+
+                            timer2.Reset();
+                            context.Application["RebuildCacheHistory"] += "<li style=\"padding-bottom: 1rem;\">Rebuilding Examine indexes... ";
+                            timer2.Start();
+
+                            foreach (var index in ExamineManager.Instance.IndexProviderCollection.ToList())
+                            {
+                                context.Application["RebuildCacheHistory"] += index.Name.Replace("Indexer", "") + "... ";
+                                index.RebuildIndex();
+                            }
+
+                            timer2.Stop();
+                            context.Application["RebuildCacheHistory"] += "<strong>completed in " + timer2.GetSeconds<int>() + " seconds</strong></li>";
+
+
+                            timer.Stop();
+
+                            context.Application.SafeRemove("RebuildCacheStatus");
 
 							context.Application["RebuildCacheHistory"] += "</ol>";
 							context.Application["RebuildCacheHistory"] += "<h4 style=\"font-size: 1.1rem;\">Finished in " + timer.GetSeconds<int>() + " seconds</h4>";
-						}
+                        }
 
-						catch (Exception e)
+                        catch (Exception e)
 						{
 							timer.Stop();
 							timer2.Stop();
