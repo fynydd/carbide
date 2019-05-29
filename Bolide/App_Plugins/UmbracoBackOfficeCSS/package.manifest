@@ -1,0 +1,5 @@
+{
+   css: [
+       '~/App_Plugins/UmbracoBackOfficeCSS/css/UmbracoBackOfficeCSS.css'
+   ]
+}

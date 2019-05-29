@@ -4,10 +4,12 @@ using System.Collections.Specialized;
 using System.Configuration;
 using System.Xml;
 
+using Umbraco.Web;
+
 namespace Fynydd.Carbide
 {
     /// <summary><![CDATA[
-    /// The Configuration class contains methods and properties for manipulating configuration properties
+    /// The Config class contains methods and properties for manipulating configuration properties
     /// within the Web.config file.
     /// 
     /// Add a reference to the Carbide configuration section in your Web.config file as below.
@@ -29,13 +31,13 @@ namespace Fynydd.Carbide
         /// <summary><![CDATA[
         /// Retrieve the value of an application setting from the Web.config file.
         /// ]]></summary>
-        /// <param name="keyName">Key name for which a value should be returned.</param>
-        /// <param name="defaultValue">A default value if the key does not exist.</param>
+        /// <param name="keyName">Key name for which a value should be returned</param>
+        /// <param name="defaultValue">A default value if the key does not exist</param>
         /// <param name="sectionName">Optional section name (e.g. "Fynydd.Carbide")</param>
-        /// <returns>A key value or the default value if the key does not exist.</returns>
+        /// <returns>A key value or the default value if the key does not exist</returns>
         public static T GetKeyValue<T>(string keyName, T defaultValue, string sectionName = "")
         {
-            if (string.IsNullOrEmpty(sectionName) == false)
+            if (sectionName.HasValue())
             {
                 NameValueCollection settings = (NameValueCollection)ConfigurationManager.GetSection(sectionName);
 
@@ -79,10 +81,10 @@ namespace Fynydd.Carbide
         /// <summary><![CDATA[
         /// Retrieve the value of an application setting from the Web.config file.
         /// ]]></summary>
-        /// <param name="keyName">Key name for which a value should be returned.</param>
-        /// <param name="defaultValue">A default value if the key does not exist.</param>
-        /// <param name="sectionName">Config section name.</param>
-        /// <returns>A key value or a default value if the key does not exist.</returns>
+        /// <param name="keyName">Key name for which a value should be returned</param>
+        /// <param name="defaultValue">A default value if the key does not exist</param>
+        /// <param name="sectionName">Config section name</param>
+        /// <returns>A key value or a default value if the key does not exist</returns>
         public static string GetKeyValue(string keyName, string defaultValue, string sectionName = "")
         {
             return GetKeyValue<string>(keyName, defaultValue, sectionName);
@@ -91,8 +93,8 @@ namespace Fynydd.Carbide
         /// <summary><![CDATA[
         /// Retrieve the value of an application setting from the Web.config file.
         /// ]]></summary>
-        /// <param name="keyName">Key name for which a value should be returned.</param>
-        /// <returns>A key value or an empty string if the key does not exist.</returns>
+        /// <param name="keyName">Key name for which a value should be returned</param>
+        /// <returns>A key value or an empty string if the key does not exist</returns>
         public static string GetKeyValue(string keyName)
         {
             return GetKeyValue<string>(keyName, "", "");
@@ -101,13 +103,14 @@ namespace Fynydd.Carbide
         /// <summary><![CDATA[
         /// Retrieve XML node data from a config file.
         /// ]]></summary>
+        /// <param name="umbCtx">Umbraco context object to use</param>
         /// <param name="configFilePath">Web style path to the config file</param>
         /// <param name="nodePath">XPath for node selection</param>
         /// <returns>Enumerable string array of values</returns>
-        public static string[] GetConfigFileValues(string configFilePath, string nodePath)
+        public static string[] GetConfigFileValues(this UmbracoContext umbCtx, string configFilePath, string nodePath)
         {
             XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(StorageHelpers.MapPath(configFilePath));
+            xmlDoc.Load(umbCtx.MapPath(configFilePath));
             XmlNodeList nodeList = xmlDoc.DocumentElement.SelectNodes(nodePath);
             List<string> result = new List<string>();
 

@@ -1,0 +1,27 @@
+﻿SET NUMERIC_ROUNDABORT OFF
+SET ANSI_PADDING, ANSI_WARNINGS, CONCAT_NULL_YIELDS_NULL, ARITHABORT, QUOTED_IDENTIFIER, ANSI_NULLS, NOCOUNT ON
+SET DATEFORMAT YMD
+SET XACT_ABORT ON
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
+GO -- SQRIBE/GO;528484
+
+-- SQRIBE/TABLE;528484
+-- Adding 6 rows to dbo.cmsContentTypeAllowedContentType
+
+BEGIN TRANSACTION
+
+-- SQRIBE/INSERT;528484
+INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1031,1031,0);
+-- SQRIBE/INSERT;528484
+INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1031,1032,0);
+-- SQRIBE/INSERT;528484
+INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1031,1033,0);
+-- SQRIBE/INSERT;528484
+INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1056,1052,0);
+-- SQRIBE/INSERT;528484
+INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1062,1060,0);
+-- SQRIBE/INSERT;528484
+INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1066,1051,0);
+
+COMMIT TRANSACTION
+

@@ -14,10 +14,38 @@ namespace Fynydd.Carbide
     public static class Identify
     {
         /// <summary><![CDATA[
+        /// Determine if a given string is in a valid GUID format.
+        /// ]]></summary>
+        /// <param name="value">GUID string value</param>
+        /// <returns>true or false</returns>
+        public static bool IsGuid(this string value)
+        {
+            var result = false;
+
+            if (value.HasValue())
+            {
+                try
+                {
+                    var guid = new Guid(value);
+
+                    if (guid != null)
+                    {
+                        result = true;
+                    }
+                }
+
+                catch { }
+            }
+
+            return result;
+        }
+
+
+        /// <summary><![CDATA[
         /// Determine if a given string matches a 2-letter state abbreviation.
         /// ]]></summary>
-        /// <param name="value">2-letter state abbreviation to check.</param>
-        /// <returns>true or false.</returns>
+        /// <param name="value">2-letter state abbreviation to check</param>
+        /// <returns>true or false</returns>
         public static bool IsState(this string value)
         {
             return Geography.StatesAbbreviations.Contains(value.ToUpper());
@@ -27,7 +55,7 @@ namespace Fynydd.Carbide
         /// Determines if a string value is numeric, but not currency.
         /// ]]></summary>
         /// <param name="value">String to evaluate</param>
-        /// <returns>true or false.</returns>
+        /// <returns>true or false</returns>
         public static bool IsNumeric(this string value)
         {
             Double doubleVal;
@@ -38,7 +66,7 @@ namespace Fynydd.Carbide
         /// Determines if a string value is a bool value or not.
         /// ]]></summary>
         /// <param name="value">String to evaluate</param>
-        /// <returns>true or false.</returns>
+        /// <returns>true or false</returns>
         public static bool IsBool(this string value)
         {
             bool boolVal;
@@ -49,7 +77,7 @@ namespace Fynydd.Carbide
         /// Determines if a string value can be used as currency.
         /// ]]></summary>
         /// <param name="value">String to evaluate</param>
-        /// <returns>true or false.</returns>
+        /// <returns>true or false</returns>
         public static bool IsCurrency(this string value)
         {
             Double doubleVal;
@@ -60,7 +88,7 @@ namespace Fynydd.Carbide
         /// Determines if a string value is numeric, with no symbols, commas, or decimal points.
         /// ]]></summary>
         /// <param name="value">String to evaluate</param>
-        /// <returns>true or false.</returns>
+        /// <returns>true or false</returns>
         public static bool IsPureNumeric(this string value)
         {
             Double doubleVal;
@@ -72,7 +100,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <param name="value">String to evaluate</param>
         /// <param name="pattern">Regex pattern to use</param>
-        /// <returns>True if the value has the pattern, false otherwise.</returns>
+        /// <returns>True if the value has the pattern, false otherwise</returns>
         public static bool MatchesPattern(this string value, string pattern)
         {
             Regex regEx = new Regex(pattern);
@@ -84,7 +112,7 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <param name="value">String to evaluate</param>
         /// <param name="patterns">String array of Regex patterns to use</param>
-        /// <returns>True if the input has all of the patterns, false otherwise.</returns>
+        /// <returns>True if the input has all of the patterns, false otherwise</returns>
         public static bool MatchesPatterns(this string value, string[] patterns)
         {
             bool result = true;
@@ -109,7 +137,7 @@ namespace Fynydd.Carbide
         {
             bool result = false;
 
-            if (!String.IsNullOrEmpty(value))
+            if (value.HasValue())
             {
                 try
                 {
@@ -130,15 +158,15 @@ namespace Fynydd.Carbide
         /// Uses RegEx to check for password formatting. Alpha-numeric
         /// characters and basic typewriter symbols are allowed.
         /// ]]></summary>
-        /// <param name="value">password string to validate.</param>
-        /// <param name="minLength">Minimum length of valid password; at least 4.</param>
+        /// <param name="value">password string to validate</param>
+        /// <param name="minLength">Minimum length of valid password; at least 4</param>
         /// <param name="maxLength">Maximum length for valid password</param>
-        /// <returns>true if a valid password, false if not.</returns>
+        /// <returns>true if a valid password, false if not</returns>
         public static bool IsValidPasswordFormat(this string value, int minLength, int maxLength)
         {
             bool result = false;
 
-            if (string.IsNullOrEmpty(value) == false && minLength > 3 && minLength <= maxLength)
+            if (value.HasValue() && minLength > 3 && minLength <= maxLength)
             {
                 if (value.Length >= minLength && value.Length <= maxLength)
                 {
@@ -157,8 +185,8 @@ namespace Fynydd.Carbide
         /// characters and basic typewriter symbols are allowed.
         /// Password must be between 8 and 64 characters in length.
         /// ]]></summary>
-        /// <param name="value">password string to validate.</param>
-        /// <returns>true if a valid password, false if not.</returns>
+        /// <param name="value">password string to validate</param>
+        /// <returns>true if a valid password, false if not</returns>
         public static bool IsValidPasswordFormat(this string value)
         {
             return value.MatchesPattern(RegularExpressions.PasswordAndLength);
@@ -173,7 +201,7 @@ namespace Fynydd.Carbide
         {
             bool result = false;
 
-            if (string.IsNullOrEmpty(value) == false)
+            if (value.HasValue())
             {
                 result = value.MatchesPattern(RegularExpressions.Email);
             }
@@ -210,15 +238,15 @@ namespace Fynydd.Carbide
         /// Verify that a given value is equal to a value in a delimitted list of provided values.
         /// ]]></summary>
         /// <param name="value">String to evaluate</param>
-        /// <param name="prevalueList">Delimitted list of possible matches for comparison.</param>
+        /// <param name="prevalueList">Delimitted list of possible matches for comparison</param>
         /// <param name="delimitter">Delimitter string which defines the boundary between items in the list (e.g. ",")</param>
-        /// <param name="caseSensitive">Set to true to compare values using case sensitivity, or false to ignore case.</param>
-        /// <returns>Empty string on success, or an error message.</returns>
+        /// <param name="caseSensitive">Set to true to compare values using case sensitivity, or false to ignore case</param>
+        /// <returns>Empty string on success, or an error message</returns>
         public static bool ContainsPrevalue(this string value, string prevalueList, string delimitter, bool caseSensitive = false)
         {
             bool result = false;
 
-            if (string.IsNullOrEmpty(prevalueList) == false && string.IsNullOrEmpty(value) == false)
+            if (prevalueList.HasValue() && value.HasValue())
             {
                 string[] values = prevalueList.Split(new string[] { delimitter }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -236,12 +264,12 @@ namespace Fynydd.Carbide
         /// Certain types of validators obviate the need to specify a minimum or maximum length,
         /// like ValidationOptions.Email.
         /// ]]></summary>
-        /// <param name="value">Value to validate.</param>
-        /// <param name="valType">Constant determining what type of validation.</param>
-        /// <param name="minLength">Minimum length alowed.</param>
-        /// <param name="maxLength">Maximum length allowed.</param>
-        /// <param name="optional">Field is optional. Zero length validates, otherwise, full validation occurs.</param>
-        /// <returns>Empty string if validation succeeds, error message on failure.</returns>
+        /// <param name="value">Value to validate</param>
+        /// <param name="valType">Constant determining what type of validation</param>
+        /// <param name="minLength">Minimum length alowed</param>
+        /// <param name="maxLength">Maximum length allowed</param>
+        /// <param name="optional">Field is optional. Zero length validates, otherwise, full validation occurs</param>
+        /// <returns>Empty string if validation succeeds, error message on failure</returns>
         public static string ValidateText(this string value, ValidationOptions valType, int minLength, int maxLength, bool optional)
         {
             string result = "";
@@ -466,11 +494,11 @@ namespace Fynydd.Carbide
         /// Certain types of validators obviate the need to specify a minimum or maximum length,
         /// like ValidationOptions.Email.
         /// ]]></summary>
-        /// <param name="value">Value to validate.</param>
-        /// <param name="valType">Constant determining what type of validation.</param>
-        /// <param name="minLength">Minimum length alowed.</param>
-        /// <param name="maxLength">Maximum length allowed.</param>
-        /// <returns>Empty string if validation succeeds, error message on failure.</returns>
+        /// <param name="value">Value to validate</param>
+        /// <param name="valType">Constant determining what type of validation</param>
+        /// <param name="minLength">Minimum length alowed</param>
+        /// <param name="maxLength">Maximum length allowed</param>
+        /// <returns>Empty string if validation succeeds, error message on failure</returns>
         public static string ValidateText(this string value, ValidationOptions valType, int minLength, int maxLength)
         {
             return ValidateText(value, valType, minLength, maxLength, false);
@@ -481,9 +509,9 @@ namespace Fynydd.Carbide
         /// Certain types of validators obviate the need to specify a minimum or maximum length,
         /// like ValidationOptions.Email.
         /// ]]></summary>
-        /// <param name="value">Value to validate.</param>
-        /// <param name="valType">Constant determining what type of validation.</param>
-        /// <returns>Empty string if validation succeeds, error message on failure.</returns>
+        /// <param name="value">Value to validate</param>
+        /// <param name="valType">Constant determining what type of validation</param>
+        /// <returns>Empty string if validation succeeds, error message on failure</returns>
         public static string ValidateText(this string value, ValidationOptions valType)
         {
             return ValidateText(value, valType, 0, 0, false);
@@ -492,10 +520,10 @@ namespace Fynydd.Carbide
         /// <summary><![CDATA[
         /// Run field length validation on a specific value.
         /// ]]></summary>
-        /// <param name="value">Value to validate.</param>
-        /// <param name="minLength">Minimum length alowed.</param>
-        /// <param name="maxLength">Maximum length allowed.</param>
-        /// <returns>Empty string if validation succeeds, error message on failure.</returns>
+        /// <param name="value">Value to validate</param>
+        /// <param name="minLength">Minimum length alowed</param>
+        /// <param name="maxLength">Maximum length allowed</param>
+        /// <returns>Empty string if validation succeeds, error message on failure</returns>
         public static string ValidateText(this string value, int minLength, int maxLength)
         {
             return ValidateText(value, ValidationOptions.Length, minLength, maxLength, false);
@@ -504,10 +532,10 @@ namespace Fynydd.Carbide
         /// <summary><![CDATA[
         /// Run data type validation on a specific value.
         /// ]]></summary>
-        /// <param name="value">Value to validate.</param>
-        /// <param name="valType">Constant determining what type of validation.</param>
-        /// <param name="optional">Field is optional. Zero length validates, otherwise, full validation occurs.</param>
-        /// <returns>Empty string if validation succeeds, error message on failure.</returns>
+        /// <param name="value">Value to validate</param>
+        /// <param name="valType">Constant determining what type of validation</param>
+        /// <param name="optional">Field is optional. Zero length validates, otherwise, full validation occurs</param>
+        /// <returns>Empty string if validation succeeds, error message on failure</returns>
         public static string ValidateText(this string value, ValidationOptions valType, bool optional)
         {
             return ValidateText(value, valType, 0, 0, optional);

@@ -318,10 +318,10 @@ namespace Fynydd.Carbide
         /// DataReader reader = new DataReader("select * from test", "ID>5", "LastName ASC, FirstName ASC", 10, 3, "Carbide");
         /// ]]></code>
         /// </example>
-        /// <param name="commandText">A SQL command to execute.</param>
-        /// <param name="whereClause">Where clause without the "Where".</param>
-        /// <param name="orderByClause">Order BY clause without the "order by".</param>
-        /// <param name="pageNum">Which page full of records to read.</param>
+        /// <param name="commandText">A SQL command to execute</param>
+        /// <param name="whereClause">Where clause without the "Where"</param>
+        /// <param name="orderByClause">Order BY clause without the "order by"</param>
+        /// <param name="pageNum">Which page full of records to read</param>
         /// <param name="perPage">How many records per page?</param>
         /// <param name="useConnectionStringName">Which connection string to use from within the Web.config file?</param>
         public DataReader(string commandText, string whereClause, string orderByClause, int perPage, int pageNum, string useConnectionStringName)
@@ -344,10 +344,10 @@ namespace Fynydd.Carbide
         /// DataReader reader = new DataReader("select * from test", "ID>5", "LastName ASC, FirstName ASC", 10, 3);
         /// ]]></code>
         /// </example>
-        /// <param name="commandText">A SQL command to execute.</param>
-        /// <param name="whereClause">Where clause without the "Where".</param>
-        /// <param name="orderByClause">Order BY clause without the "order by".</param>
-        /// <param name="pageNum">Which page full of records to read.</param>
+        /// <param name="commandText">A SQL command to execute</param>
+        /// <param name="whereClause">Where clause without the "Where"</param>
+        /// <param name="orderByClause">Order BY clause without the "order by"</param>
+        /// <param name="pageNum">Which page full of records to read</param>
         /// <param name="perPage">How many records per page?</param>
         public DataReader(string commandText, string whereClause, string orderByClause, int perPage, int pageNum)
         {
@@ -374,7 +374,7 @@ namespace Fynydd.Carbide
         /// DataReader reader = new DataReader("select * from test");
         /// ]]></code>
         /// </example>
-        /// <param name="commandText">A SQL command to execute.</param>
+        /// <param name="commandText">A SQL command to execute</param>
         public DataReader(string commandText)
         {
             sqlCommandString = commandText;
@@ -405,8 +405,8 @@ namespace Fynydd.Carbide
         /// DataReader reader = new DataReader("select * from test", true);
         /// ]]></code>
         /// </example>
-        /// <param name="commandText">A SQL command to execute.</param>
-        /// <param name="getSchema">Determines if schema information should also be retured, enabling various other methods and properties.</param>
+        /// <param name="commandText">A SQL command to execute</param>
+        /// <param name="getSchema">Determines if schema information should also be retured, enabling various other methods and properties</param>
         public DataReader(string commandText, bool getSchema)
         {
             sqlCommandString = commandText;
@@ -447,8 +447,8 @@ namespace Fynydd.Carbide
         /// DataReader reader = new DataReader("select * from test", "Carbide");
         /// ]]></code>
         /// </example>
-        /// <param name="commandText">A SQL command to execute.</param>
-        /// <param name="connectionName">Name of a connection string within the Web.Config file.</param>
+        /// <param name="commandText">A SQL command to execute</param>
+        /// <param name="connectionName">Name of a connection string within the Web.Config file</param>
         public DataReader(string commandText, string connectionName)
         {
             sqlCommandString = commandText;
@@ -481,10 +481,10 @@ namespace Fynydd.Carbide
         /// DataReader reader = new DataReader("SELECT * FROM Sheet", "/uploads/sheet.xls", "", DataReader.ConnectionStrings.XLS_OLEDB);
         /// ]]></code>
         /// </example>
-        /// <param name="commandText">A SQL command to execute.</param>
-        /// <param name="filePath">Path to the file.</param>
-        /// <param name="password">password for the file, if any, or a blank string.</param>
-        /// <param name="Connection_String">DataReader.ConnectionString constant which defines the file type.</param>
+        /// <param name="commandText">A SQL command to execute</param>
+        /// <param name="filePath">Path to the file</param>
+        /// <param name="password">password for the file, if any, or a blank string</param>
+        /// <param name="Connection_String">DataReader.ConnectionString constant which defines the file type</param>
         public DataReader(string commandText, string filePath, string password, ConnectionStrings Connection_String)
         {
             oledb_CommandString = commandText;
@@ -516,9 +516,9 @@ namespace Fynydd.Carbide
         /// DataReader reader = new DataReader("select * from test", true, "Carbide");
         /// ]]></code>
         /// </example>
-        /// <param name="commandText">A SQL command to execute.</param>
-        /// <param name="getSchema">Determines if schema information should also be retured, enabling various other methods and properties.</param>
-        /// <param name="connectionName">Name of a connection string within the Web.Config file.</param>
+        /// <param name="commandText">A SQL command to execute</param>
+        /// <param name="getSchema">Determines if schema information should also be retured, enabling various other methods and properties</param>
+        /// <param name="connectionName">Name of a connection string within the Web.Config file</param>
         public DataReader(string commandText, bool getSchema, string connectionName)
         {
             sqlCommandString = commandText;
@@ -570,7 +570,7 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <returns>Nothing.</returns>
+        /// <returns>Nothing</returns>
         public void Close()
         {
             try
@@ -722,7 +722,7 @@ namespace Fynydd.Carbide
         ///	reader.Close();
         /// ]]></code>
         /// </example>
-        /// <returns>true if read, false if end of data.</returns>
+        /// <returns>true if read, false if end of data</returns>
         public bool Read()
         {
             bool output = false;
@@ -764,7 +764,7 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <returns>true if result set is switched, false if not.</returns>
+        /// <returns>true if result set is switched, false if not</returns>
         public bool NextResult()
         {
             try
@@ -844,7 +844,7 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <returns>A string with the column name of the primary key.</returns>
+        /// <returns>A string with the column name of the primary key</returns>
         public string GetPrimarykeyName()
         {
             if (schemaAvailable)
@@ -885,8 +885,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of the column.</param>
-        /// <returns>An integer.</returns>
+        /// <param name="columnName">Name of the column</param>
+        /// <returns>An integer</returns>
         public int GetColumnSize(string columnName)
         {
             int output = 0;
@@ -941,8 +941,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of the column.</param>
-        /// <returns>true or false.</returns>
+        /// <param name="columnName">Name of the column</param>
+        /// <returns>true or false</returns>
         public bool GetColumnIsKey(string columnName)
         {
             bool output = false;
@@ -978,8 +978,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of the column.</param>
-        /// <returns>true or false.</returns>
+        /// <param name="columnName">Name of the column</param>
+        /// <returns>true or false</returns>
         public bool GetColumnAllowNulls(string columnName)
         {
             bool output = false;
@@ -1016,8 +1016,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of the column.</param>
-        /// <returns>true or false.</returns>
+        /// <param name="columnName">Name of the column</param>
+        /// <returns>true or false</returns>
         public bool GetColumnIsIdentity(string columnName)
         {
             bool output = false;
@@ -1054,8 +1054,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of the column.</param>
-        /// <returns>true or false.</returns>
+        /// <param name="columnName">Name of the column</param>
+        /// <returns>true or false</returns>
         public bool GetColumnIsAutoIncrement(string columnName)
         {
             bool output = false;
@@ -1093,8 +1093,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of the column.</param>
-        /// <returns>Data type name as a string.</returns>
+        /// <param name="columnName">Name of the column</param>
+        /// <returns>Data type name as a string</returns>
         public string GetColumnSystemDataType(string columnName)
         {
             string output = "";
@@ -1131,8 +1131,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnIndex">Number of the column.</param>
-        /// <returns>A string.</returns>
+        /// <param name="columnIndex">Number of the column</param>
+        /// <returns>A string</returns>
         public string GetDataTypeName(int columnIndex)
         {
             string output = string.Empty;
@@ -1162,8 +1162,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of the column.</param>
-        /// <returns>A string.</returns>
+        /// <param name="columnName">Name of the column</param>
+        /// <returns>A string</returns>
         public string GetDataTypeName(string columnName)
         {
             try
@@ -1190,8 +1190,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnNumber">Number of column to retrieve.</param>
-        /// <returns>A string.</returns>
+        /// <param name="columnNumber">Number of column to retrieve</param>
+        /// <returns>A string</returns>
         public string ColumnName(int columnNumber)
         {
             try
@@ -1226,8 +1226,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of column to evaluate.</param>
-        /// <returns>true if column value is null or empty, false if not.</returns>
+        /// <param name="columnName">Name of column to evaluate</param>
+        /// <returns>true if column value is null or empty, false if not</returns>
         public bool IsNullOrEmpty(string columnName)
         {
             try
@@ -1270,7 +1270,7 @@ namespace Fynydd.Carbide
         /// One use for this method is to create a data source for other
         /// controls that want a DataTable, like 3rd party controls.
         /// ]]></summary>
-        /// <param name="addBlank">Determine whether to add a blank row to the end or not.</param>
+        /// <param name="addBlank">Determine whether to add a blank row to the end or not</param>
         /// <returns>DataTable object</returns>
         public DataTable ReadTable(bool addBlank)
         {
@@ -1333,8 +1333,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of column to retrieve.</param>
-        /// <returns>DateTime object.</returns>
+        /// <param name="columnName">Name of column to retrieve</param>
+        /// <returns>DateTime object</returns>
         public DateTime GetDateTime(string columnName)
         {
             DateTime output = new DateTime(1900, 1, 1);
@@ -1373,8 +1373,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of column to retrieve.</param>
-        /// <returns>DateTime object.</returns>
+        /// <param name="columnName">Name of column to retrieve</param>
+        /// <returns>DateTime object</returns>
         public DateTime? GetDateTimeNullable(string columnName)
         {
             DateTime? output = null;
@@ -1414,7 +1414,7 @@ namespace Fynydd.Carbide
         /// ]]></code>
         /// </example>
         /// <param name="columnName">Name of column to retrieve</param>
-        /// <returns>A string with the column value as a date.</returns>
+        /// <returns>A string with the column value as a date</returns>
         public string GetDate(string columnName)
         {
             string output = string.Empty;
@@ -1470,8 +1470,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of column to retrieve.</param>
-        /// <returns>A string with the column value as a time.</returns>
+        /// <param name="columnName">Name of column to retrieve</param>
+        /// <returns>A string with the column value as a time</returns>
         public string GetTime(string columnName)
         {
             string output = string.Empty;
@@ -1527,8 +1527,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of column to retrieve.</param>
-        /// <returns>A string with the column formatted as currency.</returns>
+        /// <param name="columnName">Name of column to retrieve</param>
+        /// <returns>A string with the column formatted as currency</returns>
         public string GetMoney(string columnName)
         {
             string output = string.Empty;
@@ -1584,8 +1584,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of column to retrieve.</param>
-        /// <returns>An integer.</returns>
+        /// <param name="columnName">Name of column to retrieve</param>
+        /// <returns>An integer</returns>
         public int GetInt(string columnName)
         {
             int output = 0;
@@ -1641,7 +1641,7 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of column to retrieve.</param>
+        /// <param name="columnName">Name of column to retrieve</param>
         /// <returns>A nullable int</returns>
         public int? GetInt32Nullable(string columnName)
         {
@@ -1688,8 +1688,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of column to retrieve.</param>
-        /// <returns>An int.</returns>
+        /// <param name="columnName">Name of column to retrieve</param>
+        /// <returns>An int</returns>
         public int GetInt32(string columnName)
         {
             return GetInt(columnName);
@@ -1707,8 +1707,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of column to retrieve.</param>
-        /// <returns>A nullable Int64.</returns>
+        /// <param name="columnName">Name of column to retrieve</param>
+        /// <returns>A nullable Int64</returns>
         public Int64? GetInt64Nullable(string columnName)
         {
             Int64? output = null;
@@ -1754,8 +1754,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of column to retrieve.</param>
-        /// <returns>A long.</returns>
+        /// <param name="columnName">Name of column to retrieve</param>
+        /// <returns>A long</returns>
         public long GetLong(string columnName)
         {
             long output = 0;
@@ -1811,8 +1811,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of column to retrieve.</param>
-        /// <returns>An Int64.</returns>
+        /// <param name="columnName">Name of column to retrieve</param>
+        /// <returns>An Int64</returns>
         public Int64 GetInt64(string columnName)
         {
             return GetLong(columnName);
@@ -1830,8 +1830,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of column to retrieve.</param>
-        /// <returns>A double.</returns>
+        /// <param name="columnName">Name of column to retrieve</param>
+        /// <returns>A double</returns>
         public double GetDouble(string columnName)
         {
             double output = 0;
@@ -1887,8 +1887,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of column to retrieve.</param>
-        /// <returns>A decimal.</returns>
+        /// <param name="columnName">Name of column to retrieve</param>
+        /// <returns>A decimal</returns>
         public decimal GetDecimal(string columnName)
         {
             decimal output = 0;
@@ -1944,8 +1944,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of column to retrieve.</param>
-        /// <returns>A float.</returns>
+        /// <param name="columnName">Name of column to retrieve</param>
+        /// <returns>A float</returns>
         public float GetFloat(string columnName)
         {
             float output = 0;
@@ -2004,7 +2004,7 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <returns>A string with the XML result.</returns>
+        /// <returns>A string with the XML result</returns>
         public string GetXMLResult()
         {
             if (xmlResult == null)
@@ -2061,8 +2061,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnIndex">Number of column to retrieve.</param>
-        /// <returns>A string.</returns>
+        /// <param name="columnIndex">Number of column to retrieve</param>
+        /// <returns>A string</returns>
         public string GetString(int columnIndex)
         {
             string output = string.Empty;
@@ -2116,8 +2116,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of column to retrieve.</param>
-        /// <returns>A string value or null.</returns>
+        /// <param name="columnName">Name of column to retrieve</param>
+        /// <returns>A string value or null</returns>
         public string GetStringNullable(string columnName)
         {
             try
@@ -2162,9 +2162,9 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of column to retrieve.</param>
-        /// <param name="defaultValue">Default value to return if string is null or empty.</param>
-        /// <returns>A string.</returns>
+        /// <param name="columnName">Name of column to retrieve</param>
+        /// <param name="defaultValue">Default value to return if string is null or empty</param>
+        /// <returns>A string</returns>
         public string GetString(string columnName, string defaultValue)
         {
             try
@@ -2213,8 +2213,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of column to retrieve.</param>
-        /// <returns>A string.</returns>
+        /// <param name="columnName">Name of column to retrieve</param>
+        /// <returns>A string</returns>
         public string GetString(string columnName)
         {
             return GetString(columnName, "");
@@ -2232,8 +2232,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of column to retrieve.</param>
-        /// <returns>A boolean.</returns>
+        /// <param name="columnName">Name of column to retrieve</param>
+        /// <returns>A boolean</returns>
         public bool GetBoolean(string columnName)
         {
             bool output = false;
@@ -2289,8 +2289,8 @@ namespace Fynydd.Carbide
         /// reader.Close();
         /// ]]></code>
         /// </example>
-        /// <param name="columnName">Name of column to retrieve.</param>
-        /// <returns>A string.</returns>
+        /// <param name="columnName">Name of column to retrieve</param>
+        /// <returns>A string</returns>
         public string GetYesNo(string columnName)
         {
             string output = "n/a";
@@ -2348,8 +2348,8 @@ namespace Fynydd.Carbide
         /// Gets a numeric field that represents minutes (ie 125)
         /// and converts it to an hour format (ie 2:05)
         /// ]]></summary>
-        /// <param name="columnName">Name of column to retrieve.</param>
-        /// <returns>A formatted string.</returns>
+        /// <param name="columnName">Name of column to retrieve</param>
+        /// <returns>A formatted string</returns>
         public string GetStringOfMinutes(string columnName)
         {
             string output = "";
@@ -2365,7 +2365,7 @@ namespace Fynydd.Carbide
                 d = GetString(dr.GetOrdinal(columnName));
             }
 
-            if (!String.IsNullOrEmpty(d))
+            if (d.HasValue())
             {
                 try
                 {
