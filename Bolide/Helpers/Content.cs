@@ -7,7 +7,6 @@ using Fynydd.Carbide;
 using Fynydd.Carbide.Constants;
 
 using Bolide.Helpers;
-using Bolide.Models;
 
 namespace Bolide.Helpers
 {
