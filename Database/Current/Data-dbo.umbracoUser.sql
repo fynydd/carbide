@@ -3,17 +3,17 @@ SET ANSI_PADDING, ANSI_WARNINGS, CONCAT_NULL_YIELDS_NULL, ARITHABORT, QUOTED_IDE
 SET DATEFORMAT YMD
 SET XACT_ABORT ON
 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
-GO -- SQRIBE/GO;528484
+GO -- SQRIBE/GO;9d5799
 
--- SQRIBE/TABLE;528484
+-- SQRIBE/TABLE;9d5799
 -- Adding 1 row to dbo.umbracoUser
 
 SET IDENTITY_INSERT [dbo].[umbracoUser] ON
 
 BEGIN TRANSACTION
 
--- SQRIBE/INSERT;528484
-INSERT INTO [dbo].[umbracoUser] ([id],[userDisabled],[userNoConsole],[userName],[userLogin],[userPassword],[passwordConfig],[userEmail],[userLanguage],[securityStampToken],[failedLoginAttempts],[lastLockoutDate],[lastPasswordChangeDate],[lastLoginDate],[emailConfirmedDate],[invitedDate],[createDate],[updateDate],[avatar],[tourData]) VALUES (-1,0,0,N'Michael Argentini',N'michael@argentini.us',N'FaYJdjHSAfNbRnbiEPXHOg==W9mjPeTvgOUVo9y3VMAHRMrAAK3/7CKyCr/lfifbvCE=',N'{"hashAlgorithm":"HMACSHA256"}',N'michael@argentini.us',N'en-US',N'a2764c6f-e7e9-44aa-a536-b387a32b119c',0,CONVERT(datetime,NULL,121),CONVERT(datetime,'2019-02-16 14:20:14.883',121),CONVERT(datetime,'2019-05-29 14:13:52.763',121),CONVERT(datetime,NULL,121),CONVERT(datetime,NULL,121),CONVERT(datetime,'2019-02-16 14:20:13.243',121),CONVERT(datetime,'2019-05-29 14:13:52.790',121),NULL,N'[{"alias":"umbIntroIntroduction","completed":false,"disabled":true}]');
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoUser] ([id],[userDisabled],[userNoConsole],[userName],[userLogin],[userPassword],[passwordConfig],[userEmail],[userLanguage],[securityStampToken],[failedLoginAttempts],[lastLockoutDate],[lastPasswordChangeDate],[lastLoginDate],[emailConfirmedDate],[invitedDate],[createDate],[updateDate],[avatar],[tourData]) VALUES (-1,0,0,N'Michael Argentini',N'michael@argentini.us',N'PljhjkdpIYsTvsEv7TEHGg==1tBYNRUd+fLi0KPZXFN9ggZ+aymMKWg72JalH1nOd1U=',N'{"hashAlgorithm":"HMACSHA256"}',N'michael@argentini.us',N'en-US',N'9f0e11c1-d449-45c1-a1bb-a3128c0c023f',NULL,CONVERT(datetime,NULL,121),CONVERT(datetime,'2019-05-29 18:29:08.237',121),CONVERT(datetime,'2019-05-29 18:29:40.780',121),CONVERT(datetime,NULL,121),CONVERT(datetime,NULL,121),CONVERT(datetime,'2019-05-29 18:29:07.180',121),CONVERT(datetime,'2019-05-29 18:29:40.790',121),NULL,NULL);
 
 COMMIT TRANSACTION
 
