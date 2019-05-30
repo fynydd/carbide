@@ -33,7 +33,9 @@ Thumbs.db
 [Rr]elease/
 [Rr]eleases/
 x64/
+!/libsodium-net/x64/
 x86/
+!/libsodium-net/x86/
 bld/
 [Oo]bj/
 [Ll]og/
