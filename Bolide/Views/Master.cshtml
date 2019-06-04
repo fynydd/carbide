@@ -1,0 +1,24 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @{ Html.RenderPartial("Partial_Head"); }
+</head>
+<body>
+    <header>
+    </header>
+    <section id="siteContent">
+
+        <main role="main">
+            @RenderBody()
+        </main>
+
+    </section>
+    <footer>
+    </footer>
+</body>
+</html>

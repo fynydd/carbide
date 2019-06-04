@@ -1,0 +1,77 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using System.Security.Cryptography
+@using Umbraco.Web
+@using Fynydd.Carbide
+
+@{
+    var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
+
+    // Get current domain to be used in robots.txt, page metadata
+    var domain = HttpRequests.GetSeoHost(umbCtx);
+
+    // SCSS check and build
+    Scss.RunConfiguredScssBuild(umbCtx);
+}
+
+<meta charset="utf-8" />
+<meta content="IE=EmulateIE10,chrome=1" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+@Html.Raw(Optimization.PreventSearchIndexingWhenDebug(umbCtx))
+@Html.Raw(Optimization.PreventBrowserCachingWhenDebug(umbCtx))
+
+@{
+    var metaTitle = Model.Name;
+
+    if (Model.HasProperty("metaTitle"))
+    {
+        if (!string.IsNullOrEmpty(Model.SafeValue<string>("metaTitle")))
+        {
+            metaTitle = Model.SafeValue<string>("metaTitle");
+        }
+    }
+}
+<!-- Page SEO metadata -->
+<title>@Html.Raw(metaTitle)</title>
+<meta name="keywords" content="@Html.Raw(Model.SafeValue<string>("metaKeywords"))">
+<meta name="description" content="@Html.Raw(Model.SafeValue<string>("metaDescription"))">
+@Html.Raw("<link rel=\"canonical\" href=\"https://" + domain + Model.Url + "\">")
+
+<!-- Open Graph support for Social Channels -->
+<meta property="og:title" content="@(Html.Raw(metaTitle))">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://@(domain + Model.Url)">
+<meta property="og:image" content="@(Html.Raw(Model.HasValue("shareImage") ? "//" + domain + Model.GetCropUrl("shareImage", "SocialSharing") : ""))">
+<meta property="og:site_name" content="@(Config.GetKeyValue("Organization.Name", "Company Name", "Fynydd.Carbide"))">
+<meta property="og:description" content="@(Html.Raw(Model.SafeValue<string>("metaDescription")))">
+
+<!-- Twitter Card Support -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:url" content="https://@(domain + Model.Url)">
+<meta name="twitter:site" content="@(Config.GetKeyValue("Twitter.User", "", "Fynydd.Carbide"))">
+<meta name="twitter:creator" content="@(Config.GetKeyValue("Twitter.User", "", "Fynydd.Carbide"))">
+<meta name="twitter:title" content="@(Html.Raw(metaTitle))">
+<meta name="twitter:description" content="@(Html.Raw(Model.SafeValue<string>("metaDescription")))">
+<meta name="twitter:image" content="@(Html.Raw(Model.HasValue("shareImage") ? "//" + domain + Model.GetCropUrl("shareImage", "SocialSharing") : ""))">
+
+<!-- Icon Support -->
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+<link rel="manifest" href="/icons/site.webmanifest">
+<link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#008bff">
+<link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/favicon.ico">
+<meta name="msapplication-TileColor" content="#008bff">
+<meta name="msapplication-config" content="/icons/browserconfig.xml">
+<meta name="theme-color" content="#008bff">
+
+<!-- JQuery -->
+<script src="@Url.Content(umbCtx, "~/scripts/jquery-3.3.1.min.js", addCacheBuster: true)"></script>
+
+<!-- Fluidbox image lightbox -->
+<link rel="stylesheet" href="@Url.Content(umbCtx, "~/scripts/fluidbox/css/fluidbox.min.css", addCacheBuster: true)" />
+<script src="@Url.Content(umbCtx, "~/scripts/jquery.ba-throttle-debounce.min.js", addCacheBuster: true)"></script>
+<script src="@Url.Content(umbCtx, "~/scripts/fluidbox/jquery.fluidbox.min.js", addCacheBuster: true)"></script>
+
+<!-- Stylesheets -->
+<link href="@Url.Content(umbCtx, "~/stylesheets/application.css", addCacheBuster: true)" rel="stylesheet" />
