@@ -1,0 +1,383 @@
+//-----------------------------------------------------------------------//
+// $LAYOUT
+// Mixins, functions, and styles for working with units and grids.
+//-----------------------------------------------------------------------//
+
+//-----------------------------------------------------------------------//
+// MIXINS AND FUNCTIONS
+//-----------------------------------------------------------------------//
+
+// BOUNDS CHECKING...
+
+@mixin sf-grid-init($prefix: false, $breakpoint: zero) {
+
+    @if ($prefix != false) {
+
+        margin: 0;
+
+        // CSS CUSTOM PROPERTIES
+
+        // GUTTERS
+        // style="--sf-gutters: 5%;"
+        // style="--sf-tabp-gutters: 5%;"
+        &[style~="--#{$prefix}gutters:"] {
+
+            margin-left: calc((var(--#{$prefix}gutters)/2) * -1);
+            margin-right: calc((var(--#{$prefix}gutters)/2) * -1);
+
+            & > [role="gridcell"] {
+                
+                padding-left: calc(var(--#{$prefix}gutters)/2);
+                padding-right: calc(var(--#{$prefix}gutters)/2);
+            }
+        }
+
+        // ROW GUTTERS
+        // style="--sf-row-gutters: 1.5rem;"
+        // style="--sf-tabp-row-gutters: 1.5rem;"
+        &[style~="--#{$prefix}row-gutters:"] {
+
+            margin-top: calc((var(--#{$prefix}row-gutters)/2) * -1);
+            margin-bottom: calc((var(--#{$prefix}row-gutters)/2) * -1);
+
+            [role="grid"][sf-row-gutters] + &,
+            [role="grid"][style~="--#{$prefix}row-gutters:"] + & {
+
+                margin-top: calc(var(--#{$prefix}row-gutters) * -1);
+            }
+
+            & > [role="gridcell"] {
+                
+                padding-top: calc(var(--#{$prefix}row-gutters)/2);
+                padding-bottom: calc(var(--#{$prefix}row-gutters)/2);
+            }
+        }
+
+        // IMPLICIT COLUMN WIDTHS BASED ON COLUMN COUNT
+        // style="--sf-cols: 3;"
+        // style="--sf-tabp-cols: 3;"
+        &[style~="--#{$prefix}cols:"] {
+
+            & > [role="gridcell"] {
+                
+                width: calc(100% / var(--#{$prefix}cols));
+            }
+        }
+
+        // REVERSE
+        // style="--sf-flex-direction: column-reverse;"
+        // style="--sf-flex-direction: row;"
+        &[style~="--#{$prefix}flex-direction:"] {
+
+            flex-direction: var(--#{$prefix}flex-direction);
+        }
+
+        // EQUAL HEIGHT CELLS PER ROW
+        // style="--sf-equal-heights: true;"
+        // style="--sf-tabp-equal-heights: true;"
+        &[style~="--#{$prefix}equal-heights:"] {
+
+            @include sf-make-equal-heights();
+        }
+
+        // VERTICALLY CENTERED GRID CELL CONTENT
+        // style="--sf-centered: true;"
+        // style="--sf-tabp-centered: true;"
+        &[style~="--#{$prefix}centered:"] {
+
+            @include sf-make-centered-grid();
+        }
+
+        // EXPLICIT GRID AND CELL WIDTHS
+        // style="--sf-width: 30%;"
+        // style="--sf-tabp-width: 30%;"
+        &[style~="--#{$prefix}width:"],
+        & > [role="gridcell"][style~="--#{$prefix}width:"] {
+            
+            width: var(--#{$prefix}width);
+            flex-grow: 0;
+        }
+
+        // EXPLICIT GRID AND CELL WIDTHS (FRACTIONS)
+        // style="--sf-frac: 3/12;"
+        // style="--sf-tabp-frac: 7/12;"
+        &[style~="--#{$prefix}frac:"],
+        & > [role="gridcell"][style~="--#{$prefix}frac:"] {
+            
+            width: calc((var(--#{$prefix}frac)) * 100%);
+            flex-grow: 0;
+        }
+
+        // CELL PUSH
+        // style="--sf-push: 30%;"
+        // style="--sf-tabp-push: 30%;"
+        & > [role="gridcell"][style~="--#{$prefix}push:"] {
+            
+            left: var(--#{$prefix}push);
+        }
+
+        // CELL PUSH (FRACTIONS)
+        // style="--sf-push-frac: 2/12;"
+        // style="--sf-tabp-push-frac: 2/12;"
+        & > [role="gridcell"][style~="--#{$prefix}push-frac:"] {
+            
+            left: calc((var(--#{$prefix}push-frac)) * 100%);
+        }
+
+        // CELL PULL
+        // style="--sf-pull: 30%;"
+        // style="--sf-tabp-pull: 30%;"
+        & > [role="gridcell"][style~="--#{$prefix}pull:"] {
+            
+            right: var(--#{$prefix}pull);
+        }
+
+        // CELL PULL (FRACTIONS)
+        // style="--sf-pull-frac: 2/12;"
+        // style="--sf-tabp-pull-frac: 2/12;"
+        & > [role="gridcell"][style~="--#{$prefix}pull-frac:"] {
+            
+            right: calc((var(--#{$prefix}pull-frac)) * 100%);
+        }
+
+        // AUTO WIDTH CELLS
+
+        &[#{$prefix}width-auto],
+        & > [role="gridcell"][#{$prefix}width-auto],
+        &[#{$prefix}width-auto="1"],
+        & > [role="gridcell"][#{$prefix}width-auto="1"],
+        &[#{$prefix}width-auto="true"],
+        & > [role="gridcell"][#{$prefix}width-auto="true"] {
+
+            width: auto;
+            flex-grow: 1;
+        }
+
+        // AUTO WIDTH CELLS
+
+        &[#{$prefix}width-auto="0"],
+        & > [role="gridcell"][#{$prefix}width-auto="0"],
+        &[#{$prefix}width-auto="false"],
+        & > [role="gridcell"][#{$prefix}width-auto="false"] {
+
+            flex-grow: 0;
+        }
+    }
+}
+
+
+//-----------------------------------------------------------------------//
+// STYLES
+//-----------------------------------------------------------------------//
+
+html, body {
+
+    // Needed for mobile
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+body {
+
+    // Needed for mobile
+    position: relative;
+
+    [sf-elastic-wrapper] {
+
+        @if (nth(map-get($media-breakpoints, elastic), 1) != false) {
+
+            max-width: $elastic-breakpoint;
+        }
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@each $breakpoint, $props in $media-breakpoints {
+
+    @if (nth($props, 1) != false) {
+
+        @if ($breakpoint == zero) {
+
+            [sf-hide] {
+
+                display: none !important;
+            } 
+
+        } @else {
+
+            @include sf-media($from: $breakpoint) {
+
+                [sf-hide-#{nth($props, 2)}-and-up] {
+
+                    display: none !important;
+                } 
+            }
+
+            @include sf-media($upto: $breakpoint) {
+
+                [sf-hide-below-#{nth($props, 2)}] {
+
+                    display: none !important;
+                } 
+            }
+        }
+    }
+}
+
+
+// GRID DEFAULTS
+
+// <div role="grid" sf-tabp-reverse>
+//     <div role="gridcell">...</div>
+//     <div role="gridcell">...</div>
+//     ...
+// </div>
+
+[role="grid"] {
+
+    @include sf-flexbox-grid();
+
+    $prefix: "";
+
+    @each $breakpoint, $props in $media-breakpoints {
+
+        @if (nth($props, 1) != false) {
+
+            @if ($breakpoint == zero) {
+
+                $prefix: "sf-";
+
+                @include sf-grid-init($prefix, $breakpoint);
+
+            } @else {
+
+                $prefix: "sf-" + nth($props, 2) + "-";
+
+                @include sf-media($from: $breakpoint) {
+
+                    @include sf-grid-init($prefix);
+                }
+            }
+        }
+    }
+}
+
+
+// UNIT STYLING
+// These are the outer block containers that you stack to create your UX.
+
+// <main>
+//     <section id="hero-unit" sf-unit>
+//         <div sf-outer-wrapper>
+//             <div sf-inner-wrapper>
+//                 ...
+//                 <div sf-subunit>
+//                     ...
+//                 </div>
+//                 ...
+//             </div>
+//         </div>
+//     </div>
+//     <section id="feature-unit" sf-unit>
+//         <div sf-outer-wrapper>
+//             <div sf-inner-wrapper>
+//                 ...
+//             </div>
+//         </div>
+//     </div>
+//     ...
+
+* {
+
+    & > [sf-unit], &[sf-unit] {
+
+        @include set-bottom-unit-padding();
+
+        & > [sf-outer-wrapper] {
+
+            margin-left: auto;
+            margin-right: auto;
+
+            @if (nth(map-get($media-breakpoints, elastic), 1) != false) {
+
+                max-width: $elastic-breakpoint;
+            }
+
+            @include set-horizontal-unit-padding();
+
+            & > [sf-inner-wrapper] {
+
+                @include set-top-unit-padding();
+
+                & > *:not([role="grid"]) {
+
+                    &:first-child {
+
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    [sf-subunit] {
+
+        @include set-bottom-subunit-margin();
+
+        &:last-child {
+
+            margin-bottom: 0;
+        }
+    }
+
+    // SF-SCROLL-WRAPPER
+    // Allows wide content to scroll horizontally on mobile.
+
+    // <div sf-scroll-wrapper>
+    //   <div sf-scroll-content>
+    //     <table>
+    //       ...
+    //     </table>
+    //   </div>
+    // </div>
+
+    &[sf-scroll-wrapper] {
+
+        @include sf-media($upto: tablet-portrait) {
+
+            margin-right: calc(var(--horizontal-unit-padding) * -1);
+        }
+
+        @include sf-media($from: phablet, $upto: tablet-portrait) {
+
+            margin-right: calc(var(--phablet-horizontal-unit-padding) * -1);
+        }
+
+        overflow: scroll;
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar {
+
+            display: none;
+        }
+
+        & > [sf-scroll-content] {
+
+            min-width: 100%;
+            width: 100%;
+            width: -webkit-max-content;
+
+            @include sf-media($upto: tablet-portrait) {
+
+                margin-right: var(--horizontal-unit-padding);
+            }
+    
+            @include sf-media($from: phablet, $upto: tablet-portrait) {
+    
+                margin-right: var(--phablet-horizontal-unit-padding);
+            }
+        }
+    }
+}

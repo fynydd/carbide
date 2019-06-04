@@ -429,7 +429,22 @@
     <Content Include="config\Lang\sv-SE.user.xml" />
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="config\logviewer.searches.config.js" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="icons\android-chrome-192x192.png" />
+    <Content Include="icons\android-chrome-512x512.png" />
+    <Content Include="icons\apple-touch-icon.png" />
+    <Content Include="icons\browserconfig.xml" />
+    <Content Include="icons\favicon-16x16.png" />
+    <Content Include="icons\favicon-32x32.png" />
+    <Content Include="icons\mstile-144x144.png" />
+    <Content Include="icons\mstile-150x150.png" />
+    <Content Include="icons\mstile-310x150.png" />
+    <Content Include="icons\mstile-310x310.png" />
+    <Content Include="icons\mstile-70x70.png" />
+    <Content Include="icons\safari-pinned-tab.svg" />
+    <Content Include="images\dropdown-mark.jpg" />
+    <Content Include="images\magnifying-glass.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -452,6 +467,7 @@
     <Content Include="config\serilog.config" />
     <Content Include="config\HealthChecks.config" />
     <Content Include="config\BackOfficeTours\getting-started.json" />
+    <Content Include="icons\site.webmanifest" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <None Include="Properties\PublishProfiles\Release.pubxml" />
@@ -484,6 +500,7 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+    <Folder Include="stylesheets\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

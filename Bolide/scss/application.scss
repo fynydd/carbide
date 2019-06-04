@@ -1,0 +1,51 @@
+//-----------------------------------------------------------------------//
+// STYLE GUIDE
+//-----------------------------------------------------------------------//
+
+@import "manifest";
+
+// YOUR CUSTOM PARTIALS
+@import "custom/fonts";
+@import "custom/typography";
+@import "custom/forms";
+@import "custom/grids";
+@import "custom/buttons";
+@import "custom/lists-and-tables";
+@import "custom/media";
+@import "custom/layout-header";
+@import "custom/layout-footer";
+
+html, body {
+
+    background-color: var(--sf-color-light);
+    color: black;
+
+    a {
+
+        color: var(--sf-color-primary);
+    }
+}
+
+body {
+    
+    & > main {
+
+        > section[separator] {
+
+            @include set-bottom-unit-padding();
+        }
+
+        // Primary wrapped containers with an elastic max-width
+        > [sf-unit] {
+
+            background-color: white;
+            overflow: hidden;
+
+            & + [sf-unit] {
+
+                border-top: solid 1px var(--sf-color-line);
+            }
+        }
+    }
+}
+
