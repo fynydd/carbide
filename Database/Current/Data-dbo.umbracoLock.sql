@@ -23,7 +23,7 @@ INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-336,1,N'MediaType
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-335,1,N'MemberTree');
 -- SQRIBE/INSERT;9d5799
-INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-334,1,N'MediaTree');
+INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-334,-1,N'MediaTree');
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-333,1,N'ContentTree');
 -- SQRIBE/INSERT;9d5799
