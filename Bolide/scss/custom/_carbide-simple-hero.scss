@@ -1,16 +1,15 @@
-﻿#hero-unit {
+﻿.carbide_simple_hero {
+
     position: relative;
     transition: background 0.5s linear;
-
-    @include sf-set-color-scheme(home-hero);
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 36rem;
+    min-height: 20rem;
     padding-bottom: 0;
 
     @include sf-media($from: tablet-portrait) {
-        min-height: 33rem;
+        min-height: 24rem;
     }
 
     #full-dimmer, #dimmer {
@@ -45,17 +44,20 @@
     }
 
 
-    [sf-inner-wrapper] {
-        padding-top: 0;
+    [sf-outer-wrapper] {
+
+        & > [sf-inner-wrapper] {
+            padding-top: 0;
+        }
     }
 
     #hero-content {
-        min-height: 36rem;
-        padding-top: 11rem;
+        min-height: 20rem;
+        padding-top: 0rem;
 
         @include sf-media($from: tablet-portrait) {
-            min-height: 33rem;
-            padding-top: 8rem;
+            min-height: 24rem;
+            padding-top: 0rem;
         }
 
         [role="presentation"] {
@@ -95,6 +97,7 @@
             }
 
             p {
+                color: white;
                 margin-bottom: 2rem;
 
                 @include sf-media($from: tablet-portrait) {
@@ -122,6 +125,7 @@
             }
 
             a {
+                color: white;
                 display: inline-block;
                 margin-right: 1rem;
 
