@@ -4,16 +4,20 @@
 
 @import "manifest";
 
-// YOUR CUSTOM PARTIALS
-@import "custom/fonts";
-@import "custom/typography";
-@import "custom/forms";
-@import "custom/grids";
-@import "custom/buttons";
-@import "custom/lists-and-tables";
-@import "custom/media";
-@import "custom/layout-header";
-@import "custom/layout-footer";
+// Custom units from the "custom" folder will be inserted here dynamically when the site is launched.
+// DO NOT EDIT BETWEEN THE FOLLOWING COMMENTS.
+// $CARBIDE_PARTIALS:BEGIN
+@import "custom/_buttons.scss";
+@import "custom/_carbide-simple-hero.scss";
+@import "custom/_fonts.scss";
+@import "custom/_forms.scss";
+@import "custom/_grids.scss";
+@import "custom/_layout-footer.scss";
+@import "custom/_layout-header.scss";
+@import "custom/_lists-and-tables.scss";
+@import "custom/_media.scss";
+@import "custom/_typography.scss";
+// $CARBIDE_PARTIALS:END
 
 html, body {
 

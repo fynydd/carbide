@@ -445,6 +445,10 @@
     <Content Include="icons\safari-pinned-tab.svg" />
     <Content Include="images\dropdown-mark.jpg" />
     <Content Include="images\magnifying-glass.png" />
+    <Content Include="scripts\fluidbox\css\fluidbox.min.css" />
+    <Content Include="scripts\fluidbox\jquery.fluidbox.min.js" />
+    <Content Include="scripts\jquery-3.3.1.min.js" />
+    <Content Include="scripts\jquery.ba-throttle-debounce.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -482,6 +486,7 @@
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\Master.cshtml" />
     <Content Include="Views\Partials\Partial_Head.cshtml" />
+    <Content Include="scripts\jquery-3.3.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -502,6 +507,7 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+    <Folder Include="scss\custom\" />
     <Folder Include="stylesheets\" />
   </ItemGroup>
   <PropertyGroup>
