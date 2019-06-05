@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/TABLE;9d5799
--- Adding 21 rows to dbo.cmsPropertyType
+-- Adding 31 rows to dbo.cmsPropertyType
 
 SET IDENTITY_INSERT [dbo].[cmsPropertyType] ON
 
@@ -54,6 +54,26 @@ INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[property
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (39,-88,1055,12,N'metaDescription',N'Meta Description',2,0,NULL,NULL,0,'332E7216-3C90-45E2-AB9B-B3F7FECFDDE2');
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (41,1043,1055,12,N'shareImage',N'Share Image',3,0,NULL,NULL,0,'CA10576E-5D2C-458E-8AF8-00F74D7B9CB8');
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (42,1070,1063,14,N'carbideSimpleHeroBackgroundImage',N'Background Image',0,0,NULL,NULL,0,'3B60A002-7C63-4EB7-AE88-D895C05B4D55');
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (43,1065,1063,14,N'carbideSimpleHeroTitle',N'Title',1,1,NULL,NULL,0,'3CA1A54F-E961-4E57-A409-AD2EE16FC910');
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (44,1062,1063,14,N'carbideSimpleHeroExcerpt',N'Excerpt',2,0,NULL,NULL,0,'826DB653-53B5-4BE7-BB7D-CF85752D6BE7');
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (45,1065,1063,14,N'carbideSimpleHeroButtonText',N'Button Text',3,0,NULL,NULL,0,'4E44466D-803E-4E35-95B9-F867D98540D3');
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (46,1064,1063,14,N'carbideSimpleHeroButtonLink',N'Button Link',4,0,NULL,NULL,0,'D96C8758-FABC-48A6-84EE-AA275D704BEF');
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (47,1065,1063,14,N'carbideSimpleHeroButtonUrl',N'Button URL',5,0,NULL,NULL,0,'E0A830DE-B417-407A-9EC1-DAEF188BCCF5');
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (48,1066,1069,15,N'carbideSimpleHeroFrames',N'Hero Frames',0,0,NULL,N'Content frames for the hero',0,'35BB0EB9-9E21-4802-8625-2C8471F06489');
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (49,1067,1069,15,N'carbideSimpleHeroFrameDuration',N'Frame Duration',1,1,NULL,N'Milliseconds to leave each frame on-screen',0,'8EF0F80C-86D8-48F0-B3DF-24EAF6A71E17');
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (50,1068,1069,15,N'carbideSimpleHeroTransitionTime',N'Transition Time',2,1,NULL,N'Millisecond time for frame transitions',0,'00DA1376-4DEE-45F8-81B3-1BC577598B3E');
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (51,-49,1069,15,N'carbideSimpleHeroShowCountdown',N'Show Countdown',3,1,NULL,NULL,0,'F7DB7C32-EF84-4893-83A1-B348C8D629E9');
 
 COMMIT TRANSACTION
 

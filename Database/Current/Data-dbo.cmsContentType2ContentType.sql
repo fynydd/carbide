@@ -6,12 +6,14 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/TABLE;9d5799
--- Adding 1 row to dbo.cmsContentType2ContentType
+-- Adding 2 rows to dbo.cmsContentType2ContentType
 
 BEGIN TRANSACTION
 
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1055,1052);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1069,1052);
 
 COMMIT TRANSACTION
 

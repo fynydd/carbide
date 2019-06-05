@@ -122,15 +122,19 @@ ALTER TABLE [dbo].[cmsContentTypeAllowedContentType] ADD CONSTRAINT [df_cmsConte
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/OBJ;9d5799
-ALTER TABLE [dbo].[cmsPropertyTypeGroup] ADD CONSTRAINT [df_cmsPropertyTypeGroup_uniqueID] DEFAULT (newid()) FOR [uniqueID]
-GO -- SQRIBE/GO;9d5799
-
--- SQRIBE/OBJ;9d5799
 ALTER TABLE [dbo].[umbracoUserGroup] ADD CONSTRAINT [df_umbracoUserGroup_createDate] DEFAULT (getdate()) FOR [createDate]
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/OBJ;9d5799
 ALTER TABLE [dbo].[umbracoUserGroup] ADD CONSTRAINT [df_umbracoUserGroup_updateDate] DEFAULT (getdate()) FOR [updateDate]
+GO -- SQRIBE/GO;9d5799
+
+-- SQRIBE/OBJ;9d5799
+ALTER TABLE [dbo].[cmsPropertyTypeGroup] ADD CONSTRAINT [df_cmsPropertyTypeGroup_uniqueID] DEFAULT (newid()) FOR [uniqueID]
+GO -- SQRIBE/GO;9d5799
+
+-- SQRIBE/OBJ;9d5799
+ALTER TABLE [dbo].[umbracoAudit] ADD CONSTRAINT [df_umbracoAudit_eventDateUtc] DEFAULT (getdate()) FOR [eventDateUtc]
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/OBJ;9d5799
@@ -155,10 +159,6 @@ GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/OBJ;9d5799
 ALTER TABLE [dbo].[umbracoContentVersion] ADD CONSTRAINT [df_umbracoContentVersion_versionDate] DEFAULT (getdate()) FOR [versionDate]
-GO -- SQRIBE/GO;9d5799
-
--- SQRIBE/OBJ;9d5799
-ALTER TABLE [dbo].[umbracoAudit] ADD CONSTRAINT [df_umbracoAudit_eventDateUtc] DEFAULT (getdate()) FOR [eventDateUtc]
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/OBJ;9d5799
