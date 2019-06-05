@@ -1,5 +1,12 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Home>
-@using ContentModels = Umbraco.Web.PublishedModels;
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using ContentModels = Umbraco.Web.PublishedModels
+@using Fynydd.Carbide
 @{
 	Layout = "Master.cshtml";
 }
+
+@{
+    Html.ViewData.Add(new KeyValuePair<string, object>("CarbideSimpleHeroInstanceId", "carbide-simple-hero"));
+    Html.RenderPartial("_Partial_Carbide_Simple_Hero", Html.ViewData);
+}
+

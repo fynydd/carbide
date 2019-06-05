@@ -445,7 +445,15 @@
     <Content Include="icons\safari-pinned-tab.svg" />
     <Content Include="images\dropdown-mark.jpg" />
     <Content Include="images\magnifying-glass.png" />
+    <Content Include="scripts\fluidbox\css\fluidbox.min.css" />
+    <Content Include="scripts\fluidbox\jquery.fluidbox.min.js" />
+    <Content Include="scripts\jquery-3.3.1.min.js" />
+    <Content Include="scripts\jquery.ba-throttle-debounce.min.js" />
+    <Content Include="stylesheets\all.min.css" />
     <Content Include="Web.config" />
+    <Content Include="webfonts\fa-brands-400.svg" />
+    <Content Include="webfonts\fa-regular-400.svg" />
+    <Content Include="webfonts\fa-solid-900.svg" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\EventHandlers.cs" />
@@ -481,13 +489,27 @@
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\Master.cshtml" />
-    <Content Include="Views\Partials\Partial_Head.cshtml" />
+    <Content Include="Views\Partials\_Partial_Head.cshtml" />
+    <Content Include="scripts\jquery-3.3.1.min.map" />
+    <Content Include="Views\Partials\_Partial_Carbide_Simple_Hero.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="webfonts\fa-brands-400.eot" />
+    <Content Include="webfonts\fa-brands-400.ttf" />
+    <Content Include="webfonts\fa-brands-400.woff" />
+    <Content Include="webfonts\fa-brands-400.woff2" />
+    <Content Include="webfonts\fa-regular-400.eot" />
+    <Content Include="webfonts\fa-regular-400.ttf" />
+    <Content Include="webfonts\fa-regular-400.woff" />
+    <Content Include="webfonts\fa-regular-400.woff2" />
+    <Content Include="webfonts\fa-solid-900.eot" />
+    <Content Include="webfonts\fa-solid-900.ttf" />
+    <Content Include="webfonts\fa-solid-900.woff" />
+    <Content Include="webfonts\fa-solid-900.woff2" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
@@ -502,7 +524,7 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
-    <Folder Include="stylesheets\" />
+    <Folder Include="scss\custom\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

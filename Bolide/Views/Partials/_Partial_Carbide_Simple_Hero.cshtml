@@ -1,0 +1,156 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using System.Security.Cryptography
+@using Umbraco.Web
+@using Fynydd.Carbide
+
+@{ 
+    object carbideSimpleHeroInstanceId;
+    Html.ViewData.TryGetValue("CarbideSimpleHeroInstanceId", out carbideSimpleHeroInstanceId);
+
+    var heroId = carbideSimpleHeroInstanceId == null ? "hero-unit" : carbideSimpleHeroInstanceId.ToString();
+}
+
+<section id="@(heroId)" class="carbide_simple_hero" sf-unit>
+    <div role="presentation" id="dimmer"></div>
+    <div sf-outer-wrapper>
+        <div sf-inner-wrapper>
+            <div role="grid" style="--sf-tabp-cols: 2; --sf-centered: true;">
+                <div role="gridcell">
+                    <div id="hero-content">
+                        <div role="presentation">
+                            @foreach(var frame in Model.SafeNestedValues("carbideSimpleHeroFrames"))
+                            {
+                            <div class="frame" data-img="@(frame.PickerValue("carbideSimpleHeroBackgroundImage").Url)">
+                                <h1>@Html.Raw(frame.SafeValue("carbideSimpleHeroTitle"))</h1>
+                                <p>
+                                    @Html.Raw(frame.SafeValue("carbideSimpleHeroExcerpt"))
+                                </p>
+                                <a href="@(frame.HasValue("carbideSimpleHeroButtonLink") ? frame.PickerValue("carbideSimpleHeroButtonLink").Url : frame.SafeValue<string>("carbideSimpleHeroButtonUrl"))" role="button">@Html.Raw(frame.SafeValue("carbideSimpleHeroButtonText"))</a>
+                            </div>
+                            }
+                            <div class="nodes">
+                            @foreach(var frame in Model.SafeNestedValues("carbideSimpleHeroFrames"))
+                            {
+                                <a></a>
+                            }
+                                <span></span>
+                            </div>
+                        </div>
+                        <script>
+
+                            var slideCount = $("#@(heroId) .frame").length;
+                            var slideTimer;
+                            var countdownTimer;
+                            var slideDuration = 7000;
+                            var countdown = parseInt(slideDuration / 1000);
+                            var transitionTime = 500;
+
+                            // Preload Images
+                            var images = new Array();
+                            $("#@(heroId) #hero-content .frame").each(function (index) {
+
+                                images[index] = new Image();
+                                images[index].src = $(this).attr("data-img");
+                            });
+
+                            $("#@(heroId) #hero-content .nodes > a").each(function (index) {
+
+                                $(this).on("click", function () {
+
+                                    nextSlide(index);
+                                });
+                            });
+
+                            function nextSlide(index) {
+
+                                var nodeIndex = index;
+                                var nextSlideIndex = index + 1;
+
+                                if (nextSlideIndex >= slideCount) {
+
+                                    nextSlideIndex = 0;
+                                }
+
+                                clearTimeout(slideTimer);
+
+                                countdown = parseInt(slideDuration / 1000);
+
+                                @if (Model.SafeValue<bool>("carbideSimpleHeroShowCountdown")) {
+
+                                <text>displayCountdown();</text>
+                                }
+
+                                clearTimeout(countdownTimer);
+                                countdownTimer = setInterval(function () {
+
+                                    countdown--;
+
+                                @if (Model.SafeValue<bool>("carbideSimpleHeroShowCountdown")) {
+
+                                    <text>displayCountdown();</text>
+                                }
+
+                                }, 1000);
+
+                                slideTimer = setTimeout(function () {
+
+                                    nextSlide(nextSlideIndex);
+
+                                }, slideDuration);
+
+                                $("#@(heroId) #hero-content .nodes > a").each(function (index) {
+
+                                    if (index !== nodeIndex) {
+
+                                        $(this).html("<i class='far fa-circle'></i>");
+
+                                    } else {
+
+                                        $(this).html("<i class='fas fa-circle'></i>");
+                                    }
+                                });
+
+                                $("#@(heroId) #hero-content .frame").each(function (index) {
+
+                                    var frame = this;
+
+                                    if (index !== nodeIndex) {
+
+                                        $(frame).removeClass("current");
+
+                                    } else {
+
+                                        $(frame).addClass("current");
+
+                                        $("#@(heroId)").css("background-image", "url('" + $(frame).attr("data-img") + "')");
+                                    }
+                                });
+                            }
+
+                            function displayCountdown() {
+
+                                var text = "";
+
+                                if (countdown > 0) {
+
+                                    text = countdown;
+                                }
+
+                                $("#@(heroId) #hero-content .nodes > span").html(text);
+                            }
+
+                            nextSlide(0);
+
+                            @if (Model.SafeValue<bool>("carbideSimpleHeroShowCountdown")) {
+
+                            <text>displayCountdown();</text>
+                            }
+
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
