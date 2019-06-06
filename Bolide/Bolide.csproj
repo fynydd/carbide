@@ -449,6 +449,7 @@
     <Content Include="scripts\fluidbox\jquery.fluidbox.min.js" />
     <Content Include="scripts\jquery-3.3.1.min.js" />
     <Content Include="scripts\jquery.ba-throttle-debounce.min.js" />
+    <Content Include="scripts\jquery.backstretch.min.js" />
     <Content Include="stylesheets\all.min.css" />
     <Content Include="Web.config" />
     <Content Include="webfonts\fa-brands-400.svg" />
@@ -492,6 +493,38 @@
     <Content Include="Views\Partials\_Partial_Head.cshtml" />
     <Content Include="scripts\jquery-3.3.1.min.map" />
     <Content Include="Views\Partials\_Partial_Bolide_Simple_Hero.cshtml" />
+    <None Include="Properties\PublishProfiles\Staging.pubxml" />
+    <Content Include="scss\application.scss" />
+    <Content Include="scss\core\bolide\_core-bolide-simple-hero.scss" />
+    <Content Include="scss\core\_core-animation.scss" />
+    <Content Include="scss\core\_core-buttons.scss" />
+    <Content Include="scss\core\_core-color.scss" />
+    <Content Include="scss\core\_core-flexbox-grid.scss" />
+    <Content Include="scss\core\_core-forms.scss" />
+    <Content Include="scss\core\_core-helpers.scss" />
+    <Content Include="scss\core\_core-initialize.scss" />
+    <Content Include="scss\core\_core-layout.scss" />
+    <Content Include="scss\core\_core-lists-and-tables.scss" />
+    <Content Include="scss\core\_core-media-queries.scss" />
+    <Content Include="scss\core\_core-media.scss" />
+    <Content Include="scss\core\_core-typography.scss" />
+    <Content Include="scss\custom\bolide\_bolide-simple-hero.scss" />
+    <Content Include="scss\custom\_buttons.scss" />
+    <Content Include="scss\custom\_fonts.scss" />
+    <Content Include="scss\custom\_forms.scss" />
+    <Content Include="scss\custom\_grids.scss" />
+    <Content Include="scss\custom\_layout-footer.scss" />
+    <Content Include="scss\custom\_layout-header.scss" />
+    <Content Include="scss\custom\_lists-and-tables.scss" />
+    <Content Include="scss\custom\_media.scss" />
+    <Content Include="scss\custom\_typography.scss" />
+    <Content Include="scss\vendor\_normalize.scss" />
+    <Content Include="scss\_config-colors.scss" />
+    <Content Include="scss\_config-measurements.scss" />
+    <Content Include="scss\_config-media-breakpoints.scss" />
+    <Content Include="scss\_config-typography.scss" />
+    <Content Include="scss\_config.scss" />
+    <Content Include="scss\_manifest.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -524,7 +557,6 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
-    <Folder Include="scss\custom\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
