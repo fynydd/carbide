@@ -277,8 +277,9 @@ namespace Fynydd.Carbide
         /// <param name="umbCtx">Umbraco context object to use</param>
         /// <param name="path">Web-formatted parent path to examine</param>
         /// <param name="includeRoot">First insert the passed path</param>
+        /// <param name="recurse">Recurse all subdirectories</param>
         /// <returns>String array of fully qualified child folder names (e.g. "/pdf/", "/pdf/child1/", "/pdf/child2/", etc.)</returns>
-        public static ArrayList GetWebFolders(this UmbracoContext umbCtx, string path, bool includeRoot = false)
+        public static ArrayList GetWebFolders(this UmbracoContext umbCtx, string path, bool includeRoot = false, bool recurse = true)
         {
             ArrayList folders = new ArrayList();
             string[] _folders = Directory.GetDirectories(umbCtx.MapPath(path));
@@ -288,7 +289,10 @@ namespace Fynydd.Carbide
                 var newPath = path.TrimEnd('/') + "/" + _folders[i].Substring(_folders[i].LastIndexOf("\\") + 1) + "/";
                 folders.Add(newPath);
 
-                folders.AddRange(umbCtx.GetWebFolders(newPath));
+                if (recurse)
+                {
+                    folders.AddRange(umbCtx.GetWebFolders(newPath));
+                }
             }
 
             folders.Sort();

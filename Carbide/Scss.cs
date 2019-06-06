@@ -282,7 +282,7 @@ namespace Fynydd.Carbide
                                     }
                                 }
 
-                                ArrayList folders = umbCtx.GetWebFolders(_scssPath + _partialPath, includeRoot: false);
+                                ArrayList folders = umbCtx.GetWebFolders(_scssPath + _partialPath, includeRoot: false, recurse: true);
 
                                 foreach (var folder in folders)
                                 {
