@@ -5,8 +5,11 @@
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
+    backface-visibility: hidden;
+
     min-height: 20rem;
     padding-bottom: 0;
+    opacity: 0.99; // Trigger hardware acceleration
 
     @include sf-media($from: tablet-portrait) {
         min-height: 24rem;
@@ -27,7 +30,6 @@
 
     #dimmer {
         background-color: rgba(0,0,0,0.5);
-        //background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.45) 75%, rgba(0,212,255,0) 100%);
         @include sf-media($from: tablet-portrait) {
             background-color: transparent;
             background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.45) 75%, rgba(0,212,255,0) 100%);

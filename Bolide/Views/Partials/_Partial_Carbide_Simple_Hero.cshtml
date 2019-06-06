@@ -20,7 +20,7 @@
                         <div role="presentation">
                             @foreach(var frame in Model.SafeNestedValues("carbideSimpleHeroFrames"))
                             {
-                            <div class="frame" data-img="@(frame.PickerValue("carbideSimpleHeroBackgroundImage").Url)">
+                            <div class="frame" data-img="@(frame.PickerValue("carbideSimpleHeroBackgroundImage").Url)?width=1920&quality=75">
                                 <h1>@Html.Raw(frame.SafeValue("carbideSimpleHeroTitle"))</h1>
                                 <p>
                                     @Html.Raw(frame.SafeValue("carbideSimpleHeroExcerpt"))
@@ -41,9 +41,9 @@
                             var slideCount = $("#@(heroId) .frame").length;
                             var slideTimer;
                             var countdownTimer;
-                            var slideDuration = 7000;
+                            var slideDuration = @(Model.SafeValue<int>("carbideSimpleHeroFrameDuration"));
                             var countdown = parseInt(slideDuration / 1000);
-                            var transitionTime = 500;
+                            var transitionTime = @(Model.SafeValue<int>("carbideSimpleHeroTransitionTime"));
 
                             // Preload Images
                             var images = new Array();
@@ -141,11 +141,10 @@
 
                             nextSlide(0);
 
-                            @if (Model.SafeValue<bool>("carbideSimpleHeroShowCountdown")) {
-
+                            @if (Model.SafeValue<bool>("carbideSimpleHeroShowCountdown"))
+                            {
                             <text>displayCountdown();</text>
                             }
-
                         </script>
                     </div>
                 </div>
@@ -153,4 +152,3 @@
         </div>
     </div>
 </section>
-

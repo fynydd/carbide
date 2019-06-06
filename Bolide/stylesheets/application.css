@@ -634,7 +634,7 @@ body [sf-elastic-wrapper] { max-width: 1200px; margin-left: auto; margin-right: 
 
 [role="button"].blue { background-color: var(--sf-color-primary); border-color: var(--sf-color-primary); }
 
-.carbide_simple_hero { position: relative; transition: background 0.5s linear; background-position: 50%; background-repeat: no-repeat; background-size: cover; min-height: 20rem; padding-bottom: 0; }
+.carbide_simple_hero { position: relative; transition: background 0.5s linear; background-position: 50%; background-repeat: no-repeat; background-size: cover; backface-visibility: hidden; min-height: 20rem; padding-bottom: 0; opacity: 0.99; }
 
 @media screen and (min-width: 33.75em) { .carbide_simple_hero { min-height: 24rem; } }
 
