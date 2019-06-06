@@ -4,11 +4,16 @@
 @using Fynydd.Carbide
 
 @{ 
+    var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
+
     object bolideSimpleHeroInstanceId;
     Html.ViewData.TryGetValue("BolideSimpleHeroInstanceId", out bolideSimpleHeroInstanceId);
 
     var heroId = bolideSimpleHeroInstanceId == null ? "hero-unit" : bolideSimpleHeroInstanceId.ToString();
 }
+
+<!-- BackStetch -->
+<script src="@Url.Content(umbCtx, "~/scripts/jquery.backstretch.min.js", addCacheBuster: true)"></script>
 
 <section id="@(heroId)" class="bolide_simple_hero" sf-unit>
     <div role="presentation" id="dimmer"></div>
@@ -131,7 +136,12 @@
 
                                         $(frame).addClass("current");
 
-                                        $("#@(heroId)").css("background-image", "url('" + $(frame).attr("data-img") + "')");
+                                        $("#@(heroId)").backstretch($(frame).attr("data-img"), {
+
+                                            transitionDuration: transitionTime
+                                        });
+
+                                        //$("#@(heroId)").css("background-image", "url('" + $(frame).attr("data-img") + "')");
                                     }
                                 });
                             }
