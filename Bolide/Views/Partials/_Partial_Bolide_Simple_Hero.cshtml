@@ -4,13 +4,13 @@
 @using Fynydd.Carbide
 
 @{ 
-    object carbideSimpleHeroInstanceId;
-    Html.ViewData.TryGetValue("CarbideSimpleHeroInstanceId", out carbideSimpleHeroInstanceId);
+    object bolideSimpleHeroInstanceId;
+    Html.ViewData.TryGetValue("BolideSimpleHeroInstanceId", out bolideSimpleHeroInstanceId);
 
-    var heroId = carbideSimpleHeroInstanceId == null ? "hero-unit" : carbideSimpleHeroInstanceId.ToString();
+    var heroId = bolideSimpleHeroInstanceId == null ? "hero-unit" : bolideSimpleHeroInstanceId.ToString();
 }
 
-<section id="@(heroId)" class="carbide_simple_hero" sf-unit>
+<section id="@(heroId)" class="bolide_simple_hero" sf-unit>
     <div role="presentation" id="dimmer"></div>
     <div sf-outer-wrapper>
         <div sf-inner-wrapper>
@@ -20,22 +20,22 @@
                         <div role="presentation">
                             <div role="grid">
                                 <div role="gridcell" class="inner-gridcell">
-                                    @foreach(var frame in Model.SafeNestedValues("carbideSimpleHeroFrames").Where(f => f.SafeValue<bool>("carbideSimpleHeroEnabled")))
+                                    @foreach(var frame in Model.SafeNestedValues("bolideSimpleHeroFrames").Where(f => f.SafeValue<bool>("bolideSimpleHeroEnabled")))
                                     {
-                                    <div class="frame" data-img="@(frame.PickerValue("carbideSimpleHeroBackgroundImage").Url)?width=1920&quality=75">
-                                        <h1>@Html.Raw(frame.SafeValue("carbideSimpleHeroTitle"))</h1>
+                                    <div class="frame" data-img="@(frame.PickerValue("bolideSimpleHeroBackgroundImage").Url)?width=1920&quality=75">
+                                        <h1>@Html.Raw(frame.SafeValue("bolideSimpleHeroTitle"))</h1>
                                         <div class="excerpt-row">
-                                            @Html.Raw(frame.SafeValue("carbideSimpleHeroExcerpt"))
+                                            @Html.Raw(frame.SafeValue("bolideSimpleHeroExcerpt"))
                                         </div>
                                         <div class="button-row">
-                                            <a href="@(frame.HasValue("carbideSimpleHeroButtonLink") ? frame.PickerValue("carbideSimpleHeroButtonLink").Url : frame.SafeValue<string>("carbideSimpleHeroButtonUrl"))" role="button">@Html.Raw(frame.SafeValue("carbideSimpleHeroButtonText"))</a>
+                                            <a href="@(frame.HasValue("bolideSimpleHeroButtonLink") ? frame.PickerValue("bolideSimpleHeroButtonLink").Url : frame.SafeValue<string>("bolideSimpleHeroButtonUrl"))" role="button">@Html.Raw(frame.SafeValue("bolideSimpleHeroButtonText"))</a>
                                         </div>
                                     </div>
                                     }
                                 </div>
                             </div>
                             <div class="nodes">
-                            @foreach(var frame in Model.SafeNestedValues("carbideSimpleHeroFrames").Where(f => f.SafeValue<bool>("carbideSimpleHeroEnabled")))
+                            @foreach(var frame in Model.SafeNestedValues("bolideSimpleHeroFrames").Where(f => f.SafeValue<bool>("bolideSimpleHeroEnabled")))
                             {
                                 <a></a>
                             }
@@ -47,9 +47,9 @@
                             var slideCount = $("#@(heroId) .frame").length;
                             var slideTimer;
                             var countdownTimer;
-                            var slideDuration = @(Model.SafeValue<int>("carbideSimpleHeroFrameDuration"));
+                            var slideDuration = @(Model.SafeValue<int>("bolideSimpleHeroFrameDuration"));
                             var countdown = parseInt(slideDuration / 1000);
-                            var transitionTime = @(Model.SafeValue<int>("carbideSimpleHeroTransitionTime"));
+                            var transitionTime = @(Model.SafeValue<int>("bolideSimpleHeroTransitionTime"));
 
                             // Preload Images
                             var images = new Array();
@@ -83,7 +83,7 @@
 
                                     countdown = parseInt(slideDuration / 1000);
 
-                                    @if (Model.SafeValue<bool>("carbideSimpleHeroShowCountdown")) {
+                                    @if (Model.SafeValue<bool>("bolideSimpleHeroShowCountdown")) {
 
                                     <text>displayCountdown();</text>
                                     }
@@ -93,7 +93,7 @@
 
                                         countdown--;
 
-                                    @if (Model.SafeValue<bool>("carbideSimpleHeroShowCountdown")) {
+                                    @if (Model.SafeValue<bool>("bolideSimpleHeroShowCountdown")) {
 
                                         <text>displayCountdown();</text>
                                     }
@@ -150,7 +150,7 @@
 
                             nextSlide(0);
 
-                            @if (Model.SafeValue<bool>("carbideSimpleHeroShowCountdown"))
+                            @if (Model.SafeValue<bool>("bolideSimpleHeroShowCountdown"))
                             {
                             <text>displayCountdown();</text>
                             }

@@ -491,7 +491,7 @@
     <Content Include="Views\Master.cshtml" />
     <Content Include="Views\Partials\_Partial_Head.cshtml" />
     <Content Include="scripts\jquery-3.3.1.min.map" />
-    <Content Include="Views\Partials\_Partial_Carbide_Simple_Hero.cshtml" />
+    <Content Include="Views\Partials\_Partial_Bolide_Simple_Hero.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
