@@ -8,7 +8,6 @@
 // DO NOT EDIT BETWEEN THE FOLLOWING COMMENTS.
 // $CARBIDE_PARTIALS:BEGIN
 @import "custom/_buttons.scss";
-@import "custom/_carbide-simple-hero.scss";
 @import "custom/_fonts.scss";
 @import "custom/_forms.scss";
 @import "custom/_grids.scss";
@@ -17,6 +16,7 @@
 @import "custom/_lists-and-tables.scss";
 @import "custom/_media.scss";
 @import "custom/_typography.scss";
+@import "custom/bolide/_bolide-simple-hero.scss";
 // $CARBIDE_PARTIALS:END
 
 html, body {

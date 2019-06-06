@@ -269,11 +269,24 @@ namespace Fynydd.Carbide
                             if (chunks.Count == 2)
                             {
                                 var inject = "";
-                                ArrayList folders = umbCtx.GetWebFolders(_scssPath + _partialPath, includeRoot: true);
+
+                                // Root partial files go first
+                                var _files = umbCtx.GetFiles(_scssPath + _partialPath, "*.scss");
+                                _files.Sort();
+
+                                if (_files.Count > 0)
+                                {
+                                    foreach (var file in _files)
+                                    {
+                                        inject += "@import \"" + (_scssPath + _partialPath).Replace(_scssPath, "") + file + "\";\r\n";
+                                    }
+                                }
+
+                                ArrayList folders = umbCtx.GetWebFolders(_scssPath + _partialPath, includeRoot: false);
 
                                 foreach (var folder in folders)
                                 {
-                                    var _files = umbCtx.GetFiles(folder.ToString(), "*.scss");
+                                    _files = umbCtx.GetFiles(folder.ToString(), "*.scss");
                                     _files.Sort();
 
                                     if (_files.Count > 0)

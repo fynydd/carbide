@@ -1,4 +1,4 @@
-﻿.carbide_simple_hero {
+.carbide_simple_hero {
 
     // SETTINGS
 
@@ -186,52 +186,5 @@
                 text-shadow: 0 0 0.75rem var(--nodes-shadow-color);
             }
         }
-    }
-}
-
-#carbide-simple-hero {
-
-    --vertical-padding: 3rem;
-    --min-height: 20rem;
-    --max-height: 20rem;
-
-    --text-align: center;
-    --content-width: 1/1;
-    --content-push: 0;
-    --content-bottom-spacer: 2rem;
-    --button-bottom-spacer: 2rem;
-
-    --nodes-top-spacer: 1rem;
-    --nodes-align: center;
-
-    --dimmer-fade-color-start: rgba(0,0,0,0.4);
-    --dimmer-fade-position-start: 0%;
-    --dimmer-fade-color-middle: rgba(0,0,0,0.4);
-    --dimmer-fade-position-middle: 50%;
-    --dimmer-fade-color-end: rgba(0,0,0,0.4);
-    --dimmer-fade-position-end: 100%;
-
-    @include sf-media($from: tablet-portrait) {
-
-        --vertical-padding: 3rem;
-        --min-height: 24rem;
-        --max-height: 24rem;
-
-        --text-align: left;
-        --content-width: 1/3;
-        --content-push: 0;
-        --content-bottom-spacer: 2rem;
-        --button-bottom-spacer: 2rem;
-
-        --nodes-top-spacer: 1rem;
-        --nodes-align: left;
-
-        --dimmer-angle: 90deg;
-        --dimmer-fade-color-start: rgba(0,0,0,0.5);
-        --dimmer-fade-position-start: 0%;
-        --dimmer-fade-color-middle: rgba(0,0,0,0.3);
-        --dimmer-fade-position-middle: 50%;
-        --dimmer-fade-color-end: rgba(0,0,0,0);
-        --dimmer-fade-position-end: 75%;
     }
 }
