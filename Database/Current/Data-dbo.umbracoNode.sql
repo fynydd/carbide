@@ -41,7 +41,7 @@ INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sort
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (-51,'2E6D3631-066E-44B8-AEC4-96F09099B2B5',-1,1,N'-1,-51',2,0,-1,N'Numeric','30A2A501-1978-4DDB-A57B-F7EFED43BA3C',CONVERT(datetime,'2019-05-29 18:29:07.267',121));
 -- SQRIBE/INSERT;9d5799
-INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (-49,'92897BC6-A5F3-4FFE-AE27-F2E7E33DDA49',-1,1,N'-1,-49',2,0,-1,N'True/false','30A2A501-1978-4DDB-A57B-F7EFED43BA3C',CONVERT(datetime,'2019-05-29 18:29:07.270',121));
+INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (-49,'92897BC6-A5F3-4FFE-AE27-F2E7E33DDA49',-1,1,N'-1,-49',2,0,-1,N'Truefalse','30A2A501-1978-4DDB-A57B-F7EFED43BA3C',CONVERT(datetime,'2019-05-29 18:29:07.270',121));
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (-43,'FBAF13A8-4036-41F2-93A3-974F678C312A',-1,1,N'-1,-43',2,0,-1,N'Checkbox list','30A2A501-1978-4DDB-A57B-F7EFED43BA3C',CONVERT(datetime,'2019-05-29 18:29:07.270',121));
 -- SQRIBE/INSERT;9d5799

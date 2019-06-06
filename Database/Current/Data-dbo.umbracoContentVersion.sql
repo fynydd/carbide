@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/TABLE;9d5799
--- Adding 13 rows to dbo.umbracoContentVersion
+-- Adding 17 rows to dbo.umbracoContentVersion
 
 SET IDENTITY_INSERT [dbo].[umbracoContentVersion] ON
 
@@ -37,7 +37,15 @@ INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (12,1056,CONVERT(datetime,'2019-06-04 20:05:08.637',121),-1,0,N'Home');
 -- SQRIBE/INSERT;9d5799
-INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (13,1056,CONVERT(datetime,'2019-06-04 20:05:08.637',121),-1,1,N'Home');
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (13,1056,CONVERT(datetime,'2019-06-06 11:10:53.323',121),-1,0,N'Home');
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (14,1056,CONVERT(datetime,'2019-06-06 12:07:49.080',121),-1,0,N'Home');
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (15,1056,CONVERT(datetime,'2019-06-06 12:09:32.953',121),-1,0,N'Home');
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (16,1056,CONVERT(datetime,'2019-06-06 12:16:46.033',121),-1,0,N'Home');
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (17,1056,CONVERT(datetime,'2019-06-06 12:16:46.033',121),-1,1,N'Home');
 
 COMMIT TRANSACTION
 
