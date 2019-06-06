@@ -15,7 +15,10 @@
     --content-bottom-spacer: 2rem;
     --content-shadow-color: rgba(0, 0, 0, 0.5);
 
+    --button-bottom-spacer: 2rem;
+
     --nodes-display: block; 
+    --nodes-align: center;
     --nodes-top-spacer: 1rem;
     --nodes-shadow-color: rgba(0, 0, 0, 0.25);
 
@@ -55,7 +58,7 @@
         background: linear-gradient(var(--dimmer-angle), rgba(0, 0, 0, 0) 0%, var(--dimmer-fade-color-start) var(--dimmer-fade-position-start), var(--dimmer-fade-color-middle) var(--dimmer-fade-position-middle), var(--dimmer-fade-color-end) var(--dimmer-fade-position-end), rgba(0, 0, 0, 0) 100%);
     }
 
-    .outer-gridcell {
+    .inner-gridcell {
 
         width: calc((var(--content-width)) * 100%);
         left: calc((var(--content-push)) * 100%);
@@ -140,7 +143,7 @@
 
             .button-row {
 
-                margin-bottom: var(--content-bottom-spacer);
+                margin-bottom: var(--button-bottom-spacer);
 
                 a[role="button"] {
 
@@ -157,7 +160,7 @@
             display: var(--nodes-display);
             font-size: 0;
             line-height: 1;
-            text-align: var(--text-align);
+            text-align: var(--nodes-align);
             vertical-align: middle;
 
             margin-top: var(--nodes-top-spacer);
@@ -189,14 +192,18 @@
 
 #carbide-simple-hero {
 
+    --vertical-padding: 3rem;
+    --min-height: 20rem;
+    --max-height: 20rem;
+
     --text-align: center;
     --content-width: 1/1;
     --content-push: 0;
-    --vertical-padding: 3rem;
     --content-bottom-spacer: 2rem;
+    --button-bottom-spacer: 2rem;
+
     --nodes-top-spacer: 1rem;
-    --min-height: 20rem;
-    --max-height: 20rem;
+    --nodes-align: center;
 
     --dimmer-fade-color-start: rgba(0,0,0,0.4);
     --dimmer-fade-position-start: 0%;
@@ -207,22 +214,26 @@
 
     @include sf-media($from: tablet-portrait) {
 
-        --text-align: center;
-        --content-width: 1/2;
-        --content-push: 1/4;
-        --vertical-padding: 5rem;
+        --vertical-padding: 3rem;
+        --min-height: 24rem;
+        --max-height: 24rem;
+
+        --text-align: left;
+        --content-width: 1/3;
+        --content-push: 0;
         --content-bottom-spacer: 2rem;
+        --button-bottom-spacer: 2rem;
+
         --nodes-top-spacer: 1rem;
-        --min-height: 26rem;
-        --max-height: 26rem;
+        --nodes-align: left;
 
         --dimmer-angle: 90deg;
-        --dimmer-fade-color-start: rgba(0,0,0,0.3);
-        --dimmer-fade-position-start: 35%;
-        --dimmer-fade-color-middle: rgba(0,0,0,0.4);
+        --dimmer-fade-color-start: rgba(0,0,0,0.5);
+        --dimmer-fade-position-start: 0%;
+        --dimmer-fade-color-middle: rgba(0,0,0,0.3);
         --dimmer-fade-position-middle: 50%;
-        --dimmer-fade-color-end: rgba(0,0,0,0.3);
-        --dimmer-fade-position-end: 65%;
+        --dimmer-fade-color-end: rgba(0,0,0,0);
+        --dimmer-fade-position-end: 75%;
     }
 }
 

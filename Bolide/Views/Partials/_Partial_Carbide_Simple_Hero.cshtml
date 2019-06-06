@@ -18,18 +18,22 @@
                 <div role="gridcell" class="outer-gridcell">
                     <div id="hero-content">
                         <div role="presentation">
-                            @foreach(var frame in Model.SafeNestedValues("carbideSimpleHeroFrames").Where(f => f.SafeValue<bool>("carbideSimpleHeroEnabled")))
-                            {
-                            <div class="frame" data-img="@(frame.PickerValue("carbideSimpleHeroBackgroundImage").Url)?width=1920&quality=75">
-                                <h1>@Html.Raw(frame.SafeValue("carbideSimpleHeroTitle"))</h1>
-                                <div class="excerpt-row">
-                                    @Html.Raw(frame.SafeValue("carbideSimpleHeroExcerpt"))
-                                </div>
-                                <div class="button-row">
-                                    <a href="@(frame.HasValue("carbideSimpleHeroButtonLink") ? frame.PickerValue("carbideSimpleHeroButtonLink").Url : frame.SafeValue<string>("carbideSimpleHeroButtonUrl"))" role="button">@Html.Raw(frame.SafeValue("carbideSimpleHeroButtonText"))</a>
+                            <div role="grid">
+                                <div role="gridcell" class="inner-gridcell">
+                                    @foreach(var frame in Model.SafeNestedValues("carbideSimpleHeroFrames").Where(f => f.SafeValue<bool>("carbideSimpleHeroEnabled")))
+                                    {
+                                    <div class="frame" data-img="@(frame.PickerValue("carbideSimpleHeroBackgroundImage").Url)?width=1920&quality=75">
+                                        <h1>@Html.Raw(frame.SafeValue("carbideSimpleHeroTitle"))</h1>
+                                        <div class="excerpt-row">
+                                            @Html.Raw(frame.SafeValue("carbideSimpleHeroExcerpt"))
+                                        </div>
+                                        <div class="button-row">
+                                            <a href="@(frame.HasValue("carbideSimpleHeroButtonLink") ? frame.PickerValue("carbideSimpleHeroButtonLink").Url : frame.SafeValue<string>("carbideSimpleHeroButtonUrl"))" role="button">@Html.Raw(frame.SafeValue("carbideSimpleHeroButtonText"))</a>
+                                        </div>
+                                    </div>
+                                    }
                                 </div>
                             </div>
-                            }
                             <div class="nodes">
                             @foreach(var frame in Model.SafeNestedValues("carbideSimpleHeroFrames").Where(f => f.SafeValue<bool>("carbideSimpleHeroEnabled")))
                             {
@@ -101,7 +105,7 @@
                                         nextSlide(nextSlideIndex);
 
                                     }, slideDuration);
-                                }
+                                }                                
 
                                 $("#@(heroId) #hero-content .nodes > a").each(function (index) {
 
