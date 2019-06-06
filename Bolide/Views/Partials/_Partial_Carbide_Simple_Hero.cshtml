@@ -18,18 +18,20 @@
                 <div role="gridcell" class="outer-gridcell">
                     <div id="hero-content">
                         <div role="presentation">
-                            @foreach(var frame in Model.SafeNestedValues("carbideSimpleHeroFrames"))
+                            @foreach(var frame in Model.SafeNestedValues("carbideSimpleHeroFrames").Where(f => f.SafeValue<bool>("carbideSimpleHeroEnabled")))
                             {
                             <div class="frame" data-img="@(frame.PickerValue("carbideSimpleHeroBackgroundImage").Url)?width=1920&quality=75">
                                 <h1>@Html.Raw(frame.SafeValue("carbideSimpleHeroTitle"))</h1>
-                                <p>
+                                <div class="excerpt-row">
                                     @Html.Raw(frame.SafeValue("carbideSimpleHeroExcerpt"))
-                                </p>
-                                <a href="@(frame.HasValue("carbideSimpleHeroButtonLink") ? frame.PickerValue("carbideSimpleHeroButtonLink").Url : frame.SafeValue<string>("carbideSimpleHeroButtonUrl"))" role="button">@Html.Raw(frame.SafeValue("carbideSimpleHeroButtonText"))</a>
+                                </div>
+                                <div class="button-row">
+                                    <a href="@(frame.HasValue("carbideSimpleHeroButtonLink") ? frame.PickerValue("carbideSimpleHeroButtonLink").Url : frame.SafeValue<string>("carbideSimpleHeroButtonUrl"))" role="button">@Html.Raw(frame.SafeValue("carbideSimpleHeroButtonText"))</a>
+                                </div>
                             </div>
                             }
                             <div class="nodes">
-                            @foreach(var frame in Model.SafeNestedValues("carbideSimpleHeroFrames"))
+                            @foreach(var frame in Model.SafeNestedValues("carbideSimpleHeroFrames").Where(f => f.SafeValue<bool>("carbideSimpleHeroEnabled")))
                             {
                                 <a></a>
                             }
@@ -71,32 +73,35 @@
                                     nextSlideIndex = 0;
                                 }
 
-                                clearTimeout(slideTimer);
+                                if (slideCount > 1) {
 
-                                countdown = parseInt(slideDuration / 1000);
+                                    clearTimeout(slideTimer);
 
-                                @if (Model.SafeValue<bool>("carbideSimpleHeroShowCountdown")) {
+                                    countdown = parseInt(slideDuration / 1000);
 
-                                <text>displayCountdown();</text>
-                                }
-
-                                clearTimeout(countdownTimer);
-                                countdownTimer = setInterval(function () {
-
-                                    countdown--;
-
-                                @if (Model.SafeValue<bool>("carbideSimpleHeroShowCountdown")) {
+                                    @if (Model.SafeValue<bool>("carbideSimpleHeroShowCountdown")) {
 
                                     <text>displayCountdown();</text>
+                                    }
+
+                                    clearTimeout(countdownTimer);
+                                    countdownTimer = setInterval(function () {
+
+                                        countdown--;
+
+                                    @if (Model.SafeValue<bool>("carbideSimpleHeroShowCountdown")) {
+
+                                        <text>displayCountdown();</text>
+                                    }
+
+                                    }, 1000);
+
+                                    slideTimer = setTimeout(function () {
+
+                                        nextSlide(nextSlideIndex);
+
+                                    }, slideDuration);
                                 }
-
-                                }, 1000);
-
-                                slideTimer = setTimeout(function () {
-
-                                    nextSlide(nextSlideIndex);
-
-                                }, slideDuration);
 
                                 $("#@(heroId) #hero-content .nodes > a").each(function (index) {
 
