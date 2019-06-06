@@ -634,7 +634,7 @@ body [sf-elastic-wrapper] { max-width: 1200px; margin-left: auto; margin-right: 
 
 [role="button"].blue { background-color: var(--sf-color-primary); border-color: var(--sf-color-primary); }
 
-.carbide_simple_hero { position: relative; transition: background 0.5s linear; background-position: 50%; background-repeat: no-repeat; background-size: cover; backface-visibility: hidden; min-height: 20rem; padding-bottom: 0; opacity: 0.99; }
+.carbide_simple_hero { --text-align: center; --content-width: 1/2; --content-push: 1/4; position: relative; transition: background 0.5s linear; background-position: 50%; background-repeat: no-repeat; background-size: cover; min-height: 20rem; padding-bottom: 0; }
 
 @media screen and (min-width: 33.75em) { .carbide_simple_hero { min-height: 24rem; } }
 
@@ -650,9 +650,11 @@ body [sf-elastic-wrapper] { max-width: 1200px; margin-left: auto; margin-right: 
 
 @media screen and (min-width: 33.75em) { .carbide_simple_hero #full-dimmer { width: 100%; } }
 
+.carbide_simple_hero .outer-gridcell { width: calc((var(--content-width)) * 100%); left: calc((var(--content-push)) * 100%); }
+
 .carbide_simple_hero [sf-outer-wrapper] > [sf-inner-wrapper] { padding-top: 0; }
 
-.carbide_simple_hero #hero-content { min-height: 20rem; padding-top: 0rem; }
+.carbide_simple_hero #hero-content { min-height: 20rem; padding-top: 0rem; text-align: var(--text-align); }
 
 @media screen and (min-width: 33.75em) { .carbide_simple_hero #hero-content { min-height: 24rem; padding-top: 0rem; } }
 
@@ -672,13 +674,9 @@ body [sf-elastic-wrapper] { max-width: 1200px; margin-left: auto; margin-right: 
 
 .carbide_simple_hero #hero-content .frame p { color: white; margin-bottom: 2rem; }
 
-@media screen and (min-width: 33.75em) { .carbide_simple_hero #hero-content .frame p { padding-right: 5rem; } }
-
 .carbide_simple_hero #hero-content .frame a[role="button"] { background-color: sf-get-background-color(homebutton); color: sf-get-foreground-color(homebutton); line-height: 3rem; padding: 0 2rem; }
 
-.carbide_simple_hero #hero-content .nodes { padding-top: 2rem; font-size: 0; line-height: 1; text-align: center; vertical-align: middle; }
-
-@media screen and (min-width: 33.75em) { .carbide_simple_hero #hero-content .nodes { text-align: left; } }
+.carbide_simple_hero #hero-content .nodes { padding-top: 2rem; font-size: 0; line-height: 1; text-align: var(--text-align); vertical-align: middle; }
 
 .carbide_simple_hero #hero-content .nodes a { color: white; display: inline-block; margin-right: 1rem; }
 
@@ -686,13 +684,9 @@ body [sf-elastic-wrapper] { max-width: 1200px; margin-left: auto; margin-right: 
 
 .carbide_simple_hero #hero-content .nodes span { display: inline-block; font-size: 0.75rem; vertical-align: baseline; color: rgba(255, 255, 255, 0.5); }
 
-.carbide_simple_hero.non-home-page { min-height: 28rem; }
+#carbide-simple-hero { --text-align: center; --content-width: 1/1; --content-push: 0; }
 
-@media screen and (min-width: 33.75em) { .carbide_simple_hero.non-home-page { min-height: 24rem; } }
-
-.carbide_simple_hero.non-home-page #hero-content { text-align: center; min-height: 27rem; }
-
-@media screen and (min-width: 33.75em) { .carbide_simple_hero.non-home-page #hero-content { min-height: 24rem; } }
+@media screen and (min-width: 33.75em) { #carbide-simple-hero { --text-align: center; --content-width: 1/3; --content-push: 1/3; } }
 
 body > main > [sf-unit] article[id$="-unit"] p { margin-top: 0; margin-bottom: 0.8896rem; }
 
