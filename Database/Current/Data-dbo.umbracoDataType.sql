@@ -75,7 +75,7 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1065,N'Umbraco.TextBox',N'Nvarchar',N'{}');
 -- SQRIBE/INSERT;9d5799
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1066,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"carbideSimpleHeroFrame","ncTabAlias":"Frame Content","nameTemplate":"{{carbideSimpleHeroTitle}}"}],"minItems":1,"confirmDeletes":true,"showIcons":true,"hideLabel":true}');
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1066,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"bolideSimpleHeroFrame","ncTabAlias":"Frame Content","nameTemplate":"{{bolideSimpleHeroTitle}}"}],"minItems":1,"confirmDeletes":true,"showIcons":true,"hideLabel":true}');
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1067,N'Umbraco.Integer',N'Integer',N'{"min":1000,"step":250}');
 -- SQRIBE/INSERT;9d5799

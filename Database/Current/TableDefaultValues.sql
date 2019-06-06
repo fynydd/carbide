@@ -178,10 +178,6 @@ ALTER TABLE [dbo].[cmsPropertyType] ADD CONSTRAINT [df_cmsPropertyType_UniqueID]
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/OBJ;9d5799
-ALTER TABLE [dbo].[umbracoLog] ADD CONSTRAINT [df_umbracoLog_Datestamp] DEFAULT (getdate()) FOR [Datestamp]
-GO -- SQRIBE/GO;9d5799
-
--- SQRIBE/OBJ;9d5799
 ALTER TABLE [dbo].[umbracoCacheInstruction] ADD CONSTRAINT [df_umbracoCacheInstruction_instructionCount] DEFAULT ('1') FOR [instructionCount]
 GO -- SQRIBE/GO;9d5799
 
@@ -195,4 +191,8 @@ GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/OBJ;9d5799
 ALTER TABLE [dbo].[umbracoNode] ADD CONSTRAINT [df_umbracoNode_createDate] DEFAULT (getdate()) FOR [createDate]
+GO -- SQRIBE/GO;9d5799
+
+-- SQRIBE/OBJ;9d5799
+ALTER TABLE [dbo].[umbracoLog] ADD CONSTRAINT [df_umbracoLog_Datestamp] DEFAULT (getdate()) FOR [Datestamp]
 GO -- SQRIBE/GO;9d5799
