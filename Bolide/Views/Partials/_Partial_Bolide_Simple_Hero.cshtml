@@ -32,9 +32,12 @@
                                         <div class="excerpt-row">
                                             @Html.Raw(frame.SafeValue("bolideSimpleHeroExcerpt"))
                                         </div>
+                                        @if(frame.HasValue("bolideSimpleHeroButtonText"))
+                                        {
                                         <div class="button-row">
                                             <a href="@(frame.HasValue("bolideSimpleHeroButtonLink") ? frame.PickerValue("bolideSimpleHeroButtonLink").Url : frame.SafeValue<string>("bolideSimpleHeroButtonUrl"))" role="button">@Html.Raw(frame.SafeValue("bolideSimpleHeroButtonText"))</a>
                                         </div>
+                                        }
                                     </div>
                                     }
                                 </div>
