@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/TABLE;9d5799
--- Adding 32 rows to dbo.cmsPropertyType
+-- Adding 33 rows to dbo.cmsPropertyType
 
 SET IDENTITY_INSERT [dbo].[cmsPropertyType] ON
 
@@ -71,11 +71,13 @@ INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[property
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (49,1067,1069,15,N'bolideSimpleHeroFrameDuration',N'Frame Duration',1,1,NULL,N'Milliseconds to leave each frame on-screen',0,'8EF0F80C-86D8-48F0-B3DF-24EAF6A71E17');
 -- SQRIBE/INSERT;9d5799
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (50,1068,1069,15,N'bolideSimpleHeroTransitionTime',N'Transition Time',2,1,NULL,N'Millisecond time for frame transitions',0,'00DA1376-4DEE-45F8-81B3-1BC577598B3E');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (50,1068,1069,15,N'bolideSimpleHeroBgTransitionTime',N'Background Transition Time',2,1,NULL,N'Millisecond time for frame transitions',0,'00DA1376-4DEE-45F8-81B3-1BC577598B3E');
 -- SQRIBE/INSERT;9d5799
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (51,-49,1069,15,N'bolideSimpleHeroShowCountdown',N'Show Countdown',3,1,NULL,NULL,0,'F7DB7C32-EF84-4893-83A1-B348C8D629E9');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (51,-49,1069,15,N'bolideSimpleHeroShowCountdown',N'Show Countdown',4,1,NULL,NULL,0,'F7DB7C32-EF84-4893-83A1-B348C8D629E9');
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (52,-49,1063,14,N'bolideSimpleHeroEnabled',N'Enabled',6,0,NULL,NULL,0,'3D638670-7411-4B60-89F8-872469B5E506');
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (53,1068,1069,15,N'bolideSimpleHeroFrameTransitionTime',N'Frame Transition Time',3,0,NULL,NULL,0,'710F29AE-7C0B-41B0-9D9C-66A4149A4247');
 
 COMMIT TRANSACTION
 
