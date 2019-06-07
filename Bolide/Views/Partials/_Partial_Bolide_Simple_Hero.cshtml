@@ -27,7 +27,7 @@
                                 <div role="gridcell" class="inner-gridcell">
                                     @foreach(var frame in Model.SafeNestedValues("bolideSimpleHeroFrames").Where(f => f.SafeValue<bool>("bolideSimpleHeroEnabled")))
                                     {
-                                    <div class="frame" data-img="@(frame.PickerValue("bolideSimpleHeroBackgroundImage").Url)?width=1920&quality=75">
+                                    <div class="frame" data-img="@(frame.PickerValue("bolideSimpleHeroBackgroundImage").Url)?width=1920&quality=75" style="transition-duration: @(Model.SafeValue<float>("bolideSimpleHeroFrameTransitionTime")/1000)s;">
                                         <h1>@Html.Raw(frame.SafeValue("bolideSimpleHeroTitle"))</h1>
                                         <div class="excerpt-row">
                                             @Html.Raw(frame.SafeValue("bolideSimpleHeroExcerpt"))
@@ -54,7 +54,7 @@
                             var countdownTimer;
                             var slideDuration = @(Model.SafeValue<int>("bolideSimpleHeroFrameDuration"));
                             var countdown = parseInt(slideDuration / 1000);
-                            var transitionTime = @(Model.SafeValue<int>("bolideSimpleHeroTransitionTime"));
+                            var transitionTime = @(Model.SafeValue<int>("bolideSimpleHeroBgTransitionTime"));
 
                             // Preload Images
                             var images = new Array();

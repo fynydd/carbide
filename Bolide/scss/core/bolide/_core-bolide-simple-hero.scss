@@ -8,20 +8,15 @@
     --min-height: 25rem;
     --max-height: 25rem;
     --vertical-padding: 3rem;
-
     --headline-bottom-spacer: 1rem;
     --headline-shadow-color: rgba(0, 0, 0, 0.35);
-
     --content-bottom-spacer: 2rem;
     --content-shadow-color: rgba(0, 0, 0, 0.5);
-
     --button-bottom-spacer: 2rem;
-
-    --nodes-display: block; 
+    --nodes-display: block;
     --nodes-align: center;
     --nodes-top-spacer: 1rem;
     --nodes-shadow-color: rgba(0, 0, 0, 0.25);
-
     --dimmer-width: 100%;
     --dimmer-height: 100%;
     --dimmer-angle: 90deg;
@@ -35,11 +30,9 @@
     // ---------------------------
 
     position: relative;
-    // transition: background 0.5s linear;
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
-
     overflow: hidden;
     min-height: var(--min-height);
     max-height: var(--max-height);
@@ -52,7 +45,6 @@
         top: 0;
         width: var(--dimmer-width);
         height: var(--dimmer-height);
-
         background-color: transparent;
         background: linear-gradient(var(--dimmer-angle), rgba(0, 0, 0, 0) 0%, var(--dimmer-fade-color-start) var(--dimmer-fade-position-start), var(--dimmer-fade-color-middle) var(--dimmer-fade-position-middle), var(--dimmer-fade-color-end) var(--dimmer-fade-position-end), rgba(0, 0, 0, 0) 100%);
     }
@@ -76,7 +68,6 @@
         min-height: var(--min-height);
         padding-top: var(--vertical-padding);
         padding-bottom: var(--vertical-padding);
-
         text-align: var(--text-align);
 
         [role="presentation"] {
@@ -86,7 +77,10 @@
 
         .frame {
 
-            @include sf-animate ( $property: opacity, $delay: 1s, $duration: 2s, $kind: ease );
+            transition-property: opacity;
+            animation-delay: 0;
+            transition-timing-function: ease;
+
             position: relative;
             height: 0;
             overflow: hidden;
@@ -161,7 +155,6 @@
             line-height: 1;
             text-align: var(--nodes-align);
             vertical-align: middle;
-
             margin-top: var(--nodes-top-spacer);
 
             a {

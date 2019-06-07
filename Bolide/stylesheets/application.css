@@ -644,7 +644,7 @@ body [sf-elastic-wrapper] { max-width: 1200px; margin-left: auto; margin-right: 
 
 .bolide_simple_hero #hero-content [role="presentation"] { width: 100%; }
 
-.bolide_simple_hero #hero-content .frame { -moz-transition-property: opacity; -o-transition-property: opacity; -webkit-transition-property: opacity; transition-property: opacity; -moz-transition-duration: 2s; -o-transition-duration: 2s; -webkit-transition-duration: 2s; transition-duration: 2s; -moz-transition-timing-function: ease; -o-transition-timing-function: ease; -webkit-transition-timing-function: ease; transition-timing-function: ease; -moz-animation-delay: 1s; -o-animation-delay: 1s; -webkit-animation-delay: 1s; animation-delay: 1s; position: relative; height: 0; overflow: hidden; opacity: 0; }
+.bolide_simple_hero #hero-content .frame { transition-property: opacity; animation-delay: 0; transition-timing-function: ease; position: relative; height: 0; overflow: hidden; opacity: 0; }
 
 .bolide_simple_hero #hero-content .frame.current { height: auto; opacity: 1.0; }
 
