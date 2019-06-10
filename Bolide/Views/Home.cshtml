@@ -1,12 +1,19 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @using ContentModels = Umbraco.Web.PublishedModels
+@using System.Xml
+@using System.Xml.Linq
+@using Umbraco.Core
+@using Umbraco.Core.IO
+@using Umbraco.Core.Models.Packaging
+@using Umbraco.Core.Services
 @using Fynydd.Carbide
 @{
-	Layout = "Master.cshtml";
-}
+    Layout = "Master.cshtml";
 
-@{
-    Html.ViewData.Add(new KeyValuePair<string, object>("BolideSimpleHeroInstanceId", "bolide-simple-hero"));
-    Html.RenderPartial("_Partial_Bolide_Simple_Hero", Html.ViewData);
+    for(int x = 0; x < 5; x++)
+    {
+        Html.ViewData.Add(new KeyValuePair<string, object>("BolideSimpleHeroInstanceId", "bolide-simple-hero-" + x));
+        Html.RenderPartial("_Partial_Bolide_Simple_Hero", Html.ViewData);
+        Html.ViewData.Clear();
+    }
 }
-

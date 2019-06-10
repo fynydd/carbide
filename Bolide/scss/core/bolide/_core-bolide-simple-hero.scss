@@ -2,7 +2,7 @@
 
     // SETTINGS
 
-    --text-align: center;
+    --content-align: center;
     --content-width: 1/2;
     --content-push: 1/4;
     --min-height: 25rem;
@@ -68,7 +68,7 @@
         min-height: var(--min-height);
         padding-top: var(--vertical-padding);
         padding-bottom: var(--vertical-padding);
-        text-align: var(--text-align);
+        text-align: var(--content-align);
 
         [role="presentation"] {
 

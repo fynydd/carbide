@@ -1,4 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using System
 @using System.Security.Cryptography
 @using Umbraco.Web
 @using Fynydd.Carbide
@@ -10,10 +11,8 @@
     Html.ViewData.TryGetValue("BolideSimpleHeroInstanceId", out bolideSimpleHeroInstanceId);
 
     var heroId = bolideSimpleHeroInstanceId == null ? "hero-unit" : bolideSimpleHeroInstanceId.ToString();
+    var uid = heroId.Replace("-", "").Replace("_", "");
 }
-
-<!-- BackStetch -->
-<script src="@Url.Content(umbCtx, "~/scripts/jquery.backstretch.min.js", addCacheBuster: true)"></script>
 
 <section id="@(heroId)" class="bolide_simple_hero" sf-unit>
     <div role="presentation" id="dimmer"></div>
@@ -52,120 +51,147 @@
                         </div>
                         <script>
 
-                            var slideCount = $("#@(heroId) .frame").length;
-                            var slideTimer;
-                            var countdownTimer;
-                            var slideDuration = @(Model.SafeValue<int>("bolideSimpleHeroFrameDuration"));
-                            var countdown = parseInt(slideDuration / 1000);
-                            var transitionTime = @(Model.SafeValue<int>("bolideSimpleHeroBgTransitionTime"));
+                            $(document).ready(function() {
 
-                            // Preload Images
-                            var images = new Array();
-                            $("#@(heroId) #hero-content .frame").each(function (index) {
+                                var @(uid)_slideCount = $("#@(heroId) .frame").length;
+                                var @(uid)_slideTimer;
+                                var @(uid)_countdownTimer;
+                                var @(uid)_slideDuration = @(Model.SafeValue<int>("bolideSimpleHeroFrameDuration"));
+                                var @(uid)_countdown = parseInt(@(uid)_slideDuration / 1000);
+                                var @(uid)_transitionTime = @(Model.SafeValue<int>("bolideSimpleHeroBgTransitionTime"));
 
-                                images[index] = new Image();
-                                images[index].src = $(this).attr("data-img");
-                            });
+                                // Preload Images
+                                var @(uid)_images = new Array();
 
-                            $("#@(heroId) #hero-content .nodes > a").each(function (index) {
+                                if (!$.backstretch) {
 
-                                $(this).on("click", function () {
+                                    $.getScript("/scripts/jquery.backstretch.min.js", function (data, textStatus, jqxhr) {
+                                        //console.log( data ); // Data returned
+                                        console.log( textStatus ); // Success
+                                        console.log( jqxhr.status ); // 200
+                                        console.log("Load was performed.");
 
-                                    nextSlide(index);
-                                });
-                            });
+                                        if (jqxhr.status === 200) {
 
-                            function nextSlide(index) {
+                                            @(uid)_initSimpleHero();
+                                        }
+                                    });
 
-                                var nodeIndex = index;
-                                var nextSlideIndex = index + 1;
+                                } else {
 
-                                if (nextSlideIndex >= slideCount) {
-
-                                    nextSlideIndex = 0;
+                                    @(uid)_initSimpleHero();
                                 }
 
-                                if (slideCount > 1) {
+                                function @(uid)_initSimpleHero() {
 
-                                    clearTimeout(slideTimer);
+                                    $("#@(heroId) #hero-content .frame").each(function (index) {
 
-                                    countdown = parseInt(slideDuration / 1000);
+                                        @(uid)_images[index] = new Image();
+                                        @(uid)_images[index].src = $(this).attr("data-img");
+                                    });
 
-                                    @if (Model.SafeValue<bool>("bolideSimpleHeroShowCountdown")) {
+                                    $("#@(heroId) #hero-content .nodes > a").each(function (index) {
 
-                                    <text>displayCountdown();</text>
-                                    }
+                                        $(this).on("click", function () {
 
-                                    clearTimeout(countdownTimer);
-                                    countdownTimer = setInterval(function () {
-
-                                        countdown--;
-
-                                    @if (Model.SafeValue<bool>("bolideSimpleHeroShowCountdown")) {
-
-                                        <text>displayCountdown();</text>
-                                    }
-
-                                    }, 1000);
-
-                                    slideTimer = setTimeout(function () {
-
-                                        nextSlide(nextSlideIndex);
-
-                                    }, slideDuration);
-                                }                                
-
-                                $("#@(heroId) #hero-content .nodes > a").each(function (index) {
-
-                                    if (index !== nodeIndex) {
-
-                                        $(this).html("<i class='far fa-circle'></i>");
-
-                                    } else {
-
-                                        $(this).html("<i class='fas fa-circle'></i>");
-                                    }
-                                });
-
-                                $("#@(heroId) #hero-content .frame").each(function (index) {
-
-                                    var frame = this;
-
-                                    if (index !== nodeIndex) {
-
-                                        $(frame).removeClass("current");
-
-                                    } else {
-
-                                        $(frame).addClass("current");
-
-                                        $("#@(heroId)").backstretch($(frame).attr("data-img"), {
-
-                                            transitionDuration: transitionTime,
-                                            transitionEasing: 'linear'
+                                            @(uid)_nextSlide(index);
                                         });
+                                    });
+
+                                    @(uid)_nextSlide(0);
+
+                                    @if (Model.SafeValue<bool>("bolideSimpleHeroShowCountdown"))
+                                    {
+                                        @(uid + "_displayCountdown();")
                                     }
-                                });
-                            }
-
-                            function displayCountdown() {
-
-                                var text = "";
-
-                                if (countdown > 0) {
-
-                                    text = countdown;
                                 }
 
-                                $("#@(heroId) #hero-content .nodes > span").html(text);
-                            }
+                                function @(uid)_nextSlide(index) {
 
-                            nextSlide(0);
+                                    var nodeIndex = index;
+                                    var nextSlideIndex = index + 1;
 
-                            @if (Model.SafeValue<bool>("bolideSimpleHeroShowCountdown"))
-                            {
-                            <text>displayCountdown();</text>
-                            }
+                                    if (nextSlideIndex >= @(uid)_slideCount) {
+
+                                        nextSlideIndex = 0;
+                                    }
+
+                                    if (@(uid)_slideCount > 1) {
+
+                                        clearTimeout(@(uid)_slideTimer);
+
+                                        @(uid)_countdown = parseInt(@(uid)_slideDuration / 1000);
+
+                                        @if (Model.SafeValue<bool>("bolideSimpleHeroShowCountdown"))
+                                        {
+                                        @(uid + "_displayCountdown();")
+                                        }
+
+                                        clearTimeout(@(uid)_countdownTimer);
+                                        @(uid)_countdownTimer = setInterval(function () {
+
+                                            @(uid)_countdown--;
+
+                                        @if (Model.SafeValue<bool>("bolideSimpleHeroShowCountdown"))
+                                        {
+                                        @(uid + "_displayCountdown();")
+                                        }
+
+                                        }, 1000);
+
+                                        @(uid)_slideTimer = setTimeout(function () {
+
+                                            @(uid)_nextSlide(nextSlideIndex);
+
+                                        }, @(uid)_slideDuration);
+                                    }                                
+
+                                    $("#@(heroId) #hero-content .nodes > a").each(function (index) {
+
+                                        if (index !== nodeIndex) {
+
+                                            $(this).html("<i class='far fa-circle'></i>");
+
+                                        } else {
+
+                                            $(this).html("<i class='fas fa-circle'></i>");
+                                        }
+                                    });
+
+                                    $("#@(heroId) #hero-content .frame").each(function (index) {
+
+                                        var frame = this;
+
+                                        if (index !== nodeIndex) {
+
+                                            $(frame).removeClass("current");
+
+                                        } else {
+
+                                            $(frame).addClass("current");
+
+                                            $("#@(heroId)").backstretch($(frame).attr("data-img"), {
+
+                                                transitionDuration: @(uid)_transitionTime,
+                                                transitionEasing: 'linear'
+                                            });
+                                        }
+                                    });
+                                }
+
+                                function @(uid)_displayCountdown() {
+
+                                    var text = "";
+
+                                    if (@(uid)_countdown > 0) {
+
+                                        text = @(uid)_countdown;
+                                    }
+
+                                    $("#@(heroId) #hero-content .nodes > span").html(text);
+                                }
+                            });
+
                         </script>
                     </div>
                 </div>
