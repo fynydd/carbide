@@ -10,7 +10,7 @@
 @{
     Layout = "Master.cshtml";
 
-    for(int x = 0; x < 5; x++)
+    for(int x = 0; x < 3; x++)
     {
         Html.ViewData.Add(new KeyValuePair<string, object>("BolideSimpleHeroInstanceId", "bolide-simple-hero-" + x));
         Html.RenderPartial("_Partial_Bolide_Simple_Hero", Html.ViewData);
