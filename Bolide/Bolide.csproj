@@ -445,6 +445,7 @@
     <Content Include="icons\safari-pinned-tab.svg" />
     <Content Include="images\dropdown-mark.jpg" />
     <Content Include="images\magnifying-glass.png" />
+    <Content Include="scripts\jquery.bolide-simple-hero.js" />
     <Content Include="scripts\fluidbox\css\fluidbox.min.css" />
     <Content Include="scripts\fluidbox\jquery.fluidbox.min.js" />
     <Content Include="scripts\jquery-3.3.1.min.js" />
