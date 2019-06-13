@@ -8,7 +8,7 @@
     var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
 
     object bolideSimpleHeroInstanceId;
-    Html.ViewData.TryGetValue("BolideSimpleHeroInstanceId", out bolideSimpleHeroInstanceId);
+    Html.ViewData.TryGetValue("simpleHeroInstanceId", out bolideSimpleHeroInstanceId);
 
     var heroId = bolideSimpleHeroInstanceId == null ? "hero-unit" : bolideSimpleHeroInstanceId.ToString();
     var uid = heroId.Replace("-", "").Replace("_", "");
@@ -24,17 +24,17 @@
                         <div role="presentation">
                             <div role="grid">
                                 <div role="gridcell" class="inner-gridcell">
-                                    @foreach(var frame in Model.SafeNestedValues("bolideSimpleHeroFrames").Where(f => f.SafeValue<bool>("bolideSimpleHeroEnabled")))
+                                    @foreach(var frame in Model.SafeNestedValues("simpleHeroFrames").Where(f => f.SafeValue<bool>("simpleHeroEnabled")))
                                     {
-                                    <div class="frame" data-img="@(frame.PickerValue("bolideSimpleHeroBackgroundImage").Url)?width=1920&quality=75" style="transition-duration: @(Model.SafeValue<float>("bolideSimpleHeroFrameTransitionTime")/1000)s;">
-                                        <h1>@Html.Raw(frame.SafeValue("bolideSimpleHeroTitle"))</h1>
+                                    <div class="frame" data-img="@(frame.PickerValue("simpleHeroBackgroundImage").Url)?width=1920&quality=75" style="transition-duration: @(Model.SafeValue<float>("simpleHeroFrameTransitionTime")/1000)s;">
+                                        <h1>@Html.Raw(frame.SafeValue("simpleHeroTitle"))</h1>
                                         <div class="excerpt-row">
-                                            @Html.Raw(frame.SafeValue("bolideSimpleHeroExcerpt"))
+                                            @Html.Raw(frame.SafeValue("simpleHeroExcerpt"))
                                         </div>
-                                        @if(frame.HasValue("bolideSimpleHeroButtonText"))
+                                        @if(frame.HasValue("simpleHeroButtonText"))
                                         {
                                         <div class="button-row">
-                                            <a href="@(frame.HasValue("bolideSimpleHeroButtonLink") ? frame.PickerValue("bolideSimpleHeroButtonLink").Url : frame.SafeValue<string>("bolideSimpleHeroButtonUrl"))" role="button">@Html.Raw(frame.SafeValue("bolideSimpleHeroButtonText"))</a>
+                                            <a href="@(frame.HasValue("simpleHeroButtonLink") ? frame.PickerValue("simpleHeroButtonLink").Url : frame.SafeValue<string>("simpleHeroButtonUrl"))" role="button">@Html.Raw(frame.SafeValue("simpleHeroButtonText"))</a>
                                         </div>
                                         }
                                     </div>
@@ -42,7 +42,7 @@
                                 </div>
                             </div>
                             <div class="nodes">
-                            @foreach(var frame in Model.SafeNestedValues("bolideSimpleHeroFrames").Where(f => f.SafeValue<bool>("bolideSimpleHeroEnabled")))
+                            @foreach(var frame in Model.SafeNestedValues("simpleHeroFrames").Where(f => f.SafeValue<bool>("simpleHeroEnabled")))
                             {
                                 <a></a>
                             }
@@ -55,8 +55,8 @@
 
                                 $("#@(heroId)").bolideSimpleHero({
 
-                                    slideDuration: @(Model.SafeValue<int>("bolideSimpleHeroFrameDuration")),
-                                    transitionTime: @(Model.SafeValue<int>("bolideSimpleHeroBgTransitionTime")),
+                                    slideDuration: @(Model.SafeValue<int>("simpleHeroFrameDuration")),
+                                    transitionTime: @(Model.SafeValue<int>("simpleHeroBgTransitionTime")),
                                     showCountdown: true
                                 });
                             });

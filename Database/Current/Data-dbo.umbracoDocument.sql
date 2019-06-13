@@ -6,12 +6,18 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/TABLE;9d5799
--- Adding 1 row to dbo.umbracoDocument
+-- Adding 4 rows to dbo.umbracoDocument
 
 BEGIN TRANSACTION
 
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[umbracoDocument] ([nodeId],[published],[edited]) VALUES (1056,1,0);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoDocument] ([nodeId],[published],[edited]) VALUES (1078,1,0);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoDocument] ([nodeId],[published],[edited]) VALUES (1080,1,0);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoDocument] ([nodeId],[published],[edited]) VALUES (1081,1,0);
 
 COMMIT TRANSACTION
 

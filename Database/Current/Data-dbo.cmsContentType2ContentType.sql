@@ -13,7 +13,7 @@ BEGIN TRANSACTION
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1055,1052);
 -- SQRIBE/INSERT;9d5799
-INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1069,1052);
+INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1075,1069);
 
 COMMIT TRANSACTION
 

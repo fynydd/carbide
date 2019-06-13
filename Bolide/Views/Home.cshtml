@@ -6,14 +6,19 @@
 @using Umbraco.Core.IO
 @using Umbraco.Core.Models.Packaging
 @using Umbraco.Core.Services
+
+@using Bolide.Helpers
 @using Fynydd.Carbide
 @{
     Layout = "Master.cshtml";
 
-    for(int x = 0; x < 3; x++)
+    foreach (var component in Model.SafePickerValues("content"))
     {
-        Html.ViewData.Add(new KeyValuePair<string, object>("BolideSimpleHeroInstanceId", "bolide-simple-hero-" + x));
-        Html.RenderPartial("_Partial_Bolide_Simple_Hero", Html.ViewData);
-        Html.ViewData.Clear();
+        if (component.ContentType.Alias == "bolideSimpleHero")
+        {
+            Html.ViewData.Add(new KeyValuePair<string, object>("simpleHeroInstanceId", component.Name.AsCssSelector()));
+            Html.RenderPartial("_Partial_Bolide_Simple_Hero", component, Html.ViewData);
+            Html.ViewData.Clear();
+        }
     }
 }

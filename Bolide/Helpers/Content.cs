@@ -27,5 +27,10 @@ namespace Bolide.Helpers
 
             return result;
         }
+
+        public static string AsCssSelector(this string value)
+        {
+            return value.ToLower().Replace("  ", " ").Replace(" ", "-");
+        }
     }
 }
