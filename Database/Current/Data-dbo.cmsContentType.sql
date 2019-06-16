@@ -21,7 +21,7 @@ INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[de
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (534,1033,N'File',N'icon-document',N'icon-document',NULL,0,0,1,0);
 -- SQRIBE/INSERT;9d5799
-INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (535,1052,N'home',N'icon-home color-black',N'folder.png',NULL,0,0,1,0);
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (535,1052,N'homepage',N'icon-home color-black',N'folder.png',NULL,0,0,1,0);
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (536,1055,N'sEO',N'icon-document',N'folder.png',NULL,0,1,0,0);
 -- SQRIBE/INSERT;9d5799

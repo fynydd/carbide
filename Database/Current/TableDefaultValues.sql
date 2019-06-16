@@ -118,15 +118,15 @@ ALTER TABLE [dbo].[umbracoUser] ADD CONSTRAINT [df_umbracoUser_updateDate] DEFAU
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/OBJ;9d5799
-ALTER TABLE [dbo].[cmsContentTypeAllowedContentType] ADD CONSTRAINT [df_cmsContentTypeAllowedContentType_SortOrder] DEFAULT ('0') FOR [SortOrder]
-GO -- SQRIBE/GO;9d5799
-
--- SQRIBE/OBJ;9d5799
 ALTER TABLE [dbo].[umbracoUserGroup] ADD CONSTRAINT [df_umbracoUserGroup_createDate] DEFAULT (getdate()) FOR [createDate]
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/OBJ;9d5799
 ALTER TABLE [dbo].[umbracoUserGroup] ADD CONSTRAINT [df_umbracoUserGroup_updateDate] DEFAULT (getdate()) FOR [updateDate]
+GO -- SQRIBE/GO;9d5799
+
+-- SQRIBE/OBJ;9d5799
+ALTER TABLE [dbo].[cmsContentTypeAllowedContentType] ADD CONSTRAINT [df_cmsContentTypeAllowedContentType_SortOrder] DEFAULT ('0') FOR [SortOrder]
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/OBJ;9d5799
@@ -154,15 +154,15 @@ ALTER TABLE [dbo].[cmsContentType] ADD CONSTRAINT [df_cmsContentType_variations]
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/OBJ;9d5799
-ALTER TABLE [dbo].[umbracoCacheInstruction] ADD CONSTRAINT [df_umbracoCacheInstruction_instructionCount] DEFAULT ('1') FOR [instructionCount]
-GO -- SQRIBE/GO;9d5799
-
--- SQRIBE/OBJ;9d5799
 ALTER TABLE [dbo].[umbracoAudit] ADD CONSTRAINT [df_umbracoAudit_eventDateUtc] DEFAULT (getdate()) FOR [eventDateUtc]
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/OBJ;9d5799
 ALTER TABLE [dbo].[umbracoContentVersion] ADD CONSTRAINT [df_umbracoContentVersion_versionDate] DEFAULT (getdate()) FOR [versionDate]
+GO -- SQRIBE/GO;9d5799
+
+-- SQRIBE/OBJ;9d5799
+ALTER TABLE [dbo].[umbracoCacheInstruction] ADD CONSTRAINT [df_umbracoCacheInstruction_instructionCount] DEFAULT ('1') FOR [instructionCount]
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/OBJ;9d5799

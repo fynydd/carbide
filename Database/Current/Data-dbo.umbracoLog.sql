@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/TABLE;9d5799
--- Adding 138 rows to dbo.umbracoLog
+-- Adding 153 rows to dbo.umbracoLog
 
 SET IDENTITY_INSERT [dbo].[umbracoLog] ON
 
@@ -288,6 +288,36 @@ INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],
 INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (137,-1,1083,N'DocumentType',CONVERT(datetime,'2019-06-16 15:29:58.333',121),N'Save',NULL,NULL);
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (138,-1,1056,N'Document',CONVERT(datetime,'2019-06-16 15:30:11.577',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (139,-1,1052,N'DocumentType',CONVERT(datetime,'2019-06-16 15:40:51.440',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (140,-1,1078,N'Document',CONVERT(datetime,'2019-06-16 15:41:06.183',121),N'Move',NULL,NULL);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (141,-1,1082,N'DataType',CONVERT(datetime,'2019-06-16 15:43:04.407',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (142,-1,1083,N'DocumentType',CONVERT(datetime,'2019-06-16 15:43:10.543',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (143,-1,1052,N'DocumentType',CONVERT(datetime,'2019-06-16 15:43:28.310',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (144,-1,1082,N'DataType',CONVERT(datetime,'2019-06-16 15:44:41.443',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (145,-1,1083,N'DocumentType',CONVERT(datetime,'2019-06-16 15:44:47.510',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (146,-1,1082,N'DataType',CONVERT(datetime,'2019-06-16 15:45:34.640',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (147,-1,1083,N'DocumentType',CONVERT(datetime,'2019-06-16 15:45:40.533',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (148,-1,1082,N'DataType',CONVERT(datetime,'2019-06-16 15:46:40.110',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (149,-1,1083,N'DocumentType',CONVERT(datetime,'2019-06-16 15:46:46.740',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (150,-1,1082,N'DataType',CONVERT(datetime,'2019-06-16 15:47:14.150',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (151,-1,1083,N'DocumentType',CONVERT(datetime,'2019-06-16 15:47:19.947',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (152,-1,1056,N'Document',CONVERT(datetime,'2019-06-16 15:48:01.347',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (153,-1,1056,N'Document',CONVERT(datetime,'2019-06-16 15:48:06.323',121),N'Publish',NULL,NULL);
 
 COMMIT TRANSACTION
 

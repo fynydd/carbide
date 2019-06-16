@@ -85,7 +85,7 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1074,N'Umbraco.TextBox',N'Nvarchar',N'{}');
 -- SQRIBE/INSERT;9d5799
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1082,N'Umbraco.MultiNodeTreePicker',N'Ntext',N'{"startNode":{"type":"content","query":null,"id":"umb://document/00287e723f89417fa484e700e544514c"},"filter":"bolideSimpleHero","minNumber":0,"maxNumber":0,"showOpenButton":true}');
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1082,N'Umbraco.MultiNodeTreePicker',N'Ntext',N'{"startNode":{"type":"content","query":"$current/ancestor-or-self::*[self::homepage]/components","id":null},"filter":"bolideSimpleHero","minNumber":0,"maxNumber":0,"showOpenButton":true}');
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1084,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"contentComponentPicker","ncTabAlias":"Content","nameTemplate":"{{contentName}}"}],"confirmDeletes":true,"showIcons":true,"hideLabel":false}');
 
