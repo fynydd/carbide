@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/TABLE;9d5799
--- Adding 11 rows to dbo.cmsContentType
+-- Adding 12 rows to dbo.cmsContentType
 
 SET IDENTITY_INSERT [dbo].[cmsContentType] ON
 
@@ -34,6 +34,8 @@ INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[de
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (540,1077,N'components',N'icon-server-alt color-black',N'folder.png',N'Content components you can use on your pages.',0,0,1,0);
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (541,1079,N'componentGroup',N'icon-brick color-black',N'folder.png',N'Content for a specific component type',1,0,0,0);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (542,1083,N'contentComponentPicker',N'icon-server-alt color-black',N'folder.png',NULL,0,1,0,0);
 
 COMMIT TRANSACTION
 

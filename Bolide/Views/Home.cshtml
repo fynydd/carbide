@@ -12,13 +12,19 @@
 @{
     Layout = "Master.cshtml";
 
-    foreach (var component in Model.SafePickerValues("content"))
+    foreach (var component in Model.SafeNestedValues("pageContent"))
     {
-        if (component.ContentType.Alias == "bolideSimpleHero")
+        if (component.ContentType.Alias == "contentComponentPicker")
         {
-            Html.ViewData.Add(new KeyValuePair<string, object>("simpleHeroInstanceId", component.Name.AsCssSelector()));
-            Html.RenderPartial("_Partial_Bolide_Simple_Hero", component, Html.ViewData);
-            Html.ViewData.Clear();
+            foreach (var item in component.SafePickerValues("contentComponents"))
+            {
+                if (item.ContentType.Alias == "bolideSimpleHero")
+                {
+                    Html.ViewData.Add(new KeyValuePair<string, object>("simpleHeroInstanceId", item.Name.AsCssSelector()));
+                    Html.RenderPartial("_Partial_Bolide_Simple_Hero", item, Html.ViewData);
+                    Html.ViewData.Clear();
+                }
+            }
         }
     }
 }
