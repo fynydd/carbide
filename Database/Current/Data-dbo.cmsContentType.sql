@@ -35,7 +35,7 @@ INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[de
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (541,1079,N'componentGroup',N'icon-brick color-black',N'folder.png',N'Content for a specific component type',1,0,0,0);
 -- SQRIBE/INSERT;9d5799
-INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (542,1083,N'contentComponentPicker',N'icon-server-alt color-black',N'folder.png',NULL,0,1,0,0);
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (542,1083,N'componentPicker',N'icon-server-alt color-black',N'folder.png',NULL,0,1,0,0);
 
 COMMIT TRANSACTION
 

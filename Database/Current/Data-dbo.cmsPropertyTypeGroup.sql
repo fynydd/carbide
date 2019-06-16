@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/TABLE;9d5799
--- Adding 9 rows to dbo.cmsPropertyTypeGroup
+-- Adding 10 rows to dbo.cmsPropertyTypeGroup
 
 SET IDENTITY_INSERT [dbo].[cmsPropertyTypeGroup] ON
 
@@ -30,6 +30,8 @@ INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sorto
 INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (18,1083,N'Content',0,'70CD3F69-A5B9-42F9-A279-676EB6A6A50D');
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (19,1052,N'Content',0,'6A51B621-08FB-4485-A9EE-85C884D1AED5');
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (21,1069,N'Advanced CSS Help',901,'2B8089ED-5998-4A70-9749-CA4B6351F703');
 
 COMMIT TRANSACTION
 

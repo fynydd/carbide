@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/TABLE;9d5799
--- Adding 39 rows to dbo.umbracoDataType
+-- Adding 41 rows to dbo.umbracoDataType
 
 BEGIN TRANSACTION
 
@@ -88,6 +88,10 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1082,N'Umbraco.MultiNodeTreePicker',N'Ntext',N'{"startNode":{"type":"content","query":"$current/ancestor-or-self::*[self::homepage]/components","id":null},"filter":"bolideSimpleHero","minNumber":0,"maxNumber":0,"showOpenButton":true}');
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1084,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"contentComponentPicker","ncTabAlias":"Content","nameTemplate":"{{contentName}}"}],"confirmDeletes":true,"showIcons":true,"hideLabel":false}');
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1090,N'Bolide.StaticText',N'Nvarchar',N'{}');
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1091,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<p>Below are the <strong>CSS custom properties</strong> with sample data for the simple hero component:</p>\n<p>\n--content-align: center;<br />\n--content-width: 1/2;<br />\n--content-push: 1/4;<br />\n--min-height: 25rem;<br />\n--max-height: 25rem;<br />\n--vertical-padding: 3rem;<br />\n--headline-bottom-spacer: 1rem;<br />\n--headline-shadow-color: rgba(0, 0, 0, 0.35);<br />\n--content-bottom-spacer: 2rem;<br />\n--content-shadow-color: rgba(0, 0, 0, 0.5);<br />\n--button-bottom-spacer: 2rem;<br />\n--nodes-display: block;<br />\n--nodes-align: center;<br />\n--nodes-top-spacer: 1rem;<br />\n--nodes-shadow-color: rgba(0, 0, 0, 0.25);<br />\n--dimmer-width: 100%;<br />\n--dimmer-height: 100%;<br />\n--dimmer-angle: 90deg;<br />\n--dimmer-fade-color-start: rgba(0,0,0,0);<br />\n--dimmer-fade-position-start: 35%;<br />\n--dimmer-fade-color-middle: rgba(0,0,0,0);<br />\n--dimmer-fade-position-middle: 50%;<br />\n--dimmer-fade-color-end: rgba(0,0,0,0);<br />\n--dimmer-fade-position-end: 65%;\n</p>","fullWidth":"1"}');
 
 COMMIT TRANSACTION
 

@@ -1,0 +1,36 @@
+﻿{
+	propertyEditors: [
+		{
+			alias: "Bolide.StaticText",
+			name: "Bolide Static Text",
+			icon: "icon-help-alt",
+			group: "Common",
+			editor: {
+				view: "~/App_Plugins/StaticText/statictext.html",
+				hideLabel: false,
+				valueType: "TEXT",
+				validation: {},
+				isReadOnly: true
+			},
+			prevalues: {
+				fields: [
+					{
+						label: "Static text to show",
+						description: "Enter the static text to display",
+						key: "defaultValue",
+						view: "textarea"
+					},
+					{
+						label: "Hide Label",
+						description: "Hide the sidebar label and description",
+						key: "fullWidth",
+						view: "boolean"
+					}
+				]
+			}
+		}
+	],
+	javascript: [
+		'~/App_Plugins/StaticText/statictext.controller.js'
+	]
+}

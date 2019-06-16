@@ -14,7 +14,7 @@
 
     foreach (var component in Model.SafeNestedValues("pageContent"))
     {
-        if (component.ContentType.Alias == "contentComponentPicker")
+        if (component.ContentType.Alias == "componentPicker")
         {
             foreach (var item in component.SafePickerValues("contentComponents"))
             {

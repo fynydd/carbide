@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/TABLE;9d5799
--- Adding 43 rows to dbo.cmsPropertyType
+-- Adding 44 rows to dbo.cmsPropertyType
 
 SET IDENTITY_INSERT [dbo].[cmsPropertyType] ON
 
@@ -98,6 +98,8 @@ INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[property
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (65,-88,1083,18,N'contentName',N'Name',0,0,NULL,N'Name of the content component to show in the content picker',0,'DE900AEC-C322-4AE0-B21A-5A1766B79BDC');
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (67,1082,1083,18,N'contentComponents',N'Content Components',1,0,NULL,NULL,0,'B44801AB-3C57-44A3-911B-EAE771F6371F');
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (70,1091,1069,21,N'cSSHelp',N'CSS Help',0,0,NULL,NULL,0,'BA43A30E-31F1-4E36-9148-DC8A43931AFA');
 
 COMMIT TRANSACTION
 
