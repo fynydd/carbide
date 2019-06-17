@@ -1,0 +1,43 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using System
+@using System.Security.Cryptography
+@using Umbraco.Web
+@using Bolide.Helpers
+@using Fynydd.Carbide
+
+@{ 
+    var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
+
+    object cssSelector;
+    Html.ViewData.TryGetValue("cssSelector", out cssSelector);
+
+    var selector = cssSelector == null ? "" : cssSelector.ToString();
+
+    if (selector.HasValue())
+    {
+        var breakpoints = new string[] { "zero", "phab", "tabp", "tabl", "note", "desk", "elas" };
+
+<style type="text/css">
+        @foreach (var breakpoint in breakpoints)
+        {
+            var width = Settings.GetCssBreakpoint(breakpoint);
+
+            if (width != "false")
+            {
+                if (Model.SafeValue(breakpoint + "CssProperties").HasValue())
+                {
+    <text>
+    @@media (min-width: @(width)) {
+
+        @(selector) {
+
+            @(Model.SafeValue(breakpoint + "CssProperties"))
+        }
+    }
+    </text>
+                }
+            }
+        }
+</style>
+    }
+}

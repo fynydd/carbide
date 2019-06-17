@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
+using System.Web.Mvc;
 using Fynydd.Carbide;
 using Fynydd.Carbide.Constants;
+using Umbraco.Web;
 
 namespace Bolide.Helpers
 {
@@ -31,5 +32,45 @@ namespace Bolide.Helpers
         //}
 
         public static string AppKey = Config.GetKeyValue("AppKey");
+
+        /// <summary>
+        /// Get the pixel width of a media breakpoint from the SCSS _config-media-breakpoints.scss file.
+        /// Returns "false" if none is set.
+        /// </summary>
+        /// <param name="shortBreakpointName">Four character breakpoint name (e.g. "desk")</param>
+        /// <returns>Pixel width as a string, or "false"</returns>
+        public static string GetCssBreakpoint(string shortBreakpointName)
+        {
+            var result = "false";
+            var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
+            shortBreakpointName = shortBreakpointName.ToLower();
+
+            if (Caching.CacheExists(umbCtx, shortBreakpointName + "-breakpoint"))
+            {
+                result = Caching.Cache<string>(umbCtx, shortBreakpointName + "-breakpoint");
+            }
+
+            else
+            {
+                var _config = Storage.ReadFile(umbCtx, "/scss/_config-media-breakpoints.scss");
+                var endIndex = _config.IndexOf(", " + shortBreakpointName + ")") - 1;
+
+                if (endIndex > 0)
+                {
+                    for (int x = endIndex - 1; x > 0; x--)
+                    {
+                        if (_config.Substring(x, 1) == "(")
+                        {
+                            result = _config.Substring(x + 1, endIndex - x).ToLower();
+                            x = 0;
+
+                            Caching.CacheAddPermanent(umbCtx, shortBreakpointName + "-breakpoint", result);
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }

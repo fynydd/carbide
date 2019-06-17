@@ -9,9 +9,11 @@
 
     object bolideSimpleHeroInstanceId;
     Html.ViewData.TryGetValue("simpleHeroInstanceId", out bolideSimpleHeroInstanceId);
-
     var heroId = bolideSimpleHeroInstanceId == null ? "hero-unit" : bolideSimpleHeroInstanceId.ToString();
-    var uid = heroId.Replace("-", "").Replace("_", "");
+
+    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".bolide_simple_hero#" + heroId));
+    Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
+    Html.ViewData.Clear();
 }
 
 <section id="@(heroId)" class="bolide_simple_hero" sf-unit>

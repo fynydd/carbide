@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/TABLE;9d5799
--- Adding 122 rows to dbo.umbracoCacheInstruction
+-- Adding 124 rows to dbo.umbracoCacheInstruction
 
 SET IDENTITY_INSERT [dbo].[umbracoCacheInstruction] ON
 
@@ -256,6 +256,10 @@ INSERT INTO [dbo].[umbracoCacheInstruction] ([id],[utcStamp],[jsonInstruction],[
 INSERT INTO [dbo].[umbracoCacheInstruction] ([id],[utcStamp],[jsonInstruction],[originated],[instructionCount]) VALUES (1249,CONVERT(datetime,'2019-06-16 23:20:14.203',121),N'[{"RefreshType":4,"RefresherId":"900a4fbe-df3c-41e6-bb77-be896cd158ea","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":null,"JsonIdCount":1,"JsonPayload":"[{\"Id\":1056,\"ChangeTypes\":4}]"}]',N'WIN-U59DMILN740//LM/W3SVC/1/ROOT [P21516/D29] 181EB5D7033D47E7B016C7268134DAEA',1);
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[umbracoCacheInstruction] ([id],[utcStamp],[jsonInstruction],[originated],[instructionCount]) VALUES (1250,CONVERT(datetime,'2019-06-16 23:20:28.110',121),N'[{"RefreshType":4,"RefresherId":"900a4fbe-df3c-41e6-bb77-be896cd158ea","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":null,"JsonIdCount":1,"JsonPayload":"[{\"Id\":1085,\"ChangeTypes\":4}]"}]',N'WIN-U59DMILN740//LM/W3SVC/1/ROOT [P21516/D29] 181EB5D7033D47E7B016C7268134DAEA',1);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoCacheInstruction] ([id],[utcStamp],[jsonInstruction],[originated],[instructionCount]) VALUES (1251,CONVERT(datetime,'2019-06-17 01:14:45.973',121),N'[{"RefreshType":3,"RefresherId":"e057af6d-2ee6-41f4-8045-3694010f0aa6","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[-1]","JsonIdCount":1,"JsonPayload":null}]',N'WIN-U59DMILN740//LM/W3SVC/1/ROOT [P25116/D2] 10679AB77C67494C9ABA2F605E0B84E7',1);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoCacheInstruction] ([id],[utcStamp],[jsonInstruction],[originated],[instructionCount]) VALUES (1252,CONVERT(datetime,'2019-06-17 01:15:31.353',121),N'[{"RefreshType":4,"RefresherId":"900a4fbe-df3c-41e6-bb77-be896cd158ea","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":null,"JsonIdCount":1,"JsonPayload":"[{\"Id\":1081,\"ChangeTypes\":4}]"}]',N'WIN-U59DMILN740//LM/W3SVC/1/ROOT [P25116/D2] 10679AB77C67494C9ABA2F605E0B84E7',1);
 
 COMMIT TRANSACTION
 

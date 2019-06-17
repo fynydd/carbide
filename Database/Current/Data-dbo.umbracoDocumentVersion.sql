@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/TABLE;9d5799
--- Adding 57 rows to dbo.umbracoDocumentVersion
+-- Adding 58 rows to dbo.umbracoDocumentVersion
 
 BEGIN TRANSACTION
 
@@ -111,7 +111,7 @@ INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUE
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (63,NULL,0);
 -- SQRIBE/INSERT;9d5799
-INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (64,NULL,1);
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (64,NULL,0);
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (65,NULL,0);
 -- SQRIBE/INSERT;9d5799
@@ -119,11 +119,13 @@ INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUE
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (67,NULL,0);
 -- SQRIBE/INSERT;9d5799
-INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (68,NULL,0);
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (68,NULL,1);
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (69,1051,0);
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (70,1051,0);
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (71,NULL,0);
 
 COMMIT TRANSACTION
 

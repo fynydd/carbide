@@ -529,6 +529,7 @@
     <Content Include="scss\_config-typography.scss" />
     <Content Include="scss\_config.scss" />
     <Content Include="scss\_manifest.scss" />
+    <Content Include="Views\Partials\_Partial_CSS_Custom_Properties.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
