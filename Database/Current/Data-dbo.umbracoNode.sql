@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;9d5799
 
 -- SQRIBE/TABLE;9d5799
--- Adding 75 rows to dbo.umbracoNode
+-- Adding 76 rows to dbo.umbracoNode
 
 SET IDENTITY_INSERT [dbo].[umbracoNode] ON
 
@@ -129,7 +129,7 @@ INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sort
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1074,'19F04EAA-AB54-4BC0-A3C5-599C5A812CD9',-1,1,N'-1,1074',36,0,-1,N'Bolide Simple Hero - CSS Properties - Textbox','30A2A501-1978-4DDB-A57B-F7EFED43BA3C',CONVERT(datetime,'2019-06-12 19:05:11.600',121));
 -- SQRIBE/INSERT;9d5799
-INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1075,'191338DA-127C-4395-A6E9-EEAF8B98D3AC',1054,2,N'-1,1054,1075',1,0,-1,N'CSS Properties','A2CB7800-F571-4787-9638-BC48539A0EFB',CONVERT(datetime,'2019-06-12 19:11:24.313',121));
+INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1075,'191338DA-127C-4395-A6E9-EEAF8B98D3AC',1054,2,N'-1,1054,1075',1,0,-1,N'CSS Custom Properties','A2CB7800-F571-4787-9638-BC48539A0EFB',CONVERT(datetime,'2019-06-12 19:11:24.313',121));
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1076,'5E123CB8-9E7D-4EE1-B1EE-CA9F552E8957',-1,1,N'-1,1076',0,0,-1,N'Components','2F7A2769-6B0B-4468-90DD-AF42D64F7F16',CONVERT(datetime,'2019-06-12 19:25:20.520',121));
 -- SQRIBE/INSERT;9d5799
@@ -162,6 +162,8 @@ INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sort
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1090,'8C93C5D0-D75B-4714-81A1-6D468C3809C3',-1,1,N'-1,1090',39,0,-1,N'StaticText','30A2A501-1978-4DDB-A57B-F7EFED43BA3C',CONVERT(datetime,'2019-06-16 17:51:35.967',121));
 -- SQRIBE/INSERT;9d5799
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1091,'B7BD87F8-CD24-4714-9F66-2B3DA16288FB',-1,1,N'-1,1091',40,0,-1,N'Bolide Simple Hero - Help','30A2A501-1978-4DDB-A57B-F7EFED43BA3C',CONVERT(datetime,'2019-06-16 17:52:46.300',121));
+-- SQRIBE/INSERT;9d5799
+INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1092,'5A0B42DB-CAB7-490D-94B0-E7BE6069893B',-1,1,N'-1,1092',41,0,-1,N'CSS Custom Properties - Intro Text','30A2A501-1978-4DDB-A57B-F7EFED43BA3C',CONVERT(datetime,'2019-06-16 22:15:20.790',121));
 
 COMMIT TRANSACTION
 

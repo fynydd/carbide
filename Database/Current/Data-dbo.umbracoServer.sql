@@ -13,7 +13,7 @@ SET IDENTITY_INSERT [dbo].[umbracoServer] ON
 BEGIN TRANSACTION
 
 -- SQRIBE/INSERT;9d5799
-INSERT INTO [dbo].[umbracoServer] ([id],[address],[computerName],[registeredDate],[lastNotifiedDate],[isActive],[isMaster]) VALUES (1,N'https://10.0.11.2/umbraco',N'WIN-U59DMILN740//LM/W3SVC/1/ROOT',CONVERT(datetime,'2019-05-29 18:29:43.447',121),CONVERT(datetime,'2019-06-16 22:06:25.467',121),1,1);
+INSERT INTO [dbo].[umbracoServer] ([id],[address],[computerName],[registeredDate],[lastNotifiedDate],[isActive],[isMaster]) VALUES (1,N'https://10.0.11.2/umbraco',N'WIN-U59DMILN740//LM/W3SVC/1/ROOT',CONVERT(datetime,'2019-05-29 18:29:43.447',121),CONVERT(datetime,'2019-06-16 22:16:45.403',121),1,1);
 
 COMMIT TRANSACTION
 
