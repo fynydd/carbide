@@ -35,8 +35,8 @@ $elastic-line-height: false;
 :root {
 
     // REQUIRED: Font stacks
-    --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, Helvetica, Calibri, Arial, sans-serif;
-    --font-mono: 'Source Code Pro', -apple-system-mono, 'Menlo', 'Consolas', 'Monaco', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', 'Courier', 'Courier New', monospace;
+    --font-body: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Calibri, Arial, sans-serif;
+    --font-mono: "Source Code Pro", -apple-system-mono, Menlo, Consolas, Monaco, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Courier, "Courier New", monospace;
     --font-head: var(--font-body);
 
     // REQUIRED: Base monospace font size and line height

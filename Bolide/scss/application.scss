@@ -21,9 +21,6 @@
 
 html, body {
 
-    background-color: var(--sf-color-light);
-    color: black;
-
     a {
 
         color: var(--sf-color-primary);
@@ -42,7 +39,7 @@ body {
         // Primary wrapped containers with an elastic max-width
         > [sf-unit] {
 
-            background-color: white;
+            //background-color: white;
             overflow: hidden;
 
             & + [sf-unit] {

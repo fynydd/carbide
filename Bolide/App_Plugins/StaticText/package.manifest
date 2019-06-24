@@ -16,7 +16,7 @@
 				fields: [
 					{
 						label: "Static text to show",
-						description: "Enter the static text to display",
+						description: "Enter the static text to display; HTML markup is allowed.",
 						key: "defaultValue",
 						view: "textarea"
 					},

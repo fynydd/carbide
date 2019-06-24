@@ -1,22 +1,81 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using Umbraco.Web
+@using Bolide.Helpers
+@using Fynydd.Carbide
 @{
-	Layout = null;
-}
+    Layout = null;
 
+    var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
+    var home = Model.AncestorOrSelf("homepage");
+    var settings = home.DescendantsOfType("bolideSettings").FirstOrDefault();
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    @{ Html.RenderPartial("_Partial_Head"); }
+    @{
+        Html.RenderPartial("_Partial_Head");
+
+        var breakpoints = new string[] { "zero", "phab", "tabp", "tabl", "note", "desk", "elas" };
+
+    <style type="text/css">
+
+        @if(settings.SafeValue("settingsCustomFontURLs").HasValue())
+        {
+<text>    @Html.Raw(settings.SafeValue("settingsCustomFontURLs"))</text>
+        }
+
+    :root {
+
+        --background-color: var(--sf-color-white);
+        --foreground-color: var(--sf-color-white-contrast);
+
+        @if(settings.SafeValue("settingsBodyFontStack").HasValue())
+        {
+<text>        --font-body: @Html.Raw(settings.SafeValue("settingsBodyFontStack").Trim(";"));</text>
+        }@if(settings.SafeValue("settingsMonoFontStack").HasValue())
+        {
+<text>        --font-mono: @Html.Raw(settings.SafeValue("settingsMonoFontStack").Trim(";"));</text>
+        }@if (settings.SafeValue("settingsHeadlineFontStack").HasValue())
+        {
+<text>        --font-head: @Html.Raw(settings.SafeValue("settingsHeadlineFontStack").Trim(";"));</text>
+        }
+    }
+
+        @foreach (var breakpoint in breakpoints)
+        {
+            var width = Settings.GetCssBreakpoint(breakpoint);
+
+            if (width != "false")
+            {
+                if (settings.SafeValue(breakpoint + "CssProperties").HasValue())
+                {
+<text>    @@media (min-width: @(width)) {
+
+        :root {
+
+            @(settings.SafeValue(breakpoint + "CssProperties").Replace("\n", " "))
+        }
+    }
+</text>
+                }
+            }
+        }
+    html, body {
+
+        background-color: var(--background-color);
+        color: var(--foreground-color);
+    }
+    </style>
+    }
+
 </head>
 <body>
-    <header>
-    </header>
+    <header></header>
     <section id="siteContent">
         <main role="main">
             @RenderBody()
         </main>
     </section>
-    <footer>
-    </footer>
+    <footer></footer>
 </body>
 </html>
