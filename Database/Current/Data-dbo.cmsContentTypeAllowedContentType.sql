@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/TABLE;0caaa3
--- Adding 7 rows to dbo.cmsContentTypeAllowedContentType
+-- Adding 5 rows to dbo.cmsContentTypeAllowedContentType
 
 BEGIN TRANSACTION
 
@@ -17,13 +17,9 @@ INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrde
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1031,1033,0);
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1052,1077,0);
+INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1052,1069,0);
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1052,1093,1);
--- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1077,1079,0);
--- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1079,1069,0);
+INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1052,1098,1);
 
 COMMIT TRANSACTION
 

@@ -118,6 +118,10 @@ ALTER TABLE [dbo].[umbracoServer] ADD CONSTRAINT [df_umbracoServer_registeredDat
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/OBJ;0caaa3
+ALTER TABLE [dbo].[cmsContentTypeAllowedContentType] ADD CONSTRAINT [df_cmsContentTypeAllowedContentType_SortOrder] DEFAULT ('0') FOR [SortOrder]
+GO -- SQRIBE/GO;0caaa3
+
+-- SQRIBE/OBJ;0caaa3
 ALTER TABLE [dbo].[umbracoUserGroup] ADD CONSTRAINT [df_umbracoUserGroup_createDate] DEFAULT (getdate()) FOR [createDate]
 GO -- SQRIBE/GO;0caaa3
 
@@ -126,7 +130,7 @@ ALTER TABLE [dbo].[umbracoUserGroup] ADD CONSTRAINT [df_umbracoUserGroup_updateD
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/OBJ;0caaa3
-ALTER TABLE [dbo].[cmsContentTypeAllowedContentType] ADD CONSTRAINT [df_cmsContentTypeAllowedContentType_SortOrder] DEFAULT ('0') FOR [SortOrder]
+ALTER TABLE [dbo].[cmsPropertyTypeGroup] ADD CONSTRAINT [df_cmsPropertyTypeGroup_uniqueID] DEFAULT (newid()) FOR [uniqueID]
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/OBJ;0caaa3
@@ -150,10 +154,6 @@ ALTER TABLE [dbo].[cmsContentType] ADD CONSTRAINT [df_cmsContentType_variations]
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/OBJ;0caaa3
-ALTER TABLE [dbo].[cmsPropertyTypeGroup] ADD CONSTRAINT [df_cmsPropertyTypeGroup_uniqueID] DEFAULT (newid()) FOR [uniqueID]
-GO -- SQRIBE/GO;0caaa3
-
--- SQRIBE/OBJ;0caaa3
 ALTER TABLE [dbo].[umbracoAudit] ADD CONSTRAINT [df_umbracoAudit_eventDateUtc] DEFAULT (getdate()) FOR [eventDateUtc]
 GO -- SQRIBE/GO;0caaa3
 
@@ -174,7 +174,7 @@ ALTER TABLE [dbo].[cmsPropertyType] ADD CONSTRAINT [df_cmsPropertyType_UniqueID]
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/OBJ;0caaa3
-ALTER TABLE [dbo].[umbracoCacheInstruction] ADD CONSTRAINT [df_umbracoCacheInstruction_instructionCount] DEFAULT ('1') FOR [instructionCount]
+ALTER TABLE [dbo].[umbracoContentVersion] ADD CONSTRAINT [df_umbracoContentVersion_versionDate] DEFAULT (getdate()) FOR [versionDate]
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/OBJ;0caaa3
@@ -190,7 +190,7 @@ ALTER TABLE [dbo].[umbracoNode] ADD CONSTRAINT [df_umbracoNode_createDate] DEFAU
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/OBJ;0caaa3
-ALTER TABLE [dbo].[umbracoContentVersion] ADD CONSTRAINT [df_umbracoContentVersion_versionDate] DEFAULT (getdate()) FOR [versionDate]
+ALTER TABLE [dbo].[umbracoCacheInstruction] ADD CONSTRAINT [df_umbracoCacheInstruction_instructionCount] DEFAULT ('1') FOR [instructionCount]
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/OBJ;0caaa3

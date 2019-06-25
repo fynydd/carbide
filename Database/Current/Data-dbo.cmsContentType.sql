@@ -23,23 +23,23 @@ INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[de
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (535,1052,N'homepage',N'icon-home color-black',N'folder.png',NULL,0,0,1,0);
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (536,1055,N'sEO',N'icon-document',N'folder.png',NULL,0,1,0,0);
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (536,1055,N'sEO',N'icon-search color-black',N'folder.png',NULL,0,1,0,0);
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (537,1063,N'bolideSimpleHeroFrame',N'icon-frame-alt color-black',N'folder.png',NULL,0,1,0,0);
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (538,1069,N'bolideSimpleHero',N'icon-slideshow color-black',N'folder.png',NULL,0,0,0,0);
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (538,1069,N'bolideSimpleHeroUnit',N'icon-slideshow color-black',N'folder.png',NULL,0,0,0,0);
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (539,1075,N'cSSProperties',N'icon-document',N'folder.png',N'For each breakpoint, enter any CSS custom property variables to override the appearance of the component.',0,1,0,0);
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (539,1075,N'cSSProperties',N'icon-code color-black',N'folder.png',N'For each breakpoint, enter any CSS custom property variables to override the appearance of the component.',0,1,0,0);
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (540,1077,N'components',N'icon-server-alt color-black',N'folder.png',N'Content components you can use on your pages.',0,0,1,0);
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (544,1098,N'bolideRichContentUnit',N'icon-font color-black',N'folder.png',NULL,0,0,0,0);
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (541,1079,N'componentGroup',N'icon-brick color-black',N'folder.png',N'Content for a specific component type',1,0,0,0);
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (545,1101,N'companyInfo',N'icon-info color-black',N'folder.png',NULL,0,1,0,0);
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (542,1083,N'componentPicker',N'icon-server-alt color-black',N'folder.png',NULL,0,1,0,0);
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (546,1102,N'socialNetworks',N'icon-facebook-like color-black',N'folder.png',NULL,0,1,0,0);
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (543,1093,N'bolideSettings',N'icon-settings color-black',N'folder.png',NULL,0,0,0,0);
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (547,1103,N'fonts',N'icon-font color-black',N'folder.png',NULL,0,1,0,0);
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (544,1098,N'bolideRichContent',N'icon-font color-black',N'folder.png',NULL,0,1,0,0);
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (548,1104,N'cssHelpSiteDefaults',N'icon-help-alt color-black',N'folder.png',NULL,0,1,0,0);
 
 COMMIT TRANSACTION
 

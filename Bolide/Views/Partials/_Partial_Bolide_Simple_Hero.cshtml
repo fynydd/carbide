@@ -9,13 +9,13 @@
 
     object bolideInstanceId;
     Html.ViewData.TryGetValue("instanceId", out bolideInstanceId);
-    var heroId = bolideInstanceId == null ? "hero-unit" : bolideInstanceId.ToString();
+    var instanceId = bolideInstanceId == null ? "hero-unit" : bolideInstanceId.ToString();
 
-    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".bolide_simple_hero#" + heroId));
+    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".bolide_simple_hero#" + instanceId));
     Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
     Html.ViewData.Clear();
 }
-<section id="@(heroId)" class="bolide_simple_hero" sf-unit>
+<section id="@(instanceId)" class="bolide_simple_hero" sf-unit>
     <div role="presentation" id="dimmer"></div>
     <div sf-outer-wrapper>
         <div sf-inner-wrapper>
@@ -54,7 +54,7 @@
 
                             $(document).ready(function () {
 
-                                $("#@(heroId)").bolideSimpleHero({
+                                $("#@(instanceId)").bolideSimpleHero({
 
                                     slideDuration: @(Model.SafeValue<int>("frameDuration")),
                                     transitionTime: @(Model.SafeValue<int>("bgTransitionTime")),

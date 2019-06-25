@@ -12,30 +12,21 @@
 @{
     Layout = "Master.cshtml";
 
-    foreach (var component in Model.SafeNestedValues("pageContent"))
+    foreach (var content in Model.Children().OrderBy(o => o.SortOrder))
     {
-        if (component.SafeValue<bool>("enabled"))
+        if (content.HasProperty("enabled") && content.SafeValue<bool>("enabled"))
         {
-            if (component.ContentType.Alias == "componentPicker")
+            if (content.ContentType.Alias == "bolideSimpleHeroUnit")
             {
-                var components = component.SafePickerValues("contentComponents");
-
-                foreach (var item in components)
-                {
-                    if (item.ContentType.Alias == "bolideSimpleHero")
-                    {
-                        Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", item.Name.AsCssSelector()));
-                        Html.RenderPartial("_Partial_Bolide_Simple_Hero", item, Html.ViewData);
-                        Html.ViewData.Clear();
-                    }
-                }
+                Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", content.Name.AsCssSelector()));
+                Html.RenderPartial("_Partial_Bolide_Simple_Hero", content, Html.ViewData);
+                Html.ViewData.Clear();
             }
 
-            if (component.ContentType.Alias == "bolideRichContent")
+            if (content.ContentType.Alias == "bolideRichContentUnit")
             {
-                Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", component.SafeValue("contentName").AsCssSelector()));
-                Html.ViewData.Add(new KeyValuePair<string, object>("nestedContent", component));
-                Html.RenderPartial("_Partial_Bolide_Rich_Content", Html.ViewData);
+                Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", content.Name.AsCssSelector()));
+                Html.RenderPartial("_Partial_Bolide_Rich_Content", content, Html.ViewData);
                 Html.ViewData.Clear();
             }
         }
