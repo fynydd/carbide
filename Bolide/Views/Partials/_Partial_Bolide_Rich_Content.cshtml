@@ -1,0 +1,41 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using System
+@using System.Security.Cryptography
+@using Umbraco.Web
+@using Fynydd.Carbide
+
+@{
+    var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
+
+    object bolideInstanceId;
+    object _nestedContent;
+    Html.ViewData.TryGetValue("instanceId", out bolideInstanceId);
+    Html.ViewData.TryGetValue("nestedContent", out _nestedContent);
+
+    IPublishedElement nestedContent = (IPublishedElement)_nestedContent;
+    var heroId = bolideInstanceId == null ? "rich-content" : bolideInstanceId.ToString();
+    Html.ViewData.Clear();
+}
+@if (nestedContent != null)
+{
+<section id="@(heroId)" class="bolide_rich_content" sf-unit>
+    <div sf-outer-wrapper>
+        <div sf-inner-wrapper>
+            @if (nestedContent.SafeValue("headline").HasValue())
+            {
+                @Html.Raw("<" + nestedContent.SafeValue("headlineStyle") + ">" + nestedContent.SafeValue("headline") + "</" + nestedContent.SafeValue("headlineStyle") + ">")
+            }
+            @if (nestedContent.SafeValue("richContent").HasValue())
+            {
+                @Html.Raw(nestedContent.SafeValue("richContent"))
+            }
+            @if (nestedContent.SafeValue("buttonText").HasValue())
+            {
+                <div style="text-align: @(nestedContent.HasValue("buttonAlignment") ? nestedContent.SafeValue("buttonAlignment").ToLower() : "left");">
+                    <a href="@(nestedContent.HasValue("buttonLink") ? nestedContent.PickerValue("buttonLink").Url : nestedContent.SafeValue<string>("buttonUrl"))" role="button">@Html.Raw(nestedContent.SafeValue("buttonText"))</a>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+}

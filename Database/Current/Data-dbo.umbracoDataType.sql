@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/TABLE;0caaa3
--- Adding 42 rows to dbo.umbracoDataType
+-- Adding 45 rows to dbo.umbracoDataType
 
 BEGIN TRANSACTION
 
@@ -85,7 +85,7 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1082,N'Umbraco.MultiNodeTreePicker',N'Ntext',N'{"startNode":{"type":"content","query":"$current/ancestor-or-self::*[self::homepage]/components","id":null},"filter":"bolideSimpleHero","minNumber":0,"maxNumber":0,"showOpenButton":true}');
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1084,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"componentPicker","ncTabAlias":"Content","nameTemplate":"{{contentName}}"}],"confirmDeletes":true,"showIcons":true,"hideLabel":false}');
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1084,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"componentPicker","ncTabAlias":"Content","nameTemplate":"{{contentName}}"},{"ncAlias":"bolideRichContent","ncTabAlias":"Content","nameTemplate":"{{contentName}}"}],"confirmDeletes":true,"showIcons":true,"hideLabel":false}');
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1090,N'Bolide.StaticText',N'Nvarchar',N'{}');
 -- SQRIBE/INSERT;0caaa3
@@ -94,6 +94,12 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1092,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<p>For each breakpoint, enter any CSS custom property variables to override the appearance.</p>","fullWidth":"1"}');
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1096,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<p>\n<strong>The following CSS custom properties are available for styling the overall site:</strong>\n</p>\n<p>\n        --background-color: var(--sf-color-white);<br />\n        --foreground-color: var(--sf-color-white-contrast);\n</p>","fullWidth":"1"}');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1097,N'Umbraco.RadioButtonList',N'Nvarchar',N'{"items":[{"id":1,"value":"h1"},{"id":2,"value":"h2"},{"id":3,"value":"h3"},{"id":4,"value":"h4"},{"id":5,"value":"h5"},{"id":6,"value":"h6"}]}');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1099,N'Umbraco.RadioButtonList',N'Nvarchar',N'{"items":[{"id":1,"value":"Left"},{"id":2,"value":"Center"},{"id":3,"value":"Right"}]}');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1100,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<p><strong>Optional Button</strong></p>\n<p>Display a button below the rich content.</p>","fullWidth":"1"}');
 
 COMMIT TRANSACTION
 

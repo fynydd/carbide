@@ -530,6 +530,7 @@
     <Content Include="scss\_config.scss" />
     <Content Include="scss\_manifest.scss" />
     <Content Include="Views\Partials\_Partial_CSS_Custom_Properties.cshtml" />
+    <Content Include="Views\Partials\_Partial_Bolide_Rich_Content.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

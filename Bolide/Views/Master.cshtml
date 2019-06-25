@@ -19,9 +19,9 @@
 
     <style type="text/css">
 
-        @if(settings.SafeValue("settingsCustomFontURLs").HasValue())
+        @if(settings.SafeValue("customFontURLs").HasValue())
         {
-<text>    @Html.Raw(settings.SafeValue("settingsCustomFontURLs"))</text>
+<text>    @Html.Raw(settings.SafeValue("customFontURLs"))</text>
         }
 
     :root {
@@ -29,15 +29,15 @@
         --background-color: var(--sf-color-white);
         --foreground-color: var(--sf-color-white-contrast);
 
-        @if(settings.SafeValue("settingsBodyFontStack").HasValue())
+        @if(settings.SafeValue("bodyFontStack").HasValue())
         {
-<text>        --font-body: @Html.Raw(settings.SafeValue("settingsBodyFontStack").Trim(";"));</text>
-        }@if(settings.SafeValue("settingsMonoFontStack").HasValue())
+<text>        --font-body: @Html.Raw(settings.SafeValue("bodyFontStack").Trim(";"));</text>
+        }@if(settings.SafeValue("monoFontStack").HasValue())
         {
-<text>        --font-mono: @Html.Raw(settings.SafeValue("settingsMonoFontStack").Trim(";"));</text>
-        }@if (settings.SafeValue("settingsHeadlineFontStack").HasValue())
+<text>        --font-mono: @Html.Raw(settings.SafeValue("monoFontStack").Trim(";"));</text>
+        }@if (settings.SafeValue("headlineFontStack").HasValue())
         {
-<text>        --font-head: @Html.Raw(settings.SafeValue("settingsHeadlineFontStack").Trim(";"));</text>
+<text>        --font-head: @Html.Raw(settings.SafeValue("headlineFontStack").Trim(";"));</text>
         }
     }
 

@@ -14,16 +14,29 @@
 
     foreach (var component in Model.SafeNestedValues("pageContent"))
     {
-        if (component.ContentType.Alias == "componentPicker")
+        if (component.SafeValue<bool>("enabled"))
         {
-            foreach (var item in component.SafePickerValues("contentComponents"))
+            if (component.ContentType.Alias == "componentPicker")
             {
-                if (item.ContentType.Alias == "bolideSimpleHero")
+                var components = component.SafePickerValues("contentComponents");
+
+                foreach (var item in components)
                 {
-                    Html.ViewData.Add(new KeyValuePair<string, object>("simpleHeroInstanceId", item.Name.AsCssSelector()));
-                    Html.RenderPartial("_Partial_Bolide_Simple_Hero", item, Html.ViewData);
-                    Html.ViewData.Clear();
+                    if (item.ContentType.Alias == "bolideSimpleHero")
+                    {
+                        Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", item.Name.AsCssSelector()));
+                        Html.RenderPartial("_Partial_Bolide_Simple_Hero", item, Html.ViewData);
+                        Html.ViewData.Clear();
+                    }
                 }
+            }
+
+            if (component.ContentType.Alias == "bolideRichContent")
+            {
+                Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", component.SafeValue("contentName").AsCssSelector()));
+                Html.ViewData.Add(new KeyValuePair<string, object>("nestedContent", component));
+                Html.RenderPartial("_Partial_Bolide_Rich_Content", Html.ViewData);
+                Html.ViewData.Clear();
             }
         }
     }

@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/TABLE;0caaa3
--- Adding 13 rows to dbo.cmsContentType
+-- Adding 14 rows to dbo.cmsContentType
 
 SET IDENTITY_INSERT [dbo].[cmsContentType] ON
 
@@ -38,6 +38,8 @@ INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[de
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (542,1083,N'componentPicker',N'icon-server-alt color-black',N'folder.png',NULL,0,1,0,0);
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (543,1093,N'bolideSettings',N'icon-settings color-black',N'folder.png',NULL,0,0,0,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (544,1098,N'bolideRichContent',N'icon-font color-black',N'folder.png',NULL,0,1,0,0);
 
 COMMIT TRANSACTION
 
