@@ -1,0 +1,51 @@
+﻿.umb-group-panel__header {
+    cursor: pointer;
+    position: relative;
+    transition: background-color ease-in-out .3s, color ease-in-out .3s, padding ease-in-out .3s;
+}
+
+    .umb-group-panel__header:after {
+        content: '';
+        position: absolute;
+        top: calc(50% - 3px);
+        left: 7px;
+        right: auto;
+        width: 0;
+        height: 0;
+        vertical-align: top;
+        border-top: 4px solid #000;
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+        transform-origin: center;
+        transition: transform ease-in-out .3s, border-top-color ease-in-out .3s;
+    }
+
+    .umb-group-panel__header.open {
+        background-color: #1b264f;
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        padding: 12px 30px;
+    }
+
+        .umb-group-panel__header.open:after {
+            transform: rotateZ(180deg);
+            border-top-color: white;
+        }
+
+.umb-group-panel__content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    transition: max-height ease-in-out .3s, opacity ease-in-out .3s, padding linear 0s .3s;
+}
+
+    .umb-group-panel__content.open {
+        max-height: 200vh;
+        opacity: 1;
+        overflow-y: auto;
+        padding: 20px;
+        transition: max-height ease-in-out .3s, opacity ease-in-out .3s, padding linear 0s 0s;
+    }

@@ -1,0 +1,8 @@
+﻿{
+  "javascript": [
+    "~/App_Plugins/u8Collapse/u8Collapse.controller.js"
+  ],
+  "css": [
+    "~/App_Plugins/u8Collapse/u8Collapse.css"
+  ]
+}
