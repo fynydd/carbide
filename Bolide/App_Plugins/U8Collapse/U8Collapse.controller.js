@@ -19,7 +19,7 @@
                                 }
                                 tabs[0].classList.add("open");
                                 tabs[0].nextElementSibling.classList.add("open");
-                            }, 10)
+                            }, 500)
                         }
                     }
                     return response;
