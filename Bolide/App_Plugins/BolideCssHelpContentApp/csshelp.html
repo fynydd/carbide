@@ -1,0 +1,101 @@
+﻿<div ng-controller="Bolide.CssHelpApp as vm">
+    <div class="umb-group-panel ng-scope ng-isolate-scope">
+        <umb-box>
+            <umb-box-header title="Short Codes" />
+            <umb-box-content>
+                <p>
+                    <strong>You can insert field data into your content by using short codes.</strong> These snippets of text use the format <strong>{{fieldName}}</strong> where "fieldName" is the name of the field in camel case format. For example, to insert the company street address, type:
+                </p>
+                <p>
+                    <code ng-non-bindable>{{companyStreetAddress}}</code>
+                </p>
+                <p>
+                    You can find field names by simply hovering your mouse over a caption in the left column. A tooltip will appear showing you the field name.
+                </p>
+                <p>
+                    <strong>Note:</strong> these short codes work for fields in the home page as well as the current content item being edited (and its parent, if it's nested content).
+                </p>
+            </umb-box-content>
+        </umb-box>
+    </div>
+    <div ng-show="vm.CurrentNodeAlias == 'homepage'" class="umb-group-panel ng-scope ng-isolate-scope">
+        <umb-box class="umb-group-panel ng-scope ng-isolate-scope">
+            <umb-box-header title="CSS Custom Properties" />
+            <umb-box-content>
+                <p>Below are the <strong>CSS custom properties</strong> with sample data for styling the overall site:</p>
+                <p>
+                    --background-color: var(--sf-color-white);<br />
+                    --foreground-color: var(--sf-color-white-contrast);
+                </p>
+            </umb-box-content>
+        </umb-box>
+    </div>
+    <div ng-show="vm.CurrentNodeAlias == 'bolideRichContentUnit'" class="umb-group-panel ng-scope ng-isolate-scope">
+        <umb-box class="umb-group-panel ng-scope ng-isolate-scope">
+            <umb-box-header title="CSS Custom Properties" />
+            <umb-box-content>
+                <p>Below are the <strong>CSS custom properties</strong> with sample data for the rich content component:</p>
+                <p>
+                    --background-color: transparent;<br />
+                    --content-width: 100%;<br />
+                    --headline-align: left;<br />
+                    --content-align: left;
+                </p>
+                <p>
+                    --button-align: left;<br />
+                    --button-width: auto;<br />
+                    --button-background-color: var(--sf-color-buttons);<br />
+                    --button-foreground-color: var(--sf-color-buttons-contrast);
+                </p>
+            </umb-box-content>
+        </umb-box>
+    </div>
+    <div ng-show="vm.CurrentNodeAlias == 'bolideSimpleHeroUnit'" class="umb-group-panel ng-scope ng-isolate-scope">
+        <umb-box class="umb-group-panel ng-scope ng-isolate-scope">
+            <umb-box-header title="CSS Custom Properties" />
+            <umb-box-content>
+                <p>Below are the <strong>CSS custom properties</strong> with sample data for the simple hero component:</p>
+                <p>
+                    --content-align: center;<br />
+                    --content-width: 1/2;<br />
+                    --content-push: 1/4;<br />
+                    --min-height: 25rem;<br />
+                    --max-height: 25rem;<br />
+                    --vertical-padding: 3rem;<br />
+                    --content-bottom-spacer: 2rem;<br />
+                    --content-shadow-color: rgba(0, 0, 0, 0.5);
+                </p>
+                <p>
+                    --headline-bottom-spacer: 1rem;<br />
+                    --headline-shadow-color: rgba(0, 0, 0, 0.35);
+                </p>
+                <p>
+                    --nodes-display: block;<br />
+                    --nodes-align: center;<br />
+                    --nodes-top-spacer: 1rem;<br />
+                    --nodes-shadow-color: rgba(0, 0, 0, 0.25);
+                </p>
+                <p>
+                    --dimmer-width: 100%;<br />
+                    --dimmer-height: 100%;<br />
+                    --dimmer-angle: 90deg;<br />
+                    --dimmer-fade-color-start: rgba(0,0,0,0);<br />
+                    --dimmer-fade-position-start: 35%;<br />
+                    --dimmer-fade-color-middle: rgba(0,0,0,0);<br />
+                    --dimmer-fade-position-middle: 50%;<br />
+                    --dimmer-fade-color-end: rgba(0,0,0,0);<br />
+                    --dimmer-fade-position-end: 65%;
+                </p>
+                <p>
+                    --background-color: black;<br />
+                    --foreground-color: white;
+                </p>
+                <p>
+                    --button-bottom-spacer: 2rem;<br />
+                    --button-background-color: green;<br />
+                    --button-foreground-color: white;
+                </p>
+            </umb-box-content>
+        </umb-box>
+    </div>
+</div>

@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/TABLE;0caaa3
--- Adding 48 rows to dbo.umbracoDataType
+-- Adding 44 rows to dbo.umbracoDataType
 
 BEGIN TRANSACTION
 
@@ -89,11 +89,7 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1090,N'Bolide.StaticText',N'Nvarchar',N'{}');
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1091,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<p>Below are the <strong>CSS custom properties</strong> with sample data for the simple hero component:</p>\n<p>\n--content-align: center;<br />\n--content-width: 1/2;<br />\n--content-push: 1/4;<br />\n--min-height: 25rem;<br />\n--max-height: 25rem;<br />\n--vertical-padding: 3rem;<br />\n--content-bottom-spacer: 2rem;<br />\n--content-shadow-color: rgba(0, 0, 0, 0.5);\n</p>\n<p>\n--headline-bottom-spacer: 1rem;<br />\n--headline-shadow-color: rgba(0, 0, 0, 0.35);\n</p>\n<p>\n--nodes-display: block;<br />\n--nodes-align: center;<br />\n--nodes-top-spacer: 1rem;<br />\n--nodes-shadow-color: rgba(0, 0, 0, 0.25);\n</p>\n<p>\n--dimmer-width: 100%;<br />\n--dimmer-height: 100%;<br />\n--dimmer-angle: 90deg;<br />\n--dimmer-fade-color-start: rgba(0,0,0,0);<br />\n--dimmer-fade-position-start: 35%;<br />\n--dimmer-fade-color-middle: rgba(0,0,0,0);<br />\n--dimmer-fade-position-middle: 50%;<br />\n--dimmer-fade-color-end: rgba(0,0,0,0);<br />\n--dimmer-fade-position-end: 65%;\n</p>\n<p>\n--background-color: black;<br />\n--foreground-color: white;\n</p>\n<p>\n--button-bottom-spacer: 2rem;<br />\n--button-background-color: green;<br />\n--button-foreground-color: white;\n</p>","fullWidth":"1"}');
--- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1092,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<p>For each breakpoint, enter any CSS custom property variables to override the appearance.</p>","fullWidth":"1"}');
--- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1096,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<p>\n<strong>The following CSS custom properties are available for styling the overall site:</strong>\n</p>\n<p>\n--background-color: var(--sf-color-white);<br />\n--foreground-color: var(--sf-color-white-contrast);\n</p>","fullWidth":"1"}');
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1097,N'Umbraco.RadioButtonList',N'Nvarchar',N'{"items":[{"id":1,"value":"h1"},{"id":2,"value":"h2"},{"id":3,"value":"h3"},{"id":4,"value":"h4"},{"id":5,"value":"h5"},{"id":6,"value":"h6"}]}');
 -- SQRIBE/INSERT;0caaa3
@@ -101,11 +97,7 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1100,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<h4>Optional Button</strong></h4>\n<p>Display a button below the rich content.</p>","fullWidth":"1"}');
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1106,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<p>Below are the <strong>CSS custom properties</strong> with sample data for the rich content component:</p>\n<p>\n--background-color: transparent;<br />\n--content-width: 100%;<br />\n--headline-align: left;<br />\n--content-align: left;\n</p>\n<p>\n--button-align: left;<br />\n--button-width: auto;<br />\n--button-background-color: var(--sf-color-buttons);<br />\n--button-foreground-color: var(--sf-color-buttons-contrast);\n</p>","fullWidth":"1"}');
--- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1108,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<p>\n<strong>Optional Button</strong><br />\nAdd a button to the bottom of your rich content unit.\n</p>","fullWidth":"1"}');
--- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1109,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<h4>Short Codes</h4>\n<p>\n<strong>You can insert field data into your content by using short codes.</strong> These snippets of text use the format <strong>{{fieldName}}</strong> where \"fieldName\" is the name of the field in camel case format. For example, to insert the company street address, type:\n</p>\n<p>\n<code>{{companyStreetAddress}}</code>\n</p>\n<p>\nYou can find field names by simply hovering your mouse over a caption in the left column. A tooltip will appear showing you the field name.\n</p>\n<p>\n<strong>Note:</strong> these short codes work for fields in the home page as well as the current content item being edited (and its parent, if it''s nested content).\n</p>","fullWidth":"1"}');
 
 COMMIT TRANSACTION
 
