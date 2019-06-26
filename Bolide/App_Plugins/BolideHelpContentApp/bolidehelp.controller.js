@@ -1,5 +1,5 @@
 ﻿angular.module("umbraco")
-    .controller("Bolide.CssHelpApp", function ($scope, editorState, userService, contentResource) {
+    .controller("Bolide.HelpApp", function ($scope, editorState, userService, contentResource) {
 
         var vm = this;
         vm.CurrentNodeId = editorState.current.id;

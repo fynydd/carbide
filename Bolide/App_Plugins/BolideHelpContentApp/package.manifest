@@ -2,10 +2,10 @@
   "contentApps": [
     {
       "name": "Bolide Help", // required - the name that appears under the icon
-      "alias": "bolideCssHelp", // required - unique alias for your app
+      "alias": "bolideHelp", // required - unique alias for your app
       "weight": 0, // optional, default is 0, use values between -99 and +99 to appear between the existing Content (-100) and Info (100) apps
       "icon": "icon-help-alt", // required - the icon to use
-      "view": "~/App_Plugins/BolideCssHelpContentApp/csshelp.html", // required - the location of the view file
+      "view": "~/App_Plugins/BolideHelpContentApp/bolidehelp.html", // required - the location of the view file
       "show": [
         "-media/*", // hide for all media types
         "+content/bolideSimpleHeroUnit",
@@ -15,6 +15,6 @@
     }
   ],
   "javascript": [
-    "~/App_Plugins/BolideCssHelpContentApp/csshelp.controller.js"
+    "~/App_Plugins/BolideHelpContentApp/bolidehelp.controller.js"
   ]
 }

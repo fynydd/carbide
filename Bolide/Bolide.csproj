@@ -405,8 +405,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Plugins\BolideCssHelpContentApp\csshelp.controller.js" />
-    <Content Include="App_Plugins\BolideCssHelpContentApp\csshelp.html" />
+    <Content Include="App_Plugins\BolideHelpContentApp\bolidehelp.controller.js" />
+    <Content Include="App_Plugins\BolideHelpContentApp\bolidehelp.html" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.html" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
@@ -486,7 +486,7 @@
     <Content Include="icons\site.webmanifest" />
     <Content Include="App_Plugins\StaticText\package.manifest" />
     <Content Include="App_Plugins\U8Collapse\package.manifest" />
-    <Content Include="App_Plugins\BolideCssHelpContentApp\package.manifest" />
+    <Content Include="App_Plugins\BolideHelpContentApp\package.manifest" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <None Include="Properties\PublishProfiles\Release.pubxml" />

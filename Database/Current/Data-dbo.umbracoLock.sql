@@ -27,7 +27,7 @@ INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-334,1,N'MediaTree
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-333,-1,N'ContentTree');
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-332,1,N'ContentTypes');
+INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-332,-1,N'ContentTypes');
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-331,1,N'Servers');
 
