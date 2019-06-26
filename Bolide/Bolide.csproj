@@ -410,6 +410,8 @@
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
     <Content Include="App_Plugins\StaticText\StaticText.controller.js" />
     <Content Include="App_Plugins\StaticText\StaticText.html" />
+    <Content Include="App_Plugins\U8Collapse\U8Collapse.controller.js" />
+    <Content Include="App_Plugins\U8Collapse\U8Collapse.css" />
     <Content Include="App_Plugins\UmbracoBackOfficeCSS\css\UmbracoBackOfficeCSS.css" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
@@ -481,6 +483,7 @@
     <Content Include="config\BackOfficeTours\getting-started.json" />
     <Content Include="icons\site.webmanifest" />
     <Content Include="App_Plugins\StaticText\package.manifest" />
+    <Content Include="App_Plugins\U8Collapse\package.manifest" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <None Include="Properties\PublishProfiles\Release.pubxml" />

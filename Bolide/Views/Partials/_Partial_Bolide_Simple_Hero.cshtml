@@ -2,6 +2,7 @@
 @using System
 @using System.Security.Cryptography
 @using Umbraco.Web
+@using Bolide.Helpers
 @using Fynydd.Carbide
 
 @{ 
@@ -28,14 +29,14 @@
                                     @foreach(var frame in Model.SafeNestedValues("frames").Where(f => f.SafeValue<bool>("enabled")))
                                     {
                                     <div class="frame" data-img="@(frame.PickerValue("backgroundImage").Url)?width=1920&quality=75" style="transition-duration: @(Model.SafeValue<float>("frameTransitionTime")/1000)s;">
-                                        <h1>@Html.Raw(frame.SafeValue("title"))</h1>
+                                        <h1>@Html.Raw(frame.SafeValue("title").ProcessShortCodes(Model, frame))</h1>
                                         <div class="excerpt-row">
-                                            @Html.Raw(frame.SafeValue("excerpt"))
+                                            @Html.Raw(frame.SafeValue("excerpt").ProcessShortCodes(Model, frame))
                                         </div>
                                         @if(frame.HasValue("buttonText"))
                                         {
                                         <div class="button-row">
-                                            <a href="@(frame.HasValue("buttonLink") ? frame.PickerValue("buttonLink").Url : frame.SafeValue<string>("buttonUrl"))" role="button">@Html.Raw(frame.SafeValue("buttonText"))</a>
+                                            <a href="@(frame.HasValue("buttonLink") ? frame.PickerValue("buttonLink").Url : frame.SafeValue<string>("buttonUrl"))" role="button">@Html.Raw(frame.SafeValue("buttonText").ProcessShortCodes(Model, frame))</a>
                                         </div>
                                         }
                                     </div>

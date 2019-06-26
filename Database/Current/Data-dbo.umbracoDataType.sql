@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/TABLE;0caaa3
--- Adding 46 rows to dbo.umbracoDataType
+-- Adding 48 rows to dbo.umbracoDataType
 
 BEGIN TRANSACTION
 
@@ -75,7 +75,7 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1065,N'Umbraco.TextBox',N'Nvarchar',N'{}');
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1066,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"bolideSimpleHeroFrame","ncTabAlias":"Frame Content","nameTemplate":"{{title}}"}],"minItems":1,"confirmDeletes":true,"showIcons":true,"hideLabel":true}');
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1066,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"bolideSimpleHeroFrame","ncTabAlias":"Frame Content","nameTemplate":"{{title}}"}],"minItems":1,"confirmDeletes":true,"showIcons":true,"hideLabel":false}');
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1067,N'Umbraco.Integer',N'Integer',N'{"min":1000,"step":250}');
 -- SQRIBE/INSERT;0caaa3
@@ -99,9 +99,13 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1099,N'Umbraco.RadioButtonList',N'Nvarchar',N'{"items":[{"id":1,"value":"Left"},{"id":2,"value":"Center"},{"id":3,"value":"Right"}]}');
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1100,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<p><strong>Optional Button</strong></p>\n<p>Display a button below the rich content.</p>","fullWidth":"1"}');
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1100,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<h4>Optional Button</strong></h4>\n<p>Display a button below the rich content.</p>","fullWidth":"1"}');
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1106,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<p>Below are the <strong>CSS custom properties</strong> with sample data for the rich content component:</p>\n<p>\n--background-color: transparent;<br />\n--content-width: 100%;<br />\n--headline-align: left;<br />\n--content-align: left;\n</p>\n<p>\n--button-align: left;<br />\n--button-width: auto;<br />\n--button-background-color: var(--sf-color-buttons);<br />\n--button-foreground-color: var(--sf-color-buttons-contrast);\n</p>","fullWidth":"1"}');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1108,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<p>\n<strong>Optional Button</strong><br />\nAdd a button to the bottom of your rich content unit.\n</p>","fullWidth":"1"}');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1109,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<h4>Short Codes</h4>\n<p>\n<strong>You can insert field data into your content by using short codes.</strong> These snippets of text use the format <strong>{{fieldName}}</strong> where \"fieldName\" is the name of the field in camel case format. For example, to insert the company street address, type:\n</p>\n<p>\n<code>{{companyStreetAddress}}</code>\n</p>\n<p>\nYou can find field names by simply hovering your mouse over a caption in the left column. A tooltip will appear showing you the field name.\n</p>\n<p>\n<strong>Note:</strong> these short codes work for fields in the home page as well as the current content item being edited (and its parent, if it''s nested content).\n</p>","fullWidth":"1"}');
 
 COMMIT TRANSACTION
 

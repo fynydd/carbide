@@ -644,6 +644,20 @@ CREATE TABLE [dbo].[umbracoAudit]
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;0caaa3
 
+PRINT N'CREATE TABLE [dbo].[umbracoDataType]'
+GO -- SQRIBE/GO;0caaa3
+
+-- SQRIBE/OBJ;0caaa3
+CREATE TABLE [dbo].[umbracoDataType]
+(
+    [nodeId] [int] NOT NULL,
+    [propertyEditorAlias] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+    [dbType] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+    [config] [ntext] COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+
+) ON [PRIMARY]
+GO -- SQRIBE/GO;0caaa3
+
 PRINT N'CREATE TABLE [dbo].[umbracoUserLogin]'
 GO -- SQRIBE/GO;0caaa3
 
@@ -656,20 +670,6 @@ CREATE TABLE [dbo].[umbracoUserLogin]
     [lastValidatedUtc] [datetime] NOT NULL,
     [loggedOutUtc] [datetime] NULL,
     [ipAddress] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
-
-) ON [PRIMARY]
-GO -- SQRIBE/GO;0caaa3
-
-PRINT N'CREATE TABLE [dbo].[umbracoDataType]'
-GO -- SQRIBE/GO;0caaa3
-
--- SQRIBE/OBJ;0caaa3
-CREATE TABLE [dbo].[umbracoDataType]
-(
-    [nodeId] [int] NOT NULL,
-    [propertyEditorAlias] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
-    [dbType] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
-    [config] [ntext] COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;0caaa3

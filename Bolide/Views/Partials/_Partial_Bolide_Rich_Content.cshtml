@@ -3,6 +3,7 @@
 @using System.Security.Cryptography
 @using Umbraco.Web
 @using Fynydd.Carbide
+@using Bolide.Helpers
 
 @{
     var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
@@ -21,16 +22,16 @@
             <div class="unit-content">
             @if (Model.SafeValue("headline").HasValue())
             {
-                @Html.Raw("<" + Model.SafeValue("headlineStyle") + ">" + Model.SafeValue("headline") + "</" + Model.SafeValue("headlineStyle") + ">")
+                @Html.Raw("<" + Model.SafeValue("headlineStyle") + ">" + Model.SafeValue("headline").ProcessShortCodes(Model) + "</" + Model.SafeValue("headlineStyle") + ">")
             }
             @if (Model.SafeValue("richContent").HasValue())
             {
-                @Html.Raw(Model.SafeValue("richContent"))
+                @Html.Raw(Model.SafeValue("richContent").ProcessShortCodes(Model))
             }
             @if (Model.SafeValue("buttonText").HasValue())
             {
                 <div class="button-row">
-                    <a href="@(Model.HasValue("buttonLink") ? Model.PickerValue("buttonLink").Url : Model.SafeValue<string>("buttonUrl"))" role="button">@Html.Raw(Model.SafeValue("buttonText"))</a>
+                    <a href="@(Model.HasValue("buttonLink") ? Model.PickerValue("buttonLink").Url : Model.SafeValue<string>("buttonUrl"))" role="button">@Html.Raw(Model.SafeValue("buttonText").ProcessShortCodes(Model))</a>
                 </div>
             }
             </div>
