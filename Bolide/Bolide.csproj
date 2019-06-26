@@ -531,6 +531,7 @@
     <Content Include="scss\_manifest.scss" />
     <Content Include="Views\Partials\_Partial_CSS_Custom_Properties.cshtml" />
     <Content Include="Views\Partials\_Partial_Bolide_Rich_Content.cshtml" />
+    <Content Include="scss\core\bolide\_core-bolide-rich-content.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

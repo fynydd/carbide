@@ -97,24 +97,11 @@
             h1 {
 
                 margin-bottom: var(--headline-bottom-spacer);
-                line-height: 1.25;
                 text-shadow: 0 0 0.5rem var(--headline-shadow-color);
 
                 &, * {
 
                     color: var(--foreground-color);
-                    font-weight: bold;
-                    font-size: 1.5rem;
-
-                    @include sf-media($from: tablet-portrait) {
-
-                        font-size: 1.7rem;
-                    }
-
-                    @include sf-media($from: elastic) {
-
-                        font-size: 1.7rem;
-                    }
                 }
             }
 
@@ -144,8 +131,6 @@
                     background-color: var(--button-background-color);
                     border-color: var(--button-background-color);
                     color: var(--button-foreground-color);
-                    line-height: 3rem;
-                    padding: 0 2rem;
                 }
             }
         }

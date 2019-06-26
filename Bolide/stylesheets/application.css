@@ -648,13 +648,9 @@ body [sf-elastic-wrapper] { max-width: 1200px; margin-left: auto; margin-right: 
 
 .bolide_simple_hero #hero-content .frame.current { height: auto; opacity: 1.0; }
 
-.bolide_simple_hero #hero-content .frame h1 { margin-bottom: var(--headline-bottom-spacer); line-height: 1.25; text-shadow: 0 0 0.5rem var(--headline-shadow-color); }
+.bolide_simple_hero #hero-content .frame h1 { margin-bottom: var(--headline-bottom-spacer); text-shadow: 0 0 0.5rem var(--headline-shadow-color); }
 
-.bolide_simple_hero #hero-content .frame h1, .bolide_simple_hero #hero-content .frame h1 * { color: var(--foreground-color); font-weight: bold; font-size: 1.5rem; }
-
-@media screen and (min-width: 33.75em) { .bolide_simple_hero #hero-content .frame h1, .bolide_simple_hero #hero-content .frame h1 * { font-size: 1.7rem; } }
-
-@media screen and (min-width: 75em) { .bolide_simple_hero #hero-content .frame h1, .bolide_simple_hero #hero-content .frame h1 * { font-size: 1.7rem; } }
+.bolide_simple_hero #hero-content .frame h1, .bolide_simple_hero #hero-content .frame h1 * { color: var(--foreground-color); }
 
 .bolide_simple_hero #hero-content .frame .excerpt-row { margin-bottom: var(--content-bottom-spacer); }
 
@@ -664,7 +660,7 @@ body [sf-elastic-wrapper] { max-width: 1200px; margin-left: auto; margin-right: 
 
 .bolide_simple_hero #hero-content .frame .button-row { margin-bottom: var(--button-bottom-spacer); }
 
-.bolide_simple_hero #hero-content .frame .button-row a[role="button"] { background-color: var(--button-background-color); border-color: var(--button-background-color); color: var(--button-foreground-color); line-height: 3rem; padding: 0 2rem; }
+.bolide_simple_hero #hero-content .frame .button-row a[role="button"] { background-color: var(--button-background-color); border-color: var(--button-background-color); color: var(--button-foreground-color); }
 
 .bolide_simple_hero #hero-content .nodes { display: var(--nodes-display); font-size: 0; line-height: 1; text-align: var(--nodes-align); vertical-align: middle; margin-top: var(--nodes-top-spacer); }
 
@@ -673,6 +669,16 @@ body [sf-elastic-wrapper] { max-width: 1200px; margin-left: auto; margin-right: 
 .bolide_simple_hero #hero-content .nodes a i { font-size: 0.75rem; }
 
 .bolide_simple_hero #hero-content .nodes span { display: inline-block; font-size: 0.75rem; vertical-align: baseline; color: var(--foreground-color); opacity: 0.5; text-shadow: 0 0 0.75rem var(--nodes-shadow-color); }
+
+.bolide_rich_content { --content-width: 100%; --background-color: transparent; --headline-align: left; --content-align: left; --button-width: auto; --button-align: left; --button-background-color: var(--sf-color-buttons); --button-foreground-color: var(--sf-color-buttons-contrast); background-color: var(--background-color); }
+
+.bolide_rich_content .unit-content { position: relative; width: var(--content-width); margin: 0 auto; text-align: var(--content-align); }
+
+.bolide_rich_content .unit-content h1, .bolide_rich_content .unit-content h2, .bolide_rich_content .unit-content h3, .bolide_rich_content .unit-content h4, .bolide_rich_content .unit-content h5, .bolide_rich_content .unit-content h6 { text-align: var(--headline-align); }
+
+.bolide_rich_content .unit-content .button-row { text-align: var(--button-align); }
+
+.bolide_rich_content .unit-content .button-row a[role="button"] { background-color: var(--button-background-color); border-color: var(--button-background-color); color: var(--button-foreground-color); width: var(--button-width); }
 
 [role="button"].blue { background-color: var(--sf-color-primary); border-color: var(--sf-color-primary); }
 

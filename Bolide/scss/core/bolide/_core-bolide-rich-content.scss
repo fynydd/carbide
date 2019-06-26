@@ -1,0 +1,45 @@
+﻿.bolide_rich_content {
+
+    // SETTINGS
+
+    --content-width: 100%;
+    --background-color: transparent; 
+
+    --headline-align: left;
+    --content-align: left;
+
+    --button-width: auto;
+    --button-align: left;
+    --button-background-color: var(--sf-color-buttons);
+    --button-foreground-color: var(--sf-color-buttons-contrast);
+
+    // ---------------------------
+
+    background-color: var(--background-color);
+
+    .unit-content {
+
+        position: relative;
+        width: var(--content-width);
+        margin: 0 auto;
+        text-align: var(--content-align);
+
+        h1, h2, h3, h4, h5, h6 {
+
+            text-align: var(--headline-align);
+        }
+
+        .button-row {
+
+            text-align: var(--button-align);
+
+            a[role="button"] {
+
+                background-color: var(--button-background-color);
+                border-color: var(--button-background-color);
+                color: var(--button-foreground-color);
+                width: var(--button-width);
+            }
+        }
+    }
+}

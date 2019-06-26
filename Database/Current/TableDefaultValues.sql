@@ -130,10 +130,6 @@ ALTER TABLE [dbo].[umbracoUserGroup] ADD CONSTRAINT [df_umbracoUserGroup_updateD
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/OBJ;0caaa3
-ALTER TABLE [dbo].[cmsPropertyTypeGroup] ADD CONSTRAINT [df_cmsPropertyTypeGroup_uniqueID] DEFAULT (newid()) FOR [uniqueID]
-GO -- SQRIBE/GO;0caaa3
-
--- SQRIBE/OBJ;0caaa3
 ALTER TABLE [dbo].[cmsContentType] ADD CONSTRAINT [df_cmsContentType_thumbnail] DEFAULT ('folder.png') FOR [thumbnail]
 GO -- SQRIBE/GO;0caaa3
 
@@ -151,6 +147,10 @@ GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/OBJ;0caaa3
 ALTER TABLE [dbo].[cmsContentType] ADD CONSTRAINT [df_cmsContentType_variations] DEFAULT ('1') FOR [variations]
+GO -- SQRIBE/GO;0caaa3
+
+-- SQRIBE/OBJ;0caaa3
+ALTER TABLE [dbo].[cmsPropertyTypeGroup] ADD CONSTRAINT [df_cmsPropertyTypeGroup_uniqueID] DEFAULT (newid()) FOR [uniqueID]
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/OBJ;0caaa3
@@ -174,10 +174,6 @@ ALTER TABLE [dbo].[cmsPropertyType] ADD CONSTRAINT [df_cmsPropertyType_UniqueID]
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/OBJ;0caaa3
-ALTER TABLE [dbo].[umbracoContentVersion] ADD CONSTRAINT [df_umbracoContentVersion_versionDate] DEFAULT (getdate()) FOR [versionDate]
-GO -- SQRIBE/GO;0caaa3
-
--- SQRIBE/OBJ;0caaa3
 ALTER TABLE [dbo].[umbracoNode] ADD CONSTRAINT [df_umbracoNode_uniqueId] DEFAULT (newid()) FOR [uniqueId]
 GO -- SQRIBE/GO;0caaa3
 
@@ -187,6 +183,10 @@ GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/OBJ;0caaa3
 ALTER TABLE [dbo].[umbracoNode] ADD CONSTRAINT [df_umbracoNode_createDate] DEFAULT (getdate()) FOR [createDate]
+GO -- SQRIBE/GO;0caaa3
+
+-- SQRIBE/OBJ;0caaa3
+ALTER TABLE [dbo].[umbracoContentVersion] ADD CONSTRAINT [df_umbracoContentVersion_versionDate] DEFAULT (getdate()) FOR [versionDate]
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/OBJ;0caaa3
