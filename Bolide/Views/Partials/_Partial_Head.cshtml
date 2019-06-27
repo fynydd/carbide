@@ -57,15 +57,10 @@
 <meta name="twitter:image" content="@(Html.Raw(Model.HasValue("shareImage") ? "//" + domain + Model.GetCropUrl("shareImage", "SocialSharing") : ""))">
 
 <!-- Icon Support -->
-<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-<link rel="manifest" href="/icons/site.webmanifest">
-<link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#008bff">
-<link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/favicon.ico">
-<meta name="msapplication-TileColor" content="#008bff">
-<meta name="msapplication-config" content="/icons/browserconfig.xml">
-<meta name="theme-color" content="#008bff">
+<link rel="apple-touch-icon" sizes="180x180" href="@(Html.Raw(home.HasValue("websiteAvatarPng") ? "//" + domain + home.GetCropUrl("websiteAvatarPng", "Icon180") : ""))">
+<link rel="icon" type="image/png" sizes="32x32" href="@(Html.Raw(home.HasValue("websiteAvatarPng") ? "//" + domain + home.GetCropUrl("websiteAvatarPng", "Icon32") : ""))">
+<link rel="icon" type="image/png" sizes="16x16" href="@(Html.Raw(home.HasValue("websiteAvatarPng") ? "//" + domain + home.GetCropUrl("websiteAvatarPng", "Icon16") : ""))">
+<link rel="shortcut icon" type="image/png" href="@(Html.Raw(home.HasValue("websiteAvatarPng") ? "//" + domain + home.GetCropUrl("websiteAvatarPng", "Icon48") : ""))">
 
 <!-- FontAwesome -->
 <link href="/stylesheets/all.min.css" rel="stylesheet">
