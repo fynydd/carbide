@@ -1,0 +1,32 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using ContentModels = Umbraco.Web.PublishedModels
+@using System.Xml
+@using System.Xml.Linq
+@using Umbraco.Core
+@using Umbraco.Core.IO
+@using Umbraco.Core.Models.Packaging
+@using Umbraco.Core.Services
+
+@using Bolide.Helpers
+@using Fynydd.Carbide
+@{
+    foreach (var content in Model.Children().OrderBy(o => o.SortOrder))
+    {
+        if (content.HasProperty("enabled") && content.SafeValue<bool>("enabled"))
+        {
+            if (content.ContentType.Alias == "bolideSimpleHeroUnit")
+            {
+                Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", content.Name.AsCssSelector()));
+                Html.RenderPartial("_Partial_Bolide_Simple_Hero", content, Html.ViewData);
+                Html.ViewData.Clear();
+            }
+
+            if (content.ContentType.Alias == "bolideRichContentUnit")
+            {
+                Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", content.Name.AsCssSelector()));
+                Html.RenderPartial("_Partial_Bolide_Rich_Content", content, Html.ViewData);
+                Html.ViewData.Clear();
+            }
+        }
+    }
+}

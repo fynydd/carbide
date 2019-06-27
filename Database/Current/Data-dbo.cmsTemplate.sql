@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/TABLE;0caaa3
--- Adding 2 rows to dbo.cmsTemplate
+-- Adding 3 rows to dbo.cmsTemplate
 
 SET IDENTITY_INSERT [dbo].[cmsTemplate] ON
 
@@ -16,6 +16,8 @@ BEGIN TRANSACTION
 INSERT INTO [dbo].[cmsTemplate] ([pk],[nodeId],[alias]) VALUES (1,1051,N'Home');
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[cmsTemplate] ([pk],[nodeId],[alias]) VALUES (2,1053,N'Master');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[cmsTemplate] ([pk],[nodeId],[alias]) VALUES (3,1120,N'BasicPage');
 
 COMMIT TRANSACTION
 

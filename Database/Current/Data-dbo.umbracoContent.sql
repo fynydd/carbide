@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/TABLE;0caaa3
--- Adding 10 rows to dbo.umbracoContent
+-- Adding 12 rows to dbo.umbracoContent
 
 BEGIN TRANSACTION
 
@@ -30,6 +30,10 @@ INSERT INTO [dbo].[umbracoContent] ([nodeId],[contentTypeId]) VALUES (1085,1052)
 INSERT INTO [dbo].[umbracoContent] ([nodeId],[contentTypeId]) VALUES (1088,1069);
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoContent] ([nodeId],[contentTypeId]) VALUES (1105,1098);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoContent] ([nodeId],[contentTypeId]) VALUES (1121,1119);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoContent] ([nodeId],[contentTypeId]) VALUES (1122,1098);
 
 COMMIT TRANSACTION
 

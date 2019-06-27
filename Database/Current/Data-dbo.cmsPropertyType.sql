@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/TABLE;0caaa3
--- Adding 72 rows to dbo.cmsPropertyType
+-- Adding 77 rows to dbo.cmsPropertyType
 
 SET IDENTITY_INSERT [dbo].[cmsPropertyType] ON
 
@@ -156,6 +156,16 @@ INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[property
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (193,1043,1110,44,N'shareImage',N'Share Image',7,0,NULL,N'Used as a thumbnail when a page is shared on social networks',0,'4A309D3A-9DFF-44B0-B7C1-8CCF921DEC3F');
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (195,1115,1110,44,N'ogPageType',N'Page Type',8,0,NULL,N'The type of content on the current page',0,'22A73329-FA60-455B-93EF-E849284F8908');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (196,1116,1101,27,N'websiteAvatarPng',N'Website Avatar PNG',13,0,NULL,N'Square website image used for the favicon and browser bookmarks; MUST BE A 512x512 pixel SQUARE PNG',0,'22F13C06-2A1E-46D4-B4BF-F0A70498D4EA');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (197,1117,1118,45,N'primaryNavigation',N'Primary Navigation',0,0,NULL,NULL,0,'F526A041-5EFB-4481-AB0D-7ED83CFEC018');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (198,1117,1118,45,N'footerNavigation',N'Footer Navigation',2,0,NULL,NULL,0,'488D1395-350F-44EE-A839-41AB9CC0EDB9');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (199,-49,1118,45,N'primaryIncludeHomePage',N'Include Home Page',1,0,NULL,NULL,0,'E4F8E2D9-8059-4E60-A5BA-B76849B3BE42');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (200,-49,1118,45,N'FooterIncludeHomePage',N'Include Home Page',3,0,NULL,NULL,0,'399C9893-676E-43B8-80D3-B3FDF4263309');
 
 COMMIT TRANSACTION
 

@@ -78,10 +78,6 @@ ALTER TABLE [dbo].[umbracoExternalLogin] ADD CONSTRAINT [df_umbracoExternalLogin
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/OBJ;0caaa3
-ALTER TABLE [dbo].[cmsDocumentType] ADD CONSTRAINT [df_cmsDocumentType_IsDefault] DEFAULT ('0') FOR [IsDefault]
-GO -- SQRIBE/GO;0caaa3
-
--- SQRIBE/OBJ;0caaa3
 ALTER TABLE [dbo].[umbracoKeyValue] ADD CONSTRAINT [df_umbracoKeyValue_updated] DEFAULT (getdate()) FOR [updated]
 GO -- SQRIBE/GO;0caaa3
 
@@ -114,11 +110,11 @@ ALTER TABLE [dbo].[umbracoUser] ADD CONSTRAINT [df_umbracoUser_updateDate] DEFAU
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/OBJ;0caaa3
-ALTER TABLE [dbo].[umbracoServer] ADD CONSTRAINT [df_umbracoServer_registeredDate] DEFAULT (getdate()) FOR [registeredDate]
+ALTER TABLE [dbo].[cmsDocumentType] ADD CONSTRAINT [df_cmsDocumentType_IsDefault] DEFAULT ('0') FOR [IsDefault]
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/OBJ;0caaa3
-ALTER TABLE [dbo].[cmsContentTypeAllowedContentType] ADD CONSTRAINT [df_cmsContentTypeAllowedContentType_SortOrder] DEFAULT ('0') FOR [SortOrder]
+ALTER TABLE [dbo].[umbracoServer] ADD CONSTRAINT [df_umbracoServer_registeredDate] DEFAULT (getdate()) FOR [registeredDate]
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/OBJ;0caaa3
@@ -127,6 +123,10 @@ GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/OBJ;0caaa3
 ALTER TABLE [dbo].[umbracoUserGroup] ADD CONSTRAINT [df_umbracoUserGroup_updateDate] DEFAULT (getdate()) FOR [updateDate]
+GO -- SQRIBE/GO;0caaa3
+
+-- SQRIBE/OBJ;0caaa3
+ALTER TABLE [dbo].[cmsContentTypeAllowedContentType] ADD CONSTRAINT [df_cmsContentTypeAllowedContentType_SortOrder] DEFAULT ('0') FOR [SortOrder]
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/OBJ;0caaa3

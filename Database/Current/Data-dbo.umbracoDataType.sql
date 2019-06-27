@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/TABLE;0caaa3
--- Adding 49 rows to dbo.umbracoDataType
+-- Adding 50 rows to dbo.umbracoDataType
 
 BEGIN TRANSACTION
 
@@ -83,8 +83,6 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1070,N'Umbraco.MediaPicker',N'Ntext',N'{"multiPicker":false,"onlyImages":true,"disableFolderSelect":true,"startNodeId":null}');
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1082,N'Umbraco.MultiNodeTreePicker',N'Ntext',N'{"startNode":{"type":"content","query":"$current/ancestor-or-self::*[self::homepage]/components","id":null},"filter":"bolideSimpleHero","minNumber":0,"maxNumber":0,"showOpenButton":true}');
--- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1084,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"componentPicker","ncTabAlias":"Content","nameTemplate":"{{contentName}}"},{"ncAlias":"bolideRichContent","ncTabAlias":"Content","nameTemplate":"{{contentName}}"}],"confirmDeletes":true,"showIcons":true,"hideLabel":false}');
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1090,N'Bolide.StaticText',N'Nvarchar',N'{}');
@@ -108,6 +106,10 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1114,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<h4>Social Network Info</h4>\n<p>\nThe following items are used for social network sharing and links.\n</p>","fullWidth":"1"}');
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1115,N'Umbraco.DropDown.Flexible',N'Nvarchar',N'{"multiple":false,"items":[{"id":1,"value":"website"},{"id":2,"value":"article"},{"id":3,"value":"book"},{"id":4,"value":"profile"},{"id":5,"value":"music.song"},{"id":6,"value":"music.album"},{"id":7,"value":"music.playlist"},{"id":8,"value":"music.radio_station"},{"id":9,"value":"video.movie"},{"id":10,"value":"video.episode"},{"id":11,"value":"video.tv_show"},{"id":12,"value":"video.other"}]}');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1116,N'Umbraco.ImageCropper',N'Ntext',N'{"crops":[{"alias":"WebsiteAvatar","width":512,"height":512},{"alias":"Icon180","width":180,"height":180},{"alias":"Icon32","width":32,"height":32},{"alias":"Icon16","width":16,"height":16},{"alias":"Icon48","width":48,"height":48},{"alias":"Icon64","width":64,"height":64},{"alias":"Icon192","width":192,"height":192},{"alias":"Icon144","width":144,"height":144},{"alias":"Icon150","width":150,"height":150},{"alias":"Icon70","width":70,"height":70}]}');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1117,N'Umbraco.MultiNodeTreePicker',N'Ntext',N'{"startNode":{"type":"content","query":"$site","id":null},"filter":"basicPage","minNumber":0,"maxNumber":0,"showOpenButton":false}');
 
 COMMIT TRANSACTION
 

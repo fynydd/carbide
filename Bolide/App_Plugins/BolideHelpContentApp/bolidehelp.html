@@ -1,7 +1,7 @@
 ﻿<div ng-controller="Bolide.HelpApp as vm">
     <div class="umb-group-panel ng-scope ng-isolate-scope">
         <umb-box>
-            <umb-box-header title="Short Codes" />
+            <umb-box-header title="Field Data Short Codes" />
             <umb-box-content>
                 <p>
                     <strong>You can insert field data into your content by using short codes.</strong> These snippets of text use the format <strong>{{fieldName}}</strong> where "fieldName" is the name of the field in camel case format. For example, to insert the company street address, type:
@@ -14,6 +14,19 @@
                 </p>
                 <p>
                     <strong>Note:</strong> these short codes work for fields in the home page as well as the current content item being edited (and its parent, if it's nested content).
+                </p>
+            </umb-box-content>
+        </umb-box>
+    </div>
+    <div class="umb-group-panel ng-scope ng-isolate-scope">
+        <umb-box>
+            <umb-box-header title="Utility Short Codes" />
+            <umb-box-content>
+                <p>
+                    Following the format above you can insert utility short codes for things like TBD.
+                </p>
+                <p>
+                    <code ng-non-bindable>{{TBD}}</code> <small>&mdash; TBD</small>
                 </p>
             </umb-box-content>
         </umb-box>

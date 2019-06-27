@@ -6,7 +6,7 @@
 			icon: "icon-help-alt",
 			group: "Common",
 			editor: {
-				view: "~/App_Plugins/StaticText/statictext.html",
+				view: "~/App_Plugins/StaticText/StaticText.html",
 				hideLabel: false,
 				valueType: "TEXT",
 				validation: {},
@@ -31,6 +31,6 @@
 		}
 	],
 	javascript: [
-		'~/App_Plugins/StaticText/statictext.controller.js'
+		'~/App_Plugins/StaticText/StaticText.controller.js'
 	]
 }

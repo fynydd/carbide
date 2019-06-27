@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using ContentModels = Umbraco.Web.PublishedModels
+@using System.Xml
+@using System.Xml.Linq
+@using Umbraco.Core
+@using Umbraco.Core.IO
+@using Umbraco.Core.Models.Packaging
+@using Umbraco.Core.Services
+
+@using Bolide.Helpers
+@using Fynydd.Carbide
+@{
+    Layout = "Master.cshtml";
+
+    Html.RenderPartial("_Partial_Content_Units");
+}

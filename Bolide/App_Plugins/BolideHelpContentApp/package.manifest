@@ -10,7 +10,8 @@
         "-media/*", // hide for all media types
         "+content/bolideSimpleHeroUnit",
         "+content/bolideRichContentUnit",
-        "+content/homepage"
+        "+content/homepage",
+        "+content/basicPage"
       ]
     }
   ],
