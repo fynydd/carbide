@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/TABLE;0caaa3
--- Adding 68 rows to dbo.cmsPropertyType
+-- Adding 72 rows to dbo.cmsPropertyType
 
 SET IDENTITY_INSERT [dbo].[cmsPropertyType] ON
 
@@ -46,14 +46,6 @@ INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[property
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (35,-94,1044,NULL,N'umbracoMemberPasswordRetrievalQuestion',N'Password Question',7,0,NULL,NULL,0,'00000023-0000-0000-0000-000000000000');
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (36,-94,1044,NULL,N'umbracoMemberPasswordRetrievalAnswer',N'Password Answer',8,0,NULL,NULL,0,'00000024-0000-0000-0000-000000000000');
--- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (37,-88,1055,12,N'metaTitle',N'Meta Title',0,0,NULL,NULL,0,'4072EBF0-B42A-42BE-B46D-3D02960CD493');
--- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (38,-88,1055,12,N'metaKeywords',N'Meta Keywords',1,0,NULL,NULL,0,'739B20DA-EAC6-4CB7-AC8A-8192E606BEE5');
--- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (39,-88,1055,12,N'metaDescription',N'Meta Description',2,0,NULL,NULL,0,'332E7216-3C90-45E2-AB9B-B3F7FECFDDE2');
--- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (41,1043,1055,12,N'shareImage',N'Share Image',3,0,NULL,NULL,0,'CA10576E-5D2C-458E-8AF8-00F74D7B9CB8');
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (42,1070,1063,14,N'backgroundImage',N'Background Image',1,0,NULL,NULL,0,'3B60A002-7C63-4EB7-AE88-D895C05B4D55');
 -- SQRIBE/INSERT;0caaa3
@@ -111,7 +103,7 @@ INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[property
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (99,-49,1098,26,N'enabled',N'Enabled',0,0,NULL,NULL,0,'005E5BC3-8DC4-4021-8765-3298F5575FCA');
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (101,-88,1101,27,N'companyName',N'Name',0,0,NULL,N'',0,'0D09D634-566F-4D5E-AFE7-22B93609D990');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (101,-88,1101,27,N'companyName',N'Company Name',0,0,NULL,N'',0,'0D09D634-566F-4D5E-AFE7-22B93609D990');
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (102,-88,1101,27,N'companyStreetAddress',N'Street Address',1,0,NULL,NULL,0,'9FA5EAEB-CBB3-47B8-8DEF-E6F6C11835B2');
 -- SQRIBE/INSERT;0caaa3
@@ -127,16 +119,6 @@ INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[property
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (108,-88,1101,27,N'companyMainTelephone',N'Main Telephone',7,0,NULL,NULL,0,'AA52690A-E310-42E1-8743-AF1AA3D7C851');
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (127,-88,1102,32,N'facebookURL',N'Facebook URL',0,0,NULL,NULL,0,'BF361D6C-7541-48D8-A894-33FC21E4773A');
--- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (128,-88,1102,32,N'twitterURL',N'Twitter URL',3,0,NULL,NULL,0,'85EF0C72-77B9-4DBB-B9F9-A38887237122');
--- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (129,-88,1102,32,N'youTubeURL',N'YouTube URL',4,0,NULL,NULL,0,'8B2BC977-C305-4E69-A25F-F11D38007E8F');
--- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (130,-88,1102,32,N'linkedInURL',N'LinkedIn URL',1,0,NULL,NULL,0,'557AB7F9-1C1B-4E2F-B3B0-C04A89445E46');
--- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (131,-88,1102,32,N'pinterestURL',N'Pinterest URL',2,0,NULL,NULL,0,'997C1A97-921B-44C1-A15A-3A154B6AA41E');
--- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (151,-89,1103,38,N'customFontURLs',N'Custom Font URLs',0,0,NULL,N'Enter CSS @import statements to load remote fonts',0,'2A1BDD8D-1661-4F30-85CF-E11D8BC63090');
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (152,-88,1103,38,N'bodyFontStack',N'Body Font Stack',1,0,NULL,N'Enter the CSS font stack to use for the default font',0,'9534F3DE-CF7E-44D2-8FCC-4FF69359EF7A');
@@ -148,6 +130,32 @@ INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[property
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (173,-49,1069,15,N'enabled',N'Enabled',0,0,NULL,NULL,0,'885E0848-376A-44C8-9613-C45590F1984E');
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (176,-87,1098,26,N'richContentColumn2',N'Optional Column 2',4,0,NULL,N'Use this to add a second column of content to device sizes larger than phablet',0,'B66D5201-A024-4ECE-BA76-59C8EF3FDB04');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (177,-49,1110,44,N'showInNavigation',N'Show in Navigation',0,0,NULL,N'If used in navigation, allow this page to be seen',0,'CDF26030-577E-4EC6-9FF9-C6629A76AF1F');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (178,-49,1110,44,N'showInSiteMap',N'Show in Site Map',1,0,NULL,N'Show this page in site maps',0,'B9AF9D90-A4AF-4DAE-8410-8BAF00B5C42F');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (179,-88,1110,44,N'menuName',N'Menu Name',2,0,NULL,N'When shown in navigation menus, prefer this text for the label',0,'371F1432-2B58-4DD5-A11C-BFF5E33D22BF');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (180,1111,1110,44,N'metadataSeparator',N'Metadata Separator',3,0,NULL,NULL,0,'764EE97C-A64D-4D51-9A05-C5DA53AAD6BF');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (181,-88,1110,44,N'metaTitle',N'Meta Title',4,0,NULL,N'Used for search results page title and social sharing links; keep to fewer than 160 characters',0,'6CC11253-6FDF-415C-A724-6CFE23554A4A');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (182,-88,1110,44,N'metaKeywords',N'Meta Keywords',5,0,NULL,N'Separate keywords with commas',0,'E7D9F4D7-F1A3-4A04-80AD-5613F637CA47');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (183,-88,1110,44,N'metaDescription',N'Meta Description',6,0,NULL,N'Used for search results excerpts and social sharing links',0,'30B64A26-0EF2-44C8-B0CF-9EAF4169E270');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (189,1114,1101,27,N'socialSharingInfo',N'Social Sharing Info',8,0,NULL,NULL,0,'29CFDCA9-3F00-436B-940D-94CDF649FFC5');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (190,-88,1101,27,N'socialCompanyName',N'Company Name',9,0,NULL,N'Name of your company used for social sharing metadata',0,'2003807D-8D20-4BCC-AA13-7E3BF00F813D');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (191,-88,1101,27,N'twitterUserName',N'Twitter User Name',11,0,NULL,N'Twitter user name (used as twitter:creator); omit leading @ character',0,'4EE220BF-BBE1-4E58-B18E-5A1CBB7F4194');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (192,-88,1101,27,N'twitterSiteName',N'Twitter Site Name',12,0,NULL,N'Twitter user name for a website account (used as twitter:site); omit leading @ character',0,'226AE7BB-4C9F-4910-B55C-EB04D9054AE6');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (193,1043,1110,44,N'shareImage',N'Share Image',7,0,NULL,N'Used as a thumbnail when a page is shared on social networks',0,'4A309D3A-9DFF-44B0-B7C1-8CCF921DEC3F');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (195,1115,1110,44,N'ogPageType',N'Page Type',8,0,NULL,N'The type of content on the current page',0,'22A73329-FA60-455B-93EF-E849284F8908');
 
 COMMIT TRANSACTION
 

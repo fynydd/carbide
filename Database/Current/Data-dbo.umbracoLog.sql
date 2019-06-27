@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/TABLE;0caaa3
--- Adding 491 rows to dbo.umbracoLog
+-- Adding 552 rows to dbo.umbracoLog
 
 SET IDENTITY_INSERT [dbo].[umbracoLog] ON
 
@@ -994,6 +994,128 @@ INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],
 INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (490,-1,1098,N'DocumentType',CONVERT(datetime,'2019-06-26 23:03:14.933',121),N'Save',NULL,NULL);
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (491,-1,1105,N'Document',CONVERT(datetime,'2019-06-26 23:03:40.180',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (492,-1,1110,N'DocumentType',CONVERT(datetime,'2019-06-27 13:57:32.177',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (493,-1,1110,N'DocumentType',CONVERT(datetime,'2019-06-27 13:57:56.697',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (494,-1,1111,N'DataType',CONVERT(datetime,'2019-06-27 14:00:43.113',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (495,-1,1110,N'DocumentType',CONVERT(datetime,'2019-06-27 14:00:53.340',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (496,-1,1111,N'DataType',CONVERT(datetime,'2019-06-27 14:01:15.960',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (497,-1,1110,N'DocumentType',CONVERT(datetime,'2019-06-27 14:01:24.137',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (498,-1,1110,N'DocumentType',CONVERT(datetime,'2019-06-27 14:03:06.347',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (499,-1,1052,N'DocumentType',CONVERT(datetime,'2019-06-27 14:03:27.943',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (500,-1,1110,N'DocumentType',CONVERT(datetime,'2019-06-27 14:03:45.407',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (501,-1,1043,N'DataType',CONVERT(datetime,'2019-06-27 14:07:45.237',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (502,-1,1102,N'DocumentType',CONVERT(datetime,'2019-06-27 14:08:00.717',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (503,-1,-1,N'Document',CONVERT(datetime,'2019-06-27 14:08:12.637',121),N'Delete',N'Delete content of type 1055',NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (504,-1,1055,N'DocumentType',CONVERT(datetime,'2019-06-27 14:08:12.717',121),N'Delete',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (505,-1,-1,N'Document',CONVERT(datetime,'2019-06-27 14:09:26.180',121),N'Delete',N'Delete content of type 1104',NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (506,-1,1104,N'DocumentType',CONVERT(datetime,'2019-06-27 14:09:26.210',121),N'Delete',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (507,-1,1102,N'DocumentType',CONVERT(datetime,'2019-06-27 14:10:06.750',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (508,-1,1052,N'DocumentType',CONVERT(datetime,'2019-06-27 14:10:24.017',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (509,-1,1056,N'Document',CONVERT(datetime,'2019-06-27 14:12:25.033',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (510,-1,1056,N'Document',CONVERT(datetime,'2019-06-27 14:12:42.217',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (511,-1,1112,N'DataType',CONVERT(datetime,'2019-06-27 14:30:41.083',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (512,-1,1102,N'DocumentType',CONVERT(datetime,'2019-06-27 14:32:30.573',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (513,-1,1102,N'DocumentType',CONVERT(datetime,'2019-06-27 14:33:39.740',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (514,-1,1102,N'DocumentType',CONVERT(datetime,'2019-06-27 14:37:36.767',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (515,-1,1110,N'DocumentType',CONVERT(datetime,'2019-06-27 14:39:32.497',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (516,-1,1113,N'DataType',CONVERT(datetime,'2019-06-27 14:42:11.820',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (517,-1,1102,N'DocumentType',CONVERT(datetime,'2019-06-27 14:42:33.763',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (518,-1,1102,N'DocumentType',CONVERT(datetime,'2019-06-27 14:43:20.670',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (519,-1,1102,N'DocumentType',CONVERT(datetime,'2019-06-27 14:44:31.350',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (520,-1,1114,N'DataType',CONVERT(datetime,'2019-06-27 14:46:22.120',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (521,-1,1101,N'DocumentType',CONVERT(datetime,'2019-06-27 14:47:17.253',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (522,-1,1101,N'DocumentType',CONVERT(datetime,'2019-06-27 14:48:10.267',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (523,-1,1102,N'DocumentType',CONVERT(datetime,'2019-06-27 14:48:32.397',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (524,-1,1101,N'DocumentType',CONVERT(datetime,'2019-06-27 14:50:00.553',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (525,-1,1102,N'DocumentType',CONVERT(datetime,'2019-06-27 14:50:42.170',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (526,-1,1102,N'DocumentType',CONVERT(datetime,'2019-06-27 14:51:40.603',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (527,-1,1043,N'DataType',CONVERT(datetime,'2019-06-27 14:52:22.973',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (528,-1,1110,N'DocumentType',CONVERT(datetime,'2019-06-27 14:52:37.497',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (529,-1,1110,N'DocumentType',CONVERT(datetime,'2019-06-27 14:52:57.267',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (530,-1,1101,N'DocumentType',CONVERT(datetime,'2019-06-27 14:53:51.120',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (531,-1,1052,N'DocumentType',CONVERT(datetime,'2019-06-27 14:54:11.347',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (532,-1,-1,N'Document',CONVERT(datetime,'2019-06-27 14:54:27.513',121),N'Delete',N'Delete content of type 1102',NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (533,-1,1102,N'DocumentType',CONVERT(datetime,'2019-06-27 14:54:27.527',121),N'Delete',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (534,-1,1101,N'DocumentType',CONVERT(datetime,'2019-06-27 14:57:04.100',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (535,-1,1101,N'DocumentType',CONVERT(datetime,'2019-06-27 14:57:57.863',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (536,-1,1056,N'Document',CONVERT(datetime,'2019-06-27 14:58:40.287',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (537,-1,1056,N'Document',CONVERT(datetime,'2019-06-27 14:59:23.067',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (538,-1,1056,N'Document',CONVERT(datetime,'2019-06-27 14:59:56.937',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (539,-1,1115,N'DataType',CONVERT(datetime,'2019-06-27 15:14:41.170',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (540,-1,1110,N'DocumentType',CONVERT(datetime,'2019-06-27 15:15:18.327',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (541,-1,1056,N'Document',CONVERT(datetime,'2019-06-27 15:18:00.990',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (542,-1,1056,N'Document',CONVERT(datetime,'2019-06-27 15:18:20.680',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (543,-1,1056,N'Document',CONVERT(datetime,'2019-06-27 15:19:02.033',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (544,-1,1056,N'Document',CONVERT(datetime,'2019-06-27 15:19:18.920',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (545,-1,1110,N'DocumentType',CONVERT(datetime,'2019-06-27 15:20:09.037',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (546,-1,1110,N'DocumentType',CONVERT(datetime,'2019-06-27 15:20:56.600',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (547,-1,1056,N'Document',CONVERT(datetime,'2019-06-27 15:28:01.400',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (548,-1,1101,N'DocumentType',CONVERT(datetime,'2019-06-27 15:28:37.960',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (549,-1,1101,N'DocumentType',CONVERT(datetime,'2019-06-27 15:30:13.697',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (550,-1,1101,N'DocumentType',CONVERT(datetime,'2019-06-27 15:30:41.687',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (551,-1,1056,N'Document',CONVERT(datetime,'2019-06-27 15:31:28.077',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (552,-1,1056,N'Document',CONVERT(datetime,'2019-06-27 15:31:41.523',121),N'Publish',NULL,NULL);
 
 COMMIT TRANSACTION
 
