@@ -6,12 +6,10 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/TABLE;0caaa3
--- Adding 8 rows to dbo.cmsContentType2ContentType
+-- Adding 6 rows to dbo.cmsContentType2ContentType
 
 BEGIN TRANSACTION
 
--- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1055,1052);
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1075,1052);
 -- SQRIBE/INSERT;0caaa3
@@ -21,11 +19,9 @@ INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childCont
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1101,1052);
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1102,1052);
--- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1103,1052);
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1104,1052);
+INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1110,1052);
 
 COMMIT TRANSACTION
 

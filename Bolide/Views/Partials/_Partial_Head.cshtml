@@ -5,6 +5,7 @@
 
 @{
     var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
+    var home = Model.AncestorOrSelf("homepage");
 
     // Get current domain to be used in robots.txt, page metadata
     var domain = HttpRequests.GetSeoHost(umbCtx);
@@ -35,21 +36,22 @@
 <title>@Html.Raw(metaTitle)</title>
 <meta name="keywords" content="@Html.Raw(Model.SafeValue<string>("metaKeywords"))">
 <meta name="description" content="@Html.Raw(Model.SafeValue<string>("metaDescription"))">
-@Html.Raw("<link rel=\"canonical\" href=\"https://" + domain + Model.Url + "\">")
+@Html.Raw("<link rel=\"canonical\" href=\"" + Model.Url + "\">")
 
 <!-- Open Graph support for Social Channels -->
+<meta property="og:site_name" content="@(home.SafeValue("socialCompanyName"))">
 <meta property="og:title" content="@(Html.Raw(metaTitle))">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://@(domain + Model.Url)">
-<meta property="og:image" content="@(Html.Raw(Model.HasValue("shareImage") ? "//" + domain + Model.GetCropUrl("shareImage", "SocialSharing") : ""))">
-<meta property="og:site_name" content="@(Config.GetKeyValue("Organization.Name", "Company Name", "Fynydd.Carbide"))">
+<meta property="og:keywords" content="@Html.Raw(Model.SafeValue<string>("metaKeywords"))">
 <meta property="og:description" content="@(Html.Raw(Model.SafeValue<string>("metaDescription")))">
+<meta property="og:type" content="@(Model.SafeValue("ogPageType").HasValue() ? Model.SafeValue("ogPageType") : "website")">
+<meta property="og:url" content="@(Model.Url)">
+<meta property="og:image" content="@(Html.Raw(Model.HasValue("shareImage") ? "//" + domain + Model.GetCropUrl("shareImage", "SocialSharing") : ""))">
 
 <!-- Twitter Card Support -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:url" content="https://@(domain + Model.Url)">
-<meta name="twitter:site" content="@(Config.GetKeyValue("Twitter.User", "", "Fynydd.Carbide"))">
-<meta name="twitter:creator" content="@(Config.GetKeyValue("Twitter.User", "", "Fynydd.Carbide"))">
+<meta name="twitter:url" content="@(Model.Url)">
+<meta name="twitter:site" content="@("@" + home.SafeValue("twitterSiteName").Trim("@"))">
+<meta name="twitter:creator" content="@("@" + home.SafeValue("twitterUserName").Trim("@"))">
 <meta name="twitter:title" content="@(Html.Raw(metaTitle))">
 <meta name="twitter:description" content="@(Html.Raw(Model.SafeValue<string>("metaDescription")))">
 <meta name="twitter:image" content="@(Html.Raw(Model.HasValue("shareImage") ? "//" + domain + Model.GetCropUrl("shareImage", "SocialSharing") : ""))">

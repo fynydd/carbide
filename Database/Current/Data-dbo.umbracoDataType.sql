@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/TABLE;0caaa3
--- Adding 44 rows to dbo.umbracoDataType
+-- Adding 49 rows to dbo.umbracoDataType
 
 BEGIN TRANSACTION
 
@@ -57,7 +57,7 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1041,N'Umbraco.Tags',N'Ntext',N'{"group":"default", "storageType":"Json"}');
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1043,N'Umbraco.ImageCropper',N'Ntext',N'{"crops":[{"alias":"SocialSharing","width":1200,"height":800}]}');
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1043,N'Umbraco.ImageCropper',N'Ntext',N'{"crops":[{"alias":"SocialSharing","width":1200,"height":628}]}');
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1046,N'Umbraco.ContentPicker',N'Nvarchar',NULL);
 -- SQRIBE/INSERT;0caaa3
@@ -98,6 +98,16 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1100,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<h4>Optional Button</strong></h4>\n<p>Display a button below the rich content.</p>","fullWidth":"1"}');
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1108,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<p>\n<strong>Optional Button</strong><br />\nAdd a button to the bottom of your rich content unit.\n</p>","fullWidth":"1"}');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1111,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<h4>Metadata</h4>\n<p>\nThe following is rendered as hidden page metadata, which can help web search findability.\n</p>","fullWidth":"1"}');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1112,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<h4>Twitter</h4>","fullWidth":"1"}');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1113,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<p>\nLinks to this page shared on social media will also use the <strong>meta title</strong> and <strong>meta description</strong> from <em>Page Settings</em>.\n</p>","fullWidth":"0"}');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1114,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<h4>Social Network Info</h4>\n<p>\nThe following items are used for social network sharing and links.\n</p>","fullWidth":"1"}');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1115,N'Umbraco.DropDown.Flexible',N'Nvarchar',N'{"multiple":false,"items":[{"id":1,"value":"website"},{"id":2,"value":"article"},{"id":3,"value":"book"},{"id":4,"value":"profile"},{"id":5,"value":"music.song"},{"id":6,"value":"music.album"},{"id":7,"value":"music.playlist"},{"id":8,"value":"music.radio_station"},{"id":9,"value":"video.movie"},{"id":10,"value":"video.episode"},{"id":11,"value":"video.tv_show"},{"id":12,"value":"video.other"}]}');
 
 COMMIT TRANSACTION
 
