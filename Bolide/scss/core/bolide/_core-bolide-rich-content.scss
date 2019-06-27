@@ -6,7 +6,11 @@
     --background-color: transparent; 
 
     --headline-align: left;
+    --headline-margin: 2rem;
     --content-align: left;
+
+    --column-gutter: 3%;
+    --row-gutter: 2rem;
 
     --button-width: auto;
     --button-align: left;
@@ -27,6 +31,7 @@
         h1, h2, h3, h4, h5, h6 {
 
             text-align: var(--headline-align);
+            margin-bottom: var(--headline-margin);
         }
 
         .button-row {
