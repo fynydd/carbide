@@ -1,52 +1,10 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
-@using ContentModels = Umbraco.Web.PublishedModels
-@using System.Xml
-@using System.Xml.Linq
-@using Umbraco.Core
-@using Umbraco.Core.IO
-@using Umbraco.Core.Models.Packaging
-@using Umbraco.Core.Services
-@using Umbraco.Web.Models
-
-@using Bolide.Helpers
-@using Fynydd.Carbide
 
 @{
     Layout = "Master.cshtml";
-}
-<style type="text/css">
 
-:root {
-
-    /* DEFAULT STYLES */
-    --primary-navigation-background-color: var(--sf-color-primary);
-    --primary-navigation-foreground-color: var(--sf-color-primary-contrast);
-    --primary-navigation-logo-max-width: 10rem;
-    --primary-navigation-logo-max-height: 3rem;
-}
-
-</style>
-
-@{
-    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".bolide_basic_theme"));
+    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".bolide_basic_theme#primary-navigation"));
     Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
-}
-
-<nav role="main" class="bolide_basic_theme">
-    @if (Model.HasValue("companyLogo"))
-    {
-        <a href="/" title="@(Model.SafeValue("companyName")) home page"><img src="@(Model.PickerValue("companyLogo").Url)" /></a>
-    }
-    @if (Model.HasValue("primaryNavigation"))
-    {
-        foreach (var link in Model.Value<IEnumerable<Link>>("primaryNavigation"))
-        {
-            var content = Umbraco.Content(link.Udi);
-
-            <a href="@(link.Url)" target="@(link.Target)">@(content.GetBestMenuName())</a>
-        }
-    }
-</nav>
-@{
+    Html.RenderPartial("_Partial_Basic_Primary_Navigation", Model);
     Html.RenderPartial("_Partial_Content_Units");
 }

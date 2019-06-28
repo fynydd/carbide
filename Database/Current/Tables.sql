@@ -658,22 +658,6 @@ CREATE TABLE [dbo].[umbracoAudit]
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;0caaa3
 
-PRINT N'CREATE TABLE [dbo].[umbracoUserLogin]'
-GO -- SQRIBE/GO;0caaa3
-
--- SQRIBE/OBJ;0caaa3
-CREATE TABLE [dbo].[umbracoUserLogin]
-(
-    [sessionId] [uniqueidentifier] NOT NULL,
-    [userId] [int] NOT NULL,
-    [loggedInUtc] [datetime] NOT NULL,
-    [lastValidatedUtc] [datetime] NOT NULL,
-    [loggedOutUtc] [datetime] NULL,
-    [ipAddress] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
-
-) ON [PRIMARY]
-GO -- SQRIBE/GO;0caaa3
-
 PRINT N'CREATE TABLE [dbo].[cmsPropertyType]'
 GO -- SQRIBE/GO;0caaa3
 
@@ -692,6 +676,22 @@ CREATE TABLE [dbo].[cmsPropertyType]
     [Description] [nvarchar](2000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
     [variations] [int] NOT NULL,
     [UniqueID] [uniqueidentifier] NOT NULL
+
+) ON [PRIMARY]
+GO -- SQRIBE/GO;0caaa3
+
+PRINT N'CREATE TABLE [dbo].[umbracoUserLogin]'
+GO -- SQRIBE/GO;0caaa3
+
+-- SQRIBE/OBJ;0caaa3
+CREATE TABLE [dbo].[umbracoUserLogin]
+(
+    [sessionId] [uniqueidentifier] NOT NULL,
+    [userId] [int] NOT NULL,
+    [loggedInUtc] [datetime] NOT NULL,
+    [lastValidatedUtc] [datetime] NOT NULL,
+    [loggedOutUtc] [datetime] NULL,
+    [ipAddress] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;0caaa3

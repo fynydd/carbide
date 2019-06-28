@@ -1,0 +1,56 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using System
+@using Umbraco.Web
+@using Umbraco.Web.Models
+@using Fynydd.Carbide
+@using Bolide.Helpers
+
+<section id="primary-navigation" class="bolide_basic_theme" sf-unit>
+    <div sf-outer-wrapper>
+        <div sf-inner-wrapper>
+            <nav role="main">
+                <div role="grid" style="--sf-tabp-equal-heights: true; --sf-tabp-centered: true;">
+                @if (Model.HasValue("companyLogo"))
+                {
+                    <div role="gridcell" style="--sf-tabp-frac: 20%;">
+                        <section>
+                            <a href="/" title="@(Model.SafeValue("companyName")) home page"><img src="@(Model.PickerValue("companyLogo").Url)" /></a>
+                        </section>
+                    </div>
+                }
+
+                @if (Model.HasValue("primaryNavigation"))
+                {
+                    <div role="gridcell" sf-tabp-width-auto="true">
+                        <section>
+
+                    @foreach (var link in Model.Value<IEnumerable<Link>>("primaryNavigation"))
+                    {
+                        var content = Umbraco.Content(link.Udi);
+
+                        if (content != null)
+                        {
+                            var current = false;
+
+                            if (HttpContext.Current.Request.Url.AbsoluteUri.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/") == content.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/"))
+                            {
+                                current = true;
+                            }
+
+                            <a href="@(content.GetUrlPath())" target="@(link.Target)" @Html.Raw(current ? " class=\"current\"" : "")>@(content.GetBestMenuName())</a>
+                        }
+
+                        else
+                        {
+                            <a href="@(link.Url)" target="@(link.Target)">@(link.Name)</a>
+                        }
+                    }
+
+                        </section>
+                    </div>
+                }
+                </div>
+            </nav>
+        </div>
+    </div>
+</section>

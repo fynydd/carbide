@@ -527,7 +527,8 @@
     <Content Include="Views\BasicPage.cshtml" />
     <Content Include="Views\Partials\_Partial_Content_Units.cshtml" />
     <Content Include="Views\BasicHomepage.cshtml" />
-    <Content Include="scss\custom\bolide\bolide_homepage.scss" />
+    <Content Include="scss\custom\bolide\bolide_basic_theme.scss" />
+    <Content Include="Views\Partials\_Partial_Basic_Primary_Navigation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

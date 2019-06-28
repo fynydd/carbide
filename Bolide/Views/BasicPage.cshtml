@@ -1,16 +1,12 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
-@using ContentModels = Umbraco.Web.PublishedModels
-@using System.Xml
-@using System.Xml.Linq
-@using Umbraco.Core
-@using Umbraco.Core.IO
-@using Umbraco.Core.Models.Packaging
-@using Umbraco.Core.Services
 
-@using Bolide.Helpers
-@using Fynydd.Carbide
 @{
     Layout = "Master.cshtml";
 
+    var home = Model.AncestorOrSelf(1);
+
+    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".bolide_basic_theme#primary-navigation"));
+    Html.RenderPartial("_Partial_CSS_Custom_Properties", home, Html.ViewData);
+    Html.RenderPartial("_Partial_Basic_Primary_Navigation", home);
     Html.RenderPartial("_Partial_Content_Units");
 }
