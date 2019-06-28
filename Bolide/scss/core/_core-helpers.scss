@@ -273,7 +273,14 @@
 .mobile-only {
 
     @include sf-media($from: tablet-portrait) {
-        display: none;
+        display: none !important;
+    }
+}
+
+.not-mobile {
+
+    @include sf-media($upto: tablet-portrait) {
+        display: none !important;
     }
 }
 

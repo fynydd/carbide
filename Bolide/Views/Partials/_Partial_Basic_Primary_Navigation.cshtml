@@ -8,11 +8,12 @@
 <section id="primary-navigation" class="bolide_basic_theme" sf-unit>
     <div sf-outer-wrapper>
         <div sf-inner-wrapper>
+            <div class="dim-overlay closed" onclick="toggleMenu();"></div>
             <nav role="main">
-                <div role="grid" style="--sf-tabp-equal-heights: true; --sf-tabp-centered: true;">
+                <div role="grid" style="--sf-equal-heights: true; --sf-centered: true;">
                 @if (Model.HasValue("companyLogo"))
                 {
-                    <div role="gridcell" style="--sf-tabp-frac: 20%;">
+                    <div role="gridcell" style="--sf-frac: 3/4; --sf-tabp-frac: 1/5;">
                         <section>
                             <a href="/" title="@(Model.SafeValue("companyName")) home page"><img src="@(Model.PickerValue("companyLogo").Url)" /></a>
                         </section>
@@ -21,8 +22,9 @@
 
                 @if (Model.HasValue("primaryNavigation"))
                 {
-                    <div role="gridcell" sf-tabp-width-auto="true">
+                    <div role="gridcell" sf-width-auto="true">
                         <section>
+                            <a onclick="toggleMenu();" class="mobile-only"><img src="/images/bars.png" /></a>
 
                     @foreach (var link in Model.Value<IEnumerable<Link>>("primaryNavigation"))
                     {
@@ -37,12 +39,12 @@
                                 current = true;
                             }
 
-                            <a href="@(content.GetUrlPath())" target="@(link.Target)" @Html.Raw(current ? " class=\"current\"" : "")>@(content.GetBestMenuName())</a>
+                            <a href="@(content.GetUrlPath())" target="@(link.Target)" class="not-mobile@(Html.Raw(current ? " current" : ""))">@(content.GetBestMenuName())</a>
                         }
 
                         else
                         {
-                            <a href="@(link.Url)" target="@(link.Target)">@(link.Name)</a>
+                            <a href="@(link.Url)" target="@(link.Target)" class="not-mobile">@(link.Name)</a>
                         }
                     }
 
@@ -53,4 +55,76 @@
             </nav>
         </div>
     </div>
+    <div id="primary-navigation-mobile" class="closed mobile-only">
+        <nav>
+            <div role="grid" style="">
+            @if (Model.HasValue("companyLogo"))
+            {
+                <div role="gridcell">
+                    <section>
+                        <a href="/" title="@(Model.SafeValue("companyName")) home page"><img src="@(Model.PickerValue("companyLogo").Url)" /></a>
+                    </section>
+                </div>
+            }
+
+            @if (Model.HasValue("primaryNavigation"))
+            {
+                <div role="gridcell">
+                    <section>
+
+                @foreach (var link in Model.Value<IEnumerable<Link>>("primaryNavigation"))
+                {
+                    var content = Umbraco.Content(link.Udi);
+
+                    if (content != null)
+                    {
+                        var current = false;
+
+                        if (HttpContext.Current.Request.Url.AbsoluteUri.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/") == content.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/"))
+                        {
+                            current = true;
+                        }
+
+                        <a href="@(content.GetUrlPath())" target="@(link.Target)" class="@(Html.Raw(current ? " current" : ""))">@(content.GetBestMenuName())</a>
+                    }
+
+                    else
+                    {
+                        <a href="@(link.Url)" target="@(link.Target)">@(link.Name)</a>
+                    }
+                }
+
+                    </section>
+                </div>
+            }
+            </div>
+        </nav>
+    </div>
 </section>
+
+<script>
+
+    function toggleMenu() {
+
+        $("#primary-navigation-mobile").toggleClass("closed");
+        $(".dim-overlay").toggleClass("closed");
+    }
+
+    function processNavheight() {
+
+        $("main[role='main']").css("padding-top", $("#primary-navigation").outerHeight() + "px");
+
+        console.log($("#primary-navigation").outerHeight());
+    }
+
+    $(window).on("resize", function () {
+
+        processNavheight();
+    });
+
+    $(document).ready(function () {
+
+        processNavheight();
+    });
+
+</script>

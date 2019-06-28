@@ -95,7 +95,9 @@ template { display: none; }
 
 [hidden] { display: none; }
 
-@media screen and (min-width: 33.75em) { .mobile-only { display: none; } }
+@media screen and (min-width: 33.75em) { .mobile-only { display: none !important; } }
+
+@media screen and (max-width: 33.74em) { .not-mobile { display: none !important; } }
 
 * { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none; hyphens: none; word-spacing: initial; letter-spacing: initial; word-break: break-word; }
 
@@ -773,9 +775,11 @@ hr { --vertical-subunit-padding: 0; margin-bottom: var(--vertical-subunit-paddin
 
 hr:last-child { margin-bottom: 0; }
 
-.bolide_basic_theme#primary-navigation { --primary-navigation-background-color: var(--sf-color-primary); --primary-navigation-foreground-color: var(--sf-color-primary-contrast); --primary-navigation-logo-max-width: 10rem; --primary-navigation-logo-max-height: 3rem; --primary-navigation-current-opacity: 0.5; background-color: var(--primary-navigation-background-color); }
+.bolide_basic_theme { --primary-navigation-background-color: var(--sf-color-primary); --primary-navigation-foreground-color: var(--sf-color-primary-contrast); --primary-navigation-logo-max-width: 10rem; --primary-navigation-logo-max-height: 3rem; --primary-navigation-current-opacity: 0.5; --primary-navigation-item-gutter: 3rem; }
 
-.bolide_basic_theme#primary-navigation nav[role="main"] [role="gridcell"] a { display: inline-block; text-decoration: none; }
+.bolide_basic_theme#primary-navigation { position: fixed; top: 0; left: 0; right: 0; z-index: 997; background-color: var(--primary-navigation-background-color); }
+
+.bolide_basic_theme#primary-navigation nav[role="main"] [role="gridcell"] a { display: inline-block; text-decoration: none; cursor: pointer; }
 
 .bolide_basic_theme#primary-navigation nav[role="main"] [role="gridcell"] a, .bolide_basic_theme#primary-navigation nav[role="main"] [role="gridcell"] a:hover, .bolide_basic_theme#primary-navigation nav[role="main"] [role="gridcell"] a:active, .bolide_basic_theme#primary-navigation nav[role="main"] [role="gridcell"] a:visited { color: var(--primary-navigation-foreground-color); }
 
@@ -783,13 +787,35 @@ hr:last-child { margin-bottom: 0; }
 
 .bolide_basic_theme#primary-navigation nav[role="main"] [role="gridcell"] a.current { opacity: var(--primary-navigation-current-opacity); }
 
-.bolide_basic_theme#primary-navigation nav[role="main"] [role="gridcell"]:first-of-type { text-align: left; }
+.bolide_basic_theme#primary-navigation nav[role="main"] [role="gridcell"]:first-of-type section { justify-content: flex-start; }
 
-.bolide_basic_theme#primary-navigation nav[role="main"] [role="gridcell"]:first-of-type a { max-width: var(--primary-navigation-logo-max-width); }
+.bolide_basic_theme#primary-navigation nav[role="main"] [role="gridcell"]:first-of-type section a { max-width: var(--primary-navigation-logo-max-width); }
 
 .bolide_basic_theme#primary-navigation nav[role="main"] [role="gridcell"]:not(:first-of-type) section { justify-content: flex-end; }
 
-.bolide_basic_theme#primary-navigation nav[role="main"] [role="gridcell"]:not(:first-of-type) section a { margin-left: 3rem; }
+.bolide_basic_theme#primary-navigation nav[role="main"] [role="gridcell"]:not(:first-of-type) section a { margin-left: var(--primary-navigation-item-gutter); }
+
+.bolide_basic_theme#primary-navigation nav[role="main"] [role="gridcell"]:not(:first-of-type) section a img { max-width: 2rem; }
+
+.bolide_basic_theme .dim-overlay { -moz-transition-property: opacity; -o-transition-property: opacity; -webkit-transition-property: opacity; transition-property: opacity; -moz-transition-duration: 0.5s; -o-transition-duration: 0.5s; -webkit-transition-duration: 0.5s; transition-duration: 0.5s; -moz-transition-timing-function: ease; -o-transition-timing-function: ease; -webkit-transition-timing-function: ease; transition-timing-function: ease; -moz-animation-delay: 0; -o-animation-delay: 0; -webkit-animation-delay: 0; animation-delay: 0; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9998; cursor: pointer; background-color: rgba(0, 0, 0, 0.65); opacity: 1; }
+
+.bolide_basic_theme .dim-overlay.closed { background-color: transparent; width: 0; height: 0; opacity: 0; }
+
+.bolide_basic_theme #primary-navigation-mobile { -moz-transition-property: right; -o-transition-property: right; -webkit-transition-property: right; transition-property: right; -moz-transition-duration: 0.25s; -o-transition-duration: 0.25s; -webkit-transition-duration: 0.25s; transition-duration: 0.25s; -moz-transition-timing-function: ease; -o-transition-timing-function: ease; -webkit-transition-timing-function: ease; transition-timing-function: ease; -moz-animation-delay: 0; -o-animation-delay: 0; -webkit-animation-delay: 0; animation-delay: 0; position: fixed; top: 0; right: 0; width: 80vw; height: 100vh; z-index: 9999; padding: 2.25rem; overflow-y: scroll; background-color: var(--primary-navigation-background-color); }
+
+.bolide_basic_theme #primary-navigation-mobile.closed { right: -80vw; }
+
+.bolide_basic_theme #primary-navigation-mobile a { display: block; text-decoration: none; cursor: pointer; margin-bottom: 1rem; }
+
+.bolide_basic_theme #primary-navigation-mobile a:last-of-type { margin-bottom: 2rem; }
+
+.bolide_basic_theme #primary-navigation-mobile a, .bolide_basic_theme #primary-navigation-mobile a:hover, .bolide_basic_theme #primary-navigation-mobile a:active, .bolide_basic_theme #primary-navigation-mobile a:visited { color: var(--primary-navigation-foreground-color); }
+
+.bolide_basic_theme #primary-navigation-mobile a:hover { text-decoration: underline; }
+
+.bolide_basic_theme #primary-navigation-mobile a.current { opacity: var(--primary-navigation-current-opacity); }
+
+.bolide_basic_theme #primary-navigation-mobile a img { max-width: 75%; }
 
 .bolide_rich_content { --content-width: 100%; --background-color: transparent; --headline-align: left; --headline-margin: 2rem; --content-align: left; --column-gutter: 3%; --row-gutter: 2rem; --button-width: auto; --button-align: left; --button-background-color: var(--sf-color-buttons); --button-foreground-color: var(--sf-color-buttons-contrast); background-color: var(--background-color); }
 
