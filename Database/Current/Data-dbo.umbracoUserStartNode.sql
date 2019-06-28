@@ -6,16 +6,18 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/TABLE;0caaa3
--- Adding 3 rows to dbo.umbracoUser2UserGroup
+-- Adding 2 rows to dbo.umbracoUserStartNode
+
+SET IDENTITY_INSERT [dbo].[umbracoUserStartNode] ON
 
 BEGIN TRANSACTION
 
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[umbracoUser2UserGroup] ([userId],[userGroupId]) VALUES (-1,1);
+INSERT INTO [dbo].[umbracoUserStartNode] ([id],[userId],[startNode],[startNodeType]) VALUES (1,1,1056,1);
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[umbracoUser2UserGroup] ([userId],[userGroupId]) VALUES (-1,5);
--- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[umbracoUser2UserGroup] ([userId],[userGroupId]) VALUES (1,3);
+INSERT INTO [dbo].[umbracoUserStartNode] ([id],[userId],[startNode],[startNodeType]) VALUES (2,1,1124,2);
 
 COMMIT TRANSACTION
+
+SET IDENTITY_INSERT [dbo].[umbracoUserStartNode] OFF
 

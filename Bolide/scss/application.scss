@@ -16,7 +16,9 @@
 @import "custom/_lists-and-tables.scss";
 @import "custom/_media.scss";
 @import "custom/_typography.scss";
-@import "custom/bolide/_bolide-simple-hero.scss";
+@import "custom/bolide/bolide_basic_theme.scss";
+@import "custom/bolide/bolide-rich-content.scss";
+@import "custom/bolide/bolide-simple-hero.scss";
 // $CARBIDE_PARTIALS:END
 
 html, body {

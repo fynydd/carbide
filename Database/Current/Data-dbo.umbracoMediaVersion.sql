@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/TABLE;0caaa3
--- Adding 5 rows to dbo.umbracoMediaVersion
+-- Adding 8 rows to dbo.umbracoMediaVersion
 
 BEGIN TRANSACTION
 
@@ -20,6 +20,12 @@ INSERT INTO [dbo].[umbracoMediaVersion] ([id],[path]) VALUES (7,N'/media/s3mlewi
 INSERT INTO [dbo].[umbracoMediaVersion] ([id],[path]) VALUES (9,N'/media/1eycjz0v/03560_thetopangagradient_5120x2880.jpg');
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoMediaVersion] ([id],[path]) VALUES (11,N'/media/qwqf44ny/03588_morrainelake_5120x2880.jpg');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoMediaVersion] ([id],[path]) VALUES (180,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoMediaVersion] ([id],[path]) VALUES (181,NULL);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoMediaVersion] ([id],[path]) VALUES (184,N'/media/hn5dgxp3/fynydd-logo-white-wide.png');
 
 COMMIT TRANSACTION
 

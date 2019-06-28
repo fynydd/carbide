@@ -33,9 +33,9 @@ namespace Bolide.Helpers
         {
             var result = value;
 
-            if (result.Contains("{{"))
+            if (result.Contains("{{") && model != null)
             {
-                var home = model.AncestorOrSelf("homepage");
+                var home = model.AncestorOrSelf(1);
                 
                 Regex expression = new Regex(@"{{\w*}}");
 
@@ -61,6 +61,23 @@ namespace Bolide.Helpers
                         }
                     }
                 }
+            }
+
+            return result;
+        }
+
+        public static string GetBestMenuName(this IPublishedContent content)
+        {
+            var result = content.Name;
+
+            if (content.HasProperty("menuName") && content.HasValue("menuName"))
+            {
+                result = content.SafeValue("menuName");
+            }
+
+            else if (content.HasProperty("metaTitle") && content.HasValue("metaTitle"))
+            {
+                result = content.SafeValue("metaTitle");
             }
 
             return result;

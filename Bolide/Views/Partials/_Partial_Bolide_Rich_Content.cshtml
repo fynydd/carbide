@@ -14,7 +14,6 @@
 
     Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".bolide_rich_content#" + instanceId));
     Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
-    Html.ViewData.Clear();
 }
 <section id="@(instanceId)" class="bolide_rich_content" sf-unit>
     <div sf-outer-wrapper>

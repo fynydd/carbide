@@ -6,7 +6,7 @@
     Layout = null;
 
     var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
-    var home = Model.AncestorOrSelf("homepage");
+    var home = Model.AncestorOrSelf(1);
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -40,25 +40,6 @@
         }
     }
 
-        @foreach (var breakpoint in breakpoints)
-        {
-            var width = Settings.GetCssBreakpoint(breakpoint);
-
-            if (width != "false")
-            {
-                if (home.SafeValue(breakpoint + "CssProperties").HasValue())
-                {
-<text>    @@media (min-width: @(width)) {
-
-        :root {
-
-            @(home.SafeValue(breakpoint + "CssProperties").Replace("\n", " "))
-        }
-    }
-</text>
-                }
-            }
-        }
     html, body {
 
         background-color: var(--background-color);

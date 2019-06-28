@@ -14,19 +14,24 @@
     {
         if (content.HasProperty("enabled") && content.SafeValue<bool>("enabled"))
         {
+            Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", content.Name.AsCssSelector()));
+
             if (content.ContentType.Alias == "bolideSimpleHeroUnit")
             {
-                Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", content.Name.AsCssSelector()));
                 Html.RenderPartial("_Partial_Bolide_Simple_Hero", content, Html.ViewData);
-                Html.ViewData.Clear();
             }
 
             if (content.ContentType.Alias == "bolideRichContentUnit")
             {
-                Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", content.Name.AsCssSelector()));
                 Html.RenderPartial("_Partial_Bolide_Rich_Content", content, Html.ViewData);
-                Html.ViewData.Clear();
             }
+
+            if (content.ContentType.Alias == "bolideNavigationUnit")
+            {
+                Html.RenderPartial("_Partial_Bolide_Navigation", content, Html.ViewData);
+            }
+
+            Html.ViewData.Clear();
         }
     }
 }

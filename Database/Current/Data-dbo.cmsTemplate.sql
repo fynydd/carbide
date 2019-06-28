@@ -13,11 +13,11 @@ SET IDENTITY_INSERT [dbo].[cmsTemplate] ON
 BEGIN TRANSACTION
 
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsTemplate] ([pk],[nodeId],[alias]) VALUES (1,1051,N'Home');
+INSERT INTO [dbo].[cmsTemplate] ([pk],[nodeId],[alias]) VALUES (1,1051,N'basicHomepage');
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[cmsTemplate] ([pk],[nodeId],[alias]) VALUES (2,1053,N'Master');
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[cmsTemplate] ([pk],[nodeId],[alias]) VALUES (3,1120,N'BasicPage');
+INSERT INTO [dbo].[cmsTemplate] ([pk],[nodeId],[alias]) VALUES (3,1120,N'basicPage');
 
 COMMIT TRANSACTION
 

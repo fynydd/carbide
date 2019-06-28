@@ -1,0 +1,23 @@
+﻿nav[role="main"] {
+
+    &.bolide_basic_theme {
+
+        background-color: var(--primary-navigation-background-color);
+
+        a {
+
+            display: inline-block;
+
+            &:hover, &:active, &:visited {
+
+                color: var(--primary-navigation-foreground-color);
+            }
+
+            &:first-of-type {
+
+                max-width: var(--primary-navigation-logo-max-width);
+                max-height: var(--primary-navigation-logo-max-height);
+            }
+        }
+    }
+}
