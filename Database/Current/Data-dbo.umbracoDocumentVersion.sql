@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/TABLE;0caaa3
--- Adding 162 rows to dbo.umbracoDocumentVersion
+-- Adding 220 rows to dbo.umbracoDocumentVersion
 
 BEGIN TRANSACTION
 
@@ -209,7 +209,7 @@ INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUE
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (140,1051,0);
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (141,NULL,1);
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (141,NULL,0);
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (142,NULL,0);
 -- SQRIBE/INSERT;0caaa3
@@ -331,9 +331,125 @@ INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUE
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (204,1051,0);
 -- SQRIBE/INSERT;0caaa3
-INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (205,1051,1);
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (205,1051,0);
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (206,1051,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (207,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (208,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (209,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (210,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (211,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (212,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (213,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (214,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (215,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (216,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (217,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (218,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (219,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (220,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (221,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (222,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (223,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (224,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (225,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (226,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (227,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (228,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (229,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (230,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (231,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (232,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (233,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (234,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (235,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (236,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (237,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (238,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (239,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (240,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (241,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (242,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (243,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (244,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (245,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (246,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (247,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (248,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (249,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (250,1051,1);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (251,1051,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (252,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (253,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (254,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (255,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (256,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (257,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (258,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (259,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (260,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (261,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (262,NULL,0);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (263,NULL,1);
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (264,NULL,0);
 
 COMMIT TRANSACTION
 

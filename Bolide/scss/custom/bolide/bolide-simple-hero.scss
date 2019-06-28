@@ -17,15 +17,10 @@
     --nodes-align: center;
     --nodes-top-spacer: 1rem;
     --nodes-shadow-color: rgba(0, 0, 0, 0.25);
-    --dimmer-width: 100%;
-    --dimmer-height: 100%;
-    --dimmer-angle: 90deg;
-    --dimmer-fade-color-start: rgba(0,0,0,0);
-    --dimmer-fade-position-start: 35%;
-    --dimmer-fade-color-middle: rgba(0,0,0,0);
-    --dimmer-fade-position-middle: 50%;
-    --dimmer-fade-color-end: rgba(0,0,0,0);
-    --dimmer-fade-position-end: 65%;
+
+    --background-brightness: 100%;
+    --background-saturation: 100%;
+
     --button-background-color: var(--sf-color-buttons);
     --button-foreground-color: var(--sf-color-buttons-contrast);
 
@@ -40,15 +35,10 @@
     max-height: var(--max-height);
     padding-bottom: 0;
 
-    #dimmer {
+    .backstretch-item {
 
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: var(--dimmer-width);
-        height: var(--dimmer-height);
-        background-color: transparent;
-        background: linear-gradient(var(--dimmer-angle), rgba(0, 0, 0, 0) 0%, var(--dimmer-fade-color-start) var(--dimmer-fade-position-start), var(--dimmer-fade-color-middle) var(--dimmer-fade-position-middle), var(--dimmer-fade-color-end) var(--dimmer-fade-position-end), rgba(0, 0, 0, 0) 100%);
+        filter: brightness(var(--background-brightness)) saturate(var(--background-saturation));
+        -webkit-filter: brightness(var(--background-brightness)) saturate(var(--background-saturation));
     }
 
     .inner-gridcell {
