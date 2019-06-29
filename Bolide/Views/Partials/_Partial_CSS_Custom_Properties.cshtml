@@ -34,7 +34,7 @@
             @(Model.SafeValue(breakpoint + "CssProperties"))
         }
 
-        @if (Model.SafeValue(breakpoint + "CssProperties").Replace(" ", "").Contains("--content-align:center;"))
+        @if (Model.SafeValue(breakpoint + "CssProperties").Replace(" ", "").Contains("--content-align:center"))
         {
             // EXCEPTION FOR MS EDGE
             <text>
@@ -45,7 +45,7 @@
             </text>
         }
 
-        @if (Model.SafeValue(breakpoint + "CssProperties").Replace(" ", "").Contains("--content-align:right;"))
+        @if (Model.SafeValue(breakpoint + "CssProperties").Replace(" ", "").Contains("--content-align:right"))
         {
             // EXCEPTION FOR MS EDGE
             <text>
@@ -56,7 +56,29 @@
             </text>
         }
 
-        @if (Model.SafeValue(breakpoint + "CssProperties").Replace(" ", "").Contains("--headline-align:center;"))
+        @if (Model.SafeValue(breakpoint + "CssProperties").Replace(" ", "").Contains("--nodes-align:center"))
+        {
+            // EXCEPTION FOR MS EDGE
+            <text>
+            @Html.Raw(selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] .nodes") {
+
+                text-align: center;
+            }
+            </text>
+        }
+
+        @if (Model.SafeValue(breakpoint + "CssProperties").Replace(" ", "").Contains("--nodes-align:right"))
+        {
+            // EXCEPTION FOR MS EDGE
+            <text>
+            @Html.Raw(selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] .nodes") {
+
+                text-align: right;
+            }
+            </text>
+        }
+
+        @if (Model.SafeValue(breakpoint + "CssProperties").Replace(" ", "").Contains("--headline-align:center"))
         {
             // EXCEPTION FOR MS EDGE
             <text>
@@ -67,7 +89,7 @@
             </text>
         }
 
-        @if (Model.SafeValue(breakpoint + "CssProperties").Replace(" ", "").Contains("--headline-align:right;"))
+        @if (Model.SafeValue(breakpoint + "CssProperties").Replace(" ", "").Contains("--headline-align:right"))
         {
             // EXCEPTION FOR MS EDGE
             <text>
@@ -78,7 +100,7 @@
             </text>
         }
 
-        @if (Model.SafeValue(breakpoint + "CssProperties").Replace(" ", "").Contains("--button-align:center;"))
+        @if (Model.SafeValue(breakpoint + "CssProperties").Replace(" ", "").Contains("--button-align:center"))
         {
             // EXCEPTION FOR MS EDGE
             <text>
@@ -89,7 +111,7 @@
             </text>
         }
 
-        @if (Model.SafeValue(breakpoint + "CssProperties").Replace(" ", "").Contains("--button-align:right;"))
+        @if (Model.SafeValue(breakpoint + "CssProperties").Replace(" ", "").Contains("--button-align:right"))
         {
             // EXCEPTION FOR MS EDGE
             <text>
