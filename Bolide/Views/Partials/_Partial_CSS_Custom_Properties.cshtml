@@ -34,22 +34,66 @@
             @(Model.SafeValue(breakpoint + "CssProperties"))
         }
 
-        @if (selector.Contains(".bolide_simple_hero") && Model.SafeValue(breakpoint + "CssProperties").Replace(" ", "").Contains("--content-align:center;"))
+        @if (Model.SafeValue(breakpoint + "CssProperties").Replace(" ", "").Contains("--content-align:center;"))
         {
             // EXCEPTION FOR MS EDGE
             <text>
-            @Html.Raw(selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] #hero-content" ) {
+            @Html.Raw(selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] #hero-content, " + selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] .unit-content") {
 
                 text-align: center;
             }
             </text>
         }
 
-        @if (selector.Contains(".bolide_simple_hero") && Model.SafeValue(breakpoint + "CssProperties").Replace(" ", "").Contains("--content-align:right;"))
+        @if (Model.SafeValue(breakpoint + "CssProperties").Replace(" ", "").Contains("--content-align:right;"))
         {
             // EXCEPTION FOR MS EDGE
             <text>
-            @Html.Raw(selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] #hero-content" ) {
+            @Html.Raw(selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] #hero-content, " + selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] .unit-content") {
+
+                text-align: right;
+            }
+            </text>
+        }
+
+        @if (Model.SafeValue(breakpoint + "CssProperties").Replace(" ", "").Contains("--headline-align:center;"))
+        {
+            // EXCEPTION FOR MS EDGE
+            <text>
+            @Html.Raw(selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] h1, " + selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] h2, " + selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] h3, " + selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] h4, " + selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] h5, " + selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] h6") {
+
+                text-align: center;
+            }
+            </text>
+        }
+
+        @if (Model.SafeValue(breakpoint + "CssProperties").Replace(" ", "").Contains("--headline-align:right;"))
+        {
+            // EXCEPTION FOR MS EDGE
+            <text>
+            @Html.Raw(selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] h1, " + selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] h2, " + selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] h3, " + selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] h4, " + selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] h5, " + selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] h6") {
+
+                text-align: right;
+            }
+            </text>
+        }
+
+        @if (Model.SafeValue(breakpoint + "CssProperties").Replace(" ", "").Contains("--button-align:center;"))
+        {
+            // EXCEPTION FOR MS EDGE
+            <text>
+            @Html.Raw(selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] .button-row") {
+
+                text-align: center;
+            }
+            </text>
+        }
+
+        @if (Model.SafeValue(breakpoint + "CssProperties").Replace(" ", "").Contains("--button-align:right;"))
+        {
+            // EXCEPTION FOR MS EDGE
+            <text>
+            @Html.Raw(selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] .button-row") {
 
                 text-align: right;
             }
