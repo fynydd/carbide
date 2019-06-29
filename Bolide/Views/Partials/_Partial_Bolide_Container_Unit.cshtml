@@ -9,22 +9,27 @@
 
 @using Bolide.Helpers
 @using Fynydd.Carbide
+
+@{
+    var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
+
+    object bolideInstanceId;
+    Html.ViewData.TryGetValue("instanceId", out bolideInstanceId);
+    var instanceId = bolideInstanceId == null ? "container-unit" : bolideInstanceId.ToString();
+
+    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".bolide_container_unit#" + instanceId));
+    Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
+    Html.ViewData.Clear();
+}
+<section id="@(instanceId)" class="bolide_container_unit" sf-unit>
+    <div sf-outer-wrapper>
+        <div sf-inner-wrapper>
 @{
     foreach (var content in Model.Children().OrderBy(o => o.SortOrder))
     {
         if (content.HasProperty("enabled") && content.SafeValue<bool>("enabled"))
         {
             Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", content.Name.AsCssSelector()));
-
-            if (content.ContentType.Alias == "bolideSimpleHeroUnit")
-            {
-                Html.RenderPartial("_Partial_Bolide_Simple_Hero", content, Html.ViewData);
-            }
-
-            if (content.ContentType.Alias == "bolideContainerUnit")
-            {
-                Html.RenderPartial("_Partial_Bolide_Container_Unit", content, Html.ViewData);
-            }
 
             if (content.ContentType.Alias == "bolideRichContentSubunit")
             {
@@ -35,3 +40,6 @@
         }
     }
 }
+        </div>
+    </div>
+</section>

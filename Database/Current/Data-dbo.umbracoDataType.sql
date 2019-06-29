@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;0caaa3
 
 -- SQRIBE/TABLE;0caaa3
--- Adding 50 rows to dbo.umbracoDataType
+-- Adding 51 rows to dbo.umbracoDataType
 
 BEGIN TRANSACTION
 
@@ -110,6 +110,8 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1116,N'Umbraco.ImageCropper',N'Ntext',N'{"crops":[{"alias":"WebsiteAvatar","width":512,"height":512},{"alias":"Icon180","width":180,"height":180},{"alias":"Icon32","width":32,"height":32},{"alias":"Icon16","width":16,"height":16},{"alias":"Icon48","width":48,"height":48},{"alias":"Icon64","width":64,"height":64},{"alias":"Icon192","width":192,"height":192},{"alias":"Icon144","width":144,"height":144},{"alias":"Icon150","width":150,"height":150},{"alias":"Icon70","width":70,"height":70}]}');
 -- SQRIBE/INSERT;0caaa3
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1126,N'Umbraco.MediaPicker',N'Ntext',N'{"multiPicker":false,"onlyImages":true,"disableFolderSelect":true,"startNodeId":null}');
+-- SQRIBE/INSERT;0caaa3
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1128,N'Bolide.StaticText',N'Ntext',N'{"defaultValue":"<h4>Unit Container</h4>\n<p>\nThis component renders a container on the page with plenty of space around its child subunit content.\n</p>","fullWidth":"1"}');
 
 COMMIT TRANSACTION
 

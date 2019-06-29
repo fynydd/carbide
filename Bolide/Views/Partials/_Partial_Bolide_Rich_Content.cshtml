@@ -12,41 +12,35 @@
     Html.ViewData.TryGetValue("instanceId", out bolideInstanceId);
     var instanceId = bolideInstanceId == null ? "rich-content" : bolideInstanceId.ToString();
 
-    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".bolide_rich_content#" + instanceId));
+    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", "[sf-subunit].bolide_rich_content#" + instanceId));
     Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
 }
-<section id="@(instanceId)" class="bolide_rich_content" sf-unit>
-    <div sf-outer-wrapper>
-        <div sf-inner-wrapper>
-            <div class="unit-content" sf-subunit>
-                @if (Model.SafeValue("headline").HasValue())
-                {
-                    @Html.Raw("<" + Model.SafeValue("headlineStyle") + ">" + Model.SafeValue("headline").ProcessShortCodes(Model) + "</" + Model.SafeValue("headlineStyle") + ">")
-                }
-                <div role="grid" style="--sf-tabp-gutters: var(--column-gutter); --sf-row-gutters: var(--row-gutter);">
-                    @if (Model.SafeValue("richContent").HasValue() && Model.SafeValue("richContentColumn2").HasValue())
-                    {
-                        <div role="gridcell" style="--sf-tabp-frac: 1/2;">
-                            @Html.Raw(Model.SafeValue("richContent").ProcessShortCodes(Model))
-                        </div>
-                        <div role="gridcell" style="--sf-tabp-frac: 1/2;">
-                            @Html.Raw(Model.SafeValue("richContentColumn2").ProcessShortCodes(Model))
-                        </div>
-                    }
-                    else
-                    {
-                        <div role="gridcell">
-                            @Html.Raw(Model.SafeValue("richContent").ProcessShortCodes(Model))
-                        </div>
-                    }
-                    @if (Model.SafeValue("buttonText").HasValue())
-                    {
-                        <div role="gridcell" class="button-row">
-                            <a href="@(Model.HasValue("buttonLink") ? Model.PickerValue("buttonLink").Url : Model.SafeValue<string>("buttonUrl"))" role="button">@Html.Raw(Model.SafeValue("buttonText").ProcessShortCodes(Model))</a>
-                        </div>
-                    }
-                </div>
+<div id="@(instanceId)" class="bolide_rich_content" sf-subunit>
+    @if (Model.SafeValue("headline").HasValue())
+    {
+        @Html.Raw("<" + Model.SafeValue("headlineStyle") + ">" + Model.SafeValue("headline").ProcessShortCodes(Model) + "</" + Model.SafeValue("headlineStyle") + ">")
+    }
+    <div role="grid" style="--sf-tabp-gutters: var(--column-gutter); --sf-row-gutters: var(--row-gutter);">
+        @if (Model.SafeValue("richContent").HasValue() && Model.SafeValue("richContentColumn2").HasValue())
+        {
+            <div role="gridcell" style="--sf-tabp-frac: 1/2;">
+                @Html.Raw(Model.SafeValue("richContent").ProcessShortCodes(Model))
             </div>
-        </div>
+            <div role="gridcell" style="--sf-tabp-frac: 1/2;">
+                @Html.Raw(Model.SafeValue("richContentColumn2").ProcessShortCodes(Model))
+            </div>
+        }
+        else
+        {
+            <div role="gridcell">
+                @Html.Raw(Model.SafeValue("richContent").ProcessShortCodes(Model))
+            </div>
+        }
+        @if (Model.SafeValue("buttonText").HasValue())
+        {
+            <div role="gridcell" class="button-row">
+                <a href="@(Model.HasValue("buttonLink") ? Model.PickerValue("buttonLink").Url : Model.SafeValue<string>("buttonUrl"))" role="button">@Html.Raw(Model.SafeValue("buttonText").ProcessShortCodes(Model))</a>
+            </div>
+        }
     </div>
-</section>
+</div>

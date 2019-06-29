@@ -9,7 +9,8 @@
       "show": [
         "-media/*", // hide for all media types
         "+content/bolideSimpleHeroUnit",
-        "+content/bolideRichContentUnit",
+        "+content/bolideRichContentSubunit",
+        "+content/bolideContainerUnit",
         "+content/BasicHomepage",
         "+content/BasicPage"
       ]

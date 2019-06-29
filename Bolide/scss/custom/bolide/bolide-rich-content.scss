@@ -19,32 +19,27 @@
 
     // ---------------------------
 
-    background-color: var(--background-color);
+    position: relative;
+    width: var(--content-width);
+    margin: 0 auto;
+    text-align: var(--content-align);
 
-    .unit-content {
+    h1, h2, h3, h4, h5, h6 {
 
-        position: relative;
-        width: var(--content-width);
-        margin: 0 auto;
-        text-align: var(--content-align);
+        text-align: var(--headline-align);
+        margin-bottom: var(--headline-margin);
+    }
 
-        h1, h2, h3, h4, h5, h6 {
+    .button-row {
 
-            text-align: var(--headline-align);
-            margin-bottom: var(--headline-margin);
-        }
+        text-align: var(--button-align);
 
-        .button-row {
+        a[role="button"] {
 
-            text-align: var(--button-align);
-
-            a[role="button"] {
-
-                background-color: var(--button-background-color);
-                border-color: var(--button-background-color);
-                color: var(--button-foreground-color);
-                width: var(--button-width);
-            }
+            background-color: var(--button-background-color);
+            border-color: var(--button-background-color);
+            color: var(--button-foreground-color);
+            width: var(--button-width);
         }
     }
 }

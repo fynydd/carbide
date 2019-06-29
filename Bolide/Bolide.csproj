@@ -446,7 +446,9 @@
     <Content Include="scripts\jquery-3.3.1.min.js" />
     <Content Include="scripts\jquery.ba-throttle-debounce.min.js" />
     <Content Include="scripts\jquery.backstretch.min.js" />
+    <Content Include="scss\custom\bolide\bolide-rich-content.scss" />
     <Content Include="stylesheets\all.min.css" />
+    <Content Include="Views\Partials\_Partial_Content_Units.cshtml" />
     <Content Include="Web.config" />
     <Content Include="webfonts\fa-brands-400.svg" />
     <Content Include="webfonts\fa-regular-400.svg" />
@@ -523,12 +525,12 @@
     <Content Include="scss\_manifest.scss" />
     <Content Include="Views\Partials\_Partial_CSS_Custom_Properties.cshtml" />
     <Content Include="Views\Partials\_Partial_Bolide_Rich_Content.cshtml" />
-    <Content Include="scss\custom\bolide\bolide-rich-content.scss" />
     <Content Include="Views\BasicPage.cshtml" />
-    <Content Include="Views\Partials\_Partial_Content_Units.cshtml" />
     <Content Include="Views\BasicHomepage.cshtml" />
     <Content Include="scss\custom\bolide\bolide_basic_theme.scss" />
     <Content Include="Views\Partials\_Partial_Basic_Primary_Navigation.cshtml" />
+    <Content Include="Views\Partials\_Partial_Bolide_Container_Unit.cshtml" />
+    <Content Include="scss\custom\bolide\bolide-container-unit.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

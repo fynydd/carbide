@@ -41,7 +41,8 @@
                     --foreground-color: var(--sf-color-white-contrast);
                 </p>
                 <p>
-                    --vertical-unit-padding: 1.25rem;
+                    --horizontal-unit-padding: 1.25rem;
+                    --vertical-unit-padding: 3rem;
                 </p>
                 <p>
                     --primary-navigation-background-color: #1b264f;<br />
@@ -53,9 +54,24 @@
             </umb-box-content>
         </umb-box>
     </div>
-    <div ng-show="vm.CurrentNodeAlias == 'bolideRichContentUnit'" class="umb-group-panel ng-scope ng-isolate-scope">
+    <div ng-show="vm.CurrentNodeAlias == 'bolideContainerUnit'" class="umb-group-panel ng-scope ng-isolate-scope">
         <umb-box class="umb-group-panel ng-scope ng-isolate-scope">
-            <umb-box-header title="CSS Custom Properties" />
+            <umb-box-header title="Container CSS Custom Properties" />
+            <umb-box-content>
+                <p>Below are the <strong>CSS custom properties</strong> with sample data for styling the overall site:</p>
+                <p>
+                    --background-color: var(--sf-color-white);<br />
+                </p>
+                <p>
+                    --horizontal-unit-padding: 1.25rem;<br />
+                    --vertical-unit-padding: 3rem;
+                </p>
+            </umb-box-content>
+        </umb-box>
+    </div>
+    <div ng-show="vm.CurrentNodeAlias == 'bolideRichContentSubunit'" class="umb-group-panel ng-scope ng-isolate-scope">
+        <umb-box class="umb-group-panel ng-scope ng-isolate-scope">
+            <umb-box-header title="Rich Content CSS Custom Properties" />
             <umb-box-content>
                 <p>Below are the <strong>CSS custom properties</strong> with sample data for the rich content component:</p>
                 <p>
@@ -63,7 +79,6 @@
                     --row-gutter: 2rem;
                 </p>
                 <p>
-                    --background-color: transparent;<br />
                     --content-width: 100%;<br />
                     --headline-margin: 2rem;<br />
                     --headline-align: left;<br />
@@ -80,7 +95,7 @@
     </div>
     <div ng-show="vm.CurrentNodeAlias == 'bolideSimpleHeroUnit'" class="umb-group-panel ng-scope ng-isolate-scope">
         <umb-box class="umb-group-panel ng-scope ng-isolate-scope">
-            <umb-box-header title="CSS Custom Properties" />
+            <umb-box-header title="Simple Hero CSS Custom Properties" />
             <umb-box-content>
                 <p>Below are the <strong>CSS custom properties</strong> with sample data for the simple hero component:</p>
                 <p>
