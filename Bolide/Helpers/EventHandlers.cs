@@ -12,7 +12,7 @@ using Umbraco.Web;
 using Fynydd.Carbide;
 using Fynydd.Carbide.Constants;
 
-using Bolide.Helpers;
+using Carbide.Web.Helpers;
 
 namespace MyProject.Components
 {

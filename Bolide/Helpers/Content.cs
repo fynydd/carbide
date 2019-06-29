@@ -11,9 +11,7 @@ using Umbraco.Web;
 using Fynydd.Carbide;
 using Fynydd.Carbide.Constants;
 
-using Bolide.Helpers;
-
-namespace Bolide.Helpers
+namespace Carbide.Web.Helpers
 {
     public static class Content
     {

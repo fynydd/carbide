@@ -7,21 +7,21 @@
 @using Umbraco.Core.Models.Packaging
 @using Umbraco.Core.Services
 
-@using Bolide.Helpers
+@using Carbide.Web.Helpers
 @using Fynydd.Carbide
 
 @{
     var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
 
-    object bolideInstanceId;
-    Html.ViewData.TryGetValue("instanceId", out bolideInstanceId);
-    var instanceId = bolideInstanceId == null ? "container-unit" : bolideInstanceId.ToString();
+    object _instanceId;
+    Html.ViewData.TryGetValue("instanceId", out _instanceId);
+    var instanceId = _instanceId == null ? "container-unit" : _instanceId.ToString();
 
-    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".bolide_container_unit#" + instanceId));
+    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".carbide_container_unit#" + instanceId));
     Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
     Html.ViewData.Clear();
 }
-<section id="@(instanceId)" class="bolide_container_unit" sf-unit>
+<section id="@(instanceId)" class="carbide_container_unit" sf-unit>
     <div sf-outer-wrapper>
         <div sf-inner-wrapper>
 @{
@@ -31,9 +31,9 @@
         {
             Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", content.Name.AsCssSelector()));
 
-            if (content.ContentType.Alias == "bolideRichContentSubunit")
+            if (content.ContentType.Alias == "carbideRichContentSubunit")
             {
-                Html.RenderPartial("_Partial_Bolide_Rich_Content", content, Html.ViewData);
+                Html.RenderPartial("_Partial_Carbide_Rich_Content_Subunit", content, Html.ViewData);
             }
 
             Html.ViewData.Clear();

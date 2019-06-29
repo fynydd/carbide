@@ -3,8 +3,8 @@
 @{
     Layout = "Master.cshtml";
 
-    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".bolide_basic_theme#primary-navigation"));
+    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".carbide_basic_theme#primary-navigation"));
     Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
     Html.RenderPartial("_Partial_Basic_Primary_Navigation", Model);
-    Html.RenderPartial("_Partial_Content_Units");
+    Html.RenderPartial("_Partial_Render_Content_Units");
 }

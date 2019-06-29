@@ -16,10 +16,10 @@
 @import "custom/_lists-and-tables.scss";
 @import "custom/_media.scss";
 @import "custom/_typography.scss";
-@import "custom/bolide/bolide_basic_theme.scss";
-@import "custom/bolide/bolide-container-unit.scss";
-@import "custom/bolide/bolide-rich-content.scss";
-@import "custom/bolide/bolide-simple-hero.scss";
+@import "custom/carbide/basic_theme.scss";
+@import "custom/carbide/container-unit.scss";
+@import "custom/carbide/rich-content-subunit.scss";
+@import "custom/carbide/simple-hero-unit.scss";
 // $CARBIDE_PARTIALS:END
 
 html, body {

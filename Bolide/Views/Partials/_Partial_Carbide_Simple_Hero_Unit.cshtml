@@ -2,20 +2,20 @@
 @using System
 @using System.Security.Cryptography
 @using Umbraco.Web
-@using Bolide.Helpers
+@using Carbide.Web.Helpers
 @using Fynydd.Carbide
 
 @{ 
     var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
 
-    object bolideInstanceId;
-    Html.ViewData.TryGetValue("instanceId", out bolideInstanceId);
-    var instanceId = bolideInstanceId == null ? "hero-unit" : bolideInstanceId.ToString();
+    object _instanceId;
+    Html.ViewData.TryGetValue("instanceId", out _instanceId);
+    var instanceId = _instanceId == null ? "hero-unit" : _instanceId.ToString();
 
-    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".bolide_simple_hero#" + instanceId));
+    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".carbide_simple_hero_unit#" + instanceId));
     Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
 }
-<section id="@(instanceId)" class="bolide_simple_hero" sf-unit>
+<section id="@(instanceId)" class="carbide_simple_hero_unit" sf-unit>
     <div sf-outer-wrapper>
         <div sf-inner-wrapper>
             <div role="grid" style="--sf-centered: true;">
@@ -53,7 +53,7 @@
 
                             $(document).ready(function () {
 
-                                $("#@(instanceId)").bolideSimpleHero({
+                                $("#@(instanceId)").carbideSimpleHero({
 
                                     slideDuration: @(Model.SafeValue<int>("frameDuration")),
                                     transitionTime: @(Model.SafeValue<int>("bgTransitionTime")),

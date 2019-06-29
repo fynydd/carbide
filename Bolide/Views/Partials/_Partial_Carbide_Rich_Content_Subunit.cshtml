@@ -3,19 +3,19 @@
 @using System.Security.Cryptography
 @using Umbraco.Web
 @using Fynydd.Carbide
-@using Bolide.Helpers
+@using Carbide.Web.Helpers
 
 @{
     var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
 
-    object bolideInstanceId;
-    Html.ViewData.TryGetValue("instanceId", out bolideInstanceId);
-    var instanceId = bolideInstanceId == null ? "rich-content" : bolideInstanceId.ToString();
+    object _instanceId;
+    Html.ViewData.TryGetValue("instanceId", out _instanceId);
+    var instanceId = _instanceId == null ? "rich-content-subunit" : _instanceId.ToString();
 
-    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", "[sf-subunit].bolide_rich_content#" + instanceId));
+    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", "[sf-subunit].carbide_rich_content_subunit#" + instanceId));
     Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
 }
-<div id="@(instanceId)" class="bolide_rich_content" sf-subunit>
+<div id="@(instanceId)" class="carbide_rich_content_subunit" sf-subunit>
     @if (Model.SafeValue("headline").HasValue())
     {
         @Html.Raw("<" + Model.SafeValue("headlineStyle") + ">" + Model.SafeValue("headline").ProcessShortCodes(Model) + "</" + Model.SafeValue("headlineStyle") + ">")

@@ -1,5 +1,5 @@
 ﻿angular.module("umbraco")
-    .controller("Bolide.HelpApp", function ($scope, editorState, userService, contentResource) {
+    .controller("Carbide.HelpApp", function ($scope, editorState, userService, contentResource) {
 
         var vm = this;
 

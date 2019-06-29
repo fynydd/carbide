@@ -7,7 +7,7 @@
 @using Umbraco.Core.Models.Packaging
 @using Umbraco.Core.Services
 
-@using Bolide.Helpers
+@using Carbide.Web.Helpers
 @using Fynydd.Carbide
 @{
     foreach (var content in Model.Children().OrderBy(o => o.SortOrder))
@@ -16,19 +16,14 @@
         {
             Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", content.Name.AsCssSelector()));
 
-            if (content.ContentType.Alias == "bolideSimpleHeroUnit")
+            if (content.ContentType.Alias == "carbideSimpleHeroUnit")
             {
-                Html.RenderPartial("_Partial_Bolide_Simple_Hero", content, Html.ViewData);
+                Html.RenderPartial("_Partial_Carbide_Simple_Hero_Unit", content, Html.ViewData);
             }
 
-            if (content.ContentType.Alias == "bolideContainerUnit")
+            if (content.ContentType.Alias == "carbideContainerUnit")
             {
-                Html.RenderPartial("_Partial_Bolide_Container_Unit", content, Html.ViewData);
-            }
-
-            if (content.ContentType.Alias == "bolideRichContentSubunit")
-            {
-                Html.RenderPartial("_Partial_Bolide_Rich_Content", content, Html.ViewData);
+                Html.RenderPartial("_Partial_Carbide_Container_Unit", content, Html.ViewData);
             }
 
             Html.ViewData.Clear();

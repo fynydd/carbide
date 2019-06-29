@@ -3,17 +3,19 @@ SET ANSI_PADDING, ANSI_WARNINGS, CONCAT_NULL_YIELDS_NULL, ARITHABORT, QUOTED_IDE
 SET DATEFORMAT YMD
 SET XACT_ABORT ON
 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
-GO -- SQRIBE/GO;0caaa3
+GO -- SQRIBE/GO;03d113
 
--- SQRIBE/TABLE;0caaa3
--- Adding 1 row to dbo.umbracoRelation
+-- SQRIBE/TABLE;03d113
+-- Adding 2 rows to dbo.umbracoRelation
 
 SET IDENTITY_INSERT [dbo].[umbracoRelation] ON
 
 BEGIN TRANSACTION
 
--- SQRIBE/INSERT;0caaa3
+-- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoRelation] ([id],[parentId],[childId],[relType],[datetime],[comment]) VALUES (1,1057,1058,3,CONVERT(datetime,'2019-06-04 16:18:20.697',121),N'');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoRelation] ([id],[parentId],[childId],[relType],[datetime],[comment]) VALUES (10,1085,1088,2,CONVERT(datetime,'2019-06-29 19:39:28.773',121),N'');
 
 COMMIT TRANSACTION
 

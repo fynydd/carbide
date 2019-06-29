@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bolide", "Bolide\Bolide.csproj", "{2B9AF8D7-8845-46DD-964E-79D8B5F59FC7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carbide.Web", "Bolide\Carbide.Web.csproj", "{2B9AF8D7-8845-46DD-964E-79D8B5F59FC7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carbide", "Carbide\Carbide.csproj", "{1D183973-141F-481B-A681-1D53FD0B65EE}"
 EndProject

@@ -1,6 +1,6 @@
 ﻿(function ($) {
 
-    $.fn.bolideSimpleHero = function(options) {
+    $.fn.carbideSimpleHero = function(options) {
 
         var settings = $.extend({
 

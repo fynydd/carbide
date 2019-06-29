@@ -9,16 +9,20 @@
                         if (response.status === 200) {
                             window.setTimeout(function () {
                                 var tabs = document.getElementsByClassName("umb-group-panel__header");
-                                for (var i = 0; i < tabs.length; i++) {
-                                    if (tabs[i].onclick == null) {
-                                        tabs[i].onclick = function () {
-                                            this.classList.toggle("open");
-                                            this.nextElementSibling.classList.toggle("open");
+                                if (tabs) {
+                                    for (var i = 0; i < tabs.length; i++) {
+                                        if (tabs[i].onclick == null) {
+                                            tabs[i].onclick = function () {
+                                                this.classList.toggle("open");
+                                                this.nextElementSibling.classList.toggle("open");
+                                            }
                                         }
                                     }
+                                    if (tabs[0]) {
+                                        tabs[0].classList.add("open");
+                                        tabs[0].nextElementSibling.classList.add("open");
+                                    }
                                 }
-                                tabs[0].classList.add("open");
-                                tabs[0].nextElementSibling.classList.add("open");
                             }, 500)
                         }
                     }
