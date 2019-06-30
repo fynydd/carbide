@@ -471,21 +471,25 @@ namespace Fynydd.Carbide
         /// <returns>URL to page as string</returns>
         public static string GetUrlPath(this IPublishedContent content)
         {
-            Uri pageUri = new Uri(content.Url());
+            if (content != null)
+            {
+                try
+                {
+                    Uri pageUri = new Uri(content.UrlAbsolute());
 
-            return pageUri.AbsolutePath;
-        }
+                    return pageUri.AbsolutePath;
+                }
 
-        /// <summary>
-        /// Get the absolute path for a page URL (omits the transport and domain)
-        /// </summary>
-        /// <param name="url">URL to process</param>
-        /// <returns>URL to page as string</returns>
-        public static string GetUrlPath(this string url)
-        {
-            Uri pageUri = new Uri(url);
+                catch
+                {
+                    return "/";
+                }
+            }
 
-            return pageUri.AbsolutePath;
+            else
+            {
+                return "/";
+            }
         }
 
         #endregion

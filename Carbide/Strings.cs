@@ -21,6 +21,26 @@ namespace Fynydd.Carbide
     public static class Strings
     {
         /// <summary>
+        /// Get the absolute path for a page URL (omits the transport and domain)
+        /// </summary>
+        /// <param name="url">URL to process</param>
+        /// <returns>URL to page as string</returns>
+        public static string GetUrlPath(this string url)
+        {
+            try
+            {
+                Uri pageUri = new Uri(url);
+
+                return pageUri.AbsolutePath;
+            }
+
+            catch
+            {
+                return url;
+            }
+        }
+
+        /// <summary>
         /// Determines if a string has a value (is not null or empty).
         /// Inverse of string.IsNullorEmpty().
         /// </summary>
