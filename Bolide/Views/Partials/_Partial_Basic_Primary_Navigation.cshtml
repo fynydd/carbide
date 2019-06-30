@@ -33,8 +33,10 @@
                         if (content != null)
                         {
                             var current = false;
+                            var currentUrl = HttpContext.Current.Request.Url.AbsoluteUri.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/");
+                            var newUrl = content.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/");
 
-                            if (HttpContext.Current.Request.Url.AbsoluteUri.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/") == content.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/"))
+                            if (currentUrl == newUrl)
                             {
                                 current = true;
                             }
