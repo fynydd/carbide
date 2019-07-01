@@ -446,8 +446,11 @@
     <Content Include="scripts\jquery-3.3.1.min.js" />
     <Content Include="scripts\jquery.ba-throttle-debounce.min.js" />
     <Content Include="scripts\jquery.backstretch.min.js" />
+    <Content Include="scss\custom\carbide\basic_navigation_unit.scss" />
+    <Content Include="scss\custom\carbide\basic_theme.scss" />
     <Content Include="scss\custom\carbide\rich-content-subunit.scss" />
     <Content Include="stylesheets\all.min.css" />
+    <Content Include="Views\Partials\_Partial_Carbide_Basic_Navigation_Unit.cshtml" />
     <Content Include="Views\Partials\_Partial_Render_Content_Units.cshtml" />
     <Content Include="Web.config" />
     <Content Include="webfonts\fa-brands-400.svg" />
@@ -527,8 +530,6 @@
     <Content Include="Views\Partials\_Partial_Carbide_Rich_Content_Subunit.cshtml" />
     <Content Include="Views\BasicPage.cshtml" />
     <Content Include="Views\BasicHomepage.cshtml" />
-    <Content Include="scss\custom\carbide\basic_theme.scss" />
-    <Content Include="Views\Partials\_Partial_Basic_Primary_Navigation.cshtml" />
     <Content Include="Views\Partials\_Partial_Carbide_Container_Unit.cshtml" />
     <Content Include="scss\custom\carbide\container-unit.scss" />
     <None Include="Web.Debug.config">
