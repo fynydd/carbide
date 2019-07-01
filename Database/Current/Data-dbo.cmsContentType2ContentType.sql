@@ -21,6 +21,8 @@ INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childCont
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1075,1129);
 -- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1075,1135);
+-- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1101,1052);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1103,1052);
@@ -28,8 +30,6 @@ INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childCont
 INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1110,1052);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1110,1119);
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1118,1052);
 
 COMMIT TRANSACTION
 

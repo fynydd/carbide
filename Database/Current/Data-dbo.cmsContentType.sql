@@ -37,11 +37,11 @@ INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[de
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (549,1110,N'pageProperties',N'icon-settings color-black',N'folder.png',NULL,0,1,0,0);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (550,1118,N'navigation',N'icon-link color-black',N'folder.png',NULL,0,1,0,0);
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (551,1119,N'basicPage',N'icon-umb-content color-black',N'folder.png',N'Uses eyebrow, primary, footer, and ground navigations (if present)',0,0,1,0);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (553,1129,N'carbideContainerUnit',N'icon-checkbox-dotted color-black',N'folder.png',N'Creates a spaced container for subunit content',0,0,0,0);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (554,1135,N'carbideBasicNavigationUnit',N'icon-link color-black',N'folder.png',N'Add primary and footer navigation bars to the home page for site-wide navigation',0,0,0,0);
 
 COMMIT TRANSACTION
 

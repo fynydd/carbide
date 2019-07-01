@@ -40,16 +40,31 @@
                     --background-color: var(--sf-color-white);<br />
                     --foreground-color: var(--sf-color-white-contrast);
                 </p>
+            </umb-box-content>
+        </umb-box>
+    </div>
+    <div ng-show="vm.CurrentNodeAlias == 'carbideBasicNavigationUnit'" class="umb-group-panel ng-scope ng-isolate-scope">
+        <umb-box class="umb-group-panel ng-scope ng-isolate-scope">
+            <umb-box-header title="Basic Navigation CSS Custom Properties" />
+            <umb-box-content>
+                <p>Below are the <strong>CSS custom properties</strong> with sample data for styling the basic navigation units:</p>
+                <p>
+                    --background-color: var(--sf-color-white);<br />
+                    --foreground-color: var(--sf-color-white-contrast);
+                </p>
                 <p>
                     --horizontal-unit-padding: 1.25rem;
                     --vertical-unit-padding: 3rem;
                 </p>
                 <p>
-                    --primary-navigation-background-color: #1b264f;<br />
-                    --primary-navigation-foreground-color: #ffffff;<br />
-                    --primary-navigation-logo-max-width: 50%;<br />
-                    --primary-navigation-current-opacity: 0.5;<br />
-                    --primary-navigation-item-gutter: 3rem;
+                    --background-color: #1b264f;<br />
+                    --foreground-color: #ffffff;<br />
+                    --first-max-width: 50%;<br />
+                    --sidebar-first-max-width: 75%;<br />
+                    --current-opacity: 0.5;<br />
+                    --item-gutter: 3rem;<br />
+                    --justify-content: flex-end;<br />
+                    --first-justify-content: flex-start;
                 </p>
             </umb-box-content>
         </umb-box>

@@ -1,10 +1,29 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
-
+@using Fynydd.Carbide
+@using Carbide.Web.Helpers
 @{
     Layout = "Master.cshtml";
 
-    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".carbide_basic_theme#primary-navigation"));
+    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".carbide_basic_theme"));
     Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
-    Html.RenderPartial("_Partial_Basic_Primary_Navigation", Model);
+    Html.ViewData.Clear();
+
+    var primaryNavigation = Model.Children().Where(c => c.ContentType.Alias == "carbideBasicNavigationUnit" && c.SafeValue("position") == "Primary");
+    var footerNavigation = Model.Children().Where(c => c.ContentType.Alias == "carbideBasicNavigationUnit" && c.SafeValue("position") == "Footer");
+
+    if (primaryNavigation != null)
+    {
+        Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", "primary-navigation"));
+        Html.RenderPartial("_Partial_Carbide_Basic_Navigation_Unit", primaryNavigation.First(), Html.ViewData);
+        Html.ViewData.Clear();
+    }
+
     Html.RenderPartial("_Partial_Render_Content_Units");
+
+    if (footerNavigation != null)
+    {
+        Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", "footer-navigation"));
+        Html.RenderPartial("_Partial_Carbide_Basic_Navigation_Unit", footerNavigation.First(), Html.ViewData);
+        Html.ViewData.Clear();
+    }
 }

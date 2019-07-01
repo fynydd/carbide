@@ -1,0 +1,204 @@
+﻿.carbide_basic_navigation_unit {
+
+    // SETTINGS
+
+    --background-color: var(--sf-color-primary);
+    --foreground-color: var(--sf-color-primary-contrast);
+    --first-max-width: 50%;
+    --sidebar-first-max-width: 75%;
+    --current-opacity: 0.5;
+    --item-gutter: 3rem;
+    --justify-content: flex-end;
+    --first-justify-content: flex-start;
+    --row-gutter: 1rem;
+
+    // ---------------------------
+
+    background-color: var(--background-color);
+
+    nav {
+
+        [role="gridcell"] {
+
+            color: var(--foreground-color);
+
+            a {
+
+                display: inline-block;
+                text-decoration: none;
+                cursor: pointer;
+
+                &, &:hover, &:active, &:visited {
+
+                    color: var(--foreground-color);
+                }
+
+                &:hover {
+
+                    text-decoration: underline;
+                }
+
+                &.current {
+
+                    opacity: var(--current-opacity);
+                }
+            }
+
+            &:first-of-type {
+
+                width: var(--first-max-width);
+
+                section {
+
+                    justify-content: var(--first-justify-content);
+                }
+            }
+
+            &:not(:first-of-type) {
+
+                section {
+
+                    justify-content: var(--justify-content);
+
+                    a {
+
+                        margin-left: calc(var(--item-gutter)/2);
+                        margin-right: calc(var(--item-gutter)/2);
+
+                        img {
+
+                            max-width: 2rem;
+                        }
+
+                        &:first-of-type {
+
+                            margin-left: 0;
+                        }
+
+                        &:last-of-type {
+
+                            margin-right: 0;
+                        }
+
+                        &.hamburger {
+
+                            margin-left: 0;
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &#primary-navigation {
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 997;
+    }
+
+    .dim-overlay {
+
+        @include sf-animate (
+
+            $property: opacity,
+            $delay: 0,
+            $duration: 0.5s,
+            $kind: ease
+        );
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 9998;
+        cursor: pointer;
+
+        background-color: rgba(0, 0, 0, 0.65);
+        opacity: 1;
+
+        &.closed {
+
+            background-color: rgba(0, 0, 0, 0);
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+    }
+
+    #primary-navigation-mobile {
+
+        @include sf-animate (
+
+            $property: right,
+            $delay: 0,
+            $duration: 0.25s,
+            $kind: ease
+        );
+
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80vw;
+        height: 100vh;
+        z-index: 9999;
+        padding: 2.25rem;
+        overflow-y: scroll;
+
+        background-color: var(--background-color);
+        
+        &.closed {
+
+            right: -80vw;
+        }
+
+        nav {
+
+            & > [role="grid"] {
+
+                & > [role="gridcell"] {
+
+                    &:first-of-type {
+
+                        width: var(--sidebar-first-max-width);
+                    }
+
+                    a {
+
+                        display: block;
+                        text-decoration: none;
+                        cursor: pointer;
+                        margin-bottom: 1rem;
+
+                        &:last-of-type {
+
+                            margin-bottom: 2rem;
+                        }
+
+                        &, &:hover, &:active, &:visited {
+
+                            color: var(--foreground-color);
+                        }
+
+                        &:hover {
+
+                            text-decoration: underline;
+                        }
+
+                        &.current {
+
+                            opacity: var(--current-opacity);
+                        }
+
+                        margin-left: 0;
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}

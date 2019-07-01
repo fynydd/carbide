@@ -11,6 +11,7 @@
         "+content/carbideSimpleHeroUnit",
         "+content/carbideRichContentSubunit",
         "+content/carbideContainerUnit",
+        "+content/carbideBasicNavigationUnit",
         "+content/BasicHomepage",
         "+content/BasicPage"
       ]

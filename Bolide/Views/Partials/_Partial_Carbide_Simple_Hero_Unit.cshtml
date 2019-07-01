@@ -6,8 +6,6 @@
 @using Fynydd.Carbide
 
 @{ 
-    var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
-
     object _instanceId;
     Html.ViewData.TryGetValue("instanceId", out _instanceId);
     var instanceId = _instanceId == null ? "hero-unit" : _instanceId.ToString();
