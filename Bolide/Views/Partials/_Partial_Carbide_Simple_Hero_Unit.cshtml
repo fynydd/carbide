@@ -9,9 +9,81 @@
     object _instanceId;
     Html.ViewData.TryGetValue("instanceId", out _instanceId);
     var instanceId = _instanceId == null ? "hero-unit" : _instanceId.ToString();
+    var selector = ".carbide_simple_hero_unit#" + instanceId;
 
-    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".carbide_simple_hero_unit#" + instanceId));
+    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", selector));
     Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
+
+
+
+    // BEGIN: MICROSOFT EDGE OVERRIDES
+
+    var breakpoints = new string[] { "zero", "phab", "tabp", "tabl", "note", "desk", "elas" };
+    var processMicrosoftEdgeOverrides = false;
+
+    foreach (var breakpoint in breakpoints)
+    {
+        var width = Settings.GetCssBreakpoint(breakpoint);
+
+        if (width != "false")
+        {
+            if (Model.SafeValue(breakpoint + "CssProperties").HasValue())
+            {
+                var props = Model.SafeValue(breakpoint + "CssProperties").ToLower().Replace(" ", "");
+
+                if (props.Contains("--content-align:") || props.Contains("--nodes-align:"))
+                {
+                    processMicrosoftEdgeOverrides = true;
+                    break;
+                }
+            }
+        }
+    }
+
+    if (processMicrosoftEdgeOverrides)
+    {
+    <style type="text/css">
+        @foreach (var breakpoint in breakpoints)
+        {
+            var width = Settings.GetCssBreakpoint(breakpoint);
+
+            if (width != "false")
+            {
+                if (Model.SafeValue(breakpoint + "CssProperties").HasValue())
+                {
+                    var props = Model.SafeValue(breakpoint + "CssProperties").ToLower().Replace(" ", "");
+
+    <text>
+    @@media (min-width: @(width)) {
+
+        @if (props.Contains("--content-align:"))
+        {
+            <text>
+            @Html.Raw(selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] #hero-content") {
+
+                text-align: @(props.Contains("--content-align:center") ? "center" : (props.Contains("--content-align:right") ? "right" : "left"));
+            }
+            </text>
+        }
+
+        @if (props.Contains("--nodes-align:"))
+        {
+            <text>
+            @Html.Raw(selector + " > [sf-outer-wrapper] > [sf-inner-wrapper] .nodes") {
+
+                text-align: @(props.Contains("--content-align:center") ? "center" : (props.Contains("--content-align:right") ? "right" : "left"));
+            }
+            </text>
+        }
+    }
+    </text>
+                }
+            }
+        }
+    </style>
+    }
+
+    // END: MICROSOFT EDGE OVERRIDES
 }
 <section id="@(instanceId)" class="carbide_simple_hero_unit" sf-unit>
     <div sf-outer-wrapper>

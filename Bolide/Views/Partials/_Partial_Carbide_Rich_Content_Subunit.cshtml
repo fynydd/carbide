@@ -9,9 +9,91 @@
     object _instanceId;
     Html.ViewData.TryGetValue("instanceId", out _instanceId);
     var instanceId = _instanceId == null ? "rich-content-subunit" : _instanceId.ToString();
+    var selector = "[sf-subunit].carbide_rich_content_subunit#" + instanceId;
 
-    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", "[sf-subunit].carbide_rich_content_subunit#" + instanceId));
+    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", selector));
     Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
+
+
+
+    // BEGIN: MICROSOFT EDGE OVERRIDES
+
+    var breakpoints = new string[] { "zero", "phab", "tabp", "tabl", "note", "desk", "elas" };
+    var processMicrosoftEdgeOverrides = false;
+
+    foreach (var breakpoint in breakpoints)
+    {
+        var width = Settings.GetCssBreakpoint(breakpoint);
+
+        if (width != "false")
+        {
+            if (Model.SafeValue(breakpoint + "CssProperties").HasValue())
+            {
+                var props = Model.SafeValue(breakpoint + "CssProperties").ToLower().Replace(" ", "");
+
+                if (props.Contains("--content-align:") || props.Contains("--nodes-align:"))
+                {
+                    processMicrosoftEdgeOverrides = true;
+                    break;
+                }
+            }
+        }
+    }
+
+    if (processMicrosoftEdgeOverrides)
+    {
+    <style type="text/css">
+        @foreach (var breakpoint in breakpoints)
+        {
+            var width = Settings.GetCssBreakpoint(breakpoint);
+
+            if (width != "false")
+            {
+                if (Model.SafeValue(breakpoint + "CssProperties").HasValue())
+                {
+                    var props = Model.SafeValue(breakpoint + "CssProperties").ToLower().Replace(" ", "");
+
+    <text>
+    @@media (min-width: @(width)) {
+
+        @if (props.Contains("--content-align:"))
+        {
+            <text>
+            @Html.Raw(selector) {
+
+                text-align: @(props.Contains("--content-align:center") ? "center" : (props.Contains("--content-align:right") ? "right" : "left"));
+            }
+            </text>
+        }
+
+        @if (props.Contains("--headline-align:"))
+        {
+            <text>
+            @Html.Raw(selector + " h1, " + selector + " h2, " + selector + " h3, " + selector + " h4, " + selector + " h5, " + selector + " h6") {
+
+                text-align: @(props.Contains("--headline-align:center") ? "center" : (props.Contains("--headline-align:right") ? "right" : "left"));
+            }
+            </text>
+        }
+
+        @if (props.Contains("--button-align:"))
+        {
+            <text>
+            @Html.Raw(selector + " .button-row") {
+
+                text-align: @(props.Contains("--button-align:center") ? "center" : (props.Contains("--button-align:right") ? "right" : "left"));
+            }
+            </text>
+        }
+    }
+    </text>
+                }
+            }
+        }
+    </style>
+    }
+
+    // END: MICROSOFT EDGE OVERRIDES
 }
 <div id="@(instanceId)" class="carbide_rich_content_subunit" sf-subunit>
     @if (Model.SafeValue("headline").HasValue())
