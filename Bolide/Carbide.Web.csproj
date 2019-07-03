@@ -532,6 +532,7 @@
     <Content Include="Views\BasicHomepage.cshtml" />
     <Content Include="Views\Partials\_Partial_Carbide_Container_Unit.cshtml" />
     <Content Include="scss\custom\carbide\container-unit.scss" />
+    <Content Include="Views\MacroPartials\_Partial_Responsive_Image.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

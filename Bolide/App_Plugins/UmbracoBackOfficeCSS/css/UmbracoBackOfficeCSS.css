@@ -4,3 +4,14 @@
     max-width: 50%;
 }
 
+.sf-image-wrapper > img {
+
+    display: block;
+    max-width: 100%;
+}
+
+.sf-image-wrapper > small {
+
+    display: block;
+    margin-top: 0.75rem;
+}

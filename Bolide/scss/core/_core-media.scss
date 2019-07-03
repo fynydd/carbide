@@ -79,7 +79,7 @@ object[type="image/svg+xml"] {
     pointer-events: none;
 }
 
-[sf-image-wrapper] {
+[sf-image-wrapper], .sf-image-wrapper {
 
     @include sf-media($upto: tablet-portrait) {
 
@@ -111,7 +111,7 @@ object[type="image/svg+xml"] {
 // VIDEO
 //-----------------------------------------------------------------------//
 
-[sf-video-wrapper] {
+[sf-video-wrapper], .sf-video-wrapper {
 
     @include sf-media($upto: tablet-portrait) {
 

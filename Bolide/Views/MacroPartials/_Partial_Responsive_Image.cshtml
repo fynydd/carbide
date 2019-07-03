@@ -1,0 +1,23 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+    string id = @Model.MacroParameters["responsiveImage"].ToString();
+    var udi = Udi.Parse(id);
+    var media = Umbraco.Media(udi);
+}
+<style type="text/css">
+.sf-image-wrapper > img {
+
+    display: block;
+    max-width: 50%;
+}
+
+.sf-image-wrapper > small {
+
+    display: block;
+    margin-top: 0.75rem;
+}
+</style>
+<div class="sf-image-wrapper">
+    <img src="@(media.Url)">
+    <small>This is a responsive image caption.</small>
+</div>
