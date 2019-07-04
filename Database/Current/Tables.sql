@@ -257,44 +257,6 @@ CREATE TABLE [dbo].[umbracoUserGroup2NodePermission]
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;03d113
 
-PRINT N'CREATE TABLE [dbo].[cmsMacro]'
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-CREATE TABLE [dbo].[cmsMacro]
-(
-    [id] [int] IDENTITY(1,1) NOT NULL,
-    [uniqueId] [uniqueidentifier] NOT NULL,
-    [macroUseInEditor] [bit] NOT NULL,
-    [macroRefreshRate] [int] NOT NULL,
-    [macroAlias] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
-    [macroName] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-    [macroCacheByPage] [bit] NOT NULL,
-    [macroCachePersonalized] [bit] NOT NULL,
-    [macroDontRender] [bit] NOT NULL,
-    [macroSource] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
-    [macroType] [int] NOT NULL
-
-) ON [PRIMARY]
-GO -- SQRIBE/GO;03d113
-
-PRINT N'CREATE TABLE [dbo].[cmsMacroProperty]'
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-CREATE TABLE [dbo].[cmsMacroProperty]
-(
-    [id] [int] IDENTITY(1,1) NOT NULL,
-    [uniquePropertyId] [uniqueidentifier] NOT NULL,
-    [editorAlias] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
-    [macro] [int] NOT NULL,
-    [macroPropertySortOrder] [int] NOT NULL,
-    [macroPropertyAlias] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
-    [macroPropertyName] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL
-
-) ON [PRIMARY]
-GO -- SQRIBE/GO;03d113
-
 PRINT N'CREATE TABLE [dbo].[umbracoKeyValue]'
 GO -- SQRIBE/GO;03d113
 
@@ -424,6 +386,44 @@ CREATE TABLE [dbo].[umbracoUserStartNode]
     [userId] [int] NOT NULL,
     [startNode] [int] NOT NULL,
     [startNodeType] [int] NOT NULL
+
+) ON [PRIMARY]
+GO -- SQRIBE/GO;03d113
+
+PRINT N'CREATE TABLE [dbo].[cmsMacro]'
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+CREATE TABLE [dbo].[cmsMacro]
+(
+    [id] [int] IDENTITY(1,1) NOT NULL,
+    [uniqueId] [uniqueidentifier] NOT NULL,
+    [macroUseInEditor] [bit] NOT NULL,
+    [macroRefreshRate] [int] NOT NULL,
+    [macroAlias] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+    [macroName] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+    [macroCacheByPage] [bit] NOT NULL,
+    [macroCachePersonalized] [bit] NOT NULL,
+    [macroDontRender] [bit] NOT NULL,
+    [macroSource] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+    [macroType] [int] NOT NULL
+
+) ON [PRIMARY]
+GO -- SQRIBE/GO;03d113
+
+PRINT N'CREATE TABLE [dbo].[cmsMacroProperty]'
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+CREATE TABLE [dbo].[cmsMacroProperty]
+(
+    [id] [int] IDENTITY(1,1) NOT NULL,
+    [uniquePropertyId] [uniqueidentifier] NOT NULL,
+    [editorAlias] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+    [macro] [int] NOT NULL,
+    [macroPropertySortOrder] [int] NOT NULL,
+    [macroPropertyAlias] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+    [macroPropertyName] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL
 
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;03d113

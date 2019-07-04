@@ -450,6 +450,7 @@
     <Content Include="scss\custom\carbide\basic_theme.scss" />
     <Content Include="scss\custom\carbide\rich-content-subunit.scss" />
     <Content Include="stylesheets\all.min.css" />
+    <None Include="Views\MacroPartials\_Partial_Responsive_Video.cshtml" />
     <Content Include="Views\Partials\_Partial_Carbide_Basic_Navigation_Unit.cshtml" />
     <Content Include="Views\Partials\_Partial_Render_Content_Units.cshtml" />
     <Content Include="Web.config" />
@@ -533,6 +534,7 @@
     <Content Include="Views\Partials\_Partial_Carbide_Container_Unit.cshtml" />
     <Content Include="scss\custom\carbide\container-unit.scss" />
     <Content Include="Views\MacroPartials\_Partial_Responsive_Image.cshtml" />
+    <Content Include="Views\MacroPartials\_Partial_Responsive_YouTube_Video.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

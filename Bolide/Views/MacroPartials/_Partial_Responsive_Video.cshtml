@@ -1,0 +1,20 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using Carbide.Web.Helpers
+<style type="text/css">
+    body#tinymce .sf-video-wrapper > [role="video"] {
+
+        display: block;
+        max-width: 50%;
+    }
+    body#tinymce .sf-video-wrapper > small {
+
+        display: block;
+        margin-top: 0.75rem;
+    }
+</style>
+<div class="sf-video-wrapper p">
+    <div role="video">
+        @Html.Raw(HttpUtility.HtmlDecode(Model.MacroParameters["responsiveVideoMarkup"].ToString()))
+    </div>
+    <small>This is a responsive video caption.</small>
+</div>

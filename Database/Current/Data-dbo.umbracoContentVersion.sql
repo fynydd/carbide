@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 311 rows to dbo.umbracoContentVersion
+-- Adding 318 rows to dbo.umbracoContentVersion
 
 SET IDENTITY_INSERT [dbo].[umbracoContentVersion] ON
 
@@ -633,7 +633,21 @@ INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (346,1105,CONVERT(datetime,'2019-07-03 22:40:41.763',121),-1,0,N'Welcome');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (347,1105,CONVERT(datetime,'2019-07-03 22:40:41.763',121),-1,1,N'Welcome');
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (347,1105,CONVERT(datetime,'2019-07-03 22:47:11.290',121),-1,0,N'Welcome');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (348,1105,CONVERT(datetime,'2019-07-03 22:49:24.220',121),-1,0,N'Welcome');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (349,1105,CONVERT(datetime,'2019-07-03 22:49:50.763',121),-1,0,N'Welcome');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (350,1105,CONVERT(datetime,'2019-07-03 22:50:10.433',121),-1,0,N'Welcome');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (351,1105,CONVERT(datetime,'2019-07-03 22:53:04.590',121),-1,0,N'Welcome');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (352,1105,CONVERT(datetime,'2019-07-03 22:58:06.337',121),-1,0,N'Welcome');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (353,1105,CONVERT(datetime,'2019-07-03 23:00:48.513',121),-1,0,N'Welcome');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (354,1105,CONVERT(datetime,'2019-07-03 23:00:48.513',121),-1,1,N'Welcome');
 
 COMMIT TRANSACTION
 

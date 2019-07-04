@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 2,484 rows to dbo.umbracoPropertyData
+-- Adding 2,547 rows to dbo.umbracoPropertyData
 
 SET IDENTITY_INSERT [dbo].[umbracoPropertyData] ON
 
@@ -10102,51 +10102,238 @@ INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[lang
 --button-align: center;
 --button-width: 100%;');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5874,347,55,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'--headline-align: center;
---headline-margin: 2rem;
---content-align: left;
---button-align: center;
---button-width: 100%;');
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5875,346,57,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'--button-width: auto;
---column-gutter: 5%;
---row-gutter: 2rem;');
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5876,347,57,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'--button-width: auto;
 --column-gutter: 5%;
 --row-gutter: 2rem;');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5877,346,91,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to {{companyName}} in {{companyCity}}!',NULL);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5878,347,91,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to {{companyName}} in {{companyCity}}!',NULL);
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5879,346,92,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'h2',NULL);
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5880,347,92,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'h2',NULL);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5881,346,93,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<?UMBRACO_MACRO macroAlias="ResponsiveImage" responsiveImage="umb://media/eb86bff880c04f58b45b565cf5229a76" />
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed. Tempor orci eu lobortis elementum nibh tellus molestie nunc. A scelerisque purus semper eget duis at tellus. Risus quis varius quam quisque id diam vel. Enim facilisis gravida neque convallis a. Massa enim nec dui nunc. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Pretium fusce id velit ut tortor. Tortor dignissim convallis aenean et tortor at risus.</p>');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5882,347,93,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<?UMBRACO_MACRO macroAlias="ResponsiveImage" responsiveImage="umb://media/eb86bff880c04f58b45b565cf5229a76" />
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed. Tempor orci eu lobortis elementum nibh tellus molestie nunc. A scelerisque purus semper eget duis at tellus. Risus quis varius quam quisque id diam vel. Enim facilisis gravida neque convallis a. Massa enim nec dui nunc. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Pretium fusce id velit ut tortor. Tortor dignissim convallis aenean et tortor at risus.</p>');
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5883,346,94,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Visit Bolide Site 2',NULL);
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5884,347,94,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Visit Bolide Site 2',NULL);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5885,346,95,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umb://document/cdca7afe6c2443fdae456a6bdda0ace0',NULL);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5886,347,95,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umb://document/cdca7afe6c2443fdae456a6bdda0ace0',NULL);
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5887,346,99,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5888,347,99,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5889,346,176,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<p>Vitae et leo duis ut. At varius vel pharetra vel turpis. Massa enim nec dui nunc. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis. Suspendisse interdum consectetur libero id. Nunc aliquet bibendum enim facilisis gravida neque convallis a cras. Posuere urna nec tincidunt praesent semper feugiat. Vel facilisis volutpat est velit egestas. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Massa placerat duis ultricies lacus sed turpis. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Scelerisque felis imperdiet proin fermentum leo vel orci porta non.</p>
 <?UMBRACO_MACRO macroAlias="ResponsiveImage" responsiveImage="umb://media/3dd4230875924589a7042ee90b8a5a8e" />');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5890,347,176,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<p>Vitae et leo duis ut. At varius vel pharetra vel turpis. Massa enim nec dui nunc. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis. Suspendisse interdum consectetur libero id. Nunc aliquet bibendum enim facilisis gravida neque convallis a cras. Posuere urna nec tincidunt praesent semper feugiat. Vel facilisis volutpat est velit egestas. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Massa placerat duis ultricies lacus sed turpis. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Scelerisque felis imperdiet proin fermentum leo vel orci porta non.</p>
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5891,347,55,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'--headline-align: center;
+--headline-margin: 2rem;
+--content-align: left;
+--button-align: center;
+--button-width: 100%;');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5893,347,57,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'--button-width: auto;
+--column-gutter: 5%;
+--row-gutter: 2rem;');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5895,347,91,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to {{companyName}} in {{companyCity}}!',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5897,347,92,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'h2',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5899,347,93,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<?UMBRACO_MACRO macroAlias="ResponsiveVideo" responsiveVideoMarkup="&lt;iframe src=&quot;https://www.youtube.com/embed/us6ZcvCcYoo?rel=0&amp;amp;autohide=2&amp;amp;modestbranding=1&amp;amp;theme=light&amp;amp;color=white&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;" />
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed. Tempor orci eu lobortis elementum nibh tellus molestie nunc. A scelerisque purus semper eget duis at tellus. Risus quis varius quam quisque id diam vel. Enim facilisis gravida neque convallis a. Massa enim nec dui nunc. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Pretium fusce id velit ut tortor. Tortor dignissim convallis aenean et tortor at risus.</p>');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5901,347,94,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Visit Bolide Site 2',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5903,347,95,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umb://document/cdca7afe6c2443fdae456a6bdda0ace0',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5905,347,99,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5907,347,176,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<p>Vitae et leo duis ut. At varius vel pharetra vel turpis. Massa enim nec dui nunc. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis. Suspendisse interdum consectetur libero id. Nunc aliquet bibendum enim facilisis gravida neque convallis a cras. Posuere urna nec tincidunt praesent semper feugiat. Vel facilisis volutpat est velit egestas. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Massa placerat duis ultricies lacus sed turpis. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Scelerisque felis imperdiet proin fermentum leo vel orci porta non.</p>
 <?UMBRACO_MACRO macroAlias="ResponsiveImage" responsiveImage="umb://media/3dd4230875924589a7042ee90b8a5a8e" />');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5909,348,55,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'--headline-align: center;
+--headline-margin: 2rem;
+--content-align: left;
+--button-align: center;
+--button-width: 100%;');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5911,348,57,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'--button-width: auto;
+--column-gutter: 5%;
+--row-gutter: 2rem;');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5913,348,91,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to {{companyName}} in {{companyCity}}!',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5915,348,92,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'h2',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5917,348,93,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<?UMBRACO_MACRO macroAlias="ResponsiveVideo" responsiveVideoMarkup="&lt;iframe src=&quot;https://www.youtube.com/embed/us6ZcvCcYoo?rel=0&amp;amp;autohide=2&amp;amp;modestbranding=1&amp;amp;theme=light&amp;amp;color=white&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;" />
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed. Tempor orci eu lobortis elementum nibh tellus molestie nunc. A scelerisque purus semper eget duis at tellus. Risus quis varius quam quisque id diam vel. Enim facilisis gravida neque convallis a. Massa enim nec dui nunc. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Pretium fusce id velit ut tortor. Tortor dignissim convallis aenean et tortor at risus.</p>');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5919,348,94,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Visit Bolide Site 2',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5921,348,95,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umb://document/cdca7afe6c2443fdae456a6bdda0ace0',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5923,348,99,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5925,348,176,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<p>Vitae et leo duis ut. At varius vel pharetra vel turpis. Massa enim nec dui nunc. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis. Suspendisse interdum consectetur libero id. Nunc aliquet bibendum enim facilisis gravida neque convallis a cras. Posuere urna nec tincidunt praesent semper feugiat. Vel facilisis volutpat est velit egestas. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Massa placerat duis ultricies lacus sed turpis. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Scelerisque felis imperdiet proin fermentum leo vel orci porta non.</p>
+<?UMBRACO_MACRO macroAlias="ResponsiveImage" responsiveImage="umb://media/3dd4230875924589a7042ee90b8a5a8e" />');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5927,349,55,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'--headline-align: center;
+--headline-margin: 2rem;
+--content-align: left;
+--button-align: center;
+--button-width: 100%;');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5929,349,57,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'--button-width: auto;
+--column-gutter: 5%;
+--row-gutter: 2rem;');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5931,349,91,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to {{companyName}} in {{companyCity}}!',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5933,349,92,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'h2',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5935,349,93,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<?UMBRACO_MACRO macroAlias="ResponsiveVideo" responsiveVideoMarkup="&lt;iframe src=&quot;https://www.youtube.com/embed/us6ZcvCcYoo?rel=0&amp;amp;autohide=2&amp;amp;modestbranding=1&amp;amp;theme=light&amp;amp;color=white&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;" />
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed. Tempor orci eu lobortis elementum nibh tellus molestie nunc. A scelerisque purus semper eget duis at tellus. Risus quis varius quam quisque id diam vel. Enim facilisis gravida neque convallis a. Massa enim nec dui nunc. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Pretium fusce id velit ut tortor. Tortor dignissim convallis aenean et tortor at risus.</p>');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5937,349,94,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Visit Bolide Site 2',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5939,349,95,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umb://document/cdca7afe6c2443fdae456a6bdda0ace0',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5941,349,99,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5943,349,176,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<p>Vitae et leo duis ut. At varius vel pharetra vel turpis. Massa enim nec dui nunc. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis. Suspendisse interdum consectetur libero id. Nunc aliquet bibendum enim facilisis gravida neque convallis a cras. Posuere urna nec tincidunt praesent semper feugiat. Vel facilisis volutpat est velit egestas. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Massa placerat duis ultricies lacus sed turpis. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Scelerisque felis imperdiet proin fermentum leo vel orci porta non.</p>
+<?UMBRACO_MACRO macroAlias="ResponsiveImage" responsiveImage="umb://media/3dd4230875924589a7042ee90b8a5a8e" />');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5945,350,55,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'--headline-align: center;
+--headline-margin: 2rem;
+--content-align: left;
+--button-align: center;
+--button-width: 100%;');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5947,350,57,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'--button-width: auto;
+--column-gutter: 5%;
+--row-gutter: 2rem;');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5949,350,91,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to {{companyName}} in {{companyCity}}!',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5951,350,92,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'h2',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5953,350,93,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<?UMBRACO_MACRO macroAlias="ResponsiveVideo" responsiveVideoMarkup="&lt;iframe src=&quot;https://www.youtube.com/embed/us6ZcvCcYoo?rel=0&amp;amp;autohide=2&amp;amp;modestbranding=1&amp;amp;theme=light&amp;amp;color=white&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;" />
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed. Tempor orci eu lobortis elementum nibh tellus molestie nunc. A scelerisque purus semper eget duis at tellus. Risus quis varius quam quisque id diam vel. Enim facilisis gravida neque convallis a. Massa enim nec dui nunc. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Pretium fusce id velit ut tortor. Tortor dignissim convallis aenean et tortor at risus.</p>');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5955,350,94,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Visit Bolide Site 2',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5957,350,95,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umb://document/cdca7afe6c2443fdae456a6bdda0ace0',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5959,350,99,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5961,350,176,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<p>Vitae et leo duis ut. At varius vel pharetra vel turpis. Massa enim nec dui nunc. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis. Suspendisse interdum consectetur libero id. Nunc aliquet bibendum enim facilisis gravida neque convallis a cras. Posuere urna nec tincidunt praesent semper feugiat. Vel facilisis volutpat est velit egestas. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Massa placerat duis ultricies lacus sed turpis. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Scelerisque felis imperdiet proin fermentum leo vel orci porta non.</p>
+<?UMBRACO_MACRO macroAlias="ResponsiveImage" responsiveImage="umb://media/3dd4230875924589a7042ee90b8a5a8e" />');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5963,351,55,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'--headline-align: center;
+--headline-margin: 2rem;
+--content-align: left;
+--button-align: center;
+--button-width: 100%;');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5965,351,57,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'--button-width: auto;
+--column-gutter: 5%;
+--row-gutter: 2rem;');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5967,351,91,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to {{companyName}} in {{companyCity}}!',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5969,351,92,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'h2',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5971,351,93,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<?UMBRACO_MACRO macroAlias="ResponsiveVideo" responsiveVideoMarkup="&lt;iframe src=&quot;https://www.youtube.com/embed/us6ZcvCcYoo?rel=0&amp;amp;autohide=2&amp;amp;modestbranding=1&amp;amp;theme=light&amp;amp;color=white&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;" />
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed. Tempor orci eu lobortis elementum nibh tellus molestie nunc. A scelerisque purus semper eget duis at tellus. Risus quis varius quam quisque id diam vel. Enim facilisis gravida neque convallis a. Massa enim nec dui nunc. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Pretium fusce id velit ut tortor. Tortor dignissim convallis aenean et tortor at risus.</p>');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5973,351,94,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Visit Bolide Site 2',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5975,351,95,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umb://document/cdca7afe6c2443fdae456a6bdda0ace0',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5977,351,99,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5979,351,176,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<p>Vitae et leo duis ut. At varius vel pharetra vel turpis. Massa enim nec dui nunc. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis. Suspendisse interdum consectetur libero id. Nunc aliquet bibendum enim facilisis gravida neque convallis a cras. Posuere urna nec tincidunt praesent semper feugiat. Vel facilisis volutpat est velit egestas. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Massa placerat duis ultricies lacus sed turpis. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Scelerisque felis imperdiet proin fermentum leo vel orci porta non.</p>
+<?UMBRACO_MACRO macroAlias="ResponsiveImage" responsiveImage="umb://media/3dd4230875924589a7042ee90b8a5a8e" />');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5981,352,55,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'--headline-align: center;
+--headline-margin: 2rem;
+--content-align: left;
+--button-align: center;
+--button-width: 100%;');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5983,352,57,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'--button-width: auto;
+--column-gutter: 5%;
+--row-gutter: 2rem;');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5985,352,91,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to {{companyName}} in {{companyCity}}!',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5987,352,92,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'h2',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5989,352,93,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<?UMBRACO_MACRO macroAlias="ResponsiveVideo" responsiveVideoMarkup="&lt;iframe src=&quot;https://www.youtube.com/embed/us6ZcvCcYoo?rel=0&amp;amp;autohide=2&amp;amp;modestbranding=1&amp;amp;theme=light&amp;amp;color=white&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;" />
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed. Tempor orci eu lobortis elementum nibh tellus molestie nunc. A scelerisque purus semper eget duis at tellus. Risus quis varius quam quisque id diam vel. Enim facilisis gravida neque convallis a. Massa enim nec dui nunc. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Pretium fusce id velit ut tortor. Tortor dignissim convallis aenean et tortor at risus.</p>
+<?UMBRACO_MACRO macroAlias="ResponsiveYouTubeVideo" youTubeCode="8AXEzcuMQp4" />');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5991,352,94,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Visit Bolide Site 2',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5993,352,95,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umb://document/cdca7afe6c2443fdae456a6bdda0ace0',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5995,352,99,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5997,352,176,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<p>Vitae et leo duis ut. At varius vel pharetra vel turpis. Massa enim nec dui nunc. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis. Suspendisse interdum consectetur libero id. Nunc aliquet bibendum enim facilisis gravida neque convallis a cras. Posuere urna nec tincidunt praesent semper feugiat. Vel facilisis volutpat est velit egestas. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Massa placerat duis ultricies lacus sed turpis. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Scelerisque felis imperdiet proin fermentum leo vel orci porta non.</p>
+<?UMBRACO_MACRO macroAlias="ResponsiveImage" responsiveImage="umb://media/3dd4230875924589a7042ee90b8a5a8e" />');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (5999,353,55,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'--headline-align: center;
+--headline-margin: 2rem;
+--content-align: left;
+--button-align: center;
+--button-width: 100%;');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (6000,354,55,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'--headline-align: center;
+--headline-margin: 2rem;
+--content-align: left;
+--button-align: center;
+--button-width: 100%;');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (6001,353,57,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'--button-width: auto;
+--column-gutter: 5%;
+--row-gutter: 2rem;');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (6002,354,57,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'--button-width: auto;
+--column-gutter: 5%;
+--row-gutter: 2rem;');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (6003,353,91,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to {{companyName}} in {{companyCity}}!',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (6004,354,91,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to {{companyName}} in {{companyCity}}!',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (6005,353,92,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'h2',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (6006,354,92,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'h2',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (6007,353,93,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<?UMBRACO_MACRO macroAlias="ResponsiveVideo" responsiveVideoMarkup="&lt;iframe src=&quot;https://www.youtube.com/embed/us6ZcvCcYoo?rel=0&amp;amp;autohide=2&amp;amp;modestbranding=1&amp;amp;theme=light&amp;amp;color=white&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;" />
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed. Tempor orci eu lobortis elementum nibh tellus molestie nunc. A scelerisque purus semper eget duis at tellus. Risus quis varius quam quisque id diam vel. Enim facilisis gravida neque convallis a. Massa enim nec dui nunc. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Pretium fusce id velit ut tortor. Tortor dignissim convallis aenean et tortor at risus.</p>
+<?UMBRACO_MACRO macroAlias="ResponsiveYouTubeVideo" youTubeCode="8AXEzcuMQp4" />');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (6008,354,93,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<?UMBRACO_MACRO macroAlias="ResponsiveVideo" responsiveVideoMarkup="&lt;iframe src=&quot;https://www.youtube.com/embed/us6ZcvCcYoo?rel=0&amp;amp;autohide=2&amp;amp;modestbranding=1&amp;amp;theme=light&amp;amp;color=white&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;" />
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed. Tempor orci eu lobortis elementum nibh tellus molestie nunc. A scelerisque purus semper eget duis at tellus. Risus quis varius quam quisque id diam vel. Enim facilisis gravida neque convallis a. Massa enim nec dui nunc. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Pretium fusce id velit ut tortor. Tortor dignissim convallis aenean et tortor at risus.</p>
+<?UMBRACO_MACRO macroAlias="ResponsiveYouTubeVideo" youTubeCode="8AXEzcuMQp4" />');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (6009,353,94,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Visit Bolide Site 2',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (6010,354,94,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Visit Bolide Site 2',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (6011,353,95,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umb://document/cdca7afe6c2443fdae456a6bdda0ace0',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (6012,354,95,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umb://document/cdca7afe6c2443fdae456a6bdda0ace0',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (6013,353,99,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (6014,354,99,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (6015,353,176,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<p>Vitae et leo duis ut. At varius vel pharetra vel turpis. Massa enim nec dui nunc. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis. Suspendisse interdum consectetur libero id. Nunc aliquet bibendum enim facilisis gravida neque convallis a cras. Posuere urna nec tincidunt praesent semper feugiat. Vel facilisis volutpat est velit egestas. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Massa placerat duis ultricies lacus sed turpis. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Scelerisque felis imperdiet proin fermentum leo vel orci porta non.</p>
+<?UMBRACO_MACRO macroAlias="ResponsiveImage" responsiveImage="umb://media/3dd4230875924589a7042ee90b8a5a8e" />
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed. Tempor orci eu lobortis elementum nibh tellus molestie nunc. A scelerisque purus semper eget duis at tellus. Risus quis varius quam quisque id diam vel. Enim facilisis gravida neque convallis a. Massa enim nec dui nunc. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Pretium fusce id velit ut tortor. Tortor dignissim convallis aenean et tortor at risus.</p>');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (6016,354,176,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<p>Vitae et leo duis ut. At varius vel pharetra vel turpis. Massa enim nec dui nunc. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis. Suspendisse interdum consectetur libero id. Nunc aliquet bibendum enim facilisis gravida neque convallis a cras. Posuere urna nec tincidunt praesent semper feugiat. Vel facilisis volutpat est velit egestas. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Massa placerat duis ultricies lacus sed turpis. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Scelerisque felis imperdiet proin fermentum leo vel orci porta non.</p>
+<?UMBRACO_MACRO macroAlias="ResponsiveImage" responsiveImage="umb://media/3dd4230875924589a7042ee90b8a5a8e" />
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a diam maecenas sed. Tempor orci eu lobortis elementum nibh tellus molestie nunc. A scelerisque purus semper eget duis at tellus. Risus quis varius quam quisque id diam vel. Enim facilisis gravida neque convallis a. Massa enim nec dui nunc. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Pretium fusce id velit ut tortor. Tortor dignissim convallis aenean et tortor at risus.</p>');
 
 COMMIT TRANSACTION
 

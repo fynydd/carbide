@@ -54,30 +54,6 @@ ALTER TABLE [dbo].[umbracoExternalLogin] ADD CONSTRAINT [df_umbracoExternalLogin
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[cmsMacro] ADD CONSTRAINT [df_cmsMacro_macroUseInEditor] DEFAULT ('0') FOR [macroUseInEditor]
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[cmsMacro] ADD CONSTRAINT [df_cmsMacro_macroRefreshRate] DEFAULT ('0') FOR [macroRefreshRate]
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[cmsMacro] ADD CONSTRAINT [df_cmsMacro_macroCacheByPage] DEFAULT ('1') FOR [macroCacheByPage]
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[cmsMacro] ADD CONSTRAINT [df_cmsMacro_macroCachePersonalized] DEFAULT ('0') FOR [macroCachePersonalized]
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[cmsMacro] ADD CONSTRAINT [df_cmsMacro_macroDontRender] DEFAULT ('0') FOR [macroDontRender]
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[cmsMacroProperty] ADD CONSTRAINT [df_cmsMacroProperty_macroPropertySortOrder] DEFAULT ('0') FOR [macroPropertySortOrder]
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
 ALTER TABLE [dbo].[umbracoKeyValue] ADD CONSTRAINT [df_umbracoKeyValue_updated] DEFAULT (getdate()) FOR [updated]
 GO -- SQRIBE/GO;03d113
 
@@ -115,6 +91,30 @@ GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
 ALTER TABLE [dbo].[umbracoUser] ADD CONSTRAINT [df_umbracoUser_updateDate] DEFAULT (getdate()) FOR [updateDate]
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[cmsMacro] ADD CONSTRAINT [df_cmsMacro_macroUseInEditor] DEFAULT ('0') FOR [macroUseInEditor]
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[cmsMacro] ADD CONSTRAINT [df_cmsMacro_macroRefreshRate] DEFAULT ('0') FOR [macroRefreshRate]
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[cmsMacro] ADD CONSTRAINT [df_cmsMacro_macroCacheByPage] DEFAULT ('1') FOR [macroCacheByPage]
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[cmsMacro] ADD CONSTRAINT [df_cmsMacro_macroCachePersonalized] DEFAULT ('0') FOR [macroCachePersonalized]
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[cmsMacro] ADD CONSTRAINT [df_cmsMacro_macroDontRender] DEFAULT ('0') FOR [macroDontRender]
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[cmsMacroProperty] ADD CONSTRAINT [df_cmsMacroProperty_macroPropertySortOrder] DEFAULT ('0') FOR [macroPropertySortOrder]
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
