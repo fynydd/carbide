@@ -15,7 +15,7 @@
 // STYLES
 //-----------------------------------------------------------------------//
 
-a {
+a, .a {
 
     text-decoration: underline;
 
@@ -25,13 +25,14 @@ a {
     }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
 
     margin-top: 0;
     margin-bottom: var(--headline-bottom-margin);
     font-weight: 300;
 
-    &[sf-tight] {
+    &[sf-tight], .sf-tight {
 
         margin-bottom: var(--headline-bottom-margin)/3;
     }
@@ -42,12 +43,14 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-h3, h4, h5, h6 {
+h3, h4, h5, h6,
+.h3, .h4, .h5, .h6 {
 
     font-weight: 400;
 }
 
-* + h1, * + h2, * + h3, * + h4, * + h5, * + h6 {
+* + h1, * + h2, * + h3, * + h4, * + h5, * + h6,
+* + .h1, * + .h2, * + .h3, * + .h4, * + .h5, * + .h6 {
 
     margin-top: var(--headline-top-margin-stacked);
 
@@ -62,17 +65,24 @@ h2 + h1, h2 + h2, h2 + h3, h2 + h4, h2 + h5, h2 + h6,
 h3 + h1, h3 + h2, h3 + h3, h3 + h4, h3 + h5, h3 + h6,
 h4 + h1, h4 + h2, h4 + h3, h4 + h4, h4 + h5, h4 + h6,
 h5 + h1, h5 + h2, h5 + h3, h5 + h4, h5 + h5, h5 + h6,
-h6 + h1, h6 + h2, h6 + h3, h6 + h4, h6 + h5, h6 + h6 {
+h6 + h1, h6 + h2, h6 + h3, h6 + h4, h6 + h5, h6 + h6,
+
+.h1 + .h1, .h1 + .h2, .h1 + .h3, .h1 + .h4, .h1 + .h5, .h1 + .h6,
+.h2 + .h1, .h2 + .h2, .h2 + .h3, .h2 + .h4, .h2 + .h5, .h2 + .h6,
+.h3 + .h1, .h3 + .h2, .h3 + .h3, .h3 + .h4, .h3 + .h5, .h3 + .h6,
+.h4 + .h1, .h4 + .h2, .h4 + .h3, .h4 + .h4, .h4 + .h5, .h4 + .h6,
+.h5 + .h1, .h5 + .h2, .h5 + .h3, .h5 + .h4, .h5 + .h5, .h5 + .h6,
+.h6 + .h1, .h6 + .h2, .h6 + .h3, .h6 + .h4, .h6 + .h5, .h6 + .h6 {
 
     margin-top: 0;
 }
 
-p {
+p, .p {
 
     margin-top: 0;
     margin-bottom: var(--paragraph-bottom-margin);
 
-    &[sf-tight] {
+    &[sf-tight], .sf-tight {
 
         margin-bottom: var(--paragraph-bottom-margin)/3;
     }
@@ -83,7 +93,7 @@ p {
     }
 }
 
-blockquote {
+blockquote, .blockquote {
 
     border-left: solid 0px sf-get-background-color(graylightest);
     border-left-width: 0.75rem;
@@ -123,7 +133,7 @@ blockquote {
     }
 }
 
-strong {
+strong, .strong {
 
     font-weight: 700;
 
@@ -133,7 +143,7 @@ strong {
     }
 }
 
-small {
+small, .small {
 
     font-size: 0.8rem;
     line-height: 1.3rem;
@@ -261,7 +271,7 @@ hr {
     }
 }
 
-[sf-nowrap] {
+[sf-nowrap], .sf-nowrap {
 
     white-space: nowrap;
 }

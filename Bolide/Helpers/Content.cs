@@ -17,7 +17,14 @@ namespace Carbide.Web.Helpers
     {
         public static string AsCssSelector(this string value)
         {
-            return value.ToLower().MakeSlug();
+            var result = value.ToLower().MakeSlug();
+
+            if (result.Substring(0, 1).IsPureNumeric())
+            {
+                result = "s" + result;
+            }
+
+            return result;
         }
 
         /// <summary>

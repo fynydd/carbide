@@ -393,45 +393,45 @@ table th:last-child, table td:last-child { padding-right: 0; }
 
 table th { font-weight: bold; }
 
-a { text-decoration: underline; }
+a, .a { text-decoration: underline; }
 
-a:hover { cursor: pointer; }
+a:hover, .a:hover { cursor: pointer; }
 
-h1, h2, h3, h4, h5, h6 { margin-top: 0; margin-bottom: var(--headline-bottom-margin); font-weight: 300; }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { margin-top: 0; margin-bottom: var(--headline-bottom-margin); font-weight: 300; }
 
-h1[sf-tight], h2[sf-tight], h3[sf-tight], h4[sf-tight], h5[sf-tight], h6[sf-tight] { margin-bottom: var(--headline-bottom-margin)/3; }
+h1[sf-tight], h1 .sf-tight, h2[sf-tight], h2 .sf-tight, h3[sf-tight], h3 .sf-tight, h4[sf-tight], h4 .sf-tight, h5[sf-tight], h5 .sf-tight, h6[sf-tight], h6 .sf-tight, .h1[sf-tight], .h1 .sf-tight, .h2[sf-tight], .h2 .sf-tight, .h3[sf-tight], .h3 .sf-tight, .h4[sf-tight], .h4 .sf-tight, .h5[sf-tight], .h5 .sf-tight, .h6[sf-tight], .h6 .sf-tight { margin-bottom: var(--headline-bottom-margin)/3; }
 
-h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a { font-weight: 300; }
+h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a, .h1 > a, .h2 > a, .h3 > a, .h4 > a, .h5 > a, .h6 > a { font-weight: 300; }
 
-h3, h4, h5, h6 { font-weight: 400; }
+h3, h4, h5, h6, .h3, .h4, .h5, .h6 { font-weight: 400; }
 
-* + h1, * + h2, * + h3, * + h4, * + h5, * + h6 { margin-top: var(--headline-top-margin-stacked); }
+* + h1, * + h2, * + h3, * + h4, * + h5, * + h6, * + .h1, * + .h2, * + .h3, * + .h4, * + .h5, * + .h6 { margin-top: var(--headline-top-margin-stacked); }
 
-@media screen and (min-width: 33.75em) { * + h1, * + h2, * + h3, * + h4, * + h5, * + h6 { margin-top: var(--headline-top-margin); } }
+@media screen and (min-width: 33.75em) { * + h1, * + h2, * + h3, * + h4, * + h5, * + h6, * + .h1, * + .h2, * + .h3, * + .h4, * + .h5, * + .h6 { margin-top: var(--headline-top-margin); } }
 
-h1 + h1, h1 + h2, h1 + h3, h1 + h4, h1 + h5, h1 + h6, h2 + h1, h2 + h2, h2 + h3, h2 + h4, h2 + h5, h2 + h6, h3 + h1, h3 + h2, h3 + h3, h3 + h4, h3 + h5, h3 + h6, h4 + h1, h4 + h2, h4 + h3, h4 + h4, h4 + h5, h4 + h6, h5 + h1, h5 + h2, h5 + h3, h5 + h4, h5 + h5, h5 + h6, h6 + h1, h6 + h2, h6 + h3, h6 + h4, h6 + h5, h6 + h6 { margin-top: 0; }
+h1 + h1, h1 + h2, h1 + h3, h1 + h4, h1 + h5, h1 + h6, h2 + h1, h2 + h2, h2 + h3, h2 + h4, h2 + h5, h2 + h6, h3 + h1, h3 + h2, h3 + h3, h3 + h4, h3 + h5, h3 + h6, h4 + h1, h4 + h2, h4 + h3, h4 + h4, h4 + h5, h4 + h6, h5 + h1, h5 + h2, h5 + h3, h5 + h4, h5 + h5, h5 + h6, h6 + h1, h6 + h2, h6 + h3, h6 + h4, h6 + h5, h6 + h6, .h1 + .h1, .h1 + .h2, .h1 + .h3, .h1 + .h4, .h1 + .h5, .h1 + .h6, .h2 + .h1, .h2 + .h2, .h2 + .h3, .h2 + .h4, .h2 + .h5, .h2 + .h6, .h3 + .h1, .h3 + .h2, .h3 + .h3, .h3 + .h4, .h3 + .h5, .h3 + .h6, .h4 + .h1, .h4 + .h2, .h4 + .h3, .h4 + .h4, .h4 + .h5, .h4 + .h6, .h5 + .h1, .h5 + .h2, .h5 + .h3, .h5 + .h4, .h5 + .h5, .h5 + .h6, .h6 + .h1, .h6 + .h2, .h6 + .h3, .h6 + .h4, .h6 + .h5, .h6 + .h6 { margin-top: 0; }
 
-p { margin-top: 0; margin-bottom: var(--paragraph-bottom-margin); }
+p, .p { margin-top: 0; margin-bottom: var(--paragraph-bottom-margin); }
 
-p[sf-tight] { margin-bottom: var(--paragraph-bottom-margin)/3; }
+p[sf-tight], p .sf-tight, .p[sf-tight], .p .sf-tight { margin-bottom: var(--paragraph-bottom-margin)/3; }
 
-p:last-child { margin-bottom: 0; }
+p:last-child, .p:last-child { margin-bottom: 0; }
 
-blockquote { border-left: solid 0px sf-get-background-color(graylightest); border-left-width: 0.75rem; margin-left: 0; margin-right: 0; margin-bottom: 2.25rem; margin-top: 2.5rem; padding-left: 1.3344rem; padding-right: 1.3344rem; font-style: italic; }
+blockquote, .blockquote { border-left: solid 0px sf-get-background-color(graylightest); border-left-width: 0.75rem; margin-left: 0; margin-right: 0; margin-bottom: 2.25rem; margin-top: 2.5rem; padding-left: 1.3344rem; padding-right: 1.3344rem; font-style: italic; }
 
-@media screen and (min-width: 33.75em) { blockquote { margin-left: 3.5rem; margin-right: 2.5rem; margin-bottom: 3rem; margin-top: 3rem; padding-left: 1.5rem; padding-right: 4.0rem; } }
+@media screen and (min-width: 33.75em) { blockquote, .blockquote { margin-left: 3.5rem; margin-right: 2.5rem; margin-bottom: 3rem; margin-top: 3rem; padding-left: 1.5rem; padding-right: 4.0rem; } }
 
-blockquote:last-child { margin-bottom: 0; }
+blockquote:last-child, .blockquote:last-child { margin-bottom: 0; }
 
-blockquote cite { display: block; margin-top: 1.5rem; font-size: 85%; }
+blockquote cite, .blockquote cite { display: block; margin-top: 1.5rem; font-size: 85%; }
 
-@media screen and (min-width: 33.75em) { blockquote cite { margin-top: 1.25rem; } }
+@media screen and (min-width: 33.75em) { blockquote cite, .blockquote cite { margin-top: 1.25rem; } }
 
-strong { font-weight: 700; }
+strong, .strong { font-weight: 700; }
 
-strong em { font-weight: 700; }
+strong em, .strong em { font-weight: 700; }
 
-small { font-size: 0.8rem; line-height: 1.3rem; }
+small, .small { font-size: 0.8rem; line-height: 1.3rem; }
 
 :not(pre) > code, :not(pre) > code[class*="language-"] { display: inline-block; margin: 0; padding: 0.1rem 0.5rem; border-radius: 0.1rem; font-size: 0.8rem; font-family: var(--font-mono); }
 
@@ -461,7 +461,7 @@ hr { margin: 0; margin-bottom: 2rem; height: 0.15rem; min-height: 0.15rem; borde
 
 hr:last-child { margin-bottom: 0; }
 
-[sf-nowrap] { white-space: nowrap; }
+[sf-nowrap], .sf-nowrap { white-space: nowrap; }
 
 audio, canvas, img, svg, video { vertical-align: middle; }
 
@@ -751,21 +751,21 @@ body #logo:not(#logo) [role="grid"] > [role="gridcell"]:nth-child(3) h4, body #l
 
 * { font-weight: 400; }
 
-h1 > i.fa, h2 > i.fa, h3 > i.fa, h4 > i.fa, h5 > i.fa, h6 > i.fa { padding-right: 0.5rem; }
+h1 > i.fa, h2 > i.fa, h3 > i.fa, h4 > i.fa, h5 > i.fa, h6 > i.fa, .h1 > i.fa, .h2 > i.fa, .h3 > i.fa, .h4 > i.fa, .h5 > i.fa, .h6 > i.fa { padding-right: 0.5rem; }
 
-@media screen and (min-width: 33.75em) { h1 > i.fa, h2 > i.fa, h3 > i.fa, h4 > i.fa, h5 > i.fa, h6 > i.fa { padding-right: 0.5rem; } }
+@media screen and (min-width: 33.75em) { h1 > i.fa, h2 > i.fa, h3 > i.fa, h4 > i.fa, h5 > i.fa, h6 > i.fa, .h1 > i.fa, .h2 > i.fa, .h3 > i.fa, .h4 > i.fa, .h5 > i.fa, .h6 > i.fa { padding-right: 0.5rem; } }
 
-h1 em, h2 em, h3 em, h4 em, h5 em, h6 em { font-family: var(--font-head); font-weight: 300; }
+h1 em, h2 em, h3 em, h4 em, h5 em, h6 em, .h1 em, .h2 em, .h3 em, .h4 em, .h5 em, .h6 em { font-family: var(--font-head); font-weight: 300; }
 
-h1 span.fa-stack, h2 span.fa-stack, h3 span.fa-stack, h4 span.fa-stack, h5 span.fa-stack, h6 span.fa-stack { position: relative; font-size: 65%; vertical-align: text-top; left: -0.5rem; }
+h1 span.fa-stack, h2 span.fa-stack, h3 span.fa-stack, h4 span.fa-stack, h5 span.fa-stack, h6 span.fa-stack, .h1 span.fa-stack, .h2 span.fa-stack, .h3 span.fa-stack, .h4 span.fa-stack, .h5 span.fa-stack, .h6 span.fa-stack { position: relative; font-size: 65%; vertical-align: text-top; left: -0.5rem; }
 
-h1 > span.nobr, h2 > span.nobr, h3 > span.nobr, h4 > span.nobr, h5 > span.nobr, h6 > span.nobr { display: inline-block; vertical-align: initial; top: auto; width: auto; margin-right: 0; margin-bottom: 0; white-space: nowrap; }
+h1 > span.nobr, h2 > span.nobr, h3 > span.nobr, h4 > span.nobr, h5 > span.nobr, h6 > span.nobr, .h1 > span.nobr, .h2 > span.nobr, .h3 > span.nobr, .h4 > span.nobr, .h5 > span.nobr, .h6 > span.nobr { display: inline-block; vertical-align: initial; top: auto; width: auto; margin-right: 0; margin-bottom: 0; white-space: nowrap; }
 
-@media screen and (max-width: 33.74em) { h1 > span.nobr.except-mobile, h2 > span.nobr.except-mobile, h3 > span.nobr.except-mobile, h4 > span.nobr.except-mobile, h5 > span.nobr.except-mobile, h6 > span.nobr.except-mobile { white-space: initial; } }
+@media screen and (max-width: 33.74em) { h1 > span.nobr.except-mobile, h2 > span.nobr.except-mobile, h3 > span.nobr.except-mobile, h4 > span.nobr.except-mobile, h5 > span.nobr.except-mobile, h6 > span.nobr.except-mobile, .h1 > span.nobr.except-mobile, .h2 > span.nobr.except-mobile, .h3 > span.nobr.except-mobile, .h4 > span.nobr.except-mobile, .h5 > span.nobr.except-mobile, .h6 > span.nobr.except-mobile { white-space: initial; } }
 
-h1 > span.nobr-except-mobile, h2 > span.nobr-except-mobile, h3 > span.nobr-except-mobile, h4 > span.nobr-except-mobile, h5 > span.nobr-except-mobile, h6 > span.nobr-except-mobile { display: inline; vertical-align: initial; top: auto; white-space: initial; }
+h1 > span.nobr-except-mobile, h2 > span.nobr-except-mobile, h3 > span.nobr-except-mobile, h4 > span.nobr-except-mobile, h5 > span.nobr-except-mobile, h6 > span.nobr-except-mobile, .h1 > span.nobr-except-mobile, .h2 > span.nobr-except-mobile, .h3 > span.nobr-except-mobile, .h4 > span.nobr-except-mobile, .h5 > span.nobr-except-mobile, .h6 > span.nobr-except-mobile { display: inline; vertical-align: initial; top: auto; white-space: initial; }
 
-@media screen and (min-width: 33.75em) { h1 > span.nobr-except-mobile, h2 > span.nobr-except-mobile, h3 > span.nobr-except-mobile, h4 > span.nobr-except-mobile, h5 > span.nobr-except-mobile, h6 > span.nobr-except-mobile { white-space: nowrap; } }
+@media screen and (min-width: 33.75em) { h1 > span.nobr-except-mobile, h2 > span.nobr-except-mobile, h3 > span.nobr-except-mobile, h4 > span.nobr-except-mobile, h5 > span.nobr-except-mobile, h6 > span.nobr-except-mobile, .h1 > span.nobr-except-mobile, .h2 > span.nobr-except-mobile, .h3 > span.nobr-except-mobile, .h4 > span.nobr-except-mobile, .h5 > span.nobr-except-mobile, .h6 > span.nobr-except-mobile { white-space: nowrap; } }
 
 hr { --vertical-subunit-padding: 0; margin-bottom: var(--vertical-subunit-padding); --vertical-subunit-padding: var(--vertical-subunit-padding); }
 

@@ -6,30 +6,6 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[cmsMacro] ADD CONSTRAINT [df_cmsMacro_macroUseInEditor] DEFAULT ('0') FOR [macroUseInEditor]
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[cmsMacro] ADD CONSTRAINT [df_cmsMacro_macroRefreshRate] DEFAULT ('0') FOR [macroRefreshRate]
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[cmsMacro] ADD CONSTRAINT [df_cmsMacro_macroCacheByPage] DEFAULT ('1') FOR [macroCacheByPage]
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[cmsMacro] ADD CONSTRAINT [df_cmsMacro_macroCachePersonalized] DEFAULT ('0') FOR [macroCachePersonalized]
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[cmsMacro] ADD CONSTRAINT [df_cmsMacro_macroDontRender] DEFAULT ('0') FOR [macroDontRender]
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[cmsMacroProperty] ADD CONSTRAINT [df_cmsMacroProperty_macroPropertySortOrder] DEFAULT ('0') FOR [macroPropertySortOrder]
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
 ALTER TABLE [dbo].[cmsMember] ADD CONSTRAINT [df_cmsMember_Email] DEFAULT ('''') FOR [Email]
 GO -- SQRIBE/GO;03d113
 
@@ -75,6 +51,30 @@ GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
 ALTER TABLE [dbo].[umbracoExternalLogin] ADD CONSTRAINT [df_umbracoExternalLogin_createDate] DEFAULT (getdate()) FOR [createDate]
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[cmsMacro] ADD CONSTRAINT [df_cmsMacro_macroUseInEditor] DEFAULT ('0') FOR [macroUseInEditor]
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[cmsMacro] ADD CONSTRAINT [df_cmsMacro_macroRefreshRate] DEFAULT ('0') FOR [macroRefreshRate]
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[cmsMacro] ADD CONSTRAINT [df_cmsMacro_macroCacheByPage] DEFAULT ('1') FOR [macroCacheByPage]
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[cmsMacro] ADD CONSTRAINT [df_cmsMacro_macroCachePersonalized] DEFAULT ('0') FOR [macroCachePersonalized]
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[cmsMacro] ADD CONSTRAINT [df_cmsMacro_macroDontRender] DEFAULT ('0') FOR [macroDontRender]
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[cmsMacroProperty] ADD CONSTRAINT [df_cmsMacroProperty_macroPropertySortOrder] DEFAULT ('0') FOR [macroPropertySortOrder]
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
@@ -154,6 +154,10 @@ ALTER TABLE [dbo].[cmsContentType] ADD CONSTRAINT [df_cmsContentType_variations]
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[umbracoCacheInstruction] ADD CONSTRAINT [df_umbracoCacheInstruction_instructionCount] DEFAULT ('1') FOR [instructionCount]
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
 ALTER TABLE [dbo].[umbracoAudit] ADD CONSTRAINT [df_umbracoAudit_eventDateUtc] DEFAULT (getdate()) FOR [eventDateUtc]
 GO -- SQRIBE/GO;03d113
 
@@ -183,10 +187,6 @@ GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
 ALTER TABLE [dbo].[umbracoNode] ADD CONSTRAINT [df_umbracoNode_createDate] DEFAULT (getdate()) FOR [createDate]
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[umbracoCacheInstruction] ADD CONSTRAINT [df_umbracoCacheInstruction_instructionCount] DEFAULT ('1') FOR [instructionCount]
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
