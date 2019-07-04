@@ -16,5 +16,8 @@
     <div role="video">
         @Html.Raw(HttpUtility.HtmlDecode(Model.MacroParameters["responsiveVideoMarkup"].ToString()))
     </div>
-    <small>This is a responsive video caption.</small>
+    @if (Model.MacroParameters["caption"].ToString() != "")
+    {
+    <small>@Html.Raw(HttpUtility.HtmlDecode(Model.MacroParameters["caption"].ToString()))</small>
+    }
 </div>

@@ -16,5 +16,8 @@
     <div role="video">
         <iframe src="https://www.youtube.com/embed/@(Model.MacroParameters["youTubeCode"].ToString())?rel=0&amp;autohide=2&amp;modestbranding=1&amp;theme=light&amp;color=white" frameborder="0" allowfullscreen></iframe>
     </div>
-    <small>This is a responsive video caption.</small>
+    @if (Model.MacroParameters["caption"].ToString() != "")
+    {
+    <small>@Html.Raw(HttpUtility.HtmlDecode(Model.MacroParameters["caption"].ToString()))</small>
+    }
 </div>

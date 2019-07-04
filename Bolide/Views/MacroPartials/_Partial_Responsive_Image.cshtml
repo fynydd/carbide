@@ -19,5 +19,8 @@
 </style>
 <div class="sf-image-wrapper p" id="@(media.Name.AsCssSelector())">
     <img src="@(media.Url)">
-    <small>This is a responsive image caption.</small>
+    @if (Model.MacroParameters["caption"].ToString() != "")
+    {
+    <small>@Html.Raw(HttpUtility.HtmlDecode(Model.MacroParameters["caption"].ToString()))</small>
+    }
 </div>

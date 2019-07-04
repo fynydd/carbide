@@ -6,18 +6,24 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 3 rows to dbo.cmsMacroProperty
+-- Adding 6 rows to dbo.cmsMacroProperty
 
 SET IDENTITY_INSERT [dbo].[cmsMacroProperty] ON
 
 BEGIN TRANSACTION
 
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (1,'985B670F-587A-4490-AB97-D777AC4E5EC3',N'Umbraco.MediaPicker',1,0,N'responsiveImage',N'Responsive Image');
+INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (4,'F7F2EEDB-DAD8-411D-AC8F-B12215700888',N'Umbraco.MediaPicker',1,0,N'responsiveImage',N'Responsive Image');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (2,'EE80D9D6-91C2-440E-8CB7-E4065284DCD1',N'Umbraco.TextArea',2,0,N'responsiveVideoMarkup',N'Responsive Video Markup');
+INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (5,'047B55F5-0F59-44EC-AD40-AAE3E177D28C',N'Umbraco.TextBox',1,1,N'caption',N'Caption');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (3,'34F34BC2-9F2B-4AED-91D6-07C986334F32',N'Umbraco.TextBox',3,0,N'youTubeCode',N'YouTube Code');
+INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (6,'DAF4412A-86C6-442F-9283-5962A1EBF553',N'Umbraco.TextArea',2,0,N'responsiveVideoMarkup',N'Responsive Video Markup');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (7,'44E59D6D-0883-4A05-98C0-6A9444136313',N'Umbraco.TextBox',2,1,N'caption',N'Caption');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (8,'494D87C6-E997-4BF3-B74F-6E3DEB99E8CD',N'Umbraco.TextBox',3,0,N'youTubeCode',N'YouTube Code');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (9,'F6602A2B-58DA-46BE-9FDE-62DBC95ED8F3',N'Umbraco.TextBox',3,1,N'caption',N'Caption');
 
 COMMIT TRANSACTION
 
