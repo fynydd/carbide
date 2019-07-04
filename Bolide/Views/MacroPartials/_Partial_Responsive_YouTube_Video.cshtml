@@ -1,5 +1,12 @@
 ﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using System.Text.RegularExpressions
+@using Fynydd.Carbide
 @using Carbide.Web.Helpers
+@{ 
+    var youTubeCode = Model.MacroParameters["youTubeCode"].ToString().GetYouTubeVideoId();
+}
+@if (youTubeCode.HasValue() && youTubeCode.Length < 15)
+{
 <style type="text/css">
     body#tinymce .sf-video-wrapper > [role="video"] {
 
@@ -14,10 +21,11 @@
 </style>
 <div class="sf-video-wrapper p">
     <div role="video">
-        <iframe src="https://www.youtube.com/embed/@(Model.MacroParameters["youTubeCode"].ToString())?rel=0&amp;autohide=2&amp;modestbranding=1&amp;theme=light&amp;color=white" frameborder="0" allowfullscreen></iframe>
+        <iframe src="//www.youtube.com/embed/@(youTubeCode)?rel=0&autohide=2&modestbranding=1&theme=light&color=white" frameborder="0" allowfullscreen></iframe>
     </div>
     @if (Model.MacroParameters["caption"].ToString() != "")
     {
     <small>@Html.Raw(HttpUtility.HtmlDecode(Model.MacroParameters["caption"].ToString()))</small>
     }
 </div>
+}

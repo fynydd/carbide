@@ -21,6 +21,30 @@ namespace Fynydd.Carbide
     public static class Strings
     {
         /// <summary>
+        /// Get the YouTube video ID from a YouTube URL.
+        /// </summary>
+        /// <param name="url">YouTube URL</param>
+        /// <returns>Video ID or returns the provided URL</returns>
+        public static string GetYouTubeVideoId(this string url)
+        {
+            var result = url;
+
+            if (url.HasValue())
+            {
+                var YoutubeLinkRegex = "(?:.+?)?(?:\\/v\\/|watch\\/|\\?v=|\\&v=|youtu\\.be\\/|\\/v=|^youtu\\.be\\/)([^\\s\\&\\?]+)+";
+                var regexExtractId = new Regex(YoutubeLinkRegex, RegexOptions.Compiled);
+                var regRes = regexExtractId.Match(url);
+
+                if (regRes.Success)
+                {
+                    result = regRes.Groups[1].Value;
+                }
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Get the absolute path for a page URL (omits the transport and domain)
         /// </summary>
         /// <param name="url">URL to process</param>
