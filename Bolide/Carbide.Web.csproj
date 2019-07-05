@@ -442,7 +442,7 @@
     <Content Include="images\magnifying-glass.png" />
     <Content Include="scripts\jquery.carbide-simple-hero.js" />
     <Content Include="scripts\fluidbox\css\fluidbox.min.css" />
-    <Content Include="scripts\fluidbox\jquery.fluidbox.min.js" />
+    <Content Include="scripts\fluidbox\jquery.fluidbox.js" />
     <Content Include="scripts\jquery-3.3.1.min.js" />
     <Content Include="scripts\jquery.ba-throttle-debounce.min.js" />
     <Content Include="scripts\jquery.backstretch.min.js" />
