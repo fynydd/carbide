@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 6 rows to dbo.cmsMacroProperty
+-- Adding 7 rows to dbo.cmsMacroProperty
 
 SET IDENTITY_INSERT [dbo].[cmsMacroProperty] ON
 
@@ -21,9 +21,11 @@ INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[mac
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (15,'8D6B560E-4C0F-4FB4-83E3-BD1FA6EC2064',N'Umbraco.TextBox',2,1,N'caption',N'Optional Caption');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (16,'C536CFA4-FF34-4702-9B6A-1A34F889B286',N'Umbraco.MediaPicker',1,0,N'responsiveImage',N'Responsive Image');
+INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (18,'CFBB6557-331C-4244-B949-10F29C05A20A',N'Umbraco.MediaPicker',1,0,N'responsiveImage',N'Responsive Image');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (17,'846BCFB7-758D-4377-9396-C0FE7B589549',N'Umbraco.TextBox',1,1,N'caption',N'Optional Caption');
+INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (19,'2916EB52-4AD7-43F7-B566-9B7E74811E2D',N'Umbraco.TextBox',1,1,N'caption',N'Optional Caption');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (20,'05597595-4F78-4D2E-9C76-4BD664A0B867',N'Umbraco.TrueFalse',1,2,N'enableLightbox',N'Click to Enlarge?');
 
 COMMIT TRANSACTION
 

@@ -56,5 +56,87 @@
         </main>
     </section>
     <footer></footer>
+    <script type="text/javascript">
+
+        var _lastWindowWidth = 0;
+
+        (function ($) {
+
+            var d = 250, t = null, e = null, resizeend, resizestart, r = false;
+
+            resizeend = function () {
+
+                r = false;
+                //console.log("resizeend fired (" + $(window).innerWidth() + ")");
+                $(window).trigger('resizeend', e);
+            };
+
+            resizestart = function () {
+
+                e = event || e;
+
+                clearTimeout(t);
+
+                if (!r) {
+
+                    //console.log("resizestart fired (" + $(window).innerWidth() + ")");
+                    $(window).trigger('resizestart', e);
+                    r = true;
+                }
+
+                if (_lastWindowWidth != $(window).outerWidth()) {
+
+                    _lastWindowWidth = $(window).outerWidth();
+
+                    t = setTimeout(resizestart, d);
+
+                } else {
+
+                    t = setTimeout(resizeend, d);
+                }
+            };
+
+            $(window).on('resize', function (event) {
+
+                var retry = setTimeout(resizestart, 0);
+            });
+
+        }(jQuery));
+
+        $(document).ready(function(){
+
+            $(window).on("resizestart", function () {
+
+                console.log('Disabling fluidbox');
+
+                $(".fluidbox-image > a").trigger("destroy.fluidbox");
+
+                $(".fluidbox-image > a").on("click", function (e) {
+
+                    e.preventDefault();
+                });
+            });
+
+            $(window).on("resizeend", function () {
+
+                if ($(window).innerWidth() >= @(Carbide.Web.Helpers.Settings.GetCssBreakpoint("tabp").Replace("px", ""))) {
+
+                    console.log('Enabling fluidbox');
+
+                    $(".fluidbox-image > a").off("click");
+
+                    $(".fluidbox-image > a").fluidbox({
+
+                        viewportFill: 0.9,
+                        loader: true
+                    });
+                }
+            });
+
+            $(window).trigger("resizestart");
+            $(window).trigger("resizeend");
+        });
+
+    </script>
 </body>
 </html>

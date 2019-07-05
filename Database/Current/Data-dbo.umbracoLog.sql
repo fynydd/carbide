@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 905 rows to dbo.umbracoLog
+-- Adding 911 rows to dbo.umbracoLog
 
 SET IDENTITY_INSERT [dbo].[umbracoLog] ON
 
@@ -1822,6 +1822,18 @@ INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],
 INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (904,-1,-1,N'Macro',CONVERT(datetime,'2019-07-04 12:01:03.533',121),N'Save',NULL,NULL);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (905,-1,1105,N'Document',CONVERT(datetime,'2019-07-04 12:01:18.883',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (906,-1,-1,N'Macro',CONVERT(datetime,'2019-07-05 10:41:30.233',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (907,-1,1105,N'Document',CONVERT(datetime,'2019-07-05 10:41:55.500',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (908,-1,1105,N'Document',CONVERT(datetime,'2019-07-05 11:12:11.437',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (909,-1,1105,N'Document',CONVERT(datetime,'2019-07-05 11:18:16.310',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (910,-1,1105,N'Document',CONVERT(datetime,'2019-07-05 11:56:48.683',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (911,-1,1105,N'Document',CONVERT(datetime,'2019-07-05 13:02:21.087',121),N'Publish',NULL,NULL);
 
 COMMIT TRANSACTION
 
