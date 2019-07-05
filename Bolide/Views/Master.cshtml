@@ -67,7 +67,6 @@
             resizeend = function () {
 
                 r = false;
-                //console.log("resizeend fired (" + $(window).innerWidth() + ")");
                 $(window).trigger('resizeend', e);
             };
 
@@ -79,7 +78,6 @@
 
                 if (!r) {
 
-                    //console.log("resizestart fired (" + $(window).innerWidth() + ")");
                     $(window).trigger('resizestart', e);
                     r = true;
                 }
@@ -107,8 +105,6 @@
 
             $(window).on("resizestart", function () {
 
-                console.log('Disabling fluidbox');
-
                 $(".fluidbox-image > a").trigger("destroy.fluidbox");
 
                 $(".fluidbox-image > a").on("click", function (e) {
@@ -120,8 +116,6 @@
             $(window).on("resizeend", function () {
 
                 if ($(window).innerWidth() >= @(Carbide.Web.Helpers.Settings.GetCssBreakpoint("tabp").Replace("px", ""))) {
-
-                    console.log('Enabling fluidbox');
 
                     $(".fluidbox-image > a").off("click");
 
