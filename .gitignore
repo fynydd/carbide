@@ -225,12 +225,12 @@ NetBoot
 .DS_Store
 .com.apple.timemachine.supported
 # Media
-Bolide/Media/*
-!Bolide/Media/Web.config
+Carbide.Web/Media/*
+!Carbide.Web/Media/Web.config
 # Project binaries other than dependencies
-Bolide/bin/*
-!Bolide/bin/*.lic
+Carbide.Web/bin/*
+!Carbide.Web/bin/*.lic
 # Compiled SASS
-Bolide/css/application.*
-/Bolide/stylesheets/_carbide.generated.application.css
-/Bolide/scripts/_carbide.generated.jquery.bolide-simple-hero.js
+Carbide.Web/css/application.*
+/Carbide.Web/stylesheets/_carbide.generated.application.css
+/Carbide.Web/scripts/_carbide.generated.jquery.carbide-simple-hero.js
