@@ -31,13 +31,24 @@ namespace Fynydd.Carbide
 
             if (url.HasValue())
             {
-                var YoutubeLinkRegex = "(?:.+?)?(?:\\/v\\/|watch\\/|\\?v=|\\&v=|youtu\\.be\\/|\\/v=|^youtu\\.be\\/)([^\\s\\&\\?]+)+";
-                var regexExtractId = new Regex(YoutubeLinkRegex, RegexOptions.Compiled);
-                var regRes = regexExtractId.Match(url);
+                var uri = new Uri(url);
+                var query = HttpUtility.ParseQueryString(uri.Query);
 
-                if (regRes.Success)
+                if (query["v"].HasValue())
                 {
-                    result = regRes.Groups[1].Value;
+                    result = query["v"];
+                }
+
+                else
+                {
+                    var YoutubeLinkRegex = "(?:.+?)?(?:\\/v\\/|watch\\/|\\?v=|\\&v=|youtu\\.be\\/|\\/v=|^youtu\\.be\\/)([a-zA-Z0-9_-]{11})+";
+                    var regexExtractId = new Regex(YoutubeLinkRegex, RegexOptions.Compiled);
+                    var regRes = regexExtractId.Match(url);
+
+                    if (regRes.Success)
+                    {
+                        result = regRes.Groups[1].Value;
+                    }
                 }
             }
 

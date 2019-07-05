@@ -3,7 +3,7 @@
 @using Fynydd.Carbide
 @using Carbide.Web.Helpers
 @{ 
-    var youTubeCode = Model.MacroParameters["youTubeCode"].ToString().GetYouTubeVideoId();
+    var youTubeCode = HttpUtility.HtmlDecode(Model.MacroParameters["youTubeCode"].ToString()).GetYouTubeVideoId();
 }
 @if (youTubeCode.HasValue() && youTubeCode.Length < 15)
 {
@@ -28,4 +28,9 @@
     <small>@Html.Raw(HttpUtility.HtmlDecode(Model.MacroParameters["caption"].ToString()))</small>
     }
 </div>
+}
+
+else
+{
+    <pre>@(Html.Raw(HttpUtility.HtmlDecode(youTubeCode)))</pre>
 }
