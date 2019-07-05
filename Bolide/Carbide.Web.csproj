@@ -445,7 +445,6 @@
     <Content Include="scripts\fluidbox\jquery.fluidbox.js" />
     <Content Include="scripts\jquery-3.3.1.min.js" />
     <Content Include="scripts\jquery.ba-throttle-debounce.min.js" />
-    <Content Include="scripts\jquery.backstretch.min.js" />
     <Content Include="scss\custom\carbide\basic_navigation_unit.scss" />
     <Content Include="scss\custom\carbide\basic_theme.scss" />
     <Content Include="scss\custom\carbide\rich-content-subunit.scss" />

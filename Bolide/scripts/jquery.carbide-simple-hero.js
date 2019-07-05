@@ -5,7 +5,6 @@
         var settings = $.extend({
 
             slideDuration: 5000,
-            transitionTime: 1500,
             startingSlide: 0,
             showCountdown: true
 
@@ -16,15 +15,6 @@
         var slideTimer;
         var countdownTimer;
         var countdown = parseInt(settings.slideDuration / 1000);
-
-        // Preload images into browser cache
-        var images = new Array();
-
-        $('#' + instance.attr('id') + ' #hero-content .frame').each(function (index) {
-
-            images[index] = new Image();
-            images[index].src = $(this).attr('data-img');
-        });
 
         $('#' + instance.attr('id') + ' #hero-content .nodes > a').each(function (index) {
 
@@ -107,11 +97,8 @@
 
                     $(frame).addClass('current');
 
-                    $('#' + instance.attr('id')).backstretch($(frame).attr('data-img'), {
-
-                        transitionDuration: settings.transitionTime,
-                        transitionEasing: 'linear'
-                    });
+                    $('#' + instance.attr('id') + ' > .background-image:not(#bgi' + index + ')').css("opacity", "0");
+                    $('#' + instance.attr('id') + ' > #bgi' + index).css("opacity", "1.0");
                 }
             });
         }
