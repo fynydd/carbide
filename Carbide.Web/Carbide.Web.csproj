@@ -457,6 +457,7 @@
     <Content Include="webfonts\fa-solid-900.svg" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\HelpersController.cs" />
     <Compile Include="Helpers\EventHandlers.cs" />
     <Compile Include="Helpers\Guids.cs" />
     <Compile Include="Helpers\Content.cs" />
@@ -564,8 +565,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Helpers\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

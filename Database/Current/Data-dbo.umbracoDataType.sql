@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 46 rows to dbo.umbracoDataType
+-- Adding 47 rows to dbo.umbracoDataType
 
 BEGIN TRANSACTION
 
@@ -55,7 +55,7 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (-36,N'Umbraco.DateTime',N'Date',NULL);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1041,N'Umbraco.Tags',N'Ntext',N'{"group":"default", "storageType":"Json"}');
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1041,N'Umbraco.Tags',N'Nvarchar',N'{"group":"Pages","storageType":0,"Delimiter":"\u0000"}');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1043,N'Umbraco.ImageCropper',N'Ntext',N'{"crops":[{"alias":"SocialSharing","width":1200,"height":628}]}');
 -- SQRIBE/INSERT;03d113
@@ -102,6 +102,8 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1128,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<h4>Unit Container</h4>\n<p>\nUse unit containers to create spaced areas for like subunit content. Add to your page and then add subunits as children.\n</p>","fullWidth":"1"}');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1134,N'Umbraco.RadioButtonList',N'Nvarchar',N'{"items":[{"id":1,"value":"Primary"},{"id":2,"value":"Footer"}]}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1139,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<h4>Page Tags</h4>\n<p>\nTagging the page allows you to group like pages with one or more categories.\n</p>\n<h5>Tags already in-use:</h5>\n<p>\n{{tags:Pages}}\n</p>","fullWidth":"1"}');
 
 COMMIT TRANSACTION
 

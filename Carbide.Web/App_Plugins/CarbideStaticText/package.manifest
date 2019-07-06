@@ -16,7 +16,7 @@
 				fields: [
 					{
 						label: "Static text to show",
-						description: "Enter the static text to display; HTML markup is allowed.",
+						description: "Enter the static text to display; HTML markup is allowed. Use {{tags:groupname}} to display a list of tags being used by a tag group.",
 						key: "defaultValue",
 						view: "textarea"
 					},
