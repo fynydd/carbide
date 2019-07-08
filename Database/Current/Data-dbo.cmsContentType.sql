@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 15 rows to dbo.cmsContentType
+-- Adding 17 rows to dbo.cmsContentType
 
 SET IDENTITY_INSERT [dbo].[cmsContentType] ON
 
@@ -42,6 +42,10 @@ INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[de
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (553,1129,N'carbideContainerUnit',N'icon-checkbox-dotted color-black',N'folder.png',N'Creates a spaced container for subunit content',0,0,0,0);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (554,1135,N'carbideBasicNavigationUnit',N'icon-link color-black',N'folder.png',N'Add primary and footer navigation bars to the home page for site-wide navigation',0,0,0,0);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (555,1140,N'carbidePortfolioViewSubunit',N'icon-item-arrangement color-black',N'folder.png',N'Display pages as a gallery of items (e.g. services, samples, photos, and more)',0,0,0,0);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (556,1141,N'carbidePageCollectionUnit',N'icon-server-alt color-black',N'folder.png',N'Container for pages that is not, itself, a viewable page; uses a list view',1,0,0,0);
 
 COMMIT TRANSACTION
 

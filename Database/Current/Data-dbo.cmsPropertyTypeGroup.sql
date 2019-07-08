@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 12 rows to dbo.cmsPropertyTypeGroup
+-- Adding 13 rows to dbo.cmsPropertyTypeGroup
 
 SET IDENTITY_INSERT [dbo].[cmsPropertyTypeGroup] ON
 
@@ -23,7 +23,7 @@ INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sorto
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (15,1069,N'Simple Hero Content',0,'F2124F7E-1BB9-42E3-90F6-127B47B6FE1B');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (16,1075,N'CSS Custom Properties',900,'6486EF58-A260-4C15-A9D4-D5CC6ACDF4D1');
+INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (16,1075,N'CSS Custom Properties',999,'6486EF58-A260-4C15-A9D4-D5CC6ACDF4D1');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (26,1098,N'Content',0,'C93D4373-4EB3-4DCD-8218-550A26FF3E04');
 -- SQRIBE/INSERT;03d113
@@ -31,11 +31,13 @@ INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sorto
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (38,1103,N'Fonts',800,'6BB9CC83-514E-43DD-8319-CB91A968BF7B');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (44,1110,N'Page Properties',999,'5DB9AC0F-5180-4297-83B9-80E3D49DA4CA');
+INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (44,1110,N'Page Properties',998,'5DB9AC0F-5180-4297-83B9-80E3D49DA4CA');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (47,1129,N'Unit Container',0,'EBEA160B-1774-48F6-B701-661375A91518');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (48,1135,N'Navigation',0,'C79C3AB2-2259-4E79-B95C-130206D84CF0');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (49,1140,N'Portfolio Properties',0,'66B480F8-71B2-4CDC-9E8D-7A1D5EA3D49C');
 
 COMMIT TRANSACTION
 

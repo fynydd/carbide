@@ -75,9 +75,9 @@ namespace Carbide.Web.Helpers
         {
             var result = content.Name;
 
-            if (content.HasProperty("menuName") && content.HasValue("menuName"))
+            if (content.HasProperty("pageName") && content.HasValue("pageName"))
             {
-                result = content.SafeValue("menuName");
+                result = content.SafeValue("pageName");
             }
 
             else if (content.HasProperty("metaTitle") && content.HasValue("metaTitle"))

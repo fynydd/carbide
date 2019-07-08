@@ -37,7 +37,7 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (-87,N'Umbraco.TinyMCE',N'Ntext',N'{"editor":{"toolbar":["ace","styleselect","bold","italic","alignleft","aligncenter","alignright","bullist","numlist","outdent","indent","link","umbmacro","umbembeddialog"],"stylesheets":[],"maxImageSize":500,"mode":"classic"},"hideLabel":false}');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (-51,N'Umbraco.Integer',N'Integer',NULL);
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (-51,N'Umbraco.Integer',N'Integer',N'{"min":0,"step":1}');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (-49,N'Umbraco.TrueFalse',N'Integer',N'{"default":"1","labelOn":null}');
 -- SQRIBE/INSERT;03d113
@@ -103,7 +103,7 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1134,N'Umbraco.RadioButtonList',N'Nvarchar',N'{"items":[{"id":1,"value":"Primary"},{"id":2,"value":"Footer"}]}');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1139,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<h4>Page Tags</h4>\n<p>\nTagging the page allows you to group like pages with one or more categories.\n</p>\n<h5>Tags already in-use:</h5>\n<p>\n{{tags:Pages}}\n</p>","fullWidth":"1"}');
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1139,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<h4>Page Tags</h4>\n<p>\nTagging the page allows you to group like pages with one or more categories. This affects things like page search and portfolio/gallery views.\n</p>\n<h5>Tags already in-use:</h5>\n<p>\n{{tags:Pages}}\n</p>","fullWidth":"1"}');
 
 COMMIT TRANSACTION
 

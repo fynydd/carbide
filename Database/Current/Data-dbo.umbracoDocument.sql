@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 13 rows to dbo.umbracoDocument
+-- Adding 14 rows to dbo.umbracoDocument
 
 BEGIN TRANSACTION
 
@@ -36,6 +36,8 @@ INSERT INTO [dbo].[umbracoDocument] ([nodeId],[published],[edited]) VALUES (1133
 INSERT INTO [dbo].[umbracoDocument] ([nodeId],[published],[edited]) VALUES (1136,1,0);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDocument] ([nodeId],[published],[edited]) VALUES (1137,1,0);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDocument] ([nodeId],[published],[edited]) VALUES (1142,1,0);
 
 COMMIT TRANSACTION
 

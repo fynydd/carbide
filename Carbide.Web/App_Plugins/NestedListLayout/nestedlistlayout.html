@@ -1,0 +1,49 @@
+﻿<div ng-controller="My.ListView.Layout.NestedListLayoutController as vm"
+     ng-if="items"
+     class="umb-table ng-scope">
+    <div class="umb-table-head">
+        <div class="umb-table-row">
+            <div class="umb-table-cell">
+                <input class="umb-table__input" type="checkbox" ng-show="vm.allowSelectAll" ng-click="vm.selectAll($event)" ng-checked="vm.isSelectedAll()">
+            </div>
+            <div class="umb-table-cell umb-table__name">
+                <a class="umb-table-head__link sortable" href="#" prevent-default="">
+                    <localize key="general_name" class="ng-isolate-scope">Name</localize>
+                </a>
+            </div>
+            <div class="umb-table-cell">
+                <a class="umb-table-head__link sortable" href="#" prevent-default="">
+                    Tags
+                </a>
+            </div>
+            <div class="umb-table-cell">
+                <a class="umb-table-head__link sortable" href="#" prevent-default="">
+                    Last Edited
+                </a>
+            </div>
+            <div class="umb-table-cell">
+                <a class="umb-table-head__link sortable" href="#" prevent-default="">
+                    Status
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="umb-table-body">
+        <div
+            class="umb-table-row ng-scope"
+            ng-repeat="item in items"
+            ng-class="{'umb-table-row--selected':item.selected}"
+            ng-click="vm.selectItem(item, $event, $index)">
+            <div class="umb-table-cell">
+                <i class="umb-table-body__icon umb-table-body__fileicon icon-umb-content color-black" ng-class="vm.getIcon(item)"></i>
+                <i class="umb-table-body__icon umb-table-body__checkicon icon-check"></i>
+            </div>
+            <div class="umb-table-cell umb-table__name">
+                <a title="{{ item.name }}" class="umb-table-body__link ng-binding" href="" ng-click="vm.clickItem(item, $event)" ng-bind="item.name">{{ item.name }}</a>
+            </div>
+            <div class="umb-table-cell">{{ item.tags }}</div>
+            <div class="umb-table-cell">{{ item.updateDate }}</div>
+            <div class="umb-table-cell">{{ item.state }}</div>
+        </div>
+    </div>
+</div>

@@ -9,9 +9,10 @@
       "show": [
         "-media/*", // hide for all media types
         "+content/carbideSimpleHeroUnit",
-        "+content/carbideRichContentSubunit",
         "+content/carbideContainerUnit",
         "+content/carbideBasicNavigationUnit",
+        "+content/carbideRichContentSubunit",
+        "+content/carbidePortfolioViewSubunit",
         "+content/BasicHomepage",
         "+content/BasicPage"
       ]

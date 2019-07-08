@@ -126,11 +126,11 @@ ALTER TABLE [dbo].[cmsMacroProperty] ADD CONSTRAINT [df_cmsMacroProperty_macroPr
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[cmsContentTypeAllowedContentType] ADD CONSTRAINT [df_cmsContentTypeAllowedContentType_SortOrder] DEFAULT ('0') FOR [SortOrder]
+ALTER TABLE [dbo].[cmsPropertyTypeGroup] ADD CONSTRAINT [df_cmsPropertyTypeGroup_uniqueID] DEFAULT (newid()) FOR [uniqueID]
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[cmsPropertyTypeGroup] ADD CONSTRAINT [df_cmsPropertyTypeGroup_uniqueID] DEFAULT (newid()) FOR [uniqueID]
+ALTER TABLE [dbo].[cmsContentTypeAllowedContentType] ADD CONSTRAINT [df_cmsContentTypeAllowedContentType_SortOrder] DEFAULT ('0') FOR [SortOrder]
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113

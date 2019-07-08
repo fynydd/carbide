@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 11 rows to dbo.cmsContentTypeAllowedContentType
+-- Adding 15 rows to dbo.cmsContentTypeAllowedContentType
 
 BEGIN TRANSACTION
 
@@ -25,13 +25,21 @@ INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrde
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1052,1135,3);
 -- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1052,1141,4);
+-- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1119,1069,0);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1119,1119,1);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1119,1129,2);
 -- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1119,1141,3);
+-- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1129,1098,0);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1129,1140,1);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1141,1119,0);
 
 COMMIT TRANSACTION
 
