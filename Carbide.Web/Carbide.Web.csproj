@@ -412,6 +412,9 @@
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
     <Content Include="App_Plugins\CarbideStaticText\CarbideStaticText.controller.js" />
     <Content Include="App_Plugins\CarbideStaticText\CarbideStaticText.html" />
+    <Content Include="App_Plugins\NestedListLayout\nestedlistlayout.controller.js" />
+    <Content Include="App_Plugins\NestedListLayout\nestedlistlayout.css" />
+    <Content Include="App_Plugins\NestedListLayout\nestedlistlayout.html" />
     <Content Include="App_Plugins\U8Collapse\U8Collapse.controller.js" />
     <Content Include="App_Plugins\U8Collapse\U8Collapse.css" />
     <Content Include="App_Plugins\UmbracoBackOfficeCSS\css\UmbracoBackOfficeCSS.css" />
@@ -480,6 +483,7 @@
     <Content Include="App_Plugins\CarbideStaticText\package.manifest" />
     <Content Include="App_Plugins\U8Collapse\package.manifest" />
     <Content Include="App_Plugins\CarbideHelpContentApp\package.manifest" />
+    <Content Include="App_Plugins\NestedListLayout\package.manifest" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <None Include="Properties\PublishProfiles\Release.pubxml" />

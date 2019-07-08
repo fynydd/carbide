@@ -1,7 +1,7 @@
 ﻿(function () {
     "use strict";
 
-    function NestedListLayoutController($scope, listViewHelper, $location, mediaResource, mediaHelper) {
+    function NestedListLayoutController($scope, listViewHelper, $location, contentResource, mediaResource, mediaHelper) {
 
         var vm = this;
 
@@ -20,6 +20,7 @@
             $event.stopPropagation();
 
             console.log(selectedItem);
+            getChildNodes(selectedItem);
         }
 
         // Item click handler
@@ -27,7 +28,32 @@
 
             // change path to edit item
             $location.path($scope.entityType + '/' + $scope.entityType + '/edit/' + item.id);
+        }
 
+        async function getChildNodes(item) {
+
+            var kids = await test(item);
+
+            console.log(kids);
+
+            //return ["kid 1", "kid 2"];
+        }
+
+        async function test(item) {
+
+            let kids = [];
+
+            contentResource.getChildren(item.id)
+                .then(function (contentArray) {
+                    var children = contentArray;
+                    if (children.items !== null) {
+                        children.items.forEach(child => {
+                            kids.push(child);
+                        });
+                    }
+                });
+
+            return await kids;
         }
 
         activate();
