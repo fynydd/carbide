@@ -64,6 +64,7 @@
 .carbide-nl-cell.carbide-nl-cell--icon > * {
 
     padding-right: 0;
+    padding-left: 12px;
 }
 
 .carbide-nl-cell.carbide-nl-cell--name {
@@ -102,4 +103,16 @@
 
     display: block;
     width: 100%;
+}
+
+.carbide-nl-children {
+
+    font-size: 14px;
+    line-height: 20px;
+    padding-left: 53px;
+}
+
+.carbide-nl-children i, .carbide-nl-children a {
+
+    vertical-align: text-top;
 }

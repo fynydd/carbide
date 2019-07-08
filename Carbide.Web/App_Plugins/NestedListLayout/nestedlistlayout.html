@@ -3,6 +3,8 @@
      class="umb-table ng-scope">
     <div class="umb-table-head">
         <div class="carbide-nl-row">
+            <div class="carbide-nl-cell carbide-nl-cell--disclosure">
+            </div>
             <div class="carbide-nl-cell carbide-nl-cell--icon">
             </div>
             <div class="carbide-nl-cell carbide-nl-cell--name">
@@ -46,13 +48,16 @@
             <div class="carbide-nl-cell carbide-nl-cell--name">
                 <a title="{{ item.name }}" class="umb-table-body__link ng-binding" href="" ng-click="vm.clickItem(item, $event)" ng-bind="item.name">{{ item.name }}</a>
             </div>
-            <div class="carbide-nl-cell carbide-nl-cell--tags"><span>{{ item.tags }}</span></div>
-            <div class="carbide-nl-cell carbide-nl-cell--date"><span>{{ item.updateDate }}</span></div>
-            <div class="carbide-nl-cell carbide-nl-cell--status"><span>{{ item.state }}</span></div>
+            <div class="carbide-nl-cell carbide-nl-cell--tags"><span ng-bind="item.tags">{{ item.tags }}</span></div>
+            <div class="carbide-nl-cell carbide-nl-cell--date"><span ng-bind="item.updateDate">{{ item.updateDate }}</span></div>
+            <div class="carbide-nl-cell carbide-nl-cell--status"><span ng-bind="item.state">{{ item.state }}</span></div>
             <div class="break-column"></div>
             <div class="carbide-nl-cell" ng-show="item.hasChildren">
-                <div ng-show="item.expanded" class="carbide-full-width">
-                    KIDS!
+                <div ng-show="item.expanded" class="carbide-full-width" ng-repeat="child in item.children.items">
+                    <div class="carbide-full-width carbide-nl-children">
+                        <i class="umb-table-body__icon umb-table-body__fileicon icon-umb-content color-black" ng-class="child.icon"></i>
+                        <a class="umb-table-body__link ng-binding" href="" ng-click="vm.clickItem(child, $event)" ng-bind="child.name">{{ child.name }}</a>
+                    </div>
                 </div>
             </div>
         </div>

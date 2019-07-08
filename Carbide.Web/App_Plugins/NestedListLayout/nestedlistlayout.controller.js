@@ -33,9 +33,6 @@
                 });
         });
 
-        //console.log($scope.items);
-
-
         // Init the controller
         function activate() {
         }
@@ -46,9 +43,6 @@
             // use the list view helper to select the item
             listViewHelper.selectHandler(selectedItem, index, $scope.items, $scope.selection, $event);
             $event.stopPropagation();
-
-            //console.log(selectedItem);
-            //getChildNodes(selectedItem);
         }
 
         // Item click handler
