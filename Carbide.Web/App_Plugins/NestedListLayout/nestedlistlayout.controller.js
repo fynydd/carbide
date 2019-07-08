@@ -7,6 +7,34 @@
 
         vm.selectItem = selectItem;
         vm.clickItem = clickItem;
+        vm.expandChildren = expandChildren;
+
+        $scope.items.forEach(child => {
+
+            contentResource.getChildren(child.id)
+                .then(function (contentArray) {
+
+                    var children = contentArray;
+
+                    child.expanded = false;
+
+                    if (children.items !== null) {
+
+                        child.hasChildren = true;
+
+                    } else {
+
+                        child.hasChildren = false;
+                    }
+
+                    child.children = children;
+
+                    console.log(child);
+                });
+        });
+
+        //console.log($scope.items);
+
 
         // Init the controller
         function activate() {
@@ -19,8 +47,8 @@
             listViewHelper.selectHandler(selectedItem, index, $scope.items, $scope.selection, $event);
             $event.stopPropagation();
 
-            console.log(selectedItem);
-            getChildNodes(selectedItem);
+            //console.log(selectedItem);
+            //getChildNodes(selectedItem);
         }
 
         // Item click handler
@@ -30,30 +58,11 @@
             $location.path($scope.entityType + '/' + $scope.entityType + '/edit/' + item.id);
         }
 
-        async function getChildNodes(item) {
+        function expandChildren(item, $event) {
 
-            var kids = await test(item);
+            $event.stopPropagation();
 
-            console.log(kids);
-
-            //return ["kid 1", "kid 2"];
-        }
-
-        async function test(item) {
-
-            let kids = [];
-
-            contentResource.getChildren(item.id)
-                .then(function (contentArray) {
-                    var children = contentArray;
-                    if (children.items !== null) {
-                        children.items.forEach(child => {
-                            kids.push(child);
-                        });
-                    }
-                });
-
-            return await kids;
+            item.expanded = (item.expanded == false);
         }
 
         activate();

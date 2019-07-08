@@ -2,48 +2,58 @@
      ng-if="items"
      class="umb-table ng-scope">
     <div class="umb-table-head">
-        <div class="umb-table-row">
-            <div class="umb-table-cell">
-                <input class="umb-table__input" type="checkbox" ng-show="vm.allowSelectAll" ng-click="vm.selectAll($event)" ng-checked="vm.isSelectedAll()">
+        <div class="carbide-nl-row">
+            <div class="carbide-nl-cell carbide-nl-cell--icon">
             </div>
-            <div class="umb-table-cell umb-table__name">
-                <a class="umb-table-head__link sortable" href="#" prevent-default="">
+            <div class="carbide-nl-cell carbide-nl-cell--name">
+                <div>
                     <localize key="general_name" class="ng-isolate-scope">Name</localize>
-                </a>
+                </div>
             </div>
-            <div class="umb-table-cell">
-                <a class="umb-table-head__link sortable" href="#" prevent-default="">
+            <div class="carbide-nl-cell carbide-nl-cell--tags">
+                <div>
                     Tags
-                </a>
+                </div>
             </div>
-            <div class="umb-table-cell">
-                <a class="umb-table-head__link sortable" href="#" prevent-default="">
+            <div class="carbide-nl-cell carbide-nl-cell--date">
+                <div>
                     Last Edited
-                </a>
+                </div>
             </div>
-            <div class="umb-table-cell">
-                <a class="umb-table-head__link sortable" href="#" prevent-default="">
+            <div class="carbide-nl-cell carbide-nl-cell--status">
+                <div>
                     Status
-                </a>
+                </div>
             </div>
         </div>
     </div>
     <div class="umb-table-body">
         <div
-            class="umb-table-row ng-scope"
+            class="carbide-nl-row ng-scope" ng-class="{'carbide-nl-row--selected':item.selected}"
             ng-repeat="item in items"
-            ng-class="{'umb-table-row--selected':item.selected}"
             ng-click="vm.selectItem(item, $event, $index)">
-            <div class="umb-table-cell">
-                <i class="umb-table-body__icon umb-table-body__fileicon icon-umb-content color-black" ng-class="vm.getIcon(item)"></i>
-                <i class="umb-table-body__icon umb-table-body__checkicon icon-check"></i>
+            <div class="carbide-nl-cell carbide-nl-cell--icon">
+                <div>
+                    <i class="umb-table-body__icon umb-table-body__fileicon icon-umb-content color-black" ng-class="vm.getIcon(item)"></i>
+                    <i class="umb-table-body__icon umb-table-body__checkicon icon-check"></i>
+                </div>
             </div>
-            <div class="umb-table-cell umb-table__name">
+            <div class="carbide-nl-cell carbide-nl-cell--name">
                 <a title="{{ item.name }}" class="umb-table-body__link ng-binding" href="" ng-click="vm.clickItem(item, $event)" ng-bind="item.name">{{ item.name }}</a>
             </div>
-            <div class="umb-table-cell">{{ item.tags }}</div>
-            <div class="umb-table-cell">{{ item.updateDate }}</div>
-            <div class="umb-table-cell">{{ item.state }}</div>
+            <div class="carbide-nl-cell carbide-nl-cell--tags"><span>{{ item.tags }}</span></div>
+            <div class="carbide-nl-cell carbide-nl-cell--date"><span>{{ item.updateDate }}</span></div>
+            <div class="carbide-nl-cell carbide-nl-cell--status"><span>{{ item.state }}</span></div>
+            <div class="break-column"></div>
+            <div class="carbide-nl-cell" ng-show="item.hasChildren">
+                <a class="umb-table-body__link ng-binding carbide-full-width" href="" ng-click="vm.expandChildren(item, $event)">
+                    <ins data-element="tree-item-expand" ng-class="{'icon-navigation-right': !item.expanded, 'icon-navigation-down': item.expanded }" ng-click="" class="icon-navigation-right" style="visibility: visible;">&nbsp;</ins>
+                    <span>Child items...</span>
+                </a>
+                <div ng-show="item.expanded" class="carbide-full-width">
+                    KIDS!
+                </div>
+            </div>
         </div>
     </div>
 </div>
