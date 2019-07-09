@@ -23,19 +23,19 @@
             <umb-box-header title="Utility Short Codes" />
             <umb-box-content>
                 <p>
-                    Following the format above you can insert utility short codes for things like TBD.
+                    Following the format above you can insert utility short codes for things like tags.
                 </p>
                 <p>
-                    <code ng-non-bindable>{{TBD}}</code> <small>&mdash; TBD</small>
+                    <code ng-non-bindable>{{tags:Pages}}</code> <small>&mdash; Backoffice code for rendering a list of tags used for a given group.</small>
                 </p>
             </umb-box-content>
         </umb-box>
     </div>
-    <div ng-show="vm.CurrentNodeAlias == 'basicHomepage'" class="umb-group-panel ng-scope ng-isolate-scope">
+    <div class="umb-group-panel ng-scope ng-isolate-scope">
         <umb-box class="umb-group-panel ng-scope ng-isolate-scope">
-            <umb-box-header title="CSS Custom Properties" />
+            <umb-box-header title="Global CSS Custom Properties" />
             <umb-box-content>
-                <p>Below are the <strong>CSS custom properties</strong> with sample data for styling the overall site:</p>
+                <p>Below are the <strong>CSS custom properties</strong> with sample data for styling the overall site from within the settings area:</p>
                 <p>
                     --background-color: var(--sf-color-white);<br />
                     --foreground-color: var(--sf-color-white-contrast);
@@ -43,7 +43,7 @@
             </umb-box-content>
         </umb-box>
     </div>
-    <div ng-show="vm.CurrentNodeAlias == 'carbideBasicNavigationUnit'" class="umb-group-panel ng-scope ng-isolate-scope">
+    <div class="umb-group-panel ng-scope ng-isolate-scope">
         <umb-box class="umb-group-panel ng-scope ng-isolate-scope">
             <umb-box-header title="Basic Navigation CSS Custom Properties" />
             <umb-box-content>
@@ -69,11 +69,11 @@
             </umb-box-content>
         </umb-box>
     </div>
-    <div ng-show="vm.CurrentNodeAlias == 'carbideContainerUnit'" class="umb-group-panel ng-scope ng-isolate-scope">
+    <div class="umb-group-panel ng-scope ng-isolate-scope">
         <umb-box class="umb-group-panel ng-scope ng-isolate-scope">
-            <umb-box-header title="Container CSS Custom Properties" />
+            <umb-box-header title="Container Unit CSS Custom Properties" />
             <umb-box-content>
-                <p>Below are the <strong>CSS custom properties</strong> with sample data for styling the overall site:</p>
+                <p>Below are the <strong>CSS custom properties</strong> with sample data for styling container units:</p>
                 <p>
                     --background-color: var(--sf-color-white);<br />
                 </p>
@@ -84,9 +84,9 @@
             </umb-box-content>
         </umb-box>
     </div>
-    <div ng-show="vm.CurrentNodeAlias == 'carbideRichContentSubunit'" class="umb-group-panel ng-scope ng-isolate-scope">
+    <div class="umb-group-panel ng-scope ng-isolate-scope">
         <umb-box class="umb-group-panel ng-scope ng-isolate-scope">
-            <umb-box-header title="Rich Content CSS Custom Properties" />
+            <umb-box-header title="Rich Content Subunit CSS Custom Properties" />
             <umb-box-content>
                 <p>Below are the <strong>CSS custom properties</strong> with sample data for the rich content component:</p>
                 <p>
@@ -108,9 +108,9 @@
             </umb-box-content>
         </umb-box>
     </div>
-    <div ng-show="vm.CurrentNodeAlias == 'carbideSimpleHeroUnit'" class="umb-group-panel ng-scope ng-isolate-scope">
+    <div class="umb-group-panel ng-scope ng-isolate-scope">
         <umb-box class="umb-group-panel ng-scope ng-isolate-scope">
-            <umb-box-header title="Simple Hero CSS Custom Properties" />
+            <umb-box-header title="Simple Hero Unit CSS Custom Properties" />
             <umb-box-content>
                 <p>Below are the <strong>CSS custom properties</strong> with sample data for the simple hero component:</p>
                 <p>

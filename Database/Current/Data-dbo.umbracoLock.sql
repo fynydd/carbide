@@ -13,7 +13,7 @@ BEGIN TRANSACTION
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-340,1,N'Languages');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-339,1,N'KeyValues');
+INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-339,-1,N'KeyValues');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-338,1,N'Domains');
 -- SQRIBE/INSERT;03d113

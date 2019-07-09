@@ -521,7 +521,7 @@ namespace Fynydd.Carbide
             {
                 try
                 {
-                    Uri pageUri = new Uri(content.UrlAbsolute());
+                    Uri pageUri = new Uri(content.Url(content.GetCultureFromDomains(), UrlMode.Absolute));
 
                     return pageUri.AbsolutePath;
                 }

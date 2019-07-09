@@ -49,6 +49,11 @@ REFERENCES [dbo].[cmsContentType] ([nodeId])
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[cmsContentNu] WITH NOCHECK ADD CONSTRAINT [FK_cmsContentNu_umbracoContent_nodeId] FOREIGN KEY([nodeId]) 
+REFERENCES [dbo].[umbracoContent] ([nodeId]) 
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
 ALTER TABLE [dbo].[cmsPropertyType] WITH NOCHECK ADD CONSTRAINT [FK_cmsPropertyType_umbracoDataType_nodeId] FOREIGN KEY([dataTypeId]) 
 REFERENCES [dbo].[umbracoDataType] ([nodeId]) 
 GO -- SQRIBE/GO;03d113
@@ -291,11 +296,6 @@ GO -- SQRIBE/GO;03d113
 -- SQRIBE/OBJ;03d113
 ALTER TABLE [dbo].[umbracoLanguage] WITH NOCHECK ADD CONSTRAINT [FK_umbracoLanguage_umbracoLanguage_id] FOREIGN KEY([fallbackLanguageId]) 
 REFERENCES [dbo].[umbracoLanguage] ([id]) 
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[cmsContentNu] WITH NOCHECK ADD CONSTRAINT [FK_cmsContentNu_umbracoContent_nodeId] FOREIGN KEY([nodeId]) 
-REFERENCES [dbo].[umbracoContent] ([nodeId]) 
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113

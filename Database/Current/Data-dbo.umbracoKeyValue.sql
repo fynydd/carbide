@@ -11,7 +11,7 @@ GO -- SQRIBE/GO;03d113
 BEGIN TRANSACTION
 
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoKeyValue] ([key],[value],[updated]) VALUES (N'Umbraco.Core.Upgrader.State+Umbraco.Core',N'{80C0A0CB-0DD5-4573-B000-C4B7C313C70D}',CONVERT(datetime,'2019-05-29 18:29:07.820',121));
+INSERT INTO [dbo].[umbracoKeyValue] ([key],[value],[updated]) VALUES (N'Umbraco.Core.Upgrader.State+Umbraco.Core',N'{5B1E0D93-F5A3-449B-84BA-65366B84E2D4}',CONVERT(datetime,'2019-07-09 11:51:21.607',121));
 
 COMMIT TRANSACTION
 

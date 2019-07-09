@@ -13,7 +13,7 @@
 
     foreach(var navigation in settings.SafeNestedValues("navigation"))
     {
-        if (navigation.SafeValue<bool>("enabled") && navigation.SafeValue("position") == "Primary" && navigation.SafeNestedValues("links").Count() > 0)
+        if (navigation.SafeValue<bool>("enabled") && navigation.SafeValue("position") == "Primary" && navigation.HasValue("links"))
         {
             Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", "primary-navigation"));
             Html.RenderPartial("_Partial_Carbide_Basic_Navigation_Unit", navigation, Html.ViewData);
@@ -25,7 +25,7 @@
 
     foreach(var navigation in settings.SafeNestedValues("navigation"))
     {
-        if (navigation.SafeValue<bool>("enabled") && navigation.SafeValue("position") == "Footer" && navigation.SafeNestedValues("links").Count() > 0)
+        if (navigation.SafeValue<bool>("enabled") && navigation.SafeValue("position") == "Footer" && navigation.HasValue("links"))
         {
             Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", "footer-navigation"));
             Html.RenderPartial("_Partial_Carbide_Basic_Navigation_Unit", navigation, Html.ViewData);

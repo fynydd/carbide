@@ -9,7 +9,7 @@
     if (Model.SafeValue<bool>("enabled"))
     {
         var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
-        var home = umbCtx.ContentCache.GetById(umbCtx.PublishedRequest.InitialPublishedContent.Id).AncestorOrSelf(1);
+        var home = umbCtx.Content.GetById(umbCtx.PublishedRequest.InitialPublishedContent.Id).AncestorOrSelf(1);
         var settings = home.Children.First(c => c.ContentType.Alias == "settings");
 
         object _instanceId;
@@ -17,7 +17,7 @@
         var instanceId = _instanceId == null ? "basic-navigation-unit" : _instanceId.ToString();
 
         Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".carbide_basic_navigation_unit#" + instanceId));
-        Html.RenderPartial("_Partial_CSS_Custom_Properties", settings, Html.ViewData);
+        Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
 
         var isPrimary = instanceId.Contains("primary");
 
@@ -54,7 +54,7 @@
                         </section>
                     </div>
 
-        @if (settings.HasValue("links"))
+        @if (Model.HasValue("links"))
         {
                     <div role="gridcell" sf-width-auto="true">
                         <section>

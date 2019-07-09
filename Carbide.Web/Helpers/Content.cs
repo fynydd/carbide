@@ -40,7 +40,7 @@ namespace Carbide.Web.Helpers
             if (result.Contains("{{") && currentNode != null)
             {
                 //var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
-                //var cache = umbCtx.ContentCache;
+                //var cache = umbCtx.Content;
                 //var test = cache.GetById(1234);
 
                 var home = currentNode.AncestorOrSelf(1);
@@ -70,7 +70,7 @@ namespace Carbide.Web.Helpers
         /// <returns>Processed text</returns>
         public static string ProcessShortCodes(this string value, UmbracoContext umbCtx)
         {
-            return ProcessShortCodes(value, umbCtx.ContentCache.GetById(umbCtx.PublishedRequest.InitialPublishedContent.Id));
+            return ProcessShortCodes(value, umbCtx.Content.GetById(umbCtx.PublishedRequest.InitialPublishedContent.Id));
         }
 
         public static string GetBestMenuName(this IPublishedContent content)
