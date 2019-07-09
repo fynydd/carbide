@@ -409,6 +409,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Plugins\CarbideHelpContentApp\carbidehelp.controller.js" />
+    <Content Include="App_Plugins\CarbideHelpContentApp\carbidehelp.css" />
     <Content Include="App_Plugins\CarbideHelpContentApp\carbidehelp.html" />
     <Content Include="App_Plugins\CarbideStaticText\CarbideStaticText.controller.js" />
     <Content Include="App_Plugins\CarbideStaticText\CarbideStaticText.html" />
