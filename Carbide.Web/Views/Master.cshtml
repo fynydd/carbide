@@ -7,6 +7,7 @@
 
     var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
     var home = Model.AncestorOrSelf(1);
+    var settings = home.Children.First(c => c.ContentType.Alias == "settings");
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -18,9 +19,9 @@
 
     <style type="text/css">
 
-        @if(home.SafeValue("customFontURLs").HasValue())
+        @if(settings.SafeValue("customFontURLs").HasValue())
         {
-<text>    @Html.Raw(home.SafeValue("customFontURLs"))</text>
+<text>    @Html.Raw(settings.SafeValue("customFontURLs"))</text>
         }
 
     :root {
@@ -28,15 +29,15 @@
         --background-color: var(--sf-color-white);
         --foreground-color: var(--sf-color-white-contrast);
 
-        @if(home.SafeValue("bodyFontStack").HasValue())
+        @if(settings.SafeValue("bodyFontStack").HasValue())
         {
-<text>        --font-body: @Html.Raw(home.SafeValue("bodyFontStack").Trim(";"));</text>
-        }@if(home.SafeValue("monoFontStack").HasValue())
+<text>        --font-body: @Html.Raw(settings.SafeValue("bodyFontStack").Trim(";"));</text>
+        }@if(settings.SafeValue("monoFontStack").HasValue())
         {
-<text>        --font-mono: @Html.Raw(home.SafeValue("monoFontStack").Trim(";"));</text>
-        }@if (home.SafeValue("headlineFontStack").HasValue())
+<text>        --font-mono: @Html.Raw(settings.SafeValue("monoFontStack").Trim(";"));</text>
+        }@if (settings.SafeValue("headlineFontStack").HasValue())
         {
-<text>        --font-head: @Html.Raw(home.SafeValue("headlineFontStack").Trim(";"));</text>
+<text>        --font-head: @Html.Raw(settings.SafeValue("headlineFontStack").Trim(";"));</text>
         }
     }
 
@@ -115,7 +116,7 @@
 
             $(window).on("resizeend", function () {
 
-                if ($(window).innerWidth() >= @(Carbide.Web.Helpers.Settings.GetCssBreakpoint("tabp").Replace("px", ""))) {
+                if ($(window).innerWidth() >= @(SiteSettings.GetCssBreakpoint("tabp").Replace("px", ""))) {
 
                     $(".fluidbox-image > a").off("click");
 

@@ -1,4 +1,4 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedElement>
 @using System
 @using System.Security.Cryptography
 @using Umbraco.Web
@@ -23,7 +23,7 @@
 
     foreach (var breakpoint in breakpoints)
     {
-        var width = Settings.GetCssBreakpoint(breakpoint);
+        var width = SiteSettings.GetCssBreakpoint(breakpoint);
 
         if (width != "false")
         {
@@ -45,7 +45,7 @@
     <style type="text/css">
         @foreach (var breakpoint in breakpoints)
         {
-            var width = Settings.GetCssBreakpoint(breakpoint);
+            var width = SiteSettings.GetCssBreakpoint(breakpoint);
 
             if (width != "false")
             {
@@ -98,28 +98,28 @@
 <div id="@(instanceId)" class="carbide_rich_content_subunit" sf-subunit>
     @if (Model.SafeValue("headline").HasValue())
     {
-        @Html.Raw("<" + Model.SafeValue("headlineStyle") + ">" + Model.SafeValue("headline").ProcessShortCodes(Model) + "</" + Model.SafeValue("headlineStyle") + ">")
+        @Html.Raw("<" + Model.SafeValue("headlineStyle") + ">" + Model.SafeValue("headline").ProcessShortCodes(UmbracoContext) + "</" + Model.SafeValue("headlineStyle") + ">")
     }
     <div role="grid" style="--sf-tabp-gutters: var(--column-gutter); --sf-row-gutters: var(--row-gutter);">
         @if (Model.SafeValue("richContent").HasValue() && Model.SafeValue("richContentColumn2").HasValue())
         {
             <div role="gridcell" style="--sf-tabp-frac: 1/2;">
-                @Html.Raw(Model.SafeValue("richContent").ProcessShortCodes(Model))
+                @Html.Raw(Model.SafeValue("richContent").ProcessShortCodes(UmbracoContext))
             </div>
             <div role="gridcell" style="--sf-tabp-frac: 1/2;">
-                @Html.Raw(Model.SafeValue("richContentColumn2").ProcessShortCodes(Model))
+                @Html.Raw(Model.SafeValue("richContentColumn2").ProcessShortCodes(UmbracoContext))
             </div>
         }
         else
         {
             <div role="gridcell">
-                @Html.Raw(Model.SafeValue("richContent").ProcessShortCodes(Model))
+                @Html.Raw(Model.SafeValue("richContent").ProcessShortCodes(UmbracoContext))
             </div>
         }
         @if (Model.SafeValue("buttonText").HasValue())
         {
             <div role="gridcell" class="button-row">
-                <a href="@(Model.HasValue("buttonLink") ? Model.PickerValue("buttonLink").Url : Model.SafeValue<string>("buttonUrl"))" role="button">@Html.Raw(Model.SafeValue("buttonText").ProcessShortCodes(Model))</a>
+                <a href="@(Model.HasValue("buttonLink") ? Model.PickerValue("buttonLink").Url : Model.SafeValue<string>("buttonUrl"))" role="button">@Html.Raw(Model.SafeValue("buttonText").ProcessShortCodes(UmbracoContext))</a>
             </div>
         }
     </div>

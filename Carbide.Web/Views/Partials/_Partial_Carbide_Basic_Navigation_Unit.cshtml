@@ -1,4 +1,4 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedElement>
 @using System
 @using Umbraco.Web
 @using Umbraco.Web.Models
@@ -8,15 +8,18 @@
 @{ 
     if (Model.SafeValue<bool>("enabled"))
     {
+        var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
+        var home = umbCtx.ContentCache.GetById(umbCtx.PublishedRequest.InitialPublishedContent.Id).AncestorOrSelf(1);
+        var settings = home.Children.First(c => c.ContentType.Alias == "settings");
+
         object _instanceId;
         Html.ViewData.TryGetValue("instanceId", out _instanceId);
         var instanceId = _instanceId == null ? "basic-navigation-unit" : _instanceId.ToString();
 
         Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".carbide_basic_navigation_unit#" + instanceId));
-        Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
+        Html.RenderPartial("_Partial_CSS_Custom_Properties", settings, Html.ViewData);
 
         var isPrimary = instanceId.Contains("primary");
-        var home = Model.AncestorOrSelf(1);
 
 <section id="@(instanceId)" class="carbide_basic_navigation_unit" sf-unit>
     <div sf-outer-wrapper>
@@ -31,27 +34,27 @@
                         <section>
         @if (isPrimary)
         {
-            if (home.HasValue("companyLogo"))
+            if (settings.HasValue("companyLogo"))
             {
-                <a href="/" title="@(home.SafeValue("companyName")) home page"><img src="@(home.PickerValue("companyLogo").Url)" /></a>
+                <a href="/" title="@(settings.SafeValue("companyName")) home page"><img src="@(settings.PickerValue("companyLogo").Url)" /></a>
             }
 
             else
             {
-                <h3>@(home.SafeValue("companyName"))</h3>
+                <h3>@(settings.SafeValue("companyName"))</h3>
             }
         }
 
         else
         {
             <text>
-            Copyright &copy; @(DateTime.Now.Year) @(home.SafeValue("companyName"))
+            Copyright &copy; @(DateTime.Now.Year) @(settings.SafeValue("companyName"))
             </text>
         }
                         </section>
                     </div>
 
-        @if (Model.HasValue("links"))
+        @if (settings.HasValue("links"))
         {
                     <div role="gridcell" sf-width-auto="true">
                         <section>
@@ -98,14 +101,14 @@
             <div role="grid" style="">
                 <div role="gridcell">
                     <section>
-            @if (home.HasValue("companyLogo"))
+            @if (settings.HasValue("companyLogo"))
             {
-                        <a href="/" title="@(home.SafeValue("companyName")) home page"><img src="@(home.PickerValue("companyLogo").Url)" /></a>
+                        <a href="/" title="@(settings.SafeValue("companyName")) home page"><img src="@(settings.PickerValue("companyLogo").Url)" /></a>
             }
 
             else
             {
-                        <h3>@(home.SafeValue("companyName"))</h3>
+                        <h3>@(settings.SafeValue("companyName"))</h3>
             }
                     </section>
                 </div>

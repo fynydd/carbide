@@ -6,18 +6,10 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 10 rows to dbo.cmsTagRelationship
+-- Adding 6 rows to dbo.cmsTagRelationship
 
 BEGIN TRANSACTION
 
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsTagRelationship] ([nodeId],[tagId],[propertyTypeId]) VALUES (1056,2,211);
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsTagRelationship] ([nodeId],[tagId],[propertyTypeId]) VALUES (1056,5,211);
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsTagRelationship] ([nodeId],[tagId],[propertyTypeId]) VALUES (1121,5,211);
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsTagRelationship] ([nodeId],[tagId],[propertyTypeId]) VALUES (1121,6,211);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsTagRelationship] ([nodeId],[tagId],[propertyTypeId]) VALUES (1144,7,211);
 -- SQRIBE/INSERT;03d113

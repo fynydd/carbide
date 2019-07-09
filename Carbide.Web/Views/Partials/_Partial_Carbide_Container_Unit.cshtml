@@ -1,4 +1,4 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedElement>
 @using ContentModels = Umbraco.Web.PublishedModels
 @using System.Xml
 @using System.Xml.Linq
@@ -21,25 +21,28 @@
     Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
     Html.ViewData.Clear();
 }
+@if (Model.HasProperty("contentUnits") && Model.HasValue("contentUnits"))
+{
 <section id="@(instanceId)" class="carbide_container_unit" sf-unit>
     <div sf-outer-wrapper>
         <div sf-inner-wrapper>
-@{
-    foreach (var content in Model.Children().OrderBy(o => o.SortOrder))
-    {
-        if (content.HasProperty("enabled") && content.SafeValue<bool>("enabled"))
+    @{
+        foreach (var content in Model.SafeNestedValues("contentUnits"))
         {
-            Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", content.Name.AsCssSelector()));
-
-            if (content.ContentType.Alias == "carbideRichContentSubunit")
+            if (content.HasProperty("enabled") && content.SafeValue<bool>("enabled"))
             {
-                Html.RenderPartial("_Partial_Carbide_Rich_Content_Subunit", content, Html.ViewData);
-            }
+                Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", content.SafeValue("unitName").AsCssSelector()));
 
-            Html.ViewData.Clear();
+                if (content.ContentType.Alias == "carbideRichContentSubunit")
+                {
+                    Html.RenderPartial("_Partial_Carbide_Rich_Content_Subunit", content, Html.ViewData);
+                }
+
+                Html.ViewData.Clear();
+            }
         }
     }
-}
         </div>
     </div>
 </section>
+}

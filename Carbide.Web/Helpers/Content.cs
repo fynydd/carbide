@@ -28,47 +28,49 @@ namespace Carbide.Web.Helpers
         }
 
         /// <summary>
-        /// Process short codes on content. Replaces short codes with property field values from the home node, current node, and parent node if the current node is nested content.
+        /// Process short codes on content. Replaces short codes with property field values from the settings node.
         /// </summary>
         /// <param name="value">Text to process</param>
-        /// <param name="model">Page model to use for property value find/replace and finding the home node for the current site</param>
-        /// <param name="element">Optional nested content element to also use for property value find/replace</param>
+        /// <param name="currentNode">IPublishedContent of the current node, used to find the current site's home page and settings</param>
         /// <returns>Processed text</returns>
-        public static string ProcessShortCodes(this string value, IPublishedContent model, IPublishedElement element = null)
+        public static string ProcessShortCodes(this string value, IPublishedContent currentNode)
         {
             var result = value;
 
-            if (result.Contains("{{") && model != null)
+            if (result.Contains("{{") && currentNode != null)
             {
-                var home = model.AncestorOrSelf(1);
-                
+                //var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
+                //var cache = umbCtx.ContentCache;
+                //var test = cache.GetById(1234);
+
+                var home = currentNode.AncestorOrSelf(1);
+                var settings = home.Children.First(c => c.ContentType.Alias == "settings");
+
                 Regex expression = new Regex(@"{{\w*}}");
 
                 foreach (Match shortcode in expression.Matches(value))
                 {
                     var propertyName = shortcode.Value.Replace("{{", "").Replace("}}", "");
 
-                    if (home.HasProperty(propertyName))
+                    if (settings.HasProperty(propertyName))
                     {
-                        result = result.Replace(shortcode.Value, home.SafeValue(propertyName));
-                    }
-
-                    if (model.HasProperty(propertyName))
-                    {
-                        result = result.Replace(shortcode.Value, model.SafeValue(propertyName));
-                    }
-
-                    if (element != null)
-                    {
-                        if (element.HasProperty(propertyName))
-                        {
-                            result = result.Replace(shortcode.Value, element.SafeValue(propertyName));
-                        }
+                        result = result.Replace(shortcode.Value, settings.SafeValue(propertyName));
                     }
                 }
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// Process short codes on content. Replaces short codes with property field values from the settings node.
+        /// </summary>
+        /// <param name="value">Text to process</param>
+        /// <param name="umbCtx">Umbraco context, used to find the current site's home page and settings</param>
+        /// <returns>Processed text</returns>
+        public static string ProcessShortCodes(this string value, UmbracoContext umbCtx)
+        {
+            return ProcessShortCodes(value, umbCtx.ContentCache.GetById(umbCtx.PublishedRequest.InitialPublishedContent.Id));
         }
 
         public static string GetBestMenuName(this IPublishedContent content)

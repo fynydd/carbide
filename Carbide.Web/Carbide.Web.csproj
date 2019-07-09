@@ -464,7 +464,7 @@
     <Compile Include="Helpers\EventHandlers.cs" />
     <Compile Include="Helpers\Guids.cs" />
     <Compile Include="Helpers\Content.cs" />
-    <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="Helpers\SiteSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

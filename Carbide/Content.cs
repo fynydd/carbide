@@ -428,6 +428,52 @@ namespace Fynydd.Carbide
             }
         }
 
+        public static IEnumerable<IPublishedElement> SafeNestedValues(this IPublishedElement contentNode, string propertyAlias, string culture = null, string segment = null, Fallback fallback = default(Fallback), IEnumerable<IPublishedElement> defaultValue = null)
+        {
+            IEnumerable<IPublishedElement> empty = new List<IPublishedElement>();
+
+            try
+            {
+                if (defaultValue != null)
+                {
+                    empty = defaultValue;
+                }
+
+                if (contentNode != null)
+                {
+                    if (contentNode.HasProperty(propertyAlias))
+                    {
+                        var propertyItems = contentNode.Value<IEnumerable<IPublishedElement>>(propertyAlias, culture, segment, fallback, defaultValue);
+
+                        if (propertyItems != null)
+                        {
+                            return propertyItems;
+                        }
+
+                        else
+                        {
+                            return empty;
+                        }
+                    }
+
+                    else
+                    {
+                        return empty;
+                    }
+                }
+
+                else
+                {
+                    return empty;
+                }
+            }
+
+            catch
+            {
+                return empty;
+            }
+        }
+
         #endregion
 
         #region Media

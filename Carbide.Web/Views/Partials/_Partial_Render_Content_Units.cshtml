@@ -10,23 +10,26 @@
 @using Carbide.Web.Helpers
 @using Fynydd.Carbide
 @{
-    foreach (var content in Model.Children().OrderBy(o => o.SortOrder))
+    if (Model.HasProperty("contentUnits") && Model.HasValue("contentUnits"))
     {
-        if (content.HasProperty("enabled") && content.SafeValue<bool>("enabled"))
+        foreach (var content in Model.SafeNestedValues("contentUnits"))
         {
-            Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", content.Name.AsCssSelector()));
-
-            if (content.ContentType.Alias == "carbideSimpleHeroUnit")
+            if (content.HasProperty("enabled") && content.SafeValue<bool>("enabled"))
             {
-                Html.RenderPartial("_Partial_Carbide_Simple_Hero_Unit", content, Html.ViewData);
-            }
+                Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", content.SafeValue("unitName").AsCssSelector()));
 
-            if (content.ContentType.Alias == "carbideContainerUnit")
-            {
-                Html.RenderPartial("_Partial_Carbide_Container_Unit", content, Html.ViewData);
-            }
+                if (content.ContentType.Alias == "carbideSimpleHeroUnit")
+                {
+                    Html.RenderPartial("_Partial_Carbide_Simple_Hero_Unit", content, Html.ViewData);
+                }
 
-            Html.ViewData.Clear();
+                if (content.ContentType.Alias == "carbideContainerUnit")
+                {
+                    Html.RenderPartial("_Partial_Carbide_Container_Unit", content, Html.ViewData);
+                }
+
+                Html.ViewData.Clear();
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedElement>
 @using System
 @using System.Security.Cryptography
 @using Umbraco.Web
@@ -20,18 +20,20 @@
 <style type="text/css">
         @foreach (var breakpoint in breakpoints)
         {
-            var width = Settings.GetCssBreakpoint(breakpoint);
+            var width = SiteSettings.GetCssBreakpoint(breakpoint);
 
             if (width != "false")
             {
-                if (Model.SafeValue(breakpoint + "CssProperties").HasValue())
+                var propName = breakpoint + "CssProperties";
+
+                if (Model.SafeValue(propName).HasValue())
                 {
     <text>
     @@media (min-width: @(width)) {
 
         @Html.Raw(selector + ", " + selector + " > [sf-outer-wrapper], " + selector + " > [sf-outer-wrapper] > [sf-inner-wrapper]" ) {
 
-            @(Model.SafeValue(breakpoint + "CssProperties"))
+            @(Model.SafeValue(propName))
         }
     }
     </text>

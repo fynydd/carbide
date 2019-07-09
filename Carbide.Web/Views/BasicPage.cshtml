@@ -5,27 +5,31 @@
     Layout = "Master.cshtml";
 
     var home = Model.AncestorOrSelf(1);
+    var settings = home.Children.First(c => c.ContentType.Alias == "settings");
 
     Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".carbide_basic_theme"));
-    Html.RenderPartial("_Partial_CSS_Custom_Properties", home, Html.ViewData);
+    Html.RenderPartial("_Partial_CSS_Custom_Properties", settings, Html.ViewData);
     Html.ViewData.Clear();
 
-    var primaryNavigation = home.Children().First(c => c.ContentType.Alias == "carbideBasicNavigationUnit" && c.SafeValue("position") == "Primary");
-    var footerNavigation = home.Children().First(c => c.ContentType.Alias == "carbideBasicNavigationUnit" && c.SafeValue("position") == "Footer");
-
-    if (primaryNavigation != null)
+    foreach(var navigation in settings.SafeNestedValues("navigation"))
     {
-        Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", "primary-navigation"));
-        Html.RenderPartial("_Partial_Carbide_Basic_Navigation_Unit", primaryNavigation, Html.ViewData);
-        Html.ViewData.Clear();
+        if (navigation.SafeValue<bool>("enabled") && navigation.SafeValue("position") == "Primary" && navigation.SafeNestedValues("links").Count() > 0)
+        {
+            Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", "primary-navigation"));
+            Html.RenderPartial("_Partial_Carbide_Basic_Navigation_Unit", navigation, Html.ViewData);
+            Html.ViewData.Clear();
+        }
     }
 
     Html.RenderPartial("_Partial_Render_Content_Units");
 
-    if (footerNavigation != null)
+    foreach(var navigation in settings.SafeNestedValues("navigation"))
     {
-        Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", "footer-navigation"));
-        Html.RenderPartial("_Partial_Carbide_Basic_Navigation_Unit", footerNavigation, Html.ViewData);
-        Html.ViewData.Clear();
+        if (navigation.SafeValue<bool>("enabled") && navigation.SafeValue("position") == "Footer" && navigation.SafeNestedValues("links").Count() > 0)
+        {
+            Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", "footer-navigation"));
+            Html.RenderPartial("_Partial_Carbide_Basic_Navigation_Unit", navigation, Html.ViewData);
+            Html.ViewData.Clear();
+        }
     }
 }

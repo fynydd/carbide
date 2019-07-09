@@ -9,7 +9,7 @@ using Umbraco.Web;
 
 namespace Carbide.Web.Helpers
 {
-    public static class Settings
+    public static class SiteSettings
     {
         public static RestSecurityConfig RestApiSettings = new RestSecurityConfig
         {
