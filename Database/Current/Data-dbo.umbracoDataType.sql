@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 47 rows to dbo.umbracoDataType
+-- Adding 49 rows to dbo.umbracoDataType
 
 BEGIN TRANSACTION
 
@@ -104,6 +104,10 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1134,N'Umbraco.RadioButtonList',N'Nvarchar',N'{"items":[{"id":1,"value":"Primary"},{"id":2,"value":"Footer"}]}');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1139,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<h4>Page Tags</h4>\n<p>\nTagging the page allows you to group like pages with one or more categories. This affects things like page search and portfolio/gallery views.\n</p>\n<h5>Tags already in-use:</h5>\n<p>\n{{tags:Pages}}\n</p>","fullWidth":"1"}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1149,N'Umbraco.ListView',N'Nvarchar',N'{"pageSize":100,"orderBy":"sortOrder","orderDirection":"asc","includeProperties":[{"alias":"sortOrder","header":null,"isSystem":1},{"alias":"updateDate","header":"Last edited","isSystem":1},{"alias":"tags","header":"Tags","isSystem":0}],"layouts":[{"name":"List","path":"views/propertyeditors/listview/layouts/list/list.html","icon":"icon-list","isSystem":1,"selected":true},{"name":"grid","path":"views/propertyeditors/listview/layouts/grid/grid.html","icon":"icon-thumbnails-small","isSystem":1,"selected":true}],"bulkActionPermissions":{"allowBulkPublish":true,"allowBulkUnpublish":true,"allowBulkCopy":true,"allowBulkMove":true,"allowBulkDelete":true},"tabName":"Pages"}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1151,N'Umbraco.ListView',N'Nvarchar',N'{"pageSize":100,"orderBy":"name","orderDirection":"asc","includeProperties":[{"alias":"sortOrder","header":null,"isSystem":1},{"alias":"tags","header":"Tags","isSystem":0},{"alias":"updateDate","header":"Last edited","isSystem":1},{"alias":"owner","header":"Created by","isSystem":1}],"layouts":[{"name":"List","path":"views/propertyeditors/listview/layouts/list/list.html","icon":"icon-list","isSystem":1,"selected":true},{"name":"grid","path":"views/propertyeditors/listview/layouts/grid/grid.html","icon":"icon-thumbnails-small","isSystem":1,"selected":true}],"bulkActionPermissions":{"allowBulkPublish":true,"allowBulkUnpublish":true,"allowBulkCopy":true,"allowBulkMove":true,"allowBulkDelete":true},"tabName":"Pages"}');
 
 COMMIT TRANSACTION
 

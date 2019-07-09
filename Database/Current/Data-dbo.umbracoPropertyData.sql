@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 3,175 rows to dbo.umbracoPropertyData
+-- Adding 3,289 rows to dbo.umbracoPropertyData
 
 SET IDENTITY_INSERT [dbo].[umbracoPropertyData] ON
 
@@ -12870,6 +12870,412 @@ INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[lang
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7267,295,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'about,page',NULL);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7268,412,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'about,page',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7269,415,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7271,415,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7273,415,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Sample Service One',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7275,415,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628
+    }
+  ],
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "src": "/media/w1mp0fl3/agriculture-asian-background-2606525.jpg"
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7277,415,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["article"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7279,415,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'service',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7281,415,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is a sample service.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7283,416,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7285,416,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7287,416,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Sample Service One',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7289,416,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/w1mp0fl3/agriculture-asian-background-2606525.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7291,416,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["article"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7293,416,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'service,food',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7295,416,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is a sample service.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7297,418,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7299,418,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7301,418,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Sample Service Two',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7303,418,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628
+    }
+  ],
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "src": "/media/fkpnkvvr/apparel-background-boutique-2414192.jpg"
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7305,418,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'[]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7307,418,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'service,clothing',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7309,418,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is another service item.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7311,420,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7312,421,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7313,420,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7314,421,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7315,420,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Sample Service Three',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7316,421,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Sample Service Three',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7317,420,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628
+    }
+  ],
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "src": "/media/vr0baist/agriculture-aroma-art-2342580.jpg"
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7318,421,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628
+    }
+  ],
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "src": "/media/vr0baist/agriculture-aroma-art-2342580.jpg"
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7319,420,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'[]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7320,421,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'[]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7321,420,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'service,tech',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7322,421,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'service,tech',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7323,420,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is yet another service item.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7324,421,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is yet another service item.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7325,422,207,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7327,424,91,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to Service One!',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7329,424,92,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'h1',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7331,424,93,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<p>This is service one intro text.</p>');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7333,424,99,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7335,424,176,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7337,425,91,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to Service Two!',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7338,426,91,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to Service Two!',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7339,425,92,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'h1',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7340,426,92,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'h1',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7341,425,93,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<p>This is service two intro text.</p>');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7342,426,93,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'<p>This is service two intro text.</p>');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7343,425,99,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7344,426,99,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7345,425,176,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7346,426,176,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7354,417,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7355,427,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7356,417,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7357,427,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7358,417,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Sample Service One',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7359,427,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Sample Service One',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7360,417,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/w1mp0fl3/agriculture-asian-background-2606525.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7361,427,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/w1mp0fl3/agriculture-asian-background-2606525.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7362,417,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["article"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7363,427,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["article"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7364,417,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'service,food',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7365,427,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'service,food',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7366,417,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is a sample service.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7367,427,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is a sample service.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7368,428,207,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7372,419,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7374,419,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7376,419,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Sample Service Two',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7378,419,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/fkpnkvvr/apparel-background-boutique-2414192.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7380,419,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'[]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7382,419,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7384,419,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is another service item.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7387,429,207,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7388,430,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7390,430,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7392,430,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Sample Service Two',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7394,430,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/fkpnkvvr/apparel-background-boutique-2414192.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7396,430,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'[]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7398,430,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7400,430,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is another service item.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7402,431,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7404,431,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7406,431,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Sample Service Two',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7408,431,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/fkpnkvvr/apparel-background-boutique-2414192.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7410,431,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'[]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7412,431,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'service,clothing',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7414,431,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is another service item.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7416,432,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7418,432,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7420,432,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Sample Service Two',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7422,432,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/fkpnkvvr/apparel-background-boutique-2414192.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7424,432,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'[]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7426,432,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7428,432,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is another service item.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7430,423,207,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7433,434,207,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7435,435,207,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7437,436,207,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7438,437,207,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7439,433,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7440,438,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7441,433,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7442,438,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7443,433,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Sample Service Two',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7444,438,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Sample Service Two',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7445,433,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/fkpnkvvr/apparel-background-boutique-2414192.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7446,438,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/fkpnkvvr/apparel-background-boutique-2414192.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7447,433,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'[]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7448,438,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'[]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7449,433,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'service,clothing',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7450,438,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'service,clothing',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7451,433,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is another service item.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (7452,438,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is another service item.');
 
 COMMIT TRANSACTION
 

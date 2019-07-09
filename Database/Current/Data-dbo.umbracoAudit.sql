@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 77 rows to dbo.umbracoAudit
+-- Adding 87 rows to dbo.umbracoAudit
 
 SET IDENTITY_INSERT [dbo].[umbracoAudit] ON
 
@@ -166,6 +166,26 @@ INSERT INTO [dbo].[umbracoAudit] ([id],[performingUserId],[performingDetails],[p
 INSERT INTO [dbo].[umbracoAudit] ([id],[performingUserId],[performingDetails],[performingIp],[eventDateUtc],[affectedUserId],[affectedDetails],[eventType],[eventDetails]) VALUES (1072,0,N'User "SYSTEM" ',N'10.0.11.1',CONVERT(datetime,'2019-07-07 22:36:14.953',121),-1,N'User "Michael Argentini" <michael@argentini.us>',N'umbraco/user/save',N'updating LastLoginDate, UpdateDate');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoAudit] ([id],[performingUserId],[performingDetails],[performingIp],[eventDateUtc],[affectedUserId],[affectedDetails],[eventType],[eventDetails]) VALUES (1073,0,N'User "SYSTEM" ',N'10.0.11.1',CONVERT(datetime,'2019-07-07 22:36:15.017',121),-1,N'User "Michael Argentini" <michael@argentini.us>',N'umbraco/user/sign-in/login',N'login success');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoAudit] ([id],[performingUserId],[performingDetails],[performingIp],[eventDateUtc],[affectedUserId],[affectedDetails],[eventType],[eventDetails]) VALUES (1074,0,N'User "SYSTEM" ',N'10.0.11.1',CONVERT(datetime,'2019-07-08 05:21:54.207',121),-1,N'User "Michael Argentini" <michael@argentini.us>',N'umbraco/user/save',N'updating LastLoginDate, UpdateDate');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoAudit] ([id],[performingUserId],[performingDetails],[performingIp],[eventDateUtc],[affectedUserId],[affectedDetails],[eventType],[eventDetails]) VALUES (1075,0,N'User "SYSTEM" ',N'10.0.11.1',CONVERT(datetime,'2019-07-08 05:21:54.240',121),-1,N'User "Michael Argentini" <michael@argentini.us>',N'umbraco/user/sign-in/login',N'login success');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoAudit] ([id],[performingUserId],[performingDetails],[performingIp],[eventDateUtc],[affectedUserId],[affectedDetails],[eventType],[eventDetails]) VALUES (1076,0,N'User "SYSTEM" ',N'10.0.11.1',CONVERT(datetime,'2019-07-08 05:24:39.830',121),-1,N'User "Michael Argentini" <michael@argentini.us>',N'umbraco/user/save',N'updating LastLoginDate, UpdateDate');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoAudit] ([id],[performingUserId],[performingDetails],[performingIp],[eventDateUtc],[affectedUserId],[affectedDetails],[eventType],[eventDetails]) VALUES (1077,0,N'User "SYSTEM" ',N'10.0.11.1',CONVERT(datetime,'2019-07-08 05:24:39.830',121),-1,N'User "Michael Argentini" <michael@argentini.us>',N'umbraco/user/sign-in/login',N'login success');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoAudit] ([id],[performingUserId],[performingDetails],[performingIp],[eventDateUtc],[affectedUserId],[affectedDetails],[eventType],[eventDetails]) VALUES (1078,0,N'User "SYSTEM" ',N'10.0.11.1',CONVERT(datetime,'2019-07-08 14:39:27.953',121),-1,N'User "Michael Argentini" <michael@argentini.us>',N'umbraco/user/save',N'updating LastLoginDate, UpdateDate');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoAudit] ([id],[performingUserId],[performingDetails],[performingIp],[eventDateUtc],[affectedUserId],[affectedDetails],[eventType],[eventDetails]) VALUES (1079,0,N'User "SYSTEM" ',N'10.0.11.1',CONVERT(datetime,'2019-07-08 14:39:27.997',121),-1,N'User "Michael Argentini" <michael@argentini.us>',N'umbraco/user/sign-in/login',N'login success');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoAudit] ([id],[performingUserId],[performingDetails],[performingIp],[eventDateUtc],[affectedUserId],[affectedDetails],[eventType],[eventDetails]) VALUES (1080,0,N'User "SYSTEM" ',N'10.0.11.1',CONVERT(datetime,'2019-07-08 18:17:58.023',121),-1,N'User "Michael Argentini" <michael@argentini.us>',N'umbraco/user/save',N'updating LastLoginDate, UpdateDate');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoAudit] ([id],[performingUserId],[performingDetails],[performingIp],[eventDateUtc],[affectedUserId],[affectedDetails],[eventType],[eventDetails]) VALUES (1081,0,N'User "SYSTEM" ',N'10.0.11.1',CONVERT(datetime,'2019-07-08 18:17:58.037',121),-1,N'User "Michael Argentini" <michael@argentini.us>',N'umbraco/user/sign-in/login',N'login success');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoAudit] ([id],[performingUserId],[performingDetails],[performingIp],[eventDateUtc],[affectedUserId],[affectedDetails],[eventType],[eventDetails]) VALUES (1082,0,N'User "SYSTEM" ',N'10.0.11.1',CONVERT(datetime,'2019-07-08 18:45:50.270',121),-1,N'User "Michael Argentini" <michael@argentini.us>',N'umbraco/user/save',N'updating LastLoginDate, UpdateDate');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoAudit] ([id],[performingUserId],[performingDetails],[performingIp],[eventDateUtc],[affectedUserId],[affectedDetails],[eventType],[eventDetails]) VALUES (1083,0,N'User "SYSTEM" ',N'10.0.11.1',CONVERT(datetime,'2019-07-08 18:45:50.277',121),-1,N'User "Michael Argentini" <michael@argentini.us>',N'umbraco/user/sign-in/login',N'login success');
 
 COMMIT TRANSACTION
 

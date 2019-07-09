@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 88 rows to dbo.cmsPropertyType
+-- Adding 89 rows to dbo.cmsPropertyType
 
 SET IDENTITY_INSERT [dbo].[cmsPropertyType] ON
 
@@ -188,6 +188,8 @@ INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[property
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (218,1041,1140,49,N'excludeTags',N'Exclude Tags',5,0,NULL,N'Never show content with the tags chosen here.',0,'F261DB9D-C5CA-490C-BCCD-9612390F4C84');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (219,-51,1140,49,N'maximumItemCount',N'Maximum Item Count',2,1,NULL,N'Show no more than this number of items; zero means no limit.',0,'31C7DA6B-D8C7-477D-B52E-3AD21526DD3B');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (220,1149,1141,50,N'pagesListView',N'Pages List View',0,0,NULL,NULL,0,'D931D227-F396-4DCE-93C1-AD4C6C1315AD');
 
 COMMIT TRANSACTION
 

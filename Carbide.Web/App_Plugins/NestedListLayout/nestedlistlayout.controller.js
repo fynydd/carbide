@@ -1,12 +1,13 @@
 ﻿(function () {
     "use strict";
 
-    function NestedListLayoutController($scope, listViewHelper, $location, contentResource, mediaResource, mediaHelper) {
+    function NestedListLayoutController($scope, listViewHelper, $location, contentResource, editorService, navigationService, mediaResource, mediaHelper) {
 
         var vm = this;
 
         vm.selectItem = selectItem;
         vm.clickItem = clickItem;
+        vm.clickSubitem = clickSubitem;
         vm.expandChildren = expandChildren;
 
         $scope.items.forEach(child => {
@@ -29,7 +30,36 @@
 
                     child.children = children;
 
-                    console.log(child);
+                    if (child.children.items != null) {
+
+                        child.children.items.forEach(_child => {
+
+                            contentResource.getChildren(_child.id)
+                                .then(function (contentArray) {
+
+                                    var grandchildren = contentArray;
+
+                                    _child.expanded = false;
+
+                                    if (grandchildren.items !== null) {
+
+                                        _child.hasChildren = true;
+
+                                    } else {
+
+                                        _child.hasChildren = false;
+                                    }
+
+                                    _child.children = grandchildren;
+                                });
+                        });
+
+                        //console.log(child);
+
+                    } else {
+
+                        //console.log(child);
+                    }
                 });
         });
 
@@ -50,6 +80,12 @@
 
             // change path to edit item
             $location.path($scope.entityType + '/' + $scope.entityType + '/edit/' + item.id);
+        }
+
+        // Subitem click handler
+        function clickSubitem(item) {
+
+            editorService.contentEditor({ id: item.id, create: false, submit: function () { editorService.close(); }, close: function () { editorService.close(); } });
         }
 
         function expandChildren(item, $event) {

@@ -33,7 +33,7 @@
         <div
             class="carbide-nl-row ng-scope" ng-class="{'carbide-nl-row--selected':item.selected}"
             ng-repeat="item in items"
-            ng-click="vm.selectItem(item, $event, $index)">
+            ng-clickxxx="vm.selectItem(item, $event, $index)">
             <div class="carbide-nl-cell carbide-nl-cell--disclosure">
                 <a class="" href="" ng-click="vm.expandChildren(item, $event)" ng-show="item.hasChildren">
                     <ins data-element="tree-item-expand" ng-class="{'icon-navigation-right': !item.expanded, 'icon-navigation-down': item.expanded }" ng-click="" class="icon-navigation-right" style="visibility: visible;"></ins>
@@ -56,7 +56,13 @@
                 <div ng-show="item.expanded" class="carbide-full-width" ng-repeat="child in item.children.items">
                     <div class="carbide-full-width carbide-nl-children">
                         <i class="umb-table-body__icon umb-table-body__fileicon icon-umb-content color-black" ng-class="child.icon"></i>
-                        <a class="umb-table-body__link ng-binding" href="" ng-click="vm.clickItem(child, $event)" ng-bind="child.name">{{ child.name }}</a>
+                        <a class="umb-table-body__link ng-binding" href="" ng-click="vm.clickSubitem(child, $event)" ng-bind="child.name">{{ child.name }}</a>
+                    </div>
+                    <div class="carbide-full-width" ng-show="child.hasChildren" ng-repeat="grandchild in child.children.items">
+                        <div class="carbide-full-width carbide-nl-grandchildren">
+                            <i class="umb-table-body__icon umb-table-body__fileicon icon-umb-content color-black" ng-class="grandchild.icon"></i>
+                            <a class="umb-table-body__link ng-binding" href="" ng-click="vm.clickSubitem(grandchild, $event)" ng-bind="grandchild.name">{{ grandchild.name }}</a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -116,3 +116,16 @@
 
     vertical-align: text-top;
 }
+
+.carbide-nl-grandchildren {
+
+    font-size: 14px;
+    line-height: 20px;
+    padding-left: 76px;
+    padding-top: 14px;
+}
+
+.carbide-nl-grandchildren i, .carbide-nl-grandchildren a {
+
+    vertical-align: text-top;
+}
