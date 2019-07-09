@@ -1,8 +1,14 @@
 ﻿<div ng-controller="Carbide.HelpApp as vm">
+    <div class="carbide-intro-text">
+        <h4>Short Codes</h4>
+        <p>
+            The following are short codes (bits of text) you can enter into most any text input box to display data from your settings, like company name.
+        </p>
+    </div>
     <div class="umb-group-panel ng-scope ng-isolate-scope">
         <umb-box>
-            <umb-box-header title="Field Data Short Codes" />
-            <umb-box-content>
+            <umb-box-header ng-click="box1=(!box1)" ng-class="{'collapsed': !box1}"><i class="icon icon-navigation-down" ng-class="{ 'icon icon-navigation-right': !box1 }"></i> Short Codes</umb-box-header>
+            <umb-box-content ng-show="box1">
                 <p>
                     <strong>You can insert field data into your content by using short codes.</strong> These snippets of text use the format <strong>{{fieldName}}</strong> where "fieldName" is the name of the field in camel case format. For example, to insert the company street address, type:
                 </p>
@@ -20,8 +26,8 @@
     </div>
     <div class="umb-group-panel ng-scope ng-isolate-scope">
         <umb-box>
-            <umb-box-header title="Utility Short Codes" />
-            <umb-box-content>
+            <umb-box-header ng-click="box2=(!box2)" ng-class="{'collapsed': !box2}"><i class="icon icon-navigation-down" ng-class="{ 'icon icon-navigation-right': !box2 }"></i> Utility Short Codes</umb-box-header>
+            <umb-box-content ng-show="box2">
                 <p>
                     Following the format above you can insert utility short codes for things like tags.
                 </p>
@@ -31,10 +37,17 @@
             </umb-box-content>
         </umb-box>
     </div>
+
+    <div class="carbide-intro-text">
+        <h4>CSS Custom Properties</h4>
+        <p>
+            The following are guides to customizing the appearance of the website as a whole, or individual components.
+        </p>
+    </div>
     <div class="umb-group-panel ng-scope ng-isolate-scope">
-        <umb-box class="umb-group-panel ng-scope ng-isolate-scope">
-            <umb-box-header title="Global CSS Custom Properties" />
-            <umb-box-content>
+        <umb-box>
+            <umb-box-header ng-click="box3=(!box3)" ng-class="{'collapsed': !box3}"><i class="icon icon-navigation-down" ng-class="{ 'icon icon-navigation-right': !box3 }"></i> Global CSS Custom Properties</umb-box-header>
+            <umb-box-content ng-show="box3">
                 <p>Below are the <strong>CSS custom properties</strong> with sample data for styling the overall site from within the settings area:</p>
                 <p>
                     --background-color: var(--sf-color-white);<br />
@@ -44,9 +57,9 @@
         </umb-box>
     </div>
     <div class="umb-group-panel ng-scope ng-isolate-scope">
-        <umb-box class="umb-group-panel ng-scope ng-isolate-scope">
-            <umb-box-header title="Basic Navigation CSS Custom Properties" />
-            <umb-box-content>
+        <umb-box>
+            <umb-box-header ng-click="box4=(!box4)" ng-class="{'collapsed': !box4}"><i class="icon icon-navigation-down" ng-class="{ 'icon icon-navigation-right': !box4 }"></i> Basic Navigation CSS Custom Properties</umb-box-header>
+            <umb-box-content ng-show="box4">
                 <p>Below are the <strong>CSS custom properties</strong> with sample data for styling the basic navigation units:</p>
                 <p>
                     --background-color: var(--sf-color-white);<br />
@@ -70,9 +83,9 @@
         </umb-box>
     </div>
     <div class="umb-group-panel ng-scope ng-isolate-scope">
-        <umb-box class="umb-group-panel ng-scope ng-isolate-scope">
-            <umb-box-header title="Container Unit CSS Custom Properties" />
-            <umb-box-content>
+        <umb-box>
+            <umb-box-header ng-click="box5=(!box5)" ng-class="{'collapsed': !box5}"><i class="icon icon-navigation-down" ng-class="{ 'icon icon-navigation-right': !box5 }"></i> Container Unit CSS Custom Properties</umb-box-header>
+            <umb-box-content ng-show="box5">
                 <p>Below are the <strong>CSS custom properties</strong> with sample data for styling container units:</p>
                 <p>
                     --background-color: var(--sf-color-white);<br />
@@ -85,9 +98,9 @@
         </umb-box>
     </div>
     <div class="umb-group-panel ng-scope ng-isolate-scope">
-        <umb-box class="umb-group-panel ng-scope ng-isolate-scope">
-            <umb-box-header title="Rich Content Subunit CSS Custom Properties" />
-            <umb-box-content>
+        <umb-box>
+            <umb-box-header ng-click="box6=(!box6)" ng-class="{'collapsed': !box6}"><i class="icon icon-navigation-down" ng-class="{ 'icon icon-navigation-right': !box6 }"></i> Rich Content Subunit CSS Custom Properties</umb-box-header>
+            <umb-box-content ng-show="box6">
                 <p>Below are the <strong>CSS custom properties</strong> with sample data for the rich content component:</p>
                 <p>
                     --column-gutter: 3%;<br />
@@ -109,9 +122,9 @@
         </umb-box>
     </div>
     <div class="umb-group-panel ng-scope ng-isolate-scope">
-        <umb-box class="umb-group-panel ng-scope ng-isolate-scope">
-            <umb-box-header title="Simple Hero Unit CSS Custom Properties" />
-            <umb-box-content>
+        <umb-box>
+            <umb-box-header ng-click="box7=(!box7)" ng-class="{'collapsed': !box7}"><i class="icon icon-navigation-down" ng-class="{ 'icon icon-navigation-right': !box7 }"></i> Simple Hero Unit CSS Custom Properties</umb-box-header>
+            <umb-box-content ng-show="box7">
                 <p>Below are the <strong>CSS custom properties</strong> with sample data for the simple hero component:</p>
                 <p>
                     --content-align: center;<br />

@@ -15,5 +15,9 @@
   ],
   "javascript": [
     "~/App_Plugins/CarbideHelpContentApp/carbidehelp.controller.js"
+  ],
+  "css": [
+    "~/App_Plugins/CarbideHelpContentApp/carbidehelp.css"
   ]
+
 }
