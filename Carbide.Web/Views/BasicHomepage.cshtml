@@ -16,7 +16,7 @@
         if (navigation.SafeValue<bool>("enabled") && navigation.SafeValue("position") == "Primary" && navigation.HasValue("links"))
         {
             Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", "primary-navigation"));
-            Html.RenderPartial("_Partial_Carbide_Basic_Navigation_Unit", navigation, Html.ViewData);
+            Html.RenderPartial("_Partial_Basic_Navigation_Unit", navigation, Html.ViewData);
             Html.ViewData.Clear();
         }
     }
@@ -28,7 +28,7 @@
         if (navigation.SafeValue<bool>("enabled") && navigation.SafeValue("position") == "Footer" && navigation.HasValue("links"))
         {
             Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", "footer-navigation"));
-            Html.RenderPartial("_Partial_Carbide_Basic_Navigation_Unit", navigation, Html.ViewData);
+            Html.RenderPartial("_Partial_Basic_Navigation_Unit", navigation, Html.ViewData);
             Html.ViewData.Clear();
         }
     }

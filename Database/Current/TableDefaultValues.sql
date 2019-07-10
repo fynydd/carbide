@@ -186,11 +186,11 @@ ALTER TABLE [dbo].[cmsPropertyType] ADD CONSTRAINT [df_cmsPropertyType_UniqueID]
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[umbracoContentVersion] ADD CONSTRAINT [df_umbracoContentVersion_versionDate] DEFAULT (getdate()) FOR [versionDate]
+ALTER TABLE [dbo].[umbracoCacheInstruction] ADD CONSTRAINT [df_umbracoCacheInstruction_instructionCount] DEFAULT ('1') FOR [instructionCount]
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[umbracoCacheInstruction] ADD CONSTRAINT [df_umbracoCacheInstruction_instructionCount] DEFAULT ('1') FOR [instructionCount]
+ALTER TABLE [dbo].[umbracoContentVersion] ADD CONSTRAINT [df_umbracoContentVersion_versionDate] DEFAULT (getdate()) FOR [versionDate]
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113

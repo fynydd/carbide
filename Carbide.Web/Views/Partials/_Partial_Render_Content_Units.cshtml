@@ -18,14 +18,14 @@
             {
                 Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", content.SafeValue("unitName").AsCssSelector()));
 
-                if (content.ContentType.Alias == "carbideSimpleHeroUnit")
+                if (content.ContentType.Alias == "simpleHeroUnit")
                 {
-                    Html.RenderPartial("_Partial_Carbide_Simple_Hero_Unit", content, Html.ViewData);
+                    Html.RenderPartial("_Partial_Simple_Hero_Unit", content, Html.ViewData);
                 }
 
-                if (content.ContentType.Alias == "carbideContainerUnit")
+                if (content.ContentType.Alias == "contentContainerUnit")
                 {
-                    Html.RenderPartial("_Partial_Carbide_Container_Unit", content, Html.ViewData);
+                    Html.RenderPartial("_Partial_Content_Container_Unit", content, Html.ViewData);
                 }
 
                 Html.ViewData.Clear();

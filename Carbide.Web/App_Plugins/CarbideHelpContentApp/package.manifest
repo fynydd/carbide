@@ -8,8 +8,9 @@
       "view": "~/App_Plugins/CarbideHelpContentApp/carbidehelp.html", // required - the location of the view file
       "show": [
         "-media/*", // hide for all media types
-        "+content/BasicHomepage",
-        "+content/BasicPage"
+        "+content/settings",
+        "+content/homepage",
+        "+content/contentPage"
       ]
     }
   ],

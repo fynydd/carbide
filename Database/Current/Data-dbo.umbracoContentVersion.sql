@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 181 rows to dbo.umbracoContentVersion
+-- Adding 185 rows to dbo.umbracoContentVersion
 
 SET IDENTITY_INSERT [dbo].[umbracoContentVersion] ON
 
@@ -311,7 +311,7 @@ INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (455,1156,CONVERT(datetime,'2019-07-09 09:58:20.180',121),-1,0,N'Settings');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (456,1157,CONVERT(datetime,'2019-07-09 00:04:37.437',121),-1,1,N'About Us');
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (456,1157,CONVERT(datetime,'2019-07-10 17:45:29.657',121),-1,0,N'About Us');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (457,1156,CONVERT(datetime,'2019-07-09 11:17:27.610',121),-1,0,N'Settings');
 -- SQRIBE/INSERT;03d113
@@ -357,7 +357,7 @@ INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (478,1156,CONVERT(datetime,'2019-07-09 13:32:52.447',121),-1,0,N'Settings');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (479,1156,CONVERT(datetime,'2019-07-09 13:32:52.447',121),-1,1,N'Settings');
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (479,1156,CONVERT(datetime,'2019-07-10 17:44:47.830',121),-1,0,N'Settings');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (480,1056,CONVERT(datetime,'2019-07-09 13:34:25.773',121),-1,0,N'Carbide Site 1');
 -- SQRIBE/INSERT;03d113
@@ -369,11 +369,19 @@ INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (484,1056,CONVERT(datetime,'2019-07-09 22:32:04.090',121),-1,0,N'Carbide Site 1');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (485,1056,CONVERT(datetime,'2019-07-09 22:32:04.090',121),-1,1,N'Carbide Site 1');
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (485,1056,CONVERT(datetime,'2019-07-10 17:41:15.117',121),-1,0,N'Carbide Site 1');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (486,1145,CONVERT(datetime,'2019-07-09 22:38:10.717',121),-1,0,N'Sample Service Two');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (487,1145,CONVERT(datetime,'2019-07-09 22:38:10.717',121),-1,1,N'Sample Service Two');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (488,1056,CONVERT(datetime,'2019-07-10 17:42:46.333',121),-1,0,N'Carbide Site 1');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (489,1056,CONVERT(datetime,'2019-07-10 17:42:46.333',121),-1,1,N'Carbide Site 1');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (490,1156,CONVERT(datetime,'2019-07-10 17:44:47.830',121),-1,1,N'Settings');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (491,1157,CONVERT(datetime,'2019-07-10 17:45:29.657',121),-1,1,N'About Us');
 
 COMMIT TRANSACTION
 

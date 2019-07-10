@@ -456,7 +456,7 @@
     <Content Include="scss\custom\carbide\basic_theme.scss" />
     <Content Include="scss\custom\carbide\rich-content-subunit.scss" />
     <Content Include="stylesheets\all.min.css" />
-    <Content Include="Views\Partials\_Partial_Carbide_Basic_Navigation_Unit.cshtml" />
+    <Content Include="Views\Partials\_Partial_Basic_Navigation_Unit.cshtml" />
     <Content Include="Views\Partials\_Partial_Render_Content_Units.cshtml" />
     <Content Include="Web.config" />
     <Content Include="webfonts\fa-brands-400.svg" />
@@ -492,9 +492,9 @@
     <Content Include="Views\Web.config" />
     <None Include="Properties\PublishProfiles\Release.pubxml" />
     <Content Include="Views\Master.cshtml" />
-    <Content Include="Views\Partials\_Partial_Head.cshtml" />
+    <Content Include="Views\Partials\_Partial_Meta_Head.cshtml" />
     <Content Include="scripts\jquery-3.3.1.min.map" />
-    <Content Include="Views\Partials\_Partial_Carbide_Simple_Hero_Unit.cshtml" />
+    <Content Include="Views\Partials\_Partial_Simple_Hero_Unit.cshtml" />
     <None Include="Properties\PublishProfiles\Staging.pubxml" />
     <Content Include="scss\application.scss" />
     <Content Include="scss\custom\carbide\simple-hero-unit.scss" />
@@ -527,11 +527,9 @@
     <Content Include="scss\_config.scss" />
     <Content Include="scss\_manifest.scss" />
     <Content Include="Views\Partials\_Partial_CSS_Custom_Properties.cshtml" />
-    <Content Include="Views\Partials\_Partial_Carbide_Rich_Content_Subunit.cshtml" />
-    <Content Include="Views\BasicPage.cshtml" />
-    <Content Include="Views\BasicHomepage.cshtml" />
-    <Content Include="Views\Partials\_Partial_Carbide_Container_Unit.cshtml" />
-    <Content Include="scss\custom\carbide\container-unit.scss" />
+    <Content Include="Views\Partials\_Partial_Rich_Content_Subunit.cshtml" />
+    <Content Include="Views\Partials\_Partial_Content_Container_Unit.cshtml" />
+    <Content Include="scss\custom\carbide\content-container-unit.scss" />
     <Content Include="Views\MacroPartials\_Partial_Responsive_Image.cshtml" />
     <Content Include="Views\MacroPartials\_Partial_Responsive_YouTube_Video.cshtml" />
     <Content Include="Views\MacroPartials\_Partial_Responsive_Video.cshtml" />
@@ -543,6 +541,8 @@
     <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
+    <Content Include="Views\BasicHomepage.cshtml" />
+    <Content Include="Views\BasicPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -33,9 +33,9 @@
             {
                 Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", content.SafeValue("unitName").AsCssSelector()));
 
-                if (content.ContentType.Alias == "carbideRichContentSubunit")
+                if (content.ContentType.Alias == "richContentSubunit")
                 {
-                    Html.RenderPartial("_Partial_Carbide_Rich_Content_Subunit", content, Html.ViewData);
+                    Html.RenderPartial("_Partial_Rich_Content_Subunit", content, Html.ViewData);
                 }
 
                 Html.ViewData.Clear();
