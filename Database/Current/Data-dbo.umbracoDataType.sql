@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 52 rows to dbo.umbracoDataType
+-- Adding 55 rows to dbo.umbracoDataType
 
 BEGIN TRANSACTION
 
@@ -111,9 +111,15 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1153,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<p>For each breakpoint, enter any CSS custom property variables to override the appearance. See the <strong>Carbide Help</strong> (upper right corner of the screen) for more information on customizing the appearance and content of the site and each unit.</p>","fullWidth":"1"}');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1154,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"carbideContainerUnit","ncTabAlias":"Unit Container","nameTemplate":"{{unitName}}"},{"ncAlias":"carbideRichContentSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"},{"ncAlias":"carbideSimpleHeroUnit","ncTabAlias":"Simple Hero Content","nameTemplate":"{{unitName}}"}],"confirmDeletes":true,"showIcons":true,"hideLabel":true}');
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1154,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"carbideContainerUnit","ncTabAlias":"Unit Container","nameTemplate":"{{unitName}}"},{"ncAlias":"carbideSimpleHeroUnit","ncTabAlias":"Simple Hero Content","nameTemplate":"{{unitName}}"}],"confirmDeletes":true,"showIcons":true,"hideLabel":true}');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1160,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"carbideBasicNavigationUnit","ncTabAlias":"Navigation","nameTemplate":"{{position}}"}],"minItems":2,"maxItems":2,"confirmDeletes":true,"showIcons":true,"hideLabel":true}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1161,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"carbideRichContentSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"}],"confirmDeletes":true,"showIcons":true,"hideLabel":true}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1162,N'Umbraco.RadioButtonList',N'Nvarchar',N'{"items":[{"id":1,"value":"Ascending"},{"id":2,"value":"Descending"}]}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1163,N'Umbraco.RadioButtonList',N'Nvarchar',N'{"items":[{"id":1,"value":"Name"},{"id":2,"value":"Tags"},{"id":3,"value":"Update Date"},{"id":4,"value":"Node Order"}]}');
 
 COMMIT TRANSACTION
 

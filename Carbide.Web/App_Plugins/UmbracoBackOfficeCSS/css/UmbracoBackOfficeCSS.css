@@ -16,3 +16,10 @@ span.used-tag {
     margin-right: 7px;
     line-height: 1;
 }
+
+/* Umbraco 8.1 FIXES */
+
+.menu-label {
+
+    text-align: left;
+}

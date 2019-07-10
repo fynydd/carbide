@@ -43,7 +43,7 @@ INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[de
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (554,1135,N'primaryNavigation',N'icon-link color-black',N'folder.png',N'Add primary and footer navigation bars to the home page for site-wide navigation',0,0,0,0);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (555,1140,N'carbidePortfolioViewSubunit',N'icon-item-arrangement color-black',N'folder.png',N'Display pages as a gallery of items (e.g. services, samples, photos, and more)',0,0,0,0);
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (555,1140,N'carbidePortfolioViewSubunit',N'icon-item-arrangement color-black',N'folder.png',N'Display pages as a gallery of items (e.g. services, samples, photos, and more)',0,1,0,0);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (556,1141,N'carbidePageCollection',N'icon-server-alt color-black',N'folder.png',N'Container for pages that is not, itself, a viewable page; uses a list view',1,0,0,0);
 -- SQRIBE/INSERT;03d113

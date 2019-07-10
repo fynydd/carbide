@@ -6,6 +6,7 @@
 @{
     var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
     var home = Model.AncestorOrSelf(1);
+    var settings = home.Children.First(c => c.ContentType.Alias == "settings");
 
     // Get current domain to be used in robots.txt, page metadata
     var domain = HttpRequests.GetSeoHost(umbCtx);
@@ -39,7 +40,7 @@
 @Html.Raw("<link rel=\"canonical\" href=\"" + Model.Url + "\">")
 
 <!-- Open Graph support for Social Channels -->
-<meta property="og:site_name" content="@(home.SafeValue("socialCompanyName"))">
+<meta property="og:site_name" content="@(settings.SafeValue("socialCompanyName"))">
 <meta property="og:title" content="@(Html.Raw(metaTitle))">
 <meta property="og:keywords" content="@Html.Raw(Model.SafeValue<string>("metaKeywords"))">
 <meta property="og:description" content="@(Html.Raw(Model.SafeValue<string>("metaDescription")))">
@@ -50,17 +51,17 @@
 <!-- Twitter Card Support -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:url" content="@(Model.Url)">
-<meta name="twitter:site" content="@("@" + home.SafeValue("twitterSiteName").Trim("@"))">
-<meta name="twitter:creator" content="@("@" + home.SafeValue("twitterUserName").Trim("@"))">
+<meta name="twitter:site" content="@("@" + settings.SafeValue("twitterSiteName").Trim("@"))">
+<meta name="twitter:creator" content="@("@" + settings.SafeValue("twitterUserName").Trim("@"))">
 <meta name="twitter:title" content="@(Html.Raw(metaTitle))">
 <meta name="twitter:description" content="@(Html.Raw(Model.SafeValue<string>("metaDescription")))">
 <meta name="twitter:image" content="@(Html.Raw(Model.HasValue("shareImage") ? "//" + domain + Model.GetCropUrl("shareImage", "SocialSharing") : ""))">
 
 <!-- Icon Support -->
-<link rel="apple-touch-icon" sizes="180x180" href="@(Html.Raw(home.HasValue("websiteAvatarPng") ? "//" + domain + home.GetCropUrl("websiteAvatarPng", "Icon180") : ""))">
-<link rel="icon" type="image/png" sizes="32x32" href="@(Html.Raw(home.HasValue("websiteAvatarPng") ? "//" + domain + home.GetCropUrl("websiteAvatarPng", "Icon32") : ""))">
-<link rel="icon" type="image/png" sizes="16x16" href="@(Html.Raw(home.HasValue("websiteAvatarPng") ? "//" + domain + home.GetCropUrl("websiteAvatarPng", "Icon16") : ""))">
-<link rel="shortcut icon" type="image/png" href="@(Html.Raw(home.HasValue("websiteAvatarPng") ? "//" + domain + home.GetCropUrl("websiteAvatarPng", "Icon48") : ""))">
+<link rel="apple-touch-icon" sizes="180x180" href="@(Html.Raw(settings.HasValue("websiteAvatarPng") ? "//" + domain + settings.GetCropUrl("websiteAvatarPng", "Icon180") : ""))">
+<link rel="icon" type="image/png" sizes="32x32" href="@(Html.Raw(settings.HasValue("websiteAvatarPng") ? "//" + domain + settings.GetCropUrl("websiteAvatarPng", "Icon32") : ""))">
+<link rel="icon" type="image/png" sizes="16x16" href="@(Html.Raw(settings.HasValue("websiteAvatarPng") ? "//" + domain + settings.GetCropUrl("websiteAvatarPng", "Icon16") : ""))">
+<link rel="shortcut icon" type="image/png" href="@(Html.Raw(settings.HasValue("websiteAvatarPng") ? "//" + domain + settings.GetCropUrl("websiteAvatarPng", "Icon48") : ""))">
 
 <!-- FontAwesome -->
 <link href="/stylesheets/all.min.css" rel="stylesheet">
