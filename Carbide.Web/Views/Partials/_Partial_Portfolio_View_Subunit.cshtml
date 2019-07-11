@@ -17,14 +17,23 @@
     var filterTags = Model.SafeValue("filterTags").Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
     var excludeTags = Model.SafeValue("excludeTags").Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
     var sortTags = Model.SafeValue("sortTags").Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+    var sortField = Model.SafeValue("sortBy");
+
+    if (sortField == "Update Date")
+    {
+        sortField = "updateDate";
+    }
+
+    if (sortField == "Node Order")
+    {
+        sortField = "sortOrder";
+    }
 
     var collection = Model.PickerValue("parentPage");
     var pages = collection.Children().Where(c =>
         (filterTags.Length < 1 || (filterTags.Length > 0 && filterTags.All(s => c.Value<string[]>("tags").Any(ss => s.Contains(ss)))))
         && (excludeTags.Length < 1 || (excludeTags.Length > 0 && excludeTags.All(s => c.Value<string[]>("tags").All(ss => s.Contains(ss) == false))))
-    );
-
-
+    ).AsQueryable().OrderByDynamic(sortField, (Model.SafeValue("sortDirection") == "Ascending" ? QueryExtensions.Order.Asc : QueryExtensions.Order.Desc));
 
 }
 filterTags.length = @(filterTags.Length)
