@@ -18,6 +18,7 @@
     var excludeTags = Model.SafeValue("excludeTags").Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
     var sortTags = Model.SafeValue("sortTags").Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
     var sortField = Model.SafeValue("sortBy");
+    var sortAsc = (Model.SafeValue("sortDirection") == "Ascending");
 
     if (sortField == "Update Date")
     {
@@ -33,15 +34,18 @@
     var pages = collection.Children().Where(c =>
         (filterTags.Length < 1 || (filterTags.Length > 0 && filterTags.All(s => c.Value<string[]>("tags").Any(ss => s.Contains(ss)))))
         && (excludeTags.Length < 1 || (excludeTags.Length > 0 && excludeTags.All(s => c.Value<string[]>("tags").All(ss => s.Contains(ss) == false))))
-    ).AsQueryable().OrderByDynamic(sortField, (Model.SafeValue("sortDirection") == "Ascending" ? QueryExtensions.Order.Asc : QueryExtensions.Order.Desc));
+    )
+        .AsQueryable()
+        .OrderByDynamic(sortField, (sortAsc ? QueryExtensions.Order.Asc : QueryExtensions.Order.Desc))
+        .OrderBy(o => (sortTags.Length < 1 ? (sortAsc ? 0 : 1) : sortTags.Any(t => o.Value<string[]>("tags", null, null, new Fallback(), null).Any(tt => t.Contains(tt))) == true ? (sortAsc ? 0 : 1) : (sortAsc ? 1 : 0)))
+    ;
 
 }
-filterTags.length = @(filterTags.Length)
 <div id="@(instanceId)" class="carbide_portfolio_view_subunit" sf-subunit>
     <div role="grid" style="--sf-tabp-gutters: var(--column-gutter); --sf-row-gutters: var(--row-gutter);">
         @foreach(var page in pages)
         {
-            <div role="gridcell">PAGE: @Html.Raw(page.Name)</div>
+            <div role="gridcell">PAGE: @Html.Raw(page.Name) - @Html.Raw(string.Join(",", page.SafeValue<string[]>("tags")))</div>
         }
     </div>
 </div>
