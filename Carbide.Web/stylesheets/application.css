@@ -827,6 +827,8 @@ hr:last-child { margin-bottom: 0; }
 
 .carbide_container_unit { --background-color: transparent; background-color: var(--background-color); }
 
+.carbide_portfolio_view_subunit { --column-gutter: 3%; --row-gutter: 2rem; }
+
 .carbide_rich_content_subunit { --content-width: 100%; --background-color: transparent; --headline-align: left; --headline-margin: 2rem; --content-align: left; --column-gutter: 3%; --row-gutter: 2rem; --button-width: auto; --button-align: left; --button-background-color: var(--sf-color-buttons); --button-foreground-color: var(--sf-color-buttons-contrast); position: relative; width: var(--content-width); margin: 0 auto; text-align: var(--content-align); }
 
 .carbide_rich_content_subunit h1, .carbide_rich_content_subunit h2, .carbide_rich_content_subunit h3, .carbide_rich_content_subunit h4, .carbide_rich_content_subunit h5, .carbide_rich_content_subunit h6 { text-align: var(--headline-align); margin-bottom: var(--headline-margin); }

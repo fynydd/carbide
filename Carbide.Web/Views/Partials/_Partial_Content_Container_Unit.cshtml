@@ -38,6 +38,11 @@
                     Html.RenderPartial("_Partial_Rich_Content_Subunit", content, Html.ViewData);
                 }
 
+                if (content.ContentType.Alias == "portfolioViewSubunit")
+                {
+                    Html.RenderPartial("_Partial_Portfolio_View_Subunit", content, Html.ViewData);
+                }
+
                 Html.ViewData.Clear();
             }
         }

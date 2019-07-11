@@ -170,6 +170,10 @@ ALTER TABLE [dbo].[umbracoNode] ADD CONSTRAINT [df_umbracoNode_createDate] DEFAU
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[umbracoCacheInstruction] ADD CONSTRAINT [df_umbracoCacheInstruction_instructionCount] DEFAULT ('1') FOR [instructionCount]
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
 ALTER TABLE [dbo].[cmsPropertyType] ADD CONSTRAINT [df_cmsPropertyType_sortOrder] DEFAULT ('0') FOR [sortOrder]
 GO -- SQRIBE/GO;03d113
 
@@ -183,10 +187,6 @@ GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
 ALTER TABLE [dbo].[cmsPropertyType] ADD CONSTRAINT [df_cmsPropertyType_UniqueID] DEFAULT (newid()) FOR [UniqueID]
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[umbracoCacheInstruction] ADD CONSTRAINT [df_umbracoCacheInstruction_instructionCount] DEFAULT ('1') FOR [instructionCount]
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113

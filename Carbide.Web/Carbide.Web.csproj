@@ -543,6 +543,8 @@
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
     <Content Include="Views\BasicHomepage.cshtml" />
     <Content Include="Views\BasicPage.cshtml" />
+    <Content Include="Views\Partials\_Partial_Portfolio_View_Subunit.cshtml" />
+    <Content Include="scss\custom\carbide\portfolio_view.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

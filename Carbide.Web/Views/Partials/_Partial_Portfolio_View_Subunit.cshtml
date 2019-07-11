@@ -1,0 +1,38 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedElement>
+@using System
+@using System.Security.Cryptography
+@using Umbraco.Web
+@using Fynydd.Carbide
+@using Carbide.Web.Helpers
+
+@{
+    object _instanceId;
+    Html.ViewData.TryGetValue("instanceId", out _instanceId);
+    var instanceId = _instanceId == null ? "portfolio-view-subunit" : _instanceId.ToString();
+    var selector = "[sf-subunit].carbide_portfolio_view_subunit#" + instanceId;
+
+    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", selector));
+    Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
+
+    var filterTags = Model.SafeValue("filterTags").Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+    var excludeTags = Model.SafeValue("excludeTags").Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+    var sortTags = Model.SafeValue("sortTags").Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+
+    var collection = Model.PickerValue("parentPage");
+    var pages = collection.Children().Where(c =>
+        (filterTags.Length < 1 || (filterTags.Length > 0 && filterTags.All(s => c.Value<string[]>("tags").Any(ss => s.Contains(ss)))))
+        && (excludeTags.Length < 1 || (excludeTags.Length > 0 && excludeTags.All(s => c.Value<string[]>("tags").All(ss => s.Contains(ss) == false))))
+    );
+
+
+
+}
+filterTags.length = @(filterTags.Length)
+<div id="@(instanceId)" class="carbide_portfolio_view_subunit" sf-subunit>
+    <div role="grid" style="--sf-tabp-gutters: var(--column-gutter); --sf-row-gutters: var(--row-gutter);">
+        @foreach(var page in pages)
+        {
+            <div role="gridcell">PAGE: @Html.Raw(page.Name)</div>
+        }
+    </div>
+</div>

@@ -177,9 +177,9 @@ INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[property
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (216,1139,1140,49,N'tagsSeparator',N'Tags Separator',4,0,NULL,NULL,0,'A3C22CDD-C79A-4B22-8399-CFD9BB732D53');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (217,1041,1140,49,N'filterTags',N'Filter Tags',5,0,NULL,N'Only show content with the tags chosen here.',0,'00C9A8FF-5C8E-4B75-90EA-9F296D3B35E2');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (217,-88,1140,49,N'filterTags',N'Filter Tags',5,0,NULL,N'Only show content with ALL of these tags. Separate with commas.',0,'00C9A8FF-5C8E-4B75-90EA-9F296D3B35E2');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (218,1041,1140,49,N'excludeTags',N'Exclude Tags',6,0,NULL,N'Never show content with the tags chosen here.',0,'F261DB9D-C5CA-490C-BCCD-9612390F4C84');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (218,-88,1140,49,N'excludeTags',N'Exclude Tags',6,0,NULL,N'Never show content with ANY of these tags. Separate with commas.',0,'F261DB9D-C5CA-490C-BCCD-9612390F4C84');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (219,-51,1140,49,N'maximumItemCount',N'Maximum Item Count',3,1,NULL,N'Show no more than this number of items; zero means no limit.',0,'31C7DA6B-D8C7-477D-B52E-3AD21526DD3B');
 -- SQRIBE/INSERT;03d113
@@ -323,7 +323,7 @@ INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[property
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (293,1163,1140,49,N'sortBy',N'Sort By',7,0,NULL,NULL,0,'07E51F51-583C-413F-B20E-B1FD72FC734B');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (294,1041,1140,49,N'sortTags',N'Sort Tags',8,0,NULL,N'Use when sorting by tags.',0,'E69A6FF2-03BC-4F87-A98D-F65FD2C048E6');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (294,-88,1140,49,N'sortTags',N'Sort Tags',8,0,NULL,N'Use when sorting by tags. Separate with commas.',0,'E69A6FF2-03BC-4F87-A98D-F65FD2C048E6');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (295,1162,1140,49,N'sortDirection',N'Sort Order',9,0,NULL,NULL,0,'43D4D7E3-1A8C-4C8D-BD26-3CB620603148');
 
