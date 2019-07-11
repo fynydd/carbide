@@ -51,67 +51,51 @@ namespace Fynydd.Carbide
         /// <returns>Value of the property by type, or false (bool), -1 (numeric types), min value (dates), an empty string, or null (objects)</returns>
         public static T SafeValue<T>(this IPublishedContent contentNode, string propertyAlias, string culture = null, string segment = null, Fallback fallback = default(Fallback), T defaultValue = default(T))
         {
+            dynamic value = null;
+
             try
             {
                 if (contentNode != null)
                 {
                     if (contentNode.HasProperty(propertyAlias))
                     {
-                        var value = contentNode.Value<T>(propertyAlias, culture, segment, fallback, defaultValue);
-
-                        if (typeof(T) == typeof(string))
-                        {
-                            return (T)(value == null ? (object)string.Empty : Convert.ChangeType(value, typeof(T)));
-                        }
-
-                        else if (typeof(T) == typeof(bool))
-                        {
-                            return (T)(value == null ? (object)false : Convert.ChangeType(value, typeof(T)));
-                        }
-
-                        else if (typeof(T) == typeof(int) || typeof(T) == typeof(decimal) || typeof(T) == typeof(Decimal) || typeof(T) == typeof(double) || typeof(T) == typeof(Double) || typeof(T) == typeof(float) || typeof(T) == typeof(Int16) || typeof(T) == typeof(Int32) || typeof(T) == typeof(Int64) || typeof(T) == typeof(Single) || typeof(T) == typeof(short) || typeof(T) == typeof(long))
-                        {
-                            return (T)(value == null ? (object)-1 : Convert.ChangeType(value, typeof(T)));
-                        }
-
-                        else if (typeof(T) == typeof(DateTime))
-                        {
-                            return (T)(value == null ? (object)DateTime.MinValue : Convert.ChangeType(value, typeof(T)));
-                        }
-
-                        else
-                        {
-                            return (T)Convert.ChangeType(value, typeof(T));
-                        }
+                        value = contentNode.Value<T>(propertyAlias, culture, segment, fallback, defaultValue);
                     }
 
-                    else
+                    if (value == null || contentNode.HasProperty(propertyAlias) == false)
                     {
                         if (typeof(T) == typeof(string))
                         {
-                            return (T)Convert.ChangeType("", typeof(T));
+                            value = (T)(Convert.ChangeType(string.Empty, typeof(T)));
+                        }
+
+                        if (typeof(T) == typeof(string[]))
+                        {
+                            value = (T)(Convert.ChangeType(new string[] { }, typeof(T)));
                         }
 
                         else if (typeof(T) == typeof(bool))
                         {
-                            return (T)Convert.ChangeType(false, typeof(T));
+                            value = (T)(Convert.ChangeType(false, typeof(T)));
                         }
 
                         else if (typeof(T) == typeof(int) || typeof(T) == typeof(decimal) || typeof(T) == typeof(Decimal) || typeof(T) == typeof(double) || typeof(T) == typeof(Double) || typeof(T) == typeof(float) || typeof(T) == typeof(Int16) || typeof(T) == typeof(Int32) || typeof(T) == typeof(Int64) || typeof(T) == typeof(Single) || typeof(T) == typeof(short) || typeof(T) == typeof(long))
                         {
-                            return (T)Convert.ChangeType(-1, typeof(T));
+                            value = (T)(Convert.ChangeType(-1, typeof(T)));
                         }
 
                         else if (typeof(T) == typeof(DateTime))
                         {
-                            return (T)Convert.ChangeType(DateTime.MinValue, typeof(T));
+                            value = (T)(Convert.ChangeType(DateTime.MinValue, typeof(T)));
                         }
 
                         else
                         {
-                            return (T)(object)null;
+                            value = (T)(Convert.ChangeType(value, typeof(T)));
                         }
                     }
+
+                    return (T)value;
                 }
 
                 else
@@ -152,67 +136,51 @@ namespace Fynydd.Carbide
 
         public static T SafeValue<T>(this IPublishedElement contentNode, string propertyAlias, string culture = null, string segment = null, Fallback fallback = default(Fallback), T defaultValue = default(T))
         {
+            dynamic value = null;
+
             try
             {
                 if (contentNode != null)
                 {
                     if (contentNode.HasProperty(propertyAlias))
                     {
-                        var value = contentNode.Value<T>(propertyAlias, culture, segment, fallback, defaultValue);
-
-                        if (typeof(T) == typeof(string))
-                        {
-                            return (T)(value == null ? (object)string.Empty : Convert.ChangeType(value, typeof(T)));
-                        }
-
-                        else if (typeof(T) == typeof(bool))
-                        {
-                            return (T)(value == null ? (object)false : Convert.ChangeType(value, typeof(T)));
-                        }
-
-                        else if (typeof(T) == typeof(int) || typeof(T) == typeof(decimal) || typeof(T) == typeof(Decimal) || typeof(T) == typeof(double) || typeof(T) == typeof(Double) || typeof(T) == typeof(float) || typeof(T) == typeof(Int16) || typeof(T) == typeof(Int32) || typeof(T) == typeof(Int64) || typeof(T) == typeof(Single) || typeof(T) == typeof(short) || typeof(T) == typeof(long))
-                        {
-                            return (T)(value == null ? (object)-1 : Convert.ChangeType(value, typeof(T)));
-                        }
-
-                        else if (typeof(T) == typeof(DateTime))
-                        {
-                            return (T)(value == null ? (object)DateTime.MinValue : Convert.ChangeType(value, typeof(T)));
-                        }
-
-                        else
-                        {
-                            return (T)Convert.ChangeType(value, typeof(T));
-                        }
+                        value = contentNode.Value<T>(propertyAlias, culture, segment, fallback, defaultValue);
                     }
 
-                    else
+                    if (value == null || contentNode.HasProperty(propertyAlias) == false)
                     {
                         if (typeof(T) == typeof(string))
                         {
-                            return (T)Convert.ChangeType("", typeof(T));
+                            value = (T)(Convert.ChangeType(string.Empty, typeof(T)));
+                        }
+
+                        if (typeof(T) == typeof(string[]))
+                        {
+                            value = (T)(Convert.ChangeType(new string[] { }, typeof(T)));
                         }
 
                         else if (typeof(T) == typeof(bool))
                         {
-                            return (T)Convert.ChangeType(false, typeof(T));
+                            value = (T)(Convert.ChangeType(false, typeof(T)));
                         }
 
                         else if (typeof(T) == typeof(int) || typeof(T) == typeof(decimal) || typeof(T) == typeof(Decimal) || typeof(T) == typeof(double) || typeof(T) == typeof(Double) || typeof(T) == typeof(float) || typeof(T) == typeof(Int16) || typeof(T) == typeof(Int32) || typeof(T) == typeof(Int64) || typeof(T) == typeof(Single) || typeof(T) == typeof(short) || typeof(T) == typeof(long))
                         {
-                            return (T)Convert.ChangeType(-1, typeof(T));
+                            value = (T)(Convert.ChangeType(-1, typeof(T)));
                         }
 
                         else if (typeof(T) == typeof(DateTime))
                         {
-                            return (T)Convert.ChangeType(DateTime.MinValue, typeof(T));
+                            value = (T)(Convert.ChangeType(DateTime.MinValue, typeof(T)));
                         }
 
                         else
                         {
-                            return (T)(object)null;
+                            value = (T)(Convert.ChangeType(value, typeof(T)));
                         }
                     }
+
+                    return (T)value;
                 }
 
                 else
