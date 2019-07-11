@@ -23,3 +23,9 @@ span.used-tag {
 
     text-align: left;
 }
+
+.umb-table-cell.umb-table__name {
+
+    flex: 1 1 35%;
+    max-width: 35%;
+}
