@@ -32,12 +32,12 @@
 
     var collection = Model.PickerValue("parentPage");
     var pages = collection.Children().Where(c =>
-        (filterTags.Length < 1 || (filterTags.Length > 0 && filterTags.All(s => c.Value<string[]>("tags").Any(ss => s.Contains(ss)))))
-        && (excludeTags.Length < 1 || (excludeTags.Length > 0 && excludeTags.All(s => c.Value<string[]>("tags").All(ss => s.Contains(ss) == false))))
+        (filterTags.Length < 1 || (filterTags.Length > 0 && filterTags.All(s => c.Value<string[]>("tags").Any(ss => s.ToLower().Trim().Contains(ss.ToLower().Trim())))))
+        && (excludeTags.Length < 1 || (excludeTags.Length > 0 && excludeTags.All(s => c.Value<string[]>("tags").All(ss => s.ToLower().Trim().Contains(ss.ToLower().Trim()) == false))))
     )
         .AsQueryable()
         .OrderByDynamic(sortField, (sortAsc ? QueryExtensions.Order.Asc : QueryExtensions.Order.Desc))
-        .OrderBy(o => (sortTags.Length < 1 ? (sortAsc ? 0 : 1) : sortTags.Any(t => o.Value<string[]>("tags", null, null, new Fallback(), null).Any(tt => t.Contains(tt))) == true ? (sortAsc ? 0 : 1) : (sortAsc ? 1 : 0)))
+        .OrderBy(o => (sortTags.Length < 1 ? (sortAsc ? 0 : 1) : sortTags.Any(t => o.Value<string[]>("tags", null, null, new Fallback(), null).Any(tt => t.ToLower().Trim().Contains(tt.ToLower().Trim()))) == true ? (sortAsc ? 0 : 1) : (sortAsc ? 1 : 0)))
     ;
 
 }
