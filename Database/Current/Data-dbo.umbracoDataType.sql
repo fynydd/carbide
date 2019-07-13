@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 55 rows to dbo.umbracoDataType
+-- Adding 56 rows to dbo.umbracoDataType
 
 BEGIN TRANSACTION
 
@@ -119,7 +119,9 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1162,N'Umbraco.RadioButtonList',N'Nvarchar',N'{"items":[{"id":1,"value":"Ascending"},{"id":2,"value":"Descending"}]}');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1163,N'Umbraco.RadioButtonList',N'Nvarchar',N'{"items":[{"id":1,"value":"Name"},{"id":2,"value":"Tags"},{"id":3,"value":"Update Date"},{"id":4,"value":"Node Order"}]}');
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1163,N'Umbraco.RadioButtonList',N'Nvarchar',N'{"items":[{"id":1,"value":"Name"},{"id":3,"value":"Update Date"},{"id":4,"value":"Node Order"}]}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1165,N'Umbraco.ListView',N'Nvarchar',N'{"pageSize":100,"orderBy":"name","orderDirection":"asc","includeProperties":[{"alias":"sortOrder","header":"Sort order","isSystem":1},{"alias":"updateDate","header":"Last edited","isSystem":1},{"alias":"tags","header":"Tags","isSystem":0}],"layouts":[{"name":"List","path":"views/propertyeditors/listview/layouts/list/list.html","icon":"icon-list","isSystem":1,"selected":true},{"name":"grid","path":"views/propertyeditors/listview/layouts/grid/grid.html","icon":"icon-thumbnails-small","isSystem":1,"selected":true}],"bulkActionPermissions":{"allowBulkPublish":true,"allowBulkUnpublish":true,"allowBulkCopy":true,"allowBulkMove":true,"allowBulkDelete":true},"tabName":"Pages","showContentFirst":false}');
 
 COMMIT TRANSACTION
 

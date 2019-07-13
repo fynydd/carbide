@@ -38,6 +38,7 @@
         .AsQueryable()
         .OrderByDynamic(sortField, (sortAsc ? QueryExtensions.Order.Asc : QueryExtensions.Order.Desc))
         .OrderBy(o => (sortTags.Length < 1 ? (sortAsc ? 0 : 1) : sortTags.Any(t => o.Value<string[]>("tags", null, null, new Fallback(), null).Any(tt => t.ToLower().Trim().Contains(tt.ToLower().Trim()))) == true ? (sortAsc ? 0 : 1) : (sortAsc ? 1 : 0)))
+        .Take(Model.SafeValue<int>("maximumItemCount"))
     ;
 
 }
@@ -45,7 +46,19 @@
     <div role="grid" style="--sf-tabp-gutters: var(--column-gutter); --sf-row-gutters: var(--row-gutter);">
         @foreach(var page in pages)
         {
-            <div role="gridcell">PAGE: @Html.Raw(page.Name) - @Html.Raw(string.Join(",", page.SafeValue<string[]>("tags")))</div>
+            <div role="gridcell" style="--sf-tabp-frac: 1/3;">
+                @if(page.HasValue("shareImage"))
+                {
+                <div sf-image-wrapper>
+                    <a href="@(page.GetUrlPath())"><img src="@(Html.Raw(page.GetCropUrl("shareImage", "SocialSharing")))" /></a>
+                </div>
+                }
+                <h3><a href="@(page.GetUrlPath())">@Html.Raw(page.GetBestMenuName())</a></h3>
+                @if(page.GetBestExcerpt().HasValue())
+                {
+                    <p>@Html.Raw(page.GetBestExcerpt())</p>
+                }
+            </div>
         }
     </div>
 </div>

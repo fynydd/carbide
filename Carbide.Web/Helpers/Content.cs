@@ -89,5 +89,22 @@ namespace Carbide.Web.Helpers
 
             return result;
         }
+
+        public static string GetBestExcerpt(this IPublishedContent content)
+        {
+            var result = "";
+
+            if (content.HasProperty("pageExcerpt") && content.HasValue("pageExcerpt"))
+            {
+                result = content.SafeValue("pageExcerpt");
+            }
+
+            else if (content.HasProperty("metaDescription") && content.HasValue("metaDescription"))
+            {
+                result = content.SafeValue("metaDescription");
+            }
+
+            return result;
+        }
     }
 }
