@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 1,642 rows to dbo.umbracoPropertyData
+-- Adding 1,826 rows to dbo.umbracoPropertyData
 
 SET IDENTITY_INSERT [dbo].[umbracoPropertyData] ON
 
@@ -7725,31 +7725,17 @@ INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[lang
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9639,537,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9640,539,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9641,537,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9642,539,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9643,537,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Home',NULL);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9644,539,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Home',NULL);
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9645,537,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'',NULL);
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9646,539,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'',NULL);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9647,537,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to CarbideOne',NULL);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9648,539,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to CarbideOne',NULL);
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9649,537,182,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umbraco,cms,hosting',NULL);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9650,539,182,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umbraco,cms,hosting',NULL);
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9651,537,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is a sample Carbide website.');
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9652,539,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is a sample Carbide website.');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9653,537,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
   "src": "/media/1t4loytc/40628438523_c597eabff1_o.jpg",
@@ -7772,38 +7758,11 @@ INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[lang
   ]
 }');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9654,539,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
-  "src": "/media/1t4loytc/40628438523_c597eabff1_o.jpg",
-  "focalPoint": {
-    "left": 0.40833333333333333,
-    "top": 0.4625
-  },
-  "crops": [
-    {
-      "alias": "SocialSharing",
-      "width": 1200,
-      "height": 628,
-      "coordinates": {
-        "x1": 0.0073333333333333349,
-        "y1": 0.093999999999999986,
-        "x2": 0.15933333333333338,
-        "y2": 0.25183333333333341
-      }
-    }
-  ]
-}');
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9655,537,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9656,539,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9657,537,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* HOME PAGE LEVEL */');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9658,539,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* HOME PAGE LEVEL */');
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9659,537,247,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"4fd89bd5-e596-4169-9850-9ce97a1035fe","name":"Homepage hero","ncContentTypeAlias":"simpleHeroUnit","enabled":1,"unitName":"Homepage hero","frames":"[{\"key\":\"d903ccbf-82b4-46c0-ad28-887f2f3687f1\",\"name\":\"Hero Frame 1\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/95149a2b88ed462aa21ca1812e7fbde1\",\"title\":\"Hero Frame 1\",\"excerpt\":\"<p>This is Hero Frame 1</p>\",\"buttonText\":\"Read More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"cdaecfdc-0329-4bc4-8307-323c9fdf8d80\",\"name\":\"Hero Frame 2\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/eb86bff880c04f58b45b565cf5229a76\",\"title\":\"Hero Frame 2\",\"excerpt\":\"<p>This is Hero Frame 2</p>\",\"buttonText\":\"Learn More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"e3ed7e11-e575-43ca-829e-acbf3ec0641b\",\"name\":\"Hero Frame 3\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/3dd4230875924589a7042ee90b8a5a8e\",\"title\":\"Hero Frame 3\",\"excerpt\":\"<p>This is Hero Frame 3</p>\",\"buttonText\":\"Explore How\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null}]","frameDuration":9000,"bgTransitionTime":1500,"frameTransitionTime":1000,"showCountdown":1,"cSSSeparator":null,"zeroCssProperties":"--content-align: center;\n--content-width: 1;\n--content-push: 0;\n--min-height: 19rem;\n--max-height: 50rem;\n--vertical-padding: 3rem;\n--content-bottom-spacer: 2rem;\n--content-shadow-color: rgba(0, 0, 0, 0.5);\n--headline-bottom-spacer: 1rem;\n--headline-shadow-color: rgba(0, 0, 0, 0.35);\n--nodes-display: block;\n--nodes-align: center;\n--nodes-top-spacer: 1rem;\n--nodes-shadow-color: rgba(0, 0, 0, 0.25);\n--background-color: black;\n--background-brightness: 50%;\n--background-saturation: 150%;\n--foreground-color: white;\n--button-bottom-spacer: 1rem;\n--button-background-color: green;\n--button-foreground-color: white;","phabCssProperties":null,"tabpCssProperties":"--content-width: 1/2;\n--content-push: 1/4;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"1ea340a2-1f61-4848-880e-5cefe85a349b","name":"Welcome Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Welcome Unit","contentUnits":"[{\"key\":\"05eaf614-2cd9-4ad9-8bb6-62e7115e00ad\",\"name\":\"Welcome Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Welcome Text\",\"headline\":\"Welcome to {{companyName}} of {{companyCity}}\",\"headlineStyle\":\"h2\",\"richContent\":\"<?UMBRACO_MACRO macroAlias=\\\"ResponsiveYouTubeVideo\\\" youTubeCode=\\\"https://www.youtube.com/watch?v=us6ZcvCcYoo\\\" caption=\\\"This is a video caption.\\\" />\\n<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\",\"richContentColumn2\":\"<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\\n<?UMBRACO_MACRO macroAlias=\\\"ResponsiveImage\\\" responsiveImage=\\\"umb://media/3dd4230875924589a7042ee90b8a5a8e\\\" caption=\\\"This is an image caption.\\\" enableLightbox=\\\"1\\\" />\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":\"--headline-align: center;\",\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"67bce548-fdd6-48ff-bd01-3220cca5471b","name":"Portfolio Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Portfolio Unit","contentUnits":"[{\"key\":\"3943f769-9ac7-4f29-80e8-045cd7eb6089\",\"name\":\"Portfolio Sample\",\"ncContentTypeAlias\":\"portfolioViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Portfolio\",\"parentPage\":\"umb://document/dbb879803ec14ea6b021240714ea2040\",\"maximumItemCount\":3,\"tagsSeparator\":null,\"filterTags\":\"service\",\"excludeTags\":null,\"sortBy\":\"Name\",\"sortTags\":\"food\",\"sortDirection\":\"Ascending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 3;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":"--background-color: #f5f5f5;","phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9660,539,247,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"4fd89bd5-e596-4169-9850-9ce97a1035fe","name":"Homepage hero","ncContentTypeAlias":"simpleHeroUnit","enabled":1,"unitName":"Homepage hero","frames":"[{\"key\":\"d903ccbf-82b4-46c0-ad28-887f2f3687f1\",\"name\":\"Hero Frame 1\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/95149a2b88ed462aa21ca1812e7fbde1\",\"title\":\"Hero Frame 1\",\"excerpt\":\"<p>This is Hero Frame 1</p>\",\"buttonText\":\"Read More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"cdaecfdc-0329-4bc4-8307-323c9fdf8d80\",\"name\":\"Hero Frame 2\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/eb86bff880c04f58b45b565cf5229a76\",\"title\":\"Hero Frame 2\",\"excerpt\":\"<p>This is Hero Frame 2</p>\",\"buttonText\":\"Learn More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"e3ed7e11-e575-43ca-829e-acbf3ec0641b\",\"name\":\"Hero Frame 3\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/3dd4230875924589a7042ee90b8a5a8e\",\"title\":\"Hero Frame 3\",\"excerpt\":\"<p>This is Hero Frame 3</p>\",\"buttonText\":\"Explore How\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null}]","frameDuration":9000,"bgTransitionTime":1500,"frameTransitionTime":1000,"showCountdown":1,"cSSSeparator":null,"zeroCssProperties":"--content-align: center;\n--content-width: 1;\n--content-push: 0;\n--min-height: 19rem;\n--max-height: 50rem;\n--vertical-padding: 3rem;\n--content-bottom-spacer: 2rem;\n--content-shadow-color: rgba(0, 0, 0, 0.5);\n--headline-bottom-spacer: 1rem;\n--headline-shadow-color: rgba(0, 0, 0, 0.35);\n--nodes-display: block;\n--nodes-align: center;\n--nodes-top-spacer: 1rem;\n--nodes-shadow-color: rgba(0, 0, 0, 0.25);\n--background-color: black;\n--background-brightness: 50%;\n--background-saturation: 150%;\n--foreground-color: white;\n--button-bottom-spacer: 1rem;\n--button-background-color: green;\n--button-foreground-color: white;","phabCssProperties":null,"tabpCssProperties":"--content-width: 1/2;\n--content-push: 1/4;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"1ea340a2-1f61-4848-880e-5cefe85a349b","name":"Welcome Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Welcome Unit","contentUnits":"[{\"key\":\"05eaf614-2cd9-4ad9-8bb6-62e7115e00ad\",\"name\":\"Welcome Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Welcome Text\",\"headline\":\"Welcome to {{companyName}} of {{companyCity}}\",\"headlineStyle\":\"h2\",\"richContent\":\"<?UMBRACO_MACRO macroAlias=\\\"ResponsiveYouTubeVideo\\\" youTubeCode=\\\"https://www.youtube.com/watch?v=us6ZcvCcYoo\\\" caption=\\\"This is a video caption.\\\" />\\n<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\",\"richContentColumn2\":\"<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\\n<?UMBRACO_MACRO macroAlias=\\\"ResponsiveImage\\\" responsiveImage=\\\"umb://media/3dd4230875924589a7042ee90b8a5a8e\\\" caption=\\\"This is an image caption.\\\" enableLightbox=\\\"1\\\" />\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":\"--headline-align: center;\",\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"67bce548-fdd6-48ff-bd01-3220cca5471b","name":"Portfolio Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Portfolio Unit","contentUnits":"[{\"key\":\"3943f769-9ac7-4f29-80e8-045cd7eb6089\",\"name\":\"Portfolio Sample\",\"ncContentTypeAlias\":\"portfolioViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Portfolio\",\"parentPage\":\"umb://document/dbb879803ec14ea6b021240714ea2040\",\"maximumItemCount\":3,\"tagsSeparator\":null,\"filterTags\":\"service\",\"excludeTags\":null,\"sortBy\":\"Name\",\"sortTags\":\"food\",\"sortDirection\":\"Ascending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 3;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":"--background-color: #f5f5f5;","phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9661,491,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
 -- SQRIBE/INSERT;03d113
@@ -7876,6 +7835,773 @@ INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[lang
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9681,491,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Item 1\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9682,540,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Item 1\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9750,552,6,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2n0dgx4l/31180979107_da6a935c20_o.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9751,552,7,NULL,NULL,1024,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9752,552,8,NULL,NULL,683,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9753,552,9,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'116412',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9754,552,10,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'jpg',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9755,552,305,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Lift off!',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9767,539,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9769,539,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9771,539,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Home',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9773,539,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9775,539,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to CarbideOne',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9777,539,182,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umbraco,cms,hosting',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9779,539,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is a sample Carbide website.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9781,539,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/1t4loytc/40628438523_c597eabff1_o.jpg",
+  "focalPoint": {
+    "left": 0.40833333333333333,
+    "top": 0.4625
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": {
+        "x1": 0.0073333333333333349,
+        "y1": 0.093999999999999986,
+        "x2": 0.15933333333333338,
+        "y2": 0.25183333333333341
+      }
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9783,539,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9785,539,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* HOME PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9787,539,247,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"4fd89bd5-e596-4169-9850-9ce97a1035fe","name":"Homepage hero","ncContentTypeAlias":"simpleHeroUnit","enabled":1,"unitName":"Homepage hero","frames":"[{\"key\":\"d903ccbf-82b4-46c0-ad28-887f2f3687f1\",\"name\":\"Hero Frame 1\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/95149a2b88ed462aa21ca1812e7fbde1\",\"title\":\"Hero Frame 1\",\"excerpt\":\"<p>This is Hero Frame 1</p>\",\"buttonText\":\"Read More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"cdaecfdc-0329-4bc4-8307-323c9fdf8d80\",\"name\":\"Hero Frame 2\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/eb86bff880c04f58b45b565cf5229a76\",\"title\":\"Hero Frame 2\",\"excerpt\":\"<p>This is Hero Frame 2</p>\",\"buttonText\":\"Learn More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"e3ed7e11-e575-43ca-829e-acbf3ec0641b\",\"name\":\"Hero Frame 3\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/3dd4230875924589a7042ee90b8a5a8e\",\"title\":\"Hero Frame 3\",\"excerpt\":\"<p>This is Hero Frame 3</p>\",\"buttonText\":\"Explore How\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null}]","frameDuration":9000,"bgTransitionTime":1500,"frameTransitionTime":1000,"showCountdown":1,"cSSSeparator":null,"zeroCssProperties":"--content-align: center;\n--content-width: 1;\n--content-push: 0;\n--min-height: 19rem;\n--max-height: 50rem;\n--vertical-padding: 3rem;\n--content-bottom-spacer: 2rem;\n--content-shadow-color: rgba(0, 0, 0, 0.5);\n--headline-bottom-spacer: 1rem;\n--headline-shadow-color: rgba(0, 0, 0, 0.35);\n--nodes-display: block;\n--nodes-align: center;\n--nodes-top-spacer: 1rem;\n--nodes-shadow-color: rgba(0, 0, 0, 0.25);\n--background-color: black;\n--background-brightness: 50%;\n--background-saturation: 150%;\n--foreground-color: white;\n--button-bottom-spacer: 1rem;\n--button-background-color: green;\n--button-foreground-color: white;","phabCssProperties":null,"tabpCssProperties":"--content-width: 1/2;\n--content-push: 1/4;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"1ea340a2-1f61-4848-880e-5cefe85a349b","name":"Welcome Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Welcome Unit","contentUnits":"[{\"key\":\"05eaf614-2cd9-4ad9-8bb6-62e7115e00ad\",\"name\":\"Welcome Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Welcome Text\",\"headline\":\"Welcome to {{companyName}} of {{companyCity}}\",\"headlineStyle\":\"h2\",\"richContent\":\"<?UMBRACO_MACRO macroAlias=\\\"ResponsiveYouTubeVideo\\\" youTubeCode=\\\"https://www.youtube.com/watch?v=us6ZcvCcYoo\\\" caption=\\\"This is a video caption.\\\" />\\n<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\",\"richContentColumn2\":\"<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\\n<?UMBRACO_MACRO macroAlias=\\\"ResponsiveImage\\\" responsiveImage=\\\"umb://media/3dd4230875924589a7042ee90b8a5a8e\\\" caption=\\\"This is an image caption.\\\" enableLightbox=\\\"1\\\" />\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":\"--headline-align: center;\",\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"67bce548-fdd6-48ff-bd01-3220cca5471b","name":"Portfolio Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Portfolio Unit","contentUnits":"[{\"key\":\"3943f769-9ac7-4f29-80e8-045cd7eb6089\",\"name\":\"Sample Portfolio\",\"ncContentTypeAlias\":\"portfolioViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Portfolio\",\"parentPage\":\"umb://document/dbb879803ec14ea6b021240714ea2040\",\"maximumItemCount\":3,\"tagsSeparator\":null,\"filterTags\":\"service\",\"excludeTags\":null,\"sortBy\":\"Name\",\"sortTags\":\"food\",\"sortDirection\":\"Ascending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 3;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":"--background-color: #f5f5f5;","phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9789,553,6,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/qsihkyrm/31180979107_da6a935c20_o.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9790,553,7,NULL,NULL,1024,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9791,553,8,NULL,NULL,683,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9792,553,9,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'116412',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9793,553,10,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'jpg',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9794,553,305,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Lift off!',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9795,553,325,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'rocket',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9796,543,6,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/sz3ljeir/abstract-art-background-2490924.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9797,543,7,NULL,NULL,6000,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9798,543,8,NULL,NULL,4000,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9799,543,9,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'4176868',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9800,543,10,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'jpg',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9801,543,325,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'nature',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9802,542,6,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/e2jk3gut/background-bar-cafeteria-1253184.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9803,542,7,NULL,NULL,6000,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9804,542,8,NULL,NULL,4000,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9805,542,9,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'3910861',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9806,542,10,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'jpg',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9807,542,305,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Open for business!',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9808,542,325,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'store',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9809,544,6,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/v5hp0ixu/abstract-agriculture-background-2342578.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9810,544,7,NULL,NULL,6000,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9811,544,8,NULL,NULL,4000,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9812,544,9,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'3394336',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9813,544,10,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'jpg',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9814,544,325,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'nature',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9815,545,6,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/m4hmufhj/ancient-antique-architecture-911999.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9816,545,7,NULL,NULL,6000,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9817,545,8,NULL,NULL,4000,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9818,545,9,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'3208584',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9819,545,10,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'jpg',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9820,545,325,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'landscape',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9821,546,6,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/ovmdtjuq/asian-background-beach-737534.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9822,546,7,NULL,NULL,6000,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9823,546,8,NULL,NULL,4000,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9824,546,9,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'3222358',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9825,546,10,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'jpg',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9826,546,325,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'food',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9827,547,6,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/wyfevwfm/close-up-focus-nature-863081.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9828,547,7,NULL,NULL,5806,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9829,547,8,NULL,NULL,3871,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9830,547,9,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'2918818',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9831,547,10,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'jpg',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9832,547,325,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'landscape',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9833,548,6,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/3lrhuglo/beach-footwear-ocean-853188.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9834,548,7,NULL,NULL,6000,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9835,548,8,NULL,NULL,4000,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9836,548,9,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'2952151',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9837,548,10,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'jpg',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9838,548,325,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'landscape',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9839,549,6,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/x4rfaenh/accessories-accessory-asia-914196.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9840,549,7,NULL,NULL,6000,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9841,549,8,NULL,NULL,4000,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9842,549,9,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'3010303',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9843,549,10,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'jpg',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9844,549,325,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'landscape',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9845,550,6,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/hgzjpfzn/action-active-automotive-2578021.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9846,550,7,NULL,NULL,6000,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9847,550,8,NULL,NULL,4000,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9848,550,9,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'4000170',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9849,550,10,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'jpg',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9850,550,325,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'automotive',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9851,551,6,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/ntypfwjf/botanical-closeup-dark-2490925.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9852,551,7,NULL,NULL,6000,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9853,551,8,NULL,NULL,4000,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9854,551,9,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'2312436',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9855,551,10,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'jpg',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9856,551,325,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'nature',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9857,554,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9859,554,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9861,554,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Home',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9863,554,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9865,554,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to CarbideOne',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9867,554,182,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umbraco,cms,hosting',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9869,554,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is a sample Carbide website.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9871,554,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/1t4loytc/40628438523_c597eabff1_o.jpg",
+  "focalPoint": {
+    "left": 0.40833333333333333,
+    "top": 0.4625
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": {
+        "x1": 0.0073333333333333349,
+        "y1": 0.093999999999999986,
+        "x2": 0.15933333333333338,
+        "y2": 0.25183333333333341
+      }
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9873,554,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9875,554,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* HOME PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9877,554,247,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"4fd89bd5-e596-4169-9850-9ce97a1035fe","name":"Homepage hero","ncContentTypeAlias":"simpleHeroUnit","enabled":1,"unitName":"Homepage hero","frames":"[{\"key\":\"d903ccbf-82b4-46c0-ad28-887f2f3687f1\",\"name\":\"Hero Frame 1\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/95149a2b88ed462aa21ca1812e7fbde1\",\"title\":\"Hero Frame 1\",\"excerpt\":\"<p>This is Hero Frame 1</p>\",\"buttonText\":\"Read More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"cdaecfdc-0329-4bc4-8307-323c9fdf8d80\",\"name\":\"Hero Frame 2\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/eb86bff880c04f58b45b565cf5229a76\",\"title\":\"Hero Frame 2\",\"excerpt\":\"<p>This is Hero Frame 2</p>\",\"buttonText\":\"Learn More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"e3ed7e11-e575-43ca-829e-acbf3ec0641b\",\"name\":\"Hero Frame 3\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/3dd4230875924589a7042ee90b8a5a8e\",\"title\":\"Hero Frame 3\",\"excerpt\":\"<p>This is Hero Frame 3</p>\",\"buttonText\":\"Explore How\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null}]","frameDuration":9000,"bgTransitionTime":1500,"frameTransitionTime":1000,"showCountdown":1,"cSSSeparator":null,"zeroCssProperties":"--content-align: center;\n--content-width: 1;\n--content-push: 0;\n--min-height: 19rem;\n--max-height: 50rem;\n--vertical-padding: 3rem;\n--content-bottom-spacer: 2rem;\n--content-shadow-color: rgba(0, 0, 0, 0.5);\n--headline-bottom-spacer: 1rem;\n--headline-shadow-color: rgba(0, 0, 0, 0.35);\n--nodes-display: block;\n--nodes-align: center;\n--nodes-top-spacer: 1rem;\n--nodes-shadow-color: rgba(0, 0, 0, 0.25);\n--background-color: black;\n--background-brightness: 50%;\n--background-saturation: 150%;\n--foreground-color: white;\n--button-bottom-spacer: 1rem;\n--button-background-color: green;\n--button-foreground-color: white;","phabCssProperties":null,"tabpCssProperties":"--content-width: 1/2;\n--content-push: 1/4;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"1ea340a2-1f61-4848-880e-5cefe85a349b","name":"Welcome Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Welcome Unit","contentUnits":"[{\"key\":\"05eaf614-2cd9-4ad9-8bb6-62e7115e00ad\",\"name\":\"Welcome Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Welcome Text\",\"headline\":\"Welcome to {{companyName}} of {{companyCity}}\",\"headlineStyle\":\"h2\",\"richContent\":\"<?UMBRACO_MACRO macroAlias=\\\"ResponsiveYouTubeVideo\\\" youTubeCode=\\\"https://www.youtube.com/watch?v=us6ZcvCcYoo\\\" caption=\\\"This is a video caption.\\\" />\\n<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\",\"richContentColumn2\":\"<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\\n<?UMBRACO_MACRO macroAlias=\\\"ResponsiveImage\\\" responsiveImage=\\\"umb://media/3dd4230875924589a7042ee90b8a5a8e\\\" caption=\\\"This is an image caption.\\\" enableLightbox=\\\"1\\\" />\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":\"--headline-align: center;\",\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"67bce548-fdd6-48ff-bd01-3220cca5471b","name":"Portfolio Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Portfolio Unit","contentUnits":"[{\"key\":\"3943f769-9ac7-4f29-80e8-045cd7eb6089\",\"name\":\"Sample Portfolio\",\"ncContentTypeAlias\":\"portfolioViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Portfolio\",\"parentPage\":\"umb://document/dbb879803ec14ea6b021240714ea2040\",\"maximumItemCount\":3,\"tagsSeparator\":null,\"filterTags\":\"service\",\"excludeTags\":null,\"sortBy\":\"Name\",\"sortTags\":\"food\",\"sortDirection\":\"Ascending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 3;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":"--background-color: #f5f5f5;","phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"6e74fc56-8c2a-427e-af67-d785e4e6093b","name":"Content Container Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Gallery Unit","contentUnits":"[{\"key\":\"2c3a54df-a8e6-4aaa-a26e-28fbe4c1909a\",\"name\":\"Gallery View Subunit\",\"ncContentTypeAlias\":\"galleryViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Gallery\",\"mediaFolder\":\"umb://media/fe6aa2176b664dd3bd40944dcac718ba\",\"maximumItemCount\":4,\"tagsSeparator\":null,\"filterTags\":null,\"excludeTags\":null,\"sortBy\":\"Node Order\",\"sortTags\":\"rocket,food\",\"sortDirection\":\"Ascending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 4;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9879,555,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9881,555,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9883,555,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Home',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9885,555,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9887,555,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to CarbideOne',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9889,555,182,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umbraco,cms,hosting',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9891,555,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is a sample Carbide website.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9893,555,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/1t4loytc/40628438523_c597eabff1_o.jpg",
+  "focalPoint": {
+    "left": 0.40833333333333333,
+    "top": 0.4625
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": {
+        "x1": 0.0073333333333333349,
+        "y1": 0.093999999999999986,
+        "x2": 0.15933333333333338,
+        "y2": 0.25183333333333341
+      }
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9895,555,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9897,555,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* HOME PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9899,555,247,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"4fd89bd5-e596-4169-9850-9ce97a1035fe","name":"Homepage hero","ncContentTypeAlias":"simpleHeroUnit","enabled":1,"unitName":"Homepage hero","frames":"[{\"key\":\"d903ccbf-82b4-46c0-ad28-887f2f3687f1\",\"name\":\"Hero Frame 1\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/95149a2b88ed462aa21ca1812e7fbde1\",\"title\":\"Hero Frame 1\",\"excerpt\":\"<p>This is Hero Frame 1</p>\",\"buttonText\":\"Read More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"cdaecfdc-0329-4bc4-8307-323c9fdf8d80\",\"name\":\"Hero Frame 2\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/eb86bff880c04f58b45b565cf5229a76\",\"title\":\"Hero Frame 2\",\"excerpt\":\"<p>This is Hero Frame 2</p>\",\"buttonText\":\"Learn More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"e3ed7e11-e575-43ca-829e-acbf3ec0641b\",\"name\":\"Hero Frame 3\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/3dd4230875924589a7042ee90b8a5a8e\",\"title\":\"Hero Frame 3\",\"excerpt\":\"<p>This is Hero Frame 3</p>\",\"buttonText\":\"Explore How\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null}]","frameDuration":9000,"bgTransitionTime":1500,"frameTransitionTime":1000,"showCountdown":1,"cSSSeparator":null,"zeroCssProperties":"--content-align: center;\n--content-width: 1;\n--content-push: 0;\n--min-height: 19rem;\n--max-height: 50rem;\n--vertical-padding: 3rem;\n--content-bottom-spacer: 2rem;\n--content-shadow-color: rgba(0, 0, 0, 0.5);\n--headline-bottom-spacer: 1rem;\n--headline-shadow-color: rgba(0, 0, 0, 0.35);\n--nodes-display: block;\n--nodes-align: center;\n--nodes-top-spacer: 1rem;\n--nodes-shadow-color: rgba(0, 0, 0, 0.25);\n--background-color: black;\n--background-brightness: 50%;\n--background-saturation: 150%;\n--foreground-color: white;\n--button-bottom-spacer: 1rem;\n--button-background-color: green;\n--button-foreground-color: white;","phabCssProperties":null,"tabpCssProperties":"--content-width: 1/2;\n--content-push: 1/4;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"1ea340a2-1f61-4848-880e-5cefe85a349b","name":"Welcome Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Welcome Unit","contentUnits":"[{\"key\":\"05eaf614-2cd9-4ad9-8bb6-62e7115e00ad\",\"name\":\"Welcome Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Welcome Text\",\"headline\":\"Welcome to {{companyName}} of {{companyCity}}\",\"headlineStyle\":\"h2\",\"richContent\":\"<?UMBRACO_MACRO macroAlias=\\\"ResponsiveYouTubeVideo\\\" youTubeCode=\\\"https://www.youtube.com/watch?v=us6ZcvCcYoo\\\" caption=\\\"This is a video caption.\\\" />\\n<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\",\"richContentColumn2\":\"<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\\n<?UMBRACO_MACRO macroAlias=\\\"ResponsiveImage\\\" responsiveImage=\\\"umb://media/3dd4230875924589a7042ee90b8a5a8e\\\" caption=\\\"This is an image caption.\\\" enableLightbox=\\\"1\\\" />\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":\"--headline-align: center;\",\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"67bce548-fdd6-48ff-bd01-3220cca5471b","name":"Portfolio Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Portfolio Unit","contentUnits":"[{\"key\":\"3943f769-9ac7-4f29-80e8-045cd7eb6089\",\"name\":\"Sample Portfolio\",\"ncContentTypeAlias\":\"portfolioViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Portfolio\",\"parentPage\":\"umb://document/dbb879803ec14ea6b021240714ea2040\",\"maximumItemCount\":3,\"tagsSeparator\":null,\"filterTags\":\"service\",\"excludeTags\":null,\"sortBy\":\"Name\",\"sortTags\":\"food\",\"sortDirection\":\"Ascending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 3;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":"--background-color: #f5f5f5;","phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"6e74fc56-8c2a-427e-af67-d785e4e6093b","name":"Gallery Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Gallery Unit","contentUnits":"[{\"key\":\"2c3a54df-a8e6-4aaa-a26e-28fbe4c1909a\",\"name\":\"Sample Gallery\",\"ncContentTypeAlias\":\"galleryViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Gallery\",\"mediaFolder\":\"umb://media/9aae12217e934314826efdc43b0b770a\",\"maximumItemCount\":4,\"tagsSeparator\":null,\"filterTags\":null,\"excludeTags\":null,\"sortBy\":\"Node Order\",\"sortTags\":\"rocket,food\",\"sortDirection\":\"Ascending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 4;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9901,556,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9903,556,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9905,556,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Home',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9907,556,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9909,556,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to CarbideOne',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9911,556,182,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umbraco,cms,hosting',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9913,556,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is a sample Carbide website.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9915,556,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/1t4loytc/40628438523_c597eabff1_o.jpg",
+  "focalPoint": {
+    "left": 0.40833333333333333,
+    "top": 0.4625
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": {
+        "x1": 0.0073333333333333349,
+        "y1": 0.093999999999999986,
+        "x2": 0.15933333333333338,
+        "y2": 0.25183333333333341
+      }
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9917,556,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9919,556,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* HOME PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9921,556,247,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"4fd89bd5-e596-4169-9850-9ce97a1035fe","name":"Homepage hero","ncContentTypeAlias":"simpleHeroUnit","enabled":1,"unitName":"Homepage hero","frames":"[{\"key\":\"d903ccbf-82b4-46c0-ad28-887f2f3687f1\",\"name\":\"Hero Frame 1\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/95149a2b88ed462aa21ca1812e7fbde1\",\"title\":\"Hero Frame 1\",\"excerpt\":\"<p>This is Hero Frame 1</p>\",\"buttonText\":\"Read More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"cdaecfdc-0329-4bc4-8307-323c9fdf8d80\",\"name\":\"Hero Frame 2\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/eb86bff880c04f58b45b565cf5229a76\",\"title\":\"Hero Frame 2\",\"excerpt\":\"<p>This is Hero Frame 2</p>\",\"buttonText\":\"Learn More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"e3ed7e11-e575-43ca-829e-acbf3ec0641b\",\"name\":\"Hero Frame 3\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/3dd4230875924589a7042ee90b8a5a8e\",\"title\":\"Hero Frame 3\",\"excerpt\":\"<p>This is Hero Frame 3</p>\",\"buttonText\":\"Explore How\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null}]","frameDuration":9000,"bgTransitionTime":1500,"frameTransitionTime":1000,"showCountdown":1,"cSSSeparator":null,"zeroCssProperties":"--content-align: center;\n--content-width: 1;\n--content-push: 0;\n--min-height: 19rem;\n--max-height: 50rem;\n--vertical-padding: 3rem;\n--content-bottom-spacer: 2rem;\n--content-shadow-color: rgba(0, 0, 0, 0.5);\n--headline-bottom-spacer: 1rem;\n--headline-shadow-color: rgba(0, 0, 0, 0.35);\n--nodes-display: block;\n--nodes-align: center;\n--nodes-top-spacer: 1rem;\n--nodes-shadow-color: rgba(0, 0, 0, 0.25);\n--background-color: black;\n--background-brightness: 50%;\n--background-saturation: 150%;\n--foreground-color: white;\n--button-bottom-spacer: 1rem;\n--button-background-color: green;\n--button-foreground-color: white;","phabCssProperties":null,"tabpCssProperties":"--content-width: 1/2;\n--content-push: 1/4;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"1ea340a2-1f61-4848-880e-5cefe85a349b","name":"Welcome Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Welcome Unit","contentUnits":"[{\"key\":\"05eaf614-2cd9-4ad9-8bb6-62e7115e00ad\",\"name\":\"Welcome Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Welcome Text\",\"headline\":\"Welcome to {{companyName}} of {{companyCity}}\",\"headlineStyle\":\"h2\",\"richContent\":\"<?UMBRACO_MACRO macroAlias=\\\"ResponsiveYouTubeVideo\\\" youTubeCode=\\\"https://www.youtube.com/watch?v=us6ZcvCcYoo\\\" caption=\\\"This is a video caption.\\\" />\\n<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\",\"richContentColumn2\":\"<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\\n<?UMBRACO_MACRO macroAlias=\\\"ResponsiveImage\\\" responsiveImage=\\\"umb://media/3dd4230875924589a7042ee90b8a5a8e\\\" caption=\\\"This is an image caption.\\\" enableLightbox=\\\"1\\\" />\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":\"--headline-align: center;\",\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"67bce548-fdd6-48ff-bd01-3220cca5471b","name":"Portfolio Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Portfolio Unit","contentUnits":"[{\"key\":\"3943f769-9ac7-4f29-80e8-045cd7eb6089\",\"name\":\"Sample Portfolio\",\"ncContentTypeAlias\":\"portfolioViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Portfolio\",\"parentPage\":\"umb://document/dbb879803ec14ea6b021240714ea2040\",\"maximumItemCount\":3,\"tagsSeparator\":null,\"filterTags\":\"service\",\"excludeTags\":null,\"sortBy\":\"Name\",\"sortTags\":\"food\",\"sortDirection\":\"Ascending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 3;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":"--background-color: #f5f5f5;","phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"6e74fc56-8c2a-427e-af67-d785e4e6093b","name":"Gallery Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Gallery Unit","contentUnits":"[{\"key\":\"2c3a54df-a8e6-4aaa-a26e-28fbe4c1909a\",\"name\":\"Sample Gallery\",\"ncContentTypeAlias\":\"galleryViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Gallery\",\"mediaFolder\":\"umb://media/fe6aa2176b664dd3bd40944dcac718ba\",\"maximumItemCount\":4,\"tagsSeparator\":null,\"filterTags\":null,\"excludeTags\":null,\"sortBy\":\"Node Order\",\"sortTags\":\"rocket,food\",\"sortDirection\":\"Ascending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 4;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9923,557,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9925,557,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9927,557,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Home',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9929,557,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9931,557,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to CarbideOne',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9933,557,182,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umbraco,cms,hosting',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9935,557,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is a sample Carbide website.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9937,557,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/1t4loytc/40628438523_c597eabff1_o.jpg",
+  "focalPoint": {
+    "left": 0.40833333333333333,
+    "top": 0.4625
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": {
+        "x1": 0.0073333333333333349,
+        "y1": 0.093999999999999986,
+        "x2": 0.15933333333333338,
+        "y2": 0.25183333333333341
+      }
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9939,557,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9941,557,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* HOME PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9943,557,247,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"4fd89bd5-e596-4169-9850-9ce97a1035fe","name":"Homepage hero","ncContentTypeAlias":"simpleHeroUnit","enabled":1,"unitName":"Homepage hero","frames":"[{\"key\":\"d903ccbf-82b4-46c0-ad28-887f2f3687f1\",\"name\":\"Hero Frame 1\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/95149a2b88ed462aa21ca1812e7fbde1\",\"title\":\"Hero Frame 1\",\"excerpt\":\"<p>This is Hero Frame 1</p>\",\"buttonText\":\"Read More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"cdaecfdc-0329-4bc4-8307-323c9fdf8d80\",\"name\":\"Hero Frame 2\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/eb86bff880c04f58b45b565cf5229a76\",\"title\":\"Hero Frame 2\",\"excerpt\":\"<p>This is Hero Frame 2</p>\",\"buttonText\":\"Learn More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"e3ed7e11-e575-43ca-829e-acbf3ec0641b\",\"name\":\"Hero Frame 3\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/3dd4230875924589a7042ee90b8a5a8e\",\"title\":\"Hero Frame 3\",\"excerpt\":\"<p>This is Hero Frame 3</p>\",\"buttonText\":\"Explore How\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null}]","frameDuration":9000,"bgTransitionTime":1500,"frameTransitionTime":1000,"showCountdown":1,"cSSSeparator":null,"zeroCssProperties":"--content-align: center;\n--content-width: 1;\n--content-push: 0;\n--min-height: 19rem;\n--max-height: 50rem;\n--vertical-padding: 3rem;\n--content-bottom-spacer: 2rem;\n--content-shadow-color: rgba(0, 0, 0, 0.5);\n--headline-bottom-spacer: 1rem;\n--headline-shadow-color: rgba(0, 0, 0, 0.35);\n--nodes-display: block;\n--nodes-align: center;\n--nodes-top-spacer: 1rem;\n--nodes-shadow-color: rgba(0, 0, 0, 0.25);\n--background-color: black;\n--background-brightness: 50%;\n--background-saturation: 150%;\n--foreground-color: white;\n--button-bottom-spacer: 1rem;\n--button-background-color: green;\n--button-foreground-color: white;","phabCssProperties":null,"tabpCssProperties":"--content-width: 1/2;\n--content-push: 1/4;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"1ea340a2-1f61-4848-880e-5cefe85a349b","name":"Welcome Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Welcome Unit","contentUnits":"[{\"key\":\"05eaf614-2cd9-4ad9-8bb6-62e7115e00ad\",\"name\":\"Welcome Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Welcome Text\",\"headline\":\"Welcome to {{companyName}} of {{companyCity}}\",\"headlineStyle\":\"h2\",\"richContent\":\"<?UMBRACO_MACRO macroAlias=\\\"ResponsiveYouTubeVideo\\\" youTubeCode=\\\"https://www.youtube.com/watch?v=us6ZcvCcYoo\\\" caption=\\\"This is a video caption.\\\" />\\n<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\",\"richContentColumn2\":\"<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\\n<?UMBRACO_MACRO macroAlias=\\\"ResponsiveImage\\\" responsiveImage=\\\"umb://media/3dd4230875924589a7042ee90b8a5a8e\\\" caption=\\\"This is an image caption.\\\" enableLightbox=\\\"1\\\" />\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":\"--headline-align: center;\",\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"67bce548-fdd6-48ff-bd01-3220cca5471b","name":"Portfolio Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Portfolio Unit","contentUnits":"[{\"key\":\"3943f769-9ac7-4f29-80e8-045cd7eb6089\",\"name\":\"Sample Portfolio\",\"ncContentTypeAlias\":\"portfolioViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Portfolio\",\"parentPage\":\"umb://document/dbb879803ec14ea6b021240714ea2040\",\"maximumItemCount\":3,\"tagsSeparator\":null,\"filterTags\":\"service\",\"excludeTags\":null,\"sortBy\":\"Name\",\"sortTags\":\"food\",\"sortDirection\":\"Ascending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 3;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":"--background-color: #f5f5f5;","phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"6e74fc56-8c2a-427e-af67-d785e4e6093b","name":"Gallery Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Gallery Unit","contentUnits":"[{\"key\":\"2c3a54df-a8e6-4aaa-a26e-28fbe4c1909a\",\"name\":\"Sample Gallery\",\"ncContentTypeAlias\":\"galleryViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Gallery\",\"mediaFolder\":\"umb://media/fe6aa2176b664dd3bd40944dcac718ba\",\"maximumItemCount\":4,\"tagsSeparator\":null,\"filterTags\":null,\"excludeTags\":null,\"sortBy\":\"Node Order\",\"sortTags\":\"food\",\"sortDirection\":\"Ascending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 4;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9945,558,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9947,558,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9949,558,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Home',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9951,558,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9953,558,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to CarbideOne',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9955,558,182,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umbraco,cms,hosting',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9957,558,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is a sample Carbide website.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9959,558,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/1t4loytc/40628438523_c597eabff1_o.jpg",
+  "focalPoint": {
+    "left": 0.40833333333333333,
+    "top": 0.4625
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": {
+        "x1": 0.0073333333333333349,
+        "y1": 0.093999999999999986,
+        "x2": 0.15933333333333338,
+        "y2": 0.25183333333333341
+      }
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9961,558,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9963,558,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* HOME PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9965,558,247,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"4fd89bd5-e596-4169-9850-9ce97a1035fe","name":"Homepage hero","ncContentTypeAlias":"simpleHeroUnit","enabled":1,"unitName":"Homepage hero","frames":"[{\"key\":\"d903ccbf-82b4-46c0-ad28-887f2f3687f1\",\"name\":\"Hero Frame 1\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/95149a2b88ed462aa21ca1812e7fbde1\",\"title\":\"Hero Frame 1\",\"excerpt\":\"<p>This is Hero Frame 1</p>\",\"buttonText\":\"Read More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"cdaecfdc-0329-4bc4-8307-323c9fdf8d80\",\"name\":\"Hero Frame 2\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/eb86bff880c04f58b45b565cf5229a76\",\"title\":\"Hero Frame 2\",\"excerpt\":\"<p>This is Hero Frame 2</p>\",\"buttonText\":\"Learn More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"e3ed7e11-e575-43ca-829e-acbf3ec0641b\",\"name\":\"Hero Frame 3\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/3dd4230875924589a7042ee90b8a5a8e\",\"title\":\"Hero Frame 3\",\"excerpt\":\"<p>This is Hero Frame 3</p>\",\"buttonText\":\"Explore How\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null}]","frameDuration":9000,"bgTransitionTime":1500,"frameTransitionTime":1000,"showCountdown":1,"cSSSeparator":null,"zeroCssProperties":"--content-align: center;\n--content-width: 1;\n--content-push: 0;\n--min-height: 19rem;\n--max-height: 50rem;\n--vertical-padding: 3rem;\n--content-bottom-spacer: 2rem;\n--content-shadow-color: rgba(0, 0, 0, 0.5);\n--headline-bottom-spacer: 1rem;\n--headline-shadow-color: rgba(0, 0, 0, 0.35);\n--nodes-display: block;\n--nodes-align: center;\n--nodes-top-spacer: 1rem;\n--nodes-shadow-color: rgba(0, 0, 0, 0.25);\n--background-color: black;\n--background-brightness: 50%;\n--background-saturation: 150%;\n--foreground-color: white;\n--button-bottom-spacer: 1rem;\n--button-background-color: green;\n--button-foreground-color: white;","phabCssProperties":null,"tabpCssProperties":"--content-width: 1/2;\n--content-push: 1/4;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"1ea340a2-1f61-4848-880e-5cefe85a349b","name":"Welcome Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Welcome Unit","contentUnits":"[{\"key\":\"05eaf614-2cd9-4ad9-8bb6-62e7115e00ad\",\"name\":\"Welcome Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Welcome Text\",\"headline\":\"Welcome to {{companyName}} of {{companyCity}}\",\"headlineStyle\":\"h2\",\"richContent\":\"<?UMBRACO_MACRO macroAlias=\\\"ResponsiveYouTubeVideo\\\" youTubeCode=\\\"https://www.youtube.com/watch?v=us6ZcvCcYoo\\\" caption=\\\"This is a video caption.\\\" />\\n<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\",\"richContentColumn2\":\"<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\\n<?UMBRACO_MACRO macroAlias=\\\"ResponsiveImage\\\" responsiveImage=\\\"umb://media/3dd4230875924589a7042ee90b8a5a8e\\\" caption=\\\"This is an image caption.\\\" enableLightbox=\\\"1\\\" />\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":\"--headline-align: center;\",\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"67bce548-fdd6-48ff-bd01-3220cca5471b","name":"Portfolio Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Portfolio Unit","contentUnits":"[{\"key\":\"3943f769-9ac7-4f29-80e8-045cd7eb6089\",\"name\":\"Sample Portfolio\",\"ncContentTypeAlias\":\"portfolioViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Portfolio\",\"parentPage\":\"umb://document/dbb879803ec14ea6b021240714ea2040\",\"maximumItemCount\":3,\"tagsSeparator\":null,\"filterTags\":\"service\",\"excludeTags\":null,\"sortBy\":\"Name\",\"sortTags\":\"food\",\"sortDirection\":\"Ascending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 3;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":"--background-color: #f5f5f5;","phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"6e74fc56-8c2a-427e-af67-d785e4e6093b","name":"Gallery Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Gallery Unit","contentUnits":"[{\"key\":\"2c3a54df-a8e6-4aaa-a26e-28fbe4c1909a\",\"name\":\"Sample Gallery\",\"ncContentTypeAlias\":\"galleryViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Gallery\",\"mediaFolder\":\"umb://media/fe6aa2176b664dd3bd40944dcac718ba\",\"maximumItemCount\":4,\"tagsSeparator\":null,\"filterTags\":null,\"excludeTags\":\"store\",\"sortBy\":\"Node Order\",\"sortTags\":\"food\",\"sortDirection\":\"Ascending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 4;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9967,559,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9969,559,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9971,559,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Home',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9973,559,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9975,559,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to CarbideOne',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9977,559,182,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umbraco,cms,hosting',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9979,559,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is a sample Carbide website.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9981,559,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/1t4loytc/40628438523_c597eabff1_o.jpg",
+  "focalPoint": {
+    "left": 0.40833333333333333,
+    "top": 0.4625
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": {
+        "x1": 0.0073333333333333349,
+        "y1": 0.093999999999999986,
+        "x2": 0.15933333333333338,
+        "y2": 0.25183333333333341
+      }
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9983,559,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9985,559,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* HOME PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9987,559,247,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"4fd89bd5-e596-4169-9850-9ce97a1035fe","name":"Homepage hero","ncContentTypeAlias":"simpleHeroUnit","enabled":1,"unitName":"Homepage hero","frames":"[{\"key\":\"d903ccbf-82b4-46c0-ad28-887f2f3687f1\",\"name\":\"Hero Frame 1\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/95149a2b88ed462aa21ca1812e7fbde1\",\"title\":\"Hero Frame 1\",\"excerpt\":\"<p>This is Hero Frame 1</p>\",\"buttonText\":\"Read More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"cdaecfdc-0329-4bc4-8307-323c9fdf8d80\",\"name\":\"Hero Frame 2\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/eb86bff880c04f58b45b565cf5229a76\",\"title\":\"Hero Frame 2\",\"excerpt\":\"<p>This is Hero Frame 2</p>\",\"buttonText\":\"Learn More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"e3ed7e11-e575-43ca-829e-acbf3ec0641b\",\"name\":\"Hero Frame 3\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/3dd4230875924589a7042ee90b8a5a8e\",\"title\":\"Hero Frame 3\",\"excerpt\":\"<p>This is Hero Frame 3</p>\",\"buttonText\":\"Explore How\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null}]","frameDuration":9000,"bgTransitionTime":1500,"frameTransitionTime":1000,"showCountdown":1,"cSSSeparator":null,"zeroCssProperties":"--content-align: center;\n--content-width: 1;\n--content-push: 0;\n--min-height: 19rem;\n--max-height: 50rem;\n--vertical-padding: 3rem;\n--content-bottom-spacer: 2rem;\n--content-shadow-color: rgba(0, 0, 0, 0.5);\n--headline-bottom-spacer: 1rem;\n--headline-shadow-color: rgba(0, 0, 0, 0.35);\n--nodes-display: block;\n--nodes-align: center;\n--nodes-top-spacer: 1rem;\n--nodes-shadow-color: rgba(0, 0, 0, 0.25);\n--background-color: black;\n--background-brightness: 50%;\n--background-saturation: 150%;\n--foreground-color: white;\n--button-bottom-spacer: 1rem;\n--button-background-color: green;\n--button-foreground-color: white;","phabCssProperties":null,"tabpCssProperties":"--content-width: 1/2;\n--content-push: 1/4;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"1ea340a2-1f61-4848-880e-5cefe85a349b","name":"Welcome Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Welcome Unit","contentUnits":"[{\"key\":\"05eaf614-2cd9-4ad9-8bb6-62e7115e00ad\",\"name\":\"Welcome Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Welcome Text\",\"headline\":\"Welcome to {{companyName}} of {{companyCity}}\",\"headlineStyle\":\"h2\",\"richContent\":\"<?UMBRACO_MACRO macroAlias=\\\"ResponsiveYouTubeVideo\\\" youTubeCode=\\\"https://www.youtube.com/watch?v=us6ZcvCcYoo\\\" caption=\\\"This is a video caption.\\\" />\\n<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\",\"richContentColumn2\":\"<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\\n<?UMBRACO_MACRO macroAlias=\\\"ResponsiveImage\\\" responsiveImage=\\\"umb://media/3dd4230875924589a7042ee90b8a5a8e\\\" caption=\\\"This is an image caption.\\\" enableLightbox=\\\"1\\\" />\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":\"--headline-align: center;\",\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"67bce548-fdd6-48ff-bd01-3220cca5471b","name":"Portfolio Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Portfolio Unit","contentUnits":"[{\"key\":\"3943f769-9ac7-4f29-80e8-045cd7eb6089\",\"name\":\"Sample Portfolio\",\"ncContentTypeAlias\":\"portfolioViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Portfolio\",\"parentPage\":\"umb://document/dbb879803ec14ea6b021240714ea2040\",\"maximumItemCount\":3,\"tagsSeparator\":null,\"filterTags\":\"service\",\"excludeTags\":null,\"sortBy\":\"Name\",\"sortTags\":\"food\",\"sortDirection\":\"Ascending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 3;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":"--background-color: #f5f5f5;","phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"6e74fc56-8c2a-427e-af67-d785e4e6093b","name":"Gallery Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Gallery Unit","contentUnits":"[{\"key\":\"2c3a54df-a8e6-4aaa-a26e-28fbe4c1909a\",\"name\":\"Sample Gallery\",\"ncContentTypeAlias\":\"galleryViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Gallery\",\"mediaFolder\":\"umb://media/fe6aa2176b664dd3bd40944dcac718ba\",\"maximumItemCount\":4,\"tagsSeparator\":null,\"filterTags\":null,\"excludeTags\":null,\"sortBy\":\"Node Order\",\"sortTags\":\"food\",\"sortDirection\":\"Ascending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 4;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9989,560,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9991,560,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9993,560,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Home',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9995,560,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9997,560,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to CarbideOne',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (9999,560,182,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umbraco,cms,hosting',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10001,560,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is a sample Carbide website.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10003,560,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/1t4loytc/40628438523_c597eabff1_o.jpg",
+  "focalPoint": {
+    "left": 0.40833333333333333,
+    "top": 0.4625
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": {
+        "x1": 0.0073333333333333349,
+        "y1": 0.093999999999999986,
+        "x2": 0.15933333333333338,
+        "y2": 0.25183333333333341
+      }
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10005,560,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10007,560,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* HOME PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10009,560,247,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"4fd89bd5-e596-4169-9850-9ce97a1035fe","name":"Homepage hero","ncContentTypeAlias":"simpleHeroUnit","enabled":1,"unitName":"Homepage hero","frames":"[{\"key\":\"d903ccbf-82b4-46c0-ad28-887f2f3687f1\",\"name\":\"Hero Frame 1\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/95149a2b88ed462aa21ca1812e7fbde1\",\"title\":\"Hero Frame 1\",\"excerpt\":\"<p>This is Hero Frame 1</p>\",\"buttonText\":\"Read More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"cdaecfdc-0329-4bc4-8307-323c9fdf8d80\",\"name\":\"Hero Frame 2\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/eb86bff880c04f58b45b565cf5229a76\",\"title\":\"Hero Frame 2\",\"excerpt\":\"<p>This is Hero Frame 2</p>\",\"buttonText\":\"Learn More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"e3ed7e11-e575-43ca-829e-acbf3ec0641b\",\"name\":\"Hero Frame 3\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/3dd4230875924589a7042ee90b8a5a8e\",\"title\":\"Hero Frame 3\",\"excerpt\":\"<p>This is Hero Frame 3</p>\",\"buttonText\":\"Explore How\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null}]","frameDuration":9000,"bgTransitionTime":1500,"frameTransitionTime":1000,"showCountdown":1,"cSSSeparator":null,"zeroCssProperties":"--content-align: center;\n--content-width: 1;\n--content-push: 0;\n--min-height: 19rem;\n--max-height: 50rem;\n--vertical-padding: 3rem;\n--content-bottom-spacer: 2rem;\n--content-shadow-color: rgba(0, 0, 0, 0.5);\n--headline-bottom-spacer: 1rem;\n--headline-shadow-color: rgba(0, 0, 0, 0.35);\n--nodes-display: block;\n--nodes-align: center;\n--nodes-top-spacer: 1rem;\n--nodes-shadow-color: rgba(0, 0, 0, 0.25);\n--background-color: black;\n--background-brightness: 50%;\n--background-saturation: 150%;\n--foreground-color: white;\n--button-bottom-spacer: 1rem;\n--button-background-color: green;\n--button-foreground-color: white;","phabCssProperties":null,"tabpCssProperties":"--content-width: 1/2;\n--content-push: 1/4;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"1ea340a2-1f61-4848-880e-5cefe85a349b","name":"Welcome Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Welcome Unit","contentUnits":"[{\"key\":\"05eaf614-2cd9-4ad9-8bb6-62e7115e00ad\",\"name\":\"Welcome Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Welcome Text\",\"headline\":\"Welcome to {{companyName}} of {{companyCity}}\",\"headlineStyle\":\"h2\",\"richContent\":\"<?UMBRACO_MACRO macroAlias=\\\"ResponsiveYouTubeVideo\\\" youTubeCode=\\\"https://www.youtube.com/watch?v=us6ZcvCcYoo\\\" caption=\\\"This is a video caption.\\\" />\\n<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\",\"richContentColumn2\":\"<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\\n<?UMBRACO_MACRO macroAlias=\\\"ResponsiveImage\\\" responsiveImage=\\\"umb://media/3dd4230875924589a7042ee90b8a5a8e\\\" caption=\\\"This is an image caption.\\\" enableLightbox=\\\"1\\\" />\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":\"--headline-align: center;\",\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"67bce548-fdd6-48ff-bd01-3220cca5471b","name":"Portfolio Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Portfolio Unit","contentUnits":"[{\"key\":\"3943f769-9ac7-4f29-80e8-045cd7eb6089\",\"name\":\"Sample Portfolio\",\"ncContentTypeAlias\":\"portfolioViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Portfolio\",\"parentPage\":\"umb://document/dbb879803ec14ea6b021240714ea2040\",\"maximumItemCount\":3,\"tagsSeparator\":null,\"filterTags\":\"service\",\"excludeTags\":null,\"sortBy\":\"Name\",\"sortTags\":\"food\",\"sortDirection\":\"Ascending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 3;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":"--background-color: #f5f5f5;","phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"6e74fc56-8c2a-427e-af67-d785e4e6093b","name":"Gallery Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Gallery Unit","contentUnits":"[{\"key\":\"2c3a54df-a8e6-4aaa-a26e-28fbe4c1909a\",\"name\":\"Sample Gallery\",\"ncContentTypeAlias\":\"galleryViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Gallery\",\"mediaFolder\":\"umb://media/fe6aa2176b664dd3bd40944dcac718ba\",\"maximumItemCount\":4,\"tagsSeparator\":null,\"filterTags\":null,\"excludeTags\":null,\"sortBy\":\"Node Order\",\"sortTags\":null,\"sortDirection\":\"Ascending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 4;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10011,561,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10013,561,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10015,561,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Home',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10017,561,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10019,561,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to CarbideOne',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10021,561,182,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umbraco,cms,hosting',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10023,561,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is a sample Carbide website.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10025,561,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/1t4loytc/40628438523_c597eabff1_o.jpg",
+  "focalPoint": {
+    "left": 0.40833333333333333,
+    "top": 0.4625
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": {
+        "x1": 0.0073333333333333349,
+        "y1": 0.093999999999999986,
+        "x2": 0.15933333333333338,
+        "y2": 0.25183333333333341
+      }
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10027,561,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10029,561,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* HOME PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10031,561,247,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"4fd89bd5-e596-4169-9850-9ce97a1035fe","name":"Homepage hero","ncContentTypeAlias":"simpleHeroUnit","enabled":1,"unitName":"Homepage hero","frames":"[{\"key\":\"d903ccbf-82b4-46c0-ad28-887f2f3687f1\",\"name\":\"Hero Frame 1\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/95149a2b88ed462aa21ca1812e7fbde1\",\"title\":\"Hero Frame 1\",\"excerpt\":\"<p>This is Hero Frame 1</p>\",\"buttonText\":\"Read More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"cdaecfdc-0329-4bc4-8307-323c9fdf8d80\",\"name\":\"Hero Frame 2\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/eb86bff880c04f58b45b565cf5229a76\",\"title\":\"Hero Frame 2\",\"excerpt\":\"<p>This is Hero Frame 2</p>\",\"buttonText\":\"Learn More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"e3ed7e11-e575-43ca-829e-acbf3ec0641b\",\"name\":\"Hero Frame 3\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/3dd4230875924589a7042ee90b8a5a8e\",\"title\":\"Hero Frame 3\",\"excerpt\":\"<p>This is Hero Frame 3</p>\",\"buttonText\":\"Explore How\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null}]","frameDuration":9000,"bgTransitionTime":1500,"frameTransitionTime":1000,"showCountdown":1,"cSSSeparator":null,"zeroCssProperties":"--content-align: center;\n--content-width: 1;\n--content-push: 0;\n--min-height: 19rem;\n--max-height: 50rem;\n--vertical-padding: 3rem;\n--content-bottom-spacer: 2rem;\n--content-shadow-color: rgba(0, 0, 0, 0.5);\n--headline-bottom-spacer: 1rem;\n--headline-shadow-color: rgba(0, 0, 0, 0.35);\n--nodes-display: block;\n--nodes-align: center;\n--nodes-top-spacer: 1rem;\n--nodes-shadow-color: rgba(0, 0, 0, 0.25);\n--background-color: black;\n--background-brightness: 50%;\n--background-saturation: 150%;\n--foreground-color: white;\n--button-bottom-spacer: 1rem;\n--button-background-color: green;\n--button-foreground-color: white;","phabCssProperties":null,"tabpCssProperties":"--content-width: 1/2;\n--content-push: 1/4;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"1ea340a2-1f61-4848-880e-5cefe85a349b","name":"Welcome Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Welcome Unit","contentUnits":"[{\"key\":\"05eaf614-2cd9-4ad9-8bb6-62e7115e00ad\",\"name\":\"Welcome Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Welcome Text\",\"headline\":\"Welcome to {{companyName}} of {{companyCity}}\",\"headlineStyle\":\"h2\",\"richContent\":\"<?UMBRACO_MACRO macroAlias=\\\"ResponsiveYouTubeVideo\\\" youTubeCode=\\\"https://www.youtube.com/watch?v=us6ZcvCcYoo\\\" caption=\\\"This is a video caption.\\\" />\\n<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\",\"richContentColumn2\":\"<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\\n<?UMBRACO_MACRO macroAlias=\\\"ResponsiveImage\\\" responsiveImage=\\\"umb://media/3dd4230875924589a7042ee90b8a5a8e\\\" caption=\\\"This is an image caption.\\\" enableLightbox=\\\"1\\\" />\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":\"--headline-align: center;\",\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"67bce548-fdd6-48ff-bd01-3220cca5471b","name":"Portfolio Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Portfolio Unit","contentUnits":"[{\"key\":\"3943f769-9ac7-4f29-80e8-045cd7eb6089\",\"name\":\"Sample Portfolio\",\"ncContentTypeAlias\":\"portfolioViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Portfolio\",\"parentPage\":\"umb://document/dbb879803ec14ea6b021240714ea2040\",\"maximumItemCount\":3,\"tagsSeparator\":null,\"filterTags\":\"service\",\"excludeTags\":null,\"sortBy\":\"Name\",\"sortTags\":\"food\",\"sortDirection\":\"Ascending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 3;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":"--background-color: #f5f5f5;","phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"6e74fc56-8c2a-427e-af67-d785e4e6093b","name":"Gallery Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Gallery Unit","contentUnits":"[{\"key\":\"2c3a54df-a8e6-4aaa-a26e-28fbe4c1909a\",\"name\":\"Sample Gallery\",\"ncContentTypeAlias\":\"galleryViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Gallery\",\"mediaFolder\":\"umb://media/fe6aa2176b664dd3bd40944dcac718ba\",\"maximumItemCount\":4,\"tagsSeparator\":null,\"filterTags\":null,\"excludeTags\":null,\"sortBy\":\"Node Order\",\"sortTags\":null,\"sortDirection\":\"Descending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 4;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10033,562,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10034,563,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10035,562,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10036,563,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10037,562,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Home',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10038,563,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Home',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10039,562,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10040,563,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10041,562,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to CarbideOne',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10042,563,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Welcome to CarbideOne',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10043,562,182,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umbraco,cms,hosting',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10044,563,182,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'umbraco,cms,hosting',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10045,562,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is a sample Carbide website.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10046,563,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is a sample Carbide website.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10047,562,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/1t4loytc/40628438523_c597eabff1_o.jpg",
+  "focalPoint": {
+    "left": 0.40833333333333333,
+    "top": 0.4625
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": {
+        "x1": 0.0073333333333333349,
+        "y1": 0.093999999999999986,
+        "x2": 0.15933333333333338,
+        "y2": 0.25183333333333341
+      }
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10048,563,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/1t4loytc/40628438523_c597eabff1_o.jpg",
+  "focalPoint": {
+    "left": 0.40833333333333333,
+    "top": 0.4625
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": {
+        "x1": 0.0073333333333333349,
+        "y1": 0.093999999999999986,
+        "x2": 0.15933333333333338,
+        "y2": 0.25183333333333341
+      }
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10049,562,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10050,563,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10051,562,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* HOME PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10052,563,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* HOME PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10053,562,247,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"4fd89bd5-e596-4169-9850-9ce97a1035fe","name":"Homepage hero","ncContentTypeAlias":"simpleHeroUnit","enabled":1,"unitName":"Homepage hero","frames":"[{\"key\":\"d903ccbf-82b4-46c0-ad28-887f2f3687f1\",\"name\":\"Hero Frame 1\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/95149a2b88ed462aa21ca1812e7fbde1\",\"title\":\"Hero Frame 1\",\"excerpt\":\"<p>This is Hero Frame 1</p>\",\"buttonText\":\"Read More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"cdaecfdc-0329-4bc4-8307-323c9fdf8d80\",\"name\":\"Hero Frame 2\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/eb86bff880c04f58b45b565cf5229a76\",\"title\":\"Hero Frame 2\",\"excerpt\":\"<p>This is Hero Frame 2</p>\",\"buttonText\":\"Learn More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"e3ed7e11-e575-43ca-829e-acbf3ec0641b\",\"name\":\"Hero Frame 3\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/3dd4230875924589a7042ee90b8a5a8e\",\"title\":\"Hero Frame 3\",\"excerpt\":\"<p>This is Hero Frame 3</p>\",\"buttonText\":\"Explore How\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null}]","frameDuration":9000,"bgTransitionTime":1500,"frameTransitionTime":1000,"showCountdown":1,"cSSSeparator":null,"zeroCssProperties":"--content-align: center;\n--content-width: 1;\n--content-push: 0;\n--min-height: 19rem;\n--max-height: 50rem;\n--vertical-padding: 3rem;\n--content-bottom-spacer: 2rem;\n--content-shadow-color: rgba(0, 0, 0, 0.5);\n--headline-bottom-spacer: 1rem;\n--headline-shadow-color: rgba(0, 0, 0, 0.35);\n--nodes-display: block;\n--nodes-align: center;\n--nodes-top-spacer: 1rem;\n--nodes-shadow-color: rgba(0, 0, 0, 0.25);\n--background-color: black;\n--background-brightness: 50%;\n--background-saturation: 150%;\n--foreground-color: white;\n--button-bottom-spacer: 1rem;\n--button-background-color: green;\n--button-foreground-color: white;","phabCssProperties":null,"tabpCssProperties":"--content-width: 1/2;\n--content-push: 1/4;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"1ea340a2-1f61-4848-880e-5cefe85a349b","name":"Welcome Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Welcome Unit","contentUnits":"[{\"key\":\"05eaf614-2cd9-4ad9-8bb6-62e7115e00ad\",\"name\":\"Welcome Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Welcome Text\",\"headline\":\"Welcome to {{companyName}} of {{companyCity}}\",\"headlineStyle\":\"h2\",\"richContent\":\"<?UMBRACO_MACRO macroAlias=\\\"ResponsiveYouTubeVideo\\\" youTubeCode=\\\"https://www.youtube.com/watch?v=us6ZcvCcYoo\\\" caption=\\\"This is a video caption.\\\" />\\n<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\",\"richContentColumn2\":\"<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\\n<?UMBRACO_MACRO macroAlias=\\\"ResponsiveImage\\\" responsiveImage=\\\"umb://media/3dd4230875924589a7042ee90b8a5a8e\\\" caption=\\\"This is an image caption.\\\" enableLightbox=\\\"1\\\" />\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":\"--headline-align: center;\",\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"67bce548-fdd6-48ff-bd01-3220cca5471b","name":"Portfolio Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Portfolio Unit","contentUnits":"[{\"key\":\"3943f769-9ac7-4f29-80e8-045cd7eb6089\",\"name\":\"Sample Portfolio\",\"ncContentTypeAlias\":\"portfolioViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Portfolio\",\"parentPage\":\"umb://document/dbb879803ec14ea6b021240714ea2040\",\"maximumItemCount\":3,\"tagsSeparator\":null,\"filterTags\":\"service\",\"excludeTags\":null,\"sortBy\":\"Name\",\"sortTags\":\"food\",\"sortDirection\":\"Ascending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 3;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":"--background-color: #f5f5f5;","phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"6e74fc56-8c2a-427e-af67-d785e4e6093b","name":"Gallery Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Gallery Unit","contentUnits":"[{\"key\":\"2c3a54df-a8e6-4aaa-a26e-28fbe4c1909a\",\"name\":\"Sample Gallery\",\"ncContentTypeAlias\":\"galleryViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Gallery\",\"mediaFolder\":\"umb://media/fe6aa2176b664dd3bd40944dcac718ba\",\"maximumItemCount\":4,\"tagsSeparator\":null,\"filterTags\":null,\"excludeTags\":null,\"sortBy\":\"Node Order\",\"sortTags\":null,\"sortDirection\":\"Ascending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 4;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (10054,563,247,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"4fd89bd5-e596-4169-9850-9ce97a1035fe","name":"Homepage hero","ncContentTypeAlias":"simpleHeroUnit","enabled":1,"unitName":"Homepage hero","frames":"[{\"key\":\"d903ccbf-82b4-46c0-ad28-887f2f3687f1\",\"name\":\"Hero Frame 1\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/95149a2b88ed462aa21ca1812e7fbde1\",\"title\":\"Hero Frame 1\",\"excerpt\":\"<p>This is Hero Frame 1</p>\",\"buttonText\":\"Read More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"cdaecfdc-0329-4bc4-8307-323c9fdf8d80\",\"name\":\"Hero Frame 2\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/eb86bff880c04f58b45b565cf5229a76\",\"title\":\"Hero Frame 2\",\"excerpt\":\"<p>This is Hero Frame 2</p>\",\"buttonText\":\"Learn More\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null},{\"key\":\"e3ed7e11-e575-43ca-829e-acbf3ec0641b\",\"name\":\"Hero Frame 3\",\"ncContentTypeAlias\":\"simpleHeroFrame\",\"enabled\":1,\"backgroundImage\":\"umb://media/3dd4230875924589a7042ee90b8a5a8e\",\"title\":\"Hero Frame 3\",\"excerpt\":\"<p>This is Hero Frame 3</p>\",\"buttonText\":\"Explore How\",\"buttonLink\":\"umb://document/7069eb7aacf2421c91fb00bb399f5cd9\",\"buttonUrl\":null}]","frameDuration":9000,"bgTransitionTime":1500,"frameTransitionTime":1000,"showCountdown":1,"cSSSeparator":null,"zeroCssProperties":"--content-align: center;\n--content-width: 1;\n--content-push: 0;\n--min-height: 19rem;\n--max-height: 50rem;\n--vertical-padding: 3rem;\n--content-bottom-spacer: 2rem;\n--content-shadow-color: rgba(0, 0, 0, 0.5);\n--headline-bottom-spacer: 1rem;\n--headline-shadow-color: rgba(0, 0, 0, 0.35);\n--nodes-display: block;\n--nodes-align: center;\n--nodes-top-spacer: 1rem;\n--nodes-shadow-color: rgba(0, 0, 0, 0.25);\n--background-color: black;\n--background-brightness: 50%;\n--background-saturation: 150%;\n--foreground-color: white;\n--button-bottom-spacer: 1rem;\n--button-background-color: green;\n--button-foreground-color: white;","phabCssProperties":null,"tabpCssProperties":"--content-width: 1/2;\n--content-push: 1/4;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"1ea340a2-1f61-4848-880e-5cefe85a349b","name":"Welcome Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Welcome Unit","contentUnits":"[{\"key\":\"05eaf614-2cd9-4ad9-8bb6-62e7115e00ad\",\"name\":\"Welcome Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Welcome Text\",\"headline\":\"Welcome to {{companyName}} of {{companyCity}}\",\"headlineStyle\":\"h2\",\"richContent\":\"<?UMBRACO_MACRO macroAlias=\\\"ResponsiveYouTubeVideo\\\" youTubeCode=\\\"https://www.youtube.com/watch?v=us6ZcvCcYoo\\\" caption=\\\"This is a video caption.\\\" />\\n<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\",\"richContentColumn2\":\"<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>\\n<?UMBRACO_MACRO macroAlias=\\\"ResponsiveImage\\\" responsiveImage=\\\"umb://media/3dd4230875924589a7042ee90b8a5a8e\\\" caption=\\\"This is an image caption.\\\" enableLightbox=\\\"1\\\" />\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":\"--headline-align: center;\",\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"67bce548-fdd6-48ff-bd01-3220cca5471b","name":"Portfolio Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Portfolio Unit","contentUnits":"[{\"key\":\"3943f769-9ac7-4f29-80e8-045cd7eb6089\",\"name\":\"Sample Portfolio\",\"ncContentTypeAlias\":\"portfolioViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Portfolio\",\"parentPage\":\"umb://document/dbb879803ec14ea6b021240714ea2040\",\"maximumItemCount\":3,\"tagsSeparator\":null,\"filterTags\":\"service\",\"excludeTags\":null,\"sortBy\":\"Name\",\"sortTags\":\"food\",\"sortDirection\":\"Ascending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 3;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":"--background-color: #f5f5f5;","phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null},{"key":"6e74fc56-8c2a-427e-af67-d785e4e6093b","name":"Gallery Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Gallery Unit","contentUnits":"[{\"key\":\"2c3a54df-a8e6-4aaa-a26e-28fbe4c1909a\",\"name\":\"Sample Gallery\",\"ncContentTypeAlias\":\"galleryViewSubunit\",\"enabled\":1,\"unitName\":\"Sample Gallery\",\"mediaFolder\":\"umb://media/fe6aa2176b664dd3bd40944dcac718ba\",\"maximumItemCount\":4,\"tagsSeparator\":null,\"filterTags\":null,\"excludeTags\":null,\"sortBy\":\"Node Order\",\"sortTags\":null,\"sortDirection\":\"Ascending\",\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":\"--columns: 4;\",\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
 
 COMMIT TRANSACTION
 

@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 226 rows to dbo.umbracoDocumentVersion
+-- Adding 236 rows to dbo.umbracoDocumentVersion
 
 BEGIN TRANSACTION
 
@@ -455,13 +455,33 @@ INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUE
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (536,1051,0);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (537,1051,1);
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (537,1051,0);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (538,NULL,0);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (539,1051,0);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (540,1120,0);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (554,1051,0);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (555,1051,0);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (556,1051,0);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (557,1051,0);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (558,1051,0);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (559,1051,0);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (560,1051,0);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (561,1051,0);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (562,1051,1);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (563,1051,0);
 
 COMMIT TRANSACTION
 

@@ -1,10 +1,10 @@
-﻿.umb-group-panel__header {
+﻿.umb-group-panel__header.CarbideCollapse {
     cursor: pointer;
     position: relative;
     transition: background-color ease-in-out .3s, color ease-in-out .3s, padding ease-in-out .3s;
 }
 
-    .umb-group-panel__header:after {
+    .umb-group-panel__header.CarbideCollapse:after {
         content: '';
         position: absolute;
         top: calc(50% - 3px);
@@ -16,25 +16,26 @@
         border-top: 4px solid #000;
         border-right: 4px solid transparent;
         border-left: 4px solid transparent;
+        transform: rotateZ(270deg);
         transform-origin: center;
         transition: transform ease-in-out .3s, border-top-color ease-in-out .3s;
     }
 
-    .umb-group-panel__header.open {
+    .umb-group-panel__header.CarbideCollapse.open {
         background-color: #1b264f;
         color: white;
         position: sticky;
         top: 0;
         z-index: 1;
-        padding: 12px 30px;
+        padding: 12px 20px;
     }
 
-        .umb-group-panel__header.open:after {
-            transform: rotateZ(180deg);
+        .umb-group-panel__header.CarbideCollapse.open:after {
+            transform: rotateZ(360deg);
             border-top-color: white;
         }
 
-.umb-group-panel__content {
+.umb-group-panel__content.CarbideCollapse {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -42,7 +43,7 @@
     transition: max-height ease-in-out .3s, opacity ease-in-out .3s, padding linear 0s .3s;
 }
 
-    .umb-group-panel__content.open {
+    .umb-group-panel__content.CarbideCollapse.open {
         max-height: 200vh;
         opacity: 1;
         overflow-y: auto;

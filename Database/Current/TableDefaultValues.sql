@@ -66,11 +66,11 @@ ALTER TABLE [dbo].[umbracoLanguage] ADD CONSTRAINT [df_umbracoLanguage_mandatory
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[umbracoRelation] ADD CONSTRAINT [df_umbracoRelation_datetime] DEFAULT (getdate()) FOR [datetime]
+ALTER TABLE [dbo].[cmsDocumentType] ADD CONSTRAINT [df_cmsDocumentType_IsDefault] DEFAULT ('0') FOR [IsDefault]
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[cmsDocumentType] ADD CONSTRAINT [df_cmsDocumentType_IsDefault] DEFAULT ('0') FOR [IsDefault]
+ALTER TABLE [dbo].[umbracoRelation] ADD CONSTRAINT [df_umbracoRelation_datetime] DEFAULT (getdate()) FOR [datetime]
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113

@@ -1,0 +1,31 @@
+﻿.carbide_gallery_view_subunit {
+
+    // SETTINGS
+
+    --column-gutter: 3%;
+    --row-gutter: 2rem;
+    --subunit-top-margin: 0;
+    --subunit-bottom-margin: 0;
+    --columns: 1;
+
+    --background-color: transparent; 
+
+    --headline-size: 1.2rem;
+    --headline-top-margin: 1.5rem;
+    --headline-bottom-margin: 0.75rem;
+
+    // ---------------------------
+
+    background-color: var(--background-color);
+
+    margin-top: var(--subunit-top-margin);
+    margin-bottom: var(--subunit-bottom-margin);
+
+    & > [role="grid"] {
+
+        & > [role="gridcell"] {
+
+            width: calc(100% / var(--columns));
+        }
+    }
+}

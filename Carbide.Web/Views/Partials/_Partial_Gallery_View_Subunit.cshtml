@@ -1,0 +1,61 @@
+﻿
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedElement>
+@using System
+@using System.Security.Cryptography
+@using Umbraco.Web
+@using Fynydd.Carbide
+@using Carbide.Web.Helpers
+
+@{
+    object _instanceId;
+    Html.ViewData.TryGetValue("instanceId", out _instanceId);
+    var instanceId = _instanceId == null ? "gallery-view-subunit" : _instanceId.ToString();
+    var selector = "[sf-subunit].carbide_gallery_view_subunit#" + instanceId;
+
+    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", selector));
+    Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
+
+    var filterTags = Model.SafeValue("filterTags").Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+    var excludeTags = Model.SafeValue("excludeTags").Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+    var sortTags = Model.SafeValue("sortTags").Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+    var sortField = Model.SafeValue("sortBy");
+    var sortAsc = (Model.SafeValue("sortDirection") == "Ascending");
+
+    if (sortField == "Update Date")
+    {
+        sortField = "updateDate";
+    }
+
+    if (sortField == "Node Order")
+    {
+        sortField = "sortOrder";
+    }
+
+    var collection = Model.PickerValue("mediaFolder");
+    var mediaFolder = collection.Children().Where(c =>
+        (filterTags.Length < 1 || (filterTags.Length > 0 && filterTags.All(s => c.Value<string[]>("tags").Any(ss => s.ToLower().Trim().Contains(ss.ToLower().Trim())))))
+        && (excludeTags.Length < 1 || (excludeTags.Length > 0 && excludeTags.All(s => c.Value<string[]>("tags").All(ss => s.ToLower().Trim().Contains(ss.ToLower().Trim()) == false))))
+    )
+        .AsQueryable()
+        .OrderByDynamic(sortField, (sortAsc ? QueryExtensions.Order.Asc : QueryExtensions.Order.Desc))
+        .OrderBy(o => (sortTags.Length < 1 ? (sortAsc ? 0 : 1) : sortTags.Any(t => o.Value<string[]>("tags", null, null, new Fallback(), null).Any(tt => t.ToLower().Trim().Contains(tt.ToLower().Trim()))) == true ? (sortAsc ? 0 : 1) : (sortAsc ? 1 : 0)))
+        .Take(Model.SafeValue<int>("maximumItemCount"))
+    ;
+
+}
+<div id="@(instanceId)" class="carbide_gallery_view_subunit" sf-subunit>
+    <div role="grid" style="--sf-tabp-gutters: var(--column-gutter); --sf-row-gutters: var(--row-gutter);">
+        @foreach(var media in mediaFolder)
+        {
+            <div role="gridcell">
+                <div class="sf-image-wrapper p" id="@(media.Name.AsCssSelector())">
+                    <div class="fluidbox-image"><a href="@(media.Url)?width=1920"><img src="@(media.Url)?width=640" /></a></div>
+                    @if (media.SafeValue("caption").HasValue())
+                    {
+                    <small>@Html.Raw(media.SafeValue("caption"))</small>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</div>

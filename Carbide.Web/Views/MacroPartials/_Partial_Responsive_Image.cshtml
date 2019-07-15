@@ -4,12 +4,12 @@
     string id = @Model.MacroParameters["responsiveImage"].ToString();
     var udi = Udi.Parse(id);
     var media = Umbraco.Media(udi);
-    var output = "<img src=\"" + media.Url + "?width=640\">";
+    var output = "<img src=\"" + media.Url + "?width=640\" />";
     bool useLightbox = (@Model.MacroParameters["enableLightbox"].ToString() == "1");
 }
 @if (useLightbox)
 {
-    output = "<div class=\"fluidbox-image\"><a href=\"" + media.Url + "?width=1920\">" + output + "</div></a>";
+    output = "<div class=\"fluidbox-image\"><a href=\"" + media.Url + "?width=1920\">" + output + "</a></div>";
 }
 <style type="text/css">
     body#tinymce .sf-image-wrapper#@(media.Name.AsCssSelector()) > img {

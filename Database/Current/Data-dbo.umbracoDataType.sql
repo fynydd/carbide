@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 61 rows to dbo.umbracoDataType
+-- Adding 65 rows to dbo.umbracoDataType
 
 BEGIN TRANSACTION
 
@@ -113,7 +113,7 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1160,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"basicNavigationUnit","ncTabAlias":"Navigation","nameTemplate":"{{position}}"}],"minItems":2,"maxItems":2,"confirmDeletes":true,"showIcons":true,"hideLabel":true}');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1161,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"richContentSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"},{"ncAlias":"portfolioViewSubunit","ncTabAlias":"Portfolio Properties","nameTemplate":"{{unitName}}"}],"confirmDeletes":true,"showIcons":true,"hideLabel":true}');
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1161,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"richContentSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"},{"ncAlias":"portfolioViewSubunit","ncTabAlias":"Portfolio Properties","nameTemplate":"{{unitName}}"},{"ncAlias":"galleryViewSubunit","ncTabAlias":"Gallery Properties","nameTemplate":"{{unitName}}"}],"confirmDeletes":true,"showIcons":true,"hideLabel":true}');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1162,N'Umbraco.RadioButtonList',N'Nvarchar',N'{"items":[{"id":1,"value":"Ascending"},{"id":2,"value":"Descending"}]}');
 -- SQRIBE/INSERT;03d113
@@ -132,6 +132,14 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1170,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<h4>Rich Content Subunit CSS Properties</h4>\n<p>For each breakpoint enter CSS custom property variables and values to override the appearance.</p>\n{{help:Rich Content Subunit CSS Help}}\n<p>Below are the <strong>CSS custom properties</strong> with sample data for the rich content component:</p>\n<p>\n--column-gutter: 3%;<br />\n--row-gutter: 2rem;\n</p>\n<p>\n--content-width: 100%;<br />\n--headline-margin: 2rem;<br />\n--headline-align: left;<br />\n--content-align: left;\n</p>\n<p>\n--button-align: left;<br />\n--button-width: auto;<br />\n--button-background-color: var(--sf-color-buttons);<br />\n--button-foreground-color: var(--sf-color-buttons-contrast);\n</p>\n{{/help}}","fullWidth":"1"}');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1172,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<p>For each breakpoint, enter any CSS custom property variables to override the appearance of this page.</p>\n{{help:Page Level CSS Help}}\n<p>Below are the <strong>CSS custom properties</strong> with sample data for styling an individual page:</p>\n<p>\n--background-color: var(--sf-color-white);<br />\n--foreground-color: var(--sf-color-white-contrast);\n</p>\n{{/help}}","fullWidth":"1"}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1188,N'Umbraco.MediaPicker',N'Ntext',N'{"multiPicker":false,"onlyImages":false,"disableFolderSelect":false,"startNodeId":null,"ignoreUserStartNodes":false}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1189,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<h4>Image Tags</h4>\n<p>\nTagging images allows you to group like images with one or more categories. This affects things like gallery views.\n</p>\n<h5>Tags already in-use:</h5>\n<p>\n{{tags:Images}}\n</p>","fullWidth":"1"}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1190,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<h4>Gallery View CSS Properties</h4>\n<p>For each breakpoint enter CSS custom property variables and values to override the appearance.</p>\n{{help:Gallery View CSS Help}}\n<p>Below are the <strong>CSS custom properties</strong> with sample data for the gallery component:</p>\n<p>\n--column-gutter: 3%;<br />\n--row-gutter: 2rem;<br />\n--subunit-top-margin: 0;<br />\n--subunit-bottom-margin: 0;<br />\n--columns: 1;\n</p>\n<p>\n--background-color: transparent;\n</p>\n{{/help}}","fullWidth":"1"}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1191,N'Umbraco.Tags',N'Nvarchar',N'{"group":"Images","storageType":0,"Delimiter":"\u0000"}');
 
 COMMIT TRANSACTION
 

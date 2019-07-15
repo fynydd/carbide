@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 21 rows to dbo.cmsContentType
+-- Adding 22 rows to dbo.cmsContentType
 
 SET IDENTITY_INSERT [dbo].[cmsContentType] ON
 
@@ -54,6 +54,8 @@ INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[de
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (559,1159,N'basicNavigationUnit',N'icon-link color-black',N'folder.png',N'Primary or footer navigation link area',0,1,0,0);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (560,1171,N'cSSProperties1',N'icon-code color-black',N'folder.png',N'For each breakpoint, enter any CSS custom property variables to override the appearance of the component.',0,1,0,0);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (561,1187,N'galleryViewSubunit',N'icon-pictures-alt-2 color-black',N'folder.png',N'Display pages as a gallery of items (e.g. services, samples, photos, and more)',0,1,0,0);
 
 COMMIT TRANSACTION
 

@@ -420,8 +420,8 @@
     <Content Include="App_Plugins\NestedListLayout\nestedlistlayout.controller.js" />
     <Content Include="App_Plugins\NestedListLayout\nestedlistlayout.css" />
     <Content Include="App_Plugins\NestedListLayout\nestedlistlayout.html" />
-    <Content Include="App_Plugins\U8Collapse\U8Collapse.controller.js" />
-    <Content Include="App_Plugins\U8Collapse\U8Collapse.css" />
+    <Content Include="App_Plugins\CarbideCollapse\CarbideCollapse.controller.js" />
+    <Content Include="App_Plugins\CarbideCollapse\CarbideCollapse.css" />
     <Content Include="App_Plugins\UmbracoBackOfficeCSS\css\UmbracoBackOfficeCSS.css" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
@@ -481,7 +481,7 @@
     <Content Include="config\ClientDependency.config" />
     <Content Include="App_Plugins\UmbracoBackOfficeCSS\package.manifest" />
     <Content Include="App_Plugins\CarbideStaticText\package.manifest" />
-    <Content Include="App_Plugins\U8Collapse\package.manifest" />
+    <Content Include="App_Plugins\CarbideCollapse\package.manifest" />
     <Content Include="App_Plugins\CarbideHelpContentApp\package.manifest" />
     <Content Include="App_Plugins\NestedListLayout\package.manifest" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
@@ -546,8 +546,10 @@
     <Content Include="Views\BasicHomepage.cshtml" />
     <Content Include="Views\BasicPage.cshtml" />
     <Content Include="Views\Partials\_Partial_Portfolio_View_Subunit.cshtml" />
-    <Content Include="scss\custom\carbide\portfolio_view.scss" />
+    <Content Include="scss\custom\carbide\portfolio-view.scss" />
     <Content Include="scss\custom\carbide\fluidbox.scss" />
+    <Content Include="scss\custom\carbide\gallery-view.scss" />
+    <Content Include="Views\Partials\_Partial_Gallery_View_Subunit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

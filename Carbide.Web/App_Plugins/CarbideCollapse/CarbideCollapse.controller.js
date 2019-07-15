@@ -5,12 +5,15 @@
             return {
                 'response': function (response) {
                     if (response.config.url.includes('/umbraco/backoffice/UmbracoApi/Content/GetById')
-                        || response.config.url.includes('umbraco/backoffice/UmbracoApi/Content/GetEmpty')) {
+                            || response.config.url.includes('/umbraco/backoffice/UmbracoApi/Media/GetById')
+                            || response.config.url.includes('umbraco/backoffice/UmbracoApi/Content/GetEmpty')) {
                         if (response.status === 200) {
                             window.setTimeout(function () {
                                 var tabs = document.getElementsByClassName("umb-group-panel__header");
                                 if (tabs) {
                                     for (var i = 0; i < tabs.length; i++) {
+                                        tabs[i].classList.add("CarbideCollapse");
+                                        tabs[i].nextElementSibling.classList.add("CarbideCollapse");
                                         if (tabs[i].onclick == null) {
                                             tabs[i].onclick = function () {
                                                 this.classList.toggle("open");

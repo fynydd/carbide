@@ -43,6 +43,11 @@
                     Html.RenderPartial("_Partial_Portfolio_View_Subunit", content, Html.ViewData);
                 }
 
+                if (content.ContentType.Alias == "galleryViewSubunit")
+                {
+                    Html.RenderPartial("_Partial_Gallery_View_Subunit", content, Html.ViewData);
+                }
+
                 Html.ViewData.Clear();
             }
         }
