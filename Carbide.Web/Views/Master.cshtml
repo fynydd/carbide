@@ -47,7 +47,14 @@
         color: var(--foreground-color);
     }
     </style>
+
+        // Site-level CSS overrides
+        Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".carbide_basic_theme"));
+        Html.RenderPartial("_Partial_CSS_Custom_Properties", settings, Html.ViewData);
+        Html.ViewData.Clear();
     }
+
+    @RenderSection("pageCssSection", required: false)
 
 </head>
 <body>

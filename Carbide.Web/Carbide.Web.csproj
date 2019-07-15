@@ -412,6 +412,7 @@
     <Content Include="App_Plugins\CarbideHelpContentApp\carbidehelp.css" />
     <Content Include="App_Plugins\CarbideHelpContentApp\carbidehelp.html" />
     <Content Include="App_Plugins\CarbideStaticText\CarbideStaticText.controller.js" />
+    <Content Include="App_Plugins\CarbideStaticText\CarbideStaticText.css" />
     <Content Include="App_Plugins\CarbideStaticText\CarbideStaticText.html" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.html" />

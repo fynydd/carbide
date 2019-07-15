@@ -1,3 +1,5 @@
-﻿<div ng-controller="Carbide.StaticTextController as vm">
+﻿<div ng-controller="Carbide.StaticTextController as vm" class="carbide-static-text">
 	<div class="" ng-bind-html="vm.value"></div>
+    <div ng-show="vm.hasHelp" ng-click="vm.expanded=(!vm.expanded)" class="help-bar" ng-class="{'collapsed': !vm.expanded}"><i class="icon icon-navigation-down" ng-class="{ 'icon icon-navigation-right': !vm.expanded }"></i> <span ng-bind-html="vm.helpName">Help</span></div>
+    <div ng-show="vm.expanded" ng-bind-html="vm.help" class="help-block"></div>
 </div>

@@ -16,7 +16,7 @@
 				fields: [
 					{
 						label: "Static text to show",
-						description: "Enter the static text to display; HTML markup is allowed. Use {{tags:groupname}} to display a list of tags being used by a tag group.",
+						description: "Enter the static text to display; HTML markup is allowed. Use {{tags:groupname}} to display a list of tags being used by a tag group. Use {{help:help title}}help content.{{/help}} to display a collapsible help area.",
 						key: "defaultValue",
 						view: "textarea"
 					},
@@ -32,5 +32,8 @@
 	],
 	javascript: [
 		'~/App_Plugins/CarbideStaticText/CarbideStaticText.controller.js'
+	],
+	"css": [
+		"~/App_Plugins/CarbideStaticText/CarbideStaticText.css"
 	]
 }

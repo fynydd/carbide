@@ -2,160 +2,21 @@
     <div class="carbide-intro-text">
         <h4>Short Codes</h4>
         <p>
-            The following are short codes (bits of text) you can enter into most any text input box to display data from your settings, like company name.
+            The following are short codes (bits of text) you can enter into most any text input box to display data like company name.
         </p>
     </div>
     <div class="umb-group-panel ng-scope ng-isolate-scope">
         <umb-box>
-            <umb-box-header ng-click="box1=(!box1)" ng-class="{'collapsed': !box1}"><i class="icon icon-navigation-down" ng-class="{ 'icon icon-navigation-right': !box1 }"></i> Short Codes</umb-box-header>
+            <umb-box-header ng-click="box1=(!box1)" ng-class="{'collapsed': !box1}"><i class="icon icon-navigation-down" ng-class="{ 'icon icon-navigation-right': !box1 }"></i> Company Info</umb-box-header>
             <umb-box-content ng-show="box1">
                 <p>
-                    <strong>You can insert field data into your content by using short codes.</strong> These snippets of text use the format <strong>{{fieldName}}</strong> where "fieldName" is the name of the field in camel case format. For example, to insert the company street address, type:
+                    <strong>You can insert company info from your site settings.</strong> These snippets of text use the format <strong>{{fieldName}}</strong> where "fieldName" is the name of the field in camel case format. For example, to insert the company street address, type:
                 </p>
                 <p>
                     <code ng-non-bindable>{{companyStreetAddress}}</code>
                 </p>
                 <p>
                     You can find field names by simply hovering your mouse over a caption in the left column. A tooltip will appear showing you the field name.
-                </p>
-                <p>
-                    <strong>Note:</strong> short codes are available for fields in the <strong>home page</strong> node as well as the <strong>current content item</strong> being edited (and its parent, if it's nested content).
-                </p>
-            </umb-box-content>
-        </umb-box>
-    </div>
-    <div class="umb-group-panel ng-scope ng-isolate-scope">
-        <umb-box>
-            <umb-box-header ng-click="box2=(!box2)" ng-class="{'collapsed': !box2}"><i class="icon icon-navigation-down" ng-class="{ 'icon icon-navigation-right': !box2 }"></i> Utility Short Codes</umb-box-header>
-            <umb-box-content ng-show="box2">
-                <p>
-                    Following the format above you can insert utility short codes for things like tags.
-                </p>
-                <p>
-                    <code ng-non-bindable>{{tags:Pages}}</code> <small>&mdash; Backoffice code for rendering a list of tags used for a given group.</small>
-                </p>
-            </umb-box-content>
-        </umb-box>
-    </div>
-
-    <div class="carbide-intro-text">
-        <h4>CSS Custom Properties</h4>
-        <p>
-            The following are guides to customizing the appearance of the website as a whole, or individual components.
-        </p>
-    </div>
-    <div class="umb-group-panel ng-scope ng-isolate-scope">
-        <umb-box>
-            <umb-box-header ng-click="box3=(!box3)" ng-class="{'collapsed': !box3}"><i class="icon icon-navigation-down" ng-class="{ 'icon icon-navigation-right': !box3 }"></i> Global CSS Custom Properties</umb-box-header>
-            <umb-box-content ng-show="box3">
-                <p>Below are the <strong>CSS custom properties</strong> with sample data for styling the overall site from within the settings area:</p>
-                <p>
-                    --background-color: var(--sf-color-white);<br />
-                    --foreground-color: var(--sf-color-white-contrast);
-                </p>
-            </umb-box-content>
-        </umb-box>
-    </div>
-    <div class="umb-group-panel ng-scope ng-isolate-scope">
-        <umb-box>
-            <umb-box-header ng-click="box4=(!box4)" ng-class="{'collapsed': !box4}"><i class="icon icon-navigation-down" ng-class="{ 'icon icon-navigation-right': !box4 }"></i> Navigation CSS Custom Properties</umb-box-header>
-            <umb-box-content ng-show="box4">
-                <p>Below are the <strong>CSS custom properties</strong> with sample data for styling the navigation units:</p>
-                <p>
-                    --background-color: var(--sf-color-white);<br />
-                    --foreground-color: var(--sf-color-white-contrast);
-                </p>
-                <p>
-                    --horizontal-unit-padding: 1.25rem;<br />
-                    --vertical-unit-padding: 3rem;
-                </p>
-                <p>
-                    --background-color: #1b264f;<br />
-                    --foreground-color: #ffffff;<br />
-                    --first-max-width: 50%;<br />
-                    --sidebar-first-max-width: 75%;<br />
-                    --current-opacity: 0.5;<br />
-                    --item-gutter: 3rem;<br />
-                    --justify-content: flex-end;<br />
-                    --first-justify-content: flex-start;
-                </p>
-            </umb-box-content>
-        </umb-box>
-    </div>
-    <div class="umb-group-panel ng-scope ng-isolate-scope">
-        <umb-box>
-            <umb-box-header ng-click="box5=(!box5)" ng-class="{'collapsed': !box5}"><i class="icon icon-navigation-down" ng-class="{ 'icon icon-navigation-right': !box5 }"></i> Container Unit CSS Custom Properties</umb-box-header>
-            <umb-box-content ng-show="box5">
-                <p>Below are the <strong>CSS custom properties</strong> with sample data for styling container units:</p>
-                <p>
-                    --background-color: var(--sf-color-white);<br />
-                </p>
-                <p>
-                    --horizontal-unit-padding: 1.25rem;<br />
-                    --vertical-unit-padding: 3rem;
-                </p>
-            </umb-box-content>
-        </umb-box>
-    </div>
-    <div class="umb-group-panel ng-scope ng-isolate-scope">
-        <umb-box>
-            <umb-box-header ng-click="box6=(!box6)" ng-class="{'collapsed': !box6}"><i class="icon icon-navigation-down" ng-class="{ 'icon icon-navigation-right': !box6 }"></i> Rich Content Subunit CSS Custom Properties</umb-box-header>
-            <umb-box-content ng-show="box6">
-                <p>Below are the <strong>CSS custom properties</strong> with sample data for the rich content component:</p>
-                <p>
-                    --column-gutter: 3%;<br />
-                    --row-gutter: 2rem;
-                </p>
-                <p>
-                    --content-width: 100%;<br />
-                    --headline-margin: 2rem;<br />
-                    --headline-align: left;<br />
-                    --content-align: left;
-                </p>
-                <p>
-                    --button-align: left;<br />
-                    --button-width: auto;<br />
-                    --button-background-color: var(--sf-color-buttons);<br />
-                    --button-foreground-color: var(--sf-color-buttons-contrast);
-                </p>
-            </umb-box-content>
-        </umb-box>
-    </div>
-    <div class="umb-group-panel ng-scope ng-isolate-scope">
-        <umb-box>
-            <umb-box-header ng-click="box7=(!box7)" ng-class="{'collapsed': !box7}"><i class="icon icon-navigation-down" ng-class="{ 'icon icon-navigation-right': !box7 }"></i> Simple Hero Unit CSS Custom Properties</umb-box-header>
-            <umb-box-content ng-show="box7">
-                <p>Below are the <strong>CSS custom properties</strong> with sample data for the simple hero component:</p>
-                <p>
-                    --content-align: center;<br />
-                    --content-width: 1/2;<br />
-                    --content-push: 1/4;<br />
-                    --min-height: 25rem;<br />
-                    --max-height: 25rem;<br />
-                    --vertical-padding: 3rem;<br />
-                    --content-bottom-spacer: 2rem;<br />
-                    --content-shadow-color: rgba(0, 0, 0, 0.5);
-                </p>
-                <p>
-                    --headline-bottom-spacer: 1rem;<br />
-                    --headline-shadow-color: rgba(0, 0, 0, 0.35);
-                </p>
-                <p>
-                    --nodes-display: block;<br />
-                    --nodes-align: center;<br />
-                    --nodes-top-spacer: 1rem;<br />
-                    --nodes-shadow-color: rgba(0, 0, 0, 0.25);
-                </p>
-                <p>
-                    --background-color: black;<br />
-                    --background-brightness: 50%;<br />
-                    --background-saturation: 150%;<br />
-                    --foreground-color: white;
-                </p>
-                <p>
-                    --button-bottom-spacer: 2rem;<br />
-                    --button-background-color: green;<br />
-                    --button-foreground-color: white;
                 </p>
             </umb-box-content>
         </umb-box>

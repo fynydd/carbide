@@ -158,6 +158,10 @@ ALTER TABLE [dbo].[umbracoCacheInstruction] ADD CONSTRAINT [df_umbracoCacheInstr
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[umbracoAudit] ADD CONSTRAINT [df_umbracoAudit_eventDateUtc] DEFAULT (getdate()) FOR [eventDateUtc]
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
 ALTER TABLE [dbo].[umbracoNode] ADD CONSTRAINT [df_umbracoNode_uniqueId] DEFAULT (newid()) FOR [uniqueId]
 GO -- SQRIBE/GO;03d113
 
@@ -167,10 +171,6 @@ GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
 ALTER TABLE [dbo].[umbracoNode] ADD CONSTRAINT [df_umbracoNode_createDate] DEFAULT (getdate()) FOR [createDate]
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[umbracoAudit] ADD CONSTRAINT [df_umbracoAudit_eventDateUtc] DEFAULT (getdate()) FOR [eventDateUtc]
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113

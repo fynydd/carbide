@@ -7,6 +7,33 @@
             $scope.model.hideLabel = ($scope.model.config.fullWidth === 1 || $scope.model.config.fullWidth === '1' ? true : false);
 
             vm.value = $scope.model.config.defaultValue.toString();
+            vm.expanded = false;
+            vm.hasHelp = false;
+            vm.helpName = 'Help';
+
+            // Process: collapsible help
+
+            var tagStart = vm.value.indexOf('{{help:');
+
+            if (tagStart !== -1) {
+
+                vm.hasHelp = true;
+
+                tagStart += 7;
+                var tagEnd = vm.value.indexOf('}', tagStart + 7);
+
+                if (tagEnd !== -1 && tagEnd > tagStart) {
+
+                    vm.helpName = vm.value.substring(tagStart, tagEnd);
+
+                    var tagEnd2 = vm.value.indexOf('{{/help}}', tagStart);
+
+                    vm.help = vm.value.substring(tagEnd + 2, tagEnd2);
+                    vm.value = vm.value.substring(0, (tagStart - 7)) + vm.value.substring(tagEnd2 + 9, vm.value.length);
+                }
+            }
+
+            // Process: used tags
 
             var tagStart = vm.value.indexOf('{{tags:');
 
@@ -34,5 +61,4 @@
                     });
                 }
             }
-
         });
