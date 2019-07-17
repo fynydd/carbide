@@ -318,3 +318,10 @@ $sf-linear-channel-values:
         @return $dark;
     }
 }
+
+// Convert hex colors to RGB
+
+@function sf-hex-to-rgb($hex) {
+
+  @return red($hex), green($hex), blue($hex);
+}

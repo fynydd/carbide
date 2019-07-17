@@ -12,10 +12,7 @@
     Html.ViewData.TryGetValue("cssSelector", out cssSelector);
 
     var selector = cssSelector == null ? "" : cssSelector.ToString();
-
-    if (selector.HasValue())
-    {
-        var breakpoints = new string[] { "zero", "phab", "tabp", "tabl", "note", "desk", "elas" };
+    var breakpoints = new string[] { "zero", "phab", "tabp", "tabl", "note", "desk", "elas" };
 
 <style type="text/css">
         @foreach (var breakpoint in breakpoints)
@@ -28,18 +25,34 @@
 
                 if (Model.SafeValue(propName).HasValue())
                 {
-    <text>
+<text>
     @@media (min-width: @(width)) {
+</text>
 
-        @Html.Raw(selector + ", " + selector + " > [sf-outer-wrapper], " + selector + " > [sf-outer-wrapper] > [sf-inner-wrapper]" ) {
+        if(selector == ":root")
+        {
+<text>
+            :root {
 
-            @(Model.SafeValue(propName))
+                @(Model.SafeValue(propName))
+            }
+</text>
         }
+
+        else
+        {
+<text>
+            @Html.Raw(selector + ", " + selector + " > [sf-outer-wrapper], " + selector + " > [sf-outer-wrapper] > [sf-inner-wrapper]") {
+
+                @(Model.SafeValue(propName))
+            }
+</text>
+        }
+<text>
     }
-    </text>
+</text>
                 }
             }
         }
 </style>
-    }
 }

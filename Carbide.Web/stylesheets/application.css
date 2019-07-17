@@ -885,7 +885,23 @@ hr:last-child { margin-bottom: 0; }
 
 .carbide_simple_hero_unit #hero-content .nodes span { display: inline-block; font-size: 0.75rem; vertical-align: baseline; color: var(--foreground-color); opacity: 0.5; text-shadow: 0 0 0.75rem var(--nodes-shadow-color); }
 
-html a, body a { color: var(--sf-color-primary); }
+:root { --background-color: var(--sf-color-white); --foreground-color: var(--sf-color-white-contrast); --anchor-color: var(--sf-color-primary); --h1-color: var(--sf-color-white-contrast); --h2-color: var(--sf-color-white-contrast); --h3-color: var(--sf-color-white-contrast); --h4-color: var(--sf-color-white-contrast); --h5-color: var(--sf-color-white-contrast); --h6-color: var(--sf-color-white-contrast); }
+
+html, body { background-color: var(--background-color); color: var(--foreground-color); }
+
+html a, html a:hover, html a:visited, html a:active, html .a, body a, body a:hover, body a:visited, body a:active, body .a { color: var(--anchor-color); }
+
+html h1, html .h1, body h1, body .h1 { color: var(--h1-color); }
+
+html h2, html .h2, body h2, body .h2 { color: var(--h2-color); }
+
+html h3, html .h3, body h3, body .h3 { color: var(--h3-color); }
+
+html h4, html .h4, body h4, body .h4 { color: var(--h4-color); }
+
+html h5, html .h5, body h5, body .h5 { color: var(--h5-color); }
+
+html h6, html .h6, body h6, body .h6 { color: var(--h6-color); }
 
 body > main > section[separator] { --vertical-unit-padding: 0; padding-bottom: var(--vertical-unit-padding); --vertical-unit-padding: var(--zero-vertical-unit-padding); }
 

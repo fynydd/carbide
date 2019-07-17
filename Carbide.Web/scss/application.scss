@@ -26,11 +26,57 @@
 @import "custom/carbide/simple-hero-unit.scss";
 // $CARBIDE_PARTIALS:END
 
+:root {
+
+    --background-color: var(--sf-color-white);
+    --foreground-color: var(--sf-color-white-contrast);
+    --anchor-color: var(--sf-color-primary);
+    --h1-color: var(--sf-color-white-contrast);
+    --h2-color: var(--sf-color-white-contrast);
+    --h3-color: var(--sf-color-white-contrast);
+    --h4-color: var(--sf-color-white-contrast);
+    --h5-color: var(--sf-color-white-contrast);
+    --h6-color: var(--sf-color-white-contrast);
+}
+
 html, body {
 
-    a {
+    background-color: var(--background-color);
+    color: var(--foreground-color);
 
-        color: var(--sf-color-primary);
+    a, a:hover, a:visited, a:active, .a {
+
+        color: var(--anchor-color);
+    }
+
+    h1, .h1 {
+
+        color: var(--h1-color);
+    }
+
+    h2, .h2 {
+
+        color: var(--h2-color);
+    }
+
+    h3, .h3 {
+
+        color: var(--h3-color);
+    }
+
+    h4, .h4 {
+
+        color: var(--h4-color);
+    }
+
+    h5, .h5 {
+
+        color: var(--h5-color);
+    }
+
+    h6, .h6 {
+
+        color: var(--h6-color);
     }
 }
 

@@ -26,9 +26,6 @@
 
     :root {
 
-        --background-color: var(--sf-color-white);
-        --foreground-color: var(--sf-color-white-contrast);
-
         @if(settings.SafeValue("bodyFontStack").HasValue())
         {
 <text>        --font-body: @Html.Raw(settings.SafeValue("bodyFontStack").Trim(";"));</text>
@@ -41,15 +38,10 @@
         }
     }
 
-    html, body {
-
-        background-color: var(--background-color);
-        color: var(--foreground-color);
-    }
     </style>
 
         // Site-level CSS overrides
-        Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".carbide_basic_theme"));
+        Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ":root"));
         Html.RenderPartial("_Partial_CSS_Custom_Properties", settings, Html.ViewData);
         Html.ViewData.Clear();
     }
