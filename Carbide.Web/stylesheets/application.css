@@ -881,9 +881,11 @@ hr:last-child { margin-bottom: 0; }
 
 .carbide_simple_hero_unit #hero-content .nodes a { color: var(--foreground-color); display: inline-block; margin-right: 1rem; text-shadow: 0 0 0.75rem var(--nodes-shadow-color); }
 
+.carbide_simple_hero_unit #hero-content .nodes a:last-of-type { margin-right: 0; }
+
 .carbide_simple_hero_unit #hero-content .nodes a i { font-size: 0.75rem; }
 
-.carbide_simple_hero_unit #hero-content .nodes span { display: inline-block; font-size: 0.75rem; vertical-align: baseline; color: var(--foreground-color); opacity: 0.5; text-shadow: 0 0 0.75rem var(--nodes-shadow-color); }
+.carbide_simple_hero_unit #hero-content .nodes span { display: inline-block; font-size: 0.75rem; vertical-align: baseline; color: var(--foreground-color); opacity: 0.5; text-shadow: 0 0 0.75rem var(--nodes-shadow-color); margin-left: 1rem; }
 
 :root { --background-color: var(--sf-color-white); --foreground-color: var(--sf-color-white-contrast); --anchor-color: var(--sf-color-primary); --h1-color: var(--sf-color-white-contrast); --h2-color: var(--sf-color-white-contrast); --h3-color: var(--sf-color-white-contrast); --h4-color: var(--sf-color-white-contrast); --h5-color: var(--sf-color-white-contrast); --h6-color: var(--sf-color-white-contrast); }
 

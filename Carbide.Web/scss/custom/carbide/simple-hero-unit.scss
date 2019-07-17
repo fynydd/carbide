@@ -157,6 +157,11 @@
                 margin-right: 1rem;
                 text-shadow: 0 0 0.75rem var(--nodes-shadow-color);
 
+                &:last-of-type {
+
+                    margin-right: 0;
+                }
+
                 i {
 
                     font-size: 0.75rem;
@@ -171,6 +176,8 @@
                 color: var(--foreground-color);
                 opacity: 0.5;
                 text-shadow: 0 0 0.75rem var(--nodes-shadow-color);
+
+                margin-left: 1rem;
             }
         }
     }

@@ -89,9 +89,11 @@
 
     var imageParams = "?width=1920&quality=75";
     var counter = 0;
+    var frames = Model.SafeNestedValues("frames").Where(f => f.SafeValue<bool>("enabled"));
+
 }
 <section id="@(instanceId)" class="carbide_simple_hero_unit" sf-unit>
-@foreach (var frame in Model.SafeNestedValues("frames").Where(f => f.SafeValue<bool>("enabled")))
+@foreach (var frame in frames)
 {
     var imageUrl = frame.PickerValue("backgroundImage").Url + imageParams;
 
@@ -105,7 +107,7 @@
                         <div role="presentation">
                             <div role="grid">
                                 <div role="gridcell" class="inner-gridcell">
-                                    @foreach(var frame in Model.SafeNestedValues("frames").Where(f => f.SafeValue<bool>("enabled")))
+                                    @foreach(var frame in frames)
                                     {
                                     <div class="frame" style="transition-duration: @(Model.SafeValue<float>("frameTransitionTime")/1000)s;">
                                         <h1>@Html.Raw(frame.SafeValue("title").ProcessShortCodes(UmbracoContext))</h1>
@@ -122,13 +124,19 @@
                                     }
                                 </div>
                             </div>
-                            <div class="nodes">
-                            @foreach(var frame in Model.SafeNestedValues("frames").Where(f => f.SafeValue<bool>("enabled")))
+                            @if (frames.Count() > 1)
                             {
+                            <div class="nodes">
+                                @foreach (var frame in frames)
+                                {
                                 <a></a>
-                            }
+                                }
+                                @if (Model.SafeValue<bool>("showCountdown"))
+                                {
                                 <span></span>
+                                }
                             </div>
+                            }
                         </div>
                         <script>
 
@@ -137,7 +145,7 @@
                                 $("#@(instanceId)").carbideSimpleHero({
 
                                     slideDuration: @(Model.SafeValue<int>("frameDuration")),
-                                    showCountdown: true
+                                    showCountdown: @(frames.Count() > 1 ? (Model.SafeValue<bool>("showCountdown") ? "true" : "false") : "false")
                                 });
                             });
 
