@@ -55,7 +55,7 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (-36,N'Umbraco.DateTime',N'Date',NULL);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1041,N'Umbraco.Tags',N'Nvarchar',N'{"group":"Pages","storageType":0,"Delimiter":"\u0000"}');
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1041,N'Umbraco.Tags',N'Nvarchar',N'{"group":"Pages","storageType":1,"Delimiter":"\u0000"}');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1043,N'Umbraco.ImageCropper',N'Ntext',N'{"crops":[{"alias":"SocialSharing","width":1200,"height":628}]}');
 -- SQRIBE/INSERT;03d113
@@ -139,7 +139,7 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1190,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<h4>Gallery View CSS Properties</h4>\n<p>For each breakpoint enter CSS custom property variables and values to override the appearance.</p>\n{{help:Gallery View CSS Help}}\n<p>Below are the <strong>CSS custom properties</strong> with sample data for the gallery component:</p>\n<p>\n--column-gutter: 3%;<br />\n--row-gutter: 2rem;<br />\n--subunit-top-margin: 0;<br />\n--subunit-bottom-margin: 0;<br />\n--columns: 1;\n</p>\n<p>\n--background-color: transparent;\n</p>\n{{/help}}","fullWidth":"1"}');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1191,N'Umbraco.Tags',N'Nvarchar',N'{"group":"Images","storageType":0,"Delimiter":"\u0000"}');
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1191,N'Umbraco.Tags',N'Nvarchar',N'{"group":"Images","storageType":1,"Delimiter":"\u0000"}');
 
 COMMIT TRANSACTION
 

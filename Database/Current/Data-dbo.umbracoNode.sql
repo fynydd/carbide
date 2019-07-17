@@ -267,7 +267,7 @@ INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sort
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1190,'B5F79603-57EE-4A4B-9690-3BB53FA1065D',-1,1,N'-1,1190',63,0,-1,N'Gallery View Subunit - CSS Separator - Carbide Static Text','30A2A501-1978-4DDB-A57B-F7EFED43BA3C',CONVERT(datetime,'2019-07-15 16:51:57.193',121));
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1191,'713C9A38-5FD0-47B0-B4A2-95D5F131C3B7',-1,1,N'-1,1191',64,0,-1,N'Image - Tags','30A2A501-1978-4DDB-A57B-F7EFED43BA3C',CONVERT(datetime,'2019-07-15 16:53:21.180',121));
+INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1191,'713C9A38-5FD0-47B0-B4A2-95D5F131C3B7',-1,1,N'-1,1191',64,0,-1,N'Tags (Images)','30A2A501-1978-4DDB-A57B-F7EFED43BA3C',CONVERT(datetime,'2019-07-15 16:53:21.180',121));
 
 COMMIT TRANSACTION
 
