@@ -47,7 +47,7 @@ INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[de
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (557,1155,N'settings',N'icon-umb-developer color-black',N'folder.png',N'Global site settings and content',0,0,0,0);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (559,1159,N'basicNavigationUnit',N'icon-link color-black',N'folder.png',N'Primary or footer navigation link area',0,1,0,0);
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (559,1159,N'navigationUnit',N'icon-link color-black',N'folder.png',N'Primary or footer navigation link area',0,1,0,0);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (560,1171,N'cSSProperties1',N'icon-code color-black',N'folder.png',N'For each breakpoint, enter any CSS custom property variables to override the appearance of the component.',0,1,0,0);
 -- SQRIBE/INSERT;03d113

@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 66 rows to dbo.umbracoCacheInstruction
+-- Adding 74 rows to dbo.umbracoCacheInstruction
 
 SET IDENTITY_INSERT [dbo].[umbracoCacheInstruction] ON
 
@@ -144,6 +144,22 @@ INSERT INTO [dbo].[umbracoCacheInstruction] ([id],[utcStamp],[jsonInstruction],[
 INSERT INTO [dbo].[umbracoCacheInstruction] ([id],[utcStamp],[jsonInstruction],[originated],[instructionCount]) VALUES (2589,CONVERT(datetime,'2019-07-18 20:10:04.980',121),N'[{"RefreshType":4,"RefresherId":"900a4fbe-df3c-41e6-bb77-be896cd158ea","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":null,"JsonIdCount":1,"JsonPayload":"[{\"Id\":1056,\"ChangeTypes\":4}]"}]',N'DESKTOP-9F22GQS//LM/W3SVC/1/ROOT [P7528/D10] B7A5B83EF2AF4BB3A893AA4A3B5CEA11',1);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoCacheInstruction] ([id],[utcStamp],[jsonInstruction],[originated],[instructionCount]) VALUES (2590,CONVERT(datetime,'2019-07-18 20:10:29.197',121),N'[{"RefreshType":4,"RefresherId":"900a4fbe-df3c-41e6-bb77-be896cd158ea","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":null,"JsonIdCount":1,"JsonPayload":"[{\"Id\":1056,\"ChangeTypes\":4}]"}]',N'DESKTOP-9F22GQS//LM/W3SVC/1/ROOT [P7528/D10] B7A5B83EF2AF4BB3A893AA4A3B5CEA11',1);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoCacheInstruction] ([id],[utcStamp],[jsonInstruction],[originated],[instructionCount]) VALUES (2591,CONVERT(datetime,'2019-07-18 21:20:31.300',121),N'[{"RefreshType":3,"RefresherId":"e057af6d-2ee6-41f4-8045-3694010f0aa6","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":"[-1]","JsonIdCount":1,"JsonPayload":null}]',N'DESKTOP-9F22GQS//LM/W3SVC/1/ROOT [P7528/D15] 07F901F2AAFF4DEFAC83B9A3738FE71E',1);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoCacheInstruction] ([id],[utcStamp],[jsonInstruction],[originated],[instructionCount]) VALUES (2592,CONVERT(datetime,'2019-07-18 21:23:10.743',121),N'[{"RefreshType":4,"RefresherId":"6902e22c-9c10-483c-91f3-66b7cae9e2f5","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":null,"JsonIdCount":1,"JsonPayload":"[{\"ItemType\":\"IContentType\",\"Id\":1159,\"ChangeTypes\":2}]"}]',N'DESKTOP-9F22GQS//LM/W3SVC/1/ROOT [P7528/D15] 07F901F2AAFF4DEFAC83B9A3738FE71E',1);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoCacheInstruction] ([id],[utcStamp],[jsonInstruction],[originated],[instructionCount]) VALUES (2593,CONVERT(datetime,'2019-07-18 21:23:35.790',121),N'[{"RefreshType":4,"RefresherId":"35b16c25-a17e-45d7-bc8f-edab1dcc28d2","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":null,"JsonIdCount":1,"JsonPayload":"[{\"Id\":1168,\"Key\":\"d358a97b-30c6-4419-9c53-79d9d6a29fed\",\"Removed\":false}]"}]',N'DESKTOP-9F22GQS//LM/W3SVC/1/ROOT [P7528/D15] 07F901F2AAFF4DEFAC83B9A3738FE71E',1);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoCacheInstruction] ([id],[utcStamp],[jsonInstruction],[originated],[instructionCount]) VALUES (2594,CONVERT(datetime,'2019-07-18 21:23:44.537',121),N'[{"RefreshType":4,"RefresherId":"35b16c25-a17e-45d7-bc8f-edab1dcc28d2","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":null,"JsonIdCount":1,"JsonPayload":"[{\"Id\":1192,\"Key\":\"248d77fa-13bc-494b-af27-3f74db920f5b\",\"Removed\":false}]"}]',N'DESKTOP-9F22GQS//LM/W3SVC/1/ROOT [P7528/D15] 07F901F2AAFF4DEFAC83B9A3738FE71E',1);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoCacheInstruction] ([id],[utcStamp],[jsonInstruction],[originated],[instructionCount]) VALUES (2595,CONVERT(datetime,'2019-07-18 21:24:19.960',121),N'[{"RefreshType":4,"RefresherId":"35b16c25-a17e-45d7-bc8f-edab1dcc28d2","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":null,"JsonIdCount":1,"JsonPayload":"[{\"Id\":1160,\"Key\":\"23a5dcc0-6828-4284-a1d7-656a0b63a785\",\"Removed\":false}]"}]',N'DESKTOP-9F22GQS//LM/W3SVC/1/ROOT [P7528/D15] 07F901F2AAFF4DEFAC83B9A3738FE71E',1);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoCacheInstruction] ([id],[utcStamp],[jsonInstruction],[originated],[instructionCount]) VALUES (2596,CONVERT(datetime,'2019-07-18 21:24:27.680',121),N'[{"RefreshType":4,"RefresherId":"6902e22c-9c10-483c-91f3-66b7cae9e2f5","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":null,"JsonIdCount":1,"JsonPayload":"[{\"ItemType\":\"IContentType\",\"Id\":1155,\"ChangeTypes\":4}]"}]',N'DESKTOP-9F22GQS//LM/W3SVC/1/ROOT [P7528/D15] 07F901F2AAFF4DEFAC83B9A3738FE71E',1);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoCacheInstruction] ([id],[utcStamp],[jsonInstruction],[originated],[instructionCount]) VALUES (2597,CONVERT(datetime,'2019-07-18 21:24:35.930',121),N'[{"RefreshType":4,"RefresherId":"900a4fbe-df3c-41e6-bb77-be896cd158ea","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":null,"JsonIdCount":1,"JsonPayload":"[{\"Id\":0,\"ChangeTypes\":1}]"},{"RefreshType":4,"RefresherId":"b29286dd-2d40-4ddb-b325-681226589fec","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":null,"JsonIdCount":1,"JsonPayload":"[{\"Id\":0,\"ChangeTypes\":1}]"},{"RefreshType":4,"RefresherId":"11290a79-4b57-4c99-ad72-7748a3cf38af","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":null,"JsonIdCount":1,"JsonPayload":"[{\"Id\":0,\"ChangeType\":1}]"}]',N'DESKTOP-9F22GQS//LM/W3SVC/1/ROOT [P7528/D15] 07F901F2AAFF4DEFAC83B9A3738FE71E',3);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoCacheInstruction] ([id],[utcStamp],[jsonInstruction],[originated],[instructionCount]) VALUES (2598,CONVERT(datetime,'2019-07-18 21:26:55.667',121),N'[{"RefreshType":4,"RefresherId":"900a4fbe-df3c-41e6-bb77-be896cd158ea","GuidId":"00000000-0000-0000-0000-000000000000","IntId":0,"JsonIds":null,"JsonIdCount":1,"JsonPayload":"[{\"Id\":1156,\"ChangeTypes\":4}]"}]',N'DESKTOP-9F22GQS//LM/W3SVC/1/ROOT [P7528/D15] 07F901F2AAFF4DEFAC83B9A3738FE71E',1);
 
 COMMIT TRANSACTION
 

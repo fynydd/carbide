@@ -111,7 +111,7 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1154,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"contentContainerUnit","ncTabAlias":"Unit Container","nameTemplate":"{{unitName}}"},{"ncAlias":"simpleHeroUnit","ncTabAlias":"Simple Hero Content","nameTemplate":"{{unitName}}"}],"confirmDeletes":true,"showIcons":true,"hideLabel":true}');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1160,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"basicNavigationUnit","ncTabAlias":"Navigation","nameTemplate":"{{position}}"}],"minItems":2,"maxItems":2,"confirmDeletes":true,"showIcons":true,"hideLabel":true}');
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1160,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"navigationUnit","ncTabAlias":"Navigation","nameTemplate":"{{position}}"}],"minItems":2,"maxItems":2,"confirmDeletes":true,"showIcons":true,"hideLabel":true}');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1161,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"richContentSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"},{"ncAlias":"portfolioViewSubunit","ncTabAlias":"Portfolio Properties","nameTemplate":"{{unitName}}"},{"ncAlias":"galleryViewSubunit","ncTabAlias":"Gallery Properties","nameTemplate":"{{unitName}}"}],"confirmDeletes":true,"showIcons":true,"hideLabel":true}');
 -- SQRIBE/INSERT;03d113

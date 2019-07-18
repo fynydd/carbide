@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 124 rows to dbo.umbracoUserLogin
+-- Adding 127 rows to dbo.umbracoUserLogin
 
 BEGIN TRANSACTION
 
@@ -75,7 +75,7 @@ INSERT INTO [dbo].[umbracoUserLogin] ([sessionId],[userId],[loggedInUtc],[lastVa
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoUserLogin] ([sessionId],[userId],[loggedInUtc],[lastValidatedUtc],[loggedOutUtc],[ipAddress]) VALUES ('CE06CA3D-B6C3-4E3A-85D5-4002B1C5A204',-1,CONVERT(datetime,'2019-07-08 14:39:29.047',121),CONVERT(datetime,'2019-07-08 15:11:39.530',121),CONVERT(datetime,NULL,121),N'10.0.11.1');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoUserLogin] ([sessionId],[userId],[loggedInUtc],[lastValidatedUtc],[loggedOutUtc],[ipAddress]) VALUES ('08639343-A497-45ED-9780-43AE2CB42BE8',-1,CONVERT(datetime,'2019-07-18 19:52:11.830',121),CONVERT(datetime,'2019-07-18 20:10:04.763',121),CONVERT(datetime,NULL,121),N'10.0.11.1');
+INSERT INTO [dbo].[umbracoUserLogin] ([sessionId],[userId],[loggedInUtc],[lastValidatedUtc],[loggedOutUtc],[ipAddress]) VALUES ('08639343-A497-45ED-9780-43AE2CB42BE8',-1,CONVERT(datetime,'2019-07-18 19:52:11.830',121),CONVERT(datetime,'2019-07-18 20:28:50.320',121),CONVERT(datetime,NULL,121),N'10.0.11.1');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoUserLogin] ([sessionId],[userId],[loggedInUtc],[lastValidatedUtc],[loggedOutUtc],[ipAddress]) VALUES ('F2959C6C-A883-4581-92E0-4551DE645796',-1,CONVERT(datetime,'2019-07-09 01:01:06.380',121),CONVERT(datetime,'2019-07-09 01:42:06.990',121),CONVERT(datetime,NULL,121),N'10.0.11.1');
 -- SQRIBE/INSERT;03d113
@@ -98,6 +98,8 @@ INSERT INTO [dbo].[umbracoUserLogin] ([sessionId],[userId],[loggedInUtc],[lastVa
 INSERT INTO [dbo].[umbracoUserLogin] ([sessionId],[userId],[loggedInUtc],[lastValidatedUtc],[loggedOutUtc],[ipAddress]) VALUES ('3A1E8285-F320-4DAD-A1E3-56D5C7C5DD89',-1,CONVERT(datetime,'2019-07-08 04:09:19.847',121),CONVERT(datetime,'2019-07-08 04:41:28.980',121),CONVERT(datetime,NULL,121),N'10.0.11.1');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoUserLogin] ([sessionId],[userId],[loggedInUtc],[lastValidatedUtc],[loggedOutUtc],[ipAddress]) VALUES ('71C25EC5-6D50-4E14-A9F4-58D791BA5527',-1,CONVERT(datetime,'2019-07-08 19:51:57.850',121),CONVERT(datetime,'2019-07-08 20:21:57.883',121),CONVERT(datetime,NULL,121),N'10.0.11.1');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoUserLogin] ([sessionId],[userId],[loggedInUtc],[lastValidatedUtc],[loggedOutUtc],[ipAddress]) VALUES ('6ECEDAA2-C28E-4B16-BDEA-5A9E3494C254',-1,CONVERT(datetime,'2019-07-18 21:20:24.580',121),CONVERT(datetime,'2019-07-18 21:20:24.580',121),CONVERT(datetime,NULL,121),N'10.0.11.1');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoUserLogin] ([sessionId],[userId],[loggedInUtc],[lastValidatedUtc],[loggedOutUtc],[ipAddress]) VALUES ('68E9F493-3D47-419D-9793-5BCA261A8251',-1,CONVERT(datetime,'2019-07-09 16:41:14.343',121),CONVERT(datetime,'2019-07-09 17:23:27.750',121),CONVERT(datetime,NULL,121),N'10.0.11.1');
 -- SQRIBE/INSERT;03d113
@@ -138,6 +140,8 @@ INSERT INTO [dbo].[umbracoUserLogin] ([sessionId],[userId],[loggedInUtc],[lastVa
 INSERT INTO [dbo].[umbracoUserLogin] ([sessionId],[userId],[loggedInUtc],[lastValidatedUtc],[loggedOutUtc],[ipAddress]) VALUES ('D042DCC5-7D9F-47DF-A5F0-89E1D3185E20',-1,CONVERT(datetime,'2019-07-08 17:55:56.297',121),CONVERT(datetime,'2019-07-08 18:17:41.367',121),CONVERT(datetime,NULL,121),N'10.0.11.1');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoUserLogin] ([sessionId],[userId],[loggedInUtc],[lastValidatedUtc],[loggedOutUtc],[ipAddress]) VALUES ('9C0C2262-4147-43FB-A492-8D437F7D2CBA',-1,CONVERT(datetime,'2019-07-08 05:24:39.843',121),CONVERT(datetime,'2019-07-08 05:46:41.760',121),CONVERT(datetime,NULL,121),N'10.0.11.1');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoUserLogin] ([sessionId],[userId],[loggedInUtc],[lastValidatedUtc],[loggedOutUtc],[ipAddress]) VALUES ('7118E673-F361-4EBE-9E8C-8DF910DC1EFF',-1,CONVERT(datetime,'2019-07-18 20:28:50.440',121),CONVERT(datetime,'2019-07-18 21:20:22.813',121),CONVERT(datetime,NULL,121),N'10.0.11.1');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoUserLogin] ([sessionId],[userId],[loggedInUtc],[lastValidatedUtc],[loggedOutUtc],[ipAddress]) VALUES ('302DC031-3329-4D6E-B3F9-8EE2D261CACE',-1,CONVERT(datetime,'2019-07-04 02:39:55.470',121),CONVERT(datetime,'2019-07-04 03:08:13.367',121),CONVERT(datetime,NULL,121),N'10.0.11.1');
 -- SQRIBE/INSERT;03d113
@@ -250,6 +254,8 @@ INSERT INTO [dbo].[umbracoUserLogin] ([sessionId],[userId],[loggedInUtc],[lastVa
 INSERT INTO [dbo].[umbracoUserLogin] ([sessionId],[userId],[loggedInUtc],[lastValidatedUtc],[loggedOutUtc],[ipAddress]) VALUES ('CEFEA3FE-E11D-4C88-8915-F9596E1473CC',-1,CONVERT(datetime,'2019-07-10 21:48:11.823',121),CONVERT(datetime,'2019-07-10 22:19:30.727',121),CONVERT(datetime,NULL,121),N'10.0.11.1');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoUserLogin] ([sessionId],[userId],[loggedInUtc],[lastValidatedUtc],[loggedOutUtc],[ipAddress]) VALUES ('FCE07C19-C450-441E-BF24-F9FA320B3D90',-1,CONVERT(datetime,'2019-07-15 22:53:01.853',121),CONVERT(datetime,'2019-07-15 22:53:01.853',121),CONVERT(datetime,NULL,121),N'10.0.11.1');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoUserLogin] ([sessionId],[userId],[loggedInUtc],[lastValidatedUtc],[loggedOutUtc],[ipAddress]) VALUES ('2860D890-F80D-46AC-9C16-FBB3062FD03A',-1,CONVERT(datetime,'2019-07-18 21:20:31.300',121),CONVERT(datetime,'2019-07-18 21:26:12.527',121),CONVERT(datetime,NULL,121),N'10.0.11.1');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoUserLogin] ([sessionId],[userId],[loggedInUtc],[lastValidatedUtc],[loggedOutUtc],[ipAddress]) VALUES ('1C55453D-BECE-44B5-A476-FD42AE37F008',-1,CONVERT(datetime,'2019-07-11 15:34:06.323',121),CONVERT(datetime,'2019-07-11 15:46:36.473',121),CONVERT(datetime,NULL,121),N'10.0.11.1');
 -- SQRIBE/INSERT;03d113
