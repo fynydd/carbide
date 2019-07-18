@@ -6,6 +6,8 @@
 
     var home = Model.AncestorOrSelf(1);
     var settings = Model.Children.First(c => c.ContentType.Alias == "settings");
+    var primaryNavigation = settings.SafeNestedValues("navigation").Where(n => n.SafeValue<bool>("enabled") && n.SafeValue("position") == "Primary" && n.HasValue("links")).FirstOrDefault();
+    var footerNavigation = settings.SafeNestedValues("navigation").Where(n => n.SafeValue<bool>("enabled") && n.SafeValue("position") == "Footer" && n.HasValue("links")).FirstOrDefault();
 }
 @section pageCssSection
 {
@@ -17,25 +19,20 @@
     }
 }
 @{
-    foreach(var navigation in settings.SafeNestedValues("navigation"))
+
+    if (primaryNavigation != null)
     {
-        if (navigation.SafeValue<bool>("enabled") && navigation.SafeValue("position") == "Primary" && navigation.HasValue("links"))
-        {
-            Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", "primary-navigation"));
-            Html.RenderPartial("_Partial_Basic_Navigation_Unit", navigation, Html.ViewData);
-            Html.ViewData.Clear();
-        }
+        Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", "primary-navigation"));
+        Html.RenderPartial("_Partial_" + primaryNavigation.SafeValue("navigationStyle") + "_Primary_Navigation_Unit", primaryNavigation , Html.ViewData);
+        Html.ViewData.Clear();
     }
 
     Html.RenderPartial("_Partial_Render_Content_Units");
 
-    foreach(var navigation in settings.SafeNestedValues("navigation"))
+    if (footerNavigation != null)
     {
-        if (navigation.SafeValue<bool>("enabled") && navigation.SafeValue("position") == "Footer" && navigation.HasValue("links"))
-        {
-            Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", "footer-navigation"));
-            Html.RenderPartial("_Partial_Basic_Navigation_Unit", navigation, Html.ViewData);
-            Html.ViewData.Clear();
-        }
+        Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", "footer-navigation"));
+        Html.RenderPartial("_Partial_" + footerNavigation.SafeValue("navigationStyle") + "_Footer_Navigation_Unit", footerNavigation, Html.ViewData);
+        Html.ViewData.Clear();
     }
 }

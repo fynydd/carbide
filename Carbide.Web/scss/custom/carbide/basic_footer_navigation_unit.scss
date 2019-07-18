@@ -1,0 +1,82 @@
+﻿.carbide_basic_footer_navigation_unit {
+
+    // SETTINGS
+
+    --background-color: var(--sf-color-primary);
+    --foreground-color: var(--sf-color-primary-contrast);
+    --first-max-width: 50%;
+    --sidebar-first-max-width: 75%;
+    --current-opacity: 0.5;
+    --item-gutter: 3rem;
+    --justify-content: flex-end;
+    --first-justify-content: flex-start;
+    --row-gutter: 1rem;
+
+    // ---------------------------
+
+    background-color: var(--background-color);
+
+    nav {
+
+        [role="gridcell"] {
+
+            color: var(--foreground-color);
+
+            a {
+
+                display: inline-block;
+                text-decoration: none;
+                cursor: pointer;
+
+                &, &:hover, &:active, &:visited {
+
+                    color: var(--foreground-color);
+                }
+
+                &:hover {
+
+                    text-decoration: underline;
+                }
+
+                &.current {
+
+                    opacity: var(--current-opacity);
+                }
+            }
+
+            &:first-of-type {
+
+                width: var(--first-max-width);
+
+                section {
+
+                    justify-content: var(--first-justify-content);
+                }
+            }
+
+            &:not(:first-of-type) {
+
+                section {
+
+                    justify-content: var(--justify-content);
+
+                    a {
+
+                        margin-left: calc(var(--item-gutter)/2);
+                        margin-right: calc(var(--item-gutter)/2);
+
+                        &:first-of-type {
+
+                            margin-left: 0;
+                        }
+
+                        &:last-of-type {
+
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

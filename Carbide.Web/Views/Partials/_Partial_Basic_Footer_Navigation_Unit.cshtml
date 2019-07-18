@@ -1,0 +1,73 @@
+﻿
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedElement>
+@using System
+@using Umbraco.Web
+@using Umbraco.Web.Models
+@using Fynydd.Carbide
+@using Carbide.Web.Helpers
+
+@{ 
+    if (Model.SafeValue<bool>("enabled"))
+    {
+        var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
+        var home = umbCtx.Content.GetById(umbCtx.PublishedRequest.InitialPublishedContent.Id).AncestorOrSelf(1);
+        var settings = home.Children.First(c => c.ContentType.Alias == "settings");
+
+        object _instanceId;
+        Html.ViewData.TryGetValue("instanceId", out _instanceId);
+        var instanceId = _instanceId == null ? "basic-footer-navigation-unit" : _instanceId.ToString();
+
+        Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".carbide_basic_footer_navigation_unit#" + instanceId));
+        Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
+
+        var isPrimary = instanceId.Contains("primary");
+
+<section id="@(instanceId)" class="carbide_basic_footer_navigation_unit" sf-unit>
+    <div sf-outer-wrapper>
+        <div sf-inner-wrapper>
+            <nav role="main">
+                <div role="grid" style="--sf-row-gutters: var(--row-gutter); --sf-equal-heights: true; --sf-centered: true;">
+                    <div role="gridcell">
+                        <section>
+                            Copyright &copy; @(DateTime.Now.Year) @(settings.SafeValue("companyName"))
+                        </section>
+                    </div>
+
+        @if (Model.HasValue("links"))
+        {
+                    <div role="gridcell" sf-width-auto="true">
+                        <section>
+            @foreach (var link in Model.Value<IEnumerable<Link>>("links"))
+            {
+                var content = Umbraco.Content(link.Udi);
+
+                if (content != null)
+                {
+                    var current = false;
+                    var currentUrl = HttpContext.Current.Request.Url.AbsoluteUri.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/");
+                    var newUrl = content.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/");
+
+                    if (currentUrl == newUrl)
+                    {
+                        current = true;
+                    }
+
+                            <a href="@(content.GetUrlPath())" target="@(link.Target)" class="@(Html.Raw(current ? " current" : ""))">@(content.GetBestMenuName())</a>
+                }
+
+                else
+                {
+                            <a href="@(link.Url)" target="@(link.Target)">@(link.Name)</a>
+                }
+            }
+
+                </section>
+            </div>
+        }
+                </div>
+            </nav>
+        </div>
+    </div>
+</section>
+    }
+}

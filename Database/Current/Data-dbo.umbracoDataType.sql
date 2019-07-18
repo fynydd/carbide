@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 65 rows to dbo.umbracoDataType
+-- Adding 66 rows to dbo.umbracoDataType
 
 BEGIN TRANSACTION
 
@@ -140,6 +140,8 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1190,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<h4>Gallery View CSS Properties</h4>\n<p>For each breakpoint enter CSS custom property variables and values to override the appearance.</p>\n{{help:Gallery View CSS Help}}\n<p>Below are the <strong>CSS custom properties</strong> with sample data for the gallery component:</p>\n<p>\n--column-gutter: 3%;<br />\n--row-gutter: 2rem;<br />\n--subunit-top-margin: 0;<br />\n--subunit-bottom-margin: 0;<br />\n--columns: 1;\n</p>\n<p>\n--background-color: transparent;\n</p>\n{{/help}}","fullWidth":"1"}');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1191,N'Umbraco.Tags',N'Nvarchar',N'{"group":"Images","storageType":1,"Delimiter":"\u0000"}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1192,N'Umbraco.DropDown.Flexible',N'Nvarchar',N'{"multiple":false,"items":[{"id":1,"value":"Basic"}]}');
 
 COMMIT TRANSACTION
 

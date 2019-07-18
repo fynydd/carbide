@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 20 rows to dbo.cmsPropertyTypeGroup
+-- Adding 18 rows to dbo.cmsPropertyTypeGroup
 
 SET IDENTITY_INSERT [dbo].[cmsPropertyTypeGroup] ON
 
@@ -35,15 +35,11 @@ INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sorto
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (47,1129,N'Unit Container',0,'EBEA160B-1774-48F6-B701-661375A91518');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (48,1135,N'Primary Navigation',50,'C79C3AB2-2259-4E79-B95C-130206D84CF0');
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (49,1140,N'Portfolio Properties',0,'66B480F8-71B2-4CDC-9E8D-7A1D5EA3D49C');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (53,1052,N'Content',0,'AA62127F-25AF-4594-BF0C-A020F8E744DD');
+INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (53,1052,N'Page Content',0,'AA62127F-25AF-4594-BF0C-A020F8E744DD');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (54,1119,N'Content',0,'8E38D466-B7C5-4636-9ACD-8D5307F97289');
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (55,1158,N'Footer Navigation',51,'2628DE33-BC69-47C2-9DD9-B8E587E684DA');
+INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (54,1119,N'Page Content',0,'8E38D466-B7C5-4636-9ACD-8D5307F97289');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (56,1159,N'Navigation',0,'923F6777-06E0-49A9-BFE2-6115375D5EE3');
 -- SQRIBE/INSERT;03d113

@@ -453,11 +453,11 @@
     <Content Include="scripts\fluidbox\jquery.fluidbox.js" />
     <Content Include="scripts\jquery-3.3.1.min.js" />
     <Content Include="scripts\jquery.ba-throttle-debounce.min.js" />
-    <Content Include="scss\custom\carbide\basic_navigation_unit.scss" />
+    <Content Include="scss\custom\carbide\basic_primary_navigation_unit.scss" />
     <Content Include="scss\custom\carbide\basic_theme.scss" />
     <Content Include="scss\custom\carbide\rich-content-subunit.scss" />
     <Content Include="stylesheets\all.min.css" />
-    <Content Include="Views\Partials\_Partial_Basic_Navigation_Unit.cshtml" />
+    <Content Include="Views\Partials\_Partial_Basic_Primary_Navigation_Unit.cshtml" />
     <Content Include="Views\Partials\_Partial_Render_Content_Units.cshtml" />
     <Content Include="Web.config" />
     <Content Include="webfonts\fa-brands-400.svg" />
@@ -550,6 +550,8 @@
     <Content Include="scss\custom\carbide\fluidbox.scss" />
     <Content Include="scss\custom\carbide\gallery-view.scss" />
     <Content Include="Views\Partials\_Partial_Gallery_View_Subunit.cshtml" />
+    <Content Include="Views\Partials\_Partial_Basic_Footer_Navigation_Unit.cshtml" />
+    <Content Include="scss\custom\carbide\basic_footer_navigation_unit.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
