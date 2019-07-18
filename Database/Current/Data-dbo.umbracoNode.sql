@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 127 rows to dbo.umbracoNode
+-- Adding 129 rows to dbo.umbracoNode
 
 SET IDENTITY_INSERT [dbo].[umbracoNode] ON
 
@@ -179,7 +179,7 @@ INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sort
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1141,'4100A489-B86B-4685-BBF8-C62AECB083B4',1059,2,N'-1,1059,1141',2,0,-1,N'Page Collection','A2CB7800-F571-4787-9638-BC48539A0EFB',CONVERT(datetime,'2019-07-07 22:19:58.457',121));
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1142,'DBB87980-3EC1-4EA6-B021-240714EA2040',1056,2,N'-1,1056,1142',2,0,-1,N'Services','C66BA18E-EAF3-4CFF-8A22-41B16D66A972',CONVERT(datetime,'2019-07-07 22:21:19.270',121));
+INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1142,'DBB87980-3EC1-4EA6-B021-240714EA2040',1056,2,N'-1,1056,1142',3,0,-1,N'Services','C66BA18E-EAF3-4CFF-8A22-41B16D66A972',CONVERT(datetime,'2019-07-07 22:21:19.270',121));
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1144,'C645DA5E-251D-4610-973A-C7F1733D6040',1142,3,N'-1,1056,1142,1144',0,0,-1,N'Sample Service One','C66BA18E-EAF3-4CFF-8A22-41B16D66A972',CONVERT(datetime,'2019-07-07 22:35:16.293',121));
 -- SQRIBE/INSERT;03d113
@@ -266,6 +266,10 @@ INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sort
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1191,'713C9A38-5FD0-47B0-B4A2-95D5F131C3B7',-1,1,N'-1,1191',64,0,-1,N'Tags (Images)','30A2A501-1978-4DDB-A57B-F7EFED43BA3C',CONVERT(datetime,'2019-07-15 16:53:21.180',121));
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1192,'248D77FA-13BC-494B-AF27-3F74DB920F5B',-1,1,N'-1,1192',65,0,-1,N'Navigation Unit - Navigation Style - Dropdown','30A2A501-1978-4DDB-A57B-F7EFED43BA3C',CONVERT(datetime,'2019-07-18 15:33:20.627',121));
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1193,'F1ABCCE5-C44D-4C9F-A1BD-F32087849ED8',-1,1,N'-1,1193',66,0,-1,N'Content Container Unit - Show Sidebar Navigation - Radio button list','30A2A501-1978-4DDB-A57B-F7EFED43BA3C',CONVERT(datetime,'2019-07-18 17:31:06.097',121));
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1194,'2AB5CACA-2464-4D12-B968-8F5C172FD84C',1056,2,N'-1,1056,1194',2,0,-1,N'Contact Us','C66BA18E-EAF3-4CFF-8A22-41B16D66A972',CONVERT(datetime,'2019-07-18 18:19:19.040',121));
 
 COMMIT TRANSACTION
 

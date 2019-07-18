@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 17 rows to dbo.cmsTags
+-- Adding 18 rows to dbo.cmsTags
 
 SET IDENTITY_INSERT [dbo].[cmsTags] ON
 
@@ -46,6 +46,8 @@ INSERT INTO [dbo].[cmsTags] ([id],[group],[languageId],[tag]) VALUES (15,N'Image
 INSERT INTO [dbo].[cmsTags] ([id],[group],[languageId],[tag]) VALUES (16,N'Images',NULL,N'food');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsTags] ([id],[group],[languageId],[tag]) VALUES (17,N'Images',NULL,N'automotive');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsTags] ([id],[group],[languageId],[tag]) VALUES (18,N'Pages',NULL,N'contact');
 
 COMMIT TRANSACTION
 

@@ -16,6 +16,9 @@
     object _instanceId;
     Html.ViewData.TryGetValue("instanceId", out _instanceId);
     var instanceId = _instanceId == null ? "container-unit" : _instanceId.ToString();
+    Html.ViewData.TryGetValue("pageId", out _instanceId);
+    var pageId = _instanceId == null ? -1 : Convert.ToInt32(_instanceId.ToString());
+    var page = umbCtx.Content.GetById(pageId);
 
     Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".carbide_container_unit#" + instanceId));
     Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
@@ -26,32 +29,66 @@
 <section id="@(instanceId)" class="carbide_container_unit" sf-unit>
     <div sf-outer-wrapper>
         <div sf-inner-wrapper>
-    @{
-        foreach (var content in Model.SafeNestedValues("contentUnits"))
+            <div role="grid" style="--sf-tabp-gutters: var(--column-gutter); --sf-row-gutters: var(--row-gutter);">
+@if(Model.SafeValue("showSidebarNavigation").HasValue() && Model.SafeValue("showSidebarNavigation") != "None")
+{
+    var parent = (Model.SafeValue("showSidebarNavigation") == "Children" ? page : page.Parent);
+    var items = parent.DescendantsOrSelf().Where(d => d.Level <= parent.Level + 1 && d.GetTemplateAlias().HasValue());
+
+                <div role="gridcell" class="navigation-column">
+    @if (items.Count() > 0)
+    {
+                    <ul>
+        @foreach (var item in items.OrderBy(y => y.SortOrder).OrderBy(x => x.Level))
         {
-            if (content.HasProperty("enabled") && content.SafeValue<bool>("enabled"))
+            if (item.Id != parent.Id || (item.Id == parent.Id && Model.SafeValue<bool>("showParentInSidebar")))
             {
-                Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", content.SafeValue("unitName").AsCssSelector()));
-
-                if (content.ContentType.Alias == "richContentSubunit")
+                        <li>
+                @if(item.Id != page.Id)
                 {
-                    Html.RenderPartial("_Partial_Rich_Content_Subunit", content, Html.ViewData);
+                            @(Html.Raw("<a href=\"" + item.GetUrlPath() + "\">"))
                 }
-
-                if (content.ContentType.Alias == "portfolioViewSubunit")
+                            @(Html.Raw(item.GetBestMenuName()))
+                @if(item.Id != page.Id)
                 {
-                    Html.RenderPartial("_Partial_Portfolio_View_Subunit", content, Html.ViewData);
+                            @(Html.Raw("</a>"))
                 }
-
-                if (content.ContentType.Alias == "galleryViewSubunit")
-                {
-                    Html.RenderPartial("_Partial_Gallery_View_Subunit", content, Html.ViewData);
-                }
-
-                Html.ViewData.Clear();
+                        </li>
             }
         }
+                    </ul>
     }
+                </div>
+}
+                <div role="gridcell" class="content-column">
+@{
+    foreach (var content in Model.SafeNestedValues("contentUnits"))
+    {
+        if (content.HasProperty("enabled") && content.SafeValue<bool>("enabled"))
+        {
+            Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", content.SafeValue("unitName").AsCssSelector()));
+
+            if (content.ContentType.Alias == "richContentSubunit")
+            {
+                Html.RenderPartial("_Partial_Rich_Content_Subunit", content, Html.ViewData);
+            }
+
+            if (content.ContentType.Alias == "portfolioViewSubunit")
+            {
+                Html.RenderPartial("_Partial_Portfolio_View_Subunit", content, Html.ViewData);
+            }
+
+            if (content.ContentType.Alias == "galleryViewSubunit")
+            {
+                Html.RenderPartial("_Partial_Gallery_View_Subunit", content, Html.ViewData);
+            }
+
+            Html.ViewData.Clear();
+        }
+    }
+}
+                </div>
+            </div>
         </div>
     </div>
 </section>

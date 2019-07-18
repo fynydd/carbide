@@ -17,6 +17,7 @@
             if (content.HasProperty("enabled") && content.SafeValue<bool>("enabled"))
             {
                 Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", content.SafeValue("unitName").AsCssSelector()));
+                Html.ViewData.Add(new KeyValuePair<string, object>("pageId", Model.Id));
 
                 if (content.ContentType.Alias == "simpleHeroUnit")
                 {

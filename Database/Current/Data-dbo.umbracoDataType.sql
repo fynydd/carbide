@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 66 rows to dbo.umbracoDataType
+-- Adding 67 rows to dbo.umbracoDataType
 
 BEGIN TRANSACTION
 
@@ -113,7 +113,7 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1160,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"navigationUnit","ncTabAlias":"Navigation","nameTemplate":"{{position}}"}],"minItems":2,"maxItems":2,"confirmDeletes":true,"showIcons":true,"hideLabel":true}');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1161,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"richContentSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"},{"ncAlias":"portfolioViewSubunit","ncTabAlias":"Portfolio Properties","nameTemplate":"{{unitName}}"},{"ncAlias":"galleryViewSubunit","ncTabAlias":"Gallery Properties","nameTemplate":"{{unitName}}"}],"confirmDeletes":true,"showIcons":true,"hideLabel":true}');
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1161,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"richContentSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"},{"ncAlias":"portfolioViewSubunit","ncTabAlias":"Portfolio Properties","nameTemplate":"{{unitName}}"},{"ncAlias":"galleryViewSubunit","ncTabAlias":"Gallery Properties","nameTemplate":"{{unitName}}"}],"confirmDeletes":true,"showIcons":true,"hideLabel":false}');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1162,N'Umbraco.RadioButtonList',N'Nvarchar',N'{"items":[{"id":1,"value":"Ascending"},{"id":2,"value":"Descending"}]}');
 -- SQRIBE/INSERT;03d113
@@ -142,6 +142,8 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1191,N'Umbraco.Tags',N'Nvarchar',N'{"group":"Images","storageType":1,"Delimiter":"\u0000"}');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1192,N'Umbraco.DropDown.Flexible',N'Nvarchar',N'{"multiple":false,"items":[{"id":1,"value":"Basic"}]}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1193,N'Umbraco.RadioButtonList',N'Nvarchar',N'{"items":[{"id":1,"value":"None"},{"id":2,"value":"Children"},{"id":3,"value":"Siblings"}]}');
 
 COMMIT TRANSACTION
 

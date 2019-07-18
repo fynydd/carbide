@@ -3,8 +3,60 @@
     // SETTINGS
 
     --background-color: transparent; 
+    --column-gutter: 5%;
+    --row-gutter: 3rem;
+
+    --navigation-column-width: 100%;
+    --navigation-column-padding: 0;
+    --navigation-column-background-color: transparent;
+    --navigation-column-corner-radius: 0;
+    --navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);
+    --navigation-current-item-weight: bold;
+    --navigation-link-foreground-color: var(--anchor-color);
+    --navigation-item-spacing: 1.25rem;
+
+    --content-column-width: 100%;
 
     // ---------------------------
 
     background-color: var(--background-color);
+
+    .navigation-column {
+
+        width: var(--navigation-column-width);
+
+        ul {
+
+            margin-top: 0;
+            margin-left: 0;
+            list-style-type: none;
+            border-radius: var(--navigation-column-corner-radius);
+
+            background-color: var(--navigation-column-background-color);
+            padding: var(--navigation-column-padding);
+
+            li {
+
+                padding-top: 0;
+                margin-top: var(--navigation-item-spacing);
+                color: var(--navigation-current-item-foreground-color);
+                font-weight: var(--navigation-current-item-weight);
+
+                &:first-of-type {
+
+                    margin-top: 0;
+                }
+
+                a {
+                    color: var(--navigation-link-foreground-color);
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+
+    .content-column {
+
+        width: var(--content-column-width);
+    }
 }
