@@ -6,8 +6,8 @@
 
     var home = Model.AncestorOrSelf(1);
     var settings = Model.Children.First(c => c.ContentType.Alias == "settings");
-    var primaryNavigation = settings.SafeNestedValues("navigation").Where(n => n.SafeValue<bool>("enabled") && n.SafeValue("position") == "Primary" && n.HasValue("links")).FirstOrDefault();
-    var footerNavigation = settings.SafeNestedValues("navigation").Where(n => n.SafeValue<bool>("enabled") && n.SafeValue("position") == "Footer" && n.HasValue("links")).FirstOrDefault();
+    var primaryNavigation = settings.SafeNestedValues("navigation").Where(n => n.SafeValue<bool>("enabled") && n.SafeValue("position") == "Primary").FirstOrDefault();
+    var footerNavigation = settings.SafeNestedValues("navigation").Where(n => n.SafeValue<bool>("enabled") && n.SafeValue("position") == "Footer").FirstOrDefault();
 }
 @section pageCssSection
 {

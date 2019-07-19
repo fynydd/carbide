@@ -11,6 +11,7 @@
         var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
         var home = umbCtx.Content.GetById(umbCtx.PublishedRequest.InitialPublishedContent.Id).AncestorOrSelf(1);
         var settings = home.Children.First(c => c.ContentType.Alias == "settings");
+        var pages = home.DescendantsOrSelf().Where(d => d.Level <= home.Level + 1 && d.GetTemplateAlias().HasValue());
 
         object _instanceId;
         Html.ViewData.TryGetValue("instanceId", out _instanceId);
@@ -29,49 +30,70 @@
                         <section>
             @if (settings.HasValue("companyLogo"))
             {
-                <a href="/" title="@(settings.SafeValue("companyName")) home page"><img src="@(settings.PickerValue("companyLogo").Url)" /></a>
+                            <a href="/" title="@(settings.SafeValue("companyName")) home page"><img src="@(settings.PickerValue("companyLogo").Url)" /></a>
             }
 
             else
             {
-                <h3>@(settings.SafeValue("companyName"))</h3>
+                            <h3>@(settings.SafeValue("companyName"))</h3>
             }
                         </section>
                     </div>
 
-        @if (Model.HasValue("links"))
-        {
                     <div role="gridcell" sf-width-auto="true">
                         <section>
                             <a onclick="toggleMenu();" class="hamburger mobile-only"><img src="/images/bars.png" /></a>
-
-            @foreach (var link in Model.Value<IEnumerable<Link>>("links"))
+        @if (Model.SafeValue<bool>("showChildrenOfHomePage"))
+        {
+            if (pages != null && pages.Count() > 0)
             {
-                var content = Umbraco.Content(link.Udi);
-
-                if (content != null)
+                foreach (var page in pages)
                 {
                     var current = false;
                     var currentUrl = HttpContext.Current.Request.Url.AbsoluteUri.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/");
-                    var newUrl = content.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/");
+                    var newUrl = page.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/");
 
                     if (currentUrl == newUrl)
                     {
                         current = true;
                     }
 
-                            <a href="@(content.GetUrlPath())" target="@(link.Target)" class="not-mobile@(Html.Raw(current ? " current" : ""))">@(content.GetBestMenuName())</a>
-                }
-
-                else
-                {
-                            <a href="@(link.Url)" target="@(link.Target)" class="not-mobile">@(link.Name)</a>
+                            <a href="@(page.GetUrlPath())" class="not-mobile@(Html.Raw(current ? " current" : ""))">@(page.GetBestMenuName())</a>
                 }
             }
-
-                </section>
-            </div>
         }
+
+        else
+        {
+            if (Model.HasValue("links"))
+            {
+                foreach (var link in Model.Value<IEnumerable<Link>>("links"))
+                {
+                    var content = Umbraco.Content(link.Udi);
+
+                    if (content != null)
+                    {
+                        var current = false;
+                        var currentUrl = HttpContext.Current.Request.Url.AbsoluteUri.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/");
+                        var newUrl = content.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/");
+
+                        if (currentUrl == newUrl)
+                        {
+                            current = true;
+                        }
+
+                                <a href="@(content.GetUrlPath())" target="@(link.Target)" class="not-mobile@(Html.Raw(current ? " current" : ""))">@(content.GetBestMenuName())</a>
+                    }
+
+                    else
+                    {
+                                <a href="@(link.Url)" target="@(link.Target)" class="not-mobile">@(link.Name)</a>
+                    }
+                }
+            }
+        }
+                        </section>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -93,36 +115,57 @@
                     </section>
                 </div>
 
-            @if (Model.HasValue("links"))
-            {
                 <div role="gridcell">
                     <section>
-
-                @foreach (var link in Model.Value<IEnumerable<Link>>("links"))
+            @if (Model.SafeValue<bool>("showChildrenOfHomePage"))
+            {
+                if (pages != null && pages.Count() > 0)
                 {
-                    var content = Umbraco.Content(link.Udi);
-
-                    if (content != null)
+                    foreach (var page in pages)
                     {
                         var current = false;
+                        var currentUrl = HttpContext.Current.Request.Url.AbsoluteUri.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/");
+                        var newUrl = page.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/");
 
-                        if (HttpContext.Current.Request.Url.AbsoluteUri.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/") == content.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/"))
+                        if (currentUrl == newUrl)
                         {
                             current = true;
                         }
 
-                        <a href="@(content.GetUrlPath())" target="@(link.Target)" class="@(Html.Raw(current ? " current" : ""))">@(content.GetBestMenuName())</a>
-                    }
-
-                    else
-                    {
-                        <a href="@(link.Url)" target="@(link.Target)">@(link.Name)</a>
+                        <a href="@(page.GetUrlPath())" class="@(Html.Raw(current ? " current" : ""))">@(page.GetBestMenuName())</a>
                     }
                 }
+            }
 
+            else
+            {
+                if (Model.HasValue("links"))
+                {
+                    foreach (var link in Model.Value<IEnumerable<Link>>("links"))
+                    {
+                        var content = Umbraco.Content(link.Udi);
+
+                        if (content != null)
+                        {
+                            var current = false;
+
+                            if (HttpContext.Current.Request.Url.AbsoluteUri.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/") == content.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/"))
+                            {
+                                current = true;
+                            }
+
+                            <a href="@(content.GetUrlPath())" target="@(link.Target)" class="@(Html.Raw(current ? " current" : ""))">@(content.GetBestMenuName())</a>
+                        }
+
+                        else
+                        {
+                            <a href="@(link.Url)" target="@(link.Target)">@(link.Name)</a>
+                        }
+                    }
+                }
+            }
                     </section>
                 </div>
-            }
             </div>
         </nav>
     </div>

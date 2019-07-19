@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 67 rows to dbo.umbracoDataType
+-- Adding 69 rows to dbo.umbracoDataType
 
 BEGIN TRANSACTION
 
@@ -127,7 +127,7 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1168,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<h4>Navigation Unit CSS Properties</h4>\n<p>For each breakpoint enter CSS custom property variables and values to override the appearance.</p>\n{{help:Navigation Unit CSS Help}}\n<p>Below are the <strong>CSS custom properties</strong> with sample data for styling the navigation units:</p>\n<p>\n--background-color: var(--sf-color-white);<br />\n--foreground-color: var(--sf-color-white-contrast);\n</p>\n<p>\n--horizontal-unit-padding: 1.25rem;<br />\n--vertical-unit-padding: 3rem;\n</p>\n<p>\n--background-color: #1b264f;<br />\n--foreground-color: #ffffff;<br />\n--first-max-width: 50%;<br />\n--sidebar-first-max-width: 75%;<br />\n--current-opacity: 0.5;<br />\n--item-gutter: 3rem;<br />\n--justify-content: flex-end;<br />\n--first-justify-content: flex-start;\n</p>\n{{/help}}","fullWidth":"1"}');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1169,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<h4>Content Container Unit CSS Properties</h4>\n<p>For each breakpoint enter CSS custom property variables and values to override the appearance.</p>\n{{help:Content Container Unit CSS Help}}\n<p>Below are the <strong>CSS custom properties</strong> with sample data for styling container units:</p>\n<p>\n--background-color: var(--sf-color-white);<br />\n</p>\n<p>\n--horizontal-unit-padding: 1.25rem;<br />\n--vertical-unit-padding: 3rem;\n</p>\n{{/help}}","fullWidth":"1"}');
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1169,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<h4>Content Container Unit CSS Properties</h4>\n<p>For each breakpoint enter CSS custom property variables and values to override the appearance.</p>\n{{help:Content Container Unit CSS Help}}\n<p>Below are the <strong>CSS custom properties</strong> with sample data for styling container units:</p>\n<p>\n--background-color: var(--sf-color-white);<br />\n</p>\n<p>\n--horizontal-unit-padding: 1.25rem;<br />\n--vertical-unit-padding: 3rem;\n</p>\n<h5>\nSidebar Navigation\n</h5>\n<p>\n--navigation-column-width: 100%;<br />\n--navigation-column-padding: 0;<br />\n--navigation-column-background-color: transparent;<br />\n--navigation-column-corner-radius: 0;<br />\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);<br />\n--navigation-current-item-weight: bold;<br />\n--navigation-link-foreground-color: var(--anchor-color);<br />\n--navigation-item-spacing: 1.25rem;<br />\n--content-column-width: 100%;\n</p>\n{{/help}}","fullWidth":"1"}');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1170,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<h4>Rich Content Subunit CSS Properties</h4>\n<p>For each breakpoint enter CSS custom property variables and values to override the appearance.</p>\n{{help:Rich Content Subunit CSS Help}}\n<p>Below are the <strong>CSS custom properties</strong> with sample data for the rich content component:</p>\n<p>\n--column-gutter: 3%;<br />\n--row-gutter: 2rem;\n</p>\n<p>\n--content-width: 100%;<br />\n--headline-margin: 2rem;<br />\n--headline-align: left;<br />\n--content-align: left;\n</p>\n<p>\n--button-align: left;<br />\n--button-width: auto;<br />\n--button-background-color: var(--sf-color-buttons);<br />\n--button-foreground-color: var(--sf-color-buttons-contrast);\n</p>\n{{/help}}","fullWidth":"1"}');
 -- SQRIBE/INSERT;03d113
@@ -144,6 +144,10 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1192,N'Umbraco.DropDown.Flexible',N'Nvarchar',N'{"multiple":false,"items":[{"id":1,"value":"Basic"}]}');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1193,N'Umbraco.RadioButtonList',N'Nvarchar',N'{"items":[{"id":1,"value":"None"},{"id":2,"value":"Children"},{"id":3,"value":"Siblings"}]}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1195,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<h4>Optional Sidebar Navigation</h4>\n<p>\nShow a sidebar navigation to the left of the content for tablet portrait and larger screen sizes; collapses for mobile.\n</p>","fullWidth":"1"}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1196,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<h4>Manually Specify Links</h4>\n<p>\nIf not showing children of the home page, specify links manually below.\n</p>","fullWidth":"1"}');
 
 COMMIT TRANSACTION
 
