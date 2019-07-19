@@ -14,7 +14,6 @@
     --navigation-current-item-weight: bold;
     --navigation-link-foreground-color: var(--anchor-color);
     --navigation-item-spacing: 1.25rem;
-
     --content-column-width: 100%;
 
     // ---------------------------
@@ -25,31 +24,34 @@
 
         width: var(--navigation-column-width);
 
-        ul {
+        & > section {
 
-            margin-top: 0;
-            margin-left: 0;
-            list-style-type: none;
             border-radius: var(--navigation-column-corner-radius);
 
             background-color: var(--navigation-column-background-color);
             padding: var(--navigation-column-padding);
 
-            li {
+            ul {
 
-                padding-top: 0;
-                margin-top: var(--navigation-item-spacing);
-                color: var(--navigation-current-item-foreground-color);
-                font-weight: var(--navigation-current-item-weight);
+                margin-top: 0;
+                margin-left: 1.25rem;
 
-                &:first-of-type {
+                li {
 
-                    margin-top: 0;
-                }
+                    padding-top: 0;
+                    margin-top: var(--navigation-item-spacing);
+                    color: var(--navigation-current-item-foreground-color);
+                    font-weight: var(--navigation-current-item-weight);
 
-                a {
-                    color: var(--navigation-link-foreground-color);
-                    font-weight: normal;
+                    &:first-of-type {
+
+                        margin-top: 0;
+                    }
+
+                    a {
+                        color: var(--navigation-link-foreground-color);
+                        font-weight: normal;
+                    }
                 }
             }
         }

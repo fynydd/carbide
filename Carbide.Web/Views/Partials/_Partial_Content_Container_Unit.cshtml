@@ -33,31 +33,39 @@
 @if(Model.SafeValue("showSidebarNavigation").HasValue() && Model.SafeValue("showSidebarNavigation") != "None")
 {
     var parent = (Model.SafeValue("showSidebarNavigation") == "Children" ? page : page.Parent);
-    var items = parent.DescendantsOrSelf().Where(d => d.Level <= parent.Level + 1 && d.GetTemplateAlias().HasValue() && d.HasProperty("showInNavigation") && d.SafeValue<bool>("showInNavigation"));
+    var items = parent.Children().Where(d => d.GetTemplateAlias().HasValue() && d.HasProperty("showInNavigation") && d.SafeValue<bool>("showInNavigation"));
 
                 <div role="gridcell" class="navigation-column">
+                    <section>
+
+    @if (Model.SafeValue<bool>("showParentInSidebar"))
+    {
+                        <p class="parent">
+                            <a href="@(parent.GetUrlPath())">@(Html.Raw(parent.GetBestMenuName()))</a>
+                        </p>
+    }
+
     @if (items.Count() > 0)
     {
-                    <ul>
+                        <ul>
         @foreach (var item in items.OrderBy(y => y.SortOrder).OrderBy(x => x.Level))
         {
-            if (item.Id != parent.Id || (item.Id == parent.Id && Model.SafeValue<bool>("showParentInSidebar")))
-            {
-                        <li>
+                            <li>
                 @if(item.Id != page.Id)
                 {
                             @(Html.Raw("<a href=\"" + item.GetUrlPath() + "\">"))
                 }
-                            @(Html.Raw(item.GetBestMenuName()))
+                @(Html.Raw(item.GetBestMenuName()))
+
                 @if(item.Id != page.Id)
                 {
                             @(Html.Raw("</a>"))
                 }
-                        </li>
-            }
+                            </li>
         }
-                    </ul>
-    }
+                        </ul>
+    }  
+                    </section>
                 </div>
 }
                 <div role="gridcell" class="content-column">
