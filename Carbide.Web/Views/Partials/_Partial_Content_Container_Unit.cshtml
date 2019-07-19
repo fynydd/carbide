@@ -33,7 +33,7 @@
 @if(Model.SafeValue("showSidebarNavigation").HasValue() && Model.SafeValue("showSidebarNavigation") != "None")
 {
     var parent = (Model.SafeValue("showSidebarNavigation") == "Children" ? page : page.Parent);
-    var items = parent.DescendantsOrSelf().Where(d => d.Level <= parent.Level + 1 && d.GetTemplateAlias().HasValue());
+    var items = parent.DescendantsOrSelf().Where(d => d.Level <= parent.Level + 1 && d.GetTemplateAlias().HasValue() && d.HasProperty("showInNavigation") && d.SafeValue<bool>("showInNavigation"));
 
                 <div role="gridcell" class="navigation-column">
     @if (items.Count() > 0)

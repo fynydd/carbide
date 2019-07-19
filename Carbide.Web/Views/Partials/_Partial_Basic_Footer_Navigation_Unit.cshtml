@@ -12,7 +12,7 @@
         var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
         var home = umbCtx.Content.GetById(umbCtx.PublishedRequest.InitialPublishedContent.Id).AncestorOrSelf(1);
         var settings = home.Children.First(c => c.ContentType.Alias == "settings");
-        var pages = home.DescendantsOrSelf().Where(d => d.Level <= home.Level + 1 && d.GetTemplateAlias().HasValue());
+        var pages = home.DescendantsOrSelf().Where(d => d.Level <= home.Level + 1 && d.GetTemplateAlias().HasValue() && d.HasProperty("showInNavigation") && d.SafeValue<bool>("showInNavigation"));
 
         object _instanceId;
         Html.ViewData.TryGetValue("instanceId", out _instanceId);
