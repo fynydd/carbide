@@ -461,6 +461,7 @@
     <Content Include="Views\Partials\_Partial_Render_Content_Units.cshtml" />
     <Content Include="Web.config" />
     <Content Include="webfonts\fa-brands-400.svg" />
+    <Content Include="webfonts\fa-light-300.svg" />
     <Content Include="webfonts\fa-regular-400.svg" />
     <Content Include="webfonts\fa-solid-900.svg" />
   </ItemGroup>
@@ -468,7 +469,7 @@
     <Compile Include="Controllers\HelpersController.cs" />
     <Compile Include="Helpers\EventHandlers.cs" />
     <Compile Include="Helpers\Guids.cs" />
-    <Compile Include="Helpers\Content.cs" />
+    <Compile Include="Helpers\WebContent.cs" />
     <Compile Include="Helpers\QueryExtensions.cs" />
     <Compile Include="Helpers\SiteSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -570,6 +571,10 @@
     <Content Include="webfonts\fa-solid-900.ttf" />
     <Content Include="webfonts\fa-solid-900.woff" />
     <Content Include="webfonts\fa-solid-900.woff2" />
+    <Content Include="webfonts\fa-light-300.eot" />
+    <Content Include="webfonts\fa-light-300.ttf" />
+    <Content Include="webfonts\fa-light-300.woff" />
+    <Content Include="webfonts\fa-light-300.woff2" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />

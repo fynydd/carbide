@@ -32,39 +32,23 @@
             <div role="grid" style="--sf-tabp-gutters: var(--column-gutter); --sf-row-gutters: var(--row-gutter);">
 @if(Model.SafeValue("showSidebarNavigation").HasValue() && Model.SafeValue("showSidebarNavigation") != "None")
 {
-    var parent = (Model.SafeValue("showSidebarNavigation") == "Children" ? page : page.Parent);
-    var items = parent.Children().Where(d => d.GetTemplateAlias().HasValue() && d.HasProperty("showInNavigation") && d.SafeValue<bool>("showInNavigation"));
-
                 <div role="gridcell" class="navigation-column">
                     <section>
 
-    @if (Model.SafeValue<bool>("showParentInSidebar"))
-    {
-                        <p class="parent">
-                            <a href="@(parent.GetUrlPath())">@(Html.Raw(parent.GetBestMenuName()))</a>
-                        </p>
-    }
+                        @{ 
+                            var parent = (Model.SafeValue("showSidebarNavigation") == "Children" ? page : page.Parent);
+                            var navSettings = new NavigationSettings
+                            {
+                                StartNode = parent,
+                                IncludeStartNode = Model.SafeValue<bool>("showParentInSidebar"),
+                                CurrentPageId = pageId,
+                                ListType = "ul",
+                                MaxDepth = 2
+                            };
 
-    @if (items.Count() > 0)
-    {
-                        <ul>
-        @foreach (var item in items.OrderBy(y => y.SortOrder).OrderBy(x => x.Level))
-        {
-                            <li>
-                @if(item.Id != page.Id)
-                {
-                            @(Html.Raw("<a href=\"" + item.GetUrlPath() + "\">"))
-                }
-                @(Html.Raw(item.GetBestMenuName()))
+                            @Html.Raw(WebContent.GenerateNavigationList(navSettings));
+                        }
 
-                @if(item.Id != page.Id)
-                {
-                            @(Html.Raw("</a>"))
-                }
-                            </li>
-        }
-                        </ul>
-    }  
                     </section>
                 </div>
 }
