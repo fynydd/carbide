@@ -181,7 +181,7 @@ namespace Fynydd.Carbide
 
             if (!String.IsNullOrEmpty(youtubeUrlOrCode))
             {
-                result = "<iframe src=\"" + GetYoutubeUrl(youtubeUrlOrCode, transport) + "?rel=0&autohide=2&modestbranding=1&theme=light&color=white\" frameborder=\"0\" allowfullscreen></iframe>";
+                result = "<iframe class=\"youtube-video\" id=\"" + youtubeUrlOrCode + "\" src=\"" + GetYoutubeUrl(youtubeUrlOrCode, transport) + "?rel=0&autohide=2&modestbranding=1&theme=light&color=white&enablejsapi=1\" frameborder=\"0\" allowfullscreen></iframe>";
             }
 
             return result;
