@@ -26,6 +26,39 @@
 }
 @if (Model.HasProperty("contentUnits") && Model.HasValue("contentUnits"))
 {
+<script type="text/javascript">
+
+    function toggleSidebar(container) {
+
+        if ($(container).attr("state") == "closed") {
+
+            $(container).children("nav").first().css('max-height', $(container).attr("data-height") + 'px');
+            $(container).attr("state", "open");
+
+        } else {
+
+            $(container).children("nav").first().css('max-height', '0');
+            $(container).children("p").first().css('max-height', '0');
+            $(container).attr("state", "closed");
+        }
+    }
+
+    $(document).ready(function () {
+
+        $(".navigation-column > section").each(function (index) {
+
+            $(this).attr("data-height", parseFloat($(this).children("nav").first().outerHeight(true)));
+            $(this).children("nav").first().css('max-height', '0');
+            $(this).attr("state", "closed");
+
+            if ($(window).outerWidth() >= @(SiteSettings.GetCssBreakpoint("tabp").Replace("px", ""))) {
+
+                toggleSidebar(this);
+            }
+        });
+    });
+
+</script>
 <section id="@(instanceId)" class="carbide_container_unit" sf-unit>
     <div sf-outer-wrapper>
         <div sf-inner-wrapper>
@@ -34,21 +67,41 @@
 {
                 <div role="gridcell" class="navigation-column">
                     <section>
-
+                        <div class="toggle-button" onclick="toggleSidebar($(this).parent());"><i class="fal fa-bars"></i> @(Html.Raw(Model.SafeValue("sidebarTitle").ProcessShortCodes(page)))</div>
+                        <nav>
+                        @if(Model.HasValue("sidebarExcerpt"))
+                        {
+                            <p>@(Html.Raw(Model.SafeValue("sidebarExcerpt").ProcessShortCodes(page)))</p>
+                        }
                         @{ 
                             var parent = (Model.SafeValue("showSidebarNavigation") == "Children" ? page : page.Parent);
+                            var listStyle = "ul";
+                            var listItemType = "li";
+
+                            if (Model.HasValue("sidebarStyle"))
+                            {
+                                switch (Model.SafeValue("sidebarStyle"))
+                                {
+                                    case "Bullets": listStyle = "ul"; listItemType = "li"; break;
+                                    case "Numbers": listStyle = "ol"; listItemType = "li"; break;
+                                    default: listStyle = "div";  listItemType = "div"; break;
+                                }
+                            }
+
                             var navSettings = new NavigationSettings
                             {
                                 StartNode = parent,
                                 IncludeStartNode = Model.SafeValue<bool>("showParentInSidebar"),
                                 CurrentPageId = pageId,
-                                ListType = "ul",
-                                MaxDepth = 2
+                                ListType = listStyle,
+                                ListItemType = listItemType,
+                                BulletClass = (Model.HasValue("bulletClass") ? Model.SafeValue("bulletClass") : ""),
+                                MaxDepth = (Model.HasValue("sidebarDepth") ? Model.SafeValue<int>("sidebarDepth") : 2)
                             };
 
                             @Html.Raw(WebContent.GenerateNavigationList(navSettings));
                         }
-
+                        </nav>
                     </section>
                 </div>
 }

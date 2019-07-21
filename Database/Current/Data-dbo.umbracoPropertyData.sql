@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 3,062 rows to dbo.umbracoPropertyData
+-- Adding 3,777 rows to dbo.umbracoPropertyData
 
 SET IDENTITY_INSERT [dbo].[umbracoPropertyData] ON
 
@@ -14425,35 +14425,19 @@ INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[lang
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12404,671,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12405,672,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12406,671,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12407,672,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12408,671,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12409,672,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12410,671,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Contact Us',NULL);
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12411,672,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Contact Us',NULL);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12412,671,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12413,672,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12414,671,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","contact"]',NULL);
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12415,672,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","contact"]',NULL);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12416,671,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - Contact Us',NULL);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12417,672,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - Contact Us',NULL);
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12418,671,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12419,672,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12420,671,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
   "src": "/media/4bljkye1/blur-close-up-environment-429918.jpg",
@@ -14471,29 +14455,9 @@ INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[lang
   ]
 }');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12421,672,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
-  "src": "/media/4bljkye1/blur-close-up-environment-429918.jpg",
-  "focalPoint": {
-    "left": 0.5,
-    "top": 0.5
-  },
-  "crops": [
-    {
-      "alias": "SocialSharing",
-      "width": 1200,
-      "height": 628,
-      "coordinates": null
-    }
-  ]
-}');
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12422,671,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12423,672,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12424,671,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"Contact {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12425,672,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"Contact {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12426,669,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
 -- SQRIBE/INSERT;03d113
@@ -14538,7 +14502,6 @@ INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[lang
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12452,673,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12454,673,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
-GO -- SQRIBE/GO;03d113
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12456,673,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
 -- SQRIBE/INSERT;03d113
@@ -14575,6 +14538,7 @@ INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[lang
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12474,674,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12476,674,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+GO -- SQRIBE/GO;03d113
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12478,674,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
 -- SQRIBE/INSERT;03d113
@@ -14678,35 +14642,19 @@ INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[lang
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12536,677,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12537,678,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12538,677,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12539,678,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12540,677,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12541,678,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12542,677,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12543,678,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12544,677,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12545,678,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12546,677,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12547,678,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12548,677,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12549,678,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12550,677,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12551,678,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12552,677,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
   "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
@@ -14724,7 +14672,27 @@ INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[lang
   ]
 }');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12553,678,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12554,677,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12556,677,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12558,678,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12560,678,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12562,678,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12564,678,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12566,678,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12568,678,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12570,678,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12572,678,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12574,678,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
   "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
   "focalPoint": {
     "left": 0.5,
@@ -14740,13 +14708,2385 @@ INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[lang
   ]
 }');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12554,677,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12576,678,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12555,678,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12578,678,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12556,677,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12602,680,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12557,678,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12604,680,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12606,680,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12608,680,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Contact Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12610,680,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12612,680,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","contact"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12614,680,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - Contact Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12616,680,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12618,680,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/yrrlqsi5/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12620,680,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12622,680,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"Contact {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarDepth":null,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12624,672,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12626,672,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12628,672,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12630,672,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Contact Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12632,672,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12634,672,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","contact"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12636,672,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - Contact Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12638,672,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12640,672,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/yrrlqsi5/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12642,672,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12644,672,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"Contact {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12646,679,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12648,679,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12650,679,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12652,679,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12654,679,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12656,679,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12658,679,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12660,679,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12662,679,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12664,679,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12666,679,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarDepth":2,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12668,683,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12670,683,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12672,683,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12674,683,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12676,683,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12678,683,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12680,683,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12682,683,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12684,683,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12686,683,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12688,683,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarDepth":2,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12690,684,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12692,684,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12694,684,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12696,684,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12698,684,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12700,684,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12702,684,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12704,684,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12706,684,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12708,684,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12710,684,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12712,685,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12714,685,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12716,685,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12718,685,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12720,685,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12722,685,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12724,685,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12726,685,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12728,685,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12730,685,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12732,685,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12734,681,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12736,681,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12738,681,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12740,681,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Contact Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12742,681,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12744,681,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","contact"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12746,681,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - Contact Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12748,681,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12750,681,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/yrrlqsi5/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12752,681,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12754,681,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"Contact {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","sidebarDepth":null,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12756,682,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12758,682,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12760,682,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12762,682,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Contact Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12764,682,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12766,682,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","contact"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12768,682,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - Contact Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12770,682,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12772,682,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/yrrlqsi5/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12774,682,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12776,682,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"Contact {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12778,686,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12780,686,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12782,686,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12784,686,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12786,686,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12788,686,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12790,686,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12792,686,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12794,686,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12796,686,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12798,686,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Bullets","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12800,689,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12802,689,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12804,689,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12806,689,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12808,689,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12810,689,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12812,689,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12814,689,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12816,689,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12818,689,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12820,689,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Text-only","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12822,690,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12824,690,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12826,690,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12828,690,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12830,690,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12832,690,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12834,690,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12836,690,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12838,690,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12840,690,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12842,690,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Bullets","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12844,691,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12846,691,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12848,691,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12850,691,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12852,691,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12854,691,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12856,691,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12858,691,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12860,691,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12862,691,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12864,691,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12866,692,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12868,692,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12870,692,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12872,692,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12874,692,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12876,692,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12878,692,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12880,692,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12882,692,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12884,692,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12886,692,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Text-only","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12888,693,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12890,693,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12892,693,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12894,693,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us and other interesting facts you need to know',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12896,693,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12898,693,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12900,693,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12902,693,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12904,693,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12906,693,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12908,693,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Text-only","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12910,694,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12912,694,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12914,694,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12916,694,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us and other interesting facts you need to know',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12918,694,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12920,694,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12922,694,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12924,694,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12926,694,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12928,694,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12930,694,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Text-only","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;\n--navigation-bullet-indent: 1.5rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12932,695,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12934,695,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12936,695,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12938,695,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us and other interesting facts you need to know',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12940,695,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12942,695,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12944,695,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12946,695,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12948,695,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12950,695,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12952,695,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Text-only","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;\n--navigation-bullet-indent: 2.5rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12954,696,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12956,696,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12958,696,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12960,696,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us and other interesting facts you need to know',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12962,696,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12964,696,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12966,696,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12968,696,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12970,696,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12972,696,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12974,696,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Text-only","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;\n--navigation-bullet-indent: 1.5rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12976,697,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12978,697,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12980,697,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12982,697,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us and other interesting facts you need to know',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12984,697,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12986,697,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12988,697,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12990,697,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12992,697,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12994,697,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12996,697,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Text-only","bulletClass":"fal fa-arrow-square-right","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;\n--navigation-bullet-indent: 1.5rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (12998,698,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13000,698,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13002,698,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13004,698,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us and other interesting facts you need to know',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13006,698,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13008,698,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13010,698,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13012,698,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13014,698,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13016,698,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13018,698,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Custom","bulletClass":"fal fa-arrow-square-right","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;\n--navigation-bullet-indent: 1.5rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13020,699,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13022,699,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13024,699,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13026,699,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us and other interesting facts you need to know',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13028,699,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13030,699,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13032,699,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13034,699,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13036,699,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13038,699,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13040,699,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":"fal fa-arrow-square-right","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;\n--navigation-bullet-indent: 1.5rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13042,700,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13044,700,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13046,700,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13048,700,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us and other interesting facts you need to know',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13050,700,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13052,700,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13054,700,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13056,700,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13058,700,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13060,700,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13062,700,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Bullets","bulletClass":"fal fa-arrow-square-right","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;\n--navigation-bullet-indent: 1.5rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13064,701,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13066,701,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13068,701,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13070,701,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us and other interesting facts you need to know',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13072,701,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13074,701,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13076,701,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13078,701,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13080,701,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13082,701,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13084,701,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Custom","bulletClass":"fal fa-arrow-square-right","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;\n--navigation-bullet-indent: 1.5rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13086,702,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13088,702,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13090,702,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13092,702,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us and other interesting facts you need to know',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13094,702,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13096,702,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13098,702,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13100,702,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13102,702,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13104,702,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13106,702,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Custom","bulletClass":"fal fa-arrow-square-right","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;\n--navigation-bullet-indent: 1.5rem;\n--navigation-bullet-top: 0.2rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13108,687,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13110,687,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13112,687,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13114,687,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Our History',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13116,687,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the history page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13118,687,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13120,687,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - Our History',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13122,687,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the history page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13124,687,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/yrrlqsi5/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13126,687,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13128,687,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"Contact {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":null,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13130,703,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13132,703,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13134,703,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13136,703,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13138,703,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13140,703,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13142,703,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13144,703,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13146,703,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13148,703,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13150,703,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Custom","bulletClass":"fal fa-arrow-square-right","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;\n--navigation-bullet-indent: 1.5rem;\n--navigation-bullet-top: 0.2rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13152,705,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13154,705,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13156,705,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13158,705,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13160,705,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13162,705,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13164,705,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13166,705,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13168,705,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13170,705,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13172,705,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Custom","bulletClass":"fal fa-arrow-square-right","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;\n--navigation-bullet-indent: 1.5rem;\n--navigation-bullet-top: 0.2rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13174,706,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13176,706,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13178,706,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13180,706,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13182,706,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13184,706,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13186,706,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13188,706,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13190,706,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13192,706,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13194,706,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Custom","bulletClass":"fal fa-angle-right","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;\n--navigation-bullet-indent: 1.5rem;\n--navigation-bullet-top: 0.2rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13196,707,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13198,707,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13200,707,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13202,707,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13204,707,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13206,707,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13208,707,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13210,707,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13212,707,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13214,707,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13216,707,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Custom","bulletClass":"fal fa-angle-right","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;\n--navigation-bullet-indent: 0.75rem;\n--navigation-bullet-top: 0.2rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13218,708,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13220,708,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13222,708,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13224,708,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13226,708,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13228,708,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13230,708,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13232,708,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13234,708,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13236,708,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13238,708,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Custom","bulletClass":"fal fa-angle-right","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;\n--navigation-bullet-indent: 0.25rem;\n--navigation-bullet-top: 0.2rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13240,709,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13242,709,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13244,709,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13246,709,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13248,709,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13250,709,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13252,709,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13254,709,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13256,709,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13258,709,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13260,709,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Custom","bulletClass":"fal fa-angle-right","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--navigation-bullet-indent: 0.75rem;\n--navigation-bullet-top: 0.2rem;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;\n--navigation-bullet-indent: 0.75rem;\n--navigation-bullet-top: 0.2rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13262,710,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13264,710,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13266,710,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13268,710,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13270,710,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13272,710,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13274,710,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13276,710,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13278,710,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13280,710,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13282,710,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Custom","bulletClass":"fal fa-angle-right","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--navigation-bullet-indent: 1.5rem;\n--navigation-bullet-top: 0.2rem;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;\n--navigation-bullet-indent: 1.5rem;\n--navigation-bullet-top: 0.2rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13284,711,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13286,711,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13288,711,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13290,711,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13292,711,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13294,711,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13296,711,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13298,711,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13300,711,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13302,711,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13304,711,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Custom","bulletClass":"fal fa-angle-right","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--navigation-bullet-indent: 0.75rem;\n--navigation-bullet-top: 0.2rem;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;\n--navigation-bullet-indent: 0.75rem;\n--navigation-bullet-top: 0.2rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13306,712,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13308,712,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13310,712,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13312,712,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13314,712,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13316,712,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13318,712,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13320,712,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13322,712,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13324,712,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13326,712,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Custom","bulletClass":"fal fa-angle-right","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--navigation-bullet-indent: 0.75rem;\n--navigation-bullet-top: 0.2rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-column-corner-radius: 0.25rem;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;\n--navigation-bullet-indent: 0.75rem;\n--navigation-bullet-top: 0.2rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13328,713,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13330,713,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13332,713,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13334,713,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13336,713,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13338,713,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13340,713,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13342,713,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13344,713,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13346,713,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13348,713,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":"fal fa-angle-right","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--navigation-bullet-indent: 0.75rem;\n--navigation-bullet-top: 0.2rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-column-corner-radius: 0.25rem;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;\n--navigation-bullet-indent: 0.75rem;\n--navigation-bullet-top: 0.2rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13350,714,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13352,714,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13354,714,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13356,714,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13358,714,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13360,714,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13362,714,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13364,714,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13366,714,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13368,714,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13370,714,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":"fal fa-angle-right","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--navigation-bullet-indent: 0.75rem;\n--navigation-bullet-top: 0.2rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-column-corner-radius: 0.25rem;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 30%;\n--content-column-width: 70%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;\n--navigation-bullet-indent: 0.75rem;\n--navigation-bullet-top: 0.2rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13372,715,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13374,715,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13376,715,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13378,715,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13380,715,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13382,715,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13384,715,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13386,715,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13388,715,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13390,715,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13392,715,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":"fal fa-angle-right","sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--navigation-bullet-indent: 0.75rem;\n--navigation-bullet-top: 0.2rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-column-corner-radius: 0.25rem;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 30%;\n--content-column-width: 70%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;\n--navigation-bullet-indent: 0.75rem;\n--navigation-bullet-top: 0.2rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13394,716,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13396,716,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13398,716,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13400,716,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13402,716,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13404,716,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13406,716,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13408,716,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13410,716,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13412,716,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13414,716,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--navigation-bullet-indent: 0.75rem;\n--navigation-bullet-top: 0.2rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-column-corner-radius: 0.25rem;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 30%;\n--content-column-width: 70%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;\n--navigation-bullet-indent: 0.75rem;\n--navigation-bullet-top: 0.2rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13416,717,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13418,717,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13420,717,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13422,717,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13424,717,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13426,717,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13428,717,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13430,717,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13432,717,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13434,717,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13436,717,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--navigation-bullet-indent: 0.75rem;\n--navigation-bullet-top: 0.2rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-column-corner-radius: 0.25rem;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 30%;\n--content-column-width: 70%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 0rem;\n--navigation-column-background-color: transparent;\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.rem;\n--navigation-bullet-indent: 0.75rem;\n--navigation-bullet-top: 0.2rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13438,718,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13440,718,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13442,718,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13444,718,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13446,718,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13448,718,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13450,718,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13452,718,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13454,718,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13456,718,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13458,718,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--navigation-bullet-indent: 0.75rem;\n--navigation-bullet-top: 0.2rem;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 30%;\n--content-column-width: 70%;\n--navigation-item-spacing: 1rem;\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-bullet-indent: 0.75rem;\n--navigation-bullet-top: 0.2rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13460,688,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13462,688,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13464,688,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13466,688,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Contact Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13468,688,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13470,688,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","contact"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13472,688,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - Contact Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13474,688,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13476,688,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/yrrlqsi5/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13478,688,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13480,688,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"Contact {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13482,704,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13484,704,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13486,704,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13488,704,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Our History',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13490,704,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the history page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13492,704,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13494,704,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - Our History',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13496,704,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the history page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13498,704,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/yrrlqsi5/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13500,704,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13502,704,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"Contact {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":null,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;\n--navigation-item-spacing: 1rem;\n--navigation-column-padding: 1.25rem;\n--navigation-column-background-color: var(--sf-color-light);\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);\n--navigation-column-corner-radius: 0.25rem;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13504,719,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13506,719,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13508,719,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13510,719,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13512,719,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13514,719,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13516,719,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13518,719,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13520,719,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13522,719,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13524,719,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--content-column-width: 100%;\n--navigation-item-spacing: 1rem;\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);","phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13526,721,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13528,721,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13530,721,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13532,721,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Our History',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13534,721,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the history page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13536,721,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13538,721,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - Our History',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13540,721,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the history page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13542,721,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/yrrlqsi5/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13544,721,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13546,721,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"Contact {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":null,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--content-column-width: 100%;\n--navigation-item-spacing: 1rem;\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);","phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13548,720,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13550,720,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13552,720,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13554,720,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Contact Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13556,720,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13558,720,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","contact"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13560,720,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - Contact Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13562,720,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13564,720,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/yrrlqsi5/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13566,720,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13568,720,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"Contact {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--content-column-width: 100%;\n--navigation-item-spacing: 1rem;\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);","phabCssProperties":null,"tabpCssProperties":null,"tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13570,724,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13572,724,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13574,724,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13576,724,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Contact Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13578,724,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13580,724,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","contact"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13582,724,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - Contact Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13584,724,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13586,724,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/yrrlqsi5/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13588,724,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13590,724,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"Contact {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--content-column-width: 100%;\n--navigation-item-spacing: 1rem;\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 30%;\n--content-column-width: 70%;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13592,723,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13594,723,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13596,723,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13598,723,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Our History',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13600,723,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the history page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13602,723,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13604,723,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - Our History',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13606,723,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the history page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13608,723,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/yrrlqsi5/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13610,723,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13612,723,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"Contact {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":null,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--content-column-width: 100%;\n--navigation-item-spacing: 1rem;\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 30%;\n--content-column-width: 70%;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13614,722,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13616,722,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13618,722,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13620,722,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13622,722,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13624,722,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13626,722,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13628,722,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13630,722,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13632,722,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13634,722,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--content-column-width: 100%;\n--navigation-item-spacing: 1rem;\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 30%;\n--content-column-width: 70%;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13636,726,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13638,726,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13640,726,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13642,726,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Our History',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13644,726,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the history page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13646,726,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13648,726,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - Our History',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13650,726,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the history page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13652,726,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/yrrlqsi5/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13654,726,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13656,726,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"Our History\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":null,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--content-column-width: 100%;\n--navigation-item-spacing: 1rem;\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 30%;\n--content-column-width: 70%;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13658,727,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13660,727,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13662,727,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13664,727,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13666,727,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13668,727,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13670,727,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13672,727,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13674,727,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13676,727,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13678,727,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":3,"showParentInSidebar":0,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--content-column-width: 100%;\n--navigation-item-spacing: 1rem;\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 30%;\n--content-column-width: 70%;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13680,729,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13682,729,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13684,729,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13686,729,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13688,729,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13690,729,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13692,729,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13694,729,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13696,729,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13698,729,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13700,729,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Bullets","bulletClass":null,"sidebarDepth":3,"showParentInSidebar":0,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--content-column-width: 100%;\n--navigation-item-spacing: 1rem;\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 30%;\n--content-column-width: 70%;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13702,730,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13704,730,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13706,730,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13708,730,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13710,730,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13712,730,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13714,730,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13716,730,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13718,730,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13720,730,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13722,730,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":2,"showParentInSidebar":0,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--content-column-width: 100%;\n--navigation-item-spacing: 1rem;\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 30%;\n--content-column-width: 70%;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13724,731,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13726,731,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13728,731,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13730,731,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13732,731,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13734,731,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13736,731,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13738,731,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13740,731,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13742,731,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13744,731,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--content-column-width: 100%;\n--navigation-item-spacing: 1rem;\n--navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);\n--navigation-current-item-weight: normal;\n--navigation-link-foreground-color: var(--anchor-color);","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 30%;\n--content-column-width: 70%;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13746,732,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13748,732,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13750,732,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13752,732,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13754,732,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13756,732,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13758,732,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13760,732,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13762,732,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13764,732,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13766,732,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 30%;\n--content-column-width: 70%;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13768,728,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13770,728,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13772,728,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13774,728,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Our History',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13776,728,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the history page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13778,728,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13780,728,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - Our History',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13782,728,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the history page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13784,728,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/yrrlqsi5/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13786,728,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13788,728,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"Our History\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":null,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 30%;\n--content-column-width: 70%;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13790,725,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13792,725,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13794,725,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13796,725,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Contact Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13798,725,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13800,725,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","contact"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13802,725,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - Contact Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13804,725,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13806,725,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/yrrlqsi5/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13808,725,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13810,725,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"Contact {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":null,"phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 30%;\n--content-column-width: 70%;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13812,733,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13814,733,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13816,733,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13818,733,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13820,733,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13822,733,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13824,733,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13826,733,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13828,733,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13830,733,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13832,733,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--content-column-width: 100%;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 30%;\n--content-column-width: 70%;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13834,734,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13836,734,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13838,734,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13840,734,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Our History',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13842,734,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the history page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13844,734,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13846,734,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - Our History',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13848,734,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the history page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13850,734,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/yrrlqsi5/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13852,734,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13854,734,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"Our History\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":null,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--content-column-width: 100%;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 30%;\n--content-column-width: 70%;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13856,735,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13858,735,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13860,735,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13862,735,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Contact Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13864,735,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13866,735,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","contact"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13868,735,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - Contact Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13870,735,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13872,735,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/yrrlqsi5/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13874,735,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13876,735,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"Contact {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--content-column-width: 100%;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 30%;\n--content-column-width: 70%;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13878,736,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13880,736,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13882,736,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13884,736,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13886,736,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13888,736,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13890,736,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13892,736,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13894,736,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13896,736,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13898,736,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--content-column-width: 100%;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13900,737,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13901,740,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13902,737,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13903,740,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13904,737,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13905,740,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13906,737,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Our History',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13907,740,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Our History',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13908,737,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the history page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13909,740,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the history page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13910,737,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13911,740,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13912,737,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - Our History',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13913,740,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - Our History',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13914,737,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the history page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13915,740,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the history page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13916,737,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/yrrlqsi5/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13917,740,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/yrrlqsi5/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13918,737,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13919,740,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13920,737,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"Our History\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":null,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--content-column-width: 100%;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13921,740,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"Our History\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":null,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--content-column-width: 100%;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13922,738,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13923,741,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13924,738,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13925,741,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13926,738,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13927,741,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13928,738,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Contact Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13929,741,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Contact Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13930,738,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13931,741,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13932,738,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","contact"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13933,741,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","contact"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13934,738,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - Contact Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13935,741,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - Contact Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13936,738,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13937,741,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the contact us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13938,738,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/yrrlqsi5/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13939,741,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/yrrlqsi5/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13940,738,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13941,741,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13942,738,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"Contact {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--content-column-width: 100%;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13943,741,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"Contact {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--content-column-width: 100%;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13944,739,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13946,739,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13948,739,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13950,739,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13952,739,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13954,739,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13956,739,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13958,739,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13960,739,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13962,739,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13964,739,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","sidebarExcerpt":"Welcome to the about {{companyName}} section!","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--content-column-width: 100%;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13966,742,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13967,743,297,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'/* ABOUT PAGE LEVEL */');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13968,742,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13969,743,177,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13970,742,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13971,743,178,NULL,NULL,1,NULL,CONVERT(datetime,NULL,121),NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13972,742,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13973,743,179,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13974,742,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13975,743,213,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13976,742,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13977,743,211,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["page","about"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13978,742,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13979,743,181,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'Carbide - About Us',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13980,742,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13981,743,183,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'This is the about us page');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13982,742,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13983,743,193,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'{
+  "src": "/media/2c5hz1by/blur-close-up-environment-429918.jpg",
+  "focalPoint": {
+    "left": 0.5,
+    "top": 0.5
+  },
+  "crops": [
+    {
+      "alias": "SocialSharing",
+      "width": 1200,
+      "height": 628,
+      "coordinates": null
+    }
+  ]
+}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13984,742,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13985,743,195,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),N'["website"]',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13986,742,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","sidebarExcerpt":"Welcome to the {{companyName}} about us section!","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--content-column-width: 100%;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoPropertyData] ([id],[versionId],[propertyTypeId],[languageId],[segment],[intValue],[decimalValue],[dateValue],[varcharValue],[textValue]) VALUES (13987,743,251,NULL,NULL,NULL,NULL,CONVERT(datetime,NULL,121),NULL,N'[{"key":"3154272e-7bd0-4a0a-ba87-9afbd8acc857","name":"Intro and Sidebar Unit","ncContentTypeAlias":"contentContainerUnit","enabled":1,"unitName":"Intro and Sidebar Unit","contentUnits":"[{\"key\":\"77e9ca32-1c4e-4f3a-8453-9b0badf1556d\",\"name\":\"Intro Text\",\"ncContentTypeAlias\":\"richContentSubunit\",\"enabled\":1,\"unitName\":\"Intro Text\",\"headline\":\"About {{companyName}}\",\"headlineStyle\":\"h1\",\"richContent\":\"<p>This is the intro text.</p>\",\"richContentColumn2\":\"\",\"buttonSeparator\":null,\"buttonText\":null,\"buttonLink\":null,\"buttonURL\":null,\"cSSSeparator\":null,\"zeroCssProperties\":null,\"phabCssProperties\":null,\"tabpCssProperties\":null,\"tablCssProperties\":null,\"noteCssProperties\":null,\"deskCssProperties\":null,\"elasCssProperties\":null}]","sidebarSeparator":null,"sidebarTitle":"About us content","sidebarExcerpt":"Welcome to the {{companyName}} about us section!","showSidebarNavigation":"Siblings","sidebarStyle":"Numbers","bulletClass":null,"sidebarDepth":3,"showParentInSidebar":1,"cSSSeparator":null,"zeroCssProperties":"--navigation-column-width: 100%;\n--content-column-width: 100%;","phabCssProperties":null,"tabpCssProperties":"--navigation-column-width: 25%;\n--content-column-width: 75%;","tablCssProperties":null,"noteCssProperties":null,"deskCssProperties":null,"elasCssProperties":null}]');
 
 COMMIT TRANSACTION
 

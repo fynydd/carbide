@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 174 rows to dbo.cmsPropertyType
+-- Adding 179 rows to dbo.cmsPropertyType
 
 SET IDENTITY_INSERT [dbo].[cmsPropertyType] ON
 
@@ -213,21 +213,21 @@ INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[property
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (238,-89,1098,26,N'elasCssProperties',N'Elastic',17,0,NULL,NULL,0,'57C542BA-AEDB-4552-9E92-2CE39A75E34F');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (239,1169,1129,47,N'cSSSeparator',N'CSS Separator',6,0,NULL,NULL,0,'18DCFAAA-47F2-43C4-9066-45F248EF4C9B');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (239,1169,1129,47,N'cSSSeparator',N'CSS Separator',11,0,NULL,NULL,0,'18DCFAAA-47F2-43C4-9066-45F248EF4C9B');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (240,-89,1129,47,N'zeroCssProperties',N'Mobile',7,0,NULL,NULL,0,'796745A0-8FF1-403A-9790-81496075ECC1');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (240,-89,1129,47,N'zeroCssProperties',N'Mobile',12,0,NULL,NULL,0,'796745A0-8FF1-403A-9790-81496075ECC1');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (241,-89,1129,47,N'phabCssProperties',N'Phablet',8,0,NULL,NULL,0,'128DDE34-02E6-4D18-94A4-BCB9E2BE7946');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (241,-89,1129,47,N'phabCssProperties',N'Phablet',13,0,NULL,NULL,0,'128DDE34-02E6-4D18-94A4-BCB9E2BE7946');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (242,-89,1129,47,N'tabpCssProperties',N'Tablet (portrait)',9,0,NULL,NULL,0,'0FEB830E-33CE-4167-B611-183007DD9A26');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (242,-89,1129,47,N'tabpCssProperties',N'Tablet (portrait)',14,0,NULL,NULL,0,'0FEB830E-33CE-4167-B611-183007DD9A26');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (243,-89,1129,47,N'tablCssProperties',N'Tablet (landscape)',10,0,NULL,NULL,0,'1AB645EC-EF58-46B9-88B8-9B780A184EDB');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (243,-89,1129,47,N'tablCssProperties',N'Tablet (landscape)',15,0,NULL,NULL,0,'1AB645EC-EF58-46B9-88B8-9B780A184EDB');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (244,-89,1129,47,N'noteCssProperties',N'Notebook',11,0,NULL,NULL,0,'572F4DA6-D171-496E-A9C6-8733C5AD6677');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (244,-89,1129,47,N'noteCssProperties',N'Notebook',16,0,NULL,NULL,0,'572F4DA6-D171-496E-A9C6-8733C5AD6677');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (245,-89,1129,47,N'deskCssProperties',N'Desktop',12,0,NULL,NULL,0,'802DB525-7DFF-44EF-94FE-B4460C45C9C1');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (245,-89,1129,47,N'deskCssProperties',N'Desktop',17,0,NULL,NULL,0,'802DB525-7DFF-44EF-94FE-B4460C45C9C1');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (246,-89,1129,47,N'elasCssProperties',N'Elastic',13,0,NULL,NULL,0,'2FE15BF4-936E-469D-85B5-C3CDDB0D8109');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (246,-89,1129,47,N'elasCssProperties',N'Elastic',18,0,NULL,NULL,0,'2FE15BF4-936E-469D-85B5-C3CDDB0D8109');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (247,1154,1052,53,N'contentUnits',N'Content Units',0,0,NULL,NULL,0,'0AD72FA5-131D-4971-8686-F58632A7531D');
 -- SQRIBE/INSERT;03d113
@@ -351,15 +351,25 @@ INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[property
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (327,1192,1159,56,N'navigationStyle',N'Style',2,0,NULL,N'Determines how the navigation is displayed in the template.',0,'06C16193-91BF-48D7-922B-9A5CCA418963');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (328,1193,1129,47,N'showSidebarNavigation',N'Show Sidebar Navigation',4,1,NULL,N'Show children or sibling page links in a sidebar navigation.',0,'CD67F5B3-FA16-4B4D-B5E0-894AFE1FA7E9');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (328,1193,1129,47,N'showSidebarNavigation',N'Show Sidebar Navigation',6,1,NULL,N'Show children or sibling page links in a sidebar navigation.',0,'CD67F5B3-FA16-4B4D-B5E0-894AFE1FA7E9');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (329,-49,1129,47,N'showParentInSidebar',N'Show Parent in Sidebar',5,0,NULL,N'When showing a sidebar navigation, show the parent at the top.',0,'ABB07E99-4F39-4767-8F49-C1BCE807A72C');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (329,-49,1129,47,N'showParentInSidebar',N'Show Parent in Sidebar',10,0,NULL,N'When showing a sidebar navigation, show the parent at the top.',0,'ABB07E99-4F39-4767-8F49-C1BCE807A72C');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (330,1195,1129,47,N'sidebarSeparator',N'Sidebar Separator',3,0,NULL,NULL,0,'7218A42B-30DD-4E11-A69F-C69EA5F12893');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (331,-49,1159,56,N'showChildrenOfHomePage',N'Show Children of Home Page',4,0,NULL,N'Show all enabled child pages of the home page.',0,'F1C44833-EF60-4D20-B32E-4F5695E2E265');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (332,1196,1159,56,N'manualLinksSeparator',N'Manual Links Separator',5,0,NULL,NULL,0,'47CB0CCE-A5BB-4EF6-ABE3-800CA7F96A48');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (333,-51,1129,47,N'sidebarDepth',N'Depth',9,0,NULL,N'Show this many nested levels of content (e.g. 2 shows starting node and its children, 3 also shows grandchildren, etc.)',0,'E4677FAA-8594-4E34-918C-BAA88114CAA0');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (334,1198,1129,47,N'sidebarStyle',N'Sidebar Style',7,0,NULL,NULL,0,'58B8ECE2-0183-4205-933B-B5566FD52988');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (335,-88,1129,47,N'bulletClass',N'Bullet Class',8,0,NULL,N'For a custom list style, specify the Font Awesome bullet class to use, or nothing for no bullet.',0,'7CDEFA31-1347-4B62-95BE-B1D227504E5B');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (336,-88,1129,47,N'sidebarTitle',N'Sidebar Title',4,0,NULL,N'Text to display above the sidebar; also used for the mobile menu.',0,'27FE528D-FB65-4ED7-9D6C-1108DB18A166');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (337,-88,1129,47,N'sidebarExcerpt',N'Sidebar Excerpt',5,0,NULL,N'Text under the title as a lead-in to the menu itself.',0,'B86E10F9-5BCE-4B34-AB4A-BA42E1E2E829');
 
 COMMIT TRANSACTION
 

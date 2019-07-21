@@ -6,14 +6,17 @@
     --column-gutter: 5%;
     --row-gutter: 3rem;
 
-    --navigation-column-width: 100%;
-    --navigation-column-padding: 0;
+    --navigation-column-width: 0%;
+    --navigation-column-padding: 0rem;
     --navigation-column-background-color: transparent;
-    --navigation-column-corner-radius: 0;
+    --navigation-column-corner-radius: 0rem;
     --navigation-current-item-foreground-color: rgba(0, 0, 0, 0.25);
     --navigation-current-item-weight: normal;
     --navigation-link-foreground-color: var(--anchor-color);
-    --navigation-item-spacing: 1.25rem;
+    --navigation-item-spacing: 1rem;
+    --navigation-bullet-indent: 1.5rem;
+    --navigation-bullet-top: 0.2rem;
+    
     --content-column-width: 100%;
 
     // ---------------------------
@@ -27,44 +30,137 @@
         & > section {
 
             border-radius: var(--navigation-column-corner-radius);
-
             background-color: var(--navigation-column-background-color);
             padding: var(--navigation-column-padding);
 
-            ul {
+            & > .toggle-button {
 
-                margin-left: 1.25rem;
+                font-size: 1.35rem;
+                line-height: var(--h4-line-height);
+                cursor: pointer;
+
+                i {
+
+                    display: inline-block;
+                    width: 1.35rem;
+                }
             }
 
-            ol, ul {
+            & > nav {
 
-                &[data-level="0"] {
+                overflow: hidden;
 
-                    margin-top: 0;
+                @include sf-animate (
+
+                    $property: max-height,
+                    $delay: 0,
+                    $duration: 0.25s,
+                    $kind: ease
+                );
+
+                & > p {
+
+                    font-size: 0.9rem;
+                    margin-top: 0.5rem;
+                    margin-bottom: 0;
+                    overflow: hidden;
+
+                    @include sf-animate (
+
+                        $property: max-height,
+                        $delay: 0,
+                        $duration: 0.25s,
+                        $kind: ease
+                    );
                 }
 
-                li {
+                div {
 
-                    padding-top: 0;
+                    &[data-level] {
+
+                        margin-left: var(--navigation-bullet-indent);
+                        margin-top: var(--navigation-item-spacing);
+                        position: relative;
+                        vertical-align: top;
+
+                        &[data-level="0"] {
+
+                            margin-top: 0;
+                        }
+
+                        &.container {
+
+                            margin-left: 0;
+                        }
+
+                        i {
+
+                            position: absolute;
+                            display: block;
+                            width: var(--navigation-bullet-indent);
+                            margin-left: calc(var(--navigation-bullet-indent) * -1);
+                            margin-top: var(--navigation-bullet-top);
+                        }
+
+                        &:first-child {
+
+                            margin-top: 0;
+                        }
+
+                        a {
+
+                            &.current {
+
+                                color: var(--navigation-current-item-foreground-color);
+                                font-weight: var(--navigation-current-item-weight);
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+
+                ul {
+
+                    margin-left: 1.25rem;
+                }
+
+                ol, ul {
+
                     margin-top: var(--navigation-item-spacing);
 
-                    &:first-of-type {
+                    &[data-level="0"] {
 
                         margin-top: 0;
                     }
 
-                    a {
+                    li {
 
-                        color: var(--navigation-link-foreground-color);
-                        font-weight: normal;
+                        padding-top: 0;
+                        margin-top: var(--navigation-item-spacing);
 
-                        &.current {
+                        &:first-of-type {
 
-                            color: var(--navigation-current-item-foreground-color);
-                            font-weight: var(--navigation-current-item-weight);
-                            text-decoration: none;
+                            margin-top: 0;
+                        }
+
+                        a {
+
+                            color: var(--navigation-link-foreground-color);
+                            font-weight: normal;
+
+                            &.current {
+
+                                color: var(--navigation-current-item-foreground-color);
+                                font-weight: var(--navigation-current-item-weight);
+                                text-decoration: none;
+                            }
                         }
                     }
+                }
+
+                & > [data-level].container:first-of-type {
+
+                    margin-top: calc(var(--navigation-item-spacing) * 1.5);
                 }
             }
         }

@@ -21,6 +21,8 @@ namespace Carbide.Web.Helpers
             IncludeStartNode = true;
             CurrentPageId = -1;
             ListType = "ul";
+            ListItemType = "li";
+            BulletClass = "";
             MaxDepth = 1;
         }
 
@@ -28,6 +30,8 @@ namespace Carbide.Web.Helpers
         public int CurrentPageId { get; set; }
         public bool IncludeStartNode { get; set; }
         public string ListType { get; set; }
+        public string ListItemType { get; set; }
+        public string BulletClass { get; set; }
         public int MaxDepth { get; set; }
     }
 
@@ -151,16 +155,21 @@ namespace Carbide.Web.Helpers
 
             if (settings.StartNode != null)
             {
+                if (settings.ListType == "ul" || settings.ListType == "ol")
+                {
+                    settings.BulletClass = "";
+                }
+
                 if (settings.IncludeStartNode)
                 {
-                    result += "<" + settings.ListType + " data-level=\"0\"><li data-level=\"0\"><a href=\"" + settings.StartNode.GetUrlPath() + "\" class=\"" + (settings.CurrentPageId == settings.StartNode.Id ? "current" : "") + "\">" + settings.StartNode.GetBestMenuName() + "</a>";
+                    result += "<" + settings.ListType + " data-level=\"0\" class=\"container\"><" + settings.ListItemType + " data-level=\"0\"><i class=\"" + settings.BulletClass + "\"></i><a href=\"" + settings.StartNode.GetUrlPath() + "\" class=\"" + (settings.CurrentPageId == settings.StartNode.Id ? "current" : "") + "\">" + settings.StartNode.GetBestMenuName() + "</a>";
 
                     if (settings.MaxDepth > 0)
                     {
                         result += settings.StartNode.GenerateNavigationChildren(settings);
                     }
 
-                    result += "</li></" + settings.ListType + ">";
+                    result += "</" + settings.ListItemType + "></" + settings.ListType + ">";
                 }
 
                 else
@@ -181,25 +190,25 @@ namespace Carbide.Web.Helpers
 
             if (parent != null && settings.StartNode != null)
             {
-                if (settings.MaxDepth > 0)
+                if (parent.Level - settings.StartNode.Level + 1 < settings.MaxDepth)
                 {
                     var relativeLevel = parent.Level - settings.StartNode.Level + (settings.IncludeStartNode ? 1 : 0);
                     var children = parent.Children<IPublishedContent>().Where(d => d.GetTemplateAlias().HasValue() && d.HasProperty("showInNavigation") && d.SafeValue<bool>("showInNavigation"));
 
                     if (children != null && children.Count() > 0)
                     {
-                        result += "<" + settings.ListType + " data-level=\"" + relativeLevel + "\">";
+                        result += "<" + settings.ListType + " data-level=\"" + relativeLevel + "\" class=\"container\">";
 
                         foreach (var child in parent.Children<IPublishedContent>().Where(d => d.GetTemplateAlias().HasValue() && d.HasProperty("showInNavigation") && d.SafeValue<bool>("showInNavigation")))
                         {
-                            result += "<li data-level=\"" + relativeLevel + "\"><a href=\"" + child.GetUrlPath() + "\" class=\"" + (settings.CurrentPageId == child.Id ? "current" : "") + "\">" + child.GetBestMenuName() + "</a>";
+                            result += "<" + settings.ListItemType + " data-level=\"" + relativeLevel + "\"><i class=\"" + settings.BulletClass + "\"></i><a href=\"" + child.GetUrlPath() + "\" class=\"" + (settings.CurrentPageId == child.Id ? "current" : "") + "\">" + child.GetBestMenuName() + "</a>";
 
                             if (relativeLevel < settings.MaxDepth)
                             {
                                 result += child.GenerateNavigationChildren(settings);
                             }
 
-                            result += "</li>";
+                            result += "</" + settings.ListItemType + ">";
                         }
 
                         result += "</" + settings.ListType + ">";
