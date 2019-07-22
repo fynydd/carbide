@@ -29,7 +29,7 @@ INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-333,1,N'ContentTr
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-332,1,N'ContentTypes');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-331,-1,N'Servers');
+INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-331,1,N'Servers');
 
 COMMIT TRANSACTION
 

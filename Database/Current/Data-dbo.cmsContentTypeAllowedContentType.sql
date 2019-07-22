@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 15 rows to dbo.cmsContentTypeAllowedContentType
+-- Adding 17 rows to dbo.cmsContentTypeAllowedContentType
 
 BEGIN TRANSACTION
 
@@ -40,6 +40,10 @@ INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrde
 INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1159,1098,0);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1159,1140,1);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1202,1098,0);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsContentTypeAllowedContentType] ([Id],[AllowedId],[SortOrder]) VALUES (1202,1140,1);
 
 COMMIT TRANSACTION
 

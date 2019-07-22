@@ -2,6 +2,7 @@
 @using System.Security.Cryptography
 @using Umbraco.Web
 @using Fynydd.Carbide
+@using Carbide.Web.Helpers
 
 @{
     var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
@@ -34,16 +35,16 @@
     }
 }
 <!-- Page SEO metadata -->
-<title>@Html.Raw(metaTitle)</title>
-<meta name="keywords" content="@Html.Raw(Model.SafeValue<string>("metaKeywords"))">
-<meta name="description" content="@Html.Raw(Model.SafeValue<string>("metaDescription"))">
+<title>@Html.Raw(metaTitle.ProcessShortCodes(umbCtx))</title>
+<meta name="keywords" content="@Html.Raw(Model.SafeValue<string>("metaKeywords").ProcessShortCodes(umbCtx))">
+<meta name="description" content="@Html.Raw(Model.SafeValue<string>("metaDescription").ProcessShortCodes(umbCtx))">
 @Html.Raw("<link rel=\"canonical\" href=\"" + Model.Url + "\">")
 
 <!-- Open Graph support for Social Channels -->
-<meta property="og:site_name" content="@(settings.SafeValue("socialCompanyName"))">
-<meta property="og:title" content="@(Html.Raw(metaTitle))">
-<meta property="og:keywords" content="@Html.Raw(Model.SafeValue<string>("metaKeywords"))">
-<meta property="og:description" content="@(Html.Raw(Model.SafeValue<string>("metaDescription")))">
+<meta property="og:site_name" content="@(settings.SafeValue("socialCompanyName").ProcessShortCodes(umbCtx))">
+<meta property="og:title" content="@(Html.Raw(metaTitle.ProcessShortCodes(umbCtx)))">
+<meta property="og:keywords" content="@Html.Raw(Model.SafeValue<string>("metaKeywords").ProcessShortCodes(umbCtx))">
+<meta property="og:description" content="@(Html.Raw(Model.SafeValue<string>("metaDescription").ProcessShortCodes(umbCtx)))">
 <meta property="og:type" content="@(Model.SafeValue("ogPageType").HasValue() ? Model.SafeValue("ogPageType") : "website")">
 <meta property="og:url" content="@(Model.Url)">
 <meta property="og:image" content="@(Html.Raw(Model.HasValue("shareImage") ? "//" + domain + Model.GetCropUrl("shareImage", "SocialSharing") : ""))">
@@ -53,8 +54,8 @@
 <meta name="twitter:url" content="@(Model.Url)">
 <meta name="twitter:site" content="@("@" + settings.SafeValue("twitterSiteName").Trim("@"))">
 <meta name="twitter:creator" content="@("@" + settings.SafeValue("twitterUserName").Trim("@"))">
-<meta name="twitter:title" content="@(Html.Raw(metaTitle))">
-<meta name="twitter:description" content="@(Html.Raw(Model.SafeValue<string>("metaDescription")))">
+<meta name="twitter:title" content="@(Html.Raw(metaTitle.ProcessShortCodes(umbCtx)))">
+<meta name="twitter:description" content="@(Html.Raw(Model.SafeValue<string>("metaDescription").ProcessShortCodes(umbCtx)))">
 <meta name="twitter:image" content="@(Html.Raw(Model.HasValue("shareImage") ? "//" + domain + Model.GetCropUrl("shareImage", "SocialSharing") : ""))">
 
 <!-- Icon Support -->

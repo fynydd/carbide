@@ -24,7 +24,7 @@
     Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
     Html.ViewData.Clear();
 }
-@if (Model.HasProperty("contentUnits") && Model.HasValue("contentUnits"))
+@if (Model.HasProperty("contentSubunits") && Model.HasValue("contentSubunits"))
 {
 <script type="text/javascript">
 
@@ -107,7 +107,7 @@
 }
                 <div role="gridcell" class="content-column">
 @{
-    foreach (var content in Model.SafeNestedValues("contentUnits"))
+    foreach (var content in Model.SafeNestedValues("contentSubunits"))
     {
         if (content.HasProperty("enabled") && content.SafeValue<bool>("enabled"))
         {
