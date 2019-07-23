@@ -230,6 +230,8 @@ Carbide.Web/Media/*
 # Project binaries other than dependencies
 Carbide.Web/bin/*
 !Carbide.Web/bin/*.lic
+# Carbide generated assets
+_carbide.generated*.*
 # Compiled SASS
 Carbide.Web/css/application.*
 /Carbide.Web/stylesheets/_carbide.generated.application.css
