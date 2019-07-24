@@ -61,47 +61,41 @@ namespace MyProject.Components
         {
         }
 
-        private void ProcessUserFormAccess(IUser user, IEnumerable<Form> allForms)
+        private void ProcessUserFormAccess(IUser user, bool isAdmin, Form form)
         {
-            // Process form access for a specific user;
-            // Give an admin access to all forms and give normal users access only to their own forms
-            // Grants and revokes all form permissions (healing behavior)
+            // Process form access for a specific user and a specific form.
+            // Give a user access to the form if they are an admin or the form owner.
 
-            var isAdmin = user.Groups.Where(g => g.Name == "Administrators").Count() > 0 || user.Id == -1;
+            var formSecurityForUser = _userFormSecurityStorage.GetUserFormSecurity(user.Id.ToString(), form.Id);
+            var hasSecurityAlready = (formSecurityForUser != null);
             var suffix = "; #" + user.Id;
 
-            foreach (Form form in allForms)
+            if (!hasSecurityAlready)
             {
-                var formSecurityForUser = _userFormSecurityStorage.GetUserFormSecurity(user.Id.ToString(), form.Id);
-                var hasSecurityAlready = (formSecurityForUser != null);
+                formSecurityForUser = UserFormSecurity.Create();
+                formSecurityForUser.User = user.Id.ToString();
+                formSecurityForUser.Form = form.Id;
+            }
 
-                if (!hasSecurityAlready)
+            var oldPermission = formSecurityForUser.HasAccess;
+
+            formSecurityForUser.HasAccess = false;
+
+            if (form.Name.EndsWith(suffix) || isAdmin)
+            {
+                formSecurityForUser.HasAccess = true;
+            }
+
+            if (!hasSecurityAlready)
+            {
+                _userFormSecurityStorage.InsertUserFormSecurity(formSecurityForUser);
+            }
+
+            else
+            {
+                if (oldPermission != formSecurityForUser.HasAccess)
                 {
-                    formSecurityForUser = UserFormSecurity.Create();
-                    formSecurityForUser.User = user.Id.ToString();
-                    formSecurityForUser.Form = form.Id;
-                }
-
-                var oldPermission = formSecurityForUser.HasAccess;
-
-                formSecurityForUser.HasAccess = false;
-
-                if (form.Name.EndsWith(suffix) || isAdmin)
-                {
-                    formSecurityForUser.HasAccess = true;
-                }
-
-                if (!hasSecurityAlready)
-                {
-                    _userFormSecurityStorage.InsertUserFormSecurity(formSecurityForUser);
-                }
-
-                else
-                {
-                    if (oldPermission != formSecurityForUser.HasAccess)
-                    {
-                        _userFormSecurityStorage.UpdateUserFormSecurity(formSecurityForUser);
-                    }
+                    _userFormSecurityStorage.UpdateUserFormSecurity(formSecurityForUser);
                 }
             }
         }
@@ -110,15 +104,59 @@ namespace MyProject.Components
 
         private void UserService_SavedUser(IUserService sender, SaveEventArgs<IUser> e)
         {
-            // Process form access for all saved users and all forms
-
             IEnumerable<Form> allForms = _formStorage.GetAllForms();
 
             var users = e.SavedEntities;
+            var savingAdmin = false;
+
+            // Are we saving one or more admin users?
 
             foreach (var user in users)
             {
-                ProcessUserFormAccess(user, allForms);
+                if (user.Groups.Where(g => g.Name == "Administrators").Count() > 0 || user.Id == -1)
+                {
+                    savingAdmin = true;
+                }
+            }
+
+            if (savingAdmin)
+            {
+                // If saving one or more admin users, process permissions for ALL users and ALL forms
+
+                var page = 0;
+                long total = 0;
+                users = _userService.GetAll(page, 10, out total);
+
+                while (users.Any())
+                {
+                    foreach (var user in users)
+                    {
+                        var isAdmin = user.Groups.Where(g => g.Name == "Administrators").Count() > 0 || user.Id == -1;
+
+                        foreach (Form form in allForms)
+                        {
+                            ProcessUserFormAccess(user, isAdmin, form);
+                        }
+                    }
+
+                    page++;
+                    users = _userService.GetAll(page, 10, out total);
+                }
+            }
+
+            else
+            {
+                // If saving only normal users, process form access for all users being saved for all forms
+
+                foreach (var user in users)
+                {
+                    var isAdmin = user.Groups.Where(g => g.Name == "Administrators").Count() > 0 || user.Id == -1;
+
+                    foreach (Form form in allForms)
+                    {
+                        ProcessUserFormAccess(user, isAdmin, form);
+                    }
+                }
             }
         }
 
@@ -137,18 +175,19 @@ namespace MyProject.Components
 
         private void FormStorage_Saved(object sender, FormEventArgs e)
         {
-            // Process form access for all users and all forms
+            // Process current form access for all users
 
             var page = 0;
             long total = 0;
             var users = _userService.GetAll(page, 10, out total);
-            IEnumerable<Form> allForms = _formStorage.GetAllForms();
 
             while (users.Any())
             {
                 foreach (var user in users)
                 {
-                    ProcessUserFormAccess(user, allForms);
+                    var isAdmin = user.Groups.Where(g => g.Name == "Administrators").Count() > 0 || user.Id == -1;
+
+                    ProcessUserFormAccess(user, isAdmin, e.Form);
                 }
 
                 page++;
