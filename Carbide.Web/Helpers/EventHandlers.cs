@@ -82,6 +82,8 @@ namespace MyProject.Components
                     formSecurityForUser.Form = form.Id;
                 }
 
+                var oldPermission = formSecurityForUser.HasAccess;
+
                 formSecurityForUser.HasAccess = false;
 
                 if (form.Name.EndsWith(suffix) || isAdmin)
@@ -96,7 +98,10 @@ namespace MyProject.Components
 
                 else
                 {
-                    _userFormSecurityStorage.UpdateUserFormSecurity(formSecurityForUser);
+                    if (oldPermission != formSecurityForUser.HasAccess)
+                    {
+                        _userFormSecurityStorage.UpdateUserFormSecurity(formSecurityForUser);
+                    }
                 }
             }
         }
