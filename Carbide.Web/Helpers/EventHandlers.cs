@@ -38,18 +38,14 @@ namespace MyProject.Components
     {
         private readonly IUmbracoContextFactory _context;
         private readonly IFormStorage _formStorage;
-        private readonly IUserSecurityStorage _userSecurityStorage;
         private readonly IUserFormSecurityStorage _userFormSecurityStorage;
         private readonly IUserService _userService;
-        //private readonly IMembershipUserService _membershipUserService;
 
-        public MyComponent(IFormStorage formStorage, IUserService userService, IUserSecurityStorage userSecurityStorage, IUserFormSecurityStorage userFormSecurityStorage, /*IMembershipUserService membershipUserService,*/ IUmbracoContextFactory context)
+        public MyComponent(IFormStorage formStorage, IUserService userService, IUserFormSecurityStorage userFormSecurityStorage, IUmbracoContextFactory context)
         {
             _formStorage = formStorage;
             _userService = userService;
-            _userSecurityStorage = userSecurityStorage;
             _userFormSecurityStorage = userFormSecurityStorage;
-            //_membershipUserService = membershipUserService;
             _context = context;
         }
 
@@ -57,20 +53,73 @@ namespace MyProject.Components
         {
             _formStorage.Saving += this.FormStorage_Saving;
             _formStorage.Saved += this.FormStorage_Saved;
+
+            UserService.SavedUser += this.UserService_SavedUser;
         }
 
         public void Terminate()
         {
         }
 
-        //private void MembershipUserService_Save(object sender, SaveEventArgs<IUser> e)
-        //{
+        private void ProcessUserFormAccess(IUser user, IEnumerable<Form> allForms)
+        {
+            // Process form access for a specific user;
+            // Give an admin access to all forms and give normal users access only to their own forms
+            // Grants and revokes all form permissions (healing behavior)
 
-        //}
+            var isAdmin = user.Groups.Where(g => g.Name == "Administrators").Count() > 0 || user.Id == -1;
+            var suffix = "; #" + user.Id;
+
+            foreach (Form form in allForms)
+            {
+                var formSecurityForUser = _userFormSecurityStorage.GetUserFormSecurity(user.Id.ToString(), form.Id);
+                var hasSecurityAlready = (formSecurityForUser != null);
+
+                if (!hasSecurityAlready)
+                {
+                    formSecurityForUser = UserFormSecurity.Create();
+                    formSecurityForUser.User = user.Id.ToString();
+                    formSecurityForUser.Form = form.Id;
+                }
+
+                formSecurityForUser.HasAccess = false;
+
+                if (form.Name.EndsWith(suffix) || isAdmin)
+                {
+                    formSecurityForUser.HasAccess = true;
+                }
+
+                if (!hasSecurityAlready)
+                {
+                    _userFormSecurityStorage.InsertUserFormSecurity(formSecurityForUser);
+                }
+
+                else
+                {
+                    _userFormSecurityStorage.UpdateUserFormSecurity(formSecurityForUser);
+                }
+            }
+        }
+
+        #region Events
+
+        private void UserService_SavedUser(IUserService sender, SaveEventArgs<IUser> e)
+        {
+            // Process form access for all saved users and all forms
+
+            IEnumerable<Form> allForms = _formStorage.GetAllForms();
+
+            var users = e.SavedEntities;
+
+            foreach (var user in users)
+            {
+                ProcessUserFormAccess(user, allForms);
+            }
+        }
 
         private void FormStorage_Saving(object sender, FormEventArgs e)
         {
-            // Make form names reasonably unique (per user)
+            // Append user ID to the end of the form name
 
             var userId = _context.EnsureUmbracoContext().UmbracoContext.Security.CurrentUser.Id;
             var suffix = "; #" + userId;
@@ -83,7 +132,7 @@ namespace MyProject.Components
 
         private void FormStorage_Saved(object sender, FormEventArgs e)
         {
-            // Iterate users, revoke form permission on users who are not admin or the form creator
+            // Process form access for all users and all forms
 
             var page = 0;
             long total = 0;
@@ -94,44 +143,15 @@ namespace MyProject.Components
             {
                 foreach (var user in users)
                 {
-                    var isAdmin = user.Groups.Where(g => g.Name == "Administrators").Count() > 0 || user.Id == -1;
-                    var suffix = "; #" + user.Id;
-
-                    foreach (Form form in allForms)
-                    {
-                        var formSecurityForUser = _userFormSecurityStorage.GetUserFormSecurity(user.Id.ToString(), form.Id);
-                        var hasSecurityAlready = (formSecurityForUser != null);
-
-                        if (!hasSecurityAlready)
-                        {
-                            formSecurityForUser = UserFormSecurity.Create();
-                            formSecurityForUser.User = user.Id.ToString();
-                            formSecurityForUser.Form = form.Id;
-                        }
-
-                        formSecurityForUser.HasAccess = false;
-
-                        if (form.Name.EndsWith(suffix) || isAdmin)
-                        {
-                            formSecurityForUser.HasAccess = true;
-                        }
-
-                        if (!hasSecurityAlready)
-                        {
-                            _userFormSecurityStorage.InsertUserFormSecurity(formSecurityForUser);
-                        }
-
-                        else
-                        {
-                            _userFormSecurityStorage.UpdateUserFormSecurity(formSecurityForUser);
-                        }
-                    }
+                    ProcessUserFormAccess(user, allForms);
                 }
 
                 page++;
                 users = _userService.GetAll(page, 10, out total);
             }
         }
+
+        #endregion
     }
 }
 

@@ -261,3 +261,543 @@ Your license has been approved for the following IPs/Domains: - Domain: wini.com
 - Domain: *.wini.staging.fynydd.com
 - Domain: wini.staging.fynydd.com.local
 - Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
+Could not validate license for: '10.0.11.2' :
+
+Your license has been approved for the following IPs/Domains: - Domain: wini.com
+- Domain: www.wini.com
+- Domain: *.wini.com
+- Domain: wini.com.local
+- Domain: wini.dev.fynydd.com
+- Domain: www.wini.dev.fynydd.com
+- Domain: *.wini.dev.fynydd.com
+- Domain: wini.dev.fynydd.com.local
+- Domain: wini.staging.fynydd.com
+- Domain: www.wini.staging.fynydd.com
+- Domain: *.wini.staging.fynydd.com
+- Domain: wini.staging.fynydd.com.local
+- Domain: localhost
