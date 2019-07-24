@@ -4,9 +4,13 @@ using System.Linq;
 using Umbraco.Core;
 using Umbraco.Core.Composing;
 using Umbraco.Core.Events;
-using Umbraco.Core.Models;
 using Umbraco.Core.Services;
 using Umbraco.Core.Services.Implement;
+
+using Umbraco.Forms.Core;
+using Umbraco.Forms.Core.Data.Storage;
+using Umbraco.Forms.Data.Storage;
+
 using Umbraco.Web;
 
 using Fynydd.Carbide;
@@ -31,16 +35,19 @@ namespace MyProject.Components
     {
         private readonly IContentService _contentService;
         private readonly IUmbracoContextFactory _context;
+        private readonly IFormStorage _formStorage;
 
-        public MyComponent(IContentService contentService, IUmbracoContextFactory context)
+        public MyComponent(IContentService contentService, IUmbracoContextFactory context, IFormStorage formStorage)
         {
             _contentService = contentService;
             _context = context;
+            _formStorage = formStorage;
         }
-   
+
         public void Initialize()
         {
             ContentService.Saving += this.ContentService_Saving;
+            //FormStorage.Created += this.FormStorage_Created;
         }
 
         public void Terminate()
@@ -51,7 +58,7 @@ namespace MyProject.Components
         /// Listen for when content is being saved, check if it is a
         /// new item and fill in some default data.
         /// </summary>
-        private void ContentService_Saving(IContentService sender, SaveEventArgs<IContent> e)
+        private void ContentService_Saving(IContentService sender, ContentSavingEventArgs e)
         {
             //foreach (var content in e.SavedEntities.Where(c => c.ContentType.Alias.InvariantEquals("quotation")))
             //{
@@ -90,5 +97,12 @@ namespace MyProject.Components
             //    content.Properties["biographySearchText"].SetValue(author.Biography.StripHtml(false, false, true));
             //}
         }
+
+        private void FormStorage_Created(IFormStorage sender, FormEventArgs e)
+        {
+
+
+        }
     }
 }
+

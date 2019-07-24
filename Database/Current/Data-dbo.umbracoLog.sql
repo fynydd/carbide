@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 1,696 rows to dbo.umbracoLog
+-- Adding 1,707 rows to dbo.umbracoLog
 
 SET IDENTITY_INSERT [dbo].[umbracoLog] ON
 
@@ -3405,6 +3405,28 @@ INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],
 INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1695,-1,1144,N'Document',CONVERT(datetime,'2019-07-22 17:34:01.250',121),N'Publish',NULL,NULL);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1696,-1,1144,N'Document',CONVERT(datetime,'2019-07-22 17:34:26.347',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1697,-1,-1,N'Package',CONVERT(datetime,'2019-07-23 11:19:58.737',121),N'PackagerInstall',N'Package files installed for package ''Umbraco Forms''.',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1698,-1,-1,N'Macro',CONVERT(datetime,'2019-07-23 11:20:20.070',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1699,-1,-1,N'DocumentType',CONVERT(datetime,'2019-07-23 11:20:38.697',121),N'Save',NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1700,-1,-1,N'Package',CONVERT(datetime,'2019-07-23 11:20:38.840',121),N'PackagerInstall',N'Package data installed for package ''Umbraco Forms''.',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1701,-1,1194,N'Document',CONVERT(datetime,'2019-07-23 11:40:16.457',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1702,-1,1194,N'Document',CONVERT(datetime,'2019-07-23 11:46:18.313',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1703,-1,1194,N'Document',CONVERT(datetime,'2019-07-23 11:47:14.090',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1704,-1,1194,N'Document',CONVERT(datetime,'2019-07-23 11:47:46.163',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1705,-1,1194,N'Document',CONVERT(datetime,'2019-07-23 11:49:26.583',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1706,-1,1194,N'Document',CONVERT(datetime,'2019-07-23 11:49:29.630',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1707,-1,-1,N'Package',CONVERT(datetime,'2019-07-24 12:11:44.763',121),N'PackagerUninstall',N'Installed package ''Umbraco Forms'' deleted. Package id: 2',NULL);
 
 COMMIT TRANSACTION
 

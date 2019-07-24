@@ -54,6 +54,11 @@ REFERENCES [dbo].[umbracoContent] ([nodeId])
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[UFRecordDataString] WITH NOCHECK ADD CONSTRAINT [FK_UFRecordDataString_UFRecordFields_Key] FOREIGN KEY([Key]) 
+REFERENCES [dbo].[UFRecordFields] ([Key]) 
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
 ALTER TABLE [dbo].[cmsPropertyType] WITH NOCHECK ADD CONSTRAINT [FK_cmsPropertyType_umbracoDataType_nodeId] FOREIGN KEY([dataTypeId]) 
 REFERENCES [dbo].[umbracoDataType] ([nodeId]) 
 GO -- SQRIBE/GO;03d113

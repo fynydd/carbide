@@ -6,12 +6,14 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 1 row to dbo.umbracoKeyValue
+-- Adding 2 rows to dbo.umbracoKeyValue
 
 BEGIN TRANSACTION
 
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoKeyValue] ([key],[value],[updated]) VALUES (N'Umbraco.Core.Upgrader.State+Umbraco.Core',N'{5B1E0D93-F5A3-449B-84BA-65366B84E2D4}',CONVERT(datetime,'2019-07-09 11:51:21.607',121));
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoKeyValue] ([key],[value],[updated]) VALUES (N'Umbraco.Core.Upgrader.State+UmbracoForms',N'{forms-init-complete}',CONVERT(datetime,'2019-07-23 11:20:20.247',121));
 
 COMMIT TRANSACTION
 
