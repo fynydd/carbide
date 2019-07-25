@@ -3,15 +3,20 @@
   
 @{ var i = 0; }
    
-<div class="@Html.GetFormFieldClass(Model.FieldTypeName)  radiobuttonlist" id="@Model.Id">
+<ul class="@Html.GetFormFieldClass(Model.FieldTypeName)  radiobuttonlist" id="@Model.Id" sf-radios>
 @foreach (Umbraco.Forms.Mvc.Models.PrevalueViewModel pv in Model.PreValues)  
 {
-    <input type="radio" name="@Model.Id" id="@string.Concat(Model.Id,"_",i)" value="@pv.Value" 
-    @if (Model.Mandatory) {<text>data-val="true" data-val-requiredlist="@Model.RequiredErrorMessage"</text>}
-    @if (Model.ContainsValue(pv.Value)){<text>checked="checked"</text>} />
-    <label for="@string.Concat(Model.Id,"_",i)">@pv.Value</label>
-    <br />
+    <li>
+        <div sf-radio>
+            <label for="@string.Concat(Model.Id,"_",i)">
+                <span sf-wrapper><input type="radio" name="@Model.Id" id="@string.Concat(Model.Id,"_",i)" value="@pv.Value" 
+                @if (Model.Mandatory) {<text>data-val="true" data-val-requiredlist="@Model.RequiredErrorMessage"</text>}
+                @if (Model.ContainsValue(pv.Value)){<text>checked="checked"</text>} /></span>
+                <span>@(pv.Value)</span>
+            </label>
+        </div>
+    </li>
     
     i++;
 }
-</div>
+</ul>

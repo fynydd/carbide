@@ -636,6 +636,12 @@ body [sf-elastic-wrapper] { max-width: 1200px; margin-left: auto; margin-right: 
 
 [role="button"].blue { background-color: var(--sf-color-primary); border-color: var(--sf-color-primary); }
 
+ul li, ul dd, ul dt, ol li, ol dd, ol dt, dl li, dl dd, dl dt { padding-top: 0.5rem; }
+
+ul li:first-child, ul dd:first-child, ul dt:first-child, ol li:first-child, ol dd:first-child, ol dt:first-child, dl li:first-child, dl dd:first-child, dl dt:first-child { padding-top: 0; }
+
+ul[sf-radios].radiobuttonlist { margin-bottom: 0.5rem; }
+
 body > main > [sf-unit] article[id$="-unit"] p { margin-top: 0; margin-bottom: 0.8896rem; }
 
 @media screen and (min-width: 33.75em) { body > main > [sf-unit] article[id$="-unit"] p { margin-bottom: 1.005rem; } }

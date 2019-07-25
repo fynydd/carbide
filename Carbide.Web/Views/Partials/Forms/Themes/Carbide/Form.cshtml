@@ -37,13 +37,30 @@
 
                             <div role="row">
 
-                            @if (f.FieldType.FieldTypeViewName.Contains("FieldType.Textfield") || f.FieldType.FieldTypeViewName.Contains("FieldType.Textarea"))
+                            @if (f.FieldType.FieldTypeViewName.Contains("FieldType.Textfield") || f.FieldType.FieldTypeViewName.Contains("FieldType.Textarea") || f.FieldType.FieldTypeViewName.Contains("FieldType.DatePicker") || f.FieldType.FieldTypeViewName.Contains("FieldType.FileUpload") || f.FieldType.FieldTypeViewName.Contains("FieldType.PasswordField") || f.FieldType.FieldTypeViewName.Contains("FieldType.RadioButtonList"))
                             {
-                                <div id="sf-form-field-@(f.Id)" sf-textbox @(Html.ValidationMessage(f.Id).ToString().Contains("></span>") ? "" : "sf-invalid") class="@Html.GetFormFieldWrapperClass(f.FieldTypeName)  @f.CssClass" @{ if (hidden) { <text> style="display: none" </text>  } }>
+                                var fieldTypeAttribute = "sf-textbox";
+
+                                if (f.FieldType.FieldTypeViewName.Contains("FieldType.DatePicker"))
+                                {
+                                    fieldTypeAttribute = "sf-textbox sf-date";
+                                }
+
+                                else if (f.FieldType.FieldTypeViewName.Contains("FieldType.FileUpload"))
+                                {
+                                    fieldTypeAttribute = "sf-filebox";
+                                }
+
+                                else if (f.FieldType.FieldTypeViewName.Contains("FieldType.RadioButtonList"))
+                                {
+                                    fieldTypeAttribute = "";
+                                }
+
+                                <div id="sf-form-field-@(f.Id)" @(fieldTypeAttribute) @(Html.ValidationMessage(f.Id).ToString().Contains("></span>") ? "" : "sf-invalid") class="@Html.GetFormFieldWrapperClass(f.FieldTypeName)  @f.CssClass" @{ if (hidden) { <text> style="display: none" </text>  } }>
 
                                     @if (!f.HideLabel)
                                     {
-                                        <label for="@f.Id" class="control-label umbraco-forms-label">
+                                        <label for="@f.Id" class="control-label umbraco-forms-label" sf-label>
                                             @f.Caption 
                                             @if (f.ShowIndicator)
                                             {
@@ -98,69 +115,11 @@
                                 </div>
                             }
 
-                            else if (f.FieldType.FieldTypeViewName.Contains("FieldType.DatePicker"))
+                            else if (f.FieldType.FieldTypeViewName.Contains("FieldType.Text"))
                             {
-                                <div id="sf-form-field-@(f.Id)" sf-textbox sf-date @(Html.ValidationMessage(f.Id).ToString().Contains("></span>") ? "" : "sf-invalid") class="@Html.GetFormFieldWrapperClass(f.FieldTypeName)  @f.CssClass" @{ if (hidden) { <text> style="display: none" </text>  } }>
-
-                                    @if (!f.HideLabel)
-                                    {
-                                        <label for="@f.Id" class="control-label umbraco-forms-label">
-                                            @f.Caption 
-                                            @if (f.ShowIndicator)
-                                            {
-                                                <span class="umbracoForms-Indicator">@Model.Indicator</span>
-                                            }
-                                        </label>
-                                    }
-
-                                    <span class="umbraco-forms-field-wrapper" sf-wrapper>
-                                        @Html.Partial(FormThemeResolver.GetFieldView(Model, f), f)
-                                    </span>
-
-                                    @if (Model.ShowFieldValidaton)
-                                    {
-                                        <span id="sf-validation-message-@(f.Id)" sf-validation-message>@Html.ValidationMessage(f.Id)</span>
-                                    }
-
-                                    @if (!string.IsNullOrEmpty(f.ToolTip))
-                                    {
-                                        <small class="help-block">@f.ToolTip</small>
-                                    }
-
-                                </div>
+                                @Html.Partial(FormThemeResolver.GetFieldView(Model, f), f)
                             }
 
-                            else if (f.FieldType.FieldTypeViewName.Contains("FieldType.FileUpload"))
-                            {
-                                <div id="sf-form-field-@(f.Id)" sf-filebox @(Html.ValidationMessage(f.Id).ToString().Contains("></span>") ? "" : "sf-invalid") class="@Html.GetFormFieldWrapperClass(f.FieldTypeName)  @f.CssClass" @{ if (hidden) { <text> style="display: none" </text>  } }>
-
-                                    @if (!f.HideLabel)
-                                    {
-                                        <label for="@f.Id" class="control-label umbraco-forms-label">
-                                            @f.Caption 
-                                            @if (f.ShowIndicator)
-                                            {
-                                                <span class="umbracoForms-Indicator">@Model.Indicator</span>
-                                            }
-                                        </label>
-                                    }
-
-                                    <span class="umbraco-forms-field-wrapper" sf-wrapper>
-                                        @Html.Partial(FormThemeResolver.GetFieldView(Model, f), f)
-                                    </span>
-
-                                    @if (Model.ShowFieldValidaton)
-                                    {
-                                        <span id="sf-validation-message-@(f.Id)" sf-validation-message>@Html.ValidationMessage(f.Id)</span>
-                                    }
-
-                                    @if (!string.IsNullOrEmpty(f.ToolTip))
-                                    {
-                                        <small class="help-block">@f.ToolTip</small>
-                                    }
-
-                                </div>
-                            }
 
 
 

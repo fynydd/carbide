@@ -16,3 +16,20 @@
 // STYLES
 //-----------------------------------------------------------------------//
 
+ul, ol, dl {
+
+    li, dd, dt {
+
+        padding-top: 0.5rem;
+
+        &:first-child {
+
+            padding-top: 0;
+        }
+    }
+}
+
+ul[sf-radios].radiobuttonlist {
+
+    margin-bottom: 0.5rem;
+}
