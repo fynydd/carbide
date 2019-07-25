@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 539 rows to dbo.umbracoContentVersion
+-- Adding 544 rows to dbo.umbracoContentVersion
 
 SET IDENTITY_INSERT [dbo].[umbracoContentVersion] ON
 
@@ -221,7 +221,7 @@ INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (294,1056,CONVERT(datetime,'2019-07-01 10:53:09.340',121),-1,0,N'Carbide Site 1');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (296,1085,CONVERT(datetime,'2019-06-29 19:42:04.617',121),-1,1,N'Carbide Site 2');
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (296,1085,CONVERT(datetime,'2019-07-25 14:38:09.967',121),-1,0,N'Carbide Site 2');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (297,1056,CONVERT(datetime,'2019-07-01 10:54:40.097',121),-1,0,N'Carbide Site 1');
 -- SQRIBE/INSERT;03d113
@@ -911,7 +911,7 @@ INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (755,1157,CONVERT(datetime,'2019-07-22 17:26:45.073',121),-1,1,N'About Us');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (756,1197,CONVERT(datetime,'2019-07-22 17:27:55.753',121),-1,1,N'History');
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (756,1197,CONVERT(datetime,'2019-07-25 14:37:31.653',121),-1,0,N'History');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (757,1194,CONVERT(datetime,'2019-07-22 17:28:59.490',121),-1,0,N'Contact Us');
 -- SQRIBE/INSERT;03d113
@@ -1063,7 +1063,7 @@ INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (831,1209,CONVERT(datetime,'2019-07-25 11:27:39.747',121),-1,0,N'Thank You');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (832,1209,CONVERT(datetime,'2019-07-25 11:28:07.997',121),-1,1,N'Thank You');
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (832,1209,CONVERT(datetime,'2019-07-25 14:37:21.310',121),-1,0,N'Thank You');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (833,1194,CONVERT(datetime,'2019-07-25 11:32:28.750',121),-1,0,N'Contact Us');
 -- SQRIBE/INSERT;03d113
@@ -1089,7 +1089,17 @@ INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (844,1194,CONVERT(datetime,'2019-07-25 13:22:38.413',121),-1,0,N'Contact Us');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (845,1194,CONVERT(datetime,'2019-07-25 13:22:38.413',121),-1,1,N'Contact Us');
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (845,1194,CONVERT(datetime,'2019-07-25 14:37:14.233',121),-1,0,N'Contact Us');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (846,1194,CONVERT(datetime,'2019-07-25 14:37:14.233',121),-1,1,N'Contact Us');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (847,1209,CONVERT(datetime,'2019-07-25 14:37:21.310',121),-1,1,N'Thank You');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (848,1197,CONVERT(datetime,'2019-07-25 14:37:31.653',121),-1,1,N'History');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (849,1213,CONVERT(datetime,'2019-07-25 14:38:02.717',121),-1,1,N'History (1)');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (850,1085,CONVERT(datetime,'2019-07-25 14:38:09.967',121),-1,1,N'Carbide Site 2');
 
 COMMIT TRANSACTION
 
