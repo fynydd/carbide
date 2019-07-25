@@ -6,16 +6,20 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 2 rows to dbo.UFUserFormSecurity
+-- Adding 4 rows to dbo.UFUserFormSecurity
 
 SET IDENTITY_INSERT [dbo].[UFUserFormSecurity] ON
 
 BEGIN TRANSACTION
 
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[UFUserFormSecurity] ([Id],[User],[Form],[HasAccess],[AllowInEditor],[SecurityType]) VALUES (1,N'-1','DEB50D01-FF86-4CEE-920B-9F8F9C637CF8',1,1,0);
+INSERT INTO [dbo].[UFUserFormSecurity] ([Id],[User],[Form],[HasAccess],[AllowInEditor],[SecurityType]) VALUES (3,N'-1','DEB50D01-FF86-4CEE-920B-9F8F9C637CF8',1,1,0);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[UFUserFormSecurity] ([Id],[User],[Form],[HasAccess],[AllowInEditor],[SecurityType]) VALUES (2,N'1','DEB50D01-FF86-4CEE-920B-9F8F9C637CF8',1,1,0);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[UFUserFormSecurity] ([Id],[User],[Form],[HasAccess],[AllowInEditor],[SecurityType]) VALUES (8,N'-1','2D4C06FD-7D7A-4E8B-B7F9-0412CBC7D945',1,1,0);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[UFUserFormSecurity] ([Id],[User],[Form],[HasAccess],[AllowInEditor],[SecurityType]) VALUES (9,N'1','2D4C06FD-7D7A-4E8B-B7F9-0412CBC7D945',0,0,0);
 
 COMMIT TRANSACTION
 

@@ -524,7 +524,6 @@
     <Content Include="App_Plugins\UmbracoForms\css\umbraco.forms.css" />
     <Content Include="App_Plugins\UmbracoForms\Data\Templates\commentform.json" />
     <Content Include="App_Plugins\UmbracoForms\Data\Templates\contactform.json" />
-    <Content Include="App_Plugins\UmbracoForms\Data\Web.config" />
     <Content Include="App_Plugins\UmbracoForms\Directives\umb-forms-content-picker.html" />
     <Content Include="App_Plugins\UmbracoForms\Directives\umb-forms-designer-new.html" />
     <Content Include="App_Plugins\UmbracoForms\Directives\umb-forms-entry-detail.html" />
