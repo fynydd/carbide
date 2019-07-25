@@ -597,6 +597,7 @@
     <Content Include="images\carbide-logo.png" />
     <Content Include="images\dropdown-mark.jpg" />
     <Content Include="images\magnifying-glass.png" />
+    <Content Include="robots.txt" />
     <Content Include="scripts\additional-methods.min.js" />
     <Content Include="scripts\jquery.carbide-simple-hero.js" />
     <Content Include="scripts\fluidbox\css\fluidbox.min.css" />

@@ -9,7 +9,7 @@
     var home = Model.AncestorOrSelf(1);
     var settings = home.Children.First(c => c.ContentType.Alias == "settings");
 
-    // Get current domain to be used in robots.txt, page metadata
+    // Get current domain to be used in page metadata
     var domain = HttpRequests.GetSeoHost(umbCtx);
 
     // SCSS check and build

@@ -275,6 +275,7 @@
     <Compile Include="RestSecurity.cs" />
     <Compile Include="Scss.cs" />
     <Compile Include="Secrets.cs" />
+    <Compile Include="Robots.cs" />
     <Compile Include="Shrinkage.cs" />
     <Compile Include="Storage.cs" />
     <Compile Include="StringBuilders.cs" />
