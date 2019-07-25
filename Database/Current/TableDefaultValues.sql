@@ -62,10 +62,6 @@ ALTER TABLE [dbo].[umbracoLanguage] ADD CONSTRAINT [df_umbracoLanguage_mandatory
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[cmsDocumentType] ADD CONSTRAINT [df_cmsDocumentType_IsDefault] DEFAULT ('0') FOR [IsDefault]
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
 ALTER TABLE [dbo].[umbracoKeyValue] ADD CONSTRAINT [df_umbracoKeyValue_updated] DEFAULT (getdate()) FOR [updated]
 GO -- SQRIBE/GO;03d113
 
@@ -87,6 +83,10 @@ GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
 ALTER TABLE [dbo].[umbracoUser] ADD CONSTRAINT [df_umbracoUser_updateDate] DEFAULT (getdate()) FOR [updateDate]
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[cmsDocumentType] ADD CONSTRAINT [df_cmsDocumentType_IsDefault] DEFAULT ('0') FOR [IsDefault]
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113

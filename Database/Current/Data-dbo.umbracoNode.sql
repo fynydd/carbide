@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 140 rows to dbo.umbracoNode
+-- Adding 143 rows to dbo.umbracoNode
 
 SET IDENTITY_INSERT [dbo].[umbracoNode] ON
 
@@ -292,6 +292,12 @@ INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sort
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1213,'67904878-55DC-4DD4-91DE-C5DD70CEC068',-20,1,N'-1,-20,1213',0,1,-1,N'History (1)','C66BA18E-EAF3-4CFF-8A22-41B16D66A972',CONVERT(datetime,'2019-07-25 14:37:56.000',121));
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1214,'5BB15EAF-9918-4DA8-B8DF-D65C1DDF943C',-20,1,N'-1,-20,1214',1,1,-1,N'About Us (1)','C66BA18E-EAF3-4CFF-8A22-41B16D66A972',CONVERT(datetime,'2019-07-25 14:39:31.370',121));
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1215,'426736D6-0B53-4A09-89CE-4552F0039FD9',1059,2,N'-1,1059,1215',4,0,-1,N'XML Site Map','A2CB7800-F571-4787-9638-BC48539A0EFB',CONVERT(datetime,'2019-07-25 16:51:14.303',121));
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1216,'87595BCA-BA9E-4C99-8988-5546D647598F',-1,1,N'-1,1216',0,0,NULL,N'XML Site Map','6FBDE604-4178-42CE-A10B-8A2600A2F07D',CONVERT(datetime,'2019-07-25 16:51:26.100',121));
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1217,'BE1D1E2C-002D-475A-BBB0-186B76C2D648',1056,2,N'-1,1056,1217',5,0,-1,N'XML Site Map','C66BA18E-EAF3-4CFF-8A22-41B16D66A972',CONVERT(datetime,'2019-07-25 16:52:27.287',121));
 
 COMMIT TRANSACTION
 

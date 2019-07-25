@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 547 rows to dbo.umbracoContentVersion
+-- Adding 549 rows to dbo.umbracoContentVersion
 
 SET IDENTITY_INSERT [dbo].[umbracoContentVersion] ON
 
@@ -1106,6 +1106,10 @@ INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (852,1194,CONVERT(datetime,'2019-07-25 15:50:06.500',121),-1,0,N'Contact Us');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (853,1194,CONVERT(datetime,'2019-07-25 15:50:06.500',121),-1,1,N'Contact Us');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (854,1217,CONVERT(datetime,'2019-07-25 16:52:27.287',121),-1,0,N'XML Site Map');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (855,1217,CONVERT(datetime,'2019-07-25 16:52:27.287',121),-1,1,N'XML Site Map');
 
 COMMIT TRANSACTION
 

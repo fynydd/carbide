@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 2 rows to dbo.cmsDocumentType
+-- Adding 3 rows to dbo.cmsDocumentType
 
 BEGIN TRANSACTION
 
@@ -14,6 +14,8 @@ BEGIN TRANSACTION
 INSERT INTO [dbo].[cmsDocumentType] ([contentTypeNodeId],[templateNodeId],[IsDefault]) VALUES (1052,1051,1);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsDocumentType] ([contentTypeNodeId],[templateNodeId],[IsDefault]) VALUES (1119,1120,1);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsDocumentType] ([contentTypeNodeId],[templateNodeId],[IsDefault]) VALUES (1215,1216,1);
 
 COMMIT TRANSACTION
 

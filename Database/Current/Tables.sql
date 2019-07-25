@@ -259,19 +259,6 @@ CREATE TABLE [dbo].[umbracoLanguage]
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;03d113
 
-PRINT N'CREATE TABLE [dbo].[cmsDocumentType]'
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-CREATE TABLE [dbo].[cmsDocumentType]
-(
-    [contentTypeNodeId] [int] NOT NULL,
-    [templateNodeId] [int] NOT NULL,
-    [IsDefault] [bit] NOT NULL
-
-) ON [PRIMARY]
-GO -- SQRIBE/GO;03d113
-
 PRINT N'CREATE TABLE [dbo].[UFUserSecurity]'
 GO -- SQRIBE/GO;03d113
 
@@ -361,15 +348,15 @@ CREATE TABLE [dbo].[umbracoUserStartNode]
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;03d113
 
-PRINT N'CREATE TABLE [dbo].[cmsTemplate]'
+PRINT N'CREATE TABLE [dbo].[cmsDocumentType]'
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
-CREATE TABLE [dbo].[cmsTemplate]
+CREATE TABLE [dbo].[cmsDocumentType]
 (
-    [pk] [int] IDENTITY(1,1) NOT NULL,
-    [nodeId] [int] NOT NULL,
-    [alias] [nvarchar](100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+    [contentTypeNodeId] [int] NOT NULL,
+    [templateNodeId] [int] NOT NULL,
+    [IsDefault] [bit] NOT NULL
 
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;03d113
@@ -434,6 +421,19 @@ CREATE TABLE [dbo].[cmsMacro]
     [macroDontRender] [bit] NOT NULL,
     [macroSource] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
     [macroType] [int] NOT NULL
+
+) ON [PRIMARY]
+GO -- SQRIBE/GO;03d113
+
+PRINT N'CREATE TABLE [dbo].[cmsTemplate]'
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+CREATE TABLE [dbo].[cmsTemplate]
+(
+    [pk] [int] IDENTITY(1,1) NOT NULL,
+    [nodeId] [int] NOT NULL,
+    [alias] [nvarchar](100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;03d113
