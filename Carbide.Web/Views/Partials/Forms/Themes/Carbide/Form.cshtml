@@ -66,6 +66,10 @@
                                             {
                                                 <span class="umbracoForms-Indicator">@Model.Indicator</span>
                                             }
+                                            @if (!string.IsNullOrEmpty(f.ToolTip))
+                                            {
+                                                <small class="help-block">@f.ToolTip</small>
+                                            }
                                         </label>
                                     }
 
@@ -78,11 +82,6 @@
                                         <span id="sf-validation-message-@(f.Id)" sf-validation-message>@Html.ValidationMessage(f.Id)</span>
                                     }
 
-                                    @if (!string.IsNullOrEmpty(f.ToolTip))
-                                    {
-                                        <small class="help-block">@f.ToolTip</small>
-                                    }
-
                                 </div>
                             }
 
@@ -93,6 +92,10 @@
                                     @if (f.ShowIndicator)
                                     {
                                         <span class="umbracoForms-Indicator">@Model.Indicator</span>
+                                    }
+                                    @if (!string.IsNullOrEmpty(f.ToolTip))
+                                    {
+                                        <small class="help-block">@f.ToolTip</small>
                                     }
                                 </label>
                                 <div sf-checkbox class="@Html.GetFormFieldWrapperClass(f.FieldTypeName)  @f.CssClass" @{ if (hidden) { <text> style="display: none" </text>  } }>
@@ -108,6 +111,35 @@
                                             </span>
                                             <span>
                                                 @acceptCopy
+                                            </span>
+                                        </label>
+                                    }
+
+                                </div>
+                            }
+
+                            else if (f.FieldType.FieldTypeViewName.Contains("FieldType.Checkbox"))
+                            {
+                                <label sf-label>
+                                    @f.Caption 
+                                    @if (f.ShowIndicator)
+                                    {
+                                        <span class="umbracoForms-Indicator">@Model.Indicator</span>
+                                    }
+                                    @if (!string.IsNullOrEmpty(f.ToolTip))
+                                    {
+                                        <small class="help-block">@f.ToolTip</small>
+                                    }
+                                </label>
+                                <div sf-checkbox class="@Html.GetFormFieldWrapperClass(f.FieldTypeName)  @f.CssClass" @{ if (hidden) { <text> style="display: none" </text>  } }>
+
+                                    @if (!f.HideLabel)
+                                    {
+                                        <label for="@f.Id" class="control-label umbraco-forms-label">
+                                            <span class="umbraco-forms-field-wrapper" sf-wrapper>
+                                                @Html.Partial(FormThemeResolver.GetFieldView(Model, f), f)
+                                            </span>
+                                            <span>
                                             </span>
                                         </label>
                                     }

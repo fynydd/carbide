@@ -132,6 +132,12 @@ form, [role="form"] {
             border-bottom: solid var(--sf-line-width) rgba(0, 0, 0, 0.25);
             margin-bottom: 1.25rem;
         }
+
+        small {
+
+            display: block;
+            padding-bottom: 0.5rem;
+        }
     }
 
     [sf-metric], [sf-label], [sf-textbox], [sf-listbox], [sf-filebox] {

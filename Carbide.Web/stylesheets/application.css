@@ -189,6 +189,8 @@ form [sf-label], [role="form"] [sf-label] { display: block; font-size: 0.9rem; f
 
 form [sf-label][sf-with-line], [role="form"] [sf-label][sf-with-line] { border-bottom: solid var(--sf-line-width) rgba(0, 0, 0, 0.25); margin-bottom: 1.25rem; }
 
+form [sf-label] small, [role="form"] [sf-label] small { display: block; padding-bottom: 0.5rem; }
+
 form [sf-metric] label, form [sf-label] label, form [sf-textbox] label, form [sf-listbox] label, form [sf-filebox] label, [role="form"] [sf-metric] label, [role="form"] [sf-label] label, [role="form"] [sf-textbox] label, [role="form"] [sf-listbox] label, [role="form"] [sf-filebox] label { display: block; font-size: 0.9rem; font-weight: 500; padding-bottom: 0.5rem; }
 
 form [sf-metric] [sf-validation-message], form [sf-label] [sf-validation-message], form [sf-textbox] [sf-validation-message], form [sf-listbox] [sf-validation-message], form [sf-filebox] [sf-validation-message], [role="form"] [sf-metric] [sf-validation-message], [role="form"] [sf-label] [sf-validation-message], [role="form"] [sf-textbox] [sf-validation-message], [role="form"] [sf-listbox] [sf-validation-message], [role="form"] [sf-filebox] [sf-validation-message] { display: block; padding-top: 0.5rem; font-size: 0.9rem; font-weight: 1rem; }
