@@ -751,6 +751,19 @@
     <Content Include="Views\Partials\Forms\Fieldtypes\FieldType.Textfield.cshtml" />
     <Content Include="Views\Partials\Forms\Themes\bootstrap3-horizontal\Fieldtypes\FieldType.RadioButtonList.cshtml" />
     <Content Include="Views\Partials\Forms\Themes\bootstrap3-horizontal\Form.cshtml" />
+    <Content Include="Views\Partials\Forms\Themes\Carbide\Fieldtypes\FieldType.CheckBox.cshtml" />
+    <Content Include="Views\Partials\Forms\Themes\Carbide\Fieldtypes\FieldType.CheckBoxList.cshtml" />
+    <Content Include="Views\Partials\Forms\Themes\Carbide\Fieldtypes\FieldType.DataConsent.cshtml" />
+    <Content Include="Views\Partials\Forms\Themes\Carbide\Fieldtypes\FieldType.DatePicker.cshtml" />
+    <Content Include="Views\Partials\Forms\Themes\Carbide\Fieldtypes\FieldType.DropDownList.cshtml" />
+    <Content Include="Views\Partials\Forms\Themes\Carbide\Fieldtypes\FieldType.FileUpload.cshtml" />
+    <Content Include="Views\Partials\Forms\Themes\Carbide\Fieldtypes\FieldType.HiddenField.cshtml" />
+    <Content Include="Views\Partials\Forms\Themes\Carbide\Fieldtypes\FieldType.PasswordField.cshtml" />
+    <Content Include="Views\Partials\Forms\Themes\Carbide\Fieldtypes\FieldType.RadioButtonList.cshtml" />
+    <Content Include="Views\Partials\Forms\Themes\Carbide\Fieldtypes\Fieldtype.Recaptcha2.cshtml" />
+    <Content Include="Views\Partials\Forms\Themes\Carbide\Fieldtypes\FieldType.Text.cshtml" />
+    <Content Include="Views\Partials\Forms\Themes\Carbide\Fieldtypes\FieldType.Textarea.cshtml" />
+    <Content Include="Views\Partials\Forms\Themes\Carbide\Fieldtypes\FieldType.Textfield.cshtml" />
     <Content Include="Views\Partials\Forms\Themes\default\DatePicker.cshtml" />
     <Content Include="Views\Partials\Forms\Themes\default\Fieldtypes\FieldType.CheckBox.cshtml" />
     <Content Include="Views\Partials\Forms\Themes\default\Fieldtypes\FieldType.CheckBoxList.cshtml" />
@@ -869,6 +882,9 @@
     <Content Include="scss\custom\carbide\basic_footer_navigation_unit.scss" />
     <Content Include="Views\MacroPartials\InsertUmbracoFormWithTheme.cshtml" />
     <Content Include="Views\MacroPartials\RenderUmbracoFormScripts.cshtml" />
+    <Content Include="Views\Partials\Forms\Themes\Carbide\Form.cshtml" />
+    <Content Include="Views\Partials\Forms\Themes\Carbide\Submitted.cshtml" />
+    <Content Include="scss\custom\_overrides_pikaday.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -63,7 +63,7 @@
 
                                     @if (!string.IsNullOrEmpty(f.ToolTip))
                                     {
-                                        <p class="help-block">@f.ToolTip</p>
+                                        <small class="help-block">@f.ToolTip</small>
                                     }
 
                                     <script>
@@ -116,6 +116,70 @@
 
                                 </div>
                             }
+
+                            else if (f.FieldType.FieldTypeViewName.Contains("FieldType.DatePicker"))
+                            {
+                                <div id="sf-form-field-@(f.Id)" sf-textbox sf-date @(Html.ValidationMessage(f.Id).ToString().Contains("></span>") ? "" : "sf-invalid") class="@Html.GetFormFieldWrapperClass(f.FieldTypeName)  @f.CssClass" @{ if (hidden) { <text> style="display: none" </text>  } }>
+
+                                    @if (!f.HideLabel)
+                                    {
+                                        <label for="@f.Id" class="control-label umbraco-forms-label">
+                                            @f.Caption 
+                                            @if (f.ShowIndicator)
+                                            {
+                                                <span class="umbracoForms-Indicator">@Model.Indicator</span>
+                                            }
+                                        </label>
+                                    }
+
+                                    <span class="umbraco-forms-field-wrapper" sf-wrapper>
+                                        @Html.Partial(FormThemeResolver.GetFieldView(Model, f), f)
+                                    </span>
+
+                                    @if (Model.ShowFieldValidaton)
+                                    {
+                                        <span id="sf-validation-message-@(f.Id)" sf-validation-message>@Html.ValidationMessage(f.Id)</span>
+                                    }
+
+                                    @if (!string.IsNullOrEmpty(f.ToolTip))
+                                    {
+                                        <small class="help-block">@f.ToolTip</small>
+                                    }
+
+                                    <script>
+
+                                        $("body").on('DOMSubtreeModified', "#sf-validation-message-@(f.Id)", function() {
+
+                                            console.log($("#sf-validation-message-@(f.Id)").text());
+
+                                            if ($("#sf-validation-message-@(f.Id)").text().length < 1) {
+
+                                                $("#sf-form-field-@(f.Id)").removeAttr("sf-invalid");
+
+                                            } else {
+
+                                                $("#sf-form-field-@(f.Id)").attr("sf-invalid", "true");
+                                            }
+
+                                        });
+
+                                    </script>
+
+                                </div>
+                            }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                             </div>
                         }
