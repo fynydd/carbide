@@ -116,6 +116,24 @@
                                     }
 
                                 </div>
+                                    }
+
+                            else if (f.FieldType.FieldTypeViewName.Contains("FieldType.CheckboxList"))
+                            {
+                                <label sf-label>
+                                    @f.Caption 
+                                    @if (f.ShowIndicator)
+                                    {
+                                        <span class="umbracoForms-Indicator">@Model.Indicator</span>
+                                    }
+                                    @if (!string.IsNullOrEmpty(f.ToolTip))
+                                    {
+                                        <small class="help-block">@f.ToolTip</small>
+                                    }
+                                </label>
+                                <span class="umbraco-forms-field-wrapper" sf-wrapper>
+                                    @Html.Partial(FormThemeResolver.GetFieldView(Model, f), f)
+                                </span>
                             }
 
                             else if (f.FieldType.FieldTypeViewName.Contains("FieldType.Checkbox"))

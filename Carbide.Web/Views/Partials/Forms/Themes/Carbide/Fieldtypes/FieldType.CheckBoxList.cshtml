@@ -3,18 +3,22 @@
 
 @{ var i = 0; }
           
-<span class="checkboxlist" id="@Model.Id">
+<ul class="checkboxlist" id="@Model.Id" sf-checkboxes>
 @foreach (Umbraco.Forms.Mvc.Models.PrevalueViewModel pv in Model.PreValues)  
 {
-    <input type="checkbox" 
-           class="@Html.GetFormFieldClass(Model.FieldTypeName)" 
-           name="@Model.Name" id="@string.Concat(Model.Id,"_",i)" value="@pv.Value" 
-    @if (Model.Mandatory) {<text>data-val="true" data-val-requiredlist="@Model.RequiredErrorMessage"</text>}
-    @if (Model.ContainsValue(pv.Value)){<text>checked="checked"</text>}/>
-    
-    <label for="@string.Concat(Model.Id,"_",i)">@pv.Value</label>
-    <br />
+    <li>
+        <div sf-checkbox>
+            <label for="@string.Concat(Model.Id,"_",i)">
+                <span sf-wrapper><input type="checkbox" 
+                       class="@Html.GetFormFieldClass(Model.FieldTypeName)" 
+                       name="@Model.Name" id="@string.Concat(Model.Id,"_",i)" value="@pv.Value" 
+                @if (Model.Mandatory) {<text>data-val="true" data-val-requiredlist="@Model.RequiredErrorMessage"</text>}
+                @if (Model.ContainsValue(pv.Value)){<text>checked="checked"</text>}/></span>
+                <span>@(pv.Value)</span>
+            </label>
+        </div>
+    </li>
 
     i++;
 }
-</span>
+</ul>
