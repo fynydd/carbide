@@ -53,7 +53,7 @@
 
                                 else if (f.FieldType.FieldTypeViewName.Contains("FieldType.RadioButtonList"))
                                 {
-                                    fieldTypeAttribute = "";
+                                    fieldTypeAttribute = "sf-radiolist";
                                 }
 
                                 <div id="sf-form-field-@(f.Id)" @(fieldTypeAttribute) @(Html.ValidationMessage(f.Id).ToString().Contains("></span>") ? "" : "sf-invalid") class="@Html.GetFormFieldWrapperClass(f.FieldTypeName)  @f.CssClass" @{ if (hidden) { <text> style="display: none" </text>  } }>

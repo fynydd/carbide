@@ -377,12 +377,13 @@ form, [role="form"] {
 
     }
 
-    [sf-label], [sf-textbox], [sf-listbox], [sf-filebox] {
+    [sf-label], [sf-textbox], [sf-listbox], [sf-filebox], [sf-radiolist] {
 
         &[sf-invalid] {
 
             label, [sf-validation-message] {
     
+                display: block;
                 color: var(--sf-color-danger);
             }
 
