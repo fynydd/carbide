@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 2 rows to dbo.umbracoDomain
+-- Adding 3 rows to dbo.umbracoDomain
 
 SET IDENTITY_INSERT [dbo].[umbracoDomain] ON
 
@@ -16,6 +16,8 @@ BEGIN TRANSACTION
 INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (4,1,1056,N'carbideone.staging.fynydd.com');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (5,1,1085,N'carbidetwo.staging.fynydd.com');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (7,1,1056,N'carbide.fynydd.com.local');
 
 COMMIT TRANSACTION
 

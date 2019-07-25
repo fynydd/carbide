@@ -347,20 +347,6 @@ CREATE TABLE [dbo].[UFUserSecurity]
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;03d113
 
-PRINT N'CREATE TABLE [dbo].[umbracoDomain]'
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-CREATE TABLE [dbo].[umbracoDomain]
-(
-    [id] [int] IDENTITY(1,1) NOT NULL,
-    [domainDefaultLanguage] [int] NULL,
-    [domainRootStructureID] [int] NULL,
-    [domainName] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL
-
-) ON [PRIMARY]
-GO -- SQRIBE/GO;03d113
-
 PRINT N'CREATE TABLE [dbo].[umbracoKeyValue]'
 GO -- SQRIBE/GO;03d113
 
@@ -473,6 +459,20 @@ CREATE TABLE [dbo].[UFRecordDataString]
     [Id] [int] IDENTITY(1,1) NOT NULL,
     [Key] [uniqueidentifier] NOT NULL,
     [Value] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL
+
+) ON [PRIMARY]
+GO -- SQRIBE/GO;03d113
+
+PRINT N'CREATE TABLE [dbo].[umbracoDomain]'
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+CREATE TABLE [dbo].[umbracoDomain]
+(
+    [id] [int] IDENTITY(1,1) NOT NULL,
+    [domainDefaultLanguage] [int] NULL,
+    [domainRootStructureID] [int] NULL,
+    [domainName] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL
 
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;03d113
