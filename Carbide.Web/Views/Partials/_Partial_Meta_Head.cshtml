@@ -38,7 +38,7 @@
 <title>@Html.Raw(metaTitle.ProcessShortCodes(umbCtx))</title>
 <meta name="keywords" content="@Html.Raw(Model.SafeValue<string>("metaKeywords").ProcessShortCodes(umbCtx))">
 <meta name="description" content="@Html.Raw(Model.SafeValue<string>("metaDescription").ProcessShortCodes(umbCtx))">
-@Html.Raw("<link rel=\"canonical\" href=\"" + Model.Url + "\">")
+@Html.Raw("<link rel=\"canonical\" href=\"" + Model.Url(mode: UrlMode.Absolute) + "\">")
 
 <!-- Open Graph support for Social Channels -->
 <meta property="og:site_name" content="@(settings.SafeValue("socialCompanyName").ProcessShortCodes(umbCtx))">
@@ -46,12 +46,12 @@
 <meta property="og:keywords" content="@Html.Raw(Model.SafeValue<string>("metaKeywords").ProcessShortCodes(umbCtx))">
 <meta property="og:description" content="@(Html.Raw(Model.SafeValue<string>("metaDescription").ProcessShortCodes(umbCtx)))">
 <meta property="og:type" content="@(Model.SafeValue("ogPageType").HasValue() ? Model.SafeValue("ogPageType") : "website")">
-<meta property="og:url" content="@(Model.Url)">
+<meta property="og:url" content="@(Model.Url(mode: UrlMode.Absolute))">
 <meta property="og:image" content="@(Html.Raw(Model.HasValue("shareImage") ? "//" + domain + Model.GetCropUrl("shareImage", "SocialSharing") : ""))">
 
 <!-- Twitter Card Support -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:url" content="@(Model.Url)">
+<meta name="twitter:url" content="@(Model.Url(mode: UrlMode.Absolute))">
 <meta name="twitter:site" content="@("@" + settings.SafeValue("twitterSiteName").Trim("@"))">
 <meta name="twitter:creator" content="@("@" + settings.SafeValue("twitterUserName").Trim("@"))">
 <meta name="twitter:title" content="@(Html.Raw(metaTitle.ProcessShortCodes(umbCtx)))">

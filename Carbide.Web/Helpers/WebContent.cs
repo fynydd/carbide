@@ -162,7 +162,7 @@ namespace Carbide.Web.Helpers
 
                 if (settings.IncludeStartNode)
                 {
-                    result += "<" + settings.ListType + " data-level=\"0\" class=\"container\"><" + settings.ListItemType + " data-level=\"0\"><i class=\"" + settings.BulletClass + "\"></i><a href=\"" + settings.StartNode.GetUrlPath() + "\" class=\"" + (settings.CurrentPageId == settings.StartNode.Id ? "current" : "") + "\">" + settings.StartNode.GetBestMenuName() + "</a>";
+                    result += "<" + settings.ListType + " data-level=\"0\" class=\"container\"><" + settings.ListItemType + " data-level=\"0\"><i class=\"" + settings.BulletClass + "\"></i><a href=\"" + settings.StartNode.GetRelativeUrl() + "\" class=\"" + (settings.CurrentPageId == settings.StartNode.Id ? "current" : "") + "\">" + settings.StartNode.GetBestMenuName() + "</a>";
 
                     if (settings.MaxDepth > 0)
                     {
@@ -201,7 +201,7 @@ namespace Carbide.Web.Helpers
 
                         foreach (var child in parent.Children<IPublishedContent>().Where(d => d.GetTemplateAlias().HasValue() && d.HasProperty("showInNavigation") && d.SafeValue<bool>("showInNavigation")))
                         {
-                            result += "<" + settings.ListItemType + " data-level=\"" + relativeLevel + "\"><i class=\"" + settings.BulletClass + "\"></i><a href=\"" + child.GetUrlPath() + "\" class=\"" + (settings.CurrentPageId == child.Id ? "current" : "") + "\">" + child.GetBestMenuName() + "</a>";
+                            result += "<" + settings.ListItemType + " data-level=\"" + relativeLevel + "\"><i class=\"" + settings.BulletClass + "\"></i><a href=\"" + child.GetRelativeUrl() + "\" class=\"" + (settings.CurrentPageId == child.Id ? "current" : "") + "\">" + child.GetBestMenuName() + "</a>";
 
                             if (relativeLevel < settings.MaxDepth)
                             {

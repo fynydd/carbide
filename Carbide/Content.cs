@@ -479,19 +479,17 @@ namespace Fynydd.Carbide
         #region URL/URI
 
         /// <summary>
-        /// Get the absolute path for a page URL (omits the transport and domain)
+        /// Get the relative URL for a page (omits the transport and domain)
         /// </summary>
         /// <param name="content">IPublished content for page</param>
         /// <returns>URL to page as string</returns>
-        public static string GetUrlPath(this IPublishedContent content)
+        public static string GetRelativeUrl(this IPublishedContent content)
         {
             if (content != null)
             {
                 try
                 {
-                    Uri pageUri = new Uri(content.Url(content.GetCultureFromDomains(), UrlMode.Absolute));
-
-                    return pageUri.AbsolutePath;
+                    return content.Url(mode: UrlMode.Relative);
                 }
 
                 catch
@@ -504,6 +502,51 @@ namespace Fynydd.Carbide
             {
                 return "/";
             }
+        }
+
+        /// <summary>
+        /// Get the absolute URL for a page (includes transport and domain)
+        /// </summary>
+        /// <param name="content">IPublished content for page</param>
+        /// <returns>URL to page as string</returns>
+        public static string GetAbsoluteUrl(this IPublishedContent content)
+        {
+            if (content != null)
+            {
+                try
+                {
+                    return content.Url(mode: UrlMode.Absolute);
+                }
+
+                catch
+                {
+                    return "//";
+                }
+            }
+
+            else
+            {
+                return "//";
+            }
+        }
+
+        /// <summary>
+        /// Get the relative path from and absolute URL.
+        /// </summary>
+        /// <param name="content">Content item to parse</param>
+        /// <param name="useLowerCase">Convert URL to lower case</param>
+        /// <param name="stripQueryString">Remove query string from result</param>
+        /// <returns>Relative URL that always ends with "/" when the query string is stripped.</returns>
+        public static string GetRelativeUrl(this IPublishedContent content, bool useLowerCase = true, bool stripQueryString = true)
+        {
+            var result = "";
+
+            if (content!= null)
+            {
+                result = content.GetAbsoluteUrl().GetRelativeUrl(useLowerCase, stripQueryString);
+            }
+
+            return result;
         }
 
         #endregion

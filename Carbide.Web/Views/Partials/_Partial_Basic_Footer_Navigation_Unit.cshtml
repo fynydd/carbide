@@ -43,15 +43,15 @@
                 foreach (var page in pages)
                 {
                     var current = false;
-                    var currentUrl = HttpContext.Current.Request.Url.AbsoluteUri.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/");
-                    var newUrl = page.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/");
+                    var currentUrl = HttpContext.Current.GetRelativeUrl(useLowerCase: true, stripQueryString: true);
+                    var newUrl = page.GetRelativeUrl().ToLower().RemoveQueryString().TrimEnd("/");
 
                     if (currentUrl == newUrl)
                     {
                         current = true;
                     }
 
-                            <a href="@(page.GetUrlPath())" class="@(Html.Raw(current ? " current" : ""))">@(page.GetBestMenuName())</a>
+                            <a href="@(page.GetRelativeUrl())" class="@(Html.Raw(current ? " current" : ""))">@(page.GetBestMenuName())</a>
                 }
             }
         }
@@ -67,15 +67,15 @@
                     if (content != null)
                     {
                         var current = false;
-                        var currentUrl = HttpContext.Current.Request.Url.AbsoluteUri.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/");
-                        var newUrl = content.GetUrlPath().ToLower().RemoveQueryString().TrimEnd("/");
+                        var currentUrl = HttpContext.Current.GetRelativeUrl(useLowerCase: true, stripQueryString: true);
+                        var newUrl = content.GetRelativeUrl().ToLower().RemoveQueryString().TrimEnd("/");
 
                         if (currentUrl == newUrl)
                         {
                             current = true;
                         }
 
-                                <a href="@(content.GetUrlPath())" target="@(link.Target)" class="@(Html.Raw(current ? " current" : ""))">@(content.GetBestMenuName())</a>
+                                <a href="@(content.GetRelativeUrl())" target="@(link.Target)" class="@(Html.Raw(current ? " current" : ""))">@(content.GetBestMenuName())</a>
                     }
 
                     else

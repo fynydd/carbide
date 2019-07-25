@@ -50,10 +50,10 @@
                 @if(page.HasValue("shareImage"))
                 {
                 <div sf-image-wrapper>
-                    <a href="@(page.GetUrlPath())"><img src="@(Html.Raw(page.GetCropUrl("shareImage", "SocialSharing")))" /></a>
+                    <a href="@(page.GetRelativeUrl())"><img src="@(Html.Raw(page.GetCropUrl("shareImage", "SocialSharing")))" /></a>
                 </div>
                 }
-                <h3><a href="@(page.GetUrlPath())">@Html.Raw(page.GetBestMenuName())</a></h3>
+                <h3><a href="@(page.GetRelativeUrl())">@Html.Raw(page.GetBestMenuName())</a></h3>
                 @if(page.GetBestExcerpt().HasValue())
                 {
                     <p>@Html.Raw(page.GetBestExcerpt())</p>

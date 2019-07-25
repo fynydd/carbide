@@ -886,6 +886,7 @@
     <Content Include="Views\Partials\_Partial_Form_Subunit.cshtml" />
     <Content Include="scss\custom\carbide\form_subunit.scss" />
     <Content Include="Views\Partials\Forms\Emails\Generic-Email-Template.cshtml" />
+    <Content Include="Views\XmlSiteMap.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

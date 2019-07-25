@@ -21,6 +21,56 @@ namespace Fynydd.Carbide
     public static class Strings
     {
         /// <summary>
+        /// Get the relative path from and absolute URL.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="useLowerCase">Convert URL to lower case</param>
+        /// <param name="stripQueryString">Remove query string from result</param>
+        /// <returns>Relative URL that always ends with "/" when the query string is stripped.</returns>
+        public static string GetRelativeUrl(this HttpContext context, bool useLowerCase = true, bool stripQueryString = true)
+        {
+            var result = "";
+
+            if (context != null)
+            {
+                result = context.Request.Url.AbsoluteUri.GetRelativeUrl(useLowerCase, stripQueryString);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Get the relative path from and absolute URL.
+        /// </summary>
+        /// <param name="url">Absolute URL to parse</param>
+        /// <param name="useLowerCase">Convert URL to lower case</param>
+        /// <param name="stripQueryString">Remove query string from result</param>
+        /// <returns>Relative URL that always ends with "/" when the query string is stripped.</returns>
+        public static string GetRelativeUrl(this string url, bool useLowerCase = true, bool stripQueryString = true)
+        {
+            var result = "";
+
+            if (url.HasValue())
+            {
+                result = url.GetUrlPath();
+
+                if (useLowerCase)
+                {
+                    result = result.ToLower();
+                }
+
+                if (stripQueryString)
+                {
+                    result = result.RemoveQueryString();
+                }
+
+                result = result.TrimEnd(new char[] { '/' });
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Get the YouTube video ID from a YouTube URL.
         /// </summary>
         /// <param name="url">YouTube URL</param>

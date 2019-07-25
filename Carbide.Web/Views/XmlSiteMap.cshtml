@@ -1,0 +1,36 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using System.Linq
+@using Umbraco.Web
+@using Carbide.Web.Helpers
+@using Fynydd.Carbide
+@{
+    Layout = null;
+
+    Response.Write("");
+    Response.ContentType = "text/xml";
+
+    var home = Model.AncestorOrSelf(1);
+
+}<?xml version='1.0' encoding='UTF-8' ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+     <url>
+         <loc>@(home.GetAbsoluteUrl())</loc>
+         <lastmod>@(string.Format("{0:s}+00:00", home.UpdateDate))</lastmod>
+     </url>
+@ListChildNodes(home)
+</urlset>
+
+@helper ListChildNodes(IPublishedContent startNode)
+{
+    foreach (var node in startNode.Children().Where(d => d.GetTemplateAlias().HasValue() && d.HasProperty("showInSiteMap") && d.SafeValue<bool>("showInSiteMap")).OrderBy(m => m.SortOrder))
+    {
+    <url>
+        <loc>@(node.GetAbsoluteUrl())</loc>
+        <lastmod>@(string.Format("{0:s}+00:00", node.UpdateDate))</lastmod>
+    </url>
+            if (node.Level <= 100 && node.Children.Count() > 0)
+            {
+                @ListChildNodes(node)
+            }
+    }
+}
