@@ -27,11 +27,11 @@ INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[mac
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (25,'F975789D-B5A1-455D-B5AE-69DEC1183855',N'Umbraco.TextBox',3,1,N'caption',N'Optional Caption');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (26,'6AEA3D9A-EEA6-47AF-8C58-FA37CC49F414',N'UmbracoForms.FormPicker',4,0,N'FormGuid',N'Choose a form');
+INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (29,'43AD1635-BE16-45F2-8665-CB044F017F23',N'UmbracoForms.FormPicker',4,0,N'FormGuid',N'Choose a form');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (27,'83C70339-98A0-4111-853C-2F0D4014A4FC',N'UmbracoForms.ThemePicker',4,1,N'FormTheme',N'Theme');
+INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (30,'0F28A8A7-6C41-4AC2-AAFA-AFC4AFED7E11',N'UmbracoForms.ThemePicker',4,1,N'FormTheme',N'Theme');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (28,'2D5FDDA2-E19F-4103-B43E-269186FDA969',N'Umbraco.TrueFalse',4,2,N'ExcludeScripts',N'Exclude Scripts');
+INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (31,'4AE31B85-6DD5-4C5E-91A9-0680B431E1F7',N'Umbraco.TrueFalse',4,2,N'ExcludeScripts',N'Exclude Scripts');
 
 COMMIT TRANSACTION
 

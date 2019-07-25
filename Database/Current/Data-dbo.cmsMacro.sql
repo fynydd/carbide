@@ -19,7 +19,7 @@ INSERT INTO [dbo].[cmsMacro] ([id],[uniqueId],[macroUseInEditor],[macroRefreshRa
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsMacro] ([id],[uniqueId],[macroUseInEditor],[macroRefreshRate],[macroAlias],[macroName],[macroCacheByPage],[macroCachePersonalized],[macroDontRender],[macroSource],[macroType]) VALUES (3,'BD27553F-82AF-40FD-9008-11B92B7EC700',1,0,N'ResponsiveYouTubeVideo',N'Responsive YouTube Video',0,0,0,N'~/Views/MacroPartials/_Partial_Responsive_YouTube_Video.cshtml',7);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsMacro] ([id],[uniqueId],[macroUseInEditor],[macroRefreshRate],[macroAlias],[macroName],[macroCacheByPage],[macroCachePersonalized],[macroDontRender],[macroSource],[macroType]) VALUES (4,'480075D7-3F9D-4190-9356-11978DDBB8CF',1,0,N'renderUmbracoForm',N'Insert Form with Theme',0,0,0,N'~/Views/MacroPartials/InsertUmbracoFormWithTheme.cshtml',7);
+INSERT INTO [dbo].[cmsMacro] ([id],[uniqueId],[macroUseInEditor],[macroRefreshRate],[macroAlias],[macroName],[macroCacheByPage],[macroCachePersonalized],[macroDontRender],[macroSource],[macroType]) VALUES (4,'480075D7-3F9D-4190-9356-11978DDBB8CF',0,0,N'renderUmbracoForm',N'Insert Form with Theme',0,0,0,N'~/Views/MacroPartials/InsertUmbracoFormWithTheme.cshtml',7);
 
 COMMIT TRANSACTION
 
