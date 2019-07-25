@@ -884,6 +884,8 @@
     <Content Include="Views\Partials\Forms\Themes\Carbide\Form.cshtml" />
     <Content Include="Views\Partials\Forms\Themes\Carbide\Submitted.cshtml" />
     <Content Include="scss\custom\_overrides_pikaday.scss" />
+    <Content Include="Views\Partials\_Partial_Form_Subunit.cshtml" />
+    <Content Include="scss\custom\carbide\form_subunit.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

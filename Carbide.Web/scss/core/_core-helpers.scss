@@ -460,11 +460,6 @@
 
     margin-bottom: var(--vertical-subunit-padding);
 
-    @if ($include-mobile == true) {
-
-        --vertical-subunit-padding: var(--vertical-subunit-padding);
-    }
-
     @include sf-media($from: phablet) {
 
         --vertical-subunit-padding: var(--phablet-vertical-subunit-padding);

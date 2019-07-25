@@ -18,7 +18,7 @@
 
     @foreach (FieldsetViewModel fs in Model.CurrentPage.Fieldsets)
     {
-        <fieldset class="umbraco-forms-fieldset" id="@fs.Id">
+        <fieldset class="umbraco-forms-fieldset" id="@fs.Id" sf-subunit>
 
             @if (string.IsNullOrEmpty(fs.Caption) == false)
             {
@@ -46,7 +46,7 @@
 
             </script>
 
-            <div role="grid">
+            <div role="grid" style="--sf-tabp-gutters: var(--column-gutter); --sf-row-gutters: var(--row-gutter);">
 
                 @foreach (var c in fs.Containers)
                 {
@@ -180,26 +180,15 @@
                                         <small class="help-block">@f.ToolTip</small>
                                     }
                                 </label>
-                                <div sf-checkbox class="@Html.GetFormFieldWrapperClass(f.FieldTypeName)  @f.CssClass" @{ if (hidden) { <text> style="display: none" </text>  } }>
-
-                                    @if (!f.HideLabel)
-                                    {
-                                        <label for="@f.Id" class="control-label umbraco-forms-label">
-                                            <span class="umbraco-forms-field-wrapper" sf-wrapper>
-                                                @Html.Partial(FormThemeResolver.GetFieldView(Model, f), f)
-                                            </span>
-                                            <span>
-                                            </span>
-                                        </label>
-                                    }
-
+                                <div class="@Html.GetFormFieldWrapperClass(f.FieldTypeName)  @f.CssClass" @{ if (hidden) { <text> style="display: none" </text>  } }>
+                                    @Html.Partial(FormThemeResolver.GetFieldView(Model, f), f)
                                 </div>
                             </div>
                             }
 
                             else if (f.FieldType.FieldTypeViewName.Contains("FieldType.Text"))
                             {
-                            <div role="row">
+                            <div class="separator" role="row">
                                 @Html.Partial(FormThemeResolver.GetFieldView(Model, f), f)
                             </div>
                             }
@@ -210,43 +199,39 @@
                             }
                         }
 
-                        <div role="row"></div>
-
                     </div>
 
                 }
+
+                <div style="display: none">
+                    <input type="text" name="@Model.FormId.ToString().Replace("-", "")" />
+                </div>
             </div>
 
         </fieldset>
     }
 
-    <div style="display: none">
-        <input type="text" name="@Model.FormId.ToString().Replace("-", "")" />
-    </div>
-
-    <div class="umbraco-forms-navigation" role="row">
+    <div class="umbraco-forms-navigation" sf-subunit>
 		
-        <div>
-            @if (Model.IsMultiPage)
+        @if (Model.IsMultiPage)
+        {
+            if (!Model.IsFirstPage)
             {
-                if (!Model.IsFirstPage)
-                {
-                    <input class="btn prev cancel" type="submit" value="@Model.PreviousCaption" name="__prev"/>
-                }
-                if (!Model.IsLastPage)
-                {
-                    <input type="submit" class="btn next" value="@Model.NextCaption" name="next"/>
-                }
-                if (Model.IsLastPage)
-                {
-                    <input type="submit" class="btn primary" value="@Model.SubmitCaption" name="submitbtn"/>
-                }
+                <input class="btn prev cancel" type="submit" value="@Model.PreviousCaption" name="__prev"/>
             }
-            else
+            if (!Model.IsLastPage)
             {
-                <input type="submit" class="btn btn-primary" value="@Model.SubmitCaption" name="submitbtn"/>
+                <input type="submit" class="btn next" value="@Model.NextCaption" name="next"/>
             }
-        </div>
+            if (Model.IsLastPage)
+            {
+                <input type="submit" class="btn primary" value="@Model.SubmitCaption" name="submitbtn"/>
+            }
+        }
+        else
+        {
+            <input type="submit" class="btn btn-primary" value="@Model.SubmitCaption" name="submitbtn"/>
+        }
 
     </div>
 

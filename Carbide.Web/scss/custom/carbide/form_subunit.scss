@@ -1,0 +1,41 @@
+﻿.carbide_form_subunit {
+
+    // SETTINGS
+
+    --content-width: 100%;
+    --column-gutter: 3%;
+    --row-gutter: 2rem;
+    --fieldset-row-spacing: 1.5rem;
+
+    --margin-top: 2rem;
+    --margin-bottom: 0rem;
+
+    // ---------------------------
+
+    position: relative;
+    width: var(--content-width);
+
+    margin-top: var(--margin-top);
+    margin-bottom: var(--margin-bottom);
+
+    [sf-subunit] {
+
+        &:first-child {
+        
+            --vertical-subunit-padding: 2rem;
+        }
+    }
+
+    .separator {
+
+        border-bottom: solid 0.07rem var(--sf-color-line);
+        padding-bottom: 1rem;
+        margin-bottom: 1.5rem;
+
+        h1, h2, h3, h4, h5, h6 {
+
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+}
