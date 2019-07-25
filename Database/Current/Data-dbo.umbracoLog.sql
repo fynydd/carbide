@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 1,769 rows to dbo.umbracoLog
+-- Adding 1,778 rows to dbo.umbracoLog
 
 SET IDENTITY_INSERT [dbo].[umbracoLog] ON
 
@@ -3551,6 +3551,24 @@ INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],
 INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1768,-1,1194,N'Document',CONVERT(datetime,'2019-07-24 23:19:11.040',121),N'Publish',NULL,NULL);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1769,-1,1194,N'Document',CONVERT(datetime,'2019-07-24 23:27:29.930',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1770,-1,1197,N'Document',CONVERT(datetime,'2019-07-25 11:26:05.057',121),N'Copy',NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1771,-1,1209,N'Document',CONVERT(datetime,'2019-07-25 11:26:05.337',121),N'Copy',N'Copied content with Id: ''1209'' related to original content with Id: ''1197''',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1772,-1,1209,N'Document',CONVERT(datetime,'2019-07-25 11:27:28.793',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1773,-1,1209,N'Document',CONVERT(datetime,'2019-07-25 11:27:39.760',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1774,-1,1209,N'Document',CONVERT(datetime,'2019-07-25 11:27:53.780',121),N'Move',NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1775,-1,0,N'Document',CONVERT(datetime,'2019-07-25 11:28:08.013',121),N'Sort',N'Sorting content performed by user',NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1776,-1,1194,N'Document',CONVERT(datetime,'2019-07-25 11:29:50.417',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1777,-1,1194,N'Document',CONVERT(datetime,'2019-07-25 11:32:28.780',121),N'Publish',NULL,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoLog] ([id],[userId],[NodeId],[entityType],[Datestamp],[logHeader],[logComment],[parameters]) VALUES (1778,-1,1194,N'Document',CONVERT(datetime,'2019-07-25 11:34:46.363',121),N'Publish',NULL,NULL);
 
 COMMIT TRANSACTION
 

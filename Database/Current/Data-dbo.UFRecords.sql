@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 1 row to dbo.UFRecords
+-- Adding 2 rows to dbo.UFRecords
 
 SET IDENTITY_INSERT [dbo].[UFRecords] ON
 
@@ -14,6 +14,8 @@ BEGIN TRANSACTION
 
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[UFRecords] ([Id],[Form],[Created],[Updated],[CurrentPage],[UmbracoPageId],[IP],[MemberKey],[UniqueId],[State],[RecordData]) VALUES (1,'DEB50D01-FF86-4CEE-920B-9F8F9C637CF8',CONVERT(datetime,'2019-07-23 11:54:50.860',121),CONVERT(datetime,'2019-07-23 11:54:50.860',121),'00000000-0000-0000-0000-000000000000',1194,N'::1',NULL,'B8092812-15DC-4CA4-A7B2-FE267EC2C0DA',N'Approved',N'{''9641dcd2-19e7-4123-a32f-0a7381e045af'':''True'',''a6650e3f-4ab2-461f-c7b2-eda7a542b50a'':''Michael'',''222f823a-f613-4e77-95d7-22108735381a'':''Argentini'',''93de3738-47e7-4518-a275-10d9d5ebe8d1'':''magic@fynydd.com'',''ac102cac-b5df-4f0c-b023-64dd2eb56752'':''This is a sample question.''}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[UFRecords] ([Id],[Form],[Created],[Updated],[CurrentPage],[UmbracoPageId],[IP],[MemberKey],[UniqueId],[State],[RecordData]) VALUES (2,'DEB50D01-FF86-4CEE-920B-9F8F9C637CF8',CONVERT(datetime,'2019-07-25 11:35:18.677',121),CONVERT(datetime,'2019-07-25 11:35:18.677',121),'00000000-0000-0000-0000-000000000000',1194,N'10.0.11.1',NULL,'56A7FBFF-9277-4514-8826-4F506828A249',N'Approved',N'{''a6650e3f-4ab2-461f-c7b2-eda7a542b50a'':''Jane'',''222f823a-f613-4e77-95d7-22108735381a'':''Doe'',''93de3738-47e7-4518-a275-10d9d5ebe8d1'':''jane@example.com'',''ac102cac-b5df-4f0c-b023-64dd2eb56752'':''Test redirect'',''477e97a3-8c3d-4641-bb78-dbeeed323f83'':''7\/18\/2019 12:00:00 AM'',''9641dcd2-19e7-4123-a32f-0a7381e045af'':''True'',''51e82a73-2f88-45e9-f0cf-8269b8146e41'':''BBQ'',''b2ea777b-b780-4bb4-8dda-a9a17e78008e'':''True'',''c0768264-5ae9-4017-9c65-c13d58341903'':''Cat'',''a6eca8eb-da10-47f8-c201-7a8462a4fbfb'':''Red'',''1ad61576-d07e-41b3-ac44-a1a73ce67194'':''bacon''}');
 
 COMMIT TRANSACTION
 

@@ -817,6 +817,10 @@
     <Content Include="config\HealthChecks.config" />
     <Content Include="config\BackOfficeTours\getting-started.json" />
     <Content Include="bin\umbracoForms.lic" />
+    <Content Include="App_Data\UmbracoForms\Data\forms\2d4c06fd-7d7a-4e8b-b7f9-0412cbc7d945.json" />
+    <Content Include="App_Data\UmbracoForms\Data\forms\deb50d01-ff86-4cee-920b-9f8f9c637cf8.json" />
+    <Content Include="App_Data\UmbracoForms\Data\workflows\1f28df3d-9c8f-445f-bd55-77bbe9a62081.json" />
+    <Content Include="App_Data\UmbracoForms\Data\workflows\e27231ef-4ad3-4cf7-a0c9-648608ea7130.json" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <None Include="Properties\PublishProfiles\Release.pubxml" />
@@ -918,6 +922,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\UmbracoForms\Data\datasources\" />
+    <Folder Include="App_Data\UmbracoForms\Data\prevaluesources\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Helpers\" />
   </ItemGroup>

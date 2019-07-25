@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 1 row to dbo.UFRecordDataLongString
+-- Adding 2 rows to dbo.UFRecordDataLongString
 
 SET IDENTITY_INSERT [dbo].[UFRecordDataLongString] ON
 
@@ -14,6 +14,8 @@ BEGIN TRANSACTION
 
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[UFRecordDataLongString] ([Id],[Key],[Value]) VALUES (1,'C5250102-BAB8-4FE4-9541-D907E87FB423',N'This is a sample question.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[UFRecordDataLongString] ([Id],[Key],[Value]) VALUES (2,'610FCDE4-D885-42E0-ACD7-2B5983F05C54',N'Test redirect');
 
 COMMIT TRANSACTION
 

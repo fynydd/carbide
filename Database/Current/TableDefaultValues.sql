@@ -70,10 +70,6 @@ ALTER TABLE [dbo].[umbracoKeyValue] ADD CONSTRAINT [df_umbracoKeyValue_updated] 
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[umbracoRelation] ADD CONSTRAINT [df_umbracoRelation_datetime] DEFAULT (getdate()) FOR [datetime]
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
 ALTER TABLE [dbo].[umbracoServer] ADD CONSTRAINT [df_umbracoServer_registeredDate] DEFAULT (getdate()) FOR [registeredDate]
 GO -- SQRIBE/GO;03d113
 
@@ -91,6 +87,10 @@ GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
 ALTER TABLE [dbo].[umbracoUser] ADD CONSTRAINT [df_umbracoUser_updateDate] DEFAULT (getdate()) FOR [updateDate]
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[umbracoRelation] ADD CONSTRAINT [df_umbracoRelation_datetime] DEFAULT (getdate()) FOR [datetime]
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
