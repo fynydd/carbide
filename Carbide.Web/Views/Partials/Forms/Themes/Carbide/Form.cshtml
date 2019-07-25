@@ -8,7 +8,7 @@
 
     @if (string.IsNullOrEmpty(Model.CurrentPage.Caption) == false)
     {
-        <h4 class="umbraco-forms-caption">@Model.CurrentPage.Caption</h4>
+        <h2 class="umbraco-forms-caption">@Model.CurrentPage.Caption</h2>
     }
                 
     @if (Model.ShowValidationSummary)
@@ -51,65 +51,11 @@
                 @foreach (var c in fs.Containers)
                 {
                     <div class="umbraco-forms-container" role="gridcell" style="--sf-tabp-frac: @(c.Width + "/12");">
-
                         @foreach (FieldViewModel f in c.Fields)
                         {
                             bool hidden = f.HasCondition && f.ConditionActionType == FieldConditionActionType.Show;
 
-                            if (f.FieldType.FieldTypeViewName.Contains("FieldType.Textfield") || f.FieldType.FieldTypeViewName.Contains("FieldType.Textarea") || f.FieldType.FieldTypeViewName.Contains("FieldType.DatePicker") || f.FieldType.FieldTypeViewName.Contains("FieldType.FileUpload") || f.FieldType.FieldTypeViewName.Contains("FieldType.PasswordField") || f.FieldType.FieldTypeViewName.Contains("FieldType.RadioButtonList"))
-                            {
-                                var fieldTypeAttribute = "sf-textbox";
-
-                                if (f.FieldType.FieldTypeViewName.Contains("FieldType.DatePicker"))
-                                {
-                                    fieldTypeAttribute = "sf-textbox sf-date";
-                                }
-
-                                else if (f.FieldType.FieldTypeViewName.Contains("FieldType.FileUpload"))
-                                {
-                                    fieldTypeAttribute = "sf-filebox";
-                                }
-
-                                else if (f.FieldType.FieldTypeViewName.Contains("FieldType.RadioButtonList"))
-                                {
-                                    fieldTypeAttribute = "sf-radiolist";
-                                }
-
-                            <div role="row">
-                                <div id="sf-form-field-@(f.Id)" @(fieldTypeAttribute) @(Html.ValidationMessage(f.Id).ToString().Contains("></span>") ? "" : "sf-invalid") class="@Html.GetFormFieldWrapperClass(f.FieldTypeName)  @f.CssClass" @{ if (hidden) { <text> style="display: none" </text>  } }>
-
-                                    @if (!f.HideLabel)
-                                    {
-                                        <label for="@f.Id" class="control-label umbraco-forms-label" sf-label>
-                                            @f.Caption 
-                                            @if (f.ShowIndicator)
-                                            {
-                                                <span class="umbracoForms-Indicator">@Model.Indicator</span>
-                                            }
-                                            @if (!string.IsNullOrEmpty(f.ToolTip))
-                                            {
-                                                <small class="help-block">@f.ToolTip</small>
-                                            }
-                                        </label>
-                                    }
-
-                                    <span class="umbraco-forms-field-wrapper" sf-wrapper>
-                                        @Html.Partial(FormThemeResolver.GetFieldView(Model, f), f)
-                                    </span>
-
-                                    @if (Model.ShowFieldValidaton)
-                                    {
-                                        <span id="sf-validation-message-@(f.Id)" sf-validation-message>@Html.ValidationMessage(f.Id)</span>
-                                    }
-
-                                </div>
-                                <script>
-                                    setValidationWatcher('@(f.Id)');
-                                </script>
-                            </div>
-                            }
-
-                            else if (f.FieldType.FieldTypeViewName.Contains("FieldType.DataConsent"))
+                            if (f.FieldType.FieldTypeViewName.ToLower().Contains("fieldtype.dataconsent."))
                             {
                             <div role="row">
                                 <label sf-label>
@@ -146,7 +92,7 @@
                             </div>
                             }
 
-                            else if (f.FieldType.FieldTypeViewName.Contains("FieldType.CheckboxList"))
+                            else if (f.FieldType.FieldTypeViewName.ToLower().Contains("fieldtype.checkboxlist."))
                             {
                             <div role="row">
                                 <label sf-label>
@@ -166,7 +112,7 @@
                             </div>
                             }
 
-                            else if (f.FieldType.FieldTypeViewName.Contains("FieldType.Checkbox"))
+                            else if (f.FieldType.FieldTypeViewName.ToLower().Contains("fieldtype.checkbox."))
                             {
                             <div role="row">
                                 <label sf-label>
@@ -186,16 +132,79 @@
                             </div>
                             }
 
-                            else if (f.FieldType.FieldTypeViewName.Contains("FieldType.Text"))
+                            else if (f.FieldType.FieldTypeViewName.ToLower().Contains("fieldtype.text."))
                             {
                             <div class="separator" role="row">
                                 @Html.Partial(FormThemeResolver.GetFieldView(Model, f), f)
                             </div>
                             }
 
-                            else if (f.FieldType.FieldTypeViewName.Contains("FieldType.HiddenField"))
+                            else if (f.FieldType.FieldTypeViewName.ToLower().Contains("fieldtype.hiddenfield."))
                             {
                                 @Html.Partial(FormThemeResolver.GetFieldView(Model, f), f)
+                            }
+
+                            else
+                            {
+                                var fieldTypeAttribute = "";
+
+                                if (f.FieldType.FieldTypeViewName.ToLower().Contains("fieldtype.datepicker"))
+                                {
+                                    fieldTypeAttribute = "sf-textbox sf-date";
+                                }
+
+                                else if (f.FieldType.FieldTypeViewName.ToLower().Contains("fieldtype.fileupload"))
+                                {
+                                    fieldTypeAttribute = "sf-filebox";
+                                }
+
+                                else if (f.FieldType.FieldTypeViewName.ToLower().Contains("fieldtype.radiobuttonlist"))
+                                {
+                                    fieldTypeAttribute = "sf-radiolist";
+                                }
+
+                                else if (f.FieldType.FieldTypeViewName.ToLower().Contains("fieldtype.dropdownlist"))
+                                {
+                                    fieldTypeAttribute = "sf-listbox";
+                                }
+
+                                else if (f.FieldType.FieldTypeViewName.ToLower().Contains("fieldtype.textarea") || f.FieldType.FieldTypeViewName.ToLower().Contains("fieldtype.textfield") || f.FieldType.FieldTypeViewName.ToLower().Contains("fieldtype.passwordfield"))
+                                {
+                                    fieldTypeAttribute = "sf-textbox";
+                                }
+
+                            <div role="row">
+                                <div id="sf-form-field-@(f.Id)" @(fieldTypeAttribute) @(Html.ValidationMessage(f.Id).ToString().Contains("></span>") ? "" : "sf-invalid") class="@Html.GetFormFieldWrapperClass(f.FieldTypeName)  @f.CssClass" @{ if (hidden) { <text> style="display: none" </text>  } }>
+
+                                    @if (!f.HideLabel)
+                                    {
+                                        <label for="@f.Id" class="control-label umbraco-forms-label" sf-label>
+                                            @f.Caption 
+                                            @if (f.ShowIndicator)
+                                            {
+                                                <span class="umbracoForms-Indicator">@Model.Indicator</span>
+                                            }
+                                            @if (!string.IsNullOrEmpty(f.ToolTip))
+                                            {
+                                                <small class="help-block">@f.ToolTip</small>
+                                            }
+                                        </label>
+                                    }
+
+                                    <span class="umbraco-forms-field-wrapper" sf-wrapper>
+                                        @Html.Partial(FormThemeResolver.GetFieldView(Model, f), f)
+                                    </span>
+
+                                    @if (Model.ShowFieldValidaton)
+                                    {
+                                        <span id="sf-validation-message-@(f.Id)" sf-validation-message>@Html.ValidationMessage(f.Id)</span>
+                                    }
+
+                                </div>
+                                <script>
+                                    setValidationWatcher('@(f.Id)');
+                                </script>
+                            </div>
                             }
                         }
 

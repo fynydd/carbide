@@ -16,6 +16,6 @@
 }
 <div id="@(instanceId)" class="carbide_form_subunit" sf-subunit>
 
-    @Umbraco.RenderMacro("renderUmbracoForm", new { FormGuid = Model.Value("form"), FormTheme = "Carbide" })
+    @Umbraco.RenderMacro("renderUmbracoForm", new { FormGuid = Model.Value("form"), FormTheme = "Carbide", ExcludeScripts = "0" })
 
 </div>
