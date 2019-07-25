@@ -20,10 +20,7 @@
 
     [sf-subunit] {
 
-        &:first-child {
-        
-            --vertical-subunit-padding: 2rem;
-        }
+        --vertical-subunit-padding: 2rem;
     }
 
     .separator {
@@ -34,7 +31,7 @@
 
         h1, h2, h3, h4, h5, h6 {
 
-            margin-top: 2rem;
+            margin-top: 3rem;
             margin-bottom: 0.5rem;
         }
     }
@@ -45,8 +42,31 @@
         margin-bottom: 0.5rem;
     }
 
-    legend {
+    fieldset {
 
-        margin-bottom: 2rem;
+        legend {
+
+            display: block;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: solid 0.07rem var(--sf-color-line);
+        }
+
+        &:not(:first-of-type) {
+
+            legend {
+
+                padding-top: 1rem;
+            }
+        }
+    }
+
+    form, [role="form"] {
+
+        [sf-label] {
+
+            font-weight: bold;
+        }
     }
 }
+

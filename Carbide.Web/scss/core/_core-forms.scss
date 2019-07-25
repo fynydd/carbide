@@ -156,9 +156,9 @@ form, [role="form"] {
             padding-top: 0.5rem;
 
             font-size: 0.9rem;
-            font-weight: 1rem;
+            font-weight: bold;
 
-            &:empty {
+            &:empty, &[sf-empty] {
 
                 display: none;
             }

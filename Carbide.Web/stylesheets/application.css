@@ -111,43 +111,43 @@ html { font-family: var(--font-body); font-size: 4.35vw; line-height: 1.5; -webk
 
 @media screen and (min-width: 75em) { html { font-size: 15.6px; line-height: 1.5; } }
 
-html h1, html h2, html h3, html h4, html h5, html h6 { font-family: var(--font-head); }
+html h1, html h2, html h3, html h4, html h5, html h6, html .h1, html .h2, html .h3, html .h4, html .h5, html .h6 { font-family: var(--font-head); }
 
-html h1 { font-size: calc(var(--h1-font-size) * var(--h1-multiplier)); line-height: var(--h1-line-height); }
+html h1, html .h1 { font-size: calc(var(--h1-font-size) * var(--h1-multiplier)); line-height: var(--h1-line-height); }
 
-@media screen and (min-width: 33.75em) { html h1 { font-size: calc(var(--tablet-portrait-h1-multiplier) * var(--h1-font-size)); } }
+@media screen and (min-width: 33.75em) { html h1, html .h1 { font-size: calc(var(--tablet-portrait-h1-multiplier) * var(--h1-font-size)); } }
 
-@media screen and (min-width: 75em) { html h1 { font-size: calc(var(--elastic-h1-multiplier) * var(--h1-font-size)); } }
+@media screen and (min-width: 75em) { html h1, html .h1 { font-size: calc(var(--elastic-h1-multiplier) * var(--h1-font-size)); } }
 
-html h2 { font-size: calc(var(--h2-font-size) * var(--h2-multiplier)); line-height: var(--h2-line-height); }
+html h2, html .h2 { font-size: calc(var(--h2-font-size) * var(--h2-multiplier)); line-height: var(--h2-line-height); }
 
-@media screen and (min-width: 33.75em) { html h2 { font-size: calc(var(--tablet-portrait-h2-multiplier) * var(--h2-font-size)); } }
+@media screen and (min-width: 33.75em) { html h2, html .h2 { font-size: calc(var(--tablet-portrait-h2-multiplier) * var(--h2-font-size)); } }
 
-@media screen and (min-width: 75em) { html h2 { font-size: calc(var(--elastic-h2-multiplier) * var(--h2-font-size)); } }
+@media screen and (min-width: 75em) { html h2, html .h2 { font-size: calc(var(--elastic-h2-multiplier) * var(--h2-font-size)); } }
 
-html h3 { font-size: calc(var(--h3-font-size) * var(--h3-multiplier)); line-height: var(--h3-line-height); }
+html h3, html .h3 { font-size: calc(var(--h3-font-size) * var(--h3-multiplier)); line-height: var(--h3-line-height); }
 
-@media screen and (min-width: 33.75em) { html h3 { font-size: calc(var(--tablet-portrait-h3-multiplier) * var(--h3-font-size)); } }
+@media screen and (min-width: 33.75em) { html h3, html .h3 { font-size: calc(var(--tablet-portrait-h3-multiplier) * var(--h3-font-size)); } }
 
-@media screen and (min-width: 75em) { html h3 { font-size: calc(var(--elastic-h3-multiplier) * var(--h3-font-size)); } }
+@media screen and (min-width: 75em) { html h3, html .h3 { font-size: calc(var(--elastic-h3-multiplier) * var(--h3-font-size)); } }
 
-html h4 { font-size: calc(var(--h4-font-size) * var(--h4-multiplier)); line-height: var(--h4-line-height); }
+html h4, html .h4 { font-size: calc(var(--h4-font-size) * var(--h4-multiplier)); line-height: var(--h4-line-height); }
 
-@media screen and (min-width: 33.75em) { html h4 { font-size: calc(var(--tablet-portrait-h4-multiplier) * var(--h4-font-size)); } }
+@media screen and (min-width: 33.75em) { html h4, html .h4 { font-size: calc(var(--tablet-portrait-h4-multiplier) * var(--h4-font-size)); } }
 
-@media screen and (min-width: 75em) { html h4 { font-size: calc(var(--elastic-h4-multiplier) * var(--h4-font-size)); } }
+@media screen and (min-width: 75em) { html h4, html .h4 { font-size: calc(var(--elastic-h4-multiplier) * var(--h4-font-size)); } }
 
-html h5 { font-size: calc(var(--h5-font-size) * var(--h5-multiplier)); line-height: var(--h5-line-height); }
+html h5, html .h5 { font-size: calc(var(--h5-font-size) * var(--h5-multiplier)); line-height: var(--h5-line-height); }
 
-@media screen and (min-width: 33.75em) { html h5 { font-size: calc(var(--tablet-portrait-h5-multiplier) * var(--h5-font-size)); } }
+@media screen and (min-width: 33.75em) { html h5, html .h5 { font-size: calc(var(--tablet-portrait-h5-multiplier) * var(--h5-font-size)); } }
 
-@media screen and (min-width: 75em) { html h5 { font-size: calc(var(--elastic-h5-multiplier) * var(--h5-font-size)); } }
+@media screen and (min-width: 75em) { html h5, html .h5 { font-size: calc(var(--elastic-h5-multiplier) * var(--h5-font-size)); } }
 
-html h6 { font-size: calc(var(--h6-font-size) * var(--h6-multiplier)); line-height: var(--h6-line-height); }
+html h6, html .h6 { font-size: calc(var(--h6-font-size) * var(--h6-multiplier)); line-height: var(--h6-line-height); }
 
-@media screen and (min-width: 33.75em) { html h6 { font-size: calc(var(--tablet-portrait-h6-multiplier) * var(--h6-font-size)); } }
+@media screen and (min-width: 33.75em) { html h6, html .h6 { font-size: calc(var(--tablet-portrait-h6-multiplier) * var(--h6-font-size)); } }
 
-@media screen and (min-width: 75em) { html h6 { font-size: calc(var(--elastic-h6-multiplier) * var(--h6-font-size)); } }
+@media screen and (min-width: 75em) { html h6, html .h6 { font-size: calc(var(--elastic-h6-multiplier) * var(--h6-font-size)); } }
 
 html pre, html code { font-family: var(--font-mono); }
 
@@ -193,9 +193,9 @@ form [sf-label] small, [role="form"] [sf-label] small { display: block; padding-
 
 form [sf-metric] label, form [sf-label] label, form [sf-textbox] label, form [sf-listbox] label, form [sf-filebox] label, [role="form"] [sf-metric] label, [role="form"] [sf-label] label, [role="form"] [sf-textbox] label, [role="form"] [sf-listbox] label, [role="form"] [sf-filebox] label { display: block; font-size: 0.9rem; font-weight: 500; padding-bottom: 0.5rem; }
 
-form [sf-metric] [sf-validation-message], form [sf-label] [sf-validation-message], form [sf-textbox] [sf-validation-message], form [sf-listbox] [sf-validation-message], form [sf-filebox] [sf-validation-message], [role="form"] [sf-metric] [sf-validation-message], [role="form"] [sf-label] [sf-validation-message], [role="form"] [sf-textbox] [sf-validation-message], [role="form"] [sf-listbox] [sf-validation-message], [role="form"] [sf-filebox] [sf-validation-message] { display: block; padding-top: 0.5rem; font-size: 0.9rem; font-weight: 1rem; }
+form [sf-metric] [sf-validation-message], form [sf-label] [sf-validation-message], form [sf-textbox] [sf-validation-message], form [sf-listbox] [sf-validation-message], form [sf-filebox] [sf-validation-message], [role="form"] [sf-metric] [sf-validation-message], [role="form"] [sf-label] [sf-validation-message], [role="form"] [sf-textbox] [sf-validation-message], [role="form"] [sf-listbox] [sf-validation-message], [role="form"] [sf-filebox] [sf-validation-message] { display: block; padding-top: 0.5rem; font-size: 0.9rem; font-weight: bold; }
 
-form [sf-metric] [sf-validation-message]:empty, form [sf-label] [sf-validation-message]:empty, form [sf-textbox] [sf-validation-message]:empty, form [sf-listbox] [sf-validation-message]:empty, form [sf-filebox] [sf-validation-message]:empty, [role="form"] [sf-metric] [sf-validation-message]:empty, [role="form"] [sf-label] [sf-validation-message]:empty, [role="form"] [sf-textbox] [sf-validation-message]:empty, [role="form"] [sf-listbox] [sf-validation-message]:empty, [role="form"] [sf-filebox] [sf-validation-message]:empty { display: none; }
+form [sf-metric] [sf-validation-message]:empty, form [sf-metric] [sf-validation-message][sf-empty], form [sf-label] [sf-validation-message]:empty, form [sf-label] [sf-validation-message][sf-empty], form [sf-textbox] [sf-validation-message]:empty, form [sf-textbox] [sf-validation-message][sf-empty], form [sf-listbox] [sf-validation-message]:empty, form [sf-listbox] [sf-validation-message][sf-empty], form [sf-filebox] [sf-validation-message]:empty, form [sf-filebox] [sf-validation-message][sf-empty], [role="form"] [sf-metric] [sf-validation-message]:empty, [role="form"] [sf-metric] [sf-validation-message][sf-empty], [role="form"] [sf-label] [sf-validation-message]:empty, [role="form"] [sf-label] [sf-validation-message][sf-empty], [role="form"] [sf-textbox] [sf-validation-message]:empty, [role="form"] [sf-textbox] [sf-validation-message][sf-empty], [role="form"] [sf-listbox] [sf-validation-message]:empty, [role="form"] [sf-listbox] [sf-validation-message][sf-empty], [role="form"] [sf-filebox] [sf-validation-message]:empty, [role="form"] [sf-filebox] [sf-validation-message][sf-empty] { display: none; }
 
 form [sf-metric] > [sf-wrapper], form [sf-label] > [sf-wrapper], [role="form"] [sf-metric] > [sf-wrapper], [role="form"] [sf-label] > [sf-wrapper] { display: block; width: 100%; background-color: rgba(0, 0, 0, 0.05); border: var(--sf-line-width) solid transparent; border-radius: 0.15rem; padding: 0.35rem 0.65rem; font-size: 0; }
 
@@ -935,15 +935,19 @@ hr:last-child { margin-bottom: 0; }
 
 .carbide_form_subunit { --content-width: 100%; --column-gutter: 3%; --row-gutter: 2rem; --fieldset-row-spacing: 1.5rem; --margin-top: 2rem; --margin-bottom: 0rem; position: relative; width: var(--content-width); margin-top: var(--margin-top); margin-bottom: var(--margin-bottom); }
 
-.carbide_form_subunit [sf-subunit]:first-child { --vertical-subunit-padding: 2rem; }
+.carbide_form_subunit [sf-subunit] { --vertical-subunit-padding: 2rem; }
 
 .carbide_form_subunit .separator { border-bottom: solid 0.07rem var(--sf-color-line); padding-bottom: 1rem; margin-bottom: 1.5rem; }
 
-.carbide_form_subunit .separator h1, .carbide_form_subunit .separator h2, .carbide_form_subunit .separator h3, .carbide_form_subunit .separator h4, .carbide_form_subunit .separator h5, .carbide_form_subunit .separator h6 { margin-top: 2rem; margin-bottom: 0.5rem; }
+.carbide_form_subunit .separator h1, .carbide_form_subunit .separator h2, .carbide_form_subunit .separator h3, .carbide_form_subunit .separator h4, .carbide_form_subunit .separator h5, .carbide_form_subunit .separator h6 { margin-top: 3rem; margin-bottom: 0.5rem; }
 
 .carbide_form_subunit .umbraco-forms-caption { margin-top: 2rem; margin-bottom: 0.5rem; }
 
-.carbide_form_subunit legend { margin-bottom: 2rem; }
+.carbide_form_subunit fieldset legend { display: block; margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: solid 0.07rem var(--sf-color-line); }
+
+.carbide_form_subunit fieldset:not(:first-of-type) legend { padding-top: 1rem; }
+
+.carbide_form_subunit form [sf-label], .carbide_form_subunit [role="form"] [sf-label] { font-weight: bold; }
 
 .carbide_gallery_view_subunit { --column-gutter: 3%; --row-gutter: 2rem; --subunit-top-margin: 0; --subunit-bottom-margin: 0; --columns: 1; --background-color: transparent; --headline-size: 1.2rem; --headline-top-margin: 1.5rem; --headline-bottom-margin: 0.75rem; background-color: var(--background-color); margin-top: var(--subunit-top-margin); margin-bottom: var(--subunit-bottom-margin); }
 

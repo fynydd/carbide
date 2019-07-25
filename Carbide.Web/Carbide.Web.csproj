@@ -733,7 +733,6 @@
     <Content Include="scss\custom\carbide\basic_theme.scss" />
     <Content Include="scss\custom\carbide\rich-content-subunit.scss" />
     <Content Include="stylesheets\all.min.css" />
-    <Content Include="Views\Partials\Forms\Emails\Example-Template.cshtml" />
     <Content Include="Views\Partials\Forms\Export\excel.cshtml" />
     <Content Include="Views\Partials\Forms\Fieldtypes\FieldType.CheckBox.cshtml" />
     <Content Include="Views\Partials\Forms\Fieldtypes\FieldType.CheckBoxList.cshtml" />
@@ -886,6 +885,7 @@
     <Content Include="scss\custom\_overrides_pikaday.scss" />
     <Content Include="Views\Partials\_Partial_Form_Subunit.cshtml" />
     <Content Include="scss\custom\carbide\form_subunit.scss" />
+    <Content Include="Views\Partials\Forms\Emails\Generic-Email-Template.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
