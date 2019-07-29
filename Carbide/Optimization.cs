@@ -52,76 +52,84 @@ namespace Fynydd.Carbide
                         newContentpath = "_carbide.generated." + filePath;
                     }
 
-					FileInfo fileInfo = new FileInfo(umbCtx.MapPath(filePath));
-					DateTime lastModified = fileInfo.LastWriteTime;
-					var item = fileInfo.Length + "|" + lastModified.DateFormat(Carbide.Constants.DateFormats.Utc);
-
-					if (umbCtx.KeyExists(Storage.ConvertFilePathToKey(filePath)))
+                    if (Storage.FileExists(umbCtx, filePath))
                     {
-						if (umbCtx.HttpContext.Application[Storage.ConvertFilePathToKey(filePath)].ToString() == item)
-						{
-							if (umbCtx.FileExists(newContentpath))
-							{
-								filePath = newContentpath;
-								proceed = false;
-							}
-						}
+                        FileInfo fileInfo = new FileInfo(umbCtx.MapPath(filePath));
+                        DateTime lastModified = fileInfo.LastWriteTime;
+                        var item = fileInfo.Length + "|" + lastModified.DateFormat(Carbide.Constants.DateFormats.Utc);
 
-						else
-						{
-							if (umbCtx.FileExists(filePath) == false)
-							{
-								filePath = newContentpath;
-								proceed = false;
-							}
-						}
+                        if (umbCtx.KeyExists(Storage.ConvertFilePathToKey(filePath)))
+                        {
+                            if (umbCtx.HttpContext.Application[Storage.ConvertFilePathToKey(filePath)].ToString() == item)
+                            {
+                                if (umbCtx.FileExists(newContentpath))
+                                {
+                                    filePath = newContentpath;
+                                    proceed = false;
+                                }
+                            }
+
+                            else
+                            {
+                                if (umbCtx.FileExists(filePath) == false)
+                                {
+                                    filePath = newContentpath;
+                                    proceed = false;
+                                }
+                            }
+                        }
+
+                        else
+                        {
+                            if (umbCtx.FileExists(filePath) == false)
+                            {
+                                proceed = false;
+                            }
+                        }
+
+                        if (proceed)
+                        {
+                            if (umbCtx.FileExists(newContentpath))
+                            {
+                                umbCtx.DeleteFiles(newContentpath);
+                            }
+
+                            var minified = "";
+
+                            if (filePath.EndsWith(".js"))
+                            {
+                                var jsc = new JavaScriptCompressor();
+                                minified = jsc.Compress(umbCtx.ReadFile(filePath));
+                            }
+
+                            if (filePath.EndsWith(".css"))
+                            {
+                                var cssc = new CssCompressor();
+                                minified = cssc.Compress(umbCtx.ReadFile(filePath));
+                            }
+
+                            umbCtx.WriteFile(newContentpath, minified);
+
+                            Debug.WriteLine("MINIFIED TO " + newContentpath);
+
+                            fileInfo = new FileInfo(umbCtx.MapPath(filePath));
+                            lastModified = fileInfo.LastWriteTime;
+                            item = fileInfo.Length + "|" + lastModified.DateFormat(Carbide.Constants.DateFormats.Utc);
+
+                            umbCtx.HttpContext.Application[Storage.ConvertFilePathToKey(filePath)] = item;
+
+                            filePath = newContentpath;
+                        }
+
+                        else
+                        {
+                            Debug.WriteLine("SKIPPED MINIFICATION FOR " + filePath);
+                        }
                     }
 
-					else
-					{
-						if (umbCtx.FileExists(filePath) == false)
-						{
-							proceed = false;
-						}
-					}
-
-					if (proceed)
+                    else
                     {
-                        if (umbCtx.FileExists(newContentpath))
-                        {
-                            umbCtx.DeleteFiles(newContentpath);
-                        }
-
-                        var minified = "";
-
-                        if (filePath.EndsWith(".js"))
-                        {
-                            var jsc = new JavaScriptCompressor();
-                            minified = jsc.Compress(umbCtx.ReadFile(filePath));
-                        }
-
-                        if (filePath.EndsWith(".css"))
-                        {
-                            var cssc = new CssCompressor();
-                            minified = cssc.Compress(umbCtx.ReadFile(filePath));
-                        }
-
-                        umbCtx.WriteFile(newContentpath, minified);
-
-                        Debug.WriteLine("MINIFIED TO " + newContentpath);
-
-						fileInfo = new FileInfo(umbCtx.MapPath(filePath));
-						lastModified = fileInfo.LastWriteTime;
-						item = fileInfo.Length + "|" + lastModified.DateFormat(Carbide.Constants.DateFormats.Utc);
-
-						umbCtx.HttpContext.Application[Storage.ConvertFilePathToKey(filePath)] = item;
-
-						filePath = newContentpath;
-					}
-
-					else
-                    {
-                        Debug.WriteLine("SKIPPED MINIFICATION FOR " + filePath);
+                        Debug.WriteLine("SKIPPED MINIFICATION; " + filePath + " DOES NOT EXIST");
                     }
                 }
             }

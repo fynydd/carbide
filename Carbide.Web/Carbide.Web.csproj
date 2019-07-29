@@ -910,6 +910,34 @@
     <Content Include="webfonts\fa-light-300.ttf" />
     <Content Include="webfonts\fa-light-300.woff" />
     <Content Include="webfonts\fa-light-300.woff2" />
+    <Content Include="webfonts\proxima_nova_bold-webfont.woff" />
+    <Content Include="webfonts\proxima_nova_bold-webfont.woff2" />
+    <Content Include="webfonts\proxima_nova_bold_italic-webfont.woff" />
+    <Content Include="webfonts\proxima_nova_bold_italic-webfont.woff2" />
+    <Content Include="webfonts\proxima_nova_light-webfont.woff" />
+    <Content Include="webfonts\proxima_nova_light-webfont.woff2" />
+    <Content Include="webfonts\proxima_nova_light_italic-webfont.woff" />
+    <Content Include="webfonts\proxima_nova_light_italic-webfont.woff2" />
+    <Content Include="webfonts\proxima_nova_regular-webfont.woff" />
+    <Content Include="webfonts\proxima_nova_regular-webfont.woff2" />
+    <Content Include="webfonts\proxima_nova_regular_italic-webfont.woff" />
+    <Content Include="webfonts\proxima_nova_regular_italic-webfont.woff2" />
+    <Content Include="webfonts\proxima_nova_semibold-webfont.woff" />
+    <Content Include="webfonts\proxima_nova_semibold-webfont.woff2" />
+    <Content Include="webfonts\proxima_nova_semibold_italic-webfont.woff" />
+    <Content Include="webfonts\proxima_nova_semibold_italic-webfont.woff2" />
+    <Content Include="webfonts\stoneinformal-bold-webfont.woff" />
+    <Content Include="webfonts\stoneinformal-bold-webfont.woff2" />
+    <Content Include="webfonts\stoneinformal-bolditalic-webfont.woff" />
+    <Content Include="webfonts\stoneinformal-bolditalic-webfont.woff2" />
+    <Content Include="webfonts\stoneinformal-italic-webfont.woff" />
+    <Content Include="webfonts\stoneinformal-italic-webfont.woff2" />
+    <Content Include="webfonts\stoneinformal-semibold-webfont.woff" />
+    <Content Include="webfonts\stoneinformal-semibold-webfont.woff2" />
+    <Content Include="webfonts\stoneinformal-semibolditalic-webfont.woff" />
+    <Content Include="webfonts\stoneinformal-semibolditalic-webfont.woff2" />
+    <Content Include="webfonts\stoneinformal-webfont.woff" />
+    <Content Include="webfonts\stoneinformal-webfont.woff2" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />

@@ -34,6 +34,7 @@
     --background-color: var(--sf-color-white);
     --foreground-color: var(--sf-color-white-contrast);
     --anchor-color: var(--sf-color-primary);
+    --button-color: var(--sf-color-secondary);
     --h1-color: var(--sf-color-white-contrast);
     --h2-color: var(--sf-color-white-contrast);
     --h3-color: var(--sf-color-white-contrast);
@@ -50,6 +51,11 @@ html, body {
     a, a:hover, a:visited, a:active, .a {
 
         color: var(--anchor-color);
+    }
+
+    button, input[type="button"], input[type="submit"], input[type="cancel"], a[role="button"] {
+
+        background-color: var(--button-color);
     }
 
     h1, .h1 {

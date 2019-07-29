@@ -156,3 +156,25 @@
         </div>
     </div>
 </section>
+@if (Model.SafeValue<bool>("underneathPrimaryNav"))
+{
+<script>
+
+    function reProcessNavheight() {
+
+        $("main[role='main']").css("padding-top", "");
+        $("#@(instanceId).carbide_simple_hero_unit [role='presentation']").css("padding-top", $("#primary-navigation").outerHeight() + "px");
+    }
+
+    $(window).on("resize", function () {
+
+        reProcessNavheight();
+    });
+
+    $(document).ready(function () {
+
+        reProcessNavheight();
+    });
+
+</script>
+}

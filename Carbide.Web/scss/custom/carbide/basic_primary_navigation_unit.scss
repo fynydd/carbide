@@ -11,10 +11,23 @@
     --justify-content: flex-end;
     --first-justify-content: flex-start;
     --row-gutter: 1rem;
+    --background-opacity: 1.0;
 
     // ---------------------------
 
-    background-color: var(--background-color);
+    position: relative;
+
+    .background-layer {
+
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        background-color: var(--background-color);
+        opacity: var(--background-opacity);
+    }
 
     nav {
 
