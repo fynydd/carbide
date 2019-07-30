@@ -1017,7 +1017,7 @@ html, body { background-color: var(--background-color); color: var(--foreground-
 
 html a, html a:hover, html a:visited, html a:active, html .a, body a, body a:hover, body a:visited, body a:active, body .a { color: var(--anchor-color); }
 
-html button, html input[type="button"], html input[type="submit"], html input[type="cancel"], html a[role="button"], body button, body input[type="button"], body input[type="submit"], body input[type="cancel"], body a[role="button"] { background-color: var(--button-color); }
+html button, html input[type="button"], html input[type="submit"], html input[type="cancel"], html a[role="button"], body button, body input[type="button"], body input[type="submit"], body input[type="cancel"], body a[role="button"] { background-color: var(--button-color); border-color: var(--button-color); }
 
 html h1, html .h1, body h1, body .h1 { color: var(--h1-color); }
 

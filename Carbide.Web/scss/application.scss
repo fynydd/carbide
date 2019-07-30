@@ -56,6 +56,7 @@ html, body {
     button, input[type="button"], input[type="submit"], input[type="cancel"], a[role="button"] {
 
         background-color: var(--button-color);
+        border-color: var(--button-color);
     }
 
     h1, .h1 {
