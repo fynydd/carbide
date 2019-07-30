@@ -2105,13 +2105,17 @@
         mediaTypeHelper.getAllowedImagetypes($scope.startNodeId).then(function (types) {
             $scope.acceptedMediatypes = types;
         });
+        var dataTypeKey = null;
+        if ($scope.model && $scope.model.dataTypeKey) {
+            dataTypeKey = $scope.model.dataTypeKey;
+        }
         $scope.searchOptions = {
             pageNumber: 1,
             pageSize: 100,
             totalItems: 0,
             totalPages: 0,
             filter: '',
-            dataTypeKey: $scope.model.dataTypeKey
+            dataTypeKey: dataTypeKey
         };
         //preload selected item
         $scope.target = undefined;
@@ -2201,7 +2205,7 @@
                 };
             }
             if (folder.id > 0) {
-                entityResource.getAncestors(folder.id, 'media', null, { dataTypeKey: $scope.model.dataTypeKey }).then(function (anc) {
+                entityResource.getAncestors(folder.id, 'media', null, { dataTypeKey: dataTypeKey }).then(function (anc) {
                     $scope.path = _.filter(anc, function (f) {
                         return f.path.indexOf($scope.startNodeId) !== -1;
                     });
@@ -2344,7 +2348,7 @@
                         totalItems: 0,
                         totalPages: 0,
                         filter: '',
-                        dataTypeKey: $scope.model.dataTypeKey
+                        dataTypeKey: dataTypeKey
                     };
                     getChildren($scope.currentFolder.id);
                 }

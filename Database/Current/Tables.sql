@@ -440,19 +440,6 @@ CREATE TABLE [dbo].[UFUserFormSecurity]
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;03d113
 
-PRINT N'CREATE TABLE [dbo].[UFRecordDataDateTime]'
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-CREATE TABLE [dbo].[UFRecordDataDateTime]
-(
-    [Id] [int] IDENTITY(1,1) NOT NULL,
-    [Key] [uniqueidentifier] NOT NULL,
-    [Value] [datetime] NULL
-
-) ON [PRIMARY]
-GO -- SQRIBE/GO;03d113
-
 PRINT N'CREATE TABLE [dbo].[umbracoDomain]'
 GO -- SQRIBE/GO;03d113
 
@@ -463,6 +450,19 @@ CREATE TABLE [dbo].[umbracoDomain]
     [domainDefaultLanguage] [int] NULL,
     [domainRootStructureID] [int] NULL,
     [domainName] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL
+
+) ON [PRIMARY]
+GO -- SQRIBE/GO;03d113
+
+PRINT N'CREATE TABLE [dbo].[UFRecordDataDateTime]'
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+CREATE TABLE [dbo].[UFRecordDataDateTime]
+(
+    [Id] [int] IDENTITY(1,1) NOT NULL,
+    [Key] [uniqueidentifier] NOT NULL,
+    [Value] [datetime] NULL
 
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;03d113

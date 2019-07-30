@@ -2533,6 +2533,9 @@ Use this directive to render a group of toggle buttons.
                 if (isAppPresent === false && content.apps.length) {
                     content.apps[0].active = true;
                     $scope.appChanged(content.apps[0]);
+                }    // otherwise make sure the save options are up to date with the current content state
+                else {
+                    createButtons($scope.content);
                 }
                 editorState.set(content);
                 bindEvents();
@@ -5784,13 +5787,18 @@ Use this directive to construct the main editor window.
         return function (scope, element, attrs) {
             var eventBindings = [];
             function oneTimeClick(event) {
-                // ignore clicks on button groups toggles (i.e. the save and publish button)
-                var parents = $(event.target).closest('[data-element=\'button-group-toggle\']');
-                if (parents.length > 0) {
+                var el = event.target.nodeName;
+                //ignore link and button clicks
+                var els = [
+                    'INPUT',
+                    'A',
+                    'BUTTON'
+                ];
+                if (els.indexOf(el) >= 0) {
                     return;
                 }
                 // ignore clicks on new overlay
-                parents = $(event.target).parents('.umb-overlay,.umb-tour');
+                var parents = $(event.target).parents('a,button,.umb-overlay,.umb-tour');
                 if (parents.length > 0) {
                     return;
                 }
@@ -5807,11 +5815,6 @@ Use this directive to construct the main editor window.
                 // ignore clicks in flatpickr datepicker
                 var flatpickr = $(event.target).closest('.flatpickr-calendar');
                 if (flatpickr.length === 1) {
-                    return;
-                }
-                // ignore clicks on dialog actions
-                var actions = $(event.target).parents('.umb-action');
-                if (actions.length === 1) {
                     return;
                 }
                 //ignore clicks inside this element
