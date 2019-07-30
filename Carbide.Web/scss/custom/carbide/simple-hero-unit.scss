@@ -24,12 +24,17 @@
     --button-background-color: var(--sf-color-buttons);
     --button-foreground-color: var(--sf-color-buttons-contrast);
 
+    --headline-size: 2rem;
+    --text-size: 1rem;
+    --button-text-size: 1rem;
+
+    --headline-weight: 400;
+    --text-weight: 300;
+    --button-text-weight: 300;
+
     // ---------------------------
 
     position: relative;
-    /*background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;*/
     overflow: hidden;
     min-height: var(--min-height);
     max-height: var(--max-height);
@@ -102,23 +107,35 @@
 
             h1 {
 
+                font-size: var(--headline-size);
+                font-weight: var(--headline-weight);
+                line-height: 1.3;
                 margin-bottom: var(--headline-bottom-spacer);
                 text-shadow: 0 0 0.5rem var(--headline-shadow-color);
 
                 &, * {
 
+                    font-size: var(--headline-size);
+                    font-weight: var(--headline-weight);
+                    line-height: 1.3;
                     color: var(--foreground-color);
                 }
             }
 
             .excerpt-row {
 
+                font-size: var(--text-size);
+                font-weight: var(--text-weight);
+                line-height: 1.35;
                 margin-bottom: var(--content-bottom-spacer);
 
                 p {
 
                     color: var(--foreground-color);
                     margin-bottom: 2rem;
+                    font-size: var(--text-size);
+                    font-weight: var(--text-weight);
+                    line-height: 1.35;
                     text-shadow: 0 0 0.75rem var(--content-shadow-color);
 
                     &:last-child {
@@ -130,10 +147,14 @@
 
             .button-row {
 
+                font-size: var(--button-text-size);
+                font-weight: var(--button-text-weight);
                 margin-bottom: var(--button-bottom-spacer);
 
                 a[role="button"] {
 
+                    font-size: var(--button-text-size);
+                    font-weight: var(--button-text-weight);
                     background-color: var(--button-background-color);
                     border-color: var(--button-background-color);
                     color: var(--button-foreground-color);
