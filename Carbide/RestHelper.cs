@@ -71,10 +71,15 @@ namespace Fynydd.Carbide
 		/// </summary>
 		public string StatusText { get; set; }
 
-		/// <summary>
-		/// Verbose result description
-		/// </summary>
-		public string Message { get; set; }
+        /// <summary>
+        /// Legacy HTTP status code text (e.g. OK)
+        /// </summary>
+        public string Result { get; set; }
+
+        /// <summary>
+        /// Verbose result description
+        /// </summary>
+        public string Message { get; set; }
 	}
 
 	/// <summary>
