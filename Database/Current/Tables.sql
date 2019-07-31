@@ -631,18 +631,6 @@ CREATE TABLE [dbo].[cmsTags]
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;03d113
 
-PRINT N'CREATE TABLE [dbo].[umbracoMediaVersion]'
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-CREATE TABLE [dbo].[umbracoMediaVersion]
-(
-    [id] [int] NOT NULL,
-    [path] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
-
-) ON [PRIMARY]
-GO -- SQRIBE/GO;03d113
-
 PRINT N'CREATE TABLE [dbo].[cmsContentType]'
 GO -- SQRIBE/GO;03d113
 
@@ -699,6 +687,18 @@ CREATE TABLE [dbo].[cmsTagRelationship]
     [nodeId] [int] NOT NULL,
     [tagId] [int] NOT NULL,
     [propertyTypeId] [int] NOT NULL
+
+) ON [PRIMARY]
+GO -- SQRIBE/GO;03d113
+
+PRINT N'CREATE TABLE [dbo].[umbracoMediaVersion]'
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+CREATE TABLE [dbo].[umbracoMediaVersion]
+(
+    [id] [int] NOT NULL,
+    [path] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;03d113

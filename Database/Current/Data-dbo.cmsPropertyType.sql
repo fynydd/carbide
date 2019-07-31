@@ -251,7 +251,7 @@ INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[property
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (365,-49,1202,62,N'enabled',N'Enabled',0,0,NULL,NULL,0,'1B40CC94-0776-4E6E-975C-C45A77C34AC6');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (366,-88,1202,62,N'unitName',N'Name',1,1,NULL,N'Used internally to identify this object; must be unique on each page.',0,'F04F7C64-FC22-4691-BAD7-BB899D6AA06B');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (366,-88,1202,62,N'unitName',N'Name',1,1,NULL,N'Name shown in nested content lists.',0,'F04F7C64-FC22-4691-BAD7-BB899D6AA06B');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (380,1153,1155,63,N'cssSeparator',N'Css Separator',0,0,NULL,NULL,0,'C90C8402-3F46-40D4-AABE-3B75247D381F');
 -- SQRIBE/INSERT;03d113

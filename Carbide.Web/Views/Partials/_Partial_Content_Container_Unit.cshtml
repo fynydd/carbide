@@ -13,13 +13,12 @@
 @{
     var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
 
-    object _instanceId;
-    Html.ViewData.TryGetValue("instanceId", out _instanceId);
-    var instanceId = _instanceId == null ? "container-unit" : _instanceId.ToString();
-    Html.ViewData.TryGetValue("pageId", out _instanceId);
-    var pageId = _instanceId == null ? -1 : Convert.ToInt32(_instanceId.ToString());
+    object _pageId;
+    Html.ViewData.TryGetValue("pageId", out _pageId);
+    var pageId = _pageId == null ? -1 : Convert.ToInt32(_pageId.ToString());
     var page = umbCtx.Content.GetById(pageId);
 
+    var instanceId = Model.Key.AsCssSelector();
     Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".carbide_container_unit#" + instanceId));
     Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
     Html.ViewData.Clear();
@@ -39,6 +38,7 @@
 
             $(container).children("nav").first().css('max-height', '0');
             $(container).children("p").first().css('max-height', '0');
+            $(container).attr("state", "closed");
             $(container).attr("state", "closed");
         }
     }

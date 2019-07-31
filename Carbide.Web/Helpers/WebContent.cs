@@ -44,14 +44,19 @@ namespace Carbide.Web.Helpers
         /// <returns></returns>
         public static string AsCssSelector(this string value)
         {
-            var result = value.ToLower().MakeSlug();
-
-            if (result.Substring(0, 1).IsPureNumeric())
-            {
-                result = "s" + result;
-            }
+            var result = "id_" + value.ToLower().MakeSlug();
 
             return result;
+        }
+
+        /// <summary>
+        /// Format a Guid as a CSS selector.
+        /// </summary>
+        /// <param name="value">Guid to format</param>
+        /// <returns></returns>
+        public static string AsCssSelector(this Guid value)
+        {
+            return value.ToString().Replace("-", "").AsCssSelector();
         }
 
         /// <summary>

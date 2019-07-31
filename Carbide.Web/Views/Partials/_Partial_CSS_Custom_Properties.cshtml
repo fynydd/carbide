@@ -6,8 +6,6 @@
 @using Fynydd.Carbide
 
 @{ 
-    var umbCtx = DependencyResolver.Current.GetService<IUmbracoContextFactory>().EnsureUmbracoContext().UmbracoContext;
-
     object cssSelector;
     Html.ViewData.TryGetValue("cssSelector", out cssSelector);
 

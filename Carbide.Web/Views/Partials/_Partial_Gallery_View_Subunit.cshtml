@@ -7,9 +7,7 @@
 @using Carbide.Web.Helpers
 
 @{
-    object _instanceId;
-    Html.ViewData.TryGetValue("instanceId", out _instanceId);
-    var instanceId = _instanceId == null ? "gallery-view-subunit" : _instanceId.ToString();
+    var instanceId = Model.Key.AsCssSelector();
     var selector = "[sf-subunit].carbide_gallery_view_subunit#" + instanceId;
 
     Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", selector));

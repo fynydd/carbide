@@ -890,6 +890,7 @@
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
     <Content Include="scss\custom\carbide\multi_column_content_subunit.scss" />
     <Content Include="Views\Partials\_Partial_Multi_Column_Content_Subunit.cshtml" />
+    <Content Include="Views\MacroPartials\_Partial_Button.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

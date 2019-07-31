@@ -23,13 +23,13 @@ INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-336,1,N'MediaType
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-335,1,N'MemberTree');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-334,1,N'MediaTree');
+INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-334,-1,N'MediaTree');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-333,1,N'ContentTree');
+INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-333,-1,N'ContentTree');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-332,1,N'ContentTypes');
+INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-332,-1,N'ContentTypes');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-331,1,N'Servers');
+INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-331,-1,N'Servers');
 
 COMMIT TRANSACTION
 

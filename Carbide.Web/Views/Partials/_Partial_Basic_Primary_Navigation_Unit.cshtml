@@ -13,10 +13,7 @@
         var settings = home.Children.First(c => c.ContentType.Alias == "settings");
         var pages = home.DescendantsOrSelf().Where(d => d.Level <= home.Level + 1 && d.GetTemplateAlias().HasValue() && d.HasProperty("showInNavigation") && d.SafeValue<bool>("showInNavigation"));
 
-        object _instanceId;
-        Html.ViewData.TryGetValue("instanceId", out _instanceId);
-        var instanceId = _instanceId == null ? "basic-primary-navigation-unit" : _instanceId.ToString();
-
+        var instanceId = Model.Key.AsCssSelector();
         Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".carbide_basic_primary_navigation_unit#" + instanceId));
         Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
 

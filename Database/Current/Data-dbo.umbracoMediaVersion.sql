@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 23 rows to dbo.umbracoMediaVersion
+-- Adding 28 rows to dbo.umbracoMediaVersion
 
 BEGIN TRANSACTION
 
@@ -56,6 +56,16 @@ INSERT INTO [dbo].[umbracoMediaVersion] ([id],[path]) VALUES (553,N'/media/qsihk
 INSERT INTO [dbo].[umbracoMediaVersion] ([id],[path]) VALUES (860,N'/media/c4wfne5x/red-wood-up-sky.jpg');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoMediaVersion] ([id],[path]) VALUES (863,N'/media/rybjhqpe/blue-sequoyah-logo-full-wide-white-15x.png');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoMediaVersion] ([id],[path]) VALUES (971,NULL);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoMediaVersion] ([id],[path]) VALUES (972,N'/media/llfbbwwa/icons_256x256_office_desk.png');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoMediaVersion] ([id],[path]) VALUES (973,N'/media/43jd13n0/icons_256x256_kitchen.png');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoMediaVersion] ([id],[path]) VALUES (974,N'/media/fk4lebhn/icons_256x256_interiordesign.png');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoMediaVersion] ([id],[path]) VALUES (975,N'/media/l50gam3v/icons_256x256_clipboard_notes.png');
 
 COMMIT TRANSACTION
 
