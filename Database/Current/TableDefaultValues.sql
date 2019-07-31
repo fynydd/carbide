@@ -86,6 +86,10 @@ ALTER TABLE [dbo].[cmsDocumentType] ADD CONSTRAINT [df_cmsDocumentType_IsDefault
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[umbracoServer] ADD CONSTRAINT [df_umbracoServer_registeredDate] DEFAULT (getdate()) FOR [registeredDate]
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
 ALTER TABLE [dbo].[cmsMacro] ADD CONSTRAINT [df_cmsMacro_macroUseInEditor] DEFAULT ('0') FOR [macroUseInEditor]
 GO -- SQRIBE/GO;03d113
 
@@ -103,10 +107,6 @@ GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
 ALTER TABLE [dbo].[cmsMacro] ADD CONSTRAINT [df_cmsMacro_macroDontRender] DEFAULT ('0') FOR [macroDontRender]
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[umbracoServer] ADD CONSTRAINT [df_umbracoServer_registeredDate] DEFAULT (getdate()) FOR [registeredDate]
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
@@ -182,11 +182,11 @@ ALTER TABLE [dbo].[umbracoNode] ADD CONSTRAINT [df_umbracoNode_createDate] DEFAU
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[umbracoCacheInstruction] ADD CONSTRAINT [df_umbracoCacheInstruction_instructionCount] DEFAULT ('1') FOR [instructionCount]
+ALTER TABLE [dbo].[umbracoAudit] ADD CONSTRAINT [df_umbracoAudit_eventDateUtc] DEFAULT (getdate()) FOR [eventDateUtc]
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[umbracoAudit] ADD CONSTRAINT [df_umbracoAudit_eventDateUtc] DEFAULT (getdate()) FOR [eventDateUtc]
+ALTER TABLE [dbo].[umbracoCacheInstruction] ADD CONSTRAINT [df_umbracoCacheInstruction_instructionCount] DEFAULT ('1') FOR [instructionCount]
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113

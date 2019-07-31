@@ -957,9 +957,11 @@ hr:last-child { margin-bottom: 0; }
 
 .carbide_gallery_view_subunit > [role="grid"] > [role="gridcell"] { width: calc(100% / var(--columns)); }
 
-.carbide_multi_column_content_subunit { --background-color: transparent; --column-gutter: 5%; --row-gutter: 3rem; --column-padding: 0; --column-border-radius: 0; }
+.carbide_multi_column_content_subunit { --background-color: transparent; --column-gutter: 5%; --row-gutter: 3rem; --subunit-top-margin: 0; --subunit-bottom-margin: 0; --column-padding: 0; --column-border-radius: 0; --column-text-color: inherit; --button-width: auto; --button-background-color: var(--sf-color-buttons); --button-foreground-color: var(--sf-color-buttons-contrast); background-color: var(--background-color); margin-top: var(--subunit-top-margin); margin-bottom: var(--subunit-bottom-margin); }
 
-.carbide_multi_column_content_subunit .column section { padding: var(--column-padding); border-radius: var(--column-border-radius); background-color: var(--background-color); }
+.carbide_multi_column_content_subunit .column section { padding: var(--column-padding); border-radius: var(--column-border-radius); background-color: var(--background-color); color: var(--column-text-color); }
+
+.carbide_multi_column_content_subunit .column section .button-row a[role="button"] { background-color: var(--button-background-color); border-color: var(--button-background-color); color: var(--button-foreground-color); width: var(--button-width); }
 
 .carbide_portfolio_view_subunit { --column-gutter: 3%; --row-gutter: 2rem; --subunit-top-margin: 0; --subunit-bottom-margin: 0; --columns: 1; --background-color: transparent; --headline-size: 1.2rem; --headline-top-margin: 1.5rem; --headline-bottom-margin: 0.75rem; background-color: var(--background-color); margin-top: var(--subunit-top-margin); margin-bottom: var(--subunit-bottom-margin); }
 

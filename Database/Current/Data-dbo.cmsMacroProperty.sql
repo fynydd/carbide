@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 12 rows to dbo.cmsMacroProperty
+-- Adding 15 rows to dbo.cmsMacroProperty
 
 SET IDENTITY_INSERT [dbo].[cmsMacroProperty] ON
 
@@ -36,6 +36,12 @@ INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[mac
 INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (39,'64ECBDD8-6FC8-4FCC-B761-20D3BBA601D5',N'Umbraco.Integer',1,3,N'maxWidthPct',N'Maximum Width %');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (40,'ED956ECA-81DD-43FC-9D01-DCA02A1DAEE1',N'Umbraco.TrueFalse',1,4,N'center',N'Center Image?');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (47,'959AA068-5D4F-44F5-AA3F-8FBBA7460DB4',N'Umbraco.TextBox',5,0,N'text',N'Text');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (48,'B85B52D3-959C-47D8-90CB-B1B2C5513BBD',N'Umbraco.ContentPicker',5,1,N'link',N'Link');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (49,'9068B036-B551-4B6F-B313-17C541C2A3CB',N'Umbraco.TrueFalse',5,2,N'center',N'Center button?');
 
 COMMIT TRANSACTION
 

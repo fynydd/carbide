@@ -5,11 +5,24 @@
     --background-color: transparent; 
     --column-gutter: 5%;
     --row-gutter: 3rem;
+    --subunit-top-margin: 0;
+    --subunit-bottom-margin: 0;
+
+    // COLUMNS:
 
     --column-padding: 0;
     --column-border-radius: 0;
+    --column-text-color: inherit;
+
+    --button-width: auto;
+    --button-background-color: var(--sf-color-buttons);
+    --button-foreground-color: var(--sf-color-buttons-contrast);
 
     // ---------------------------
+
+    background-color: var(--background-color);
+    margin-top: var(--subunit-top-margin);
+    margin-bottom: var(--subunit-bottom-margin);
 
     .column {
 
@@ -18,6 +31,18 @@
             padding: var(--column-padding);
             border-radius: var(--column-border-radius);
             background-color: var(--background-color);
+            color: var(--column-text-color);
+
+            .button-row {
+
+                a[role="button"] {
+
+                    background-color: var(--button-background-color);
+                    border-color: var(--button-background-color);
+                    color: var(--button-foreground-color);
+                    width: var(--button-width);
+                }
+            }
         }
     }
 }

@@ -1,0 +1,25 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using Fynydd.Carbide
+@using Carbide.Web.Helpers
+@{
+    string text = @Model.MacroParameters["text"].ToString();
+    string center = @Model.MacroParameters["center"].ToString();
+    string id = @Model.MacroParameters["link"].ToString();
+    var udi = Udi.Parse(id);
+    var content = Umbraco.Content(udi);
+    var props = "";
+}
+@if (center.IsBoolean())
+{
+    if (center.GetBoolean())
+    {
+        props += "text-align: center;";
+    }
+}
+@if (props.HasValue())
+{
+    props = " style=\"" + props + "\"";
+}
+<div class="button-row"@(Html.Raw(HttpUtility.HtmlDecode(props)))>
+    <a role="button" href="@Html.Raw(HttpUtility.HtmlDecode(content.GetRelativeUrl()))">@Html.Raw(HttpUtility.HtmlDecode(text))</a>
+</div>
