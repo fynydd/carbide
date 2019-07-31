@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 147 rows to dbo.umbracoNode
+-- Adding 152 rows to dbo.umbracoNode
 
 SET IDENTITY_INSERT [dbo].[umbracoNode] ON
 
@@ -93,7 +93,7 @@ INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sort
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1054,'C3770A41-453D-4A7A-865B-1BCAA07F6A66',-1,1,N'-1,1054',0,0,-1,N'Compositions','2F7A2769-6B0B-4468-90DD-AF42D64F7F16',CONVERT(datetime,'2019-06-04 15:50:05.950',121));
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1056,'7A4E2B57-A6CD-4F7F-9265-5069DE668479',-1,1,N'-1,1056',0,0,-1,N'Carbide Site 1','C66BA18E-EAF3-4CFF-8A22-41B16D66A972',CONVERT(datetime,'2019-06-04 16:07:11.413',121));
+INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1056,'7A4E2B57-A6CD-4F7F-9265-5069DE668479',-1,1,N'-1,1056',0,0,-1,N'Carbide One','C66BA18E-EAF3-4CFF-8A22-41B16D66A972',CONVERT(datetime,'2019-06-04 16:07:11.413',121));
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1057,'A1B98C26-89E2-495B-84E9-2D137C47A29E',1124,2,N'-1,1124,1057',0,0,-1,N'Sample Images','B796F64C-1F99-4FFB-B886-4BF4BC011A9C',CONVERT(datetime,'2019-06-04 16:08:48.450',121));
 -- SQRIBE/INSERT;03d113
@@ -129,7 +129,7 @@ INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sort
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1076,'5E123CB8-9E7D-4EE1-B1EE-CA9F552E8957',-1,1,N'-1,1076',0,0,-1,N'Components','2F7A2769-6B0B-4468-90DD-AF42D64F7F16',CONVERT(datetime,'2019-06-12 19:25:20.520',121));
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1085,'CDCA7AFE-6C24-43FD-AE45-6A6BDDA0ACE0',-1,1,N'-1,1085',1,0,-1,N'Carbide Site 2','C66BA18E-EAF3-4CFF-8A22-41B16D66A972',CONVERT(datetime,'2019-06-16 16:02:22.863',121));
+INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1085,'CDCA7AFE-6C24-43FD-AE45-6A6BDDA0ACE0',-1,1,N'-1,1085',1,0,-1,N'Blue Sequoyah Technologies','C66BA18E-EAF3-4CFF-8A22-41B16D66A972',CONVERT(datetime,'2019-06-16 16:02:22.863',121));
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1097,'A7154D30-3775-4C17-A8DE-E3754DE08DB8',-1,1,N'-1,1097',42,0,-1,N'Carbide Rich Content - Headline Style - Radio button list','30A2A501-1978-4DDB-A57B-F7EFED43BA3C',CONVERT(datetime,'2019-06-24 21:02:52.403',121));
 -- SQRIBE/INSERT;03d113
@@ -306,6 +306,16 @@ INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sort
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1220,'9356AD11-BBF7-4113-BFE3-90E6791EBF14',1125,2,N'-1,1125,1220',0,0,-1,N'Red Wood Up Sky','B796F64C-1F99-4FFB-B886-4BF4BC011A9C',CONVERT(datetime,'2019-07-29 15:50:54.497',121));
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1221,'C1930288-FEE4-46EF-B5E4-B4D8FE639DD2',1125,2,N'-1,1125,1221',0,0,-1,N'Blue Sequoyah Logo (Full, Wide, White)@15X','B796F64C-1F99-4FFB-B886-4BF4BC011A9C',CONVERT(datetime,'2019-07-29 15:57:42.627',121));
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1222,'85248CD7-2094-419B-863B-2BDF52365C6F',1207,3,N'-1,1076,1207,1222',4,0,-1,N'Multi-Column Content Subunit','A2CB7800-F571-4787-9638-BC48539A0EFB',CONVERT(datetime,'2019-07-31 10:39:58.040',121));
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1223,'C7836D64-2381-448E-8733-E53217CF25C7',1207,3,N'-1,1076,1207,1223',5,0,-1,N'Multi-Column Content Subunit Column','A2CB7800-F571-4787-9638-BC48539A0EFB',CONVERT(datetime,'2019-07-31 10:47:00.897',121));
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1224,'CE3D172A-E4CB-4C29-B0FC-76B6B9103C1A',-1,1,N'-1,1224',71,0,-1,N'Multi-Column Content Subunit - Columns - Nested Content','30A2A501-1978-4DDB-A57B-F7EFED43BA3C',CONVERT(datetime,'2019-07-31 10:48:35.110',121));
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1225,'377CEA91-2370-4892-84E4-97281141B8D5',-1,1,N'-1,1225',72,0,-1,N'Multi-Column Content Subunit - CSS Separator - Carbide Static Text','30A2A501-1978-4DDB-A57B-F7EFED43BA3C',CONVERT(datetime,'2019-07-31 10:50:52.283',121));
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1226,'95556402-A18A-4D58-9487-8C8C4D7530AA',-1,1,N'-1,1226',73,0,-1,N'Multi-Column Content Subunit Column - CSS Separator - Carbide Static Text','30A2A501-1978-4DDB-A57B-F7EFED43BA3C',CONVERT(datetime,'2019-07-31 10:52:30.403',121));
 
 COMMIT TRANSACTION
 

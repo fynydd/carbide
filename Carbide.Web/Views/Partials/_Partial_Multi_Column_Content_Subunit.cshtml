@@ -1,0 +1,52 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedElement>
+@using ContentModels = Umbraco.Web.PublishedModels
+@using System.Xml
+@using System.Xml.Linq
+@using Umbraco.Core
+@using Umbraco.Core.IO
+@using Umbraco.Core.Models.Packaging
+@using Umbraco.Core.Services
+
+@using Carbide.Web.Helpers
+@using Fynydd.Carbide
+
+@{
+    object _instanceId;
+    Html.ViewData.TryGetValue("instanceId", out _instanceId);
+    var instanceId = _instanceId == null ? "multi-column-content-subunit" : _instanceId.ToString();
+    var selector = "[sf-subunit].carbide_multi_column_content_subunit#" + instanceId;
+
+    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", selector));
+    Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
+    Html.ViewData.Clear();
+}
+@if (Model.HasProperty("columns") && Model.HasValue("columns"))
+{
+    var columns = Model.SafeNestedValues("columns").Where(c => c.SafeValue<bool>("enabled"));
+
+    if (columns.Count() > 0)
+    {
+<div id="@(instanceId)" class="carbide_multi_column_content_subunit" sf-subunit>
+    <div sf-outer-wrapper>
+        <div sf-inner-wrapper>
+            <div role="grid" style="--sf-tabp-cols: @(columns.Count()); --sf-tabp-gutters: var(--column-gutter); --sf-row-gutters: var(--row-gutter);">
+        @foreach (var column in columns)
+        {
+            var columnInstanceId = _instanceId == null ? "multi-column-content-subunit-column" : column.SafeValue("unitName").AsCssSelector();
+            var columnSelector = "[role=\"gridcell\"].column#" + columnInstanceId;
+            Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", columnSelector));
+            Html.RenderPartial("_Partial_CSS_Custom_Properties", column, Html.ViewData);
+            Html.ViewData.Clear();
+
+                <div role="gridcell" class="column" id="@(columnInstanceId)">
+                    <section>
+                        @Html.Raw(column.SafeValue("columnContent").ProcessShortCodes(UmbracoContext))
+                    </section>
+                </div>
+        }
+            </div>
+        </div>
+    </div>
+</div>
+    }
+}

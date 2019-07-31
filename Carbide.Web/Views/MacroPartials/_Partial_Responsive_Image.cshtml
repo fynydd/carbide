@@ -1,11 +1,44 @@
 ﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using Fynydd.Carbide
 @using Carbide.Web.Helpers
 @{
     string id = @Model.MacroParameters["responsiveImage"].ToString();
+    string maxWidthStr = @Model.MacroParameters["maxWidthPct"].ToString();
+    var maxWidth = 100;
+    string center = @Model.MacroParameters["center"].ToString();
     var udi = Udi.Parse(id);
     var media = Umbraco.Media(udi);
     var output = "<img src=\"" + media.Url + "?width=640\" />";
     bool useLightbox = (@Model.MacroParameters["enableLightbox"].ToString() == "1");
+}
+@if (maxWidthStr.IsPureNumeric())
+{
+    var props = "";
+
+    maxWidth = Convert.ToInt32(maxWidthStr);
+
+    if (maxWidth > 100 || maxWidth < 1)
+    {
+        maxWidth = 100;
+    }
+
+    if (maxWidth != 100)
+    {
+        props = "max-width: " + maxWidth + "%;";
+    }
+
+    if (center.IsBoolean())
+    {
+        if (center.GetBoolean())
+        {
+            props += "display: block; margin: 0 auto;";
+        }
+    }
+
+    if (props.HasValue())
+    {
+        output = output.Replace("/>", " style=\"" + props + "\" />");
+    }
 }
 @if (useLightbox)
 {

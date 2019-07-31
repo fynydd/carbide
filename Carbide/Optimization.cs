@@ -108,17 +108,25 @@ namespace Fynydd.Carbide
                                 minified = cssc.Compress(umbCtx.ReadFile(filePath));
                             }
 
-                            umbCtx.WriteFile(newContentpath, minified);
+                            try
+                            {
+                                umbCtx.WriteFile(newContentpath, minified);
 
-                            Debug.WriteLine("MINIFIED TO " + newContentpath);
+                                fileInfo = new FileInfo(umbCtx.MapPath(filePath));
+                                lastModified = fileInfo.LastWriteTime;
+                                item = fileInfo.Length + "|" + lastModified.DateFormat(Carbide.Constants.DateFormats.Utc);
 
-                            fileInfo = new FileInfo(umbCtx.MapPath(filePath));
-                            lastModified = fileInfo.LastWriteTime;
-                            item = fileInfo.Length + "|" + lastModified.DateFormat(Carbide.Constants.DateFormats.Utc);
+                                umbCtx.HttpContext.Application[Storage.ConvertFilePathToKey(filePath)] = item;
 
-                            umbCtx.HttpContext.Application[Storage.ConvertFilePathToKey(filePath)] = item;
+                                filePath = newContentpath;
 
-                            filePath = newContentpath;
+                                Debug.WriteLine("MINIFIED TO " + newContentpath);
+                            }
+
+                            catch (Exception e)
+                            {
+                                Debug.WriteLine("COULD NOT MINIFY " + filePath + "; " + e.Message);
+                            }
                         }
 
                         else

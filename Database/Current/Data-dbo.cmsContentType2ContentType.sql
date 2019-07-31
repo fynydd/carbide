@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 22 rows to dbo.cmsContentType2ContentType
+-- Adding 27 rows to dbo.cmsContentType2ContentType
 
 BEGIN TRANSACTION
 
@@ -39,6 +39,12 @@ INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childCont
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1199,1211);
 -- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1199,1222);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1199,1223);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1202,1063);
+-- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1202,1069);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1202,1098);
@@ -52,6 +58,10 @@ INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childCont
 INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1202,1187);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1202,1211);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1202,1222);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1202,1223);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType2ContentType] ([parentContentTypeId],[childContentTypeId]) VALUES (1208,1155);
 

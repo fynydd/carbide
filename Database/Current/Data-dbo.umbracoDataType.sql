@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 71 rows to dbo.umbracoDataType
+-- Adding 74 rows to dbo.umbracoDataType
 
 BEGIN TRANSACTION
 
@@ -69,13 +69,13 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1050,N'Umbraco.MultiUrlPicker',N'Ntext',NULL);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1062,N'Umbraco.TinyMCE',N'Ntext',N'{"editor":{"toolbar":["ace","styleselect","bold","italic","bullist","numlist","link","umbmediapicker","umbmacro","umbembeddialog","hr","subscript","superscript","charmap"],"stylesheets":[],"maxImageSize":500,"mode":"classic"},"hideLabel":false}');
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1062,N'Umbraco.TinyMCE',N'Ntext',N'{"editor":{"toolbar":["ace","styleselect","bold","italic","alignleft","aligncenter","alignright","bullist","numlist","link","umbmediapicker","umbmacro","umbembeddialog","hr","subscript","superscript","charmap"],"stylesheets":[],"maxImageSize":500,"mode":"classic"},"hideLabel":false,"ignoreUserStartNodes":false}');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1064,N'Umbraco.ContentPicker',N'Nvarchar',N'{"showOpenButton":false,"startNodeId":null}');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1065,N'Umbraco.TextBox',N'Nvarchar',N'{}');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1066,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"simpleHeroUnitFrame","ncTabAlias":"Content","nameTemplate":"{{title}}"}],"minItems":1,"confirmDeletes":true,"showIcons":true,"hideLabel":false}');
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1066,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"simpleHeroUnitFrame","ncTabAlias":"Content","nameTemplate":"{{unitName}}"}],"minItems":1,"confirmDeletes":true,"showIcons":true,"hideLabel":false}');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1067,N'Umbraco.Integer',N'Integer',N'{"min":1000,"step":250}');
 -- SQRIBE/INSERT;03d113
@@ -111,7 +111,7 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1160,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"navigationUnit","ncTabAlias":"Content","nameTemplate":"{{position}}"}],"minItems":2,"maxItems":2,"confirmDeletes":true,"showIcons":true,"hideLabel":true}');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1161,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"formSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"},{"ncAlias":"galleryViewSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"},{"ncAlias":"portfolioViewSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"},{"ncAlias":"richContentSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"}],"confirmDeletes":true,"showIcons":true,"hideLabel":false}');
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1161,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"formSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"},{"ncAlias":"galleryViewSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"},{"ncAlias":"multiColumnContentSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"},{"ncAlias":"portfolioViewSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"},{"ncAlias":"richContentSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"}],"confirmDeletes":true,"showIcons":true,"hideLabel":false}');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1162,N'Umbraco.RadioButtonList',N'Nvarchar',N'{"items":[{"id":1,"value":"Ascending"},{"id":2,"value":"Descending"}]}');
 -- SQRIBE/INSERT;03d113
@@ -152,6 +152,12 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1210,N'UmbracoForms.FormPicker',N'Nvarchar',N'{"allowedForms":[]}');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1212,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<h4>Form Subunit CSS Properties</h4>\n<p>For each breakpoint enter CSS custom property variables and values to override the appearance.</p>\n{{help:Form Subunit CSS Help}}\n<p>Below are the <strong>CSS custom properties</strong> with sample data for styling form subunits:</p>\n<p>\n--content-width: 100%;<br />\n--column-gutter: 5%;<br />\n--row-gutter: 3rem;<br />\n--margin-top: 2rem;<br />\n--margin-bottom: 0rem;<br />\n--fieldset-row-spacing: 1.5rem;<br />\n--vertical-subunit-padding: 2rem;\n</p>\n{{/help}}","fullWidth":"1"}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1224,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"multiColumnContentSubunitColumn","ncTabAlias":"Content","nameTemplate":"{{unitName}}"}],"minItems":1,"confirmDeletes":true,"showIcons":true,"hideLabel":true}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1225,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<h4>Multi-Column Content CSS Properties</h4>\n<p>For each breakpoint enter CSS custom property variables and values to override the appearance.</p>\n{{help:Multi-Column Content CSS Help}}\n<p>Below are the <strong>CSS custom properties</strong> with sample data for the multi-column content component:</p>\n<p>\n--column-gutter: 3%;<br />\n--row-gutter: 2rem;<br />\n--subunit-top-margin: 0;<br />\n--subunit-bottom-margin: 0;\n</p>\n<p>\n--background-color: transparent;\n</p>\n{{/help}}","fullWidth":"1"}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1226,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<h4>Column CSS Properties</h4>\n<p>For each breakpoint enter CSS custom property variables and values to override the appearance.</p>\n{{help:Column CSS Help}}\n<p>Below are the <strong>CSS custom properties</strong> with sample data for the column:</p>\n<p>\n--background-color: transparent;\n</p>\n{{/help}}","fullWidth":"1"}');
 
 COMMIT TRANSACTION
 

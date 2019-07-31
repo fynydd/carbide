@@ -67,10 +67,18 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <param name="value">String to evaluate</param>
         /// <returns>true or false</returns>
-        public static bool IsBool(this string value)
+        public static bool IsBoolean(this string value)
         {
-            bool boolVal;
-            return bool.TryParse(value, out boolVal);
+            var boolVal = false;
+
+            value = value.ToLower();
+
+            if (value == "1" || value == "-1" || value == "0" || value == "true" || value == "yes" || value == "false" || value == "no")
+            {
+                boolVal = true;
+            }
+
+            return boolVal;
         }
 
         /// <summary><![CDATA[

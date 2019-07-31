@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 10 rows to dbo.cmsMacroProperty
+-- Adding 12 rows to dbo.cmsMacroProperty
 
 SET IDENTITY_INSERT [dbo].[cmsMacroProperty] ON
 
@@ -17,12 +17,6 @@ INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[mac
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (15,'8D6B560E-4C0F-4FB4-83E3-BD1FA6EC2064',N'Umbraco.TextBox',2,1,N'caption',N'Optional Caption');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (18,'CFBB6557-331C-4244-B949-10F29C05A20A',N'Umbraco.MediaPicker',1,0,N'responsiveImage',N'Responsive Image');
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (19,'2916EB52-4AD7-43F7-B566-9B7E74811E2D',N'Umbraco.TextBox',1,1,N'caption',N'Optional Caption');
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (20,'05597595-4F78-4D2E-9C76-4BD664A0B867',N'Umbraco.TrueFalse',1,2,N'enableLightbox',N'Click to Enlarge?');
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (24,'6964F671-6D50-46B9-90B8-CCE625574986',N'Umbraco.TextBox',3,0,N'youTubeCode',N'YouTube Video ID or URL');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (25,'F975789D-B5A1-455D-B5AE-69DEC1183855',N'Umbraco.TextBox',3,1,N'caption',N'Optional Caption');
@@ -32,6 +26,16 @@ INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[mac
 INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (30,'0F28A8A7-6C41-4AC2-AAFA-AFC4AFED7E11',N'UmbracoForms.ThemePicker',4,1,N'FormTheme',N'Theme');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (31,'4AE31B85-6DD5-4C5E-91A9-0680B431E1F7',N'Umbraco.TrueFalse',4,2,N'ExcludeScripts',N'Exclude Scripts');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (36,'B1ED2633-0B37-42C8-B8EE-0308BA3D724E',N'Umbraco.MediaPicker',1,0,N'responsiveImage',N'Responsive Image');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (37,'2F9AC473-1DBD-4C52-893B-760866E1874B',N'Umbraco.TextBox',1,1,N'caption',N'Optional Caption');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (38,'8D0DA5E8-8063-41DE-B0EE-40FFE968385E',N'Umbraco.TrueFalse',1,2,N'enableLightbox',N'Click to Enlarge?');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (39,'64ECBDD8-6FC8-4FCC-B761-20D3BBA601D5',N'Umbraco.Integer',1,3,N'maxWidthPct',N'Maximum Width %');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsMacroProperty] ([id],[uniquePropertyId],[editorAlias],[macro],[macroPropertySortOrder],[macroPropertyAlias],[macroPropertyName]) VALUES (40,'ED956ECA-81DD-43FC-9D01-DCA02A1DAEE1',N'Umbraco.TrueFalse',1,4,N'center',N'Center Image?');
 
 COMMIT TRANSACTION
 

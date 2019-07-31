@@ -20,6 +20,26 @@ namespace Fynydd.Carbide
     /// ]]></summary>
     public static class Strings
     {
+        /// <summary><![CDATA[
+        /// Returns a bool value from an interpreted string.
+        /// Should check .IsBoolean() first.
+        /// ]]></summary>
+        /// <param name="value">String to convert</param>
+        /// <returns>true or false</returns>
+        public static bool GetBoolean(this string value)
+        {
+            var boolVal = false;
+
+            value = value.ToLower();
+
+            if (value == "1" || value == "-1" || value == "0" || value == "true" || value == "yes" || value == "false" || value == "no")
+            {
+                boolVal = true;
+            }
+
+            return boolVal;
+        }
+
         /// <summary>
         /// Get the relative path from and absolute URL.
         /// </summary>

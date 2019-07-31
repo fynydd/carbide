@@ -133,6 +133,11 @@
                 Html.RenderPartial("_Partial_Form_Subunit", content, Html.ViewData);
             }
 
+            if (content.ContentType.Alias == "multiColumnContentSubunit")
+            {
+                Html.RenderPartial("_Partial_Multi_Column_Content_Subunit", content, Html.ViewData);
+            }
+
             Html.ViewData.Clear();
         }
     }

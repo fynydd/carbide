@@ -1,0 +1,23 @@
+﻿.carbide_multi_column_content_subunit {
+
+    // SETTINGS
+
+    --background-color: transparent; 
+    --column-gutter: 5%;
+    --row-gutter: 3rem;
+
+    --column-padding: 0;
+    --column-border-radius: 0;
+
+    // ---------------------------
+
+    .column {
+
+        section {
+
+            padding: var(--column-padding);
+            border-radius: var(--column-border-radius);
+            background-color: var(--background-color);
+        }
+    }
+}

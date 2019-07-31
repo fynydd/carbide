@@ -287,23 +287,6 @@ CREATE TABLE [dbo].[umbracoKeyValue]
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;03d113
 
-PRINT N'CREATE TABLE [dbo].[umbracoServer]'
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-CREATE TABLE [dbo].[umbracoServer]
-(
-    [id] [int] IDENTITY(1,1) NOT NULL,
-    [address] [nvarchar](500) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
-    [computerName] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
-    [registeredDate] [datetime] NOT NULL,
-    [lastNotifiedDate] [datetime] NOT NULL,
-    [isActive] [bit] NOT NULL,
-    [isMaster] [bit] NOT NULL
-
-) ON [PRIMARY]
-GO -- SQRIBE/GO;03d113
-
 PRINT N'CREATE TABLE [dbo].[umbracoUser]'
 GO -- SQRIBE/GO;03d113
 
@@ -454,6 +437,23 @@ CREATE TABLE [dbo].[umbracoDomain]
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;03d113
 
+PRINT N'CREATE TABLE [dbo].[umbracoServer]'
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+CREATE TABLE [dbo].[umbracoServer]
+(
+    [id] [int] IDENTITY(1,1) NOT NULL,
+    [address] [nvarchar](500) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+    [computerName] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+    [registeredDate] [datetime] NOT NULL,
+    [lastNotifiedDate] [datetime] NOT NULL,
+    [isActive] [bit] NOT NULL,
+    [isMaster] [bit] NOT NULL
+
+) ON [PRIMARY]
+GO -- SQRIBE/GO;03d113
+
 PRINT N'CREATE TABLE [dbo].[UFRecordDataDateTime]'
 GO -- SQRIBE/GO;03d113
 
@@ -536,23 +536,6 @@ CREATE TABLE [dbo].[umbracoRelation]
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;03d113
 
-PRINT N'CREATE TABLE [dbo].[cmsMacroProperty]'
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-CREATE TABLE [dbo].[cmsMacroProperty]
-(
-    [id] [int] IDENTITY(1,1) NOT NULL,
-    [uniquePropertyId] [uniqueidentifier] NOT NULL,
-    [editorAlias] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
-    [macro] [int] NOT NULL,
-    [macroPropertySortOrder] [int] NOT NULL,
-    [macroPropertyAlias] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
-    [macroPropertyName] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL
-
-) ON [PRIMARY]
-GO -- SQRIBE/GO;03d113
-
 PRINT N'CREATE TABLE [dbo].[umbracoLock]'
 GO -- SQRIBE/GO;03d113
 
@@ -575,6 +558,23 @@ CREATE TABLE [dbo].[UFRecordDataBit]
     [Id] [int] IDENTITY(1,1) NOT NULL,
     [Key] [uniqueidentifier] NOT NULL,
     [Value] [bit] NULL
+
+) ON [PRIMARY]
+GO -- SQRIBE/GO;03d113
+
+PRINT N'CREATE TABLE [dbo].[cmsMacroProperty]'
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+CREATE TABLE [dbo].[cmsMacroProperty]
+(
+    [id] [int] IDENTITY(1,1) NOT NULL,
+    [uniquePropertyId] [uniqueidentifier] NOT NULL,
+    [editorAlias] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+    [macro] [int] NOT NULL,
+    [macroPropertySortOrder] [int] NOT NULL,
+    [macroPropertyAlias] [nvarchar](50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+    [macroPropertyName] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL
 
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;03d113
@@ -631,18 +631,6 @@ CREATE TABLE [dbo].[cmsTags]
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;03d113
 
-PRINT N'CREATE TABLE [dbo].[cmsContentType2ContentType]'
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-CREATE TABLE [dbo].[cmsContentType2ContentType]
-(
-    [parentContentTypeId] [int] NOT NULL,
-    [childContentTypeId] [int] NOT NULL
-
-) ON [PRIMARY]
-GO -- SQRIBE/GO;03d113
-
 PRINT N'CREATE TABLE [dbo].[umbracoMediaVersion]'
 GO -- SQRIBE/GO;03d113
 
@@ -686,6 +674,18 @@ CREATE TABLE [dbo].[cmsPropertyTypeGroup]
     [text] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
     [sortorder] [int] NOT NULL,
     [uniqueID] [uniqueidentifier] NOT NULL
+
+) ON [PRIMARY]
+GO -- SQRIBE/GO;03d113
+
+PRINT N'CREATE TABLE [dbo].[cmsContentType2ContentType]'
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+CREATE TABLE [dbo].[cmsContentType2ContentType]
+(
+    [parentContentTypeId] [int] NOT NULL,
+    [childContentTypeId] [int] NOT NULL
 
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;03d113
@@ -787,21 +787,6 @@ CREATE TABLE [dbo].[umbracoUserLogin]
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;03d113
 
-PRINT N'CREATE TABLE [dbo].[umbracoCacheInstruction]'
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-CREATE TABLE [dbo].[umbracoCacheInstruction]
-(
-    [id] [int] IDENTITY(1,1) NOT NULL,
-    [utcStamp] [datetime] NOT NULL,
-    [jsonInstruction] [ntext] COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
-    [originated] [nvarchar](500) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
-    [instructionCount] [int] NOT NULL
-
-) ON [PRIMARY]
-GO -- SQRIBE/GO;03d113
-
 PRINT N'CREATE TABLE [dbo].[cmsPropertyType]'
 GO -- SQRIBE/GO;03d113
 
@@ -841,6 +826,21 @@ CREATE TABLE [dbo].[umbracoNode]
     [text] [nvarchar](255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
     [nodeObjectType] [uniqueidentifier] NULL,
     [createDate] [datetime] NOT NULL
+
+) ON [PRIMARY]
+GO -- SQRIBE/GO;03d113
+
+PRINT N'CREATE TABLE [dbo].[umbracoCacheInstruction]'
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+CREATE TABLE [dbo].[umbracoCacheInstruction]
+(
+    [id] [int] IDENTITY(1,1) NOT NULL,
+    [utcStamp] [datetime] NOT NULL,
+    [jsonInstruction] [ntext] COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+    [originated] [nvarchar](500) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+    [instructionCount] [int] NOT NULL
 
 ) ON [PRIMARY]
 GO -- SQRIBE/GO;03d113
