@@ -9,61 +9,6 @@ PRINT N'CREATE foreign key constraints'
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[cmsLanguageText] WITH NOCHECK ADD CONSTRAINT [FK_cmsLanguageText_cmsDictionary_id] FOREIGN KEY([UniqueId]) 
-REFERENCES [dbo].[cmsDictionary] ([id]) 
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[umbracoDocumentVersion] WITH NOCHECK ADD CONSTRAINT [FK_umbracoDocumentVersion_umbracoContentVersion_id] FOREIGN KEY([id]) 
-REFERENCES [dbo].[umbracoContentVersion] ([id]) 
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[umbracoDocumentVersion] WITH NOCHECK ADD CONSTRAINT [FK_umbracoDocumentVersion_cmsTemplate_nodeId] FOREIGN KEY([templateId]) 
-REFERENCES [dbo].[cmsTemplate] ([nodeId]) 
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[umbracoDomain] WITH NOCHECK ADD CONSTRAINT [FK_umbracoDomain_umbracoNode_id] FOREIGN KEY([domainRootStructureID]) 
-REFERENCES [dbo].[umbracoNode] ([id]) 
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[umbracoLog] WITH NOCHECK ADD CONSTRAINT [FK_umbracoLog_umbracoUser_id] FOREIGN KEY([userId]) 
-REFERENCES [dbo].[umbracoUser] ([id]) 
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[umbracoUserLogin] WITH NOCHECK ADD CONSTRAINT [FK_umbracoUserLogin_umbracoUser_id] FOREIGN KEY([userId]) 
-REFERENCES [dbo].[umbracoUser] ([id]) 
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[umbracoContentVersionCultureVariation] WITH NOCHECK ADD CONSTRAINT [FK_umbracoContentVersionCultureVariation_umbracoContentVersion_id] FOREIGN KEY([versionId]) 
-REFERENCES [dbo].[umbracoContentVersion] ([id]) 
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[umbracoContentVersionCultureVariation] WITH NOCHECK ADD CONSTRAINT [FK_umbracoContentVersionCultureVariation_umbracoLanguage_id] FOREIGN KEY([languageId]) 
-REFERENCES [dbo].[umbracoLanguage] ([id]) 
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[cmsMacroProperty] WITH NOCHECK ADD CONSTRAINT [FK_cmsMacroProperty_cmsMacro_id] FOREIGN KEY([macro]) 
-REFERENCES [dbo].[cmsMacro] ([id]) 
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[umbracoContentVersionCultureVariation] WITH NOCHECK ADD CONSTRAINT [FK_umbracoContentVersionCultureVariation_umbracoUser_id] FOREIGN KEY([availableUserId]) 
-REFERENCES [dbo].[umbracoUser] ([id]) 
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
-ALTER TABLE [dbo].[umbracoDocumentCultureVariation] WITH NOCHECK ADD CONSTRAINT [FK_umbracoDocumentCultureVariation_umbracoNode_id] FOREIGN KEY([nodeId]) 
-REFERENCES [dbo].[umbracoNode] ([id]) 
-GO -- SQRIBE/GO;03d113
-
--- SQRIBE/OBJ;03d113
 ALTER TABLE [dbo].[umbracoDocumentCultureVariation] WITH NOCHECK ADD CONSTRAINT [FK_umbracoDocumentCultureVariation_umbracoLanguage_id] FOREIGN KEY([languageId]) 
 REFERENCES [dbo].[umbracoLanguage] ([id]) 
 GO -- SQRIBE/GO;03d113
@@ -366,4 +311,59 @@ GO -- SQRIBE/GO;03d113
 -- SQRIBE/OBJ;03d113
 ALTER TABLE [dbo].[cmsLanguageText] WITH NOCHECK ADD CONSTRAINT [FK_cmsLanguageText_umbracoLanguage_id] FOREIGN KEY([languageId]) 
 REFERENCES [dbo].[umbracoLanguage] ([id]) 
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[cmsLanguageText] WITH NOCHECK ADD CONSTRAINT [FK_cmsLanguageText_cmsDictionary_id] FOREIGN KEY([UniqueId]) 
+REFERENCES [dbo].[cmsDictionary] ([id]) 
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[umbracoDocumentVersion] WITH NOCHECK ADD CONSTRAINT [FK_umbracoDocumentVersion_umbracoContentVersion_id] FOREIGN KEY([id]) 
+REFERENCES [dbo].[umbracoContentVersion] ([id]) 
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[umbracoDocumentVersion] WITH NOCHECK ADD CONSTRAINT [FK_umbracoDocumentVersion_cmsTemplate_nodeId] FOREIGN KEY([templateId]) 
+REFERENCES [dbo].[cmsTemplate] ([nodeId]) 
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[umbracoDomain] WITH NOCHECK ADD CONSTRAINT [FK_umbracoDomain_umbracoNode_id] FOREIGN KEY([domainRootStructureID]) 
+REFERENCES [dbo].[umbracoNode] ([id]) 
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[umbracoLog] WITH NOCHECK ADD CONSTRAINT [FK_umbracoLog_umbracoUser_id] FOREIGN KEY([userId]) 
+REFERENCES [dbo].[umbracoUser] ([id]) 
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[umbracoUserLogin] WITH NOCHECK ADD CONSTRAINT [FK_umbracoUserLogin_umbracoUser_id] FOREIGN KEY([userId]) 
+REFERENCES [dbo].[umbracoUser] ([id]) 
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[umbracoContentVersionCultureVariation] WITH NOCHECK ADD CONSTRAINT [FK_umbracoContentVersionCultureVariation_umbracoContentVersion_id] FOREIGN KEY([versionId]) 
+REFERENCES [dbo].[umbracoContentVersion] ([id]) 
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[umbracoContentVersionCultureVariation] WITH NOCHECK ADD CONSTRAINT [FK_umbracoContentVersionCultureVariation_umbracoLanguage_id] FOREIGN KEY([languageId]) 
+REFERENCES [dbo].[umbracoLanguage] ([id]) 
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[cmsMacroProperty] WITH NOCHECK ADD CONSTRAINT [FK_cmsMacroProperty_cmsMacro_id] FOREIGN KEY([macro]) 
+REFERENCES [dbo].[cmsMacro] ([id]) 
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[umbracoContentVersionCultureVariation] WITH NOCHECK ADD CONSTRAINT [FK_umbracoContentVersionCultureVariation_umbracoUser_id] FOREIGN KEY([availableUserId]) 
+REFERENCES [dbo].[umbracoUser] ([id]) 
+GO -- SQRIBE/GO;03d113
+
+-- SQRIBE/OBJ;03d113
+ALTER TABLE [dbo].[umbracoDocumentCultureVariation] WITH NOCHECK ADD CONSTRAINT [FK_umbracoDocumentCultureVariation_umbracoNode_id] FOREIGN KEY([nodeId]) 
+REFERENCES [dbo].[umbracoNode] ([id]) 
 GO -- SQRIBE/GO;03d113

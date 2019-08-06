@@ -6,14 +6,12 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 2 rows to dbo.umbracoUserStartNode
+-- Adding 1 row to dbo.umbracoUserStartNode
 
 SET IDENTITY_INSERT [dbo].[umbracoUserStartNode] ON
 
 BEGIN TRANSACTION
 
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoUserStartNode] ([id],[userId],[startNode],[startNodeType]) VALUES (1,1,1056,1);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoUserStartNode] ([id],[userId],[startNode],[startNodeType]) VALUES (2,1,1124,2);
 

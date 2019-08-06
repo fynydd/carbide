@@ -13,13 +13,13 @@ SET IDENTITY_INSERT [dbo].[umbracoDomain] ON
 BEGIN TRANSACTION
 
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (7,1,1056,N'carbide.fynydd.com.local');
+INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (13,1,1243,N'bst.staging.fynydd.com');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (10,1,1056,N'carbide.staging.fynydd.com');
+INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (14,1,1243,N'bst.fynydd.com.local');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (11,1,1085,N'bst.staging.fynydd.com');
+INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (15,1,1232,N'carbide.staging.fynydd.com');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (12,1,1085,N'bst.fynydd.com.local');
+INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (16,1,1232,N'carbide.fynydd.com.local');
 
 COMMIT TRANSACTION
 
