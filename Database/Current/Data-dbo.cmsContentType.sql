@@ -39,7 +39,7 @@ INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[de
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (551,1119,N'contentPage',N'icon-umb-content color-black',N'folder.png',NULL,0,0,1,0);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (553,1129,N'contentContainerUnit',N'icon-checkbox-dotted color-black',N'folder.png',N'Creates a spaced container for subunit content',0,1,0,0);
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (553,1129,N'elasticContainerUnit',N'icon-checkbox-dotted color-black',N'folder.png',N'Creates a centered container for subunit content',0,1,0,0);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (555,1140,N'portfolioViewSubunit',N'icon-thumbnail-list color-black',N'folder.png',N'Display pages as a gallery of items (e.g. services, samples, photos, and more)',0,1,0,0);
 -- SQRIBE/INSERT;03d113

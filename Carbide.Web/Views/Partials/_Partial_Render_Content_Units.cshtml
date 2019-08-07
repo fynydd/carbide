@@ -24,9 +24,9 @@
                     Html.RenderPartial("_Partial_Simple_Hero_Unit", content, Html.ViewData);
                 }
 
-                if (content.ContentType.Alias == "contentContainerUnit")
+                if (content.ContentType.Alias == "elasticContainerUnit")
                 {
-                    Html.RenderPartial("_Partial_Content_Container_Unit", content, Html.ViewData);
+                    Html.RenderPartial("_Partial_Elastic_Container_Unit", content, Html.ViewData);
                 }
 
                 Html.ViewData.Clear();

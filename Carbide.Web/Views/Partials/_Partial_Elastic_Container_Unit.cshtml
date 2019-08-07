@@ -19,7 +19,7 @@
     var page = umbCtx.Content.GetById(pageId);
 
     var instanceId = Model.Key.AsCssSelector();
-    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".carbide_container_unit#" + instanceId));
+    Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".carbide_elastic_container_unit#" + instanceId));
     Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
     Html.ViewData.Clear();
 }
@@ -59,7 +59,7 @@
     });
 
 </script>
-<section id="@(instanceId)" class="carbide_container_unit" sf-unit>
+<section id="@(instanceId)" class="carbide_elastic_container_unit" sf-unit>
     <div sf-outer-wrapper>
         <div sf-inner-wrapper>
             <div role="grid" style="--sf-tabp-gutters: var(--column-gutter); --sf-row-gutters: var(--row-gutter);">

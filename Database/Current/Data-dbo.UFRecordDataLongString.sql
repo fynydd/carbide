@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 6 rows to dbo.UFRecordDataLongString
+-- Adding 8 rows to dbo.UFRecordDataLongString
 
 SET IDENTITY_INSERT [dbo].[UFRecordDataLongString] ON
 
@@ -24,6 +24,10 @@ INSERT INTO [dbo].[UFRecordDataLongString] ([Id],[Key],[Value]) VALUES (5,'FE376
 INSERT INTO [dbo].[UFRecordDataLongString] ([Id],[Key],[Value]) VALUES (6,'F8AA8079-D059-4DE3-AA00-50A0DBCBA22C',N'huhjgjgjg hjg jg jhg jhg jhg hjg jhg jhg jhg jg jh gjhg jh gjg jhg jhg hj gjh ghj ghj ghjg hjg hjghj gjhg hjg hj hj ghjg.');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[UFRecordDataLongString] ([Id],[Key],[Value]) VALUES (7,'7F2CA863-4B08-4C5C-A94F-2C1B8C1F9651',N'huhjgjgjg hjg jg jhg jhg jhg hjg jhg jhg jhg jg jh gjhg jh gjg jhg jhg hj gjh ghj ghj ghjg hjg hjghj gjhg hjg hj hj ghjg.');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[UFRecordDataLongString] ([Id],[Key],[Value]) VALUES (8,'9763D84C-A584-423C-94B3-6972786C4E75',N'Teat question');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[UFRecordDataLongString] ([Id],[Key],[Value]) VALUES (9,'B9D7D28F-D16E-4D32-82CD-312FCFFB3E5C',N'Teat question');
 
 COMMIT TRANSACTION
 
