@@ -16,7 +16,7 @@
 
         var instanceId = Model.Key.AsCssSelector();
         Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".carbide_basic_footer_navigation_unit#" + instanceId));
-        Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
+        Html.RenderPartial("_Partial_CSS_Custom_Properties", Model.PickerValue("style"), Html.ViewData);
 
         var isPrimary = instanceId.Contains("primary");
 

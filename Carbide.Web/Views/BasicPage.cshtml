@@ -14,7 +14,7 @@
     @{
         // Page-level CSS overrides
         Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ":root"));
-        Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
+        Html.RenderPartial("_Partial_CSS_Custom_Properties", Model.PickerValue("style"), Html.ViewData);
         Html.ViewData.Clear();
     }
 }

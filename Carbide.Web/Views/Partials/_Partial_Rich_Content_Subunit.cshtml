@@ -10,7 +10,7 @@
     var selector = "[sf-subunit].carbide_rich_content_subunit#" + instanceId;
 
     Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", selector));
-    Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
+    Html.RenderPartial("_Partial_CSS_Custom_Properties", Model.PickerValue("style"), Html.ViewData);
 
 
 
@@ -25,9 +25,9 @@
 
         if (width != "false")
         {
-            if (Model.SafeValue(breakpoint + "CssProperties").HasValue())
+            if (Model.PickerValue("style").SafeValue(breakpoint + "CssProperties").HasValue())
             {
-                var props = Model.SafeValue(breakpoint + "CssProperties").ToLower().Replace(" ", "");
+                var props = Model.PickerValue("style").SafeValue(breakpoint + "CssProperties").ToLower().Replace(" ", "");
 
                 if (props.Contains("--content-align:") || props.Contains("--nodes-align:"))
                 {
@@ -47,9 +47,9 @@
 
             if (width != "false")
             {
-                if (Model.SafeValue(breakpoint + "CssProperties").HasValue())
+                if (Model.PickerValue("style").SafeValue(breakpoint + "CssProperties").HasValue())
                 {
-                    var props = Model.SafeValue(breakpoint + "CssProperties").ToLower().Replace(" ", "");
+                    var props = Model.PickerValue("style").SafeValue(breakpoint + "CssProperties").ToLower().Replace(" ", "");
 
     <text>
     @@media (min-width: @(width)) {

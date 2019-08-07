@@ -15,7 +15,7 @@
     var selector = "[sf-subunit].carbide_multi_column_content_subunit#" + instanceId;
 
     Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", selector));
-    Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
+    Html.RenderPartial("_Partial_CSS_Custom_Properties", Model.PickerValue("style"), Html.ViewData);
     Html.ViewData.Clear();
 }
 @if (Model.HasProperty("columns") && Model.HasValue("columns"))
@@ -27,13 +27,13 @@
 <div id="@(instanceId)" class="carbide_multi_column_content_subunit" sf-subunit>
     <div sf-outer-wrapper>
         <div sf-inner-wrapper>
-            <div role="grid" style="--sf-tabp-cols: @(columns.Count()); --sf-tabp-gutters: var(--column-gutter); --sf-row-gutters: var(--row-gutter);">
+            <div role="grid" style="--sf-cols: var(--columns); --sf-gutters: var(--column-gutter); --sf-row-gutters: var(--row-gutter);">
         @foreach (var column in columns)
         {
             var columnInstanceId = column.Key.AsCssSelector();
             var columnSelector = "[role=\"gridcell\"].column#" + columnInstanceId;
             Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", columnSelector));
-            Html.RenderPartial("_Partial_CSS_Custom_Properties", column, Html.ViewData);
+            Html.RenderPartial("_Partial_CSS_Custom_Properties", column.PickerValue("style"), Html.ViewData);
             Html.ViewData.Clear();
 
                 <div role="gridcell" class="column" id="@(columnInstanceId)">

@@ -15,7 +15,7 @@
 
         var instanceId = Model.Key.AsCssSelector();
         Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".carbide_basic_primary_navigation_unit#" + instanceId));
-        Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
+        Html.RenderPartial("_Partial_CSS_Custom_Properties", Model.PickerValue("style"), Html.ViewData);
 
 <section id="@(instanceId)" class="carbide_basic_primary_navigation_unit" sf-unit>
     <div class="background-layer"></div>

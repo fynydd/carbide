@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 26 rows to dbo.cmsContentType
+-- Adding 28 rows to dbo.cmsContentType
 
 SET IDENTITY_INSERT [dbo].[cmsContentType] ON
 
@@ -59,11 +59,15 @@ INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[de
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (566,1211,N'formSubunit',N'icon-umb-contour color-black',N'folder.png',NULL,0,1,0,0);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (567,1215,N'xMLSiteMap',N'icon-map color-black',N'folder.png',NULL,0,0,0,0);
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (567,1215,N'xMLSiteMap',N'icon-map-location color-black',N'folder.png',NULL,0,0,0,0);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (568,1222,N'multiColumnContentSubunit',N'icon-columns color-black',N'folder.png',N'Multi-column rich content that collapses to one column for mobile devices.',0,1,0,0);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (569,1223,N'multiColumnContentSubunitColumn',N'icon-checkbox-empty color-black',N'folder.png',NULL,0,1,0,0);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (570,1246,N'style',N'icon-paint-roller color-black',N'folder.png',NULL,0,0,0,0);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (571,1247,N'styleCollection',N'icon-color-bucket color-black',N'folder.png',NULL,1,0,0,0);
 
 COMMIT TRANSACTION
 

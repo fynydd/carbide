@@ -13,7 +13,7 @@ $media-breakpoints: (
     // REQUIRED: Set the screen width for which a phablet experience begins.
     // To skip this breakpoint, set to false.
     // Standard value is 400px.
-    phablet:  (false, phab), 
+    phablet:  (414px, phab), 
     
     // REQUIRED: Set the screen width for which a portrait tablet experience begins.
     // To skip this breakpoint, set to false.

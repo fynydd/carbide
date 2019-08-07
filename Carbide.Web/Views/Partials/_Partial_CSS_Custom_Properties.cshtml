@@ -13,19 +13,22 @@
     var breakpoints = new string[] { "zero", "phab", "tabp", "tabl", "note", "desk", "elas" };
     var hasProps = false;
 
-    foreach (var breakpoint in breakpoints)
+    if (Model != null)
     {
-        if (hasProps == false)
+        foreach (var breakpoint in breakpoints)
         {
-            var width = SiteSettings.GetCssBreakpoint(breakpoint);
-
-            if (width != "false")
+            if (hasProps == false)
             {
-                var propName = breakpoint + "CssProperties";
+                var width = SiteSettings.GetCssBreakpoint(breakpoint);
 
-                if (Model.SafeValue(propName).HasValue())
+                if (width != "false")
                 {
-                    hasProps = true;
+                    var propName = breakpoint + "CssProperties";
+
+                    if (Model.HasProperty(propName) && Model.SafeValue(propName).HasValue())
+                    {
+                        hasProps = true;
+                    }
                 }
             }
         }

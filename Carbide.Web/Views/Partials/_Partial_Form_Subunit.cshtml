@@ -10,7 +10,7 @@
     var selector = "[sf-subunit].carbide_form_subunit#" + instanceId;
 
     Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", selector));
-    Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
+    Html.RenderPartial("_Partial_CSS_Custom_Properties", Model.PickerValue("style"), Html.ViewData);
 }
 <div id="@(instanceId)" class="carbide_form_subunit" sf-subunit>
 

@@ -20,7 +20,7 @@
 
     var instanceId = Model.Key.AsCssSelector();
     Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".carbide_elastic_container_unit#" + instanceId));
-    Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
+    Html.RenderPartial("_Partial_CSS_Custom_Properties", Model.PickerValue("style"), Html.ViewData);
     Html.ViewData.Clear();
 }
 @if (Model.HasProperty("contentSubunits") && Model.HasValue("contentSubunits"))

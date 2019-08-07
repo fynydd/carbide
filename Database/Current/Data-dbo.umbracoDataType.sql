@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 74 rows to dbo.umbracoDataType
+-- Adding 75 rows to dbo.umbracoDataType
 
 BEGIN TRANSACTION
 
@@ -19,7 +19,7 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (-96,N'Umbraco.ListView',N'Nvarchar',N'{"pageSize":100, "orderBy":"updateDate", "orderDirection":"desc", "layouts":[{"name": "Grid","path": "views/propertyeditors/listview/layouts/grid/grid.html", "icon": "icon-thumbnails-small", "isSystem": 1, "selected": true},{"name": "List","path": "views/propertyeditors/listview/layouts/list/list.html","icon": "icon-list", "isSystem": 1,"selected": true}], "includeProperties":[{"alias":"updateDate","header":"Last edited","isSystem":1},{"alias":"owner","header":"Updated by","isSystem":1}]}');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (-95,N'Umbraco.ListView',N'Nvarchar',N'{"pageSize":100,"orderBy":"updateDate","orderDirection":"asc","includeProperties":[{"alias":"updateDate","header":"Last edited","isSystem":1},{"alias":"owner","header":"Updated by","isSystem":1}],"layouts":[{"name":"List","path":"views/propertyeditors/listview/layouts/list/list.html","icon":"icon-list","isSystem":1,"selected":true},{"name":"Grid","path":"views/propertyeditors/listview/layouts/grid/grid.html","icon":"icon-thumbnails-small","isSystem":1,"selected":true}],"bulkActionPermissions":{"allowBulkPublish":true,"allowBulkUnpublish":true,"allowBulkCopy":true,"allowBulkMove":true,"allowBulkDelete":true},"tabName":"Components"}');
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (-95,N'Umbraco.ListView',N'Nvarchar',N'{"pageSize":100,"orderBy":"name","orderDirection":"asc","includeProperties":[{"alias":"updateDate","header":"Last edited","isSystem":1},{"alias":"owner","header":"Updated by","isSystem":1}],"layouts":[{"name":"List","path":"views/propertyeditors/listview/layouts/list/list.html","icon":"icon-list","isSystem":1,"selected":true},{"name":"Grid","path":"views/propertyeditors/listview/layouts/grid/grid.html","icon":"icon-thumbnails-small","isSystem":1,"selected":true}],"bulkActionPermissions":{"allowBulkPublish":true,"allowBulkUnpublish":true,"allowBulkCopy":true,"allowBulkMove":true,"allowBulkDelete":true},"tabName":"Styles","showContentFirst":false}');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (-94,N'Umbraco.Label',N'Date',N'{"umbracoDataValueType":"DATETIME"}');
 -- SQRIBE/INSERT;03d113
@@ -158,6 +158,8 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1225,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<h4>Multi-Column Content CSS Properties</h4>\n<p>For each breakpoint enter CSS custom property variables and values to override the appearance.</p>\n{{help:Multi-Column Content CSS Help}}\n<p>Below are the <strong>CSS custom properties</strong> with sample data for the multi-column content component:</p>\n<p>\n--background-color: transparent;<br />\n--column-gutter: 3%;<br />\n--row-gutter: 2rem;<br />\n--subunit-top-margin: 0;<br />\n--subunit-bottom-margin: 0;\n</p>\n{{/help}}","fullWidth":"1"}');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1226,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<h4>Column CSS Properties</h4>\n<p>For each breakpoint enter CSS custom property variables and values to override the appearance.</p>\n{{help:Column CSS Help}}\n<p>Below are the <strong>CSS custom properties</strong> with sample data for the column:</p>\n<p>\n--background-color: transparent;<br />\n--column-padding: 0;<br />\n--column-border-radius: 0;<br />\n--column-text-color: inherit;\n</p>\n<p>\n--button-width: auto;<br />\n--button-background-color: var(--sf-color-buttons);<br />\n--button-foreground-color: var(--sf-color-buttons-contrast);\n</p>\n{{/help}}","fullWidth":"1"}');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1256,N'Umbraco.MultiNodeTreePicker',N'Ntext',N'{"startNode":{"type":"content","query":"$site/styleCollection","id":null},"filter":"style","minNumber":0,"maxNumber":1,"showOpenButton":true,"ignoreUserStartNodes":false}');
 
 COMMIT TRANSACTION
 

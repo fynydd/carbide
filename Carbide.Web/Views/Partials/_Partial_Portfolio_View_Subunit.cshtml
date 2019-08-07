@@ -10,7 +10,7 @@
     var selector = "[sf-subunit].carbide_portfolio_view_subunit#" + instanceId;
 
     Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", selector));
-    Html.RenderPartial("_Partial_CSS_Custom_Properties", Model, Html.ViewData);
+    Html.RenderPartial("_Partial_CSS_Custom_Properties", Model.PickerValue("style"), Html.ViewData);
 
     var filterTags = Model.SafeValue("filterTags").Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
     var excludeTags = Model.SafeValue("excludeTags").Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
