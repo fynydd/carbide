@@ -6,6 +6,7 @@
                 'response': function (response) {
                     if (response.config.url.includes('/umbraco/backoffice/UmbracoApi/Content/GetById')
                             || response.config.url.includes('/umbraco/backoffice/UmbracoApi/Media/GetById')
+                            || response.config.url.includes('/umbraco/backoffice/UmbracoApi/Media/GetEmpty')
                             || response.config.url.includes('umbraco/backoffice/UmbracoApi/Content/GetEmpty')) {
                         if (response.status === 200) {
                             window.setTimeout(function () {
