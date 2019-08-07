@@ -63,7 +63,7 @@ INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[de
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (568,1222,N'multiColumnContentSubunit',N'icon-columns color-black',N'folder.png',N'Multi-column rich content that collapses to one column for mobile devices.',0,1,0,0);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (569,1223,N'multiColumnContentSubunitColumn',N'icon-checkbox-empty color-black',N'folder.png',NULL,0,1,0,0);
+INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (569,1223,N'multiColumnContentSubunitColumn',N'icon-checkbox-dotted color-black',N'folder.png',NULL,0,1,0,0);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsContentType] ([pk],[nodeId],[alias],[icon],[thumbnail],[description],[isContainer],[isElement],[allowAtRoot],[variations]) VALUES (570,1246,N'style',N'icon-paint-roller color-black',N'folder.png',NULL,0,0,0,0);
 -- SQRIBE/INSERT;03d113

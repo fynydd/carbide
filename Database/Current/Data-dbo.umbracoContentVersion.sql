@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 200 rows to dbo.umbracoContentVersion
+-- Adding 207 rows to dbo.umbracoContentVersion
 
 SET IDENTITY_INSERT [dbo].[umbracoContentVersion] ON
 
@@ -343,7 +343,7 @@ INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1126,1265,CONVERT(datetime,'2019-08-07 16:27:56.383',121),-1,0,N'Home Tentpole Subunit');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1127,1265,CONVERT(datetime,'2019-08-07 16:27:56.383',121),-1,1,N'Home Tentpole Subunit');
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1127,1265,CONVERT(datetime,'2019-08-07 17:57:05.640',121),-1,0,N'Home Tentpole Subunit');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1128,1266,CONVERT(datetime,'2019-08-07 16:29:35.277',121),-1,0,N'Form (contact)');
 -- SQRIBE/INSERT;03d113
@@ -409,9 +409,23 @@ INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1159,1274,CONVERT(datetime,'2019-08-07 17:25:18.040',121),-1,0,N'Rich Content (centered title only)');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1160,1243,CONVERT(datetime,'2019-08-07 17:24:55.930',121),-1,1,N'Blue Sequoyah Technologies');
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1160,1243,CONVERT(datetime,'2019-08-07 17:52:46.703',121),-1,0,N'Blue Sequoyah Technologies');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1161,1274,CONVERT(datetime,'2019-08-07 17:25:18.040',121),-1,1,N'Rich Content (centered title only)');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1162,1243,CONVERT(datetime,'2019-08-07 17:54:23.187',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1163,1243,CONVERT(datetime,'2019-08-07 17:55:54.387',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1164,1243,CONVERT(datetime,'2019-08-07 17:56:10.170',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1165,1243,CONVERT(datetime,'2019-08-07 17:56:23.200',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1166,1243,CONVERT(datetime,'2019-08-07 17:56:27.483',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1167,1243,CONVERT(datetime,'2019-08-07 17:56:27.483',121),-1,1,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1168,1265,CONVERT(datetime,'2019-08-07 17:57:05.640',121),-1,1,N'Home Tentpole Subunit');
 
 COMMIT TRANSACTION
 

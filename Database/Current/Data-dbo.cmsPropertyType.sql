@@ -273,7 +273,7 @@ INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[property
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (400,-88,1101,27,N'companyNickname',N'Company Nickname',2,0,NULL,N'The short version of a company name, typically without LLC, Inc., etc.',0,'DF4A60F9-3DE8-4CEE-A0ED-C5AEA859AF34');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (401,1062,1223,68,N'columnContent',N'Column Content',2,0,NULL,NULL,0,'105DED45-D9DD-45E0-A143-BD468BB3DA08');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (401,1161,1223,68,N'contentSubunits',N'Column Content',2,0,NULL,NULL,0,'105DED45-D9DD-45E0-A143-BD468BB3DA08');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (402,1224,1222,69,N'columns',N'Columns',2,0,NULL,NULL,0,'99937E08-044E-487E-A4E0-1C361984ADC7');
 -- SQRIBE/INSERT;03d113
@@ -281,27 +281,27 @@ INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[property
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (404,1226,1223,68,N'cSSSeparator',N'CSS Separator',3,0,NULL,NULL,0,'D4DAE507-70D4-463F-AFE3-78EED7AB0289');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (405,1256,1069,15,N'style',N'Style',9,0,NULL,NULL,0,'35F7D8D3-8EFC-4750-9DB9-3DBAC963AF08');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (405,1256,1069,15,N'style',N'Choose Shared Style',9,0,NULL,NULL,0,'35F7D8D3-8EFC-4750-9DB9-3DBAC963AF08');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (406,1256,1129,47,N'style',N'Style',12,0,NULL,NULL,0,'9C55FB16-6780-4AEC-9C45-2E0FC08993DC');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (406,1256,1129,47,N'style',N'Choose Shared Style',12,0,NULL,NULL,0,'9C55FB16-6780-4AEC-9C45-2E0FC08993DC');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (407,1256,1098,26,N'style',N'Style',11,0,NULL,NULL,0,'FBE6D573-8E3D-42BF-BE14-12E234C69441');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (407,1256,1098,26,N'style',N'Choose Shared Style',11,0,NULL,NULL,0,'FBE6D573-8E3D-42BF-BE14-12E234C69441');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (408,1256,1140,49,N'style',N'Style',11,0,NULL,NULL,0,'55BD4EEA-75B9-4A36-B519-83711C842117');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (408,1256,1140,49,N'style',N'Choose Shared Style',11,0,NULL,NULL,0,'55BD4EEA-75B9-4A36-B519-83711C842117');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (409,1256,1187,59,N'style',N'Style',11,0,NULL,NULL,0,'642FF55A-1A45-4C3B-A269-C45D56C54819');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (409,1256,1187,59,N'style',N'Choose Shared Style',11,0,NULL,NULL,0,'642FF55A-1A45-4C3B-A269-C45D56C54819');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (410,1256,1222,69,N'style',N'Style',4,0,NULL,NULL,0,'250CFA6B-1BD7-4C78-AAE7-5E07DAA1F55E');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (410,1256,1222,69,N'style',N'Choose Shared Style',4,0,NULL,NULL,0,'250CFA6B-1BD7-4C78-AAE7-5E07DAA1F55E');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (411,1256,1223,68,N'style',N'Style',4,0,NULL,NULL,0,'2CACD3E2-D69C-4A10-BCC4-0BF32D0E218C');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (411,1256,1223,68,N'style',N'Choose Shared Style',4,0,NULL,NULL,0,'2CACD3E2-D69C-4A10-BCC4-0BF32D0E218C');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (412,1256,1211,67,N'style',N'Style',4,0,NULL,NULL,0,'7AF3070C-95EF-4C7E-B212-7D79CA842CAF');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (412,1256,1211,67,N'style',N'Choose Shared Style',4,0,NULL,NULL,0,'7AF3070C-95EF-4C7E-B212-7D79CA842CAF');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (413,1256,1159,56,N'style',N'Style',8,0,NULL,NULL,0,'A2FB9E1C-7122-4AE4-838C-D635B86997C3');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (413,1256,1159,56,N'style',N'Choose Shared Style',8,0,NULL,NULL,0,'A2FB9E1C-7122-4AE4-838C-D635B86997C3');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (415,1256,1119,65,N'style',N'Style',1,0,NULL,NULL,0,'A9FE8B27-C948-4E45-A4A6-BEDB65F253B8');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (415,1256,1119,65,N'style',N'Choose Shared Style',1,0,NULL,NULL,0,'A9FE8B27-C948-4E45-A4A6-BEDB65F253B8');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (416,1256,1052,64,N'style',N'Style',1,0,NULL,NULL,0,'243D93C4-33DF-4FF9-8977-9CF690F5DD72');
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (416,1256,1052,64,N'style',N'Choose Shared Style',1,0,NULL,NULL,0,'243D93C4-33DF-4FF9-8977-9CF690F5DD72');
 
 COMMIT TRANSACTION
 
