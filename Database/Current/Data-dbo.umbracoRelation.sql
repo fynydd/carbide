@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 6 rows to dbo.umbracoRelation
+-- Adding 7 rows to dbo.umbracoRelation
 
 SET IDENTITY_INSERT [dbo].[umbracoRelation] ON
 
@@ -24,6 +24,8 @@ INSERT INTO [dbo].[umbracoRelation] ([id],[parentId],[childId],[relType],[dateti
 INSERT INTO [dbo].[umbracoRelation] ([id],[parentId],[childId],[relType],[datetime],[comment]) VALUES (45,1249,1271,2,CONVERT(datetime,'2019-08-07 17:10:56.790',121),N'');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoRelation] ([id],[parentId],[childId],[relType],[datetime],[comment]) VALUES (46,1248,1272,2,CONVERT(datetime,'2019-08-07 17:11:04.083',121),N'');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoRelation] ([id],[parentId],[childId],[relType],[datetime],[comment]) VALUES (47,1261,1273,1,CONVERT(datetime,'2019-08-07 17:21:22.020',121),N'');
 
 COMMIT TRANSACTION
 

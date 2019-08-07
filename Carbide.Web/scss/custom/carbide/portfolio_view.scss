@@ -21,14 +21,6 @@
     margin-top: var(--subunit-top-margin);
     margin-bottom: var(--subunit-bottom-margin);
 
-    & > [role="grid"] {
-
-        & > [role="gridcell"] {
-
-            width: calc(100% / var(--columns));
-        }
-    }
-
     h3 {
 
         margin-top: var(--headline-top-margin);

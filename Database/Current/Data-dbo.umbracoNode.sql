@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 181 rows to dbo.umbracoNode
+-- Adding 183 rows to dbo.umbracoNode
 
 SET IDENTITY_INSERT [dbo].[umbracoNode] ON
 
@@ -374,6 +374,10 @@ INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sort
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1271,'C78ED20D-C699-4DDA-9987-0A772AA5B147',-20,1,N'-1,-20,1271',1,1,-1,N'Pages (global)','C66BA18E-EAF3-4CFF-8A22-41B16D66A972',CONVERT(datetime,'2019-08-07 17:04:22.823',121));
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1272,'803F4BE7-8D5E-449A-891C-0358A865E60E',-20,1,N'-1,-20,1272',2,1,-1,N'Pages (global) (1)','C66BA18E-EAF3-4CFF-8A22-41B16D66A972',CONVERT(datetime,'2019-08-07 17:04:52.510',121));
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1273,'739F7953-5A82-4B47-894B-8474158122E1',1248,3,N'-1,1232,1248,1273',12,0,-1,N'Gallery View (4 columns)','C66BA18E-EAF3-4CFF-8A22-41B16D66A972',CONVERT(datetime,'2019-08-07 17:21:21.987',121));
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1274,'314A25FC-78E4-4520-9C6E-8F2F5AF65FE4',1249,3,N'-1,1243,1249,1274',7,0,-1,N'Rich Content (centered title only)','C66BA18E-EAF3-4CFF-8A22-41B16D66A972',CONVERT(datetime,'2019-08-07 17:24:34.773',121));
 
 COMMIT TRANSACTION
 

@@ -1016,8 +1016,6 @@ hr:last-child { margin-bottom: 0; }
 
 .carbide_portfolio_view_subunit { --column-gutter: 3%; --row-gutter: 2rem; --subunit-top-margin: 0; --subunit-bottom-margin: 0; --columns: 1; --background-color: transparent; --headline-size: 1.2rem; --headline-top-margin: 1.5rem; --headline-bottom-margin: 0.75rem; background-color: var(--background-color); margin-top: var(--subunit-top-margin); margin-bottom: var(--subunit-bottom-margin); }
 
-.carbide_portfolio_view_subunit > [role="grid"] > [role="gridcell"] { width: calc(100% / var(--columns)); }
-
 .carbide_portfolio_view_subunit h3 { margin-top: var(--headline-top-margin); margin-bottom: var(--headline-bottom-margin); font-size: var(--headline-size); }
 
 .carbide_rich_content_subunit { --content-width: 100%; --background-color: transparent; --headline-align: left; --headline-margin: 2rem; --content-align: left; --column-gutter: 3%; --row-gutter: 2rem; --button-width: auto; --button-align: left; --button-background-color: var(--sf-color-buttons); --button-foreground-color: var(--sf-color-buttons-contrast); position: relative; width: var(--content-width); margin: 0 auto; text-align: var(--content-align); }
