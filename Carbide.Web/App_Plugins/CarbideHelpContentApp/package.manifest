@@ -9,8 +9,10 @@
       "show": [
         "-media/*", // hide for all media types
         "+content/settings",
+        "+content/styleCollection",
         "+content/homepage",
-        "+content/contentPage"
+        "+content/contentPage",
+        "+content/pageCollection"
       ]
     }
   ],
