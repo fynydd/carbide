@@ -13,11 +13,6 @@
     --columns: 1;
     --column-padding: 0;
     --column-border-radius: 0;
-    --column-text-color: inherit;
-
-    --button-width: auto;
-    --button-background-color: var(--sf-color-buttons);
-    --button-foreground-color: var(--sf-color-buttons-contrast);
 
     // ---------------------------
 
@@ -27,25 +22,11 @@
 
     .column {
 
-        //width: calc(100% / var(--columns));
-
         section {
 
             padding: var(--column-padding);
             border-radius: var(--column-border-radius);
             background-color: var(--background-color);
-            color: var(--column-text-color);
-
-            .button-row {
-
-                a[role="button"] {
-
-                    background-color: var(--button-background-color);
-                    border-color: var(--button-background-color);
-                    color: var(--button-foreground-color);
-                    width: var(--button-width);
-                }
-            }
         }
     }
 }

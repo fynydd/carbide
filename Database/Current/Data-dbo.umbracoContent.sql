@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 67 rows to dbo.umbracoContent
+-- Adding 68 rows to dbo.umbracoContent
 
 BEGIN TRANSACTION
 
@@ -115,8 +115,6 @@ INSERT INTO [dbo].[umbracoContent] ([nodeId],[contentTypeId]) VALUES (1258,1246)
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContent] ([nodeId],[contentTypeId]) VALUES (1259,1246);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoContent] ([nodeId],[contentTypeId]) VALUES (1260,1246);
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContent] ([nodeId],[contentTypeId]) VALUES (1261,1246);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContent] ([nodeId],[contentTypeId]) VALUES (1262,1246);
@@ -137,13 +135,17 @@ INSERT INTO [dbo].[umbracoContent] ([nodeId],[contentTypeId]) VALUES (1269,1246)
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContent] ([nodeId],[contentTypeId]) VALUES (1270,1246);
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoContent] ([nodeId],[contentTypeId]) VALUES (1271,1246);
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoContent] ([nodeId],[contentTypeId]) VALUES (1272,1246);
--- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContent] ([nodeId],[contentTypeId]) VALUES (1273,1246);
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContent] ([nodeId],[contentTypeId]) VALUES (1274,1246);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContent] ([nodeId],[contentTypeId]) VALUES (1278,1277);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContent] ([nodeId],[contentTypeId]) VALUES (1279,1277);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContent] ([nodeId],[contentTypeId]) VALUES (1280,1276);
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContent] ([nodeId],[contentTypeId]) VALUES (1282,1276);
 
 COMMIT TRANSACTION
 

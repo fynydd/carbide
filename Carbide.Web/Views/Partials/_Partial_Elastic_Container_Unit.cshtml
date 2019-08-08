@@ -63,24 +63,26 @@
     <div sf-outer-wrapper>
         <div sf-inner-wrapper>
             <div role="grid" style="--sf-tabp-gutters: var(--column-gutter); --sf-row-gutters: var(--row-gutter);">
-@if(Model.SafeValue("showSidebarNavigation").HasValue() && Model.SafeValue("showSidebarNavigation") != "None")
+@if(Model.HasValue("sidebar"))
 {
+    var sidebar = Model.PickerValue("sidebar");
+
                 <div role="gridcell" class="navigation-column">
                     <section>
-                        <div class="toggle-button" onclick="toggleSidebar($(this).parent());"><i class="fal fa-bars"></i> @(Html.Raw(Model.SafeValue("sidebarTitle").ProcessShortCodes(page)))</div>
+                        <div class="toggle-button" onclick="toggleSidebar($(this).parent());"><i class="fal fa-bars"></i> @(Html.Raw(sidebar.SafeValue("sidebarTitle").ProcessShortCodes(page)))</div>
                         <nav>
-                        @if(Model.HasValue("sidebarExcerpt"))
+                        @if(sidebar.HasValue("sidebarExcerpt"))
                         {
-                            <p>@(Html.Raw(Model.SafeValue("sidebarExcerpt").ProcessShortCodes(page)))</p>
+                            <p>@(Html.Raw(sidebar.SafeValue("sidebarExcerpt").ProcessShortCodes(page)))</p>
                         }
                         @{ 
-                            var parent = (Model.SafeValue("showSidebarNavigation") == "Children" ? page : page.Parent);
+                            var parent = (sidebar.SafeValue("showSidebarNavigation") == "Children" ? page : page.Parent);
                             var listStyle = "ul";
                             var listItemType = "li";
 
-                            if (Model.HasValue("sidebarStyle"))
+                            if (sidebar.HasValue("sidebarStyle"))
                             {
-                                switch (Model.SafeValue("sidebarStyle"))
+                                switch (sidebar.SafeValue("sidebarStyle"))
                                 {
                                     case "Bullets": listStyle = "ul"; listItemType = "li"; break;
                                     case "Numbers": listStyle = "ol"; listItemType = "li"; break;
@@ -91,12 +93,12 @@
                             var navSettings = new NavigationSettings
                             {
                                 StartNode = parent,
-                                IncludeStartNode = Model.SafeValue<bool>("showParentInSidebar"),
+                                IncludeStartNode = sidebar.SafeValue<bool>("showParentInSidebar"),
                                 CurrentPageId = pageId,
                                 ListType = listStyle,
                                 ListItemType = listItemType,
-                                BulletClass = (Model.HasValue("bulletClass") ? Model.SafeValue("bulletClass") : ""),
-                                MaxDepth = (Model.HasValue("sidebarDepth") ? Model.SafeValue<int>("sidebarDepth") : 2)
+                                BulletClass = (sidebar.HasValue("bulletClass") ? sidebar.SafeValue("bulletClass") : ""),
+                                MaxDepth = (sidebar.HasValue("sidebarDepth") ? sidebar.SafeValue<int>("sidebarDepth") : 2)
                             };
 
                             @Html.Raw(WebContent.GenerateNavigationList(navSettings));

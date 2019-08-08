@@ -105,7 +105,17 @@
                                 <div role="gridcell" class="inner-gridcell">
                                     @foreach(var frame in frames)
                                     {
-                                    <div class="frame" style="transition-duration: @(Model.SafeValue<float>("frameTransitionTime")/1000)s;">
+                                        var frameId = frame.Key.AsCssSelector();
+
+                                        if (frame.HasValue("style"))
+                                        {
+                                            var frameSelector = selector + " #" + frameId;
+
+                                            Html.ViewData.Clear();
+                                            Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", frameSelector));
+                                            Html.RenderPartial("_Partial_CSS_Custom_Properties", frame.PickerValue("style"), Html.ViewData);
+                                        }
+                                    <div id="@(frameId)" class="frame" style="transition-duration: @(Model.SafeValue<float>("frameTransitionTime")/1000)s;">
                                         <h1>@Html.Raw(frame.SafeValue("title").ProcessShortCodes(UmbracoContext))</h1>
                                         <div class="excerpt-row">
                                             @Html.Raw(frame.SafeValue("excerpt").ProcessShortCodes(UmbracoContext))
