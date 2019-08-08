@@ -15,7 +15,11 @@
 
     // ---------------------------
 
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 997;
 
     .background-layer {
 
@@ -102,15 +106,6 @@
                 }
             }
         }
-    }
-
-    &#primary-navigation {
-
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 997;
     }
 
     .dim-overlay {

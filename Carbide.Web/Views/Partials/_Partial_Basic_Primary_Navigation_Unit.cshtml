@@ -13,11 +13,10 @@
         var settings = home.Children.First(c => c.ContentType.Alias == "settings");
         var pages = home.DescendantsOrSelf().Where(d => d.Level <= home.Level + 1 && d.GetTemplateAlias().HasValue() && d.HasProperty("showInNavigation") && d.SafeValue<bool>("showInNavigation"));
 
-        var instanceId = Model.Key.AsCssSelector();
-        Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".carbide_basic_primary_navigation_unit#" + instanceId));
+        Html.ViewData.Add(new KeyValuePair<string, object>("cssSelector", ".carbide_basic_primary_navigation_unit#primary-navigation"));
         Html.RenderPartial("_Partial_CSS_Custom_Properties", Model.PickerValue("style"), Html.ViewData);
 
-<section id="@(instanceId)" class="carbide_basic_primary_navigation_unit" sf-unit>
+<section id="primary-navigation" class="carbide_basic_primary_navigation_unit" sf-unit>
     <div class="background-layer"></div>
     <div sf-outer-wrapper>
         <div sf-inner-wrapper>
