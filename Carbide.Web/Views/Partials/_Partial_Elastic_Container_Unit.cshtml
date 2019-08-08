@@ -111,34 +111,30 @@
     {
         if (content.HasProperty("enabled") && content.SafeValue<bool>("enabled"))
         {
-            Html.ViewData.Add(new KeyValuePair<string, object>("instanceId", content.SafeValue("unitName").AsCssSelector()));
-
             if (content.ContentType.Alias == "richContentSubunit")
             {
-                Html.RenderPartial("_Partial_Rich_Content_Subunit", content, Html.ViewData);
+                Html.RenderPartial("_Partial_Rich_Content_Subunit", content);
             }
 
             if (content.ContentType.Alias == "portfolioViewSubunit")
             {
-                Html.RenderPartial("_Partial_Portfolio_View_Subunit", content, Html.ViewData);
+                Html.RenderPartial("_Partial_Portfolio_View_Subunit", content);
             }
 
             if (content.ContentType.Alias == "galleryViewSubunit")
             {
-                Html.RenderPartial("_Partial_Gallery_View_Subunit", content, Html.ViewData);
+                Html.RenderPartial("_Partial_Gallery_View_Subunit", content);
             }
 
             if (content.ContentType.Alias == "formSubunit")
             {
-                Html.RenderPartial("_Partial_Form_Subunit", content, Html.ViewData);
+                Html.RenderPartial("_Partial_Form_Subunit", content);
             }
 
             if (content.ContentType.Alias == "multiColumnContentSubunit")
             {
-                Html.RenderPartial("_Partial_Multi_Column_Content_Subunit", content, Html.ViewData);
+                Html.RenderPartial("_Partial_Multi_Column_Content_Subunit", content);
             }
-
-            Html.ViewData.Clear();
         }
     }
 }

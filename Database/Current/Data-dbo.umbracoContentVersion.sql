@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 207 rows to dbo.umbracoContentVersion
+-- Adding 242 rows to dbo.umbracoContentVersion
 
 SET IDENTITY_INSERT [dbo].[umbracoContentVersion] ON
 
@@ -373,9 +373,9 @@ INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1141,1270,CONVERT(datetime,'2019-08-07 16:35:54.570',121),-1,0,N'Navigation (footer)');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1142,1270,CONVERT(datetime,'2019-08-07 16:35:54.570',121),-1,1,N'Navigation (footer)');
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1142,1270,CONVERT(datetime,'2019-08-08 10:08:38.843',121),-1,0,N'Navigation (footer)');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1143,1245,CONVERT(datetime,'2019-08-07 16:36:09.790',121),-1,1,N'Settings');
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1143,1245,CONVERT(datetime,'2019-08-08 10:08:01.663',121),-1,0,N'Settings');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1144,1271,CONVERT(datetime,'2019-08-07 17:04:22.823',121),-1,0,N'Pages (global)');
 -- SQRIBE/INSERT;03d113
@@ -423,9 +423,79 @@ INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1166,1243,CONVERT(datetime,'2019-08-07 17:56:27.483',121),-1,0,N'Blue Sequoyah Technologies');
 -- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1167,1243,CONVERT(datetime,'2019-08-07 17:56:27.483',121),-1,1,N'Blue Sequoyah Technologies');
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1167,1243,CONVERT(datetime,'2019-08-08 09:58:55.777',121),-1,0,N'Blue Sequoyah Technologies');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1168,1265,CONVERT(datetime,'2019-08-07 17:57:05.640',121),-1,1,N'Home Tentpole Subunit');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1169,1243,CONVERT(datetime,'2019-08-08 10:00:58.770',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1170,1243,CONVERT(datetime,'2019-08-08 10:01:23.967',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1171,1243,CONVERT(datetime,'2019-08-08 10:01:37.113',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1172,1243,CONVERT(datetime,'2019-08-08 10:02:06.550',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1173,1243,CONVERT(datetime,'2019-08-08 10:02:53.743',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1174,1243,CONVERT(datetime,'2019-08-08 10:03:20.513',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1175,1243,CONVERT(datetime,'2019-08-08 10:03:44.047',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1176,1243,CONVERT(datetime,'2019-08-08 10:10:22.847',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1177,1245,CONVERT(datetime,'2019-08-08 10:08:43.140',121),-1,0,N'Settings');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1178,1270,CONVERT(datetime,'2019-08-08 10:08:38.843',121),-1,1,N'Navigation (footer)');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1179,1245,CONVERT(datetime,'2019-08-08 10:08:43.140',121),-1,1,N'Settings');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1180,1243,CONVERT(datetime,'2019-08-08 10:10:32.440',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1181,1243,CONVERT(datetime,'2019-08-08 10:29:57.003',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1182,1243,CONVERT(datetime,'2019-08-08 10:30:27.193',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1183,1243,CONVERT(datetime,'2019-08-08 10:40:36.833',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1184,1243,CONVERT(datetime,'2019-08-08 10:40:43.483',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1185,1243,CONVERT(datetime,'2019-08-08 10:40:49.987',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1186,1243,CONVERT(datetime,'2019-08-08 10:40:57.230',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1187,1243,CONVERT(datetime,'2019-08-08 10:46:19.323',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1188,1243,CONVERT(datetime,'2019-08-08 10:46:33.230',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1189,1243,CONVERT(datetime,'2019-08-08 10:46:36.470',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1190,1243,CONVERT(datetime,'2019-08-08 10:46:54.550',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1191,1243,CONVERT(datetime,'2019-08-08 10:57:57.413',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1192,1243,CONVERT(datetime,'2019-08-08 10:58:15.863',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1193,1243,CONVERT(datetime,'2019-08-08 10:58:35.990',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1194,1243,CONVERT(datetime,'2019-08-08 10:58:40.353',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1195,1243,CONVERT(datetime,'2019-08-08 10:59:43.783',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1196,1243,CONVERT(datetime,'2019-08-08 11:00:29.300',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1197,1243,CONVERT(datetime,'2019-08-08 11:01:32.213',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1198,1243,CONVERT(datetime,'2019-08-08 11:01:46.927',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1199,1243,CONVERT(datetime,'2019-08-08 11:01:59.823',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1200,1243,CONVERT(datetime,'2019-08-08 11:02:07.917',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1201,1243,CONVERT(datetime,'2019-08-08 11:03:14.980',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1202,1243,CONVERT(datetime,'2019-08-08 11:04:15.070',121),-1,0,N'Blue Sequoyah Technologies');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1203,1243,CONVERT(datetime,'2019-08-08 11:04:15.070',121),-1,1,N'Blue Sequoyah Technologies');
 
 COMMIT TRANSACTION
 
