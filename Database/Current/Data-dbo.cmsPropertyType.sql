@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;03d113
 
 -- SQRIBE/TABLE;03d113
--- Adding 140 rows to dbo.cmsPropertyType
+-- Adding 141 rows to dbo.cmsPropertyType
 
 SET IDENTITY_INSERT [dbo].[cmsPropertyType] ON
 
@@ -292,6 +292,8 @@ INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[property
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (432,1256,1202,62,N'style',N'Choose Shared Style',999,0,NULL,N'For each breakpoint enter CSS custom property variables and values to override the appearance.',0,'B07F4423-A6E1-4AA7-8380-7E83BD4C4E82');
 -- SQRIBE/INSERT;03d113
 INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (433,1288,1063,14,N'cSSSeparator',N'CSS Separator',8,0,NULL,NULL,0,'5A359F8D-6FB5-4BFF-AC63-D7E61791FB9B');
+-- SQRIBE/INSERT;03d113
+INSERT INTO [dbo].[cmsPropertyType] ([id],[dataTypeId],[contentTypeId],[propertyTypeGroupId],[Alias],[Name],[sortOrder],[mandatory],[validationRegExp],[Description],[variations],[UniqueID]) VALUES (434,1070,1129,47,N'backgroundImage',N'Background Image',2,0,NULL,N'',0,'C3936B4F-844C-4D8C-9B84-8E057DEFDC79');
 
 COMMIT TRANSACTION
 

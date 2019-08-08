@@ -25,6 +25,14 @@
 }
 @if (Model.HasProperty("contentSubunits") && Model.HasValue("contentSubunits"))
 {
+    var imageParams = "?width=1920&quality=75";
+    var imageUrl = "";
+
+    if (Model.HasValue("backgroundImage"))
+    {
+        imageUrl = Model.PickerValue("backgroundImage").Url + imageParams;
+    }
+
 <script type="text/javascript">
 
     function toggleSidebar(container) {
@@ -60,6 +68,7 @@
 
 </script>
 <section id="@(instanceId)" class="carbide_elastic_container_unit" sf-unit>
+    <div class="background-image" style="@(imageUrl.HasValue() ? "background-image: url(" + imageUrl + ");" : "")"></div>
     <div sf-outer-wrapper>
         <div sf-inner-wrapper>
             <div role="grid" style="--sf-tabp-gutters: var(--column-gutter); --sf-row-gutters: var(--row-gutter);">

@@ -19,6 +19,7 @@
     --nodes-shadow-color: rgba(0, 0, 0, 0.25);
 
     --background-brightness: 100%;
+    --background-contrast: 100%;
     --background-saturation: 100%;
 
     --button-background-color: var(--sf-color-buttons);
@@ -48,8 +49,8 @@
         width: 100%;
         height: 100%;
 
-        filter: brightness(var(--background-brightness)) saturate(var(--background-saturation));
-        -webkit-filter: brightness(var(--background-brightness)) saturate(var(--background-saturation));
+        filter: contrast(var(--background-contrast)) brightness(var(--background-brightness)) saturate(var(--background-saturation));
+        -webkit-filter: contrast(var(--background-contrast)) brightness(var(--background-brightness)) saturate(var(--background-saturation));
         background-position: 50%;
         background-repeat: no-repeat;
         background-size: cover;
