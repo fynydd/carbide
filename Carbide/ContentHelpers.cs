@@ -1003,24 +1003,16 @@ namespace Fynydd.Carbide
         /// ]]></summary>
         /// <param name="documentTypeAlias">Document type alias (e.g. "blogArticle")</param>
         /// <returns>All matching IPublishedContent nodes.</returns>
-        public static IEnumerable<IPublishedContent> GetAllContentByDocTypeAlias(string documentTypeAlias, IPublishedContent root = null)
+        public static IEnumerable<IPublishedContent> GetAllContentByDocTypeAlias(string documentTypeAlias)
         {
             IEnumerable<IPublishedContent> fallback = Enumerable.Empty<IPublishedContent>();
             var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
 
             var content = fallback;
 
-            if (root != null)
-            {
-                content = root.DescendantsOrSelf()
-                    .Where(x => x.DocumentTypeAlias == documentTypeAlias);
-            }
-            else
-            {
-                content = umbracoHelper.TypedContentAtRoot()
-                    .SelectMany(r => r.DescendantsOrSelf())
-                    .Where(x => x.DocumentTypeAlias == documentTypeAlias);
-            }
+			content = umbracoHelper.TypedContentAtRoot()
+				.SelectMany(r => r.DescendantsOrSelf())
+				.Where(x => x.DocumentTypeAlias == documentTypeAlias);
 
             return content;
         }
