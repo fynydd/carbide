@@ -2369,6 +2369,17 @@ namespace Fynydd.Carbide
 
         #region Variables
 
+        /// <summary>
+        /// Determine if an enumeration has at least one item.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="items">Enumeration to evaluate</param>
+        /// <returns></returns>
+        public static bool IsNullOrEmpty<T>(this IEnumerable<T> items)
+        {
+            return items == null || !items.Any();
+        }
+
         private static readonly string[] _base16CharTable = new[]
         {
             "00", "01", "02", "03", "04", "05", "06", "07",
