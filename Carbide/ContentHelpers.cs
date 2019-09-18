@@ -1196,5 +1196,23 @@ namespace Fynydd.Carbide
         }
 
         #endregion
+
+        #region RTE Helpers
+
+        /// <summary>
+        /// Remove weird artifacts from RTE source, like empty paragraph tags.
+        /// </summary>
+        /// <param name="output"></param>
+        /// <returns></returns>
+        public static string CleanRteOutput(this string output)
+        {
+            var result = output;
+
+            result = Regex.Replace(output, @"<p>[\s|&nbsp;]*</p>", "");
+
+            return result;
+        }
+
+        #endregion
     }
 }
