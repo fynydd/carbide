@@ -1007,20 +1007,30 @@ namespace Fynydd.Carbide
         {
             IEnumerable<IPublishedContent> fallback = Enumerable.Empty<IPublishedContent>();
             var umbracoHelper = new UmbracoHelper(Carbide.ContextHelpers.EnsureUmbracoContext());
+            List<IPublishedContent> collection = new List<IPublishedContent>();
 
-            var content = umbracoHelper.TypedContentAtRoot()
-                .SelectMany(root => root.DescendantsOrSelf())
-                .Where(x => x.DocumentTypeAlias == documentTypeAlias);
+            var rootContent = umbracoHelper.TypedContentAtRoot();
 
-            if (content != null)
+            foreach (var rootItem in rootContent)
             {
-                return content;
+                var content = rootItem.DescendantsOrSelf()
+                    .Where(x => x.DocumentTypeAlias == documentTypeAlias);
+
+                try
+                {
+                    foreach (var item in content)
+                    {
+                        collection.Add(item);
+                    }
+                }
+
+                catch
+                {
+
+                }
             }
 
-            else
-            {
-                return fallback;
-            }
+            return collection;
         }
 
         /// <summary><![CDATA[
