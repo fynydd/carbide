@@ -3,19 +3,19 @@ SET ANSI_PADDING, ANSI_WARNINGS, CONCAT_NULL_YIELDS_NULL, ARITHABORT, QUOTED_IDE
 SET DATEFORMAT YMD
 SET XACT_ABORT ON
 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
-GO -- SQRIBE/GO;03d113
+GO -- SQRIBE/GO;ef17d2
 
--- SQRIBE/TABLE;03d113
+-- SQRIBE/TABLE;ef17d2
 -- Adding 2 rows to dbo.umbracoUser
 
 SET IDENTITY_INSERT [dbo].[umbracoUser] ON
 
 BEGIN TRANSACTION
 
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoUser] ([id],[userDisabled],[userNoConsole],[userName],[userLogin],[userPassword],[passwordConfig],[userEmail],[userLanguage],[securityStampToken],[failedLoginAttempts],[lastLockoutDate],[lastPasswordChangeDate],[lastLoginDate],[emailConfirmedDate],[invitedDate],[createDate],[updateDate],[avatar],[tourData]) VALUES (-1,0,0,N'Michael Argentini',N'michael@argentini.us',N'PljhjkdpIYsTvsEv7TEHGg==1tBYNRUd+fLi0KPZXFN9ggZ+aymMKWg72JalH1nOd1U=',N'{"hashAlgorithm":"HMACSHA256"}',N'michael@argentini.us',N'en-US',N'9f0e11c1-d449-45c1-a1bb-a3128c0c023f',NULL,CONVERT(datetime,NULL,121),CONVERT(datetime,'2019-05-29 18:29:08.237',121),CONVERT(datetime,'2019-08-08 09:28:54.327',121),CONVERT(datetime,NULL,121),CONVERT(datetime,NULL,121),CONVERT(datetime,'2019-05-29 18:29:07.180',121),CONVERT(datetime,'2019-08-08 09:28:54.347',121),NULL,NULL);
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoUser] ([id],[userDisabled],[userNoConsole],[userName],[userLogin],[userPassword],[passwordConfig],[userEmail],[userLanguage],[securityStampToken],[failedLoginAttempts],[lastLockoutDate],[lastPasswordChangeDate],[lastLoginDate],[emailConfirmedDate],[invitedDate],[createDate],[updateDate],[avatar],[tourData]) VALUES (1,0,0,N'Site 1 Test User',N'magic@fynydd.com',N'PXZlsJzftPbX73IF46Q/Lg==ioGhEzE1O3rYayNaLy0a7vhfyCYYFOa7Ka7TRCItoxQ=',N'{"hashAlgorithm":"HMACSHA256"}',N'magic@fynydd.com',N'en-US',N'3e0dfd07-ef40-4cd9-9d29-fb75152b3191',0,CONVERT(datetime,NULL,121),CONVERT(datetime,'2019-06-28 10:13:31.270',121),CONVERT(datetime,'2019-07-25 13:31:54.207',121),CONVERT(datetime,NULL,121),CONVERT(datetime,NULL,121),CONVERT(datetime,'2019-06-28 10:12:54.823',121),CONVERT(datetime,'2019-07-25 13:31:54.233',121),NULL,NULL);
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoUser] ([id],[userDisabled],[userNoConsole],[userName],[userLogin],[userPassword],[passwordConfig],[userEmail],[userLanguage],[securityStampToken],[failedLoginAttempts],[lastLockoutDate],[lastPasswordChangeDate],[lastLoginDate],[emailConfirmedDate],[invitedDate],[createDate],[updateDate],[avatar],[tourData]) VALUES (-1,0,0,N'Michael Argentini',N'michael@argentini.us',N'PljhjkdpIYsTvsEv7TEHGg==1tBYNRUd+fLi0KPZXFN9ggZ+aymMKWg72JalH1nOd1U=',N'{"hashAlgorithm":"HMACSHA256"}',N'michael@argentini.us',N'en-US',N'9f0e11c1-d449-45c1-a1bb-a3128c0c023f',NULL,CONVERT(datetime,NULL,121),CONVERT(datetime,'2019-05-29 18:29:08.237',121),CONVERT(datetime,'2019-09-25 19:27:17.840',121),CONVERT(datetime,NULL,121),CONVERT(datetime,NULL,121),CONVERT(datetime,'2019-05-29 18:29:07.180',121),CONVERT(datetime,'2019-09-25 19:27:17.857',121),NULL,NULL);
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoUser] ([id],[userDisabled],[userNoConsole],[userName],[userLogin],[userPassword],[passwordConfig],[userEmail],[userLanguage],[securityStampToken],[failedLoginAttempts],[lastLockoutDate],[lastPasswordChangeDate],[lastLoginDate],[emailConfirmedDate],[invitedDate],[createDate],[updateDate],[avatar],[tourData]) VALUES (1,0,0,N'Site 1 Test User',N'magic@fynydd.com',N'PXZlsJzftPbX73IF46Q/Lg==ioGhEzE1O3rYayNaLy0a7vhfyCYYFOa7Ka7TRCItoxQ=',N'{"hashAlgorithm":"HMACSHA256"}',N'magic@fynydd.com',N'en-US',N'3e0dfd07-ef40-4cd9-9d29-fb75152b3191',0,CONVERT(datetime,NULL,121),CONVERT(datetime,'2019-06-28 10:13:31.270',121),CONVERT(datetime,'2019-09-25 19:23:19.367',121),CONVERT(datetime,NULL,121),CONVERT(datetime,NULL,121),CONVERT(datetime,'2019-06-28 10:12:54.823',121),CONVERT(datetime,'2019-09-25 19:27:40.610',121),NULL,NULL);
 
 COMMIT TRANSACTION
 

@@ -3,23 +3,27 @@ SET ANSI_PADDING, ANSI_WARNINGS, CONCAT_NULL_YIELDS_NULL, ARITHABORT, QUOTED_IDE
 SET DATEFORMAT YMD
 SET XACT_ABORT ON
 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
-GO -- SQRIBE/GO;03d113
+GO -- SQRIBE/GO;ef17d2
 
--- SQRIBE/TABLE;03d113
--- Adding 4 rows to dbo.umbracoDomain
+-- SQRIBE/TABLE;ef17d2
+-- Adding 6 rows to dbo.umbracoDomain
 
 SET IDENTITY_INSERT [dbo].[umbracoDomain] ON
 
 BEGIN TRANSACTION
 
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (13,1,1243,N'bst.staging.fynydd.com');
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (14,1,1243,N'bst.fynydd.com.local');
--- SQRIBE/INSERT;03d113
+-- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (15,1,1232,N'carbide.staging.fynydd.com');
--- SQRIBE/INSERT;03d113
-INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (16,1,1232,N'carbide.fynydd.com.local');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (17,1,1243,N'carbide2.staging.fynydd.com');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (19,1,1232,N'carbide.local');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (20,1,1232,N'carbide1.local');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (21,1,1243,N'carbide2.local');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (22,1,1232,N'localhost');
 
 COMMIT TRANSACTION
 

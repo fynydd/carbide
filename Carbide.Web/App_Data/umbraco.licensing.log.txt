@@ -861,3 +861,63 @@ Your license has been approved for the following IPs/Domains: - Domain: fynydd.c
 - Domain: *.dev.fynydd.com
 - Domain: dev.fynydd.com.local
 - Domain: localhost
+Could not validate license for: 'carbide.local' :
+
+Your license has been approved for the following IPs/Domains: - Domain: fynydd.com
+- Domain: www.fynydd.com
+- Domain: *.fynydd.com
+- Domain: fynydd.com.local
+- Domain: staging.fynydd.com
+- Domain: www.staging.fynydd.com
+- Domain: *.staging.fynydd.com
+- Domain: staging.fynydd.com.local
+- Domain: dev.fynydd.com
+- Domain: www.dev.fynydd.com
+- Domain: *.dev.fynydd.com
+- Domain: dev.fynydd.com.local
+- Domain: localhost
+Could not validate license for: 'carbide.local' :
+
+Your license has been approved for the following IPs/Domains: - Domain: fynydd.com
+- Domain: www.fynydd.com
+- Domain: *.fynydd.com
+- Domain: fynydd.com.local
+- Domain: staging.fynydd.com
+- Domain: www.staging.fynydd.com
+- Domain: *.staging.fynydd.com
+- Domain: staging.fynydd.com.local
+- Domain: dev.fynydd.com
+- Domain: www.dev.fynydd.com
+- Domain: *.dev.fynydd.com
+- Domain: dev.fynydd.com.local
+- Domain: localhost
+Could not validate license for: 'carbide.local' :
+
+Your license has been approved for the following IPs/Domains: - Domain: fynydd.com
+- Domain: www.fynydd.com
+- Domain: *.fynydd.com
+- Domain: fynydd.com.local
+- Domain: staging.fynydd.com
+- Domain: www.staging.fynydd.com
+- Domain: *.staging.fynydd.com
+- Domain: staging.fynydd.com.local
+- Domain: dev.fynydd.com
+- Domain: www.dev.fynydd.com
+- Domain: *.dev.fynydd.com
+- Domain: dev.fynydd.com.local
+- Domain: localhost
+Could not validate license for: 'carbide.local' :
+
+Your license has been approved for the following IPs/Domains: - Domain: fynydd.com
+- Domain: www.fynydd.com
+- Domain: *.fynydd.com
+- Domain: fynydd.com.local
+- Domain: staging.fynydd.com
+- Domain: www.staging.fynydd.com
+- Domain: *.staging.fynydd.com
+- Domain: staging.fynydd.com.local
+- Domain: dev.fynydd.com
+- Domain: www.dev.fynydd.com
+- Domain: *.dev.fynydd.com
+- Domain: dev.fynydd.com.local
+- Domain: localhost

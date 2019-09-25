@@ -54,25 +54,7 @@
 
             $.validator.unobtrusive.adapters.addBool("requiredcb", "required");
 
-            $.validator.addMethod("umbracoforms_selectonefromlist", function (value, element) {
-                var valid = false;
-                $("input", $(element).closest(".checkboxlist, .radiobuttonlist")).each(function (i) {
-                    if ($(this).is(':checked')) {
-                        valid = true;
-                    }
-                });
-
-                if(!valid){
-                    $("input", $(element).closest(".checkboxlist, .radiobuttonlist")).each(function (i) {
-
-                        $(this).addClass("input-validation-error");
-                    });
-                }
-                return valid;
-            });
-
-            $.validator.unobtrusive.adapters.addBool("requiredlist", "umbracoforms_selectonefromlist");
-
+         
             $.validator.addMethod("umbracoforms_regex", function (value, element) {
 
                 var regex = $(element).attr("data-regex");
@@ -216,7 +198,7 @@
                                 formValues[$(this).attr("name")] = $(this).val();
                             }
                             else {
-                                formValues[$(this).attr("name")] += "," + $(this).val();
+                                formValues[$(this).attr("name")] += ";;" + $(this).val();
                             }
                         }
                     }
@@ -246,7 +228,7 @@
                     }
                 }
                 
-                var values = value.split(',');
+                var values = value.split(';;');
                 var matchingExpected = $.grep(values,
                     function (o) {
                         return o === expected;
@@ -257,7 +239,7 @@
                 if(value == null){
                     return (unexpected != value);
                 }
-                var values = value.split(',');
+                var values = value.split(';;');
                 var matchingUnexpected = $.grep(values,
                     function (o) {
                         return o === unexpected;

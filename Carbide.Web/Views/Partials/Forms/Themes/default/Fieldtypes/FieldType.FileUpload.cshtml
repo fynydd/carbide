@@ -1,6 +1,8 @@
 @model Umbraco.Forms.Mvc.Models.FieldViewModel
 
-@{ var isValid = Model.Mandatory && Model.Values != null && Model.Values.Any(); }
+@{
+    var isValid = (Model.Mandatory && Model.Values != null && Model.Values.Any()) || (!Model.Mandatory);
+}
 <input type="file" name="@Model.Name" id="@Model.Id" multiple
        data-val="@(isValid == false ? "true" : null)"
        data-val-required="@(isValid == false ? Model.RequiredErrorMessage : null)" />

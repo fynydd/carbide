@@ -3,16 +3,16 @@ SET ANSI_PADDING, ANSI_WARNINGS, CONCAT_NULL_YIELDS_NULL, ARITHABORT, QUOTED_IDE
 SET DATEFORMAT YMD
 SET XACT_ABORT ON
 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
-GO -- SQRIBE/GO;03d113
+GO -- SQRIBE/GO;ef17d2
 
--- SQRIBE/TABLE;03d113
+-- SQRIBE/TABLE;ef17d2
 -- Adding 1 row to dbo.umbracoLanguage
 
 SET IDENTITY_INSERT [dbo].[umbracoLanguage] ON
 
 BEGIN TRANSACTION
 
--- SQRIBE/INSERT;03d113
+-- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoLanguage] ([id],[languageISOCode],[languageCultureName],[isDefaultVariantLang],[mandatory],[fallbackLanguageId]) VALUES (1,N'en-US',N'English (United States)',1,0,NULL);
 
 COMMIT TRANSACTION

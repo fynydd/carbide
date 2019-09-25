@@ -846,22 +846,41 @@ angular.module("umbraco").controller("UmbracoForms.Editors.Form.CreateController
 			navigationService.hideDialog(showMenu);
 		};
 });
-angular.module("umbraco")
-.controller("UmbracoForms.Editors.Form.DeleteController",
-	function ($scope, formResource, navigationService, treeService) {
+(function () {
+	"use strict";
 
-	    $scope.delete = function (id) {
-	        formResource.deleteByGuid(id).then(function () {
-	            treeService.removeNode($scope.currentNode);
-	            navigationService.hideNavigation();
+	function Controller($scope, formResource, navigationService, notificationsService, treeService) {
 
-	        });
+		var vm = this;
+		vm.buttonState = "init";
 
-	    };
-	    $scope.cancelDelete = function () {
-	        navigationService.hideNavigation();
-	    };
-	});
+		vm.deleteForm = deleteForm;
+		vm.cancelDelete = cancelDelete;
+
+		function cancelDelete () {
+			navigationService.hideNavigation();
+		};
+
+		function deleteForm(id) {
+
+			vm.buttonState = "busy";
+			formResource.deleteByGuid(id).then(function() {
+				vm.buttonState = "success";
+				treeService.removeNode($scope.currentNode);
+				navigationService.hideNavigation();
+
+				notificationsService.success("Successfully deleted the form");
+			}, function(err) {
+				vm.buttonState = "error";
+				notificationsService.error("Form failed to delete", err.data.Message);
+			});
+
+		}
+	}
+
+	angular.module("umbraco").controller("UmbracoForms.Editors.Form.DeleteController", Controller);
+
+})();
 angular.module("umbraco").controller("UmbracoForms.Editors.Form.EditController",
 
     function ($scope, $routeParams, formResource, editorState, editorService, formService, notificationsService, contentEditingHelper, formHelper, navigationService, userService, securityResource, localizationService, workflowResource) {
@@ -1733,18 +1752,19 @@ angular.module("umbraco").controller("UmbracoForms.Editors.Form.EntriesControlle
 		}
 	};
 
-	$scope.toggleAll = function(allIsChecked){
-
-		$scope.selectedRows.length = 0;
-
+	$scope.toggleAll = function(){
+	    
+		var newValue = !$scope.allIsChecked;
+		
 		for (var i = 0; i < $scope.records.results.length; i++) {
 			var entity = $scope.records.results[i];
-			entity.selected = allIsChecked;
 
-			if(allIsChecked){
-				$scope.selectedRows.push(entity.id);
-			}
+			if(entity.selected !== newValue){
+                $scope.toggleRow(entity);
+            }
+           
 		}
+
 	};
 
 	$scope.executeRecordSetAction = function (action) {

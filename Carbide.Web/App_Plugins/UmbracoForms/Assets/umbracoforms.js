@@ -8,25 +8,6 @@
 
         $.validator.unobtrusive.adapters.addBool("requiredcb", "required");
 
-        $.validator.addMethod('umbracoforms_selectonefromlist', function(value, element) {
-            var valid = false;
-            $("input", $(element).closest(".checkboxlist, .radiobuttonlist")).each(function(i) {
-                if ($(this).is(':checked')) {
-                    valid = true;
-                }
-            });
-
-            if(!valid){
-                $("input", $(element).closest(".checkboxlist, .radiobuttonlist")).each(function (i) {
-
-                    $(this).addClass("input-validation-error");
-                });
-            }
-            return valid;
-        });
-
-        $.validator.unobtrusive.adapters.addBool("requiredlist", "umbracoforms_selectonefromlist");
-
         $.validator.addMethod('umbracoforms_regex', function(value, element) {
 
             var regex = $(element).attr("data-regex");

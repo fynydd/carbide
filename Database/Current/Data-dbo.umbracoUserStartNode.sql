@@ -3,17 +3,19 @@ SET ANSI_PADDING, ANSI_WARNINGS, CONCAT_NULL_YIELDS_NULL, ARITHABORT, QUOTED_IDE
 SET DATEFORMAT YMD
 SET XACT_ABORT ON
 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
-GO -- SQRIBE/GO;03d113
+GO -- SQRIBE/GO;ef17d2
 
--- SQRIBE/TABLE;03d113
--- Adding 1 row to dbo.umbracoUserStartNode
+-- SQRIBE/TABLE;ef17d2
+-- Adding 2 rows to dbo.umbracoUserStartNode
 
 SET IDENTITY_INSERT [dbo].[umbracoUserStartNode] ON
 
 BEGIN TRANSACTION
 
--- SQRIBE/INSERT;03d113
+-- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoUserStartNode] ([id],[userId],[startNode],[startNodeType]) VALUES (2,1,1124,2);
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoUserStartNode] ([id],[userId],[startNode],[startNodeType]) VALUES (3,1,1232,1);
 
 COMMIT TRANSACTION
 

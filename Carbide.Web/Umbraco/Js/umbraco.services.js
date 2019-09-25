@@ -1456,7 +1456,7 @@
                 var savedVariants = [];
                 if (origContent.variants) {
                     isContent = true;
-                    //it's contnet so assign the variants as they exist
+                    //it's content so assign the variants as they exist
                     origVariants = origContent.variants;
                     savedVariants = savedContent.variants;
                 } else {
@@ -1476,7 +1476,7 @@
                     var savedVariant = savedVariants[j];
                     //special case for content, don't sync this variant if it wasn't tagged
                     //for saving in the first place
-                    if (!origVariant.save) {
+                    if (isContent && !origVariant.save) {
                         continue;
                     }
                     //if it's content (not media/members), then we need to sync the variant specific data
@@ -5724,7 +5724,7 @@ When building a custom infinite editor view you can use the same components as a
      */
             getFileExtension: function getFileExtension(filePath) {
                 if (!filePath) {
-                    return false;
+                    return null;
                 }
                 var lowered = filePath.toLowerCase();
                 var ext = lowered.substr(lowered.lastIndexOf('.') + 1);

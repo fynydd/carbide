@@ -2266,16 +2266,21 @@
      *
      * @param {Int} id Id of node to return the public url to
      * @param {string} type Object type name
+     * @param {string} culture Culture
      * @returns {Promise} resourcePromise object containing the url.
      *
      */
-            getUrl: function getUrl(id, type) {
+            getUrl: function getUrl(id, type, culture) {
                 if (id === -1 || id === '-1') {
                     return '';
                 }
+                if (!culture) {
+                    culture = '';
+                }
                 return umbRequestHelper.resourcePromise($http.get(umbRequestHelper.getApiUrl('entityApiBaseUrl', 'GetUrl', [
                     { id: id },
-                    { type: type }
+                    { type: type },
+                    { culture: culture }
                 ])), 'Failed to retrieve url for id:' + id);
             },
             /**
