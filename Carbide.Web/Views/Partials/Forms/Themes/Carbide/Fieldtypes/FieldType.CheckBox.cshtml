@@ -1,14 +1,11 @@
 @model Umbraco.Forms.Mvc.Models.FieldViewModel
 
 <div sf-checkbox>
-    <label for="@(Model.Id)">
-        <span sf-wrapper>
-            <input type="checkbox" name="@Model.Name" id="@Model.Id" value="true" 
-                   @if(Model.Mandatory){<text>  data-val="true" data-val-requiredcb="@Model.RequiredErrorMessage"</text>}
-                   @if (Model.ContainsValue(true) || Model.ContainsValue("true") || Model.ContainsValue("on"))
-                   {<text>checked="checked"</text>} />
-        </span>
-        <span>Yes</span>
-    </label>
+    <input type="checkbox" name="@(Model.Name)" id="@(Model.Id)" value="true" 
+            @if(Model.Mandatory){<text>  data-val="true" data-val-requiredcb="@Model.RequiredErrorMessage"</text>}
+            @if (Model.ContainsValue(true) || Model.ContainsValue("true") || Model.ContainsValue("on"))
+            {<text>checked="checked"</text>} />
+    <label for="@(Model.Id)" data-off="off" data-on="on"></label>
+    <span sf-checkbox-label onclick="$('#@(Model.Id)').click();">Yes</span>
 </div>
 <input type="hidden" name="@Model.Name" value="false" />

@@ -79,14 +79,10 @@
                                         var acceptCopy = string.Empty;
                                         f.AdditionalSettings.TryGetValue("AcceptCopy", out acceptCopy);
 
-                                        <label for="@f.Id" class="control-label umbraco-forms-label">
-                                            <span class="umbraco-forms-field-wrapper" sf-wrapper>
-                                                @Html.Partial(FormThemeResolver.GetFieldView(Model, f), f)
-                                            </span>
-                                            <span>
-                                                @acceptCopy
-                                            </span>
-                                        </label>
+                                        @Html.Partial(FormThemeResolver.GetFieldView(Model, f), f)
+                                        <label for="@f.Id" class="control-label umbraco-forms-label" data-off="off" data-on="on"></label>
+                                        <span sf-checkbox-label onclick="$('#@(f.Id)').click();">@acceptCopy</span>
+                                        <input type="hidden" name="@f.Id" value="false" />
                                     }
                                 </div>
                                 <script>

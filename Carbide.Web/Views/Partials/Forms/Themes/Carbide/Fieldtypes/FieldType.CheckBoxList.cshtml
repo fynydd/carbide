@@ -8,14 +8,13 @@
 {
     <li>
         <div sf-checkbox>
-            <label for="@string.Concat(Model.Id,"_",i)">
-                <span sf-wrapper><input type="checkbox" 
-                       class="@Html.GetFormFieldClass(Model.FieldTypeName)" 
-                       name="@Model.Name" id="@string.Concat(Model.Id,"_",i)" value="@pv.Value" 
+                <input type="checkbox" 
+                    class="@Html.GetFormFieldClass(Model.FieldTypeName)" 
+                    name="@Model.Name" id="@string.Concat(Model.Id,"_",i)" value="@pv.Value" 
                 @if (Model.Mandatory) {<text>data-val="true" data-val-requiredlist="@Model.RequiredErrorMessage"</text>}
-                @if (Model.ContainsValue(pv.Value)){<text>checked="checked"</text>}/></span>
-                <span>@(pv.Value)</span>
-            </label>
+                @if (Model.ContainsValue(pv.Value)){<text>checked="checked"</text>}/>
+            <label for="@string.Concat(Model.Id,"_",i)" data-off="off" data-on="on"></label>
+            <span sf-checkbox-label onclick="$('#@string.Concat(Model.Id,"_",i)').click();">@(pv.Value)</span>
         </div>
     </li>
 

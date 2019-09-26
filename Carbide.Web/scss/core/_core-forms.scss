@@ -495,126 +495,27 @@ form, [role="form"] {
     // CHECKBOX
     //
     // <div sf-checkbox>
-    //     <label for="checkbox4">
-    //         <span role="checkbox"><input type="checkbox" id="checkbox4" name="checkbox"></span>
-    //         <span>Choice C</span>
-    //     </label>
+    //     <input type="checkbox" id="checkbox4" name="checkbox">
+    //     <label for="checkbox4" data-off="off" data-on="on"></label>
+    //     <span sf-checkbox-label onclick="$('#checkbox4').click();">Choice C</span>
+    // </div>
+    //
+    // RADIO BUTTON
+    //
+    // <div sf-radio>
+    //     <input type="radio" id="radio4" name="radio">
+    //     <label for="radio4" data-off="off" data-on="on"></label>
+    //     <span sf-radio-label onclick="$('#radio4').click();">Choice C</span>
     // </div>
     // --------------------------------------------------------------------
-    [sf-checkbox] {
-
-        label {
-            display: inline-block;
-            cursor: pointer;
-            padding-left: 3rem;
-            font-size: 0;
-
-            @include sf-internet-explorer-11() {
-                padding-left: 2rem;
-            }
-
-            span:not([sf-wrapper]) {
-                display: inline;
-                font-size: 1rem;
-                position: relative;
-            }
-
-            [sf-wrapper] {
-                display: inline-block;
-                position: relative;
-                font-size: 0;
-                vertical-align: top;
-                margin-left: -2.93rem;
-                margin-right: 0.75rem;
-                background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-                background-color: var(--sf-color-check-background);
-                border: solid var(--sf-line-width) var(--sf-color-form-field-line);
-                border-radius: 0.65rem;
-                height: calc(1.4rem - var(--sf-line-width));
-
-                @include sf-media($from: tablet-portrait) {
-                    margin-right: 0.7rem;
-                    height: calc(1.4rem - var(--sf-line-width));
-                }
-
-                @include sf-internet-explorer-11() {
-                    top: 0.15rem;
-                    vertical-align: top;
-                    margin-left: -2rem;
-                    margin-right: 0;
-                    padding: 0;
-                    border: 0;
-                    border-radius: 0;
-                }
-
-                input[type="checkbox"] {
-
-                    @include sf-animate ( $duration: 0.15s );
-                    display: inline-block;
-                    position: relative;
-                    -webkit-appearance: none;
-                    -moz-appearance: none;
-                    appearance: none;
-                    outline: none;
-                    vertical-align: top;
-                    width: calc(1.4rem - (var(--sf-line-width) * 1.5));
-                    height: calc(1.4rem - (var(--sf-line-width) * 1.5));
-                    top: calc((var(--sf-line-width) / 2) * -1);
-                    margin-right: 0.8rem;
-                    margin-left: calc(var(--sf-line-width) * -1);
-
-                    @include sf-internet-explorer-11() {
-                        vertical-align: top;
-                        margin-left: 0.08rem;
-                        margin-right: 0.65rem;
-                    }
-
-                    font-size: 0;
-                    line-height: 0;
-                    background-color: var(--sf-color-medium);
-                    border-radius: 50%;
-                    border: none;
-                    cursor: pointer;
-
-                    @include sf-media($from: tablet-landscape) {
-                        border-width: var(--sf-line-width);
-                        width: calc(1.4rem - (var(--sf-line-width) * 1.5));
-                        height: calc(1.4rem - (var(--sf-line-width) * 1.5));
-                        margin-left: calc(var(--sf-line-width) * -1);
-                        top: calc((var(--sf-line-width) / 2) * -1);
-                    }
-
-                    &:checked {
-                        color: var(--sf-color-primary);
-                        background-color: var(--sf-color-success);
-                        border: none;
-                        margin-right: calc(var(--sf-line-width) * -1);
-                        margin-left: 0.8rem;
-
-                        @include sf-internet-explorer-11() {
-                            vertical-align: top;
-                            margin-left: 0.08rem;
-                            margin-right: 0.65rem;
-                        }
-
-                        @include sf-media($from: tablet-landscape) {
-                            margin-right: calc(var(--sf-line-width) * -1);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    [sf-radio] {
+    [sf-radio], [sf-checkbox] {
 
         [type="radio"], [type="radio"]:before, [type="radio"]:after,
+        [type="checkbox"], [type="checkbox"]:before, [type="checkbox"]:after,
         label:before, label:after {
-
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-
             -webkit-transition: 0.2s ease-in-out;
             -moz-transition: 0.2s ease-in-out;
             -o-transition: 0.2s ease-in-out;
@@ -625,8 +526,8 @@ form, [role="form"] {
 
         margin: 0.13333rem;
 
-        [type="radio"], [type="radio"]:active {
-
+        [type="radio"], [type="radio"]:active,
+        [type="checkbox"], [type="checkbox"]:active {
             position: absolute;
             display: none;
             height: 0;
@@ -636,8 +537,8 @@ form, [role="form"] {
             outline: none;
         }
 
-        [sf-radio-label] {
-
+        [sf-radio-label],
+        [sf-checkbox-label] {
             cursor: pointer;
             position: relative;
             vertical-align: top;
@@ -645,7 +546,6 @@ form, [role="form"] {
         }
 
         label {
-
             width: 2.5rem;
             display: inline-block;
             position: relative;
@@ -661,7 +561,6 @@ form, [role="form"] {
         }
 
         label:before {
-
             content: '';
             display: block;
             position: absolute;
@@ -670,7 +569,6 @@ form, [role="form"] {
             text-indent: 1.6666rem;
             height: 1.33rem;
             width: 1.33rem;
-
             -webkit-border-radius: 100%;
             -moz-border-radius: 100%;
             border-radius: 100%;
@@ -680,31 +578,35 @@ form, [role="form"] {
             background: white;
         }
 
-        [type="radio"]:checked + label {
+        [type="radio"]:checked + label,
+        [type="checkbox"]:checked + label {
             -webkit-box-shadow: inset 0 0 0 1rem rgba(19,191,17,1),0 0 0 0.0833rem rgba(19,191,17,1);
             -moz-box-shadow: inset 0 0 0 1rem rgba(19,191,17,1),0 0 0 0.0833rem rgba(19,191,17,1);
             box-shadow: inset 0 0 0 1rem rgba(19,191,17,1),0 0 0 0.0833rem rgba(19,191,17,1);
         }
 
-        [type="radio"]:checked + label:before {
-
+        [type="radio"]:checked + label:before,
+        [type="checkbox"]:checked + label:before {
             top: 0.0666rem;
             left: calc(100% - 1.4rem);
         }
 
-        [type="radio"] + label {
+        [type="radio"] + label,
+        [type="checkbox"] + label {
             -webkit-box-shadow: inset 0 0 0 0px rgba(19,191,17,1),0 0 0 0.0833rem #dddddd;
             -moz-box-shadow: inset 0 0 0 0px rgba(19,191,17,1),0 0 0 0.0833rem #dddddd;
             box-shadow: inset 0 0 0 0px rgba(19,191,17,1),0 0 0 0.0833rem #dddddd;
         }
 
-        [type="radio"]:checked + label {
+        [type="radio"]:checked + label,
+        [type="checkbox"]:checked + label {
             -webkit-box-shadow: inset 0 0 0 0.75rem rgba(19,191,17,1),0 0 0 0.0833rem rgba(19,191,17,1);
             -moz-box-shadow: inset 0 0 0 0.75rem rgba(19,191,17,1),0 0 0 0.0833rem rgba(19,191,17,1);
             box-shadow: inset 0 0 0 0.75rem rgba(19,191,17,1),0 0 0 0.0833rem rgba(19,191,17,1);
         }
 
-        [type="radio"]:checked + label:after {
+        [type="radio"]:checked + label:after,
+        [type="checkbox"]:checked + label:after {
             color: rgba(19,191,17,1);
         }
     }
