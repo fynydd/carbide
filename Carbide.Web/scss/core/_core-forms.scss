@@ -621,8 +621,8 @@ form, [role="form"] {
             font-family: Helvetica Neue,helvetica,arial,verdana,sans-serif;
         }
 
-        width: 3.75rem;
-        margin: 0.2rem;
+        width: 2.5rem;
+        margin: 0.13333rem;
         text-align: center;
 
         [type="radio"], [type="radio"]:active {
@@ -643,16 +643,16 @@ form, [role="form"] {
         label {
             display: block;
             position: relative;
-            padding: 0.6rem;
+            padding: 0.73rem;
             //margin-bottom: 20px;
-            font-size: 1.33rem;
-            line-height: 1rem;
+            font-size: 0.8866rem;
+            line-height: 0.6666rem;
             width: 100%;
-            height: 2.2rem;
+            height: 1.4666rem;
             /*border-radius*/
-            -webkit-border-radius: 1.125rem;
-            -moz-border-radius: 1.125rem;
-            border-radius: 1.125rem;
+            -webkit-border-radius: 0.75rem;
+            -moz-border-radius: 0.75rem;
+            border-radius: 0.75rem;
             background: #e5e5e5;
             cursor: pointer;
         }
@@ -662,16 +662,16 @@ form, [role="form"] {
             display: block;
             position: absolute;
             z-index: 1;
-            line-height: 2.125rem;
-            text-indent: 2.5rem;
-            height: 2rem;
-            width: 2rem;
+            line-height: 1.4166rem;
+            text-indent: 1.6666rem;
+            height: 1.33rem;
+            width: 1.33rem;
             /*border-radius*/
             -webkit-border-radius: 100%;
             -moz-border-radius: 100%;
             border-radius: 100%;
-            top: 0.1rem;
-            left: 0.1rem;
+            top: 0.0666rem;
+            left: 0.09rem;
             right: auto;
             background: white;
 
@@ -698,15 +698,15 @@ form, [role="form"] {
 
         [type="radio"]:checked + label {
             /*box-shadow*/
-            -webkit-box-shadow: inset 0 0 0 1.5rem rgba(19,191,17,1),0 0 0 0.125rem rgba(19,191,17,1);
-            -moz-box-shadow: inset 0 0 0 1.5rem rgba(19,191,17,1),0 0 0 0.125rem rgba(19,191,17,1);
-            box-shadow: inset 0 0 0 1.5rem rgba(19,191,17,1),0 0 0 0.125rem rgba(19,191,17,1);
+            -webkit-box-shadow: inset 0 0 0 1rem rgba(19,191,17,1),0 0 0 0.0833rem rgba(19,191,17,1);
+            -moz-box-shadow: inset 0 0 0 1rem rgba(19,191,17,1),0 0 0 0.0833rem rgba(19,191,17,1);
+            box-shadow: inset 0 0 0 1rem rgba(19,191,17,1),0 0 0 0.0833rem rgba(19,191,17,1);
         }
 
         [type="radio"]:checked + label:before {
 
-            top: 0.1rem;
-            left: calc(100% - 2.1rem);
+            top: 0.0666rem;
+            left: calc(100% - 1.4rem);
             /*box-shadow*/
             /*-webkit-box-shadow: 0 0 0 0.125rem transparent,0 0.1875rem 0.1875rem rgba(0,0,0,.3);
             -moz-box-shadow: 0 0 0 0.125rem transparent,0 0.1875rem 0.1875rem rgba(0,0,0,.3);
@@ -726,16 +726,16 @@ form, [role="form"] {
         /* GREEN CHECKBOX */
         [type="radio"] + label {
             /*box-shadow*/
-            -webkit-box-shadow: inset 0 0 0 0px rgba(19,191,17,1),0 0 0 0.125rem #dddddd;
-            -moz-box-shadow: inset 0 0 0 0px rgba(19,191,17,1),0 0 0 0.125rem #dddddd;
-            box-shadow: inset 0 0 0 0px rgba(19,191,17,1),0 0 0 0.125rem #dddddd;
+            -webkit-box-shadow: inset 0 0 0 0px rgba(19,191,17,1),0 0 0 0.0833rem #dddddd;
+            -moz-box-shadow: inset 0 0 0 0px rgba(19,191,17,1),0 0 0 0.0833rem #dddddd;
+            box-shadow: inset 0 0 0 0px rgba(19,191,17,1),0 0 0 0.0833rem #dddddd;
         }
 
         [type="radio"]:checked + label {
             /*box-shadow*/
-            -webkit-box-shadow: inset 0 0 0 1.125rem rgba(19,191,17,1),0 0 0 0.125rem rgba(19,191,17,1);
-            -moz-box-shadow: inset 0 0 0 1.125rem rgba(19,191,17,1),0 0 0 0.125rem rgba(19,191,17,1);
-            box-shadow: inset 0 0 0 1.125rem rgba(19,191,17,1),0 0 0 0.125rem rgba(19,191,17,1);
+            -webkit-box-shadow: inset 0 0 0 0.75rem rgba(19,191,17,1),0 0 0 0.0833rem rgba(19,191,17,1);
+            -moz-box-shadow: inset 0 0 0 0.75rem rgba(19,191,17,1),0 0 0 0.0833rem rgba(19,191,17,1);
+            box-shadow: inset 0 0 0 0.75rem rgba(19,191,17,1),0 0 0 0.0833rem rgba(19,191,17,1);
         }
 
         [type="radio"]:checked + label:after {
