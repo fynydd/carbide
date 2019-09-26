@@ -542,7 +542,8 @@ form, [role="form"] {
         [sf-checkbox-label] {
             cursor: pointer;
             position: relative;
-            vertical-align: top;
+            vertical-align: bottom;
+            line-height: 2rem;
             padding-left: 0.5rem;
         }
 
@@ -553,8 +554,8 @@ form, [role="form"] {
             display: inline-block;
             position: relative;
             padding: 0.73rem;
-            font-size: 0.8866rem;
-            line-height: 0.6666rem;
+            font-size: 1rem;
+            line-height: 2rem;
             height: 1.48rem;
             -webkit-border-radius: 0.75rem;
             -moz-border-radius: 0.75rem;
