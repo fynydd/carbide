@@ -2,6 +2,4 @@
 <input type="checkbox" name="@Model.Id" id="@Model.Id" value="true" 
        @if(Model.Mandatory){<text>  data-rule-required="true" data-val="true" data-msg-required="@Model.RequiredErrorMessage"</text>}
        @if (Model.ContainsValue(true) || Model.ContainsValue("true") || Model.ContainsValue("on"))
-       {<text>checked="checked"</text>}       
-                                                                                                                                                                 
-/>
+       {<text>checked="checked"</text>} />

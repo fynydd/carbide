@@ -578,34 +578,60 @@ form, [role="form"] {
             background: white;
         }
 
-        [type="radio"]:checked + label,
+        // RADIO COLOR
+
+        [type="radio"]:checked + label {
+            -webkit-box-shadow: inset 0 0 0 1rem rgba(46, 143, 255, 1),0 0 0 0.0833rem rgba(46, 143, 255, 1);
+            -moz-box-shadow: inset 0 0 0 1rem rgba(46, 143, 255, 1),0 0 0 0.0833rem rgba(46, 143, 255, 1);
+            box-shadow: inset 0 0 0 1rem rgba(46, 143, 255, 1),0 0 0 0.0833rem rgba(46, 143, 255, 1);
+        }
+
+        [type="radio"]:checked + label:before {
+            top: 0.0666rem;
+            left: calc(100% - 1.4rem);
+        }
+
+        [type="radio"] + label {
+            -webkit-box-shadow: inset 0 0 0 0px rgba(46, 143, 255, 1),0 0 0 0.0833rem #dddddd;
+            -moz-box-shadow: inset 0 0 0 0px rgba(46, 143, 255, 1),0 0 0 0.0833rem #dddddd;
+            box-shadow: inset 0 0 0 0px rgba(46, 143, 255, 1),0 0 0 0.0833rem #dddddd;
+        }
+
+        [type="radio"]:checked + label {
+            -webkit-box-shadow: inset 0 0 0 0.75rem rgba(46, 143, 255, 1),0 0 0 0.0833rem rgba(46, 143, 255, 1);
+            -moz-box-shadow: inset 0 0 0 0.75rem rgba(46, 143, 255, 1),0 0 0 0.0833rem rgba(46, 143, 255, 1);
+            box-shadow: inset 0 0 0 0.75rem rgba(46, 143, 255, 1),0 0 0 0.0833rem rgba(46, 143, 255, 1);
+        }
+
+        [type="radio"]:checked + label:after {
+            color: rgba(46, 143, 255, 1);
+        }
+
+        // CHECKBOX COLOR
+
         [type="checkbox"]:checked + label {
             -webkit-box-shadow: inset 0 0 0 1rem rgba(19,191,17,1),0 0 0 0.0833rem rgba(19,191,17,1);
             -moz-box-shadow: inset 0 0 0 1rem rgba(19,191,17,1),0 0 0 0.0833rem rgba(19,191,17,1);
             box-shadow: inset 0 0 0 1rem rgba(19,191,17,1),0 0 0 0.0833rem rgba(19,191,17,1);
         }
 
-        [type="radio"]:checked + label:before,
         [type="checkbox"]:checked + label:before {
             top: 0.0666rem;
             left: calc(100% - 1.4rem);
         }
 
-        [type="radio"] + label,
         [type="checkbox"] + label {
             -webkit-box-shadow: inset 0 0 0 0px rgba(19,191,17,1),0 0 0 0.0833rem #dddddd;
             -moz-box-shadow: inset 0 0 0 0px rgba(19,191,17,1),0 0 0 0.0833rem #dddddd;
             box-shadow: inset 0 0 0 0px rgba(19,191,17,1),0 0 0 0.0833rem #dddddd;
         }
 
-        [type="radio"]:checked + label,
         [type="checkbox"]:checked + label {
             -webkit-box-shadow: inset 0 0 0 0.75rem rgba(19,191,17,1),0 0 0 0.0833rem rgba(19,191,17,1);
             -moz-box-shadow: inset 0 0 0 0.75rem rgba(19,191,17,1),0 0 0 0.0833rem rgba(19,191,17,1);
             box-shadow: inset 0 0 0 0.75rem rgba(19,191,17,1),0 0 0 0.0833rem rgba(19,191,17,1);
         }
 
-        [type="radio"]:checked + label:after,
         [type="checkbox"]:checked + label:after {
             color: rgba(19,191,17,1);
         }
