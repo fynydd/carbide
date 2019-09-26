@@ -343,8 +343,11 @@ form, [role="form"] {
         &[sf-invalid] {
 
             label, [sf-validation-message] {
-                display: block;
                 color: var(--sf-color-danger);
+            }
+
+            [sf-validation-message] {
+                display: block;
             }
 
             label {
