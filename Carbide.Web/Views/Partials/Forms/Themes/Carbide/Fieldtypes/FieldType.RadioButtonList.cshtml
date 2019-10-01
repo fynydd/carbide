@@ -8,11 +8,12 @@
 {
     <li>
         <div sf-radio>
-            <input type="radio" name="@Model.Id" id="@string.Concat(Model.Id,"_",i)" value="@pv.Value" 
+			<label for="@string.Concat(Model.Id,"_",i)">
+				<span sf-wrapper><input type="radio" name="@Model.Id" id="@string.Concat(Model.Id,"_",i)" value="@pv.Value" 
             @if (Model.Mandatory) {<text>data-val="true" data-val-requiredlist="@Model.RequiredErrorMessage"</text>}
-            @if (Model.ContainsValue(pv.Value)){<text>checked="checked"</text>} />
-            <label for="@string.Concat(Model.Id,"_",i)" data-off="off" data-on="on"></label>
-            <span sf-radio-label onclick="$('#@string.Concat(Model.Id,"_",i)').click();">@(pv.Value)</span>
+            @if (Model.ContainsValue(pv.Value)){<text>checked="checked"</text>} /></span>
+	            <span>@(pv.Value)</span>
+	        </label>
         </div>
     </li>
     
