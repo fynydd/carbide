@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;ef17d2
 
 -- SQRIBE/TABLE;ef17d2
--- Adding 266 rows to dbo.umbracoDocumentVersion
+-- Adding 273 rows to dbo.umbracoDocumentVersion
 
 BEGIN TRANSACTION
 
@@ -35,7 +35,7 @@ INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUE
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1001,1051,0);
 -- SQRIBE/INSERT;ef17d2
-INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1002,NULL,1);
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1002,NULL,0);
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1003,1120,0);
 -- SQRIBE/INSERT;ef17d2
@@ -503,7 +503,7 @@ INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUE
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1245,1051,0);
 -- SQRIBE/INSERT;ef17d2
-INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1246,1051,1);
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1246,1051,0);
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1247,NULL,1);
 -- SQRIBE/INSERT;ef17d2
@@ -521,9 +521,9 @@ INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUE
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1254,1120,0);
 -- SQRIBE/INSERT;ef17d2
-INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1255,1120,1);
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1255,1120,0);
 -- SQRIBE/INSERT;ef17d2
-INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1256,1120,0);
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1256,1120,1);
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1257,1120,0);
 -- SQRIBE/INSERT;ef17d2
@@ -542,6 +542,20 @@ INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUE
 INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1264,NULL,0);
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1265,1120,0);
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1266,1051,1);
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1267,NULL,0);
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1268,NULL,0);
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1269,NULL,1);
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1270,NULL,0);
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1271,1051,0);
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoDocumentVersion] ([id],[templateId],[published]) VALUES (1272,1120,0);
 
 COMMIT TRANSACTION
 

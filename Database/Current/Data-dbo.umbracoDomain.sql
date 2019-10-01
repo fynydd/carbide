@@ -19,11 +19,11 @@ INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStruc
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (19,1,1232,N'carbide.local');
 -- SQRIBE/INSERT;ef17d2
-INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (20,1,1232,N'carbide1.local');
--- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (21,1,1243,N'carbide2.local');
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (22,1,1232,N'localhost');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoDomain] ([id],[domainDefaultLanguage],[domainRootStructureID],[domainName]) VALUES (23,1,1232,N'gms.local');
 
 COMMIT TRANSACTION
 

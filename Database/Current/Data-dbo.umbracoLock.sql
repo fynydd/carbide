@@ -25,11 +25,11 @@ INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-335,1,N'MemberTre
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-334,-1,N'MediaTree');
 -- SQRIBE/INSERT;ef17d2
-INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-333,-1,N'ContentTree');
+INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-333,1,N'ContentTree');
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-332,-1,N'ContentTypes');
 -- SQRIBE/INSERT;ef17d2
-INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-331,1,N'Servers');
+INSERT INTO [dbo].[umbracoLock] ([id],[value],[name]) VALUES (-331,-1,N'Servers');
 
 COMMIT TRANSACTION
 

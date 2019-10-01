@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;ef17d2
 
 -- SQRIBE/TABLE;ef17d2
--- Adding 27 rows to dbo.cmsPropertyTypeGroup
+-- Adding 28 rows to dbo.cmsPropertyTypeGroup
 
 SET IDENTITY_INSERT [dbo].[cmsPropertyTypeGroup] ON
 
@@ -66,6 +66,8 @@ INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sorto
 INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (69,1222,N'Content',0,'F2700CF3-E5C6-4422-A41B-E0DC2D873A44');
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (70,1276,N'Content',0,'140A793F-FBBB-4C56-9C14-9C8C159704E1');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[cmsPropertyTypeGroup] ([id],[contenttypeNodeId],[text],[sortorder],[uniqueID]) VALUES (71,1155,N'Social Networks',11,'7FCA4F21-1AF7-40B6-A902-29B03CCE9608');
 
 COMMIT TRANSACTION
 

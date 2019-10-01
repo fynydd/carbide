@@ -23,7 +23,7 @@ INSERT INTO [dbo].[umbracoServer] ([id],[address],[computerName],[registeredDate
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoServer] ([id],[address],[computerName],[registeredDate],[lastNotifiedDate],[isActive],[isMaster]) VALUES (5,N'http://carbide.staging.fynydd.com/umbraco',N'TOPAZ//LM/W3SVC/26/ROOT',CONVERT(datetime,'2019-08-08 18:07:27.527',121),CONVERT(datetime,'2019-09-04 18:57:01.653',121),0,0);
 -- SQRIBE/INSERT;ef17d2
-INSERT INTO [dbo].[umbracoServer] ([id],[address],[computerName],[registeredDate],[lastNotifiedDate],[isActive],[isMaster]) VALUES (6,N'http://localhost/umbraco',N'DESKTOP-AD7TD84//LM/W3SVC/1/ROOT',CONVERT(datetime,'2019-09-25 18:57:00.813',121),CONVERT(datetime,'2019-09-30 21:56:56.877',121),1,1);
+INSERT INTO [dbo].[umbracoServer] ([id],[address],[computerName],[registeredDate],[lastNotifiedDate],[isActive],[isMaster]) VALUES (6,N'http://carbide.local/umbraco',N'DESKTOP-AD7TD84//LM/W3SVC/1/ROOT',CONVERT(datetime,'2019-09-25 18:57:00.813',121),CONVERT(datetime,'2019-10-01 18:56:58.087',121),1,1);
 
 COMMIT TRANSACTION
 

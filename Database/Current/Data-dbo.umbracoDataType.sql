@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;ef17d2
 
 -- SQRIBE/TABLE;ef17d2
--- Adding 79 rows to dbo.umbracoDataType
+-- Adding 81 rows to dbo.umbracoDataType
 
 BEGIN TRANSACTION
 
@@ -75,7 +75,7 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1065,N'Umbraco.TextBox',N'Nvarchar',N'{}');
 -- SQRIBE/INSERT;ef17d2
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1066,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"simpleHeroUnitFrame","ncTabAlias":"Content","nameTemplate":"{{unitName}}"}],"minItems":1,"confirmDeletes":true,"showIcons":true,"hideLabel":false}');
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1066,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"simpleHeroUnitFrame","ncTabAlias":"Content","nameTemplate":"{{unitName}}"}],"minItems":1,"confirmDeletes":true,"showIcons":true,"hideLabel":true}');
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1067,N'Umbraco.Integer',N'Integer',N'{"min":1000,"step":250}');
 -- SQRIBE/INSERT;ef17d2
@@ -111,7 +111,7 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1160,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"navigationUnit","ncTabAlias":"Content","nameTemplate":"{{position}}"}],"minItems":2,"maxItems":2,"confirmDeletes":true,"showIcons":true,"hideLabel":true}');
 -- SQRIBE/INSERT;ef17d2
-INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1161,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"formSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"},{"ncAlias":"galleryViewSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"},{"ncAlias":"multiColumnContentSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"},{"ncAlias":"portfolioViewSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"},{"ncAlias":"richContentSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"}],"confirmDeletes":true,"showIcons":true,"hideLabel":false}');
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1161,N'Umbraco.NestedContent',N'Ntext',N'{"contentTypes":[{"ncAlias":"formSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"},{"ncAlias":"galleryViewSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"},{"ncAlias":"multiColumnContentSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"},{"ncAlias":"portfolioViewSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"},{"ncAlias":"richContentSubunit","ncTabAlias":"Content","nameTemplate":"{{unitName}}"}],"confirmDeletes":true,"showIcons":true,"hideLabel":true}');
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1162,N'Umbraco.RadioButtonList',N'Nvarchar',N'{"items":[{"id":1,"value":"Ascending"},{"id":2,"value":"Descending"}]}');
 -- SQRIBE/INSERT;ef17d2
@@ -168,6 +168,10 @@ INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[co
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1285,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<h4>Settings</h4>","fullWidth":"1"}');
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1288,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<h4>CSS Properties</h4>\n{{help:Simple Hero Frame CSS Help}}\n<p>Below are the <strong>CSS custom properties</strong> with sample data for the simple hero component:</p>\n<p>\n--content-bottom-spacer: 2rem;<br />\n--content-shadow-color: rgba(0, 0, 0, 0.5);<br />\n--headline-size: 2rem;<br />\n--headline-weight: 500;<br />\n--headline-bottom-spacer: 1rem;<br />\n--headline-shadow-color: rgba(0, 0, 0, 0.35);<br />\n--text-size: 1rem;<br />\n--text-weight: 300;<br />\n--foreground-color: white;\n</p>\n<p>\n--button-bottom-spacer: 2rem;<br />\n--button-background-color: green;<br />\n--button-foreground-color: white;<br />\n--button-text-size: 1rem;<br />\n--button-text-weight: 300;\n</p>\n{{/help}}","fullWidth":"1"}');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1291,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<h4>Subunit Content</h4>","fullWidth":"1"}');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoDataType] ([nodeId],[propertyEditorAlias],[dbType],[config]) VALUES (1292,N'Carbide.StaticText',N'Ntext',N'{"defaultValue":"<hr />\n<h4>Hero Carousel Frames</h4>","fullWidth":"1"}');
 
 COMMIT TRANSACTION
 
