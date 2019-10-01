@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;ef17d2
 
 -- SQRIBE/TABLE;ef17d2
--- Adding 301 rows to dbo.umbracoContentVersion
+-- Adding 315 rows to dbo.umbracoContentVersion
 
 SET IDENTITY_INSERT [dbo].[umbracoContentVersion] ON
 
@@ -267,7 +267,7 @@ INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1088,1258,CONVERT(datetime,'2019-08-07 15:16:54.310',121),-1,0,N'Rich Content (centered title)');
 -- SQRIBE/INSERT;ef17d2
-INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1089,1258,CONVERT(datetime,'2019-08-07 15:16:54.310',121),-1,1,N'Rich Content (centered title)');
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1089,1258,CONVERT(datetime,'2019-10-01 19:05:59.903',121),-1,0,N'Rich Content (centered title)');
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1090,1259,CONVERT(datetime,'2019-08-07 15:17:25.483',121),-1,0,N'Rich Content (standard)');
 -- SQRIBE/INSERT;ef17d2
@@ -611,9 +611,37 @@ INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1270,1237,CONVERT(datetime,'2019-10-01 18:26:59.813',121),-1,1,N'Settings');
 -- SQRIBE/INSERT;ef17d2
-INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1271,1232,CONVERT(datetime,'2019-10-01 18:27:50.397',121),-1,1,N'Guardian Medical Systems');
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1271,1232,CONVERT(datetime,'2019-10-01 19:02:26.443',121),-1,0,N'Guardian Medical Systems');
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1272,1238,CONVERT(datetime,'2019-10-01 18:43:17.803',121),-1,1,N'About Us');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1273,1232,CONVERT(datetime,'2019-10-01 19:02:47.720',121),-1,0,N'Guardian Medical Systems');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1274,1232,CONVERT(datetime,'2019-10-01 19:03:19.907',121),-1,0,N'Guardian Medical Systems');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1275,1232,CONVERT(datetime,'2019-10-01 19:04:27.373',121),-1,0,N'Guardian Medical Systems');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1276,1293,CONVERT(datetime,'2019-10-01 19:03:39.833',121),-1,0,N'Feature Image (100%)');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1277,1293,CONVERT(datetime,'2019-10-01 19:04:09.073',121),-1,0,N'Feature Image (100%)');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1278,1293,CONVERT(datetime,'2019-10-01 19:05:32.650',121),-1,0,N'Feature Image (100%)');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1279,1232,CONVERT(datetime,'2019-10-01 19:04:27.373',121),-1,1,N'Guardian Medical Systems');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1280,1293,CONVERT(datetime,'2019-10-01 19:07:02.047',121),-1,0,N'Feature Image (100%)');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1281,1258,CONVERT(datetime,'2019-10-01 19:05:59.903',121),-1,1,N'Rich Content (centered title)');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1282,1293,CONVERT(datetime,'2019-10-01 19:07:20.437',121),-1,0,N'Feature Image (100%)');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1283,1293,CONVERT(datetime,'2019-10-01 19:13:06.200',121),-1,0,N'Feature Image (100%)');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1284,1293,CONVERT(datetime,'2019-10-01 19:13:36.313',121),-1,0,N'Feature Image (100%)');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1285,1293,CONVERT(datetime,'2019-10-01 19:18:19.960',121),-1,0,N'Feature Image (100%)');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoContentVersion] ([id],[nodeId],[versionDate],[userId],[current],[text]) VALUES (1286,1293,CONVERT(datetime,'2019-10-01 19:18:19.960',121),-1,1,N'Feature Image (100%)');
 
 COMMIT TRANSACTION
 

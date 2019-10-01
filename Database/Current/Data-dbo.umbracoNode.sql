@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;ef17d2
 
 -- SQRIBE/TABLE;ef17d2
--- Adding 195 rows to dbo.umbracoNode
+-- Adding 196 rows to dbo.umbracoNode
 
 SET IDENTITY_INSERT [dbo].[umbracoNode] ON
 
@@ -402,6 +402,8 @@ INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sort
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1291,'59686A2D-E7E4-4853-8A9F-9BFF6460F2EE',-1,1,N'-1,1291',79,0,-1,N'Elastic Container Unit - Content Separator - Carbide Static Text','30A2A501-1978-4DDB-A57B-F7EFED43BA3C',CONVERT(datetime,'2019-10-01 18:47:04.293',121));
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1292,'CE249A64-F46B-4A22-B28E-61AF74C6E665',-1,1,N'-1,1292',80,0,-1,N'Simple Hero Unit - Hero Frames Separator - Carbide Static Text','30A2A501-1978-4DDB-A57B-F7EFED43BA3C',CONVERT(datetime,'2019-10-01 18:53:40.283',121));
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[umbracoNode] ([id],[uniqueId],[parentId],[level],[path],[sortOrder],[trashed],[nodeUser],[text],[nodeObjectType],[createDate]) VALUES (1293,'8092C496-C982-40C8-824A-9E807DC3C359',1248,3,N'-1,1232,1248,1293',14,0,-1,N'Feature Image (100%)','C66BA18E-EAF3-4CFF-8A22-41B16D66A972',CONVERT(datetime,'2019-10-01 19:03:39.833',121));
 
 COMMIT TRANSACTION
 

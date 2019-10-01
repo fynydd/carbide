@@ -5,10 +5,13 @@
     --content-width: 100%;
     --background-color: transparent; 
 
+    --vertical-subunit-margin: 0;
+    --horizontal-subunit-margin: 0;
+
     --headline-align: left;
     --headline-margin: 2rem;
     --content-align: left;
-
+    
     --column-gutter: 3%;
     --row-gutter: 2rem;
 
@@ -23,6 +26,8 @@
     width: var(--content-width);
     margin: 0 auto;
     text-align: var(--content-align);
+
+    margin: var(--vertical-subunit-margin) var(--horizontal-subunit-margin);
 
     h1, h2, h3, h4, h5, h6 {
 
