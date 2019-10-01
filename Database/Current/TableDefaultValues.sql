@@ -122,15 +122,15 @@ ALTER TABLE [dbo].[umbracoServer] ADD CONSTRAINT [df_umbracoServer_registeredDat
 GO -- SQRIBE/GO;ef17d2
 
 -- SQRIBE/OBJ;ef17d2
+ALTER TABLE [dbo].[umbracoCacheInstruction] ADD CONSTRAINT [df_umbracoCacheInstruction_instructionCount] DEFAULT ('1') FOR [instructionCount]
+GO -- SQRIBE/GO;ef17d2
+
+-- SQRIBE/OBJ;ef17d2
 ALTER TABLE [dbo].[cmsMacroProperty] ADD CONSTRAINT [df_cmsMacroProperty_macroPropertySortOrder] DEFAULT ('0') FOR [macroPropertySortOrder]
 GO -- SQRIBE/GO;ef17d2
 
 -- SQRIBE/OBJ;ef17d2
 ALTER TABLE [dbo].[cmsContentTypeAllowedContentType] ADD CONSTRAINT [df_cmsContentTypeAllowedContentType_SortOrder] DEFAULT ('0') FOR [SortOrder]
-GO -- SQRIBE/GO;ef17d2
-
--- SQRIBE/OBJ;ef17d2
-ALTER TABLE [dbo].[umbracoCacheInstruction] ADD CONSTRAINT [df_umbracoCacheInstruction_instructionCount] DEFAULT ('1') FOR [instructionCount]
 GO -- SQRIBE/GO;ef17d2
 
 -- SQRIBE/OBJ;ef17d2

@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;ef17d2
 
 -- SQRIBE/TABLE;ef17d2
--- Adding 82 rows to dbo.UFRecordFields
+-- Adding 93 rows to dbo.UFRecordFields
 
 BEGIN TRANSACTION
 
@@ -39,6 +39,8 @@ INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType])
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('B9D7D28F-D16E-4D32-82CD-312FCFFB3E5C','AC102CAC-B5DF-4F0C-B023-64DD2EB56752',9,N'howCanWeHelp',N'LongString');
 -- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('3E9D596C-05FC-4EBA-B97A-34E33ECF4162','9641DCD2-19E7-4123-A32F-0A7381E045AF',10,N'dataConsent',N'Bit');
+-- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('4193C41E-B0FA-4584-BEC2-37393427DE63','222F823A-F613-4E77-95D7-22108735381A',8,N'lastName',N'String');
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('8E3EEBDB-7281-4F71-811E-3C07B269491A','93DE3738-47E7-4518-A275-10D9D5EBE8D1',9,N'email',N'String');
@@ -69,9 +71,13 @@ INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType])
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('A7FA0904-4458-4473-975C-5F1667F79AEF','B2EA777B-B780-4BB4-8DDA-A9A17E78008E',9,N'doYouLikeBeer',N'Bit');
 -- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('8B225009-5199-402B-8771-65B6308B8315','A6ECA8EB-DA10-47F8-C201-7A8462A4FBFB',10,N'favoriteColor',N'String');
+-- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('EE35F665-AC83-42CF-A2B7-67364CE4426A','A6650E3F-4AB2-461F-C7B2-EDA7A542B50A',2,N'firstName',N'String');
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('DDA7E239-FD9A-4619-BCD4-68A02C8B3CAC','1AD61576-D07E-41B3-AC44-A1A73CE67194',9,N'secret',N'String');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('C6417E05-A91F-48F3-B7A4-690452D55E4A','A6650E3F-4AB2-461F-C7B2-EDA7A542B50A',10,N'firstName',N'String');
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('9763D84C-A584-423C-94B3-6972786C4E75','AC102CAC-B5DF-4F0C-B023-64DD2EB56752',8,N'howCanWeHelp',N'LongString');
 -- SQRIBE/INSERT;ef17d2
@@ -105,13 +111,19 @@ INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType])
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('E6C96071-6406-475E-833C-913C812E0695','222F823A-F613-4E77-95D7-22108735381A',4,N'lastName',N'String');
 -- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('C8AC2796-46CB-4F13-A3FA-91585628C599','B2EA777B-B780-4BB4-8DDA-A9A17E78008E',10,N'doYouLikeBeer',N'Bit');
+-- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('D5B93410-61E3-429B-9172-91F3EFE66F2F','222F823A-F613-4E77-95D7-22108735381A',7,N'lastName',N'String');
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('8C4530AE-E156-4F26-A7FA-95A3B9637396','C0768264-5AE9-4017-9C65-C13D58341903',2,N'favoritePet',N'String');
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('1A10233C-11CB-4301-AACB-969E826C2C7E','9641DCD2-19E7-4123-A32F-0A7381E045AF',2,N'dataConsent',N'Bit');
 -- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('E1D99930-3C35-468C-A407-98564629DA9F','222F823A-F613-4E77-95D7-22108735381A',10,N'lastName',N'String');
+-- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('99B603D4-346B-456A-A559-99D49F27C56A','C0768264-5AE9-4017-9C65-C13D58341903',8,N'favoritePet',N'String');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('379AA2DE-AC9E-44E6-B059-9A00C7C64C27','1AD61576-D07E-41B3-AC44-A1A73CE67194',10,N'secret',N'String');
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('5F5660F3-836D-48CD-9D06-9C7FBEC117E2','A6650E3F-4AB2-461F-C7B2-EDA7A542B50A',9,N'firstName',N'String');
 -- SQRIBE/INSERT;ef17d2
@@ -121,9 +133,15 @@ INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType])
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('BFC919B6-EE20-4CEC-93AE-9E53A756C734','93DE3738-47E7-4518-A275-10D9D5EBE8D1',1,N'email',N'String');
 -- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('F21D26C3-342C-4143-939D-9E7764C6CB58','93DE3738-47E7-4518-A275-10D9D5EBE8D1',10,N'email',N'String');
+-- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('01F13B61-1BE3-456A-BC8E-A270DC2B90E9','51E82A73-2F88-45E9-F0CF-8269B8146E41',5,N'favoriteFood',N'String');
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('63815384-BD91-43E3-8B33-A503BD8FCE80','A6650E3F-4AB2-461F-C7B2-EDA7A542B50A',5,N'firstName',N'String');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('53AF4990-F7AC-4289-8B44-AD6AEEB55949','AC102CAC-B5DF-4F0C-B023-64DD2EB56752',10,N'howCanWeHelp',N'LongString');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('58A963E6-1A7F-48BC-9626-AED264E87D52','477E97A3-8C3D-4641-BB78-DBEEED323F83',10,N'dateOfBirth',N'DateTime');
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('9359DF6A-A48E-41BE-A6D6-AF6795C1BDAA','93DE3738-47E7-4518-A275-10D9D5EBE8D1',2,N'email',N'String');
 -- SQRIBE/INSERT;ef17d2
@@ -143,6 +161,8 @@ INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType])
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('55CB42C1-B8BB-41D1-936B-D4D6F18A6466','93DE3738-47E7-4518-A275-10D9D5EBE8D1',7,N'email',N'String');
 -- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('2339869B-22C1-46B1-8996-D57762FBFD8A','51E82A73-2F88-45E9-F0CF-8269B8146E41',10,N'favoriteFood',N'String');
+-- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('4C4CAB2A-1354-4477-AF94-D5A481B9E745','C0768264-5AE9-4017-9C65-C13D58341903',5,N'favoritePet',N'String');
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('C5250102-BAB8-4FE4-9541-D907E87FB423','AC102CAC-B5DF-4F0C-B023-64DD2EB56752',1,N'howCanWeHelp',N'LongString');
@@ -150,6 +170,8 @@ INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType])
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('AB4D5422-48C6-420D-9F1A-DEA254000021','477E97A3-8C3D-4641-BB78-DBEEED323F83',9,N'dateOfBirth',N'DateTime');
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('0224B646-447B-49F8-BE95-E0EC76D6732E','222F823A-F613-4E77-95D7-22108735381A',6,N'lastName',N'String');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('905CB319-F981-4DE4-A5EF-E13B0657A0AD','C0768264-5AE9-4017-9C65-C13D58341903',10,N'favoritePet',N'String');
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordFields] ([Key],[FieldId],[Record],[Alias],[DataType]) VALUES ('FD713B6E-E79D-4AF1-BB1C-E42F497B4C79','9641DCD2-19E7-4123-A32F-0A7381E045AF',8,N'dataConsent',N'Bit');
 -- SQRIBE/INSERT;ef17d2

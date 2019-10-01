@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;ef17d2
 
 -- SQRIBE/TABLE;ef17d2
--- Adding 8 rows to dbo.UFRecordDataLongString
+-- Adding 9 rows to dbo.UFRecordDataLongString
 
 SET IDENTITY_INSERT [dbo].[UFRecordDataLongString] ON
 
@@ -28,6 +28,8 @@ INSERT INTO [dbo].[UFRecordDataLongString] ([Id],[Key],[Value]) VALUES (7,'7F2CA
 INSERT INTO [dbo].[UFRecordDataLongString] ([Id],[Key],[Value]) VALUES (8,'9763D84C-A584-423C-94B3-6972786C4E75',N'Teat question');
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordDataLongString] ([Id],[Key],[Value]) VALUES (9,'B9D7D28F-D16E-4D32-82CD-312FCFFB3E5C',N'Teat question');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[UFRecordDataLongString] ([Id],[Key],[Value]) VALUES (10,'53AF4990-F7AC-4289-8B44-AD6AEEB55949',N'jhkhkhjkhkjhkjh');
 
 COMMIT TRANSACTION
 

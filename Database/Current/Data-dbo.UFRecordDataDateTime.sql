@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;ef17d2
 
 -- SQRIBE/TABLE;ef17d2
--- Adding 7 rows to dbo.UFRecordDataDateTime
+-- Adding 8 rows to dbo.UFRecordDataDateTime
 
 SET IDENTITY_INSERT [dbo].[UFRecordDataDateTime] ON
 
@@ -26,6 +26,8 @@ INSERT INTO [dbo].[UFRecordDataDateTime] ([Id],[Key],[Value]) VALUES (6,'EC53DC8
 INSERT INTO [dbo].[UFRecordDataDateTime] ([Id],[Key],[Value]) VALUES (7,'97330AD0-BF14-4F0F-B59F-45D6B37A2A64',CONVERT(datetime,'2019-08-22 00:00:00.000',121));
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordDataDateTime] ([Id],[Key],[Value]) VALUES (8,'AB4D5422-48C6-420D-9F1A-DEA254000021',CONVERT(datetime,'2019-08-22 00:00:00.000',121));
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[UFRecordDataDateTime] ([Id],[Key],[Value]) VALUES (9,'58A963E6-1A7F-48BC-9626-AED264E87D52',CONVERT(datetime,'2019-09-13 00:00:00.000',121));
 
 COMMIT TRANSACTION
 

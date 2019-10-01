@@ -6,7 +6,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 GO -- SQRIBE/GO;ef17d2
 
 -- SQRIBE/TABLE;ef17d2
--- Adding 52 rows to dbo.UFRecordDataString
+-- Adding 61 rows to dbo.UFRecordDataString
 
 SET IDENTITY_INSERT [dbo].[UFRecordDataString] ON
 
@@ -116,6 +116,24 @@ INSERT INTO [dbo].[UFRecordDataString] ([Id],[Key],[Value]) VALUES (57,'3C22CEC1
 INSERT INTO [dbo].[UFRecordDataString] ([Id],[Key],[Value]) VALUES (58,'ADA65940-F0C2-4C5B-A8BB-9D138DEEFFE5',N'Cat');
 -- SQRIBE/INSERT;ef17d2
 INSERT INTO [dbo].[UFRecordDataString] ([Id],[Key],[Value]) VALUES (59,'0C6F7EE5-D13D-429C-A81E-820647614B8D',N'Green');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[UFRecordDataString] ([Id],[Key],[Value]) VALUES (60,'C6417E05-A91F-48F3-B7A4-690452D55E4A',N'kjhkjhkj');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[UFRecordDataString] ([Id],[Key],[Value]) VALUES (61,'E1D99930-3C35-468C-A407-98564629DA9F',N'kjhkjhkjh');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[UFRecordDataString] ([Id],[Key],[Value]) VALUES (62,'F21D26C3-342C-4143-939D-9E7764C6CB58',N'kjhkjH@kjhkjhkjh.com');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[UFRecordDataString] ([Id],[Key],[Value]) VALUES (63,'379AA2DE-AC9E-44E6-B059-9A00C7C64C27',N'bacon');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[UFRecordDataString] ([Id],[Key],[Value]) VALUES (64,'2339869B-22C1-46B1-8996-D57762FBFD8A',N'Seafood');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[UFRecordDataString] ([Id],[Key],[Value]) VALUES (65,'905CB319-F981-4DE4-A5EF-E13B0657A0AD',N'Cat');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[UFRecordDataString] ([Id],[Key],[Value]) VALUES (66,'8B225009-5199-402B-8771-65B6308B8315',N'Red');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[UFRecordDataString] ([Id],[Key],[Value]) VALUES (67,'8B225009-5199-402B-8771-65B6308B8315',N'Blue');
+-- SQRIBE/INSERT;ef17d2
+INSERT INTO [dbo].[UFRecordDataString] ([Id],[Key],[Value]) VALUES (68,'8B225009-5199-402B-8771-65B6308B8315',N'Green');
 
 COMMIT TRANSACTION
 
