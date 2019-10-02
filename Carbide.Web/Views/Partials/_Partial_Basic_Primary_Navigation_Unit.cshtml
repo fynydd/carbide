@@ -167,6 +167,7 @@
         </nav>
     </div>
 </section>
+
 <script>
 
     function toggleMenu() {
@@ -184,6 +185,172 @@
 
         processNavheight();
     });
+
+    $(document).ready(function () {
+
+        processNavheight();
+    });
+
+    var lastScrollPosition;
+    var lastScrollChangePosition;
+    var scrollRefreshRate = 60;
+    var scrollChangePrecision = 50;
+    var lastScrollDirection = "";
+    var scrollMenuTimerPending = false;
+    var scrollMenuCloseTimer;
+
+    function ProcessScrolling() {
+
+        if (lastScrollPosition != $(document).scrollTop()) {
+            if (lastScrollPosition > $(document).scrollTop()) {
+                if (lastScrollDirection != "up") {
+                    lastScrollDirection = "up";
+                    initialChangePosition = 0;
+                }
+                if ($(document).scrollTop() > $("#primary-navigation").outerHeight()) {
+                    if (initialChangePosition == 0) {
+                        initialChangePosition = lastScrollPosition;
+                    }
+                    if ($(document).scrollTop() < (initialChangePosition - scrollChangePrecision)) {
+                        initialChangePosition = 0;
+                        OpenScrollMenu();
+                    }
+                } else {
+                    initialChangePosition = 0;
+                    OpenScrollMenuNow();
+                }
+            }
+            if (lastScrollPosition < $(document).scrollTop()) {
+                if (lastScrollDirection != "down") {
+                    lastScrollDirection = "down";
+                    initialChangePosition = 0;
+                }
+                if (initialChangePosition == 0) {
+                    initialChangePosition = lastScrollPosition;
+                }
+                if ($(document).scrollTop() > (initialChangePosition + scrollChangePrecision)) {
+                    initialChangePosition = 0;
+                    CloseScrollMenuNow();
+                }
+            }
+            if ($(document).scrollTop() <= $("#primary-navigation").outerHeight()) {
+                lastScrollDirection = "up";
+                initialChangePosition = 0;
+                OpenScrollMenuNow();
+            }
+        } else {
+            CloseScrollMenuOnTimer(3000);
+        }
+
+        lastScrollPosition = $(document).scrollTop();
+    }
+
+    function InitializeScrollHandling() {
+
+        $("#primary-navigation").addClass("animate");
+
+        lastScrollPosition = $(document).scrollTop();
+        initialChangePosition = 0;
+        setInterval(ProcessScrolling, 1000 / scrollRefreshRate)
+    }
+
+    window.addEventListener("DOMContentLoaded", InitializeScrollHandling);
+
+    function CancelScrollMenuTimer() {
+
+        if (scrollMenuTimerPending) {
+            scrollMenuTimerPending = false;
+            window.clearTimeout(scrollMenuCloseTimer)
+        }
+    }
+
+    function CloseScrollMenuNow() {
+
+        if (IsScrollMenuOpen()) {
+            if (!IsMobileNavMenuOpen()) {
+                CancelScrollMenuTimer();
+                $("#primary-navigation").addClass("hide")
+            }
+        }
+    }
+
+    function CloseScrollMenuOnTimer(a) {
+
+        if (IsScrollMenuOpen()) {
+            if (!IsMobileNavMenuOpen()) {
+                if (!scrollMenuTimerPending) {
+                    window.clearTimeout(scrollMenuCloseTimer);
+                    scrollMenuTimerPending = true;
+                    scrollMenuCloseTimer = setTimeout(function() {
+                        $("#primary-navigation").addClass("hide");
+                        CancelScrollMenuTimer()
+                    }, a)
+                }
+            }
+        } else {
+            CancelScrollMenuTimer()
+        }
+    }
+
+    function OpenScrollMenu() {
+
+        scrollMenuTimerPending = false;
+        window.clearTimeout(scrollMenuCloseTimer);
+        if (!IsScrollMenuOpen()) {
+            $("#primary-navigation").removeClass("hide")
+        }
+    }
+
+    var lockScroll = function (a) {
+
+        a.preventDefault();
+        a.stopPropagation();
+        return false
+    };
+
+    function LockScrollEvent(b) {
+
+        try {
+            $(b).on("touchmove", lockScroll);
+            $(b).on("scroll", lockScroll);
+            $(b).on("mousewheel", lockScroll);
+            $(b).on("wheel", lockScroll);
+            return true
+        } catch (a) {
+            return false
+        }
+    }
+
+    function ReleaseScrollEvent(b) {
+
+        try {
+            $(b).off("touchmove", lockScroll);
+            $(b).off("scroll", lockScroll);
+            $(b).off("mousewheel", lockScroll);
+            $(b).off("wheel", lockScroll);
+            return true
+        } catch (a) {
+            return false
+        }
+    }
+
+    function IsScrollMenuOpen() {
+
+        if ($("#primary-navigation").hasClass("hide")) {
+            return false
+        } else {
+            return true
+        }
+    }
+
+    function IsMobileNavMenuOpen() {
+
+        if ($("#primary-navigation-mobile").hasClass("closed") === false) {
+            return true
+        } else {
+            return false
+        }
+    }
 
     $(document).ready(function () {
 

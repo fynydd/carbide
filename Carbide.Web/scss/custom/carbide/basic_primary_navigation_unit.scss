@@ -21,6 +21,24 @@
     right: 0;
     z-index: 997;
 
+    &.hide {
+
+        top: -8rem;
+    }
+
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -moz-transition-duration: .5s;
+    -o-transition-duration: .5s;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+    -moz-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+    -webkit-transition-timing-function: ease;
+    transition-timing-function: ease;
+
     .background-layer {
 
         position: absolute;
