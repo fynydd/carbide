@@ -217,7 +217,7 @@
                     }
                 } else {
                     initialChangePosition = 0;
-                    OpenScrollMenuNow();
+                    OpenScrollMenu();
                 }
             }
             if (lastScrollPosition < $(document).scrollTop()) {
@@ -236,7 +236,7 @@
             if ($(document).scrollTop() <= $("#primary-navigation").outerHeight()) {
                 lastScrollDirection = "up";
                 initialChangePosition = 0;
-                OpenScrollMenuNow();
+                OpenScrollMenu();
             }
         } else {
 
@@ -358,7 +358,7 @@
 
     $(document).ready(function () {
 
-        OpenScrollMenuNow();
+        OpenScrollMenu();
         processNavheight();
     });
 
