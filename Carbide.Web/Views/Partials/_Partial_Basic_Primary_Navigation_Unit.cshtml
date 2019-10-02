@@ -170,26 +170,7 @@
 
 <script>
 
-    function toggleMenu() {
-
-        $("#primary-navigation-mobile").toggleClass("closed");
-        $(".dim-overlay").toggleClass("closed");
-    }
-
-    function processNavheight() {
-
-        $("main[role='main']").css("padding-top", $("#primary-navigation").outerHeight() + "px");
-    }
-
-    $(window).on("resize", function () {
-
-        processNavheight();
-    });
-
-    $(document).ready(function () {
-
-        processNavheight();
-    });
+    // Scroll menu handling
 
     var lastScrollPosition;
     var lastScrollChangePosition;
@@ -305,39 +286,6 @@
         }
     }
 
-    var lockScroll = function (a) {
-
-        a.preventDefault();
-        a.stopPropagation();
-        return false
-    };
-
-    function LockScrollEvent(b) {
-
-        try {
-            $(b).on("touchmove", lockScroll);
-            $(b).on("scroll", lockScroll);
-            $(b).on("mousewheel", lockScroll);
-            $(b).on("wheel", lockScroll);
-            return true
-        } catch (a) {
-            return false
-        }
-    }
-
-    function ReleaseScrollEvent(b) {
-
-        try {
-            $(b).off("touchmove", lockScroll);
-            $(b).off("scroll", lockScroll);
-            $(b).off("mousewheel", lockScroll);
-            $(b).off("wheel", lockScroll);
-            return true
-        } catch (a) {
-            return false
-        }
-    }
-
     function IsScrollMenuOpen() {
 
         if ($("#primary-navigation").hasClass("hide")) {
@@ -356,9 +304,36 @@
         }
     }
 
+    function processNavheight() {
+
+        $("main[role='main']").css("padding-top", $("#primary-navigation").outerHeight() + "px");
+    }
+
+
+    // Mobile navigation menu
+
+    function toggleMenu() {
+
+        $("#primary-navigation-mobile").toggleClass("closed");
+        $(".dim-overlay").toggleClass("closed");
+    }
+
+
+    // Events
+
     $(document).ready(function () {
 
         OpenScrollMenu();
+        processNavheight();
+    });
+
+    $(window).on("resize", function () {
+
+        processNavheight();
+    });
+
+    $(document).ready(function () {
+
         processNavheight();
     });
 
