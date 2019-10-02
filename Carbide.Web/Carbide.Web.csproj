@@ -780,7 +780,6 @@
     <Content Include="App_Plugins\UmbracoForms\Fonts\icomoon.woff" />
     <Content Include="App_Plugins\UmbracoForms\Fonts\icomoon.ttf" />
     <Content Include="App_Plugins\UmbracoForms\Fonts\icomoon.eot" />
-    <Content Include="App_Plugins\UmbracoForms\Data\Web.config" />
     <Content Include="App_Plugins\UmbracoForms\Data\Templates\contactform.json" />
     <Content Include="App_Plugins\UmbracoForms\Data\Templates\commentform.json" />
     <None Include="packages.config" />
