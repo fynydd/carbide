@@ -239,7 +239,11 @@
                 OpenScrollMenuNow();
             }
         } else {
-            CloseScrollMenuOnTimer(3000);
+
+            if ($(document).scrollTop() > $("#primary-navigation").outerHeight()) {
+
+                CloseScrollMenuOnTimer(3000);
+            }
         }
 
         lastScrollPosition = $(document).scrollTop();
@@ -354,6 +358,7 @@
 
     $(document).ready(function () {
 
+        OpenScrollMenuNow();
         processNavheight();
     });
 
