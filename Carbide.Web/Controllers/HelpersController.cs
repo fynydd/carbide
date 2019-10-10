@@ -1,10 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Hosting;
 
+using Umbraco.Core;
+using Umbraco.Core.Configuration;
+using Umbraco.Core.Logging;
+using Umbraco.Core.Models;
+using Umbraco.Core.Services;
+using Umbraco.Web;
 using Umbraco.Web.Mvc;
+using Umbraco.Web.Routing;
+using Umbraco.Web.Security;
+
+using Fynydd.Carbide;
+using Fynydd.Carbide.Constants;
 
 namespace Carbide.Web.Controllers
 {
@@ -25,6 +40,68 @@ namespace Carbide.Web.Controllers
             public string result { get; set; }
             public string message { get; set; }
             public List<string> list { get; set; }
+        }
+
+        /// <summary>
+        /// Delete versions from all content earlier than a specified date.
+        /// </summary>
+        /// <example>
+        /// /umbraco/surface/helpers/deleteversions?beforedate=10-OCT-2019
+        /// </example>
+        /// <param name="beforeDate">Versions earlier than this date will be deleted.</param>
+        /// <returns></returns>
+        public JsonResult DeleteVersions(string beforeDate = "")
+        {
+            StringListResult jsonData = new StringListResult();
+            var priorDate = Temporal.DateFormat(DateTime.Now, DateFormats.European);
+
+            if (beforeDate.HasValue())
+            {
+                try
+                {
+                    priorDate = Temporal.DateFormat(Convert.ToDateTime(beforeDate), DateFormats.European);
+                }
+
+                catch { }
+            }
+
+            try
+            {
+                var cmd = @"
+SELECT cv.id
+INTO #toDelete
+FROM umbracoDocumentVersion dv
+INNER JOIN umbracoContentVersion cv ON dv.id = cv.id
+WHERE cv.[current] != 1 AND dv.published != 1 AND cv.VersionDate < '" + priorDate + @"'
+
+DELETE FROM umbracoPropertyData WHERE versionId IN (select id from #toDelete)
+DELETE FROM umbracoDocumentVersion WHERE id IN (select id from #toDelete)
+DELETE FROM umbracoContentVersion WHERE id IN (select id from #toDelete)
+
+DROP TABLE #toDelete
+";
+                var result = Databases.Lookup<string>(cmd, "umbracoDbDSN");
+
+                if (result.HasValue())
+                {
+                    jsonData.result = "ERROR";
+                    jsonData.message = result;
+                }
+
+                else
+                {
+                    jsonData.result = "SUCCESS";
+                    jsonData.message = "";
+                }
+            }
+
+            catch (Exception e)
+            {
+                jsonData.result = "ERROR";
+                jsonData.message = e.StackTrace;
+            }
+
+            return new JsonResult() { Data = jsonData, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
         // /umbraco/surface/helpers/gettags?groupName=Pages
