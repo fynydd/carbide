@@ -43,6 +43,84 @@ namespace Carbide.Web.Controllers
         }
 
         /// <summary>
+        /// Empty content in the trash.
+        /// </summary>
+        /// <example>
+        /// /umbraco/surface/helpers/emptycontenttrash
+        /// </example>
+        /// <returns></returns>
+        public JsonResult EmptyContentTrash()
+        {
+            StringListResult jsonData = new StringListResult();
+
+            try
+            {
+                var contentService = Services.ContentService;
+
+                var opResult = contentService.EmptyRecycleBin(-1);
+
+                if (opResult.Success)
+                {
+                    jsonData.result = "SUCCESS";
+                    jsonData.message = "";
+                }
+
+                else
+                {
+                    jsonData.result = "ERROR";
+                    jsonData.message = "Could not empty the content trash";
+                }
+            }
+
+            catch (Exception e)
+            {
+                jsonData.result = "ERROR";
+                jsonData.message = e.StackTrace;
+            }
+
+            return new JsonResult() { Data = jsonData, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
+
+        /// <summary>
+        /// Empty media in the trash.
+        /// </summary>
+        /// <example>
+        /// /umbraco/surface/helpers/emptymediatrash
+        /// </example>
+        /// <returns></returns>
+        public JsonResult EmptyMediaTrash()
+        {
+            StringListResult jsonData = new StringListResult();
+
+            try
+            {
+                var mediaService = Services.MediaService;
+
+                var opResult = mediaService.EmptyRecycleBin(-1);
+
+                if (opResult.Success)
+                {
+                    jsonData.result = "SUCCESS";
+                    jsonData.message = "";
+                }
+
+                else
+                {
+                    jsonData.result = "ERROR";
+                    jsonData.message = "Could not empty the media trash";
+                }
+            }
+
+            catch (Exception e)
+            {
+                jsonData.result = "ERROR";
+                jsonData.message = e.StackTrace;
+            }
+
+            return new JsonResult() { Data = jsonData, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
+
+        /// <summary>
         /// Delete versions from all content earlier than a specified date.
         /// </summary>
         /// <example>
@@ -67,6 +145,13 @@ namespace Carbide.Web.Controllers
 
             try
             {
+                var contentService = Services.ContentService;
+
+                // Empty the trash bin...
+                var opResult = contentService.EmptyRecycleBin(-1);
+
+
+                // Delete old content versions...
                 var cmd = @"
 SELECT cv.id
 INTO #toDelete
