@@ -145,12 +145,6 @@ namespace Carbide.Web.Controllers
 
             try
             {
-                var contentService = Services.ContentService;
-
-                // Empty the trash bin...
-                var opResult = contentService.EmptyRecycleBin(-1);
-
-
                 // Delete old content versions...
                 var cmd = @"
 SELECT cv.id
