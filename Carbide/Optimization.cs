@@ -105,7 +105,13 @@ namespace Fynydd.Carbide
                             if (filePath.EndsWith(".css"))
                             {
                                 var cssc = new CssCompressor();
-                                minified = cssc.Compress(umbCtx.ReadFile(filePath));
+
+                                minified = umbCtx.ReadFile(filePath);
+
+                                if (minified.HasValue())
+                                {
+                                    minified = cssc.Compress(minified);
+                                }                                
                             }
 
                             try
