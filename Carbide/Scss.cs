@@ -320,7 +320,7 @@ namespace Fynydd.Carbide
 
             catch (Exception e)
             {
-                Debug.WriteLine("EXCEPTION: Carbide.Storage.InjectScssPartials() - " + e.Message);
+                Debug.WriteLine("EXCEPTION: Carbide.Scss.InjectScssPartials() - " + e.Message);
             }
         }
 
