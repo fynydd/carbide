@@ -19,8 +19,8 @@ namespace Fynydd.Carbide
     ///		<section name="Fynydd.Carbide" type="System.Configuration.NameValueFileSectionHandler"/>
     /// </configSections>
     /// <Fynydd.Carbide>
-    ///    <add key = "Encryption.BaseKey" value="10,64,9,2,13,199,67,18,141,233,16,230,217,183,146,18,156,74,90,36,226,129,181,219" />
-    ///    <add key = "Encryption.InitVector" value="162,99,183,154,226,211,14,122,74,187,112,21,251,109,76,75,219,93" />
+    ///    <add key="Encryption.BaseKey" value="151,4,109,42,135,99,67,82,242,233,16,200,9,83,196,178,56,74,90,36,206,129,81,229,67,82,242,233,16,200,9,83" />
+    ///    <add key="Encryption.InitVector" value="162,99,183,154,226,211,14,122,74,187,112,21,251,109,76,75" />
     /// </Fynydd.Carbide>
     ///	]]></code>
     ///	</example>
