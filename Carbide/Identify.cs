@@ -217,6 +217,23 @@ namespace Fynydd.Carbide
             return result;
         }
 
+        /// <summary><![CDATA[
+        /// Validate the format of a U.S. telephone number
+        /// ]]></summary>
+        /// <param name="value">Telephone number to evaluate</param>
+        /// <returns>true if formatted as a valid U.S. telephone number, false if not</returns>
+        public static bool IsUSTelephone(this string value)
+        {
+            bool result = false;
+
+            if (value.HasValue())
+            {
+                result = value.MatchesPattern(RegularExpressions.TelephoneUS);
+            }
+
+            return result;
+        }
+
         private class StringComparer : IEqualityComparer<string>
         {
             private bool _caseSensitive {  get; set; }
