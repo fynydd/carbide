@@ -32,7 +32,7 @@ namespace Fynydd.Carbide
 
             value = value.ToLower();
 
-            if (value == "1" || value == "-1" || value == "0" || value == "true" || value == "yes" || value == "false" || value == "no")
+            if (value == "1" || value == "-1" || value == "true" || value == "yes")
             {
                 boolVal = true;
             }
