@@ -1,0 +1,5 @@
+﻿{
+    "css": [
+        '~/App_Plugins/FontAwesomeSolid/font-awesome.css'
+    ]
+}
