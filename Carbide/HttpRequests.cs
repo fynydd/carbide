@@ -1423,7 +1423,7 @@ namespace Fynydd.Carbide
 
                 result = URL.Left("?");
                 queryString = DeleteUrlParameter(queryString, parameter);
-                result += "?" + queryString;
+                result += (queryString.HasValue() ? "?" + queryString : "");
             }
 
             return result;
