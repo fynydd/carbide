@@ -1376,6 +1376,51 @@ namespace Fynydd.Carbide
             return SetUrlParameterValue(umbCtx.GetUrlParams(), urlParam, value);
         }
 
+        /// <summary>
+        /// Add a URL parameter to an existing URL.
+        /// </summary>
+        /// <param name="URL">URL to process</param>
+        /// <param name="parameter">URL parameter name to add</param>
+        /// <param name="value">Parameter value</param>
+        /// <returns>Modified URL</returns>
+        public static string AddUrlParameter(this string URL, string parameter, string value)
+        {
+            var result = URL;
+
+            if (URL.Contains("?") && URL.LastIndexOf("?") < URL.Length - 1)
+            {
+                var queryString = URL.Right("?");
+
+                result = URL.Left("?");
+                queryString = SetUrlParameterValue(queryString, parameter, value);
+                result += "?" + queryString;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Delete a URL parameter from a URL.
+        /// </summary>
+        /// <param name="URL">URL to process</param>
+        /// <param name="parameter">URL parameter name to delete</param>
+        /// <returns>Modified URL</returns>
+        public static string RemoveUrlParameter(this string URL, string parameter)
+        {
+            var result = URL;
+
+            if (URL.Contains("?") && URL.LastIndexOf("?") < URL.Length - 1)
+            {
+                var queryString = URL.Right("?");
+
+                result = URL.Left("?");
+                queryString = DeleteUrlParameter(queryString, parameter);
+                result += "?" + queryString;
+            }
+
+            return result;
+        }
+
         #endregion
     }
 }
