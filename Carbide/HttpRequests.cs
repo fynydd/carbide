@@ -1387,13 +1387,21 @@ namespace Fynydd.Carbide
         {
             var result = URL;
 
-            if (URL.Contains("?") && URL.LastIndexOf("?") < URL.Length - 1)
+            if (URL.Contains("?"))
             {
-                var queryString = URL.Right("?");
+                if (URL.LastIndexOf("?") < URL.Length - 1)
+                {
+                    var queryString = URL.Right("?");
 
-                result = URL.Left("?");
-                queryString = SetUrlParameterValue(queryString, parameter, value);
-                result += "?" + queryString;
+                    result = URL.Left("?");
+                    queryString = SetUrlParameterValue(queryString, parameter, value);
+                    result += "?" + queryString;
+                }
+            }
+
+            else
+            {
+                result += "?" + parameter + "=" + HttpUtility.UrlEncode(value).Replace("'", "%27");
             }
 
             return result;
@@ -1409,7 +1417,7 @@ namespace Fynydd.Carbide
         {
             var result = URL;
 
-            if (URL.Contains("?") && URL.LastIndexOf("?") < URL.Length - 1)
+            if (URL.Contains("?"))
             {
                 var queryString = URL.Right("?");
 
